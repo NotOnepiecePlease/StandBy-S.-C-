@@ -1,0 +1,62 @@
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\PFC - StandBy CSharp.exe.config
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\PFC - StandBy CSharp.exe
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\PFC - StandBy CSharp.pdb
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.dll
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Guna.UI.dll
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.Core.dll
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.xml
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.xml
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.exe.config
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Loading.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ALERT.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes_Edit.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ_Edit.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ServicosPorMes.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Principal.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Properties.Resources.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.GenerateResource.cache
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CoreCompileInputs.cache
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CopyComplete
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.exe
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.pdb
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csprojAssemblyReference.cache
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluidos.resources
+C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_StandBy.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\StandBy System.exe.config
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\StandBy System.exe
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\StandBy System.pdb
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.dll
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.dll
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\FontAwesome.Sharp.dll
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Guna.UI.dll
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.Core.dll
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.xml
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.xml
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.exe.config
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Loading.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ALERT.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes_Edit.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluidos.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir_Alterar.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Orcamento.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ_Edit.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ServicosAnuais.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_StandBy.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Principal.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Properties.Resources.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.GenerateResource.cache
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CoreCompileInputs.cache
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CopyComplete
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.exe
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.pdb
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csprojAssemblyReference.cache
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Notepad.resources

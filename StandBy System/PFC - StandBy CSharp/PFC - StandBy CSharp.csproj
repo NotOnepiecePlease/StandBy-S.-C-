@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29AD5A39-3B4D-4C72-AC69-ED784CFD5259}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PFC___StandBy_CSharp</RootNamespace>
+    <AssemblyName>StandBy System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>pt-BR</TargetCulture>
+    <ProductName>StandBy System</ProductName>
+    <PublisherName>Adriano Andrade</PublisherName>
+    <SuiteName>StandBy System</SuiteName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>5ee7aec0f2f1d_wmY_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BunifuDataViz">
+      <HintPath>..\@Recursos-Frameworks\Bunifu Winforms 1.11.5.1 &amp; DataViz 1.1.1.5 Crack\Bunifu Dataviz Advanced 1.1.1.5\BunifuDataViz.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\@Recursos-Frameworks\Bunifu Winforms 1.11.5.1 &amp; DataViz 1.1.1.5 Crack\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.12.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\@Recursos-Frameworks\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChecarUpdates\Verificar.cs" />
+    <Compile Include="Dados\AlterarDados.cs" />
+    <Compile Include="Dados\BuscarDados.cs" />
+    <Compile Include="Dados\DeletarDados.cs" />
+    <Compile Include="Dados\InserirDados.cs" />
+    <Compile Include="Dados\VerificarExistencia.cs" />
+    <Compile Include="Formatar Campos\Formatar.cs" />
+    <Compile Include="Forms\form_ALERT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_ALERT.Designer.cs">
+      <DependentUpon>form_ALERT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_CadastroClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_CadastroClientes.Designer.cs">
+      <DependentUpon>form_CadastroClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_CadastroClientes_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_CadastroClientes_Edit.Designer.cs">
+      <DependentUpon>form_CadastroClientes_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_Concluidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_Concluidos.Designer.cs">
+      <DependentUpon>form_Concluidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_Lucros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_Lucros.Designer.cs">
+      <DependentUpon>form_Lucros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_Lucros_Gastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_Lucros_Gastos.Designer.cs">
+      <DependentUpon>form_Lucros_Gastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_Lucros_Gastos_Exibir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_Lucros_Gastos_Exibir.Designer.cs">
+      <DependentUpon>form_Lucros_Gastos_Exibir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_Lucros_Gastos_Exibir_Alterar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_Lucros_Gastos_Exibir_Alterar.Designer.cs">
+      <DependentUpon>form_Lucros_Gastos_Exibir_Alterar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_Notepad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_Notepad.Designer.cs">
+      <DependentUpon>form_Notepad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_Orcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_Orcamento.Designer.cs">
+      <DependentUpon>form_Orcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_OrdensServ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_OrdensServ.Designer.cs">
+      <DependentUpon>form_OrdensServ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_OrdensServ_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_OrdensServ_Edit.Designer.cs">
+      <DependentUpon>form_OrdensServ_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_ServicosAnuais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_ServicosAnuais.Designer.cs">
+      <DependentUpon>form_ServicosAnuais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_StandBy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_StandBy.Designer.cs">
+      <DependentUpon>form_StandBy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graficos\GraficoServicosAnuais.cs" />
+    <Compile Include="Graficos\GraficoServicosMensais.cs" />
+    <Compile Include="Graficos\GraficoServicosSemanais.cs" />
+    <Compile Include="Graficos\GraficoTotalGanhoAnualmente.cs" />
+    <Compile Include="Graficos\SemanaDoAno.cs" />
+    <Compile Include="MsgBox\MensagensErro.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_Principal.Designer.cs">
+      <DependentUpon>form_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MsgBox\MensagensSucesso.cs" />
+    <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherComboBoxCliente.cs" />
+    <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherTableOrdensServicos.cs" />
+    <Compile Include="PreencherComponentes\Tela 2 - Cadastro Clientes\PreencherTableClientes.cs" />
+    <Compile Include="PreencherComponentes\Tela 3 - ServicosConcluidos\PreencherTableConcluidos.cs" />
+    <Compile Include="PreencherComponentes\Tela 5 - Lucros\PreencherTabelaGastos.cs" />
+    <Compile Include="PreencherComponentes\Tela 5 - Lucros\PreencherTabelaLucros.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlDbConnect\conexao.cs" />
+    <Compile Include="standbyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>standbyDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_ALERT.resx">
+      <DependentUpon>form_ALERT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_CadastroClientes.resx">
+      <DependentUpon>form_CadastroClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_CadastroClientes_Edit.resx">
+      <DependentUpon>form_CadastroClientes_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_Concluidos.resx">
+      <DependentUpon>form_Concluidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_Lucros.resx">
+      <DependentUpon>form_Lucros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_Lucros_Gastos.resx">
+      <DependentUpon>form_Lucros_Gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_Lucros_Gastos_Exibir.resx">
+      <DependentUpon>form_Lucros_Gastos_Exibir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_Lucros_Gastos_Exibir_Alterar.resx">
+      <DependentUpon>form_Lucros_Gastos_Exibir_Alterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_Notepad.resx">
+      <DependentUpon>form_Notepad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_Orcamento.resx">
+      <DependentUpon>form_Orcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_OrdensServ.resx">
+      <DependentUpon>form_OrdensServ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_OrdensServ_Edit.resx">
+      <DependentUpon>form_OrdensServ_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_ServicosAnuais.resx">
+      <DependentUpon>form_ServicosAnuais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_StandBy.resx">
+      <DependentUpon>form_StandBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_Principal.resx">
+      <DependentUpon>form_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="standbyDataSet.xsc">
+      <DependentUpon>standbyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="standbyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>standbyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="standbyDataSet.xss">
+      <DependentUpon>standbyDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\separador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\959ad3842394161b09d4cd3987c3f51c.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_ordensServicos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_40px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_error_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_comments_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_208px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_208px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bulleted_list_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_group_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checkmark_yes_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_estimate_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_money_bag_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_android_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_android_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_android_20px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_android_20px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="5ee7aec0f2f1d_wmY_icon.ico" />
+    <Content Include="Resources\Aviso.png" />
+    <Content Include="Resources\Erro.png" />
+    <None Include="Resources\TITULO CADASTRO CLIENTES.png" />
+    <None Include="Resources\TITULO ORDENS DE SERVICO.png" />
+    <None Include="Resources\TITULO STANDBY SYSTEM.png" />
+    <None Include="Resources\icons8_checked_checkbox_480px.png" />
+    <None Include="Resources\fundo editar clientes.png" />
+    <None Include="Resources\icons8_edit_account_512px.png" />
+    <None Include="Resources\icons8_card_payment_20px_2.png" />
+    <None Include="Resources\icons8_edit_file_512px.png" />
+    <None Include="Resources\icons8_edit_file_512px_1.png" />
+    <None Include="Resources\icons8_checked_checkbox_512px.png" />
+    <None Include="Resources\icons8_checked_checkbox_96px.png" />
+    <Content Include="Resources\icons8_edit_property_480px.png" />
+    <None Include="Resources\icons8_tick_box_480px.png" />
+    <None Include="Resources\icons8_edit_property_480px_1.png" />
+    <None Include="Resources\icons8_list_512px.png" />
+    <None Include="Resources\icons8_shutdown_96px.png" />
+    <None Include="Resources\icons8_paint_roller_512px.png" />
+    <None Include="Resources\icons8_reset_480px.png" />
+    <None Include="Resources\icons8_phone_20px.png" />
+    <None Include="Resources\icons8_search_208px1.png" />
+    <None Include="Resources\icons8_search_500px.png" />
+    <Content Include="Resources\Loading.png" />
+    <Content Include="Resources\Sucesso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PreencherComponentes\Tela 4 - Orcamentos\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
