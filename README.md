@@ -45,7 +45,16 @@ Sistema de gerenciamento de faturamento, clientes, dispositivos e serviços para
 - [x] Dados dos lucros mensais
 - [x] Dados dos lucros anuais
 
+<b>== Tela de Anotações</b>
+- [x] Inserir anotações
+- [x] Abrir anotações salvas
+- [x] Salvar anotações
+- [x] Customização do bloco de notas para atender o cliente.
 
+<b>== Tela de Impressão</b>
+- [x] Imprimir nota em Doc Word. (nao fiscal)
+- [x] Salvar Doc Word.
+- [x] Template personalizável a gosto do cliente.
 ## NÃO CONCLUÍDOS
 <b>== Tela de Orçamentos</b>
 - Cadastro de Dispositivos novos por Marca (Pecas)
@@ -88,3 +97,15 @@ Sistema de gerenciamento de faturamento, clientes, dispositivos e serviços para
 
 # GASTOS FIXOS/TEMPORÁRIOS + BUSCA POR DATAS DOS MESMOS.
 ![Tela de Lucros](https://i.imgur.com/wALTQem.gif)
+&nbsp;
+&nbsp;
+
+
+# MODULO DE ANOTAÇÕES INTEGRADO AO SISTEMA 
+![enter image description here](https://i.imgur.com/8GrEuzw.gif)
+&nbsp;
+&nbsp;
+
+
+# MODULO DE IMPRESSÃO INTEGRADO AO SISTEMA 
+![enter image description here](https://i.imgur.com/XyqGfLo.gif)
