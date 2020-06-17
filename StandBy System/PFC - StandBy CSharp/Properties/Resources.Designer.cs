@@ -273,6 +273,16 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_notepad_480px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_notepad_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_paint_roller_512px {
             get {
                 object obj = ResourceManager.GetObject("icons8_paint_roller_512px", resourceCulture);
@@ -296,6 +306,26 @@ namespace PFC___StandBy_CSharp.Properties {
         internal static System.Drawing.Bitmap icons8_phone_20px {
             get {
                 object obj = ResourceManager.GetObject("icons8_phone_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_480px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_print_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_512px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_print_512px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

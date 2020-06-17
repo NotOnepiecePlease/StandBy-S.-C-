@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_StandBy));
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.panelTopStandBy = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -49,7 +49,7 @@
             this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
             this.btn3 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
-            this.btn2 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnNotepad = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.buniCardsCores = new Bunifu.Framework.UI.BunifuCards();
             this.label3 = new System.Windows.Forms.Label();
@@ -395,7 +395,7 @@
             this.bunifuCards5.BorderRadius = 5;
             this.bunifuCards5.BottomSahddow = true;
             this.bunifuCards5.color = System.Drawing.Color.Transparent;
-            this.bunifuCards5.Controls.Add(this.btn2);
+            this.bunifuCards5.Controls.Add(this.btnNotepad);
             this.animationMenuHide1.SetDecoration(this.bunifuCards5, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuShow1.SetDecoration(this.bunifuCards5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards5.LeftSahddow = false;
@@ -406,28 +406,28 @@
             this.bunifuCards5.Size = new System.Drawing.Size(106, 95);
             this.bunifuCards5.TabIndex = 5;
             // 
-            // btn2
+            // btnNotepad
             // 
-            this.btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btn2.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btn2.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuHide1.SetDecoration(this.btn2, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btn2, BunifuAnimatorNS.DecorationType.None);
-            this.btn2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Image = null;
-            this.btn2.ImagePosition = 4;
-            this.btn2.ImageZoom = 50;
-            this.btn2.LabelPosition = 34;
-            this.btn2.LabelText = "---------";
-            this.btn2.Location = new System.Drawing.Point(-1, 4);
-            this.btn2.Margin = new System.Windows.Forms.Padding(6);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(106, 87);
-            this.btn2.TabIndex = 1;
-            this.btn2.Click += new System.EventHandler(this.btn2_Click);
+            this.btnNotepad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotepad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnNotepad.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnNotepad.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnNotepad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuHide1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
+            this.btnNotepad.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotepad.ForeColor = System.Drawing.Color.White;
+            this.btnNotepad.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_notepad_480px;
+            this.btnNotepad.ImagePosition = 4;
+            this.btnNotepad.ImageZoom = 50;
+            this.btnNotepad.LabelPosition = 34;
+            this.btnNotepad.LabelText = "Anotações";
+            this.btnNotepad.Location = new System.Drawing.Point(-1, 4);
+            this.btnNotepad.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNotepad.Name = "btnNotepad";
+            this.btnNotepad.Size = new System.Drawing.Size(106, 87);
+            this.btnNotepad.TabIndex = 1;
+            this.btnNotepad.Click += new System.EventHandler(this.btn2_Click);
             // 
             // bunifuCards4
             // 
@@ -681,43 +681,43 @@
             // 
             this.animationMenuShow1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuShow1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.animationMenuShow1.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.animationMenuShow1.DefaultAnimation = animation1;
             // 
             // animationMenuHide1
             // 
             this.animationMenuHide1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuHide1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.animationMenuHide1.DefaultAnimation = animation3;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.animationMenuHide1.DefaultAnimation = animation2;
             // 
             // ArredondarBordaEsquerda
             // 
@@ -732,7 +732,7 @@
             // bunifuElipse2
             // 
             this.bunifuElipse2.ElipseRadius = 3;
-            this.bunifuElipse2.TargetControl = this.btn2;
+            this.bunifuElipse2.TargetControl = this.btnNotepad;
             // 
             // bunifuElipse3
             // 
@@ -1267,7 +1267,7 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards6;
         private Bunifu.Framework.UI.BunifuTileButton btn3;
         private Bunifu.Framework.UI.BunifuCards bunifuCards5;
-        private Bunifu.Framework.UI.BunifuTileButton btn2;
+        private Bunifu.Framework.UI.BunifuTileButton btnNotepad;
         private Bunifu.Framework.UI.BunifuCards bunifuCards4;
         private Bunifu.Framework.UI.BunifuTileButton btnServicosPorMes;
         private Bunifu.Framework.UI.BunifuCustomLabel lblQntServicosSemanais;

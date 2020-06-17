@@ -4,7 +4,6 @@ F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Deb
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\Bunifu_UI_v1.5.3.dll
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\Guna.UI.dll
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\Bunifu_UI_v1.5.3.xml
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.csprojAssemblyReference.cache
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.Form1.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.Properties.Resources.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.GenerateResource.cache

@@ -69,5 +69,29 @@ namespace PFC___StandBy_CSharp.Properties {
                 this["notepad_FonteColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".\\Anotacoes")]
+        public string diretorio_default_notepad {
+            get {
+                return ((string)(this["diretorio_default_notepad"]));
+            }
+            set {
+                this["diretorio_default_notepad"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".\\NotaWord\\Cupom fiscal.docx")]
+        public string diretorio_default_word {
+            get {
+                return ((string)(this["diretorio_default_word"]));
+            }
+            set {
+                this["diretorio_default_word"] = value;
+            }
+        }
     }
 }

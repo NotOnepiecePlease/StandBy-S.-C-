@@ -1,0 +1,3 @@
+18 = Heal boost
+1 = strenght
+17 = healling zone

@@ -160,7 +160,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientBottomRight = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientTopLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btn2.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btn3.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
@@ -194,7 +194,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientBottomRight = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientTopLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btn2.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btn3.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
@@ -210,7 +210,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomLeft = Color.FromArgb(255, 0, 103);
             panelMenu.GradientBottomRight = Color.FromArgb(255, 0, 103);
             panelMenu.GradientTopLeft = Color.FromArgb(255, 0, 103);
-            btn2.colorActive = Color.FromArgb(255, 0, 103);
+            btnNotepad.colorActive = Color.FromArgb(255, 0, 103);
             btn3.colorActive = Color.FromArgb(255, 0, 103);
             iconClose.IconColor = Color.FromArgb(255, 0, 103);
 

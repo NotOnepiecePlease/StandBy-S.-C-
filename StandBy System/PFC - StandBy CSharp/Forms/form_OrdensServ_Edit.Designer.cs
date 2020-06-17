@@ -59,6 +59,7 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.btnConcluirImprimir = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnConcluirServico = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnEditarServico = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
@@ -66,6 +67,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelNome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditarServico)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +75,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.panel1.Controls.Add(this.btnConcluirImprimir);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lblIDservico);
             this.panel1.Controls.Add(this.groupBox3);
@@ -512,11 +515,24 @@
             this.bunifuDragControl2.TargetControl = this.panelNome;
             this.bunifuDragControl2.Vertical = true;
             // 
+            // btnConcluirImprimir
+            // 
+            this.btnConcluirImprimir.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_print_480px;
+            this.btnConcluirImprimir.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_print_512px;
+            this.btnConcluirImprimir.Location = new System.Drawing.Point(799, 322);
+            this.btnConcluirImprimir.Name = "btnConcluirImprimir";
+            this.btnConcluirImprimir.Size = new System.Drawing.Size(53, 51);
+            this.btnConcluirImprimir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnConcluirImprimir.TabIndex = 21;
+            this.btnConcluirImprimir.TabStop = false;
+            this.btnConcluirImprimir.Zoom = 15;
+            this.btnConcluirImprimir.Click += new System.EventHandler(this.btnConcluirImprimir_Click);
+            // 
             // btnConcluirServico
             // 
             this.btnConcluirServico.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_checked_checkbox_512px;
             this.btnConcluirServico.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_checked_checkbox_96px;
-            this.btnConcluirServico.Location = new System.Drawing.Point(799, 302);
+            this.btnConcluirServico.Location = new System.Drawing.Point(799, 265);
             this.btnConcluirServico.Name = "btnConcluirServico";
             this.btnConcluirServico.Size = new System.Drawing.Size(53, 51);
             this.btnConcluirServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -529,7 +545,7 @@
             // 
             this.btnEditarServico.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px;
             this.btnEditarServico.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px_1;
-            this.btnEditarServico.Location = new System.Drawing.Point(799, 245);
+            this.btnEditarServico.Location = new System.Drawing.Point(799, 208);
             this.btnEditarServico.Name = "btnEditarServico";
             this.btnEditarServico.Size = new System.Drawing.Size(53, 51);
             this.btnEditarServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -551,6 +567,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Servicos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_OrdensServ_Edit_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_OrdensServ_Edit_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -562,6 +579,7 @@
             this.groupBox1.PerformLayout();
             this.panelNome.ResumeLayout(false);
             this.panelNome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditarServico)).EndInit();
             this.ResumeLayout(false);
@@ -602,5 +620,6 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuImageButton btnConcluirImprimir;
     }
 }

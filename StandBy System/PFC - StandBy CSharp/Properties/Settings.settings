@@ -19,5 +19,11 @@
     <Setting Name="notepad_FonteColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Black</Value>
     </Setting>
+    <Setting Name="diretorio_default_notepad" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\Anotacoes</Value>
+    </Setting>
+    <Setting Name="diretorio_default_word" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.\NotaWord\Cupom fiscal.docx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
