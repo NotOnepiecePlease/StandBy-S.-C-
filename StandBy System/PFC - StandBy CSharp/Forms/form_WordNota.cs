@@ -16,17 +16,22 @@ using System.Diagnostics;
 using PFC___StandBy_CSharp.Properties;
 using Microsoft.Office.Interop.Word;
 using System.Drawing.Printing;
+using PFC___StandBy_CSharp.Formatar_Campos;
+using PFC___StandBy_CSharp.Dados;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_WordNota : Form
     {
+        int qntDiasGarantia = 0;
         string diretorioArquivoPadrao = Settings.Default.diretorio_default_word;
         string diretorioPadrao = @".\NotaWord";
         int[] corGeral = { 0, 0, 0 };
         List<int> processosAntes;
         List<int> processosDepois;
         form_OrdensServ_Edit ordensServ;
+        Formatar apenasNumeros = new Formatar();
+        InserirDados ins_Dados = new InserirDados();
 
         public form_WordNota(form_OrdensServ_Edit _ordensServ, int[] _corRgb)
         {
@@ -35,6 +40,7 @@ namespace PFC___StandBy_CSharp.Forms
             DirectoryInfo directoryInfo = new DirectoryInfo(diretorioArquivoPadrao);
             ordensServ = _ordensServ;
             corGeral = _corRgb;
+            switchGarantia.Checked = true;
             CentralizarLabels();
             MudarCores();
         }
@@ -44,6 +50,7 @@ namespace PFC___StandBy_CSharp.Forms
             tFilename.Text = diretorioArquivoPadrao;
             DirectoryInfo directoryInfo = new DirectoryInfo(diretorioArquivoPadrao);
             corGeral = new int[] { 255, 0, 103 };
+            switchGarantia.Checked = true;
             CentralizarLabels();
             MudarCores();
         }
@@ -54,7 +61,7 @@ namespace PFC___StandBy_CSharp.Forms
             btnCarregarWord.OnPressedColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnPastaPadrao.OnPressedColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnCriarWord.BaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnCriarWord.OnHoverBaseColor = Color.FromArgb(120, corGeral[0], corGeral[1],corGeral[2]);
+            btnCriarWord.OnHoverBaseColor = Color.FromArgb(120, corGeral[0], corGeral[1], corGeral[2]);
             btnCriarWord.OnPressedColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             lblImpressoraPdrao.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtCliente.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -62,6 +69,27 @@ namespace PFC___StandBy_CSharp.Forms
             txtModelo.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtServico.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtValor.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            iconClose.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            gunaLabel1.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            gunaLabel2.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            gunaLabel3.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            gunaLabel4.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            gunaLabel5.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            gunaLabel8.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            gunaLabel9.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            gunaLabel10.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            lblGarantia.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            checkboxUmMes.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            checkboxDoisMeses.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            checkboxTresMeses.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            gunaPanel1.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            switchGarantia.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
         }
         private void CentralizarLabels()
@@ -104,7 +132,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         string pathImage = null;
         //Methode Create the document :
-        private void CreateWordDocument(object filename, object savaAs)
+        private void CreateWordDocument(object filename, object savaAs, string DiasGarantia)
         {
             List<int> processesbeforegen = getRunningProcesses();
             object missing = Missing.Value;
@@ -140,6 +168,7 @@ namespace PFC___StandBy_CSharp.Forms
                     this.FindAndReplace(wordApp, "<valor>", txtValor.Text);
                     this.FindAndReplace(wordApp, "<cliente>", txtCliente.Text);
                     this.FindAndReplace(wordApp, "<cpf>", txtCPF.Text);
+                    this.FindAndReplace(wordApp, "<dias>", DiasGarantia);
                     this.FindAndReplace(wordApp, "<data>", DateTime.Now.ToShortDateString());
 
                     //insert the picture:
@@ -190,11 +219,21 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Save as: filename
             //MessageBox.Show("Salvando arquivo...");
-            aDoc.SaveAs2(ref savaAs, ref missing, ref missing, ref missing,
+            try
+            {
+                aDoc.SaveAs2(ref savaAs, ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing,
                     ref missing, ref missing, ref missing);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("O arquivo word utilizado como base para a impressão, já esta aberto, por favor feche o arquivo word" +
+                    " ou finalize o processo chamado 'WINWORD.EXE' no seu gerenciador de tarefas e tente novamente.\n\n\n\nERRO: " + e, "Word em uso", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
 
             //Close Document:
             //aDoc.Close(ref missing, ref missing, ref missing);
@@ -249,7 +288,7 @@ namespace PFC___StandBy_CSharp.Forms
                     }
                     catch (Exception)
                     {
-                    }   
+                    }
                 }
             }
         }
@@ -297,7 +336,7 @@ namespace PFC___StandBy_CSharp.Forms
         }
         private void btnCriarWord_Click(object sender, EventArgs e)
         {
-            Imprimir();   
+            Imprimir();
         }
 
         public void Imprimir()
@@ -314,21 +353,31 @@ namespace PFC___StandBy_CSharp.Forms
                     //Se o documento nao estiver aberto, aparece o erro.
                     if (!VerificarArquivoEmUso(diretorioDaLabel.FullName) == true)
                     {
-                        //Criar o documento
-                        CreateWordDocument(diretorioDaLabel.FullName, SaveDoc.FileName);
+                        string DiasGarantia = QuantosDiasGarantia();
 
-                        //Pego uma lista de processos antes de abrir o word pra imprimir
-                        //pra poder fechar o processo correto quando terminar de imprimir.
-                        processosAntes = getRunningProcesses();
-                        Word.Application application = new Word.Application();
-                        string caminhoContrato = directorySave.FullName;
-                        Document document = application.Documents.Open(caminhoContrato);
-                        document.Activate();
-                        document.PrintPreview();
-                        document.PrintOut();
-                        processosDepois = getRunningProcesses();
-                        ordensServ.ImprimiuAlgumaNota = 1;
-                        //this.Close();
+                        //Caso de um bug e nada de garantia seja preenchido a impressao nao vai acontecer.
+                        if (!DiasGarantia.Equals("0"))
+                        {
+                            //Criar o documento
+                            CreateWordDocument(diretorioDaLabel.FullName, SaveDoc.FileName, DiasGarantia);
+
+                            //Pego uma lista de processos antes de abrir o word pra imprimir
+                            //pra poder fechar o processo correto quando terminar de imprimir.
+                            processosAntes = getRunningProcesses();
+                            Word.Application application = new Word.Application();
+                            string caminhoContrato = directorySave.FullName;
+                            Document document = application.Documents.Open(caminhoContrato);
+                            document.Activate();
+                            document.PrintPreview();
+                            document.PrintOut();
+                            processosDepois = getRunningProcesses();
+                            ordensServ.ImprimiuAlgumaNota = 1;
+                            //this.Close();
+                            if (switchGarantia.Checked == true)
+                            {
+                                ins_Dados.InserirGarantia(Convert.ToInt32(lblIDServico.Text), Convert.ToInt32(lblIDCliente.Text), Convert.ToInt32(qntDiasGarantia));
+                            }
+                        }
                     }
                 }
                 else
@@ -353,6 +402,57 @@ namespace PFC___StandBy_CSharp.Forms
                 }
             }
         }
+
+        public string QuantosDiasGarantia()
+        {
+            int numero;
+            //MessageBox.Show(int.TryParse(txtGarantia.Text, out numero).ToString());
+            //Se a garantia estiver habilitada, todas as checks desmarcadas e o usuario digitar algum numero na textbox, garantia valida.
+            if (switchGarantia.Checked == true && checkboxUmMes.Checked == false && checkboxDoisMeses.Checked == false && checkboxTresMeses.Checked == false && int.TryParse(txtGarantia.Text, out numero) == true)
+            {
+                //MessageBox.Show(txtGarantia.Text);
+                qntDiasGarantia = Convert.ToInt32(txtGarantia.Text);
+                return "Garantia de " + txtGarantia.Text + " dias sob o serviço executado";
+            }
+            //se checkbox 1 mes tiver marcada e o resto nao, garantia = 30 dias
+            else if (checkboxUmMes.Checked == true && checkboxDoisMeses.Checked == false && checkboxTresMeses.Checked == false && txtGarantia.Enabled == false)
+            {
+                //MessageBox.Show("30");
+                qntDiasGarantia = 30;
+                return "Garantia de 30 dias sob o serviço executado";
+
+            }
+            //se checkbox 2 meses tiver marcada e o resto nao, garantia = 60 dias
+            else if (checkboxDoisMeses.Checked == true && checkboxUmMes.Checked == false && checkboxTresMeses.Checked == false && txtGarantia.Enabled == false)
+            {
+                //MessageBox.Show("60");
+                qntDiasGarantia = 60;
+                return "Garantia de 60 dias sob o serviço executado";
+            }
+            //se checkbox 3 meses tiver marcada e o resto nao, garantia = 90 dias
+            else if (checkboxTresMeses.Checked == true && checkboxUmMes.Checked == false && checkboxDoisMeses.Checked == false && txtGarantia.Enabled == false)
+            {
+                //MessageBox.Show("90");
+                qntDiasGarantia = 90;
+                return "Garantia de 90 dias sob o serviço executado";
+            }
+            //se todas checkboxs estiverem desmarcadas, mesmo com a garantia habilitada e sem numeros na textbox (deu bug) cai aqui.
+            else if (switchGarantia.Checked == true && checkboxUmMes.Checked == false && checkboxDoisMeses.Checked == false && checkboxTresMeses.Checked == false && string.IsNullOrWhiteSpace(txtGarantia.Text) || txtGarantia.Text.Equals("Nenhuma acima? especifique aqui"))
+            {
+                MessageBox.Show("Algo errado aconteceu, voce nao marcou nenhuma opção de garantia e nao preencheu" +
+                    " o campo de garantia personalizada, por favor, informe a garantia ou desative-a.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                qntDiasGarantia = 0;
+                return "0";
+            }
+            //senao, entao a txtGarantia ta habilitada e retorna o valor customizado
+            else
+            {
+                //MessageBox.Show("ULTIMAO");
+                qntDiasGarantia = 0;
+                return "Sem garantia";
+            }
+        }
+
         private void btnPastaPadrao_Click(object sender, EventArgs e)
         {
             diretorioArquivoPadrao = @".\NotaWord\Cupom fiscal.docx";
@@ -390,7 +490,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_WordNota_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         public void DeletarArquivoNoInicio()
@@ -402,6 +502,128 @@ namespace PFC___StandBy_CSharp.Forms
         private void iconClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkboxUmMes_Click(object sender, EventArgs e)
+        {
+            if (checkboxUmMes.Checked == true)
+            {
+                txtGarantia.Enabled = false;
+                checkboxDoisMeses.Checked = false;
+                checkboxTresMeses.Checked = false;
+            }
+            else
+            {
+                txtGarantia.Enabled = true;
+            }
+        }
+
+        private void checkboxDoisMeses_Click(object sender, EventArgs e)
+        {
+            if (checkboxDoisMeses.Checked == true)
+            {
+                txtGarantia.Enabled = false;
+                checkboxUmMes.Checked = false;
+                checkboxTresMeses.Checked = false;
+            }
+            else
+            {
+                txtGarantia.Enabled = true;
+            }
+        }
+
+        private void checkboxTresMeses_Click(object sender, EventArgs e)
+        {
+            if (checkboxTresMeses.Checked == true)
+            {
+                txtGarantia.Enabled = false;
+                checkboxUmMes.Checked = false;
+                checkboxDoisMeses.Checked = false;
+            }
+            else
+            {
+                txtGarantia.Enabled = true;
+            }
+        }
+
+        private void switchGarantia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (switchGarantia.Checked == false)
+            {
+                checkboxUmMes.Enabled = false;
+                checkboxUmMes.Checked = false;
+
+                checkboxDoisMeses.Enabled = false;
+                checkboxDoisMeses.Checked = false;
+
+                checkboxTresMeses.Enabled = false;
+                checkboxTresMeses.Checked = false;
+
+                txtGarantia.Enabled = false;
+                txtGarantia.Text = "";
+
+                lblGarantiaStatus.Text = "Sem garantia";
+                lblGarantiaStatus.ForeColor = Color.FromArgb(224, 224, 224);
+            }
+            else
+            {
+                checkboxUmMes.Enabled = true;
+                checkboxUmMes.Checked = true;
+
+                checkboxDoisMeses.Enabled = true;
+                checkboxDoisMeses.Checked = false;
+
+                checkboxTresMeses.Enabled = true;
+                checkboxTresMeses.Checked = false;
+
+                txtGarantia.Enabled = false;
+                txtGarantia.Text = "";
+
+                lblGarantiaStatus.Text = "Com garantia";
+                lblGarantiaStatus.ForeColor = Color.LimeGreen;
+
+                txtGarantia.Text = "Nenhuma acima? especifique aqui";
+                txtGarantia.Font = new System.Drawing.Font("Segoe UI", 9.75f, FontStyle.Italic);
+                txtGarantia.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtGarantia_Enter(object sender, EventArgs e)
+        {
+            txtGarantia.Text = "";
+            txtGarantia.Font = new System.Drawing.Font("Segoe UI", 12.25f, FontStyle.Regular);
+            txtGarantia.ForeColor = Color.White;
+        }
+
+        private void txtGarantia_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtGarantia.Text))
+            {
+                txtGarantia.Text = "Nenhuma acima? especifique aqui";
+                txtGarantia.Font = new System.Drawing.Font("Segoe UI", 9.75f, FontStyle.Italic);
+                txtGarantia.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtGarantia_KeyUp(object sender, KeyEventArgs e)
+        {
+            //apenasNumeros.AplicarEventoApenasNumero(txtGarantia);
+        }
+
+        private void txtGarantia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
+            {
+                if (e.KeyChar == ',')
+                {
+                    e.Handled = (txtGarantia.Text.Contains(','));
+                }
+                else
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Apenas numeros!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }

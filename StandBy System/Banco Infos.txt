@@ -1,1 +1,25 @@
-- sv_situacao (aumentar para 500 caracteres)
+- sv_situacao na tb_servicos (aumentar para 500 caracteres)
+
+
+
+- criar tabela tb_garantias
+USE [standby_org]
+GO
+
+/****** Object:  Table [dbo].[tb_garantias]    Script Date: 17/06/2020 18:23:52 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tb_garantias](
+	[gar_id] [int] IDENTITY(1,1) NOT NULL,
+	[gar_servico_id] [int] NOT NULL,
+	[gar_cliente_id] [int] NOT NULL,
+	[gar_data_inicial] [date] NOT NULL,
+	[gar_data_final] [date] NOT NULL
+) ON [PRIMARY]
+GO
+
+

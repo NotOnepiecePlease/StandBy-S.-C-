@@ -30,11 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnConcluirImprimir = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblIDservico = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtSituacaoEdit = new System.Windows.Forms.RichTextBox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnConcluirServico = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEditarServico = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblIDcliente = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtServicoEdit = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -59,17 +62,14 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.btnConcluirImprimir = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnConcluirServico = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnEditarServico = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditarServico)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelNome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditarServico)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,6 +92,19 @@
             this.panel1.Size = new System.Drawing.Size(861, 566);
             this.panel1.TabIndex = 0;
             // 
+            // btnConcluirImprimir
+            // 
+            this.btnConcluirImprimir.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_print_480px;
+            this.btnConcluirImprimir.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_print_512px;
+            this.btnConcluirImprimir.Location = new System.Drawing.Point(799, 322);
+            this.btnConcluirImprimir.Name = "btnConcluirImprimir";
+            this.btnConcluirImprimir.Size = new System.Drawing.Size(53, 51);
+            this.btnConcluirImprimir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnConcluirImprimir.TabIndex = 21;
+            this.btnConcluirImprimir.TabStop = false;
+            this.btnConcluirImprimir.Zoom = 15;
+            this.btnConcluirImprimir.Click += new System.EventHandler(this.btnConcluirImprimir_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
@@ -104,7 +117,7 @@
             // 
             this.lblIDservico.AutoSize = true;
             this.lblIDservico.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblIDservico.Location = new System.Drawing.Point(791, 102);
+            this.lblIDservico.Location = new System.Drawing.Point(773, 25);
             this.lblIDservico.Name = "lblIDservico";
             this.lblIDservico.Size = new System.Drawing.Size(70, 16);
             this.lblIDservico.TabIndex = 20;
@@ -150,11 +163,37 @@
             this.bunifuCustomLabel4.TabIndex = 0;
             this.bunifuCustomLabel4.Text = "Situação";
             // 
+            // btnConcluirServico
+            // 
+            this.btnConcluirServico.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_checked_checkbox_512px;
+            this.btnConcluirServico.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_checked_checkbox_96px;
+            this.btnConcluirServico.Location = new System.Drawing.Point(799, 265);
+            this.btnConcluirServico.Name = "btnConcluirServico";
+            this.btnConcluirServico.Size = new System.Drawing.Size(53, 51);
+            this.btnConcluirServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnConcluirServico.TabIndex = 5;
+            this.btnConcluirServico.TabStop = false;
+            this.btnConcluirServico.Zoom = 15;
+            this.btnConcluirServico.Click += new System.EventHandler(this.btnConcluirServico_Click);
+            // 
+            // btnEditarServico
+            // 
+            this.btnEditarServico.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px;
+            this.btnEditarServico.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px_1;
+            this.btnEditarServico.Location = new System.Drawing.Point(799, 208);
+            this.btnEditarServico.Name = "btnEditarServico";
+            this.btnEditarServico.Size = new System.Drawing.Size(53, 51);
+            this.btnEditarServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEditarServico.TabIndex = 4;
+            this.btnEditarServico.TabStop = false;
+            this.btnEditarServico.Zoom = 15;
+            this.btnEditarServico.Click += new System.EventHandler(this.btnEditarServico_Click);
+            // 
             // lblIDcliente
             // 
             this.lblIDcliente.AutoSize = true;
             this.lblIDcliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblIDcliente.Location = new System.Drawing.Point(793, 86);
+            this.lblIDcliente.Location = new System.Drawing.Point(773, 7);
             this.lblIDcliente.Name = "lblIDcliente";
             this.lblIDcliente.Size = new System.Drawing.Size(65, 16);
             this.lblIDcliente.TabIndex = 6;
@@ -515,45 +554,6 @@
             this.bunifuDragControl2.TargetControl = this.panelNome;
             this.bunifuDragControl2.Vertical = true;
             // 
-            // btnConcluirImprimir
-            // 
-            this.btnConcluirImprimir.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_print_480px;
-            this.btnConcluirImprimir.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_print_512px;
-            this.btnConcluirImprimir.Location = new System.Drawing.Point(799, 322);
-            this.btnConcluirImprimir.Name = "btnConcluirImprimir";
-            this.btnConcluirImprimir.Size = new System.Drawing.Size(53, 51);
-            this.btnConcluirImprimir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnConcluirImprimir.TabIndex = 21;
-            this.btnConcluirImprimir.TabStop = false;
-            this.btnConcluirImprimir.Zoom = 15;
-            this.btnConcluirImprimir.Click += new System.EventHandler(this.btnConcluirImprimir_Click);
-            // 
-            // btnConcluirServico
-            // 
-            this.btnConcluirServico.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_checked_checkbox_512px;
-            this.btnConcluirServico.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_checked_checkbox_96px;
-            this.btnConcluirServico.Location = new System.Drawing.Point(799, 265);
-            this.btnConcluirServico.Name = "btnConcluirServico";
-            this.btnConcluirServico.Size = new System.Drawing.Size(53, 51);
-            this.btnConcluirServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnConcluirServico.TabIndex = 5;
-            this.btnConcluirServico.TabStop = false;
-            this.btnConcluirServico.Zoom = 15;
-            this.btnConcluirServico.Click += new System.EventHandler(this.btnConcluirServico_Click);
-            // 
-            // btnEditarServico
-            // 
-            this.btnEditarServico.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px;
-            this.btnEditarServico.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px_1;
-            this.btnEditarServico.Location = new System.Drawing.Point(799, 208);
-            this.btnEditarServico.Name = "btnEditarServico";
-            this.btnEditarServico.Size = new System.Drawing.Size(53, 51);
-            this.btnEditarServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditarServico.TabIndex = 4;
-            this.btnEditarServico.TabStop = false;
-            this.btnEditarServico.Zoom = 15;
-            this.btnEditarServico.Click += new System.EventHandler(this.btnEditarServico_Click);
-            // 
             // form_OrdensServ_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,17 +571,17 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_OrdensServ_Edit_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditarServico)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelNome.ResumeLayout(false);
             this.panelNome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditarServico)).EndInit();
             this.ResumeLayout(false);
 
         }

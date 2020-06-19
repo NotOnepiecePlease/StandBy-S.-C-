@@ -39,14 +39,14 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroDeletarServico(ex);
                 //MessageBox.Show("ERRO: " + ex);
             }
-            
+
         }
 
         public void DeletarCliente(int _idcliente)
         {
             bool existeServico = ve.VerificarExistenciaServicoCliente(_idcliente);
 
-            if(existeServico == false)
+            if (existeServico == false)
             {
                 try
                 {
@@ -77,7 +77,7 @@ namespace PFC___StandBy_CSharp.Dados
         public void DeletarGastos(int _id, BunifuCustomDataGrid tabelaGastos)
         {
 
-            using(SqlConnection conexao = OpenConnection())
+            using (SqlConnection conexao = OpenConnection())
             {
 
                 string procedure = "GastosDeletar";
@@ -91,6 +91,28 @@ namespace PFC___StandBy_CSharp.Dados
                 tabelaGastos.Refresh();
                 tabelaGastos.Update();
             }
+        }
+
+        public void DeletarGarantia(int _idServico)
+        {
+            try
+            {
+                using (SqlConnection conexao = OpenConnection())
+                {
+                    string procedure = "GarantiaDeletar";
+
+                    SqlCommand cmd = new SqlCommand(procedure, conexao);
+                    cmd.Parameters.AddWithValue("@_fkServico", _idServico);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                mErro.ErroAoDeletarGarantia(ex);
+            }
+
         }
     }
 }

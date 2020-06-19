@@ -31,10 +31,6 @@ namespace PFC___StandBy_CSharp.Graficos
                 using (SqlConnection con = OpenConnection())
                 {
                     SqlDataReader dr;
-
-                    //string Query = "select sv_id, sv_data from tb_servicos where month(sv_data) = @Mes order by sv_data";
-                    //string Query = "select sv_id, sv_data from tb_servicos order by sv_data";
-
                     SqlCommand cmd = new SqlCommand("SelecionarIdData_Servicos", con);
 
                     cmd.CommandType = CommandType.StoredProcedure;

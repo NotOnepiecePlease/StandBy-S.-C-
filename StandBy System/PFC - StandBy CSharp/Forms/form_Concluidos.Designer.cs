@@ -53,6 +53,7 @@
             this.sv_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.naoConcluidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuVerGarantia = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosConcluidos)).BeginInit();
             this.menu.SuspendLayout();
@@ -92,6 +93,7 @@
             this.txtPesquisarConcluidos.Text = "Digite o nome do cliente que deseja buscar os serviços";
             this.txtPesquisarConcluidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPesquisarConcluidos.Enter += new System.EventHandler(this.txtPesquisarConcluidos_Enter);
+            this.txtPesquisarConcluidos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesquisarConcluidos_KeyUp);
             this.txtPesquisarConcluidos.Leave += new System.EventHandler(this.txtPesquisarConcluidos_Leave);
             // 
             // btnPesquisarConcluidos
@@ -288,18 +290,26 @@
             // 
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.naoConcluidoToolStripMenuItem1});
+            this.naoConcluidoToolStripMenuItem1,
+            this.menuVerGarantia});
             this.menu.Name = "menu";
             this.menu.ShowImageMargin = false;
-            this.menu.Size = new System.Drawing.Size(128, 26);
+            this.menu.Size = new System.Drawing.Size(156, 70);
             // 
             // naoConcluidoToolStripMenuItem1
             // 
             this.naoConcluidoToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.naoConcluidoToolStripMenuItem1.Name = "naoConcluidoToolStripMenuItem1";
-            this.naoConcluidoToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.naoConcluidoToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
             this.naoConcluidoToolStripMenuItem1.Text = "Nao concluido";
             this.naoConcluidoToolStripMenuItem1.Click += new System.EventHandler(this.naoConcluidoToolStripMenuItem1_Click);
+            // 
+            // menuVerGarantia
+            // 
+            this.menuVerGarantia.Name = "menuVerGarantia";
+            this.menuVerGarantia.Size = new System.Drawing.Size(155, 22);
+            this.menuVerGarantia.Text = "Ver garantia";
+            this.menuVerGarantia.Click += new System.EventHandler(this.menuVerGarantia_Click);
             // 
             // form_Concluidos
             // 
@@ -340,5 +350,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_status;
         private System.Windows.Forms.ContextMenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem naoConcluidoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem menuVerGarantia;
     }
 }

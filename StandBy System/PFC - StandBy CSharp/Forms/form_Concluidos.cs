@@ -16,6 +16,8 @@ namespace PFC___StandBy_CSharp.Forms
     {
         PreencherTableConcluidos preencherTable = new PreencherTableConcluidos();
         AlterarDados ad = new AlterarDados();
+        BuscarDados bd = new BuscarDados();
+        VerificarExistencia ve = new VerificarExistencia();
         int[] corGeral = new int[3] { 0, 0, 0 };
         public form_Concluidos(int[] corGeral)
         {
@@ -80,13 +82,72 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void naoConcluidoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Tem certeza que deseja cancelar a conclusão desse serviço?", "CANCELAR CONCLUSÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            int idServico = Convert.ToInt32(table_ServicosConcluidos.SelectedCells[0].Value);
+            DateTime Data = (DateTime)table_ServicosConcluidos.SelectedCells[2].Value;
+            string NomeCliente = table_ServicosConcluidos.SelectedCells[3].Value.ToString();
+            string Aparelho = table_ServicosConcluidos.SelectedCells[4].Value.ToString();
+            string Defeito = table_ServicosConcluidos.SelectedCells[5].Value.ToString();
 
-            if (resultado == DialogResult.Yes)
+            form_Concluido_Desfazer desfazer = new form_Concluido_Desfazer(this, corGeral);
+            desfazer.lblData.Text = String.Format("{0:d}", Data);
+            desfazer.lblNomeCliente.Text = NomeCliente;
+            desfazer.lblAparelho.Text = Aparelho;
+            desfazer.lblDefeito.Text = Defeito;
+            desfazer.lblIDServico.Text = idServico.ToString();
+            desfazer.CentralizarLabels();
+            desfazer.ShowDialog();
+            //DialogResult resultado = MessageBox.Show("Tem certeza que deseja cancelar a conclusão do serviço abaixo?\n\n" +
+            //    "Data: "+String.Format("{0:d}",Data)+"\n" +
+            //    "Cliente: "+NomeCliente+"\n" +
+            //    "Aparelho: "+Aparelho+"\n" +
+            //    "Defeito: "+Defeito+"\n" +
+            //    "Situação: "+Situacao+"\n", "CANCELAR CONCLUSÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //if (resultado == DialogResult.Yes)
+            //{
+            //    int idservico = int.Parse(table_ServicosConcluidos.SelectedCells[0].Value.ToString());
+            //    ad.CancelarConclusaoServicos(idservico);
+            //    refreshTable();
+            //}
+        }
+
+        private void txtPesquisarConcluidos_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtPesquisarConcluidos.Text == "")
             {
-                int idservico = int.Parse(table_ServicosConcluidos.SelectedCells[0].Value.ToString());
-                ad.CancelarConclusaoServicos(idservico);
-                refreshTable();
+                preencherTable.Preencher(table_ServicosConcluidos);
+            }
+            else
+            {
+                try
+                {
+                    preencherTable.PreencherPorNomeCliente(table_ServicosConcluidos, txtPesquisarConcluidos.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERRO: " + ex + "");
+                }
+            }
+        }
+
+        private void menuVerGarantia_Click(object sender, EventArgs e)
+        {
+            form_VerGarantia verGarantia = new form_VerGarantia();
+            if (ve.VerificarExistenciaGarantia(Convert.ToInt32(table_ServicosConcluidos.SelectedCells[0].Value)))
+            {
+                verGarantia.lblIDServico.Text = table_ServicosConcluidos.SelectedCells[0].Value.ToString();
+                verGarantia.lblNomeCliente.Text = table_ServicosConcluidos.SelectedCells[3].Value.ToString();
+                verGarantia.lblAparelho.Text = table_ServicosConcluidos.SelectedCells[4].Value.ToString();
+                verGarantia.lblServico.Text = table_ServicosConcluidos.SelectedCells[11].Value.ToString();
+                verGarantia.lblSemGarantia.Visible = false;
+                bd.BuscarDiasGarantia(verGarantia.lblDataInicial, verGarantia.lblDataFinal, verGarantia.lblDiasRestantes, Convert.ToInt32(verGarantia.lblIDServico.Text));
+                verGarantia.CentralizarLabels();
+                verGarantia.ShowDialog();
+            }
+            else
+            {
+                verGarantia.EsconderComponentes();
+                verGarantia.lblSemGarantia.Visible = true;
+                verGarantia.ShowDialog();
             }
         }
     }

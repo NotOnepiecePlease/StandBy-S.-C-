@@ -44,7 +44,7 @@ namespace PFC___StandBy_CSharp.Dados
                 //conexaoSQL.Close();
             }
         }
-        //<<<<<<< HEAD
+
         public void InserirCliente(string nome, string cpf, string tel)
         {
             try
@@ -70,14 +70,11 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroInserirCliente(ex);
             }
         }
-        //=======
-
-        //>>>>>>> dev_AdrianoAnd
 
         public void InserirGasto(DateTime _data, string _produto, decimal _valor, int _temporario)
         {
 
-            using(SqlConnection conexao = OpenConnection())
+            using (SqlConnection conexao = OpenConnection())
             {
 
                 string procedure = "GastosInserir";
@@ -90,6 +87,31 @@ namespace PFC___StandBy_CSharp.Dados
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void InserirGarantia(int _idServico, int _idCliente, int _qntDiasGarantia)
+        {
+            try
+            {
+                using (SqlConnection conexao = OpenConnection())
+                {
+                    string procedure = "GarantiaInserir";
+
+                    SqlCommand cmd = new SqlCommand(procedure, conexao);
+                    cmd.Parameters.AddWithValue("@_fkServico", _idServico);
+                    cmd.Parameters.AddWithValue("@_fkCliente", _idCliente);
+                    cmd.Parameters.AddWithValue("@_DataAtual", DateTime.Now.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@_QntsDiasGarantia", _qntDiasGarantia);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nao foi possivel inserir a garantia no banco de dados.\n\n\nErro: " + ex);
             }
         }
     }

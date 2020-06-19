@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Guna.UI.WinForms;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -62,12 +63,33 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 //@_nomeCliente
                 SqlCommand cmd = new SqlCommand("SelecionarServicos_Done_NomeCliente", con);
-                cmd.Parameters.AddWithValue("@_nomeCliente", SqlDbType.VarChar).Value = _nomeCliente;
+                cmd.Parameters.AddWithValue("@_nomeCliente", _nomeCliente);
+                cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void BuscarDiasGarantia(GunaLabel _Emissao, GunaLabel _DataFinal, GunaLabel _DiasRestantes, int _idServico)
+        {
+            using(SqlConnection conexao = OpenConnection())
+            {
                 SqlDataReader dr;
+                string procedure = "GarantiaQuantosDias";
+
+                SqlCommand cmd = new SqlCommand(procedure, conexao);
+                cmd.Parameters.AddWithValue("@_fkServico", _idServico);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 dr = cmd.ExecuteReader();
 
+                dr.Read();
+
+                _Emissao.Text = dr.GetDateTime(0).ToShortDateString();
+                _DataFinal.Text = dr.GetDateTime(1).ToShortDateString();
+                _DiasRestantes.Text = dr.GetInt32(2).ToString()+" Dias restantes";
+
+                dr.Close();
             }
         }
     }
