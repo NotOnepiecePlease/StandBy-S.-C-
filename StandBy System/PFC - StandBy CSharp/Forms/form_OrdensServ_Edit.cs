@@ -168,6 +168,8 @@ namespace PFC___StandBy_CSharp.Forms
                 imprimirNota.txtServico.Text = txtServicoEdit.Text;
                 imprimirNota.txtModelo.Text = txtAparelhoEdit.Text;
                 imprimirNota.txtValor.Text = txtServicoValorEdit.Text;
+                imprimirNota.lblIDServico.Text = lblIDservico.Text;
+                imprimirNota.lblIDCliente.Text = lblIDcliente.Text;
                 imprimirNota.ShowDialog();
                 DeletarArquivoWordCliente();
                 if (ImprimiuAlgumaNota == 1)

@@ -41,5 +41,36 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_3___ServicosConcluidos
                 //}
             }
         }
+
+        public void PreencherPorNomeCliente(DataGridView table_ServicosConcluidos, string _nomeCliente)
+        {
+            using (SqlConnection con = OpenConnection())
+            {
+                //0 Concluido | 1 Ta em servico
+                SqlCommand cmd = new SqlCommand("SelecionarServicos_Done_Table", con);
+                cmd.Parameters.AddWithValue("@_nomeCliente", _nomeCliente);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                //dt.Rows
+                table_ServicosConcluidos.DataSource = dt;
+                table_ServicosConcluidos.AutoGenerateColumns = false;
+                table_ServicosConcluidos.AllowUserToAddRows = false;
+                table_ServicosConcluidos.AllowUserToResizeColumns = true;
+                table_ServicosConcluidos.AllowUserToDeleteRows = false;
+
+                //foreach (DataGridViewRow row in table_ServicosConcluidos.Rows)
+                //{
+                //    if (Convert.ToInt32(row.Cells[12].Value) == 0)
+                //    {
+                //        // Se for negativo, fica vermelho
+                //        row.Cells[12].Value = "DONE";
+                //    }
+                //}
+            }
+        }
     }
 }

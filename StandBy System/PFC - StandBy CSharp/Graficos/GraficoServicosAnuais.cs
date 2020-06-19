@@ -137,6 +137,9 @@ namespace PFC___StandBy_CSharp.Graficos
                     lblDez.Visible = false;
                 }
                 
+                //Se liga na desgraca que voce aqui pvt
+                //to ligado que voce ta vendo isso em dubai
+                //mas voce era macacao pra porra pqp.
                 graficoArea.addLabely("JAN".ToUpper(), qntServicosPorMes[0]);
                 graficoArea.addLabely("FEV".ToUpper(), qntServicosPorMes[1]);
                 graficoArea.addLabely("MAR".ToUpper(), qntServicosPorMes[2]);

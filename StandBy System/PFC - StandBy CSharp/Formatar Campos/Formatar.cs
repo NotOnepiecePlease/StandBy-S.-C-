@@ -10,7 +10,7 @@ namespace PFC___StandBy_CSharp.Formatar_Campos
 {
     class Formatar
     {
-        public void ApenasValorNumerico(object sender, KeyPressEventArgs e)
+        public void ApenasValorNumericoVirgulas(object sender, KeyPressEventArgs e)
         {
             GunaLineTextBox txt = (GunaLineTextBox)sender;
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
@@ -23,6 +23,22 @@ namespace PFC___StandBy_CSharp.Formatar_Campos
                 {
                     e.Handled = true;
                     MessageBox.Show("Apenas numeros e virgulas!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        public void ApenasValorNumerico(object sender, KeyPressEventArgs e)
+        {
+            GunaLineTextBox txt = (GunaLineTextBox)sender;
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
+            {
+                if (e.KeyChar == ',')
+                {
+                    e.Handled = (txt.Text.Contains(','));
+                }
+                else
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Apenas numeros!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -84,8 +100,16 @@ namespace PFC___StandBy_CSharp.Formatar_Campos
         {
             //txt.Enter += TirarMascaraEnter;
             //txt.Leave += RetornarMascara;
-            txt.KeyPress += ApenasValorNumerico;
+            txt.KeyPress += ApenasValorNumericoVirgulas;
             txt.KeyUp += FormatarMoeda;
+        }
+
+        public void AplicarEventoApenasNumero(GunaLineTextBox txt)
+        {
+            //txt.Enter += TirarMascaraEnter;
+            //txt.Leave += RetornarMascara;
+            txt.KeyPress += ApenasValorNumerico;
+            //txt.KeyUp += FormatarMoeda;
         }
     }
 }

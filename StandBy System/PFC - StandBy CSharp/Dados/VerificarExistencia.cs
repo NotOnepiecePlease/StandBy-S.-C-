@@ -35,5 +35,27 @@ namespace PFC___StandBy_CSharp.Dados
                 }
             }
         }
+
+        public bool VerificarExistenciaGarantia(int _fkServico)
+        {
+
+            using(SqlConnection conexao = OpenConnection())
+            {
+                SqlDataReader dr;
+                string query = "select * from tb_garantias where fk_servico_id = @fkServicoID";
+
+                SqlCommand cmd = new SqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@fkServicoID", _fkServico);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    return true;
+                }
+                {
+                    return false;
+                }
+            }
+        }
     }
 }
