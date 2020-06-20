@@ -131,7 +131,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void menuVerGarantia_Click(object sender, EventArgs e)
         {
-            form_VerGarantia verGarantia = new form_VerGarantia();
+            form_VerGarantia verGarantia = new form_VerGarantia(corGeral);
             if (ve.VerificarExistenciaGarantia(Convert.ToInt32(table_ServicosConcluidos.SelectedCells[0].Value)))
             {
                 verGarantia.lblIDServico.Text = table_ServicosConcluidos.SelectedCells[0].Value.ToString();

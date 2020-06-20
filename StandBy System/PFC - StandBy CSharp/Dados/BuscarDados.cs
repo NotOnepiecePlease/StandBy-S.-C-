@@ -92,5 +92,22 @@ namespace PFC___StandBy_CSharp.Dados
                 dr.Close();
             }
         }
+
+        public string BuscarCPFCliente(int _idCliente)
+        {
+            using(SqlConnection conexao = OpenConnection())
+            {
+                SqlDataReader dr;
+                string query = "select cl_cpf from tb_clientes where cl_id = @IdCliente";
+
+                SqlCommand cmd = new SqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@IdCliente", _idCliente);
+                dr = cmd.ExecuteReader();
+
+                dr.Read();
+
+                return dr.GetString(0);
+            }
+        }
     }
 }

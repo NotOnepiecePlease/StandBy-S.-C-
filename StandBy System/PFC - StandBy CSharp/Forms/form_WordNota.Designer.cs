@@ -35,11 +35,11 @@
             this.lblIDServico = new Guna.UI.WinForms.GunaLabel();
             this.lblGarantiaStatus = new Guna.UI.WinForms.GunaLabel();
             this.switchGarantia = new Guna.UI.WinForms.GunaGoogleSwitch();
-            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
+            this.lblMes3 = new Guna.UI.WinForms.GunaLabel();
             this.checkboxTresMeses = new Guna.UI.WinForms.GunaMediumCheckBox();
-            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.lblMes2 = new Guna.UI.WinForms.GunaLabel();
             this.checkboxDoisMeses = new Guna.UI.WinForms.GunaMediumCheckBox();
-            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.lblMes1 = new Guna.UI.WinForms.GunaLabel();
             this.checkboxUmMes = new Guna.UI.WinForms.GunaMediumCheckBox();
             this.txtGarantia = new Guna.UI.WinForms.GunaLineTextBox();
             this.lblGarantia = new Guna.UI.WinForms.GunaLabel();
@@ -77,11 +77,11 @@
             this.panelDrag.Controls.Add(this.lblIDServico);
             this.panelDrag.Controls.Add(this.lblGarantiaStatus);
             this.panelDrag.Controls.Add(this.switchGarantia);
-            this.panelDrag.Controls.Add(this.gunaLabel10);
+            this.panelDrag.Controls.Add(this.lblMes3);
             this.panelDrag.Controls.Add(this.checkboxTresMeses);
-            this.panelDrag.Controls.Add(this.gunaLabel9);
+            this.panelDrag.Controls.Add(this.lblMes2);
             this.panelDrag.Controls.Add(this.checkboxDoisMeses);
-            this.panelDrag.Controls.Add(this.gunaLabel8);
+            this.panelDrag.Controls.Add(this.lblMes1);
             this.panelDrag.Controls.Add(this.checkboxUmMes);
             this.panelDrag.Controls.Add(this.txtGarantia);
             this.panelDrag.Controls.Add(this.lblGarantia);
@@ -107,7 +107,7 @@
             this.panelDrag.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDrag.Location = new System.Drawing.Point(0, 0);
             this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(333, 751);
+            this.panelDrag.Size = new System.Drawing.Size(333, 679);
             this.panelDrag.TabIndex = 2;
             // 
             // lblIDCliente
@@ -115,7 +115,7 @@
             this.lblIDCliente.AutoSize = true;
             this.lblIDCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIDCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.lblIDCliente.Location = new System.Drawing.Point(267, 143);
+            this.lblIDCliente.Location = new System.Drawing.Point(71, 9);
             this.lblIDCliente.Name = "lblIDCliente";
             this.lblIDCliente.Size = new System.Drawing.Size(59, 17);
             this.lblIDCliente.TabIndex = 35;
@@ -127,7 +127,7 @@
             this.lblIDServico.AutoSize = true;
             this.lblIDServico.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIDServico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.lblIDServico.Location = new System.Drawing.Point(267, 126);
+            this.lblIDServico.Location = new System.Drawing.Point(3, 9);
             this.lblIDServico.Name = "lblIDServico";
             this.lblIDServico.Size = new System.Drawing.Size(62, 17);
             this.lblIDServico.TabIndex = 34;
@@ -139,7 +139,7 @@
             this.lblGarantiaStatus.AutoSize = true;
             this.lblGarantiaStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGarantiaStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblGarantiaStatus.Location = new System.Drawing.Point(166, 484);
+            this.lblGarantiaStatus.Location = new System.Drawing.Point(166, 459);
             this.lblGarantiaStatus.Name = "lblGarantiaStatus";
             this.lblGarantiaStatus.Size = new System.Drawing.Size(85, 17);
             this.lblGarantiaStatus.TabIndex = 33;
@@ -151,76 +151,79 @@
             this.switchGarantia.CheckedOffColor = System.Drawing.Color.DarkGray;
             this.switchGarantia.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.switchGarantia.FillColor = System.Drawing.Color.White;
-            this.switchGarantia.Location = new System.Drawing.Point(123, 485);
+            this.switchGarantia.Location = new System.Drawing.Point(123, 460);
             this.switchGarantia.Name = "switchGarantia";
             this.switchGarantia.Size = new System.Drawing.Size(38, 20);
             this.switchGarantia.TabIndex = 31;
             this.switchGarantia.CheckedChanged += new System.EventHandler(this.switchGarantia_CheckedChanged);
             // 
-            // gunaLabel10
+            // lblMes3
             // 
-            this.gunaLabel10.AutoSize = true;
-            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel10.Location = new System.Drawing.Point(228, 514);
-            this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Size = new System.Drawing.Size(57, 17);
-            this.gunaLabel10.TabIndex = 27;
-            this.gunaLabel10.Text = "3 Meses";
+            this.lblMes3.AutoSize = true;
+            this.lblMes3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMes3.ForeColor = System.Drawing.Color.White;
+            this.lblMes3.Location = new System.Drawing.Point(228, 489);
+            this.lblMes3.Name = "lblMes3";
+            this.lblMes3.Size = new System.Drawing.Size(57, 17);
+            this.lblMes3.TabIndex = 27;
+            this.lblMes3.Text = "3 Meses";
             // 
             // checkboxTresMeses
             // 
             this.checkboxTresMeses.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.checkboxTresMeses.Checked = true;
             this.checkboxTresMeses.CheckedOffColor = System.Drawing.Color.Gray;
-            this.checkboxTresMeses.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.checkboxTresMeses.CheckedOnColor = System.Drawing.Color.SeaGreen;
             this.checkboxTresMeses.FillColor = System.Drawing.Color.White;
-            this.checkboxTresMeses.Location = new System.Drawing.Point(206, 512);
+            this.checkboxTresMeses.Location = new System.Drawing.Point(206, 487);
             this.checkboxTresMeses.Name = "checkboxTresMeses";
             this.checkboxTresMeses.Size = new System.Drawing.Size(20, 20);
             this.checkboxTresMeses.TabIndex = 26;
             this.checkboxTresMeses.Click += new System.EventHandler(this.checkboxTresMeses_Click);
             // 
-            // gunaLabel9
+            // lblMes2
             // 
-            this.gunaLabel9.AutoSize = true;
-            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel9.Location = new System.Drawing.Point(152, 513);
-            this.gunaLabel9.Name = "gunaLabel9";
-            this.gunaLabel9.Size = new System.Drawing.Size(57, 17);
-            this.gunaLabel9.TabIndex = 25;
-            this.gunaLabel9.Text = "2 Meses";
+            this.lblMes2.AutoSize = true;
+            this.lblMes2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMes2.ForeColor = System.Drawing.Color.White;
+            this.lblMes2.Location = new System.Drawing.Point(152, 488);
+            this.lblMes2.Name = "lblMes2";
+            this.lblMes2.Size = new System.Drawing.Size(57, 17);
+            this.lblMes2.TabIndex = 25;
+            this.lblMes2.Text = "2 Meses";
             // 
             // checkboxDoisMeses
             // 
             this.checkboxDoisMeses.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.checkboxDoisMeses.Checked = true;
             this.checkboxDoisMeses.CheckedOffColor = System.Drawing.Color.Gray;
-            this.checkboxDoisMeses.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.checkboxDoisMeses.CheckedOnColor = System.Drawing.Color.SeaGreen;
             this.checkboxDoisMeses.FillColor = System.Drawing.Color.White;
-            this.checkboxDoisMeses.Location = new System.Drawing.Point(133, 512);
+            this.checkboxDoisMeses.Location = new System.Drawing.Point(133, 487);
             this.checkboxDoisMeses.Name = "checkboxDoisMeses";
             this.checkboxDoisMeses.Size = new System.Drawing.Size(20, 20);
             this.checkboxDoisMeses.TabIndex = 24;
             this.checkboxDoisMeses.Click += new System.EventHandler(this.checkboxDoisMeses_Click);
             // 
-            // gunaLabel8
+            // lblMes1
             // 
-            this.gunaLabel8.AutoSize = true;
-            this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel8.Location = new System.Drawing.Point(81, 514);
-            this.gunaLabel8.Name = "gunaLabel8";
-            this.gunaLabel8.Size = new System.Drawing.Size(44, 17);
-            this.gunaLabel8.TabIndex = 23;
-            this.gunaLabel8.Text = "1 Mes";
+            this.lblMes1.AutoSize = true;
+            this.lblMes1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMes1.ForeColor = System.Drawing.Color.White;
+            this.lblMes1.Location = new System.Drawing.Point(81, 489);
+            this.lblMes1.Name = "lblMes1";
+            this.lblMes1.Size = new System.Drawing.Size(44, 17);
+            this.lblMes1.TabIndex = 23;
+            this.lblMes1.Text = "1 Mes";
             // 
             // checkboxUmMes
             // 
             this.checkboxUmMes.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.checkboxUmMes.Checked = true;
             this.checkboxUmMes.CheckedOffColor = System.Drawing.Color.Gray;
-            this.checkboxUmMes.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.checkboxUmMes.CheckedOnColor = System.Drawing.Color.SeaGreen;
             this.checkboxUmMes.FillColor = System.Drawing.Color.White;
-            this.checkboxUmMes.Location = new System.Drawing.Point(60, 512);
+            this.checkboxUmMes.Location = new System.Drawing.Point(60, 487);
             this.checkboxUmMes.Name = "checkboxUmMes";
             this.checkboxUmMes.Size = new System.Drawing.Size(20, 20);
             this.checkboxUmMes.TabIndex = 22;
@@ -234,7 +237,7 @@
             this.txtGarantia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGarantia.ForeColor = System.Drawing.Color.Silver;
             this.txtGarantia.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtGarantia.Location = new System.Drawing.Point(60, 538);
+            this.txtGarantia.Location = new System.Drawing.Point(60, 513);
             this.txtGarantia.Name = "txtGarantia";
             this.txtGarantia.PasswordChar = '\0';
             this.txtGarantia.SelectedText = "";
@@ -250,7 +253,7 @@
             this.lblGarantia.AutoSize = true;
             this.lblGarantia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGarantia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.lblGarantia.Location = new System.Drawing.Point(57, 485);
+            this.lblGarantia.Location = new System.Drawing.Point(57, 460);
             this.lblGarantia.Name = "lblGarantia";
             this.lblGarantia.Size = new System.Drawing.Size(60, 17);
             this.lblGarantia.TabIndex = 20;
@@ -276,7 +279,7 @@
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 649);
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 622);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(333, 5);
             this.gunaPanel1.TabIndex = 18;
@@ -286,7 +289,7 @@
             this.lblArquivoPadrao.AutoSize = true;
             this.lblArquivoPadrao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArquivoPadrao.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblArquivoPadrao.Location = new System.Drawing.Point(124, 73);
+            this.lblArquivoPadrao.Location = new System.Drawing.Point(124, 57);
             this.lblArquivoPadrao.Name = "lblArquivoPadrao";
             this.lblArquivoPadrao.Size = new System.Drawing.Size(85, 17);
             this.lblArquivoPadrao.TabIndex = 17;
@@ -298,7 +301,7 @@
             this.lblImpressoraPdrao.AutoSize = true;
             this.lblImpressoraPdrao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImpressoraPdrao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.lblImpressoraPdrao.Location = new System.Drawing.Point(106, 710);
+            this.lblImpressoraPdrao.Location = new System.Drawing.Point(106, 654);
             this.lblImpressoraPdrao.Name = "lblImpressoraPdrao";
             this.lblImpressoraPdrao.Size = new System.Drawing.Size(104, 17);
             this.lblImpressoraPdrao.TabIndex = 16;
@@ -309,7 +312,7 @@
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel6.ForeColor = System.Drawing.SystemColors.Control;
-            this.gunaLabel6.Location = new System.Drawing.Point(106, 680);
+            this.gunaLabel6.Location = new System.Drawing.Point(106, 634);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(123, 17);
             this.gunaLabel6.TabIndex = 15;
@@ -355,7 +358,7 @@
             this.tFilename.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tFilename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tFilename.LineColor = System.Drawing.Color.Gainsboro;
-            this.tFilename.Location = new System.Drawing.Point(5, 97);
+            this.tFilename.Location = new System.Drawing.Point(5, 79);
             this.tFilename.Name = "tFilename";
             this.tFilename.PasswordChar = '\0';
             this.tFilename.SelectedText = "";
@@ -370,7 +373,7 @@
             this.txtCPF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPF.ForeColor = System.Drawing.Color.White;
             this.txtCPF.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtCPF.Location = new System.Drawing.Point(60, 365);
+            this.txtCPF.Location = new System.Drawing.Point(60, 340);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PasswordChar = '\0';
             this.txtCPF.SelectedText = "";
@@ -386,7 +389,7 @@
             this.txtCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.ForeColor = System.Drawing.Color.White;
             this.txtCliente.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtCliente.Location = new System.Drawing.Point(60, 155);
+            this.txtCliente.Location = new System.Drawing.Point(60, 130);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.PasswordChar = '\0';
             this.txtCliente.SelectedText = "";
@@ -402,7 +405,7 @@
             this.txtValor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValor.ForeColor = System.Drawing.Color.White;
             this.txtValor.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtValor.Location = new System.Drawing.Point(60, 435);
+            this.txtValor.Location = new System.Drawing.Point(60, 410);
             this.txtValor.Name = "txtValor";
             this.txtValor.PasswordChar = '\0';
             this.txtValor.SelectedText = "";
@@ -418,7 +421,7 @@
             this.txtModelo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelo.ForeColor = System.Drawing.Color.White;
             this.txtModelo.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtModelo.Location = new System.Drawing.Point(60, 295);
+            this.txtModelo.Location = new System.Drawing.Point(60, 270);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.PasswordChar = '\0';
             this.txtModelo.SelectedText = "";
@@ -434,7 +437,7 @@
             this.txtServico.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServico.ForeColor = System.Drawing.Color.White;
             this.txtServico.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtServico.Location = new System.Drawing.Point(60, 225);
+            this.txtServico.Location = new System.Drawing.Point(60, 200);
             this.txtServico.Name = "txtServico";
             this.txtServico.PasswordChar = '\0';
             this.txtServico.SelectedText = "";
@@ -447,7 +450,7 @@
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel5.Location = new System.Drawing.Point(57, 345);
+            this.gunaLabel5.Location = new System.Drawing.Point(57, 320);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(32, 17);
             this.gunaLabel5.TabIndex = 7;
@@ -458,7 +461,7 @@
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel4.Location = new System.Drawing.Point(57, 135);
+            this.gunaLabel4.Location = new System.Drawing.Point(57, 110);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(50, 17);
             this.gunaLabel4.TabIndex = 6;
@@ -469,7 +472,7 @@
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel3.Location = new System.Drawing.Point(57, 415);
+            this.gunaLabel3.Location = new System.Drawing.Point(57, 390);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(41, 17);
             this.gunaLabel3.TabIndex = 5;
@@ -480,7 +483,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel2.Location = new System.Drawing.Point(57, 275);
+            this.gunaLabel2.Location = new System.Drawing.Point(57, 250);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(64, 17);
             this.gunaLabel2.TabIndex = 4;
@@ -491,7 +494,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel1.Location = new System.Drawing.Point(57, 205);
+            this.gunaLabel1.Location = new System.Drawing.Point(57, 180);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(53, 17);
             this.gunaLabel1.TabIndex = 3;
@@ -550,7 +553,7 @@
             this.btnCriarWord.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCriarWord.ImageSize = new System.Drawing.Size(40, 40);
             this.btnCriarWord.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCriarWord.Location = new System.Drawing.Point(137, 579);
+            this.btnCriarWord.Location = new System.Drawing.Point(137, 554);
             this.btnCriarWord.Name = "btnCriarWord";
             this.btnCriarWord.OnHoverBaseColor = System.Drawing.Color.Black;
             this.btnCriarWord.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -578,9 +581,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 751);
+            this.ClientSize = new System.Drawing.Size(333, 679);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "form_WordNota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -623,11 +627,11 @@
         private Guna.UI.WinForms.GunaMediumCheckBox checkboxUmMes;
         public Guna.UI.WinForms.GunaLineTextBox txtGarantia;
         private Guna.UI.WinForms.GunaLabel lblGarantia;
-        private Guna.UI.WinForms.GunaLabel gunaLabel10;
+        private Guna.UI.WinForms.GunaLabel lblMes3;
         private Guna.UI.WinForms.GunaMediumCheckBox checkboxTresMeses;
-        private Guna.UI.WinForms.GunaLabel gunaLabel9;
+        private Guna.UI.WinForms.GunaLabel lblMes2;
         private Guna.UI.WinForms.GunaMediumCheckBox checkboxDoisMeses;
-        private Guna.UI.WinForms.GunaLabel gunaLabel8;
+        private Guna.UI.WinForms.GunaLabel lblMes1;
         private Guna.UI.WinForms.GunaGoogleSwitch switchGarantia;
         private Guna.UI.WinForms.GunaLabel lblGarantiaStatus;
         public Guna.UI.WinForms.GunaLabel lblIDCliente;

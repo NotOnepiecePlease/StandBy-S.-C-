@@ -271,19 +271,43 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnServicos_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new form_OrdensServ(corGeral));
-            imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO ORDENS DE SERVICO.png");
+            if (Application.OpenForms.OfType<form_OrdensServ>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+            }
+            else
+            {
+                OpenChildForm(new form_OrdensServ(corGeral));
+                imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO ORDENS DE SERVICO.png");
+            }
+            
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new form_CadastroClientes(corGeral));
-            imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO CADASTRO CLIENTES.png");
+            if (Application.OpenForms.OfType<form_CadastroClientes>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+            }
+            else
+            {
+                OpenChildForm(new form_CadastroClientes(corGeral));
+                imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO CADASTRO CLIENTES.png");
+            }
+            
         }
 
         private void btnConcluidos_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new form_Concluidos(corGeral));
+            if (Application.OpenForms.OfType<form_Concluidos>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+            }
+            else
+            {
+                OpenChildForm(new form_Concluidos(corGeral));
+            }
+            
             //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO CADASTRO CLIENTES.png");
         }
 
@@ -307,7 +331,14 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnOrcamentos_Click(object sender, EventArgs e)
         {
-
+            if (Application.OpenForms.OfType<form_Orcamento>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+            }
+            else
+            {
+                OpenChildForm(new form_Orcamento(corGeral));
+            }
         }
 
         private void btn2_Click(object sender, EventArgs e)

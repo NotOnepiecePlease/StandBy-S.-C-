@@ -9,11 +9,6 @@ namespace PFC___StandBy_CSharp.Graficos
 
     class SemanaDoAno : conexao
     {
-        int contadorDia = 0;
-        int contadorServicos = 0;
-        int qntServicos = 0;
-        int contadorServicosMes = 0;
-
         public int BuscarSemanaAno(DateTime dataServico)
         {
             CultureInfo cultureInfo = new CultureInfo("en-US");

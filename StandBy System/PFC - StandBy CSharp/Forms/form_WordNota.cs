@@ -25,7 +25,7 @@ namespace PFC___StandBy_CSharp.Forms
     {
         int qntDiasGarantia = 0;
         string diretorioArquivoPadrao = Settings.Default.diretorio_default_word;
-        string diretorioPadrao = @".\NotaWord";
+        //string diretorioPadrao = @".\NotaWord";
         int[] corGeral = { 0, 0, 0 };
         List<int> processosAntes;
         List<int> processosDepois;
@@ -69,6 +69,8 @@ namespace PFC___StandBy_CSharp.Forms
             txtModelo.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtServico.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtValor.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            tFilename.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtGarantia.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -78,14 +80,14 @@ namespace PFC___StandBy_CSharp.Forms
             gunaLabel3.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             gunaLabel4.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             gunaLabel5.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            gunaLabel8.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            gunaLabel9.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            gunaLabel10.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //lblMes1.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //lblMes2.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //lblMes3.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             lblGarantia.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            checkboxUmMes.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            checkboxDoisMeses.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            checkboxTresMeses.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //checkboxUmMes.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //checkboxDoisMeses.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //checkboxTresMeses.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             gunaPanel1.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
@@ -130,7 +132,7 @@ namespace PFC___StandBy_CSharp.Forms
 
 
 
-        string pathImage = null;
+        //string pathImage = null;
         //Methode Create the document :
         private void CreateWordDocument(object filename, object savaAs, string DiasGarantia)
         {
@@ -326,7 +328,7 @@ namespace PFC___StandBy_CSharp.Forms
                 fs.Close();
                 return false;
             }
-            catch (IOException ex)
+            catch (IOException)
             {
                 DirectoryInfo nomeDoc = new DirectoryInfo(caminhoArquivo);
                 MessageBox.Show("O Documento: '" + nomeDoc.Name + "' está aberto, por favor feche antes de seguir", "Documento Aberto",

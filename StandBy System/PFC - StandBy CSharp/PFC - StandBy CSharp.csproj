@@ -243,6 +243,7 @@
     <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherTableOrdensServicos.cs" />
     <Compile Include="PreencherComponentes\Tela 2 - Cadastro Clientes\PreencherTableClientes.cs" />
     <Compile Include="PreencherComponentes\Tela 3 - ServicosConcluidos\PreencherTableConcluidos.cs" />
+    <Compile Include="PreencherComponentes\Tela 4 - Orcamentos\PreencherTableOrcamento.cs" />
     <Compile Include="PreencherComponentes\Tela 5 - Lucros\PreencherTabelaGastos.cs" />
     <Compile Include="PreencherComponentes\Tela 5 - Lucros\PreencherTabelaLucros.cs" />
     <Compile Include="Program.cs" />
@@ -413,6 +414,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="5ee7aec0f2f1d_wmY_icon.ico" />
+    <None Include="Resources\xiaomi1.png" />
+    <None Include="Resources\xiaomi.png" />
+    <None Include="Resources\Alcatel-Logo.png" />
+    <None Include="Resources\AsusTek-black-logo.png" />
+    <None Include="Resources\AsusTek-black-logo1.png" />
+    <None Include="Resources\Alcatel-Logo1.png" />
+    <None Include="Resources\AsusTek-black-logo2.png" />
+    <None Include="Resources\asus.png" />
     <Content Include="Resources\Aviso.png" />
     <Content Include="Resources\Erro.png" />
     <None Include="Resources\TITULO CADASTRO CLIENTES.png" />
@@ -439,7 +448,15 @@
     <None Include="Resources\icons8_notepad_480px.png" />
     <None Include="Resources\icons8_print_512px.png" />
     <None Include="Resources\icons8_print_480px.png" />
+    <None Include="Resources\iPhone-logo.png" />
+    <None Include="Resources\lenovo-logo-1.png" />
+    <None Include="Resources\lenovo.png" />
+    <None Include="Resources\lglogo.png" />
     <Content Include="Resources\Loading.png" />
+    <None Include="Resources\samsung-logo-png-samsung-logo-png-2104.png" />
+    <None Include="Resources\motorola-logo-1.png" />
+    <None Include="Resources\motorola-logo-11.png" />
+    <None Include="Resources\motorola.png" />
     <Content Include="Resources\Sucesso.png" />
   </ItemGroup>
   <ItemGroup>
@@ -454,9 +471,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PreencherComponentes\Tela 4 - Orcamentos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

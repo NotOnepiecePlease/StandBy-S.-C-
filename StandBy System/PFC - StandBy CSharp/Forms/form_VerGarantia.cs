@@ -14,13 +14,29 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_VerGarantia : Form
     {
         BuscarDados bd = new BuscarDados();
-        public form_VerGarantia()
+        int[] corGeral = { 0, 0, 0 };
+        public form_VerGarantia(int[] _corRgb)
         {
             InitializeComponent();
+            corGeral = _corRgb;
             CentralizarLabels();
+            MudarCores();
             //bd.BuscarDiasGarantia(lblDataInicial, lblDataFinal, Convert.ToInt32(lblIDServico.Text));
         }
 
+        public void MudarCores()
+        {
+            lblAparelho.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            lblDataFinal.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            lblDataInicial.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //lblDiasRestantes.Visible = false;
+            //lblIDServico.Visible = false;
+            lblNomeCliente.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            lblServico.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            btnConfirmar.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+        }
         public void EsconderComponentes()
         {
             lblAparelho.Visible = false;

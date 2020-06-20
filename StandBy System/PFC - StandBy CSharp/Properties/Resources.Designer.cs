@@ -73,6 +73,26 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Alcatel_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Alcatel-Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap asus {
+            get {
+                object obj = ResourceManager.GetObject("asus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_ordensServicos {
             get {
                 object obj = ResourceManager.GetObject("bg_ordensServicos", resourceCulture);
@@ -206,26 +226,6 @@ namespace PFC___StandBy_CSharp.Properties {
         internal static System.Drawing.Bitmap icons8_edit_file_512px_1 {
             get {
                 object obj = ResourceManager.GetObject("icons8_edit_file_512px_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_edit_property_480px {
-            get {
-                object obj = ResourceManager.GetObject("icons8_edit_property_480px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_edit_property_480px_1 {
-            get {
-                object obj = ResourceManager.GetObject("icons8_edit_property_480px_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +403,59 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iPhone_logo {
+            get {
+                object obj = ResourceManager.GetObject("iPhone-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lenovo {
+            get {
+                object obj = ResourceManager.GetObject("lenovo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lglogo {
+            get {
+                object obj = ResourceManager.GetObject("lglogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Loading {
             get {
                 object obj = ResourceManager.GetObject("Loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap motorola {
+            get {
+                object obj = ResourceManager.GetObject("motorola", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap samsung_logo_png_samsung_logo_png_2104 {
+            get {
+                object obj = ResourceManager.GetObject("samsung-logo-png-samsung-logo-png-2104", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +506,16 @@ namespace PFC___StandBy_CSharp.Properties {
         internal static System.Drawing.Bitmap TITULO_STANDBY_SYSTEM {
             get {
                 object obj = ResourceManager.GetObject("TITULO STANDBY SYSTEM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xiaomi1 {
+            get {
+                object obj = ResourceManager.GetObject("xiaomi1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

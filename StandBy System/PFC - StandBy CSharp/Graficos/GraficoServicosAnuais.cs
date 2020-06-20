@@ -20,7 +20,7 @@ namespace PFC___StandBy_CSharp.Graficos
             GunaLabel lblNov, GunaLabel lblDez, int[] corRgb)
         {
             SqlDataReader dr;
-            DataPoint graficoArea, graficoLinha;
+            DataPoint graficoArea;
             //graficoArea = new DataPoint(BunifuDataViz._type.Bunifu_splineArea);
             //graficoLinha = new DataPoint(BunifuDataViz._type.Bunifu_spline);
             graficoArea = new DataPoint(BunifuDataViz._type.Bunifu_stackedColumn);

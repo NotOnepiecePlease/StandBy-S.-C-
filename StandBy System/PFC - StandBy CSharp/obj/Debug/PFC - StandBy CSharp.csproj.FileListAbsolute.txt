@@ -42,6 +42,7 @@ F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes_Edit.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluidos.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluido_Desfazer.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir.resources
@@ -53,6 +54,7 @@ F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ_Edit.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ServicosAnuais.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_StandBy.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_VerGarantia.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_WordNota.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Principal.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Properties.Resources.resources
@@ -62,5 +64,3 @@ F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.exe
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.pdb
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csprojAssemblyReference.cache
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluido_Desfazer.resources
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_VerGarantia.resources

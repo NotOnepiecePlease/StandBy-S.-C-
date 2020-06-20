@@ -17,6 +17,7 @@ namespace PFC___StandBy_CSharp.Forms
     {
         form_OrdensServ formServ1;
         AlterarDados ad = new AlterarDados();
+        BuscarDados bd = new BuscarDados();
         MensagensErro mErro = new MensagensErro();
         //form_OrdensServ form = new form_OrdensServ();
         int[] corGeral = new int[] { 0, 0, 0 };
@@ -62,7 +63,7 @@ namespace PFC___StandBy_CSharp.Forms
                 valorPeca = float.Parse(txtPecaValorEdit.Text);
                 lucro = valorServico - valorPeca;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // MessageBox.Show(ex.ToString());
             }
@@ -170,6 +171,7 @@ namespace PFC___StandBy_CSharp.Forms
                 imprimirNota.txtValor.Text = txtServicoValorEdit.Text;
                 imprimirNota.lblIDServico.Text = lblIDservico.Text;
                 imprimirNota.lblIDCliente.Text = lblIDcliente.Text;
+                imprimirNota.txtCPF.Text = bd.BuscarCPFCliente(Convert.ToInt32(lblIDcliente.Text));
                 imprimirNota.ShowDialog();
                 DeletarArquivoWordCliente();
                 if (ImprimiuAlgumaNota == 1)
