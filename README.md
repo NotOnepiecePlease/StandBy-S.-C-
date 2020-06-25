@@ -59,14 +59,12 @@ Sistema de gerenciamento de faturamento, clientes, dispositivos e serviços para
 - [x] Adicionar quantidade em dias de garantia para o cliente*[OK]*
 - [x] Tela para verificação das garantias*[OK]*
 
-<<<<<<< HEAD
 <b>== Modulo de Orçamentos</b>
 - [x] Cadastro de Dispositivos novos por Marca (Pecas)
 - [x] Fazer orçamento para o cliente
 
 &nbsp;
 =======
->>>>>>> master
 ## NÃO CONCLUÍDOS
 - Botoes de atalho para algumas utilidades (ainda a decidir pelo cliente)
 
