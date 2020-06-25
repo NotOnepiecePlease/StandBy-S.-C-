@@ -33,7 +33,8 @@ namespace PFC___StandBy_CSharp.Formatar_Campos
             {
                 if (e.KeyChar == ',')
                 {
-                    e.Handled = (txt.Text.Contains(','));
+                    //e.Handled = (txt.Text.Contains(','));
+                    e.Handled = true;
                 }
                 else
                 {
@@ -96,7 +97,7 @@ namespace PFC___StandBy_CSharp.Formatar_Campos
             txt.Select(txt.Text.Length, 0);
         }
 
-        public void AplicarEventos(GunaLineTextBox txt)
+        public void AplicarApenasNumeroVirgulaEMoeda(GunaLineTextBox txt)
         {
             //txt.Enter += TirarMascaraEnter;
             //txt.Leave += RetornarMascara;
@@ -104,11 +105,19 @@ namespace PFC___StandBy_CSharp.Formatar_Campos
             txt.KeyUp += FormatarMoeda;
         }
 
-        public void AplicarEventoApenasNumero(GunaLineTextBox txt)
+        public void AplicarApenasNumerosSemVirgula(GunaLineTextBox txt)
         {
             //txt.Enter += TirarMascaraEnter;
             //txt.Leave += RetornarMascara;
             txt.KeyPress += ApenasValorNumerico;
+            //txt.KeyUp += FormatarMoeda;
+        }
+
+        public void AplicarApenasNumerosVirgulaSemMoeda(GunaLineTextBox txt)
+        {
+            //txt.Enter += TirarMascaraEnter;
+            //txt.Leave += RetornarMascara;
+            txt.KeyPress += ApenasValorNumericoVirgulas;
             //txt.KeyUp += FormatarMoeda;
         }
     }

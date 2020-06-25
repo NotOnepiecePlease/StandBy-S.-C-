@@ -19,8 +19,15 @@ namespace PFC___StandBy_CSharp.Forms
         {
             InitializeComponent();
             corGeral = _corRgb;
+            MudarCores();
             PreencherTabela("SAMSUNG");
             lblOrcStatus.Visible = false;
+        }
+
+        private void MudarCores()
+        {
+            menu.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            submenuAdicionarNovo.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         public void PreencherTabela(string _marca)
@@ -66,6 +73,14 @@ namespace PFC___StandBy_CSharp.Forms
         private void gunaAdvenceButton7_Click(object sender, EventArgs e)
         {
             PreencherTabela("LG");
+        }
+
+        private void submenuAdicionarNovo_Click(object sender, EventArgs e)
+        {
+            using (form_Orcamento_Adicionar orcAdiciona = new form_Orcamento_Adicionar(this, corGeral))
+            {
+                orcAdiciona.ShowDialog();
+            }
         }
     }
 }

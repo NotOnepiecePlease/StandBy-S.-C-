@@ -23,7 +23,7 @@ namespace PFC___StandBy_CSharp.Forms
             InitializeComponent();
             formLucros = _formLucros;
             corGeral = corRgb;
-            formatar.AplicarEventos(txtValorGastosEditar);
+            formatar.AplicarApenasNumeroVirgulaEMoeda(txtValorGastosEditar);
             MudarCores();
         }
 

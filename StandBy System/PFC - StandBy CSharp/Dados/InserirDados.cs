@@ -114,5 +114,32 @@ namespace PFC___StandBy_CSharp.Dados
                 MessageBox.Show("Nao foi possivel inserir a garantia no banco de dados.\n\n\nErro: " + ex);
             }
         }
+
+        public void InserirOrcamento(string _marca, string _modelo, decimal _peca, decimal _valor, decimal _total)
+        {
+            try
+            {
+                using (SqlConnection conexao = OpenConnection())
+                {
+                    string procedure = "OrcamentosInserir";
+
+                    SqlCommand cmd = new SqlCommand(procedure, conexao);
+
+                    cmd.Parameters.AddWithValue("@_Marca", _marca);
+                    cmd.Parameters.AddWithValue("@_Modelo", _modelo);
+                    cmd.Parameters.AddWithValue("@_Peca", _peca);
+                    cmd.Parameters.AddWithValue("@_Valor", _valor);
+                    cmd.Parameters.AddWithValue("@_Total", _total);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Orçamento inserido com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: \n\n"+ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

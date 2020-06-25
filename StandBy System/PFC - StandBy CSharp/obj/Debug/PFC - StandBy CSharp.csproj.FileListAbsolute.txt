@@ -50,6 +50,7 @@ F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Notepad.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Notepad_Abrir.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Orcamento.resources
+F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Orcamento_Adicionar.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ_Edit.resources
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ServicosAnuais.resources
@@ -63,4 +64,3 @@ F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CopyComplete
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.exe
 F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.pdb
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csprojAssemblyReference.cache

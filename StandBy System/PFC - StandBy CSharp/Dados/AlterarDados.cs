@@ -162,5 +162,27 @@ namespace PFC___StandBy_CSharp.Dados
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void ResetarDadosMensais()
+        {
+            try
+            {
+                using (SqlConnection conexao = OpenConnection())
+                {
+                    string procedure = "ResetarMes";
+
+                    SqlCommand cmd = new SqlCommand(procedure, conexao);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Mes resetado com sucesso, tenha um excelente trabalho este mês!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao resetar o mes!\n\n" + ex, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }

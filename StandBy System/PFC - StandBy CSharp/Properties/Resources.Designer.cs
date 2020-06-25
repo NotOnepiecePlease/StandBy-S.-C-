@@ -123,6 +123,16 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_512px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_add_512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_android_20px_3 {
             get {
                 object obj = ResourceManager.GetObject("icons8_android_20px_3", resourceCulture);
@@ -343,6 +353,16 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_reset_480px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_reset_480px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_search_208px {
             get {
                 object obj = ResourceManager.GetObject("icons8_search_208px", resourceCulture);
@@ -443,9 +463,29 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LUCROS {
+            get {
+                object obj = ResourceManager.GetObject("LUCROS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap motorola {
             get {
                 object obj = ResourceManager.GetObject("motorola", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ORCAMENTOS {
+            get {
+                object obj = ResourceManager.GetObject("ORCAMENTOS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +506,16 @@ namespace PFC___StandBy_CSharp.Properties {
         internal static System.Drawing.Bitmap separador {
             get {
                 object obj = ResourceManager.GetObject("separador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SERVICOS_COMPLETOS {
+            get {
+                object obj = ResourceManager.GetObject("SERVICOS_COMPLETOS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

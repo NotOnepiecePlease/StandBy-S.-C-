@@ -182,6 +182,12 @@
     <Compile Include="Forms\form_Orcamento.Designer.cs">
       <DependentUpon>form_Orcamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\form_Orcamento_Adicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_Orcamento_Adicionar.Designer.cs">
+      <DependentUpon>form_Orcamento_Adicionar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\form_OrdensServ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,7 @@
     <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherTableOrdensServicos.cs" />
     <Compile Include="PreencherComponentes\Tela 2 - Cadastro Clientes\PreencherTableClientes.cs" />
     <Compile Include="PreencherComponentes\Tela 3 - ServicosConcluidos\PreencherTableConcluidos.cs" />
+    <Compile Include="PreencherComponentes\Tela 4 - Orcamentos\PreencherComboboxMarca.cs" />
     <Compile Include="PreencherComponentes\Tela 4 - Orcamentos\PreencherTableOrcamento.cs" />
     <Compile Include="PreencherComponentes\Tela 5 - Lucros\PreencherTabelaGastos.cs" />
     <Compile Include="PreencherComponentes\Tela 5 - Lucros\PreencherTabelaLucros.cs" />
@@ -297,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_Orcamento.resx">
       <DependentUpon>form_Orcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_Orcamento_Adicionar.resx">
+      <DependentUpon>form_Orcamento_Adicionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_OrdensServ.resx">
       <DependentUpon>form_OrdensServ.cs</DependentUpon>
@@ -414,6 +424,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="5ee7aec0f2f1d_wmY_icon.ico" />
+    <None Include="Resources\TITULO ORDENS DE SERVICO.png" />
     <None Include="Resources\xiaomi1.png" />
     <None Include="Resources\xiaomi.png" />
     <None Include="Resources\Alcatel-Logo.png" />
@@ -425,7 +436,6 @@
     <Content Include="Resources\Aviso.png" />
     <Content Include="Resources\Erro.png" />
     <None Include="Resources\TITULO CADASTRO CLIENTES.png" />
-    <None Include="Resources\TITULO ORDENS DE SERVICO.png" />
     <None Include="Resources\TITULO STANDBY SYSTEM.png" />
     <None Include="Resources\icons8_checked_checkbox_480px.png" />
     <None Include="Resources\fundo editar clientes.png" />
@@ -435,6 +445,7 @@
     <None Include="Resources\icons8_edit_file_512px_1.png" />
     <None Include="Resources\icons8_checked_checkbox_512px.png" />
     <None Include="Resources\icons8_checked_checkbox_96px.png" />
+    <None Include="Resources\icons8_add_512px.png" />
     <Content Include="Resources\icons8_edit_property_480px.png" />
     <None Include="Resources\icons8_tick_box_480px.png" />
     <None Include="Resources\icons8_edit_property_480px_1.png" />
@@ -452,11 +463,15 @@
     <None Include="Resources\lenovo-logo-1.png" />
     <None Include="Resources\lenovo.png" />
     <None Include="Resources\lglogo.png" />
+    <None Include="Resources\icons8_reset_480px_1.png" />
     <Content Include="Resources\Loading.png" />
     <None Include="Resources\samsung-logo-png-samsung-logo-png-2104.png" />
     <None Include="Resources\motorola-logo-1.png" />
     <None Include="Resources\motorola-logo-11.png" />
     <None Include="Resources\motorola.png" />
+    <None Include="Resources\LUCROS.png" />
+    <None Include="Resources\ORCAMENTOS.png" />
+    <None Include="Resources\SERVICOS COMPLETOS.png" />
     <Content Include="Resources\Sucesso.png" />
   </ItemGroup>
   <ItemGroup>

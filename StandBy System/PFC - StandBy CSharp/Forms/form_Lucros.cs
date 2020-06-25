@@ -342,10 +342,12 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (checkGastos.Checked == true)
             {
+                PegarDatasDatePicker();
                 tab_Gastos.PreencherEntreDatas(tabelaGastos, datep1, datep2, 1);
             }
             else
             {
+                PegarDatasDatePicker();
                 tab_Gastos.PreencherEntreDatas(tabelaGastos, datep1, datep2, 0);
             }
         }

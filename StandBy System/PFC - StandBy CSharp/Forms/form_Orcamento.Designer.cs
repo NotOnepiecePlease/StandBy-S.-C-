@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Orcamento));
             this.tabelaOrcamento = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.orc_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orc_aparelho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orc_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orc_peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orc_valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaAdvenceButton7 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton6 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton5 = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -42,14 +49,11 @@
             this.gunaAdvenceButton2 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnSamsung = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.orc_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orc_aparelho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orc_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orc_peca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orc_valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblOrcStatus = new System.Windows.Forms.Label();
+            this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.submenuAdicionarNovo = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaOrcamento)).BeginInit();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabelaOrcamento
@@ -60,7 +64,7 @@
             this.tabelaOrcamento.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.tabelaOrcamento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tabelaOrcamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tabelaOrcamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tabelaOrcamento.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.tabelaOrcamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabelaOrcamento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -83,11 +87,12 @@
             this.orc_peca,
             this.orc_valor,
             this.total});
+            this.tabelaOrcamento.ContextMenuStrip = this.menu;
             this.tabelaOrcamento.DoubleBuffered = true;
             this.tabelaOrcamento.EnableHeadersVisualStyles = false;
             this.tabelaOrcamento.HeaderBgColor = System.Drawing.SystemColors.Control;
             this.tabelaOrcamento.HeaderForeColor = System.Drawing.Color.Black;
-            this.tabelaOrcamento.Location = new System.Drawing.Point(308, 40);
+            this.tabelaOrcamento.Location = new System.Drawing.Point(308, 51);
             this.tabelaOrcamento.Name = "tabelaOrcamento";
             this.tabelaOrcamento.ReadOnly = true;
             this.tabelaOrcamento.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -106,8 +111,55 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.tabelaOrcamento.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tabelaOrcamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabelaOrcamento.Size = new System.Drawing.Size(494, 581);
+            this.tabelaOrcamento.Size = new System.Drawing.Size(494, 570);
             this.tabelaOrcamento.TabIndex = 12;
+            // 
+            // orc_id
+            // 
+            this.orc_id.DataPropertyName = "orc_id";
+            this.orc_id.HeaderText = "orc_id";
+            this.orc_id.Name = "orc_id";
+            this.orc_id.ReadOnly = true;
+            this.orc_id.Visible = false;
+            // 
+            // orc_aparelho
+            // 
+            this.orc_aparelho.DataPropertyName = "orc_aparelho";
+            this.orc_aparelho.HeaderText = "Aparelho";
+            this.orc_aparelho.Name = "orc_aparelho";
+            this.orc_aparelho.ReadOnly = true;
+            // 
+            // orc_modelo
+            // 
+            this.orc_modelo.DataPropertyName = "orc_modelo";
+            this.orc_modelo.HeaderText = "Modelo";
+            this.orc_modelo.Name = "orc_modelo";
+            this.orc_modelo.ReadOnly = true;
+            this.orc_modelo.Width = 150;
+            // 
+            // orc_peca
+            // 
+            this.orc_peca.DataPropertyName = "orc_peca";
+            this.orc_peca.HeaderText = "R$ Peça";
+            this.orc_peca.Name = "orc_peca";
+            this.orc_peca.ReadOnly = true;
+            this.orc_peca.Width = 70;
+            // 
+            // orc_valor
+            // 
+            this.orc_valor.DataPropertyName = "orc_valor";
+            this.orc_valor.HeaderText = "R$ Valor";
+            this.orc_valor.Name = "orc_valor";
+            this.orc_valor.ReadOnly = true;
+            this.orc_valor.Width = 75;
+            // 
+            // total
+            // 
+            this.total.DataPropertyName = "total";
+            this.total.HeaderText = "R$ Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 75;
             // 
             // gunaAdvenceButton7
             // 
@@ -381,53 +433,6 @@
             this.btnSamsung.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSamsung.Click += new System.EventHandler(this.btnSamsung_Click);
             // 
-            // orc_id
-            // 
-            this.orc_id.DataPropertyName = "orc_id";
-            this.orc_id.HeaderText = "orc_id";
-            this.orc_id.Name = "orc_id";
-            this.orc_id.ReadOnly = true;
-            this.orc_id.Visible = false;
-            // 
-            // orc_aparelho
-            // 
-            this.orc_aparelho.DataPropertyName = "orc_aparelho";
-            this.orc_aparelho.HeaderText = "Aparelho";
-            this.orc_aparelho.Name = "orc_aparelho";
-            this.orc_aparelho.ReadOnly = true;
-            // 
-            // orc_modelo
-            // 
-            this.orc_modelo.DataPropertyName = "orc_modelo";
-            this.orc_modelo.HeaderText = "Modelo";
-            this.orc_modelo.Name = "orc_modelo";
-            this.orc_modelo.ReadOnly = true;
-            this.orc_modelo.Width = 150;
-            // 
-            // orc_peca
-            // 
-            this.orc_peca.DataPropertyName = "orc_peca";
-            this.orc_peca.HeaderText = "R$ Peça";
-            this.orc_peca.Name = "orc_peca";
-            this.orc_peca.ReadOnly = true;
-            this.orc_peca.Width = 70;
-            // 
-            // orc_valor
-            // 
-            this.orc_valor.DataPropertyName = "orc_valor";
-            this.orc_valor.HeaderText = "R$ Valor";
-            this.orc_valor.Name = "orc_valor";
-            this.orc_valor.ReadOnly = true;
-            this.orc_valor.Width = 75;
-            // 
-            // total
-            // 
-            this.total.DataPropertyName = "total";
-            this.total.HeaderText = "R$ Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Width = 75;
-            // 
             // lblOrcStatus
             // 
             this.lblOrcStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -439,6 +444,23 @@
             this.lblOrcStatus.Size = new System.Drawing.Size(492, 56);
             this.lblOrcStatus.TabIndex = 24;
             this.lblOrcStatus.Text = "Nao Existem Dados!";
+            // 
+            // menu
+            // 
+            this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.submenuAdicionarNovo});
+            this.menu.Name = "menu";
+            this.menu.ShowImageMargin = false;
+            this.menu.Size = new System.Drawing.Size(156, 48);
+            // 
+            // submenuAdicionarNovo
+            // 
+            this.submenuAdicionarNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.submenuAdicionarNovo.Name = "submenuAdicionarNovo";
+            this.submenuAdicionarNovo.Size = new System.Drawing.Size(155, 22);
+            this.submenuAdicionarNovo.Text = "Adicionar novo";
+            this.submenuAdicionarNovo.Click += new System.EventHandler(this.submenuAdicionarNovo_Click);
             // 
             // form_Orcamento
             // 
@@ -461,6 +483,7 @@
             this.Name = "form_Orcamento";
             this.Text = "form_Orcamento";
             ((System.ComponentModel.ISupportInitialize)(this.tabelaOrcamento)).EndInit();
+            this.menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,5 +507,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orc_valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         public System.Windows.Forms.Label lblOrcStatus;
+        private System.Windows.Forms.ContextMenuStrip menu;
+        private System.Windows.Forms.ToolStripMenuItem submenuAdicionarNovo;
     }
 }

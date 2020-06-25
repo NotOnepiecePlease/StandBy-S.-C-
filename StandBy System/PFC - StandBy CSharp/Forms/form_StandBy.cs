@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Diagnostics;
 using PFC___StandBy_CSharp.ChecarUpdates;
+using PFC___StandBy_CSharp.Dados;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -18,6 +19,7 @@ namespace PFC___StandBy_CSharp.Forms
         GraficoServicosSemanais GraficoSemanal = new GraficoServicosSemanais();
         GraficoServicosMensais GraficoMensal = new GraficoServicosMensais();
         Verificar verificarUpd = new Verificar();
+        AlterarDados ad = new AlterarDados();
         private Form currentChildForm;
         int anoAtual = DateTime.Now.Year;
         int mesAtual = DateTime.Now.Month;
@@ -161,7 +163,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomRight = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientTopLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btn3.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnReset.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             panel_CorGeral.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -195,7 +197,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomRight = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientTopLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btn3.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnReset.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
@@ -211,7 +213,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomRight = Color.FromArgb(255, 0, 103);
             panelMenu.GradientTopLeft = Color.FromArgb(255, 0, 103);
             btnNotepad.colorActive = Color.FromArgb(255, 0, 103);
-            btn3.colorActive = Color.FromArgb(255, 0, 103);
+            btnReset.colorActive = Color.FromArgb(255, 0, 103);
             iconClose.IconColor = Color.FromArgb(255, 0, 103);
 
             track_RED.Value = 255;
@@ -306,6 +308,7 @@ namespace PFC___StandBy_CSharp.Forms
             else
             {
                 OpenChildForm(new form_Concluidos(corGeral));
+                imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\SERVICOS COMPLETOS.png");
             }
             
             //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO CADASTRO CLIENTES.png");
@@ -320,14 +323,11 @@ namespace PFC___StandBy_CSharp.Forms
             else
             {
                 OpenChildForm(new form_Lucros(corGeral));
+                imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\LUCROS.png");
             }
             //
         }
 
-        private void form_StandBy_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
 
         private void btnOrcamentos_Click(object sender, EventArgs e)
         {
@@ -338,6 +338,7 @@ namespace PFC___StandBy_CSharp.Forms
             else
             {
                 OpenChildForm(new form_Orcamento(corGeral));
+                imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\ORCAMENTOS.png");
             }
         }
 
@@ -345,6 +346,28 @@ namespace PFC___StandBy_CSharp.Forms
         {
             form_Notepad notepad = new form_Notepad();
             notepad.Show();
+        }
+
+        private void form_StandBy_KeyDown(object sender, KeyEventArgs e)
+        {
+            //MessageBox.Show("Teste");
+            if (e.KeyCode == Keys.Tab)
+            {
+                if (Application.OpenForms.OfType<form_OrdensServ>().Count() > 0)
+                {
+                    //MessageBox.Show("O Form2 já está aberto!");
+                }
+                else
+                {
+                    OpenChildForm(new form_OrdensServ(corGeral));
+                    imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO ORDENS DE SERVICO.png");
+                }
+            }
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            ad.ResetarDadosMensais();
         }
     }
 }

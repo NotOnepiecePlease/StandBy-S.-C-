@@ -609,7 +609,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtGarantia_KeyUp(object sender, KeyEventArgs e)
         {
-            //apenasNumeros.AplicarEventoApenasNumero(txtGarantia);
+            //apenasNumeros.AplicarApenasNumerosSemVirgula(txtGarantia);
         }
 
         private void txtGarantia_KeyPress(object sender, KeyPressEventArgs e)

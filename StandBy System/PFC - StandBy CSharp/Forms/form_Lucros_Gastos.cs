@@ -19,14 +19,15 @@ namespace PFC___StandBy_CSharp.Forms
         readonly InserirDados ins_Dados = new InserirDados();
         Formatar format_campos = new Formatar();
         int[] corGeral = { 0, 0, 0 };
-        readonly DateTime dataAtual = DateTime.Now;
+        
         public form_Lucros_Gastos(form_Lucros _formLucros, int[] corRgb)
         {
             InitializeComponent();
             corGeral = corRgb;
             MudarCores();
-            format_campos.AplicarEventos(txtValor);
+            format_campos.AplicarApenasNumeroVirgulaEMoeda(txtValor);
             formLucros = _formLucros;
+            radioGastoTemp.Checked = true;
         }
 
         public void MudarCores()
@@ -47,6 +48,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnInserirGasto_Click(object sender, EventArgs e)
         {
+            DateTime dataAtual = DateTime.Now;
             try
             {
                 if (radioGastoReal.Checked == true && radioGastoTemp.Checked == false)

@@ -47,9 +47,7 @@
             this.buniCardsBotoes = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards7 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
-            this.btn3 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
-            this.btnNotepad = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.buniCardsCores = new Bunifu.Framework.UI.BunifuCards();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,6 +75,8 @@
             this.btnResetarCor = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMudarCor = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnDesligarPc = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnReset = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnNotepad = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnServicosPorMes = new Bunifu.Framework.UI.BunifuTileButton();
             this.panelMenu = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnLucros = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -280,6 +280,8 @@
             // 
             // bunifuDataViz1
             // 
+            this.bunifuDataViz1.AccessibleDescription = "Grafico dos servicos feitos na ultima semana";
+            this.bunifuDataViz1.AccessibleName = "teste";
             this.bunifuDataViz1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuDataViz1.animationEnabled = false;
@@ -355,7 +357,7 @@
             this.bunifuCards6.BorderRadius = 5;
             this.bunifuCards6.BottomSahddow = true;
             this.bunifuCards6.color = System.Drawing.Color.Transparent;
-            this.bunifuCards6.Controls.Add(this.btn3);
+            this.bunifuCards6.Controls.Add(this.btnReset);
             this.animationMenuHide1.SetDecoration(this.bunifuCards6, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuShow1.SetDecoration(this.bunifuCards6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards6.LeftSahddow = false;
@@ -365,28 +367,6 @@
             this.bunifuCards6.ShadowDepth = 20;
             this.bunifuCards6.Size = new System.Drawing.Size(106, 95);
             this.bunifuCards6.TabIndex = 5;
-            // 
-            // btn3
-            // 
-            this.btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btn3.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btn3.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuHide1.SetDecoration(this.btn3, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btn3, BunifuAnimatorNS.DecorationType.None);
-            this.btn3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3.ForeColor = System.Drawing.Color.White;
-            this.btn3.Image = null;
-            this.btn3.ImagePosition = 4;
-            this.btn3.ImageZoom = 50;
-            this.btn3.LabelPosition = 34;
-            this.btn3.LabelText = "---------";
-            this.btn3.Location = new System.Drawing.Point(-1, 4);
-            this.btn3.Margin = new System.Windows.Forms.Padding(6);
-            this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(106, 87);
-            this.btn3.TabIndex = 1;
             // 
             // bunifuCards5
             // 
@@ -405,29 +385,6 @@
             this.bunifuCards5.ShadowDepth = 20;
             this.bunifuCards5.Size = new System.Drawing.Size(106, 95);
             this.bunifuCards5.TabIndex = 5;
-            // 
-            // btnNotepad
-            // 
-            this.btnNotepad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNotepad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnNotepad.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnNotepad.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnNotepad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuHide1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
-            this.btnNotepad.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotepad.ForeColor = System.Drawing.Color.White;
-            this.btnNotepad.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_notepad_480px;
-            this.btnNotepad.ImagePosition = 4;
-            this.btnNotepad.ImageZoom = 50;
-            this.btnNotepad.LabelPosition = 34;
-            this.btnNotepad.LabelText = "Anotações";
-            this.btnNotepad.Location = new System.Drawing.Point(-1, 4);
-            this.btnNotepad.Margin = new System.Windows.Forms.Padding(6);
-            this.btnNotepad.Name = "btnNotepad";
-            this.btnNotepad.Size = new System.Drawing.Size(106, 87);
-            this.btnNotepad.TabIndex = 1;
-            this.btnNotepad.Click += new System.EventHandler(this.btn2_Click);
             // 
             // bunifuCards4
             // 
@@ -737,7 +694,7 @@
             // bunifuElipse3
             // 
             this.bunifuElipse3.ElipseRadius = 3;
-            this.bunifuElipse3.TargetControl = this.btn3;
+            this.bunifuElipse3.TargetControl = this.btnReset;
             // 
             // bunifuElipse4
             // 
@@ -799,8 +756,56 @@
             this.btnDesligarPc.TabIndex = 1;
             this.btnDesligarPc.Click += new System.EventHandler(this.bunifuTileButton3_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnReset.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnReset.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuHide1.SetDecoration(this.btnReset, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnReset, BunifuAnimatorNS.DecorationType.None);
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_reset_480px_1;
+            this.btnReset.ImagePosition = 4;
+            this.btnReset.ImageZoom = 50;
+            this.btnReset.LabelPosition = 33;
+            this.btnReset.LabelText = "Reset";
+            this.btnReset.Location = new System.Drawing.Point(-1, 4);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(6);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(106, 87);
+            this.btnReset.TabIndex = 1;
+            this.btnReset.Click += new System.EventHandler(this.btn3_Click);
+            // 
+            // btnNotepad
+            // 
+            this.btnNotepad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotepad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnNotepad.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnNotepad.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnNotepad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuHide1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
+            this.btnNotepad.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotepad.ForeColor = System.Drawing.Color.White;
+            this.btnNotepad.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_notepad_480px;
+            this.btnNotepad.ImagePosition = 4;
+            this.btnNotepad.ImageZoom = 50;
+            this.btnNotepad.LabelPosition = 34;
+            this.btnNotepad.LabelText = "Anotações";
+            this.btnNotepad.Location = new System.Drawing.Point(-1, 4);
+            this.btnNotepad.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNotepad.Name = "btnNotepad";
+            this.btnNotepad.Size = new System.Drawing.Size(106, 87);
+            this.btnNotepad.TabIndex = 1;
+            this.btnNotepad.Click += new System.EventHandler(this.btn2_Click);
+            // 
             // btnServicosPorMes
             // 
+            this.btnServicosPorMes.AccessibleDescription = "Todos os servicos feitos durante o ano, separados por mes";
+            this.btnServicosPorMes.AccessibleName = "teste";
             this.btnServicosPorMes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnServicosPorMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.btnServicosPorMes.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
@@ -1265,7 +1270,7 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards7;
         private Bunifu.Framework.UI.BunifuTileButton btnDesligarPc;
         private Bunifu.Framework.UI.BunifuCards bunifuCards6;
-        private Bunifu.Framework.UI.BunifuTileButton btn3;
+        private Bunifu.Framework.UI.BunifuTileButton btnReset;
         private Bunifu.Framework.UI.BunifuCards bunifuCards5;
         private Bunifu.Framework.UI.BunifuTileButton btnNotepad;
         private Bunifu.Framework.UI.BunifuCards bunifuCards4;

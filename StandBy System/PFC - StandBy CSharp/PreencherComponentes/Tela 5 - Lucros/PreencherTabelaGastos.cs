@@ -21,6 +21,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
 
         public void Preencher(DataGridView tabelaGastos, int _Temp)
         {
+            //Esse metodo so vai trazer servicos ativos no mes
             DataTable datatable = new DataTable();
             using(SqlConnection conexao = OpenConnection())
             {
