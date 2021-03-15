@@ -26,9 +26,9 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 - [x] Sistema RGB, altera as cores em todos os forms. ***[OK]***
 - [x] Exibição dos Gráficos semanais e mensais. ***[OK]***
 - [x] <b>**Vinculado com a Tabela de clientes (FK~)**</b> ***[OK]***
-- [x] Sistema de Atraso. ***[OK]***
-		- Mais de 12 horas para entrega = **VERDE**
-		- Entre 0 e 12 horas para a entrega = **LARANJA**
+- [x] Sistema de Atraso. ***[OK]***&nbsp;
+		- Mais de 12 horas para entrega = **VERDE**&nbsp;
+		- Entre 0 e 12 horas para a entrega = **LARANJA**&nbsp;
 		- Tempo de entrega finalizado = **VERMELHO**
 
 <b>== Modulo de Clientes</b>
