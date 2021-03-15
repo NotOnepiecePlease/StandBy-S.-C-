@@ -29,14 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_StandBy));
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             this.panelTopStandBy = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.iconMenu = new FontAwesome.Sharp.IconPictureBox();
+            this.iconMinimize = new FontAwesome.Sharp.IconPictureBox();
+            this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
+            this.iconClose = new FontAwesome.Sharp.IconPictureBox();
+            this.imgbuttonTitulo = new Bunifu.Framework.UI.BunifuImageButton();
+            this.iconRestaure = new FontAwesome.Sharp.IconPictureBox();
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ArredondarForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ArredondarMenu = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panelMenu = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnLucros = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnOrcamentos = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnClientes = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnConcluidos = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnServicos = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMenuSuperior = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buniCardsMensais = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuDataViz2 = new Bunifu.DataViz.WinForms.BunifuDataViz();
             this.lblQntServicosMensais = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -46,9 +59,13 @@
             this.bunifuDataViz1 = new Bunifu.DataViz.WinForms.BunifuDataViz();
             this.buniCardsBotoes = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards7 = new Bunifu.Framework.UI.BunifuCards();
+            this.btnDesligarPc = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
+            this.btnReset = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
+            this.btnNotepad = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
+            this.btnServicosPorMes = new Bunifu.Framework.UI.BunifuTileButton();
             this.buniCardsCores = new Bunifu.Framework.UI.BunifuCards();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +73,8 @@
             this.lblBLUE = new System.Windows.Forms.Label();
             this.lblGREEN = new System.Windows.Forms.Label();
             this.lblRED = new System.Windows.Forms.Label();
+            this.btnResetarCor = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMudarCor = new Bunifu.Framework.UI.BunifuImageButton();
             this.track_BLUE = new Bunifu.Framework.UI.BunifuSlider();
             this.track_GREEN = new Bunifu.Framework.UI.BunifuSlider();
             this.track_RED = new Bunifu.Framework.UI.BunifuSlider();
@@ -72,26 +91,14 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnResetarCor = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMudarCor = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnDesligarPc = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnReset = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnNotepad = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnServicosPorMes = new Bunifu.Framework.UI.BunifuTileButton();
-            this.panelMenu = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.btnLucros = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnOrcamentos = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnConcluidos = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnClientes = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnServicos = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnMenuSuperior = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.iconMenu = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMinimize = new FontAwesome.Sharp.IconPictureBox();
-            this.iconMaximize = new FontAwesome.Sharp.IconPictureBox();
-            this.iconClose = new FontAwesome.Sharp.IconPictureBox();
-            this.imgbuttonTitulo = new Bunifu.Framework.UI.BunifuImageButton();
-            this.iconRestaure = new FontAwesome.Sharp.IconPictureBox();
             this.panelTopStandBy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgbuttonTitulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconRestaure)).BeginInit();
+            this.panelMenu.SuspendLayout();
             this.buniCardsMensais.SuspendLayout();
             this.buniCardsBotoes.SuspendLayout();
             this.bunifuCards7.SuspendLayout();
@@ -99,17 +106,10 @@
             this.bunifuCards5.SuspendLayout();
             this.bunifuCards4.SuspendLayout();
             this.buniCardsCores.SuspendLayout();
-            this.panelCentral.SuspendLayout();
-            this.buniCardSemanais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnResetarCor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMudarCor)).BeginInit();
-            this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgbuttonTitulo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconRestaure)).BeginInit();
+            this.panelCentral.SuspendLayout();
+            this.buniCardSemanais.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTopStandBy
@@ -139,9 +139,116 @@
             this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.Control;
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(3, 9);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(40, 15);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(30, 15);
             this.bunifuCustomLabel3.TabIndex = 9;
-            this.bunifuCustomLabel3.Text = "v2.0.0";
+            this.bunifuCustomLabel3.Text = "4.1.1";
+            // 
+            // iconMenu
+            // 
+            this.iconMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.animationMenuHide1.SetDecoration(this.iconMenu, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.iconMenu, BunifuAnimatorNS.DecorationType.None);
+            this.iconMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.iconMenu.IconColor = System.Drawing.Color.White;
+            this.iconMenu.IconSize = 28;
+            this.iconMenu.Location = new System.Drawing.Point(109, 0);
+            this.iconMenu.Name = "iconMenu";
+            this.iconMenu.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.iconMenu.Size = new System.Drawing.Size(28, 31);
+            this.iconMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconMenu.TabIndex = 0;
+            this.iconMenu.TabStop = false;
+            this.iconMenu.Visible = false;
+            this.iconMenu.Click += new System.EventHandler(this.iconMenu_Click);
+            // 
+            // iconMinimize
+            // 
+            this.iconMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.animationMenuHide1.SetDecoration(this.iconMinimize, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.iconMinimize, BunifuAnimatorNS.DecorationType.None);
+            this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.iconMinimize.IconColor = System.Drawing.Color.White;
+            this.iconMinimize.IconSize = 29;
+            this.iconMinimize.Location = new System.Drawing.Point(1178, 4);
+            this.iconMinimize.Name = "iconMinimize";
+            this.iconMinimize.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.iconMinimize.Size = new System.Drawing.Size(29, 29);
+            this.iconMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconMinimize.TabIndex = 4;
+            this.iconMinimize.TabStop = false;
+            this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
+            // 
+            // iconMaximize
+            // 
+            this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.animationMenuHide1.SetDecoration(this.iconMaximize, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.iconMaximize, BunifuAnimatorNS.DecorationType.None);
+            this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.iconMaximize.IconColor = System.Drawing.Color.White;
+            this.iconMaximize.IconSize = 29;
+            this.iconMaximize.Location = new System.Drawing.Point(1213, 4);
+            this.iconMaximize.Name = "iconMaximize";
+            this.iconMaximize.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.iconMaximize.Size = new System.Drawing.Size(29, 29);
+            this.iconMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconMaximize.TabIndex = 3;
+            this.iconMaximize.TabStop = false;
+            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click);
+            // 
+            // iconClose
+            // 
+            this.iconClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.animationMenuHide1.SetDecoration(this.iconClose, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.iconClose, BunifuAnimatorNS.DecorationType.None);
+            this.iconClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.iconClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.iconClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.iconClose.IconSize = 29;
+            this.iconClose.Location = new System.Drawing.Point(1248, 4);
+            this.iconClose.Name = "iconClose";
+            this.iconClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.iconClose.Size = new System.Drawing.Size(29, 29);
+            this.iconClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconClose.TabIndex = 2;
+            this.iconClose.TabStop = false;
+            this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
+            // 
+            // imgbuttonTitulo
+            // 
+            this.imgbuttonTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.animationMenuHide1.SetDecoration(this.imgbuttonTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.imgbuttonTitulo, BunifuAnimatorNS.DecorationType.None);
+            this.imgbuttonTitulo.Image = ((System.Drawing.Image)(resources.GetObject("imgbuttonTitulo.Image")));
+            this.imgbuttonTitulo.ImageActive = null;
+            this.imgbuttonTitulo.Location = new System.Drawing.Point(547, 3);
+            this.imgbuttonTitulo.Name = "imgbuttonTitulo";
+            this.imgbuttonTitulo.Size = new System.Drawing.Size(194, 31);
+            this.imgbuttonTitulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgbuttonTitulo.TabIndex = 8;
+            this.imgbuttonTitulo.TabStop = false;
+            this.imgbuttonTitulo.Zoom = 10;
+            this.imgbuttonTitulo.Click += new System.EventHandler(this.imgbuttonTitulo_Click);
+            // 
+            // iconRestaure
+            // 
+            this.iconRestaure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconRestaure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.animationMenuHide1.SetDecoration(this.iconRestaure, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.iconRestaure, BunifuAnimatorNS.DecorationType.None);
+            this.iconRestaure.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
+            this.iconRestaure.IconColor = System.Drawing.Color.White;
+            this.iconRestaure.IconSize = 29;
+            this.iconRestaure.Location = new System.Drawing.Point(1213, 0);
+            this.iconRestaure.Name = "iconRestaure";
+            this.iconRestaure.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.iconRestaure.Size = new System.Drawing.Size(29, 29);
+            this.iconRestaure.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconRestaure.TabIndex = 5;
+            this.iconRestaure.TabStop = false;
+            this.iconRestaure.Click += new System.EventHandler(this.iconRestaure_Click);
             // 
             // moverForm
             // 
@@ -159,6 +266,262 @@
             // 
             this.ArredondarMenu.ElipseRadius = 7;
             this.ArredondarMenu.TargetControl = this.panelMenu;
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMenu.BackgroundImage")));
+            this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMenu.Controls.Add(this.btnLucros);
+            this.panelMenu.Controls.Add(this.btnOrcamentos);
+            this.panelMenu.Controls.Add(this.btnClientes);
+            this.panelMenu.Controls.Add(this.btnConcluidos);
+            this.panelMenu.Controls.Add(this.btnServicos);
+            this.panelMenu.Controls.Add(this.btnMenuSuperior);
+            this.animationMenuHide1.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMenu.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.panelMenu.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.panelMenu.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.panelMenu.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panelMenu.Location = new System.Drawing.Point(0, 34);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Quality = 10;
+            this.panelMenu.Size = new System.Drawing.Size(1280, 35);
+            this.panelMenu.TabIndex = 2;
+            this.panelMenu.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
+            // 
+            // btnLucros
+            // 
+            this.btnLucros.Active = false;
+            this.btnLucros.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLucros.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLucros.BackColor = System.Drawing.Color.Transparent;
+            this.btnLucros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLucros.BorderRadius = 0;
+            this.btnLucros.ButtonText = "LUCROS";
+            this.btnLucros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuShow1.SetDecoration(this.btnLucros, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.btnLucros, BunifuAnimatorNS.DecorationType.None);
+            this.btnLucros.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLucros.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLucros.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_money_bag_480px;
+            this.btnLucros.Iconimage_right = null;
+            this.btnLucros.Iconimage_right_Selected = null;
+            this.btnLucros.Iconimage_Selected = null;
+            this.btnLucros.IconMarginLeft = 0;
+            this.btnLucros.IconMarginRight = 0;
+            this.btnLucros.IconRightVisible = true;
+            this.btnLucros.IconRightZoom = 0D;
+            this.btnLucros.IconVisible = true;
+            this.btnLucros.IconZoom = 70D;
+            this.btnLucros.IsTab = false;
+            this.btnLucros.Location = new System.Drawing.Point(1005, 0);
+            this.btnLucros.Name = "btnLucros";
+            this.btnLucros.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnLucros.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnLucros.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLucros.selected = false;
+            this.btnLucros.Size = new System.Drawing.Size(187, 35);
+            this.btnLucros.TabIndex = 13;
+            this.btnLucros.Text = "LUCROS";
+            this.btnLucros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLucros.Textcolor = System.Drawing.Color.White;
+            this.btnLucros.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLucros.Click += new System.EventHandler(this.btnLucros_Click);
+            // 
+            // btnOrcamentos
+            // 
+            this.btnOrcamentos.Active = false;
+            this.btnOrcamentos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnOrcamentos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnOrcamentos.BackColor = System.Drawing.Color.Transparent;
+            this.btnOrcamentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOrcamentos.BorderRadius = 0;
+            this.btnOrcamentos.ButtonText = "ORÇAMENTOS";
+            this.btnOrcamentos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuShow1.SetDecoration(this.btnOrcamentos, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.btnOrcamentos, BunifuAnimatorNS.DecorationType.None);
+            this.btnOrcamentos.DisabledColor = System.Drawing.Color.Gray;
+            this.btnOrcamentos.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnOrcamentos.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_estimate_96px;
+            this.btnOrcamentos.Iconimage_right = null;
+            this.btnOrcamentos.Iconimage_right_Selected = null;
+            this.btnOrcamentos.Iconimage_Selected = null;
+            this.btnOrcamentos.IconMarginLeft = 0;
+            this.btnOrcamentos.IconMarginRight = 0;
+            this.btnOrcamentos.IconRightVisible = true;
+            this.btnOrcamentos.IconRightZoom = 0D;
+            this.btnOrcamentos.IconVisible = true;
+            this.btnOrcamentos.IconZoom = 70D;
+            this.btnOrcamentos.IsTab = false;
+            this.btnOrcamentos.Location = new System.Drawing.Point(781, 0);
+            this.btnOrcamentos.Name = "btnOrcamentos";
+            this.btnOrcamentos.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnOrcamentos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnOrcamentos.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnOrcamentos.selected = false;
+            this.btnOrcamentos.Size = new System.Drawing.Size(187, 35);
+            this.btnOrcamentos.TabIndex = 12;
+            this.btnOrcamentos.Text = "ORÇAMENTOS";
+            this.btnOrcamentos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnOrcamentos.Textcolor = System.Drawing.Color.White;
+            this.btnOrcamentos.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrcamentos.Click += new System.EventHandler(this.btnOrcamentos_Click);
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Active = false;
+            this.btnClientes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClientes.BorderRadius = 0;
+            this.btnClientes.ButtonText = "CLIENTES";
+            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuShow1.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
+            this.btnClientes.DisabledColor = System.Drawing.Color.Gray;
+            this.btnClientes.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnClientes.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_user_group_480px;
+            this.btnClientes.Iconimage_right = null;
+            this.btnClientes.Iconimage_right_Selected = null;
+            this.btnClientes.Iconimage_Selected = null;
+            this.btnClientes.IconMarginLeft = 0;
+            this.btnClientes.IconMarginRight = 0;
+            this.btnClientes.IconRightVisible = true;
+            this.btnClientes.IconRightZoom = 0D;
+            this.btnClientes.IconVisible = true;
+            this.btnClientes.IconZoom = 70D;
+            this.btnClientes.IsTab = false;
+            this.btnClientes.Location = new System.Drawing.Point(109, 0);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnClientes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnClientes.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnClientes.selected = false;
+            this.btnClientes.Size = new System.Drawing.Size(187, 35);
+            this.btnClientes.TabIndex = 10;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClientes.Textcolor = System.Drawing.Color.White;
+            this.btnClientes.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnConcluidos
+            // 
+            this.btnConcluidos.Active = false;
+            this.btnConcluidos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConcluidos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnConcluidos.BackColor = System.Drawing.Color.Transparent;
+            this.btnConcluidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConcluidos.BorderRadius = 0;
+            this.btnConcluidos.ButtonText = "CONCLUIDOS";
+            this.btnConcluidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuShow1.SetDecoration(this.btnConcluidos, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.btnConcluidos, BunifuAnimatorNS.DecorationType.None);
+            this.btnConcluidos.DisabledColor = System.Drawing.Color.Gray;
+            this.btnConcluidos.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnConcluidos.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_checkmark_yes_512px;
+            this.btnConcluidos.Iconimage_right = null;
+            this.btnConcluidos.Iconimage_right_Selected = null;
+            this.btnConcluidos.Iconimage_Selected = null;
+            this.btnConcluidos.IconMarginLeft = 0;
+            this.btnConcluidos.IconMarginRight = 0;
+            this.btnConcluidos.IconRightVisible = true;
+            this.btnConcluidos.IconRightZoom = 0D;
+            this.btnConcluidos.IconVisible = true;
+            this.btnConcluidos.IconZoom = 70D;
+            this.btnConcluidos.IsTab = false;
+            this.btnConcluidos.Location = new System.Drawing.Point(557, 0);
+            this.btnConcluidos.Name = "btnConcluidos";
+            this.btnConcluidos.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnConcluidos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnConcluidos.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnConcluidos.selected = false;
+            this.btnConcluidos.Size = new System.Drawing.Size(187, 35);
+            this.btnConcluidos.TabIndex = 11;
+            this.btnConcluidos.Text = "CONCLUIDOS";
+            this.btnConcluidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnConcluidos.Textcolor = System.Drawing.Color.White;
+            this.btnConcluidos.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConcluidos.Click += new System.EventHandler(this.btnConcluidos_Click);
+            // 
+            // btnServicos
+            // 
+            this.btnServicos.Active = false;
+            this.btnServicos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnServicos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnServicos.BackColor = System.Drawing.Color.Transparent;
+            this.btnServicos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnServicos.BorderRadius = 0;
+            this.btnServicos.ButtonText = "SERVIÇOS";
+            this.btnServicos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuShow1.SetDecoration(this.btnServicos, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.btnServicos, BunifuAnimatorNS.DecorationType.None);
+            this.btnServicos.DisabledColor = System.Drawing.Color.Gray;
+            this.btnServicos.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnServicos.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_bulleted_list_480px;
+            this.btnServicos.Iconimage_right = null;
+            this.btnServicos.Iconimage_right_Selected = null;
+            this.btnServicos.Iconimage_Selected = null;
+            this.btnServicos.IconMarginLeft = 0;
+            this.btnServicos.IconMarginRight = 0;
+            this.btnServicos.IconRightVisible = true;
+            this.btnServicos.IconRightZoom = 0D;
+            this.btnServicos.IconVisible = true;
+            this.btnServicos.IconZoom = 70D;
+            this.btnServicos.IsTab = false;
+            this.btnServicos.Location = new System.Drawing.Point(333, 0);
+            this.btnServicos.Name = "btnServicos";
+            this.btnServicos.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnServicos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnServicos.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnServicos.selected = false;
+            this.btnServicos.Size = new System.Drawing.Size(187, 35);
+            this.btnServicos.TabIndex = 8;
+            this.btnServicos.Text = "SERVIÇOS";
+            this.btnServicos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnServicos.Textcolor = System.Drawing.Color.White;
+            this.btnServicos.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
+            // 
+            // btnMenuSuperior
+            // 
+            this.btnMenuSuperior.Active = false;
+            this.btnMenuSuperior.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMenuSuperior.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenuSuperior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenuSuperior.BorderRadius = 0;
+            this.btnMenuSuperior.ButtonText = "";
+            this.btnMenuSuperior.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuShow1.SetDecoration(this.btnMenuSuperior, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.btnMenuSuperior, BunifuAnimatorNS.DecorationType.None);
+            this.btnMenuSuperior.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMenuSuperior.Enabled = false;
+            this.btnMenuSuperior.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMenuSuperior.Iconimage = null;
+            this.btnMenuSuperior.Iconimage_right = null;
+            this.btnMenuSuperior.Iconimage_right_Selected = null;
+            this.btnMenuSuperior.Iconimage_Selected = null;
+            this.btnMenuSuperior.IconMarginLeft = 0;
+            this.btnMenuSuperior.IconMarginRight = 0;
+            this.btnMenuSuperior.IconRightVisible = true;
+            this.btnMenuSuperior.IconRightZoom = 0D;
+            this.btnMenuSuperior.IconVisible = true;
+            this.btnMenuSuperior.IconZoom = 70D;
+            this.btnMenuSuperior.IsTab = false;
+            this.btnMenuSuperior.Location = new System.Drawing.Point(0, 0);
+            this.btnMenuSuperior.Name = "btnMenuSuperior";
+            this.btnMenuSuperior.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnMenuSuperior.OnHovercolor = System.Drawing.Color.Black;
+            this.btnMenuSuperior.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMenuSuperior.selected = false;
+            this.btnMenuSuperior.Size = new System.Drawing.Size(1280, 35);
+            this.btnMenuSuperior.TabIndex = 14;
+            this.btnMenuSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMenuSuperior.Textcolor = System.Drawing.Color.White;
+            this.btnMenuSuperior.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // buniCardsMensais
             // 
@@ -350,6 +713,29 @@
             this.bunifuCards7.Size = new System.Drawing.Size(106, 95);
             this.bunifuCards7.TabIndex = 5;
             // 
+            // btnDesligarPc
+            // 
+            this.btnDesligarPc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDesligarPc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnDesligarPc.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnDesligarPc.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnDesligarPc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuHide1.SetDecoration(this.btnDesligarPc, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnDesligarPc, BunifuAnimatorNS.DecorationType.None);
+            this.btnDesligarPc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesligarPc.ForeColor = System.Drawing.Color.White;
+            this.btnDesligarPc.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_shutdown_96px;
+            this.btnDesligarPc.ImagePosition = 4;
+            this.btnDesligarPc.ImageZoom = 50;
+            this.btnDesligarPc.LabelPosition = 34;
+            this.btnDesligarPc.LabelText = "Desligar";
+            this.btnDesligarPc.Location = new System.Drawing.Point(-1, 4);
+            this.btnDesligarPc.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDesligarPc.Name = "btnDesligarPc";
+            this.btnDesligarPc.Size = new System.Drawing.Size(106, 87);
+            this.btnDesligarPc.TabIndex = 1;
+            this.btnDesligarPc.Click += new System.EventHandler(this.bunifuTileButton3_Click);
+            // 
             // bunifuCards6
             // 
             this.bunifuCards6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -367,6 +753,30 @@
             this.bunifuCards6.ShadowDepth = 20;
             this.bunifuCards6.Size = new System.Drawing.Size(106, 95);
             this.bunifuCards6.TabIndex = 5;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnReset.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnReset.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuHide1.SetDecoration(this.btnReset, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnReset, BunifuAnimatorNS.DecorationType.None);
+            this.btnReset.Enabled = false;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_reset_480px_1;
+            this.btnReset.ImagePosition = 4;
+            this.btnReset.ImageZoom = 50;
+            this.btnReset.LabelPosition = 33;
+            this.btnReset.LabelText = "Reset";
+            this.btnReset.Location = new System.Drawing.Point(-1, 4);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(6);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(106, 87);
+            this.btnReset.TabIndex = 1;
+            this.btnReset.Click += new System.EventHandler(this.btn3_Click);
             // 
             // bunifuCards5
             // 
@@ -386,6 +796,29 @@
             this.bunifuCards5.Size = new System.Drawing.Size(106, 95);
             this.bunifuCards5.TabIndex = 5;
             // 
+            // btnNotepad
+            // 
+            this.btnNotepad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotepad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnNotepad.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnNotepad.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnNotepad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuHide1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
+            this.btnNotepad.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotepad.ForeColor = System.Drawing.Color.White;
+            this.btnNotepad.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_notepad_480px;
+            this.btnNotepad.ImagePosition = 4;
+            this.btnNotepad.ImageZoom = 50;
+            this.btnNotepad.LabelPosition = 34;
+            this.btnNotepad.LabelText = "Anotações";
+            this.btnNotepad.Location = new System.Drawing.Point(-1, 4);
+            this.btnNotepad.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNotepad.Name = "btnNotepad";
+            this.btnNotepad.Size = new System.Drawing.Size(106, 87);
+            this.btnNotepad.TabIndex = 1;
+            this.btnNotepad.Click += new System.EventHandler(this.btn2_Click);
+            // 
             // bunifuCards4
             // 
             this.bunifuCards4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -403,6 +836,31 @@
             this.bunifuCards4.ShadowDepth = 20;
             this.bunifuCards4.Size = new System.Drawing.Size(106, 95);
             this.bunifuCards4.TabIndex = 4;
+            // 
+            // btnServicosPorMes
+            // 
+            this.btnServicosPorMes.AccessibleDescription = "Todos os servicos feitos durante o ano, separados por mes";
+            this.btnServicosPorMes.AccessibleName = "teste";
+            this.btnServicosPorMes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnServicosPorMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnServicosPorMes.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.btnServicosPorMes.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnServicosPorMes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animationMenuHide1.SetDecoration(this.btnServicosPorMes, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnServicosPorMes, BunifuAnimatorNS.DecorationType.None);
+            this.btnServicosPorMes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServicosPorMes.ForeColor = System.Drawing.Color.White;
+            this.btnServicosPorMes.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_list_512px;
+            this.btnServicosPorMes.ImagePosition = 4;
+            this.btnServicosPorMes.ImageZoom = 50;
+            this.btnServicosPorMes.LabelPosition = 34;
+            this.btnServicosPorMes.LabelText = "Serv/Mes";
+            this.btnServicosPorMes.Location = new System.Drawing.Point(0, 4);
+            this.btnServicosPorMes.Margin = new System.Windows.Forms.Padding(6);
+            this.btnServicosPorMes.Name = "btnServicosPorMes";
+            this.btnServicosPorMes.Size = new System.Drawing.Size(106, 87);
+            this.btnServicosPorMes.TabIndex = 1;
+            this.btnServicosPorMes.Click += new System.EventHandler(this.btnServicosPorMes_Click);
             // 
             // buniCardsCores
             // 
@@ -516,6 +974,38 @@
             this.lblRED.Size = new System.Drawing.Size(37, 21);
             this.lblRED.TabIndex = 9;
             this.lblRED.Text = "255";
+            // 
+            // btnResetarCor
+            // 
+            this.btnResetarCor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.animationMenuHide1.SetDecoration(this.btnResetarCor, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnResetarCor, BunifuAnimatorNS.DecorationType.None);
+            this.btnResetarCor.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_reset_480px;
+            this.btnResetarCor.ImageActive = null;
+            this.btnResetarCor.Location = new System.Drawing.Point(457, 136);
+            this.btnResetarCor.Name = "btnResetarCor";
+            this.btnResetarCor.Size = new System.Drawing.Size(64, 47);
+            this.btnResetarCor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnResetarCor.TabIndex = 8;
+            this.btnResetarCor.TabStop = false;
+            this.btnResetarCor.Zoom = 10;
+            this.btnResetarCor.Click += new System.EventHandler(this.btnResetarCor_Click);
+            // 
+            // btnMudarCor
+            // 
+            this.btnMudarCor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.animationMenuHide1.SetDecoration(this.btnMudarCor, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnMudarCor, BunifuAnimatorNS.DecorationType.None);
+            this.btnMudarCor.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_paint_roller_512px;
+            this.btnMudarCor.ImageActive = null;
+            this.btnMudarCor.Location = new System.Drawing.Point(457, 81);
+            this.btnMudarCor.Name = "btnMudarCor";
+            this.btnMudarCor.Size = new System.Drawing.Size(64, 47);
+            this.btnMudarCor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMudarCor.TabIndex = 3;
+            this.btnMudarCor.TabStop = false;
+            this.btnMudarCor.Zoom = 10;
+            this.btnMudarCor.Click += new System.EventHandler(this.btnMudarCor_Click);
             // 
             // track_BLUE
             // 
@@ -638,43 +1128,43 @@
             // 
             this.animationMenuShow1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuShow1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.animationMenuShow1.DefaultAnimation = animation1;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.animationMenuShow1.DefaultAnimation = animation3;
             // 
             // animationMenuHide1
             // 
             this.animationMenuHide1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuHide1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.animationMenuHide1.DefaultAnimation = animation2;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.animationMenuHide1.DefaultAnimation = animation4;
             // 
             // ArredondarBordaEsquerda
             // 
@@ -701,495 +1191,6 @@
             this.bunifuElipse4.ElipseRadius = 3;
             this.bunifuElipse4.TargetControl = this.btnDesligarPc;
             // 
-            // btnResetarCor
-            // 
-            this.btnResetarCor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.animationMenuHide1.SetDecoration(this.btnResetarCor, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnResetarCor, BunifuAnimatorNS.DecorationType.None);
-            this.btnResetarCor.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_reset_480px;
-            this.btnResetarCor.ImageActive = null;
-            this.btnResetarCor.Location = new System.Drawing.Point(457, 136);
-            this.btnResetarCor.Name = "btnResetarCor";
-            this.btnResetarCor.Size = new System.Drawing.Size(64, 47);
-            this.btnResetarCor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnResetarCor.TabIndex = 8;
-            this.btnResetarCor.TabStop = false;
-            this.btnResetarCor.Zoom = 10;
-            this.btnResetarCor.Click += new System.EventHandler(this.btnResetarCor_Click);
-            // 
-            // btnMudarCor
-            // 
-            this.btnMudarCor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.animationMenuHide1.SetDecoration(this.btnMudarCor, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnMudarCor, BunifuAnimatorNS.DecorationType.None);
-            this.btnMudarCor.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_paint_roller_512px;
-            this.btnMudarCor.ImageActive = null;
-            this.btnMudarCor.Location = new System.Drawing.Point(457, 81);
-            this.btnMudarCor.Name = "btnMudarCor";
-            this.btnMudarCor.Size = new System.Drawing.Size(64, 47);
-            this.btnMudarCor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMudarCor.TabIndex = 3;
-            this.btnMudarCor.TabStop = false;
-            this.btnMudarCor.Zoom = 10;
-            this.btnMudarCor.Click += new System.EventHandler(this.btnMudarCor_Click);
-            // 
-            // btnDesligarPc
-            // 
-            this.btnDesligarPc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDesligarPc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnDesligarPc.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnDesligarPc.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnDesligarPc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuHide1.SetDecoration(this.btnDesligarPc, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnDesligarPc, BunifuAnimatorNS.DecorationType.None);
-            this.btnDesligarPc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesligarPc.ForeColor = System.Drawing.Color.White;
-            this.btnDesligarPc.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_shutdown_96px;
-            this.btnDesligarPc.ImagePosition = 4;
-            this.btnDesligarPc.ImageZoom = 50;
-            this.btnDesligarPc.LabelPosition = 34;
-            this.btnDesligarPc.LabelText = "Desligar";
-            this.btnDesligarPc.Location = new System.Drawing.Point(-1, 4);
-            this.btnDesligarPc.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDesligarPc.Name = "btnDesligarPc";
-            this.btnDesligarPc.Size = new System.Drawing.Size(106, 87);
-            this.btnDesligarPc.TabIndex = 1;
-            this.btnDesligarPc.Click += new System.EventHandler(this.bunifuTileButton3_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnReset.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnReset.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuHide1.SetDecoration(this.btnReset, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnReset, BunifuAnimatorNS.DecorationType.None);
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_reset_480px_1;
-            this.btnReset.ImagePosition = 4;
-            this.btnReset.ImageZoom = 50;
-            this.btnReset.LabelPosition = 33;
-            this.btnReset.LabelText = "Reset";
-            this.btnReset.Location = new System.Drawing.Point(-1, 4);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(6);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(106, 87);
-            this.btnReset.TabIndex = 1;
-            this.btnReset.Click += new System.EventHandler(this.btn3_Click);
-            // 
-            // btnNotepad
-            // 
-            this.btnNotepad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNotepad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnNotepad.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnNotepad.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnNotepad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuHide1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
-            this.btnNotepad.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotepad.ForeColor = System.Drawing.Color.White;
-            this.btnNotepad.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_notepad_480px;
-            this.btnNotepad.ImagePosition = 4;
-            this.btnNotepad.ImageZoom = 50;
-            this.btnNotepad.LabelPosition = 34;
-            this.btnNotepad.LabelText = "Anotações";
-            this.btnNotepad.Location = new System.Drawing.Point(-1, 4);
-            this.btnNotepad.Margin = new System.Windows.Forms.Padding(6);
-            this.btnNotepad.Name = "btnNotepad";
-            this.btnNotepad.Size = new System.Drawing.Size(106, 87);
-            this.btnNotepad.TabIndex = 1;
-            this.btnNotepad.Click += new System.EventHandler(this.btn2_Click);
-            // 
-            // btnServicosPorMes
-            // 
-            this.btnServicosPorMes.AccessibleDescription = "Todos os servicos feitos durante o ano, separados por mes";
-            this.btnServicosPorMes.AccessibleName = "teste";
-            this.btnServicosPorMes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnServicosPorMes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnServicosPorMes.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.btnServicosPorMes.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnServicosPorMes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuHide1.SetDecoration(this.btnServicosPorMes, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnServicosPorMes, BunifuAnimatorNS.DecorationType.None);
-            this.btnServicosPorMes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServicosPorMes.ForeColor = System.Drawing.Color.White;
-            this.btnServicosPorMes.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_list_512px;
-            this.btnServicosPorMes.ImagePosition = 4;
-            this.btnServicosPorMes.ImageZoom = 50;
-            this.btnServicosPorMes.LabelPosition = 34;
-            this.btnServicosPorMes.LabelText = "Serv/Mes";
-            this.btnServicosPorMes.Location = new System.Drawing.Point(0, 4);
-            this.btnServicosPorMes.Margin = new System.Windows.Forms.Padding(6);
-            this.btnServicosPorMes.Name = "btnServicosPorMes";
-            this.btnServicosPorMes.Size = new System.Drawing.Size(106, 87);
-            this.btnServicosPorMes.TabIndex = 1;
-            this.btnServicosPorMes.Click += new System.EventHandler(this.btnServicosPorMes_Click);
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMenu.BackgroundImage")));
-            this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelMenu.Controls.Add(this.btnLucros);
-            this.panelMenu.Controls.Add(this.btnOrcamentos);
-            this.panelMenu.Controls.Add(this.btnConcluidos);
-            this.panelMenu.Controls.Add(this.btnClientes);
-            this.panelMenu.Controls.Add(this.btnServicos);
-            this.panelMenu.Controls.Add(this.btnMenuSuperior);
-            this.animationMenuHide1.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMenu.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.panelMenu.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.panelMenu.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.panelMenu.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.panelMenu.Location = new System.Drawing.Point(0, 34);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Quality = 10;
-            this.panelMenu.Size = new System.Drawing.Size(1280, 35);
-            this.panelMenu.TabIndex = 2;
-            this.panelMenu.MouseEnter += new System.EventHandler(this.panelMenu_MouseEnter);
-            // 
-            // btnLucros
-            // 
-            this.btnLucros.Active = false;
-            this.btnLucros.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLucros.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLucros.BackColor = System.Drawing.Color.Transparent;
-            this.btnLucros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLucros.BorderRadius = 0;
-            this.btnLucros.ButtonText = "LUCROS";
-            this.btnLucros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnLucros, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuHide1.SetDecoration(this.btnLucros, BunifuAnimatorNS.DecorationType.None);
-            this.btnLucros.DisabledColor = System.Drawing.Color.Gray;
-            this.btnLucros.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnLucros.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_money_bag_480px;
-            this.btnLucros.Iconimage_right = null;
-            this.btnLucros.Iconimage_right_Selected = null;
-            this.btnLucros.Iconimage_Selected = null;
-            this.btnLucros.IconMarginLeft = 0;
-            this.btnLucros.IconMarginRight = 0;
-            this.btnLucros.IconRightVisible = true;
-            this.btnLucros.IconRightZoom = 0D;
-            this.btnLucros.IconVisible = true;
-            this.btnLucros.IconZoom = 70D;
-            this.btnLucros.IsTab = false;
-            this.btnLucros.Location = new System.Drawing.Point(1005, 0);
-            this.btnLucros.Name = "btnLucros";
-            this.btnLucros.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnLucros.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnLucros.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnLucros.selected = false;
-            this.btnLucros.Size = new System.Drawing.Size(187, 35);
-            this.btnLucros.TabIndex = 13;
-            this.btnLucros.Text = "LUCROS";
-            this.btnLucros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLucros.Textcolor = System.Drawing.Color.White;
-            this.btnLucros.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLucros.Click += new System.EventHandler(this.btnLucros_Click);
-            // 
-            // btnOrcamentos
-            // 
-            this.btnOrcamentos.Active = false;
-            this.btnOrcamentos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnOrcamentos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnOrcamentos.BackColor = System.Drawing.Color.Transparent;
-            this.btnOrcamentos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOrcamentos.BorderRadius = 0;
-            this.btnOrcamentos.ButtonText = "ORÇAMENTOS";
-            this.btnOrcamentos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnOrcamentos, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuHide1.SetDecoration(this.btnOrcamentos, BunifuAnimatorNS.DecorationType.None);
-            this.btnOrcamentos.DisabledColor = System.Drawing.Color.Gray;
-            this.btnOrcamentos.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnOrcamentos.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_estimate_96px;
-            this.btnOrcamentos.Iconimage_right = null;
-            this.btnOrcamentos.Iconimage_right_Selected = null;
-            this.btnOrcamentos.Iconimage_Selected = null;
-            this.btnOrcamentos.IconMarginLeft = 0;
-            this.btnOrcamentos.IconMarginRight = 0;
-            this.btnOrcamentos.IconRightVisible = true;
-            this.btnOrcamentos.IconRightZoom = 0D;
-            this.btnOrcamentos.IconVisible = true;
-            this.btnOrcamentos.IconZoom = 70D;
-            this.btnOrcamentos.IsTab = false;
-            this.btnOrcamentos.Location = new System.Drawing.Point(781, 0);
-            this.btnOrcamentos.Name = "btnOrcamentos";
-            this.btnOrcamentos.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnOrcamentos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnOrcamentos.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnOrcamentos.selected = false;
-            this.btnOrcamentos.Size = new System.Drawing.Size(187, 35);
-            this.btnOrcamentos.TabIndex = 12;
-            this.btnOrcamentos.Text = "ORÇAMENTOS";
-            this.btnOrcamentos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnOrcamentos.Textcolor = System.Drawing.Color.White;
-            this.btnOrcamentos.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrcamentos.Click += new System.EventHandler(this.btnOrcamentos_Click);
-            // 
-            // btnConcluidos
-            // 
-            this.btnConcluidos.Active = false;
-            this.btnConcluidos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnConcluidos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnConcluidos.BackColor = System.Drawing.Color.Transparent;
-            this.btnConcluidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConcluidos.BorderRadius = 0;
-            this.btnConcluidos.ButtonText = "CONCLUIDOS";
-            this.btnConcluidos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnConcluidos, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuHide1.SetDecoration(this.btnConcluidos, BunifuAnimatorNS.DecorationType.None);
-            this.btnConcluidos.DisabledColor = System.Drawing.Color.Gray;
-            this.btnConcluidos.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnConcluidos.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_checkmark_yes_512px;
-            this.btnConcluidos.Iconimage_right = null;
-            this.btnConcluidos.Iconimage_right_Selected = null;
-            this.btnConcluidos.Iconimage_Selected = null;
-            this.btnConcluidos.IconMarginLeft = 0;
-            this.btnConcluidos.IconMarginRight = 0;
-            this.btnConcluidos.IconRightVisible = true;
-            this.btnConcluidos.IconRightZoom = 0D;
-            this.btnConcluidos.IconVisible = true;
-            this.btnConcluidos.IconZoom = 70D;
-            this.btnConcluidos.IsTab = false;
-            this.btnConcluidos.Location = new System.Drawing.Point(557, 0);
-            this.btnConcluidos.Name = "btnConcluidos";
-            this.btnConcluidos.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnConcluidos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnConcluidos.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnConcluidos.selected = false;
-            this.btnConcluidos.Size = new System.Drawing.Size(187, 35);
-            this.btnConcluidos.TabIndex = 11;
-            this.btnConcluidos.Text = "CONCLUIDOS";
-            this.btnConcluidos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnConcluidos.Textcolor = System.Drawing.Color.White;
-            this.btnConcluidos.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConcluidos.Click += new System.EventHandler(this.btnConcluidos_Click);
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Active = false;
-            this.btnClientes.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnClientes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
-            this.btnClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClientes.BorderRadius = 0;
-            this.btnClientes.ButtonText = "CLIENTES";
-            this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuHide1.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
-            this.btnClientes.DisabledColor = System.Drawing.Color.Gray;
-            this.btnClientes.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnClientes.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_user_group_480px;
-            this.btnClientes.Iconimage_right = null;
-            this.btnClientes.Iconimage_right_Selected = null;
-            this.btnClientes.Iconimage_Selected = null;
-            this.btnClientes.IconMarginLeft = 0;
-            this.btnClientes.IconMarginRight = 0;
-            this.btnClientes.IconRightVisible = true;
-            this.btnClientes.IconRightZoom = 0D;
-            this.btnClientes.IconVisible = true;
-            this.btnClientes.IconZoom = 70D;
-            this.btnClientes.IsTab = false;
-            this.btnClientes.Location = new System.Drawing.Point(333, 0);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnClientes.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnClientes.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnClientes.selected = false;
-            this.btnClientes.Size = new System.Drawing.Size(187, 35);
-            this.btnClientes.TabIndex = 10;
-            this.btnClientes.Text = "CLIENTES";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnClientes.Textcolor = System.Drawing.Color.White;
-            this.btnClientes.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // btnServicos
-            // 
-            this.btnServicos.Active = false;
-            this.btnServicos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnServicos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnServicos.BackColor = System.Drawing.Color.Transparent;
-            this.btnServicos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnServicos.BorderRadius = 0;
-            this.btnServicos.ButtonText = "SERVIÇOS";
-            this.btnServicos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnServicos, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuHide1.SetDecoration(this.btnServicos, BunifuAnimatorNS.DecorationType.None);
-            this.btnServicos.DisabledColor = System.Drawing.Color.Gray;
-            this.btnServicos.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnServicos.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_bulleted_list_480px;
-            this.btnServicos.Iconimage_right = null;
-            this.btnServicos.Iconimage_right_Selected = null;
-            this.btnServicos.Iconimage_Selected = null;
-            this.btnServicos.IconMarginLeft = 0;
-            this.btnServicos.IconMarginRight = 0;
-            this.btnServicos.IconRightVisible = true;
-            this.btnServicos.IconRightZoom = 0D;
-            this.btnServicos.IconVisible = true;
-            this.btnServicos.IconZoom = 70D;
-            this.btnServicos.IsTab = false;
-            this.btnServicos.Location = new System.Drawing.Point(109, 0);
-            this.btnServicos.Name = "btnServicos";
-            this.btnServicos.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnServicos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnServicos.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnServicos.selected = false;
-            this.btnServicos.Size = new System.Drawing.Size(187, 35);
-            this.btnServicos.TabIndex = 8;
-            this.btnServicos.Text = "SERVIÇOS";
-            this.btnServicos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnServicos.Textcolor = System.Drawing.Color.White;
-            this.btnServicos.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
-            // 
-            // btnMenuSuperior
-            // 
-            this.btnMenuSuperior.Active = false;
-            this.btnMenuSuperior.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMenuSuperior.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenuSuperior.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMenuSuperior.BorderRadius = 0;
-            this.btnMenuSuperior.ButtonText = "";
-            this.btnMenuSuperior.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnMenuSuperior, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuHide1.SetDecoration(this.btnMenuSuperior, BunifuAnimatorNS.DecorationType.None);
-            this.btnMenuSuperior.DisabledColor = System.Drawing.Color.Gray;
-            this.btnMenuSuperior.Enabled = false;
-            this.btnMenuSuperior.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnMenuSuperior.Iconimage = null;
-            this.btnMenuSuperior.Iconimage_right = null;
-            this.btnMenuSuperior.Iconimage_right_Selected = null;
-            this.btnMenuSuperior.Iconimage_Selected = null;
-            this.btnMenuSuperior.IconMarginLeft = 0;
-            this.btnMenuSuperior.IconMarginRight = 0;
-            this.btnMenuSuperior.IconRightVisible = true;
-            this.btnMenuSuperior.IconRightZoom = 0D;
-            this.btnMenuSuperior.IconVisible = true;
-            this.btnMenuSuperior.IconZoom = 70D;
-            this.btnMenuSuperior.IsTab = false;
-            this.btnMenuSuperior.Location = new System.Drawing.Point(0, 0);
-            this.btnMenuSuperior.Name = "btnMenuSuperior";
-            this.btnMenuSuperior.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnMenuSuperior.OnHovercolor = System.Drawing.Color.Black;
-            this.btnMenuSuperior.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnMenuSuperior.selected = false;
-            this.btnMenuSuperior.Size = new System.Drawing.Size(1280, 35);
-            this.btnMenuSuperior.TabIndex = 14;
-            this.btnMenuSuperior.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnMenuSuperior.Textcolor = System.Drawing.Color.White;
-            this.btnMenuSuperior.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // iconMenu
-            // 
-            this.iconMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.animationMenuHide1.SetDecoration(this.iconMenu, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconMenu, BunifuAnimatorNS.DecorationType.None);
-            this.iconMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
-            this.iconMenu.IconColor = System.Drawing.Color.White;
-            this.iconMenu.IconSize = 28;
-            this.iconMenu.Location = new System.Drawing.Point(109, 0);
-            this.iconMenu.Name = "iconMenu";
-            this.iconMenu.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.iconMenu.Size = new System.Drawing.Size(28, 31);
-            this.iconMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconMenu.TabIndex = 0;
-            this.iconMenu.TabStop = false;
-            this.iconMenu.Visible = false;
-            this.iconMenu.Click += new System.EventHandler(this.iconMenu_Click);
-            // 
-            // iconMinimize
-            // 
-            this.iconMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.animationMenuHide1.SetDecoration(this.iconMinimize, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconMinimize, BunifuAnimatorNS.DecorationType.None);
-            this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconMinimize.IconColor = System.Drawing.Color.White;
-            this.iconMinimize.IconSize = 29;
-            this.iconMinimize.Location = new System.Drawing.Point(1178, 4);
-            this.iconMinimize.Name = "iconMinimize";
-            this.iconMinimize.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.iconMinimize.Size = new System.Drawing.Size(29, 29);
-            this.iconMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconMinimize.TabIndex = 4;
-            this.iconMinimize.TabStop = false;
-            this.iconMinimize.Click += new System.EventHandler(this.iconMinimize_Click);
-            // 
-            // iconMaximize
-            // 
-            this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.animationMenuHide1.SetDecoration(this.iconMaximize, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconMaximize, BunifuAnimatorNS.DecorationType.None);
-            this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.iconMaximize.IconColor = System.Drawing.Color.White;
-            this.iconMaximize.IconSize = 29;
-            this.iconMaximize.Location = new System.Drawing.Point(1213, 4);
-            this.iconMaximize.Name = "iconMaximize";
-            this.iconMaximize.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.iconMaximize.Size = new System.Drawing.Size(29, 29);
-            this.iconMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconMaximize.TabIndex = 3;
-            this.iconMaximize.TabStop = false;
-            this.iconMaximize.Click += new System.EventHandler(this.iconMaximize_Click);
-            // 
-            // iconClose
-            // 
-            this.iconClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.animationMenuHide1.SetDecoration(this.iconClose, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconClose, BunifuAnimatorNS.DecorationType.None);
-            this.iconClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.iconClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.iconClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.iconClose.IconSize = 29;
-            this.iconClose.Location = new System.Drawing.Point(1248, 4);
-            this.iconClose.Name = "iconClose";
-            this.iconClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.iconClose.Size = new System.Drawing.Size(29, 29);
-            this.iconClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconClose.TabIndex = 2;
-            this.iconClose.TabStop = false;
-            this.iconClose.Click += new System.EventHandler(this.iconClose_Click);
-            // 
-            // imgbuttonTitulo
-            // 
-            this.imgbuttonTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.animationMenuHide1.SetDecoration(this.imgbuttonTitulo, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.imgbuttonTitulo, BunifuAnimatorNS.DecorationType.None);
-            this.imgbuttonTitulo.Image = ((System.Drawing.Image)(resources.GetObject("imgbuttonTitulo.Image")));
-            this.imgbuttonTitulo.ImageActive = null;
-            this.imgbuttonTitulo.Location = new System.Drawing.Point(547, 3);
-            this.imgbuttonTitulo.Name = "imgbuttonTitulo";
-            this.imgbuttonTitulo.Size = new System.Drawing.Size(194, 31);
-            this.imgbuttonTitulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgbuttonTitulo.TabIndex = 8;
-            this.imgbuttonTitulo.TabStop = false;
-            this.imgbuttonTitulo.Zoom = 10;
-            this.imgbuttonTitulo.Click += new System.EventHandler(this.imgbuttonTitulo_Click);
-            // 
-            // iconRestaure
-            // 
-            this.iconRestaure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconRestaure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.animationMenuHide1.SetDecoration(this.iconRestaure, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconRestaure, BunifuAnimatorNS.DecorationType.None);
-            this.iconRestaure.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
-            this.iconRestaure.IconColor = System.Drawing.Color.White;
-            this.iconRestaure.IconSize = 29;
-            this.iconRestaure.Location = new System.Drawing.Point(1213, 0);
-            this.iconRestaure.Name = "iconRestaure";
-            this.iconRestaure.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.iconRestaure.Size = new System.Drawing.Size(29, 29);
-            this.iconRestaure.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconRestaure.TabIndex = 5;
-            this.iconRestaure.TabStop = false;
-            this.iconRestaure.Click += new System.EventHandler(this.iconRestaure_Click);
-            // 
             // form_StandBy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1207,9 +1208,17 @@
             this.Name = "form_StandBy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StandBy System";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_StandBy_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_StandBy_KeyDown);
             this.panelTopStandBy.ResumeLayout(false);
             this.panelTopStandBy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgbuttonTitulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconRestaure)).EndInit();
+            this.panelMenu.ResumeLayout(false);
             this.buniCardsMensais.ResumeLayout(false);
             this.buniCardsMensais.PerformLayout();
             this.buniCardsBotoes.ResumeLayout(false);
@@ -1219,18 +1228,11 @@
             this.bunifuCards4.ResumeLayout(false);
             this.buniCardsCores.ResumeLayout(false);
             this.buniCardsCores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnResetarCor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMudarCor)).EndInit();
             this.panelCentral.ResumeLayout(false);
             this.buniCardSemanais.ResumeLayout(false);
             this.buniCardSemanais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnResetarCor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMudarCor)).EndInit();
-            this.panelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconMaximize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgbuttonTitulo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconRestaure)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,6 +28,14 @@ namespace PFC___StandBy_CSharp.Forms
         {
             menu.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             submenuAdicionarNovo.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnSamsung.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnIphone.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnAlcatel.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnAsus.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnXiaomi.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnLenovo.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnMotorola.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnLG.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         public void PreencherTabela(string _marca)

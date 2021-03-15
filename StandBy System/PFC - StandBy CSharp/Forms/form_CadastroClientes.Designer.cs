@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.chkSemCPF = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.txtTelefoneCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtNomeCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtCPFCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -60,6 +62,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.bunifuCustomLabel4);
+            this.panel1.Controls.Add(this.chkSemCPF);
             this.panel1.Controls.Add(this.txtTelefoneCliente);
             this.panel1.Controls.Add(this.txtNomeCliente);
             this.panel1.Controls.Add(this.txtCPFCliente);
@@ -74,6 +78,75 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1081, 665);
             this.panel1.TabIndex = 1;
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Lavender;
+            this.bunifuCustomLabel4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(846, 144);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(55, 21);
+            this.bunifuCustomLabel4.TabIndex = 34;
+            this.bunifuCustomLabel4.Text = "SEM CPF";
+            this.bunifuCustomLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // chkSemCPF
+            // 
+            this.chkSemCPF.AllowBindingControlAnimation = true;
+            this.chkSemCPF.AllowBindingControlColorChanges = false;
+            this.chkSemCPF.AllowBindingControlLocation = true;
+            this.chkSemCPF.AllowCheckBoxAnimation = false;
+            this.chkSemCPF.AllowCheckmarkAnimation = true;
+            this.chkSemCPF.AllowOnHoverStates = true;
+            this.chkSemCPF.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.chkSemCPF.AutoCheck = true;
+            this.chkSemCPF.BackColor = System.Drawing.Color.Transparent;
+            this.chkSemCPF.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkSemCPF.BackgroundImage")));
+            this.chkSemCPF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chkSemCPF.BindingControl = null;
+            this.chkSemCPF.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.chkSemCPF.Checked = false;
+            this.chkSemCPF.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.chkSemCPF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkSemCPF.CustomCheckmarkImage = null;
+            this.chkSemCPF.Location = new System.Drawing.Point(822, 143);
+            this.chkSemCPF.MinimumSize = new System.Drawing.Size(17, 17);
+            this.chkSemCPF.Name = "chkSemCPF";
+            this.chkSemCPF.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.chkSemCPF.OnCheck.BorderRadius = 2;
+            this.chkSemCPF.OnCheck.BorderThickness = 2;
+            this.chkSemCPF.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.chkSemCPF.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.chkSemCPF.OnCheck.CheckmarkThickness = 2;
+            this.chkSemCPF.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.chkSemCPF.OnDisable.BorderRadius = 2;
+            this.chkSemCPF.OnDisable.BorderThickness = 2;
+            this.chkSemCPF.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkSemCPF.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.chkSemCPF.OnDisable.CheckmarkThickness = 2;
+            this.chkSemCPF.OnHoverChecked.BorderColor = System.Drawing.Color.Silver;
+            this.chkSemCPF.OnHoverChecked.BorderRadius = 2;
+            this.chkSemCPF.OnHoverChecked.BorderThickness = 2;
+            this.chkSemCPF.OnHoverChecked.CheckBoxColor = System.Drawing.Color.Silver;
+            this.chkSemCPF.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.chkSemCPF.OnHoverChecked.CheckmarkThickness = 2;
+            this.chkSemCPF.OnHoverUnchecked.BorderColor = System.Drawing.Color.Silver;
+            this.chkSemCPF.OnHoverUnchecked.BorderRadius = 2;
+            this.chkSemCPF.OnHoverUnchecked.BorderThickness = 2;
+            this.chkSemCPF.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkSemCPF.OnUncheck.BorderColor = System.Drawing.Color.White;
+            this.chkSemCPF.OnUncheck.BorderRadius = 2;
+            this.chkSemCPF.OnUncheck.BorderThickness = 2;
+            this.chkSemCPF.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.chkSemCPF.Size = new System.Drawing.Size(21, 21);
+            this.chkSemCPF.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.chkSemCPF.TabIndex = 33;
+            this.chkSemCPF.ThreeState = false;
+            this.chkSemCPF.ToolTipText = null;
+            this.chkSemCPF.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkSemCPF_CheckedChanged);
             // 
             // txtTelefoneCliente
             // 
@@ -309,6 +382,7 @@
             this.table_Clientes.Size = new System.Drawing.Size(542, 339);
             this.table_Clientes.TabIndex = 0;
             this.table_Clientes.TabStop = false;
+            this.table_Clientes.DoubleClick += new System.EventHandler(this.table_Clientes_DoubleClick);
             // 
             // cl_id
             // 
@@ -410,5 +484,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Defeito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Situacao;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private Bunifu.UI.WinForms.BunifuCheckBox chkSemCPF;
     }
 }

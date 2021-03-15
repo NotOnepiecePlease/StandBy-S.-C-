@@ -46,7 +46,7 @@
             // 
             this.btnPastaPadrao.AnimationHoverSpeed = 0.07F;
             this.btnPastaPadrao.AnimationSpeed = 0.03F;
-            this.btnPastaPadrao.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnPastaPadrao.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.btnPastaPadrao.BorderColor = System.Drawing.Color.Black;
             this.btnPastaPadrao.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnPastaPadrao.CheckedBorderColor = System.Drawing.Color.Black;
@@ -103,7 +103,7 @@
             // 
             this.btnBuscarPasta.AnimationHoverSpeed = 0.07F;
             this.btnBuscarPasta.AnimationSpeed = 0.03F;
-            this.btnBuscarPasta.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnBuscarPasta.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.btnBuscarPasta.BorderColor = System.Drawing.Color.Black;
             this.btnBuscarPasta.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnBuscarPasta.CheckedBorderColor = System.Drawing.Color.Black;

@@ -157,6 +157,7 @@
             this.txtTelefone.TabIndex = 4;
             this.txtTelefone.Text = "71992855223";
             this.txtTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTelefone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 
             // iconCPF
             // 
@@ -185,12 +186,13 @@
             this.txtCpf.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtCpf.Location = new System.Drawing.Point(101, 124);
-            this.txtCpf.MaxLength = 11;
+            this.txtCpf.MaxLength = 14;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(205, 22);
             this.txtCpf.TabIndex = 4;
             this.txtCpf.Text = "071.548.258-96";
             this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCpf.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCpf_KeyDown);
             // 
             // iconCliente
             // 
@@ -215,6 +217,7 @@
             this.txtNomeCliente.TabIndex = 1;
             this.txtNomeCliente.Text = "Adriano Andrade";
             this.txtNomeCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNomeCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeCliente_KeyDown);
             // 
             // gunaDragControl1
             // 

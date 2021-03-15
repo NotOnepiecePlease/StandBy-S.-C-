@@ -18,7 +18,7 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
 
             try
             {
-                if (!webClient.DownloadString("https://pastebin.com/raw/ibWAkD4c").Contains("2.0.0"))
+                if (!webClient.DownloadString("https://pastebin.com/raw/ibWAkD4c").Contains("2.2.5"))
                 {
                     if (MessageBox.Show("Existe uma nova versão do sistema StandBy,\ndeseja atualizar o sistema agora?",
                         "Nova Atualização", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
@@ -26,14 +26,19 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
                         {
                             Process.Start("SBAutoUpdate.exe");
                             Application.Exit();
+                            //return true;
                         }
                 }
+                else
+                {
+                    //return false;
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("Nao foi possivel estabelecer uma conexao para verificar a versão do sistema\n\nErro: "+ex, "Falha na Verificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            //return false;
         }
     }
 }

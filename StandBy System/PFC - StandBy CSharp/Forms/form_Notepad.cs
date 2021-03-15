@@ -16,11 +16,13 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_Notepad : Form
     {
         int richTextFoiAlterado;
+        int[] corGeral = { 0, 0, 0 };
         CriarNovoDocumento newNote = new CriarNovoDocumento();
         SalvarDocumento saveNote = new SalvarDocumento();
-        public form_Notepad()
+        public form_Notepad(int[] _corRgb)
         {
             InitializeComponent();
+            corGeral = _corRgb;
             richTextBox1.BackColor = Settings.Default.notepad_CorFundo;
             richTextBox1.Font = Settings.Default.notepad_FonteStyle;
             richTextBox1.ForeColor = Settings.Default.notepad_FonteColor;
@@ -74,7 +76,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            form_Notepad_Abrir f_notepad = new form_Notepad_Abrir(this);
+            form_Notepad_Abrir f_notepad = new form_Notepad_Abrir(this, corGeral);
             f_notepad.ShowDialog();
         }
 

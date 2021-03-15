@@ -33,16 +33,26 @@ namespace PFC___StandBy_CSharp.Forms
             //lblIDServico.Visible = false;
             lblNomeCliente.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             lblServico.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            panelGarantia.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             btnConfirmar.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
+        }
+        public void CentralizarLabels()
+        {
+            lblAparelho.Left = (this.Width / 2) - (lblAparelho.Width / 2);
+            lblDataInicial.Left = (this.Width / 2) - (lblDataInicial.Width / 2);
+            lblDataFinal.Left = (this.Width / 2) - (lblDataFinal.Width / 2);
+            lblNomeCliente.Left = (this.Width / 2) - (lblNomeCliente.Width / 2);
+            lblServico.Left = (this.Width / 2) - (lblServico.Width / 2);
+            lblDiasDeGarantia.Left = (this.Width / 2) - (lblDiasDeGarantia.Width / 2);
         }
         public void EsconderComponentes()
         {
             lblAparelho.Visible = false;
             lblDataFinal.Visible = false;
             lblDataInicial.Visible = false;
-            lblDiasRestantes.Visible = false;
+            lblDiasDeGarantia.Visible = false;
             lblIDServico.Visible = false;
             lblNomeCliente.Visible = false;
             lblServico.Visible = false;
@@ -55,15 +65,6 @@ namespace PFC___StandBy_CSharp.Forms
             gunaLabel6.Visible = false;
         }
 
-        public void CentralizarLabels()
-        {
-            lblAparelho.Left = (this.Width / 2) - (lblAparelho.Width / 2);
-            lblDataInicial.Left = (this.Width / 2) - (lblDataInicial.Width / 2);
-            lblDataFinal.Left = (this.Width / 2) - (lblDataFinal.Width / 2);
-            lblNomeCliente.Left = (this.Width / 2) - (lblNomeCliente.Width / 2);
-            lblServico.Left = (this.Width / 2) - (lblServico.Width / 2);
-            lblDiasRestantes.Left = (this.Width / 2) - (lblDiasRestantes.Width / 2);
-        }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {

@@ -28,6 +28,40 @@ namespace PFC___StandBy_CSharp.Forms
             InitializeComponent();
         }
 
+        public bool contemLetras(string texto)
+        {
+            if (texto.Where(c => char.IsLetter(c)).Count() > 0)
+                return true;
+            else
+                return false;
+        }
+
+        private void EditarCliente()
+        {
+            if (contemLetras(txtCpf.Text))
+            {
+                //string CpfSemPontos = txtCpf.Text.ToString().Replace(".", "").Replace("-", "");
+               // long cpf = Convert.ToInt64(CpfSemPontos);
+                
+                //string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
+                int id = int.Parse(lblID.Text);
+                ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, txtCpf.Text);
+                cadCliente.refreshTable();
+                this.Close();
+            }
+            else
+            {
+                string CpfSemPontos = txtCpf.Text.ToString().Replace(".", "").Replace("-", "");
+                long cpf = Convert.ToInt64(CpfSemPontos);
+                // long cpf = Convert.ToInt64(txtCpf.Text);
+                string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
+                int id = int.Parse(lblID.Text);
+                ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CPFformatado);
+                cadCliente.refreshTable();
+                this.Close();
+            }
+            
+        }
         public void MudarCores()
         {
             cardFundo.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -56,12 +90,31 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            long cpf = Convert.ToInt64(txtCpf.Text);
-            string CPFformatado = String.Format(@"{0:\000\.000\.000\-00}", cpf);
-            int id = int.Parse(lblID.Text);
-            ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CPFformatado);
-            cadCliente.refreshTable();
-            this.Close();
+            EditarCliente();
+        }
+
+        private void txtCpf_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EditarCliente();
+            }
+        }
+
+        private void txtTelefone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EditarCliente();
+            }
+        }
+
+        private void txtNomeCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EditarCliente();
+            }
         }
     }
 }

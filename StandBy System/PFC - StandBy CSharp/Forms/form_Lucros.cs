@@ -1,16 +1,10 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -39,8 +33,9 @@ namespace PFC___StandBy_CSharp.Forms
         public void MudarCores()
         {
             btnAddGastos.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnLucroUltimos30Dias.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             circle1.ProgressColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            circle2.ProgressColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //circle2.ProgressColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             circle3.ProgressColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             circle4.ProgressColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             checkGastos.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -67,12 +62,12 @@ namespace PFC___StandBy_CSharp.Forms
                 if (checkGastos.Checked == true)
                 {
                     lblGastos.Text = "Exibindo Gastos Temp";
-                    tab_Gastos.PreencherEntreDatas(tabelaGastos, datep1, datep2, 1);
+                    tab_Gastos.PreencherGastosTotais(tabelaGastos, datep1, datep2, 1);
                 }
                 else
                 {
                     lblGastos.Text = "Exibindo Gastos Reais";
-                    tab_Gastos.PreencherEntreDatas(tabelaGastos, datep1, datep2, 0);
+                    tab_Gastos.PreencherGastosTotais(tabelaGastos, datep1, datep2, 0);
                 }
                 tab_Lucros.Preencher(tabelaLucros, datep1, datep2, lblLucro);
 
@@ -84,7 +79,7 @@ namespace PFC___StandBy_CSharp.Forms
 
                 //Começa o trabalho com threads
                 circle1.Visible = false;
-                circle2.Visible = false;
+                //circle2.Visible = false;
                 circle3.Visible = false;
                 circle4.Visible = false;
 
@@ -94,8 +89,8 @@ namespace PFC___StandBy_CSharp.Forms
                 circle1.animated = true;
                 backWork1.RunWorkerAsync();
 
-                circle2.animated = true;
-                backWork2.RunWorkerAsync();
+                //circle2.animated = true;
+                //backWork2.RunWorkerAsync();
 
                 circle3.animated = true;
                 backWork3.RunWorkerAsync();
@@ -107,14 +102,14 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void backWork1_DoWork(object sender, DoWorkEventArgs e)
         {
-            lblValorServico.Location = new Point(341, 94);
-            lblValorServico.Text = "Carregando...";
+            lblLucroLiquido.Location = new Point(681, 86);
+            lblLucroLiquido.Text = "Carregando...";
 
             animateCircle1.ShowSync(circle1);
             circle1.Visible = true;
 
-            animateCircle1.ShowSync(lblValorServico);
-            lblValorServico.Visible = true;
+            animateCircle1.ShowSync(lblLucroLiquido);
+            lblLucroLiquido.Visible = true;
 
             animateCircle1.ShowSync(lblDesc1);
             lblDesc1.Visible = true;
@@ -132,84 +127,87 @@ namespace PFC___StandBy_CSharp.Forms
         }
         private void backWork1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            decimal valorDecimal = Convert.ToDecimal(tab_Lucros.getServicos().ToString("0.00"));
-            lblValorServico.Text = valorDecimal.ToString();
+            //decimal valorDecimal = Convert.ToDecimal(tab_Lucros.getServicos().ToString("0.00"));
+            decimal valorGastos = Convert.ToDecimal(tab_Gastos.getGastos().ToString("0.00"));
+            decimal valorLucrosBruto = Convert.ToDecimal(tab_Lucros.getLucros().ToString("0.00"));
+            decimal valorLucroLiquido = valorLucrosBruto - valorGastos;
+            lblLucroLiquido.Text = valorLucroLiquido.ToString();
             //MessageBox.Show(valorDecimal.ToString("0.00"));
-            if (Convert.ToDecimal(lblValorServico.Text) <= 0)
+            if (Convert.ToDecimal(lblLucroLiquido.Text) <= 0)
             {
-                lblValorServico.Text = "00.00";
-                lblValorServico.Location = new Point(377, 94);
+                lblLucroLiquido.Text = "00.00";
+                lblLucroLiquido.Location = new Point(720, 86);
             }
-            decimal valor = Convert.ToDecimal(lblValorServico.Text);
+            decimal valor = Convert.ToDecimal(lblLucroLiquido.Text);
             if (valor > 99.99m && valor < 999.99m)
             {
-                lblValorServico.Location = new Point(372, 94);
+                lblLucroLiquido.Location = new Point(715, 86);
             }
             else if (valor > 999.99m && valor < 9999.99m)
             {
-                lblValorServico.Location = new Point(363, 94);
-                lblValorServico.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
+                lblLucroLiquido.Location = new Point(709, 86);
+                lblLucroLiquido.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorLucroLiquido);
             }
             else if (valor > 9999.99m)
             {
-                lblValorServico.Location = new Point(358, 94);
-                lblValorServico.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
+                lblLucroLiquido.Location = new Point(704, 86);
+                lblLucroLiquido.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorLucroLiquido);
             }
             circle1.animated = false;
         }
 
         private void backWork2_DoWork(object sender, DoWorkEventArgs e)
         {
-            lblValorPeca.Location = new Point(581, 94);
-            lblValorPeca.Text = "Calculando...";
+            //lblValorPeca.Location = new Point(581, 94);
+            //lblValorPeca.Text = "Calculando...";
 
-            animateCircle2.ShowSync(circle2);
-            circle2.Visible = true;
+            //animateCircle2.ShowSync(circle2);
+            //circle2.Visible = true;
 
-            animateCircle2.ShowSync(lblValorPeca);
-            lblValorPeca.Visible = true;
+            //animateCircle2.ShowSync(lblValorPeca);
+            //lblValorPeca.Visible = true;
 
-            animateCircle2.ShowSync(lblDesc2);
-            lblDesc2.Visible = true;
+            //animateCircle2.ShowSync(lblDesc2);
+            //lblDesc2.Visible = true;
 
-            for (int i = 0; i <= 100; i++)
-            {
-                circle2.Value = i;
-                Thread.Sleep(20);
-            }
+            //for (int i = 0; i <= 100; i++)
+            //{
+            //    circle2.Value = i;
+            //    Thread.Sleep(20);
+            //}
         }
 
         private void backWork2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            decimal valorDecimal = Convert.ToDecimal(tab_Lucros.getPecas().ToString("0.00"));
-            lblValorPeca.Text = valorDecimal.ToString();
-            if (Convert.ToDecimal(lblValorPeca.Text) <= 0)
-            {
-                lblValorPeca.Text = "00.00";
-                lblValorPeca.Location = new Point(617, 94);
-            }
-            decimal valor = Convert.ToDecimal(lblValorPeca.Text);
-            if (valor > 99.99m && valor < 999.99m)
-            {
-                lblValorPeca.Location = new Point(612, 94);
-            }
-            else if (valor > 999.99m && valor < 9999.99m)
-            {
-                lblValorPeca.Location = new Point(603, 94);
-                lblValorPeca.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
-            }
-            else if (valor > 9999.99m)
-            {
-                lblValorPeca.Location = new Point(598, 94);
-                lblValorPeca.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
-            }
-            lblDesc2.Text = "Peças Totais";
-            circle2.animated = false;
+            //decimal valorDecimal = Convert.ToDecimal(tab_Lucros.getPecas().ToString("0.00"));
+            //lblValorPeca.Text = valorDecimal.ToString();
+            //if (Convert.ToDecimal(lblValorPeca.Text) <= 0)
+            //{
+            //    lblValorPeca.Text = "00.00";
+            //    lblValorPeca.Location = new Point(617, 94);
+            //}
+            //decimal valor = Convert.ToDecimal(lblValorPeca.Text);
+            //if (valor > 99.99m && valor < 999.99m)
+            //{
+            //    lblValorPeca.Location = new Point(612, 94);
+            //}
+            //else if (valor > 999.99m && valor < 9999.99m)
+            //{
+            //    lblValorPeca.Location = new Point(603, 94);
+            //    lblValorPeca.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
+            //}
+            //else if (valor > 9999.99m)
+            //{
+            //    lblValorPeca.Location = new Point(598, 94);
+            //    lblValorPeca.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
+            //}
+            //lblDesc2.Text = "Peças Totais";
+            //circle2.animated = false;
         }
 
         private void backWork3_DoWork(object sender, DoWorkEventArgs e)
         {
-            lblLucro.Location = new Point(819, 94);
+            lblLucro.Location = new Point(456, 86);
             lblLucro.Text = "Carregando...";
             //Animando a circleProgressBar
             animateCircle3.ShowSync(circle3);
@@ -237,22 +235,22 @@ namespace PFC___StandBy_CSharp.Forms
             if (Convert.ToDecimal(lblLucro.Text) <= 0)
             {
                 lblLucro.Text = "00.00";
-                lblLucro.Location = new Point(855, 94);
+                lblLucro.Location = new Point(495, 86);
             }
             //lblLucro.Text = (r3.NextDouble() * 1000).ToString("0.00");
             decimal valor = Convert.ToDecimal(lblLucro.Text);
             if (valor > 99.99m && valor < 999.99m)
             {
-                lblLucro.Location = new Point(850, 94);
+                lblLucro.Location = new Point(490, 86);
             }
             else if (valor > 999.99m && valor < 9999.99m)
             {
-                lblLucro.Location = new Point(841, 94);
+                lblLucro.Location = new Point(484, 86);
                 lblLucro.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
             }
             else if (valor > 9999.99m)
             {
-                lblLucro.Location = new Point(836, 94);
+                lblLucro.Location = new Point(479, 86);
                 lblLucro.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
             }
             //lblDesc3.Text = "Lucro Total";
@@ -261,7 +259,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void backWork4_DoWork(object sender, DoWorkEventArgs e)
         {
-            lblGastosValor.Location = new Point(119, 94);
+            lblGastosValor.Location = new Point(231, 86);
             lblGastosValor.Text = "Carregando...";
             //Animando a circleProgressBar
             animateCircle4.ShowSync(circle4);
@@ -289,21 +287,21 @@ namespace PFC___StandBy_CSharp.Forms
             if (Convert.ToDecimal(lblGastosValor.Text) <= 0)
             {
                 lblGastosValor.Text = "00.00";
-                lblGastosValor.Location = new Point(155, 94);
+                lblGastosValor.Location = new Point(270, 86);
             }
             decimal valor = Convert.ToDecimal(lblGastosValor.Text);
             if (valor > 99.99m && valor < 999.99m)
             {
-                lblGastosValor.Location = new Point(150, 94);
+                lblGastosValor.Location = new Point(265, 86);
             }
             else if (valor > 999.99m && valor < 9999.99m)
             {
-                lblGastosValor.Location = new Point(141, 94);
+                lblGastosValor.Location = new Point(259, 86);
                 lblGastosValor.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
             }
             else if (valor > 9999.99m)
             {
-                lblGastosValor.Location = new Point(136, 94);
+                lblGastosValor.Location = new Point(254, 86);
                 lblGastosValor.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
             }
             //lblDesc4.Text = "Lucro Total";
@@ -320,9 +318,8 @@ namespace PFC___StandBy_CSharp.Forms
                 menu.Items[1].Visible = true;
                 lblGastos.Text = "Exibindo Gastos Temp";
                 PegarDatasDatePicker();
-                tab_Gastos.PreencherEntreDatas(tabelaGastos, datep1, datep2, 1);
-                //tab_Gastos.Preencher(tabelaGastos, 1);
-                //tabelaGastos.Columns[0].Visible = false;
+                tab_Gastos.PreencherGastosEntreDatas(tabelaGastos, datep1, datep2, 1);
+                //tab_Gastos.PreencherGastosTotais(tabelaGastos, datep1, datep2, 1);
             }
             else
             {
@@ -332,9 +329,8 @@ namespace PFC___StandBy_CSharp.Forms
                 menu.Items[1].Visible = false;
                 lblGastos.Text = "Exibindo Gastos Reais";
                 PegarDatasDatePicker();
-                tab_Gastos.PreencherEntreDatas(tabelaGastos, datep1, datep2, 0);
-                //tab_Gastos.Preencher(tabelaGastos, 0);
-                //tabelaGastos.Columns[0].Visible = false;
+                tab_Gastos.PreencherGastosEntreDatas(tabelaGastos, datep1, datep2, 0);
+                //tab_Gastos.PreencherGastosTotais(tabelaGastos, datep1, datep2, 0);
             }
         }
 
@@ -343,12 +339,12 @@ namespace PFC___StandBy_CSharp.Forms
             if (checkGastos.Checked == true)
             {
                 PegarDatasDatePicker();
-                tab_Gastos.PreencherEntreDatas(tabelaGastos, datep1, datep2, 1);
+                tab_Gastos.PreencherGastosTotais(tabelaGastos, datep1, datep2, 1);
             }
             else
             {
                 PegarDatasDatePicker();
-                tab_Gastos.PreencherEntreDatas(tabelaGastos, datep1, datep2, 0);
+                tab_Gastos.PreencherGastosTotais(tabelaGastos, datep1, datep2, 0);
             }
         }
 
@@ -460,6 +456,94 @@ namespace PFC___StandBy_CSharp.Forms
             else
             {
             }
+        }
+
+        private void btnLucroUltimos30Dias_Click(object sender, EventArgs e)
+        {
+            LucroUltimos30Dias();
+        }
+
+        public void LucroUltimos30Dias()
+        {
+            //If pra impedir do usuario interromper o thread.
+            if (!backWork1.IsBusy && !backWork2.IsBusy && !backWork3.IsBusy)
+            {
+                PegarDatasDatePicker();
+                lblSemDados.Visible = false;
+
+                //If para saber com qual dado preencher a table gastos
+                //se vai ser gastos reais ou temporarios
+                if (checkGastos.Checked == true)
+                {
+                    lblGastos.Text = "Exibindo Gastos Temp";
+                    tab_Gastos.PreencherGastosEntreDatas(tabelaGastos, datep1, datep2, 1);
+                }
+                else
+                {
+                    lblGastos.Text = "Exibindo Gastos Reais";
+                    tab_Gastos.PreencherGastosEntreDatas(tabelaGastos, datep1, datep2, 0);
+                }
+                //tab_Lucros.Preencher(tabelaLucros, datep1, datep2, lblLucro);
+                tab_Lucros.PreencherLucroMesAtual(tabelaLucros, lblLucro);
+
+                //If pra mostrar a label "Nao existem dados"
+                if (tabelaLucros.RowCount == 0)
+                {
+                    lblSemDados.Visible = true;
+                }
+
+                //Começa o trabalho com threads
+                circle1.Visible = false;
+                //circle2.Visible = false;
+                circle3.Visible = false;
+                circle4.Visible = false;
+
+                panelResults.Visible = true;
+                Thread.Sleep(100);
+
+                circle1.animated = true;
+                backWork1.RunWorkerAsync();
+
+                //circle2.animated = true;
+                //backWork2.RunWorkerAsync();
+
+                circle3.animated = true;
+                backWork3.RunWorkerAsync();
+
+                circle4.animated = true;
+                backWork4.RunWorkerAsync();
+            }
+        }
+        private void panelResults_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void ExibirLucrosTela()
+        {
+            form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
+
+            editarServicos.lblIDservico.Text = tabelaLucros.SelectedCells[0].Value.ToString();
+            editarServicos.dtpDataEdit.Value = Convert.ToDateTime(tabelaLucros.SelectedCells[1].Value.ToString());
+            editarServicos.txtClienteNome.Text = tabelaLucros.SelectedCells[2].Value.ToString();
+            editarServicos.txtAparelhoEdit.Text = tabelaLucros.SelectedCells[3].Value.ToString();
+            editarServicos.txtDefeitoEdit.Text = tabelaLucros.SelectedCells[4].Value.ToString();
+            editarServicos.txtSituacaoEdit.Text = tabelaLucros.SelectedCells[5].Value.ToString();
+            editarServicos.txtServicoValorEdit.Text = tabelaLucros.SelectedCells[6].Value.ToString();
+            editarServicos.txtPecaValorEdit.Text = tabelaLucros.SelectedCells[7].Value.ToString();
+            editarServicos.txtLucroValorEdit.Text = tabelaLucros.SelectedCells[8].Value.ToString();
+            editarServicos.btnConcluirServico.Visible = false;
+            editarServicos.ShowDialog();
+            LucroUltimos30Dias();
+        }
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibirLucrosTela();
+        }
+
+        private void tabelaLucros_DoubleClick(object sender, EventArgs e)
+        {
+            ExibirLucrosTela();
         }
     }
 }

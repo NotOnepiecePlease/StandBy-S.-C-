@@ -23,7 +23,7 @@ namespace PFC___StandBy_CSharp.MsgBox
 
         public void AlterarServicoSucesso()
         {
-            MessageBox.Show("Serviço alterado com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Serviço salvo com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //form_ALERT message = new form_ALERT("Serviço alterado com sucesso!", form_ALERT.AlertType.Sucesso);
             //message.Show();
         }

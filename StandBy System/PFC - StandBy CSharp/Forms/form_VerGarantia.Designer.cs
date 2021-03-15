@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_VerGarantia));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblDiasRestantes = new Guna.UI.WinForms.GunaLabel();
+            this.lblSemGarantia = new Guna.UI.WinForms.GunaLabel();
+            this.lblDiasDeGarantia = new Guna.UI.WinForms.GunaLabel();
             this.lblIDServico = new Guna.UI.WinForms.GunaLabel();
             this.btnConfirmar = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lblDataFinal = new Guna.UI.WinForms.GunaLabel();
@@ -44,15 +45,17 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.lblSemGarantia = new Guna.UI.WinForms.GunaLabel();
+            this.lblDiasQueFaltam = new Guna.UI.WinForms.GunaLabel();
+            this.panelGarantia = new Guna.UI.WinForms.GunaLinePanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.lblDiasQueFaltam);
             this.panel1.Controls.Add(this.lblSemGarantia);
-            this.panel1.Controls.Add(this.lblDiasRestantes);
+            this.panel1.Controls.Add(this.lblDiasDeGarantia);
             this.panel1.Controls.Add(this.lblIDServico);
             this.panel1.Controls.Add(this.btnConfirmar);
             this.panel1.Controls.Add(this.lblDataFinal);
@@ -66,22 +69,34 @@
             this.panel1.Controls.Add(this.gunaLabel3);
             this.panel1.Controls.Add(this.gunaLabel2);
             this.panel1.Controls.Add(this.gunaLabel1);
+            this.panel1.Controls.Add(this.panelGarantia);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(342, 516);
             this.panel1.TabIndex = 0;
             // 
-            // lblDiasRestantes
+            // lblSemGarantia
             // 
-            this.lblDiasRestantes.AutoSize = true;
-            this.lblDiasRestantes.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiasRestantes.ForeColor = System.Drawing.Color.Lime;
-            this.lblDiasRestantes.Location = new System.Drawing.Point(109, 411);
-            this.lblDiasRestantes.Name = "lblDiasRestantes";
-            this.lblDiasRestantes.Size = new System.Drawing.Size(41, 20);
-            this.lblDiasRestantes.TabIndex = 13;
-            this.lblDiasRestantes.Text = "teste";
+            this.lblSemGarantia.AutoSize = true;
+            this.lblSemGarantia.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSemGarantia.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSemGarantia.Location = new System.Drawing.Point(39, 209);
+            this.lblSemGarantia.Name = "lblSemGarantia";
+            this.lblSemGarantia.Size = new System.Drawing.Size(265, 47);
+            this.lblSemGarantia.TabIndex = 14;
+            this.lblSemGarantia.Text = "SEM GARANTIA";
+            // 
+            // lblDiasDeGarantia
+            // 
+            this.lblDiasDeGarantia.AutoSize = true;
+            this.lblDiasDeGarantia.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiasDeGarantia.ForeColor = System.Drawing.Color.Lime;
+            this.lblDiasDeGarantia.Location = new System.Drawing.Point(111, 404);
+            this.lblDiasDeGarantia.Name = "lblDiasDeGarantia";
+            this.lblDiasDeGarantia.Size = new System.Drawing.Size(41, 20);
+            this.lblDiasDeGarantia.TabIndex = 13;
+            this.lblDiasDeGarantia.Text = "teste";
             // 
             // lblIDServico
             // 
@@ -113,7 +128,7 @@
             this.btnConfirmar.Image = null;
             this.btnConfirmar.ImageSize = new System.Drawing.Size(20, 20);
             this.btnConfirmar.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnConfirmar.Location = new System.Drawing.Point(81, 451);
+            this.btnConfirmar.Location = new System.Drawing.Point(81, 461);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnConfirmar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -248,16 +263,29 @@
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "Garantia StandBy";
             // 
-            // lblSemGarantia
+            // lblDiasQueFaltam
             // 
-            this.lblSemGarantia.AutoSize = true;
-            this.lblSemGarantia.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSemGarantia.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSemGarantia.Location = new System.Drawing.Point(39, 209);
-            this.lblSemGarantia.Name = "lblSemGarantia";
-            this.lblSemGarantia.Size = new System.Drawing.Size(265, 47);
-            this.lblSemGarantia.TabIndex = 14;
-            this.lblSemGarantia.Text = "SEM GARANTIA";
+            this.lblDiasQueFaltam.AutoSize = true;
+            this.lblDiasQueFaltam.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiasQueFaltam.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblDiasQueFaltam.Location = new System.Drawing.Point(111, 428);
+            this.lblDiasQueFaltam.Name = "lblDiasQueFaltam";
+            this.lblDiasQueFaltam.Size = new System.Drawing.Size(41, 20);
+            this.lblDiasQueFaltam.TabIndex = 15;
+            this.lblDiasQueFaltam.Text = "teste";
+            // 
+            // panelGarantia
+            // 
+            this.panelGarantia.LineBottom = 3;
+            this.panelGarantia.LineColor = System.Drawing.Color.White;
+            this.panelGarantia.LineLeft = 3;
+            this.panelGarantia.LineRight = 3;
+            this.panelGarantia.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.panelGarantia.LineTop = 3;
+            this.panelGarantia.Location = new System.Drawing.Point(79, 400);
+            this.panelGarantia.Name = "panelGarantia";
+            this.panelGarantia.Size = new System.Drawing.Size(182, 53);
+            this.panelGarantia.TabIndex = 16;
             // 
             // form_VerGarantia
             // 
@@ -294,7 +322,9 @@
         public Guna.UI.WinForms.GunaLabel lblDataInicial;
         public Guna.UI.WinForms.GunaLabel lblDataFinal;
         public Guna.UI.WinForms.GunaLabel lblIDServico;
-        public Guna.UI.WinForms.GunaLabel lblDiasRestantes;
+        public Guna.UI.WinForms.GunaLabel lblDiasDeGarantia;
         public Guna.UI.WinForms.GunaLabel lblSemGarantia;
+        public Guna.UI.WinForms.GunaLabel lblDiasQueFaltam;
+        private Guna.UI.WinForms.GunaLinePanel panelGarantia;
     }
 }

@@ -61,6 +61,8 @@
             this.valorPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.previsao_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.existe_um_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,9 +70,13 @@
             this.arredondarComboboxCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.arredondarBotaoCadastrar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.arredondarBotaoPesquisarCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
+            this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.standbyDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standbyDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -383,6 +389,7 @@
             // 
             this.table_OrdensServicos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Empty;
             this.table_OrdensServicos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.table_OrdensServicos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -413,7 +420,9 @@
             this.valorServico,
             this.valorPeca,
             this.lucro,
-            this.servico});
+            this.servico,
+            this.previsao_entrega,
+            this.existe_um_prazo});
             this.table_OrdensServicos.ContextMenuStrip = this.contextMenuStrip1;
             this.table_OrdensServicos.DoubleBuffered = true;
             this.table_OrdensServicos.EnableHeadersVisualStyles = false;
@@ -435,15 +444,16 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_OrdensServicos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_OrdensServicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.table_OrdensServicos.Size = new System.Drawing.Size(1066, 420);
             this.table_OrdensServicos.TabIndex = 0;
             this.table_OrdensServicos.TabStop = false;
-            this.table_OrdensServicos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_OrdensServicos_CellDoubleClick);
+            this.table_OrdensServicos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.table_OrdensServicos_CellFormatting);
             this.table_OrdensServicos.DoubleClick += new System.EventHandler(this.table_OrdensServicos_DoubleClick);
+            this.table_OrdensServicos.MouseLeave += new System.EventHandler(this.table_OrdensServicos_MouseLeave);
             // 
             // idServico
             // 
@@ -540,6 +550,22 @@
             this.servico.ReadOnly = true;
             this.servico.Visible = false;
             // 
+            // previsao_entrega
+            // 
+            this.previsao_entrega.DataPropertyName = "sv_previsao_entrega";
+            this.previsao_entrega.HeaderText = "previsao_entrega";
+            this.previsao_entrega.Name = "previsao_entrega";
+            this.previsao_entrega.ReadOnly = true;
+            this.previsao_entrega.Visible = false;
+            // 
+            // existe_um_prazo
+            // 
+            this.existe_um_prazo.DataPropertyName = "sv_existe_um_prazo";
+            this.existe_um_prazo.HeaderText = "existe_um_prazo";
+            this.existe_um_prazo.Name = "existe_um_prazo";
+            this.existe_um_prazo.ReadOnly = true;
+            this.existe_um_prazo.Visible = false;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
@@ -584,6 +610,16 @@
             this.arredondarBotaoPesquisarCliente.ElipseRadius = 20;
             this.arredondarBotaoPesquisarCliente.TargetControl = this.btnPesquisarCliente;
             // 
+            // standbyDataSet
+            // 
+            this.standbyDataSet.DataSetName = "standbyDataSet";
+            this.standbyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // standbyDataSetBindingSource
+            // 
+            this.standbyDataSetBindingSource.DataSource = this.standbyDataSet;
+            this.standbyDataSetBindingSource.Position = 0;
+            // 
             // form_OrdensServ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,6 +635,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.standbyDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standbyDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -613,17 +651,22 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtAparelhoOrdens;
-        private System.Windows.Forms.ComboBox cmbClientes;
         public Bunifu.Framework.UI.BunifuCustomLabel lblSituacao;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtDefeitoOrdens;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSituacaoOrdens;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtSenhaOrdens;
         private Bunifu.Framework.UI.BunifuElipse arredondarTabelaServ;
         private Bunifu.Framework.UI.BunifuElipse arredondarComboboxCliente;
         private Bunifu.Framework.UI.BunifuElipse arredondarBotaoCadastrar;
         private Bunifu.Framework.UI.BunifuElipse arredondarBotaoPesquisarCliente;
         public Bunifu.Framework.UI.BunifuCustomDataGrid table_OrdensServicos;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
+        private standbyDataSet standbyDataSet;
+        private System.Windows.Forms.BindingSource standbyDataSetBindingSource;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtAparelhoOrdens;
+        public System.Windows.Forms.ComboBox cmbClientes;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtDefeitoOrdens;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtSituacaoOrdens;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtSenhaOrdens;
         private System.Windows.Forms.DataGridViewTextBoxColumn idServico;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
@@ -636,8 +679,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valorPeca;
         private System.Windows.Forms.DataGridViewTextBoxColumn lucro;
         private System.Windows.Forms.DataGridViewTextBoxColumn servico;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn previsao_entrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn existe_um_prazo;
     }
 }

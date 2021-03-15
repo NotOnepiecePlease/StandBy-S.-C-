@@ -25,7 +25,7 @@ namespace PFC___StandBy_CSharp.Dados
 
                 dr = cmd.ExecuteReader();
 
-                if(dr.HasRows == false)
+                if (dr.HasRows == false)
                 {
                     return false;
                 }
@@ -39,7 +39,7 @@ namespace PFC___StandBy_CSharp.Dados
         public bool VerificarExistenciaGarantia(int _fkServico)
         {
 
-            using(SqlConnection conexao = OpenConnection())
+            using (SqlConnection conexao = OpenConnection())
             {
                 SqlDataReader dr;
                 string query = "select * from tb_garantias where fk_servico_id = @fkServicoID";
@@ -52,6 +52,29 @@ namespace PFC___StandBy_CSharp.Dados
                 {
                     return true;
                 }
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool VerificarExistenciaCPF(string _cpfCliente)
+        {
+
+            using (SqlConnection conexao = OpenConnection())
+            {
+                SqlDataReader dr;
+                string query = "select * from tb_clientes where cl_cpf = @_cpf";
+
+                SqlCommand cmd = new SqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@_cpf", _cpfCliente);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    return true;
+                }
+                else
                 {
                     return false;
                 }

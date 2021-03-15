@@ -577,6 +577,10 @@
             this.bunifuDragControl1.TargetControl = this.panelDrag;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // form_WordNota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,8 +593,7 @@
             this.Name = "form_WordNota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_WordNota";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_WordNota_FormClosing);
-            this.Load += new System.EventHandler(this.form_WordNota_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.form_WordNota_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_WordNota_KeyDown);
             this.panelDrag.ResumeLayout(false);
             this.panelDrag.PerformLayout();

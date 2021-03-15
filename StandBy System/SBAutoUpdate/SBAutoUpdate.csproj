@@ -34,10 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\@Recursos-Frameworks\Bunifu Winforms 1.11.5.1 &amp; DataViz 1.1.1.5 Crack\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>C:\Users\adria\OneDrive\Documents\sistemadecobrancas-notebook\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\@Recursos-Frameworks\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\Guna.UI-Framework-Lib-master\Guna.UI_WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />

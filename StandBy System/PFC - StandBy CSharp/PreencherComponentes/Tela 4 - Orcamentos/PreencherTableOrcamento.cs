@@ -21,7 +21,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_4___Orcamentos
         {
             try
             {
-                SqlDataReader dr;
                 DataTable dataTable = new DataTable();
                 using (SqlConnection conexao = OpenConnection())
                 {

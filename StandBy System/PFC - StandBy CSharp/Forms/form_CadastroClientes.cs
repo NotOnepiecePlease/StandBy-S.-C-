@@ -49,6 +49,8 @@ namespace PFC___StandBy_CSharp.Forms
             btnCadastrarCliente.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             //table_Clientes.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             contextMenuStrip1.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkSemCPF.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkSemCPF.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void txtNomeCliente_Enter(object sender, EventArgs e)
@@ -136,16 +138,35 @@ namespace PFC___StandBy_CSharp.Forms
                 txtPesquisarCADCliente.Font = new Font(txtPesquisarCADCliente.Font, FontStyle.Italic);
                 txtPesquisarCADCliente.ForeColor = Color.Silver;
                 txtPesquisarCADCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                preencherClientes.Preencher(table_Clientes);
             }
         }
 
         private void btnCadastrarCliente_Click(object sender, EventArgs e)
         {
             //Verificando se o usuario nao deixou nada em branco
-            if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || string.IsNullOrWhiteSpace(txtCPFCliente.Text)
-                || txtNomeCliente.Text == "Nome do Cliente" || txtCPFCliente.Text == "CPF do Cliente")
+            //if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || string.IsNullOrWhiteSpace(txtCPFCliente.Text)
+            //    || txtNomeCliente.Text == "Nome do Cliente" || txtCPFCliente.Text == "CPF do Cliente")
+            if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || txtNomeCliente.Text == "Nome do Cliente")
             {
-                MessageBox.Show("Campos de nome ou cpf estão vazios, favor preencha-os", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campos de nome está vazio, favor preencha-o", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }else if (chkSemCPF.Checked == true)
+            {
+                //Pegar os dados dos campos
+                string nome = txtNomeCliente.Text.ToString();
+                //long cpf = Convert.ToInt64(txtCPFCliente.Text);
+                string tel = txtTelefoneCliente.Text.ToString();
+
+                //string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
+                //txt.Text = CPFFormatado;
+                if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone do Cliente"))
+                {
+                    id.InserirCliente(nome, "SEM CPF", "");
+                }
+                else
+                {
+                    id.InserirCliente(nome, "SEM CPF", tel);
+                }
             }
             else
             {
@@ -154,7 +175,7 @@ namespace PFC___StandBy_CSharp.Forms
                 long cpf = Convert.ToInt64(txtCPFCliente.Text);
                 string tel = txtTelefoneCliente.Text.ToString();
 
-                string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", cpf);
+                string CPFFormatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
                 //txt.Text = CPFFormatado;
                 if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone do Cliente"))
                 {
@@ -253,8 +274,15 @@ namespace PFC___StandBy_CSharp.Forms
                 //Pegar os dados dos campos
                 string nome = txtNomeCliente.Text.ToString();
                 long cpf = Convert.ToInt64(txtCPFCliente.Text);
-                string tel = txtTelefoneCliente.Text.ToString();
-
+                string tel;
+                if (txtTelefoneCliente.Text == "Telefone do Cliente")
+                {
+                    tel = null;
+                }
+                else
+                {
+                    tel = txtTelefoneCliente.Text.ToString();
+                }
                 string CPFFormatado = String.Format(@"{0:\000\.000\.000\-00}", cpf);
                 //txt.Text = CPFFormatado;
                 id.InserirCliente(nome, CPFFormatado, tel);
@@ -304,6 +332,34 @@ namespace PFC___StandBy_CSharp.Forms
             if (e.KeyCode == Keys.Enter)
             {
                 CadastrarNovoCliente();
+            }
+        }
+
+        private void table_Clientes_DoubleClick(object sender, EventArgs e)
+        {
+            form_CadastroClientes_Edit editarCliente = new form_CadastroClientes_Edit(this, corGeral);
+            //string cpfSemformatar = table_Clientes.SelectedCells[2].Value.ToString().Replace(".", "").Replace("-", "");
+            editarCliente.lblID.Text = table_Clientes.SelectedCells[0].Value.ToString();
+            editarCliente.txtNomeCliente.Text = table_Clientes.SelectedCells[1].Value.ToString();
+            editarCliente.txtCpf.Text = table_Clientes.SelectedCells[2].Value.ToString();//cpfSemformatar;
+            editarCliente.txtTelefone.Text = table_Clientes.SelectedCells[3].Value.ToString();
+            editarCliente.ShowDialog();
+            //refreshTable();
+        }
+
+        private void chkSemCPF_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkSemCPF.Checked == true)
+            {
+                txtCPFCliente.Enabled = false;
+                txtCPFCliente.LineIdleColor = Color.Gray;
+                txtCPFCliente.LineMouseHoverColor = Color.Gray;
+            }
+            else
+            {
+                txtCPFCliente.Enabled = true;
+                txtCPFCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                txtCPFCliente.LineMouseHoverColor = Color.Lavender;
             }
         }
     }

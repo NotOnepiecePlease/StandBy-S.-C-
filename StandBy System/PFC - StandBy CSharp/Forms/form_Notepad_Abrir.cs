@@ -16,18 +16,27 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_Notepad_Abrir : Form
     {
         string diretorioSave;
+        int[] corGeral = { 0, 0, 0 };
         form_Notepad f_Notepad;
-        public form_Notepad_Abrir(form_Notepad _notepadF)
+        public form_Notepad_Abrir(form_Notepad _notepadF, int[] _corRgb)
         {
             InitializeComponent();
             f_Notepad = _notepadF;
+            corGeral = _corRgb;
             //f_Notepad.richTextBox1.BackColor = Settings.Default.notepad_CorFundo;
             //f_Notepad.richTextBox1.Font = Settings.Default.notepad_FonteStyle;
             //f_Notepad.richTextBox1.ForeColor = Settings.Default.notepad_FonteColor;
+            MudarCores();
             diretorioSave = Settings.Default.diretorio_default_notepad;
             PreencherListBox(diretorioSave);
         }
 
+        private void MudarCores()
+        {
+            gunaPanel2.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnBuscarPasta.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnPastaPadrao.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+        }
         public void PreencherListBox(string diretorio)
         {
             var pasta = new DirectoryInfo(diretorio).Parent + @"\" + new DirectoryInfo(diretorio).Name;

@@ -44,28 +44,38 @@ namespace SBAutoUpdate
 
                 if (progress.Value == 50)
                 {
-                    var client = new WebClient();
-                    //Directory.Delete(@".\", true);
-                    File.Delete(@".\PFC - StandBy CSharp.exe");
-                    File.Delete(@".\Bunifu.Core.dll");
-                    File.Delete(@".\BunifuDataViz.dll");
-                    File.Delete(@".\BunifuDataViz.xml");
-                    File.Delete(@".\FontAwesome.Sharp.dll");
-                    File.Delete(@".\PFC - StandBy CSharp.exe.config");
-                    File.Delete(@".\PFC - StandBy CSharp.pdb");
-                    //Directory.CreateDirectory(@".\");
-                    client.DownloadFile("https://forum.brvipmodteam.ga/standbysystem/Update.zip", "Update.zip");
-                    string zipPath = @".\Update.zip";
-                    string extractPath = @".\";
-                    ZipFile.ExtractToDirectory(zipPath, extractPath);
-                    File.Delete(@".\Update.zip");
+                    try
+                    {
+                        var client = new WebClient();
+                        //Directory.Delete(@".\", true);
+                        File.Delete(@".\StandBy System.exe");
+                        //File.Delete(@".\Bunifu.Core.dll");
+                        File.Delete(@".\BunifuDataViz.dll");
+                        File.Delete(@".\BunifuDataViz.xml");
+                        File.Delete(@".\FontAwesome.Sharp.dll");
+                        File.Delete(@".\StandBy System.exe.config");
+                        File.Delete(@".\StandBy System.pdb");
+                        File.Delete(@".\Cupom fiscal.docx");
+                        //Directory.CreateDirectory(@".\");
+                        client.DownloadFile("https://forum.brvipmodteam.ga/standbysystem/Update.zip", "Update.zip");
+                        string zipPath = @".\Update.zip";
+                        string extractPath = @".\";
+                        ZipFile.ExtractToDirectory(zipPath, extractPath);
+                        File.Delete(@".\Update.zip");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("ERRO: \n\n" + ex);
+                    }
+                    
                 }
                 else if (progress.Value == 100)
                 {
                     if (MessageBox.Show("Atualizado com Sucesso!\nO StandBy System vai abrir automaticamente em alguns segundos...", 
                         "APROVEITE!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                     {
-                        Process.Start(@".\PFC - StandBy CSharp.exe");
+                        Process.Start(@".\StandBy System.exe");
                     }
                 }
             }

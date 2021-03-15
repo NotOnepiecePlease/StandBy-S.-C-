@@ -139,7 +139,8 @@ namespace PFC___StandBy_CSharp.Forms
                 verGarantia.lblAparelho.Text = table_ServicosConcluidos.SelectedCells[4].Value.ToString();
                 verGarantia.lblServico.Text = table_ServicosConcluidos.SelectedCells[11].Value.ToString();
                 verGarantia.lblSemGarantia.Visible = false;
-                bd.BuscarDiasGarantia(verGarantia.lblDataInicial, verGarantia.lblDataFinal, verGarantia.lblDiasRestantes, Convert.ToInt32(verGarantia.lblIDServico.Text));
+                bd.BuscarDiasGarantia(verGarantia.lblDataInicial, verGarantia.lblDataFinal, verGarantia.lblDiasDeGarantia, Convert.ToInt32(verGarantia.lblIDServico.Text));
+                bd.BuscarDiasFaltantesGarantia(verGarantia.lblDataInicial, verGarantia.lblDataFinal, verGarantia.lblDiasQueFaltam, Convert.ToInt32(verGarantia.lblIDServico.Text));
                 verGarantia.CentralizarLabels();
                 verGarantia.ShowDialog();
             }

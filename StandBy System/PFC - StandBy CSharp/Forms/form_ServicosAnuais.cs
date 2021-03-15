@@ -43,6 +43,7 @@ namespace PFC___StandBy_CSharp.Forms
             lblOut.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             lblNov.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             lblDez.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnfechar.BaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelLinhaTopo.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 

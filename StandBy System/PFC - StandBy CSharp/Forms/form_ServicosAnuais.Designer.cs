@@ -45,7 +45,7 @@
             this.lblJan = new Guna.UI.WinForms.GunaLabel();
             this.bunifuDataViz1 = new Bunifu.DataViz.WinForms.BunifuDataViz();
             this.panelTop = new Guna.UI.WinForms.GunaPanel();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnfechar = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panelLinhaTopo = new Guna.UI.WinForms.GunaPanel();
             this.btnPesquisarAno = new Guna.UI.WinForms.GunaCircleButton();
             this.cmbAno = new Guna.UI.WinForms.GunaComboBox();
@@ -277,7 +277,7 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(38)))));
-            this.panelTop.Controls.Add(this.gunaAdvenceButton1);
+            this.panelTop.Controls.Add(this.btnfechar);
             this.panelTop.Controls.Add(this.panelLinhaTopo);
             this.panelTop.Controls.Add(this.btnPesquisarAno);
             this.panelTop.Controls.Add(this.cmbAno);
@@ -287,37 +287,37 @@
             this.panelTop.Size = new System.Drawing.Size(985, 67);
             this.panelTop.TabIndex = 16;
             // 
-            // gunaAdvenceButton1
+            // btnfechar
             // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = null;
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(960, 5);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(25, 26);
-            this.gunaAdvenceButton1.TabIndex = 18;
-            this.gunaAdvenceButton1.Text = "X";
-            this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
+            this.btnfechar.AnimationHoverSpeed = 0.07F;
+            this.btnfechar.AnimationSpeed = 0.03F;
+            this.btnfechar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnfechar.BorderColor = System.Drawing.Color.Black;
+            this.btnfechar.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnfechar.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnfechar.CheckedForeColor = System.Drawing.Color.White;
+            this.btnfechar.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnfechar.CheckedImage")));
+            this.btnfechar.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnfechar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnfechar.FocusedColor = System.Drawing.Color.Empty;
+            this.btnfechar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfechar.ForeColor = System.Drawing.Color.White;
+            this.btnfechar.Image = null;
+            this.btnfechar.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnfechar.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnfechar.Location = new System.Drawing.Point(960, 5);
+            this.btnfechar.Name = "btnfechar";
+            this.btnfechar.OnHoverBaseColor = System.Drawing.Color.Black;
+            this.btnfechar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnfechar.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnfechar.OnHoverImage = null;
+            this.btnfechar.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnfechar.OnPressedColor = System.Drawing.Color.Black;
+            this.btnfechar.Size = new System.Drawing.Size(25, 26);
+            this.btnfechar.TabIndex = 18;
+            this.btnfechar.Text = "X";
+            this.btnfechar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnfechar.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
             // panelLinhaTopo
             // 
@@ -440,6 +440,6 @@
         private Guna.UI.WinForms.GunaComboBox cmbAno;
         private Guna.UI.WinForms.GunaCircleButton btnPesquisarAno;
         private Guna.UI.WinForms.GunaPanel panelLinhaTopo;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private Guna.UI.WinForms.GunaAdvenceButton btnfechar;
     }
 }

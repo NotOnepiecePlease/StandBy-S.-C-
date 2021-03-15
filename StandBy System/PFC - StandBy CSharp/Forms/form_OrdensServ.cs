@@ -34,6 +34,78 @@ namespace PFC___StandBy_CSharp.Forms
             MudarTodasCores();
             //cmbClientes.SelectedIndex = 0;
             cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
+            table_OrdensServicos.ClearSelection();
+            //VerificarAtraso();
+        }
+
+        private void table_OrdensServicos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in table_OrdensServicos.Rows)
+            {
+                if (row.Cells[12].Value != DBNull.Value && Convert.ToInt32(row.Cells[13].Value) == 1)
+                {
+                    DateTime dataEntrega = Convert.ToDateTime(row.Cells[12].Value);
+                    DateTime dataAtual = DateTime.Now;
+
+                    TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
+
+                    //MessageBox.Show("Horas: " + DiasParaEntrega.TotalHours + "//Data: "+ Convert.ToDateTime(row.Cells[12].Value));
+                    //int DiasParaEntrega = (int)Convert.ToDateTime(row.Cells[12].Value).Subtract(DateTime.Now.Date).TotalDays;
+                    //DateTime data = DateTime.Now.Date.s  Convert.ToDateTime(row.Cells[12].Value);
+
+                    if (DiasParaEntrega.TotalHours < 0)
+                    {
+                        //row.DefaultCellStyle.BackColor = Color.Red;
+                        row.Cells[2].Style.BackColor = Color.Red;
+                        row.Cells[2].Style.ForeColor = Color.Black;
+                    }
+                    else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
+                    {
+                        //row.DefaultCellStyle.BackColor = Color.Orange;
+                        row.Cells[2].Style.BackColor = Color.Orange;
+                        row.Cells[2].Style.ForeColor = Color.Black;
+                    }
+                    else if (DiasParaEntrega.TotalHours > 12)
+                    {
+                        //row.DefaultCellStyle.BackColor = Color.Lime;
+                        row.Cells[2].Style.BackColor = Color.Lime;
+                        row.Cells[2].Style.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        //row.DefaultCellStyle.BackColor = Color.FromArgb(30, 30, 46);
+                        row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
+                        row.Cells[2].Style.ForeColor = Color.Gray;
+                    }
+                    //MessageBox.Show(DiasParaEntrega.ToString());
+                    //if (DiasParaEntrega.Ticks < 18)
+                    //{
+
+                    //Aqui vai colorir apenas a Celula
+                    //row.Cells[7].Style.BackColor = Color.Red;
+
+                    //Aqui colore a linha inteira
+                    //row.DefaultCellStyle.BackColor = Color.Lime;
+                    //}
+                }
+            }
+        }
+        private void VerificarAtraso()
+        {
+            foreach (DataGridViewRow row in table_OrdensServicos.Rows)
+            {
+                if (Convert.ToString(row.Cells[7].Value) == "teemo")
+                {
+                    // Se for negativo, fica vermelho
+                    //row.Cells[12].Value = "DONE";
+                    MessageBox.Show(Convert.ToString(row.Cells[3].Value));
+                    //row.Cells[3].Style.BackColor = Color.Red;
+                    row.Cells[7].Style.BackColor = Color.Red;
+
+                    //table_OrdensServicos.RowsDefaultCellStyle.SelectionBackColor = Color.Red;
+                }
+            }
+            //table_OrdensServicos.BackgroundColor = Color.Red;
         }
 
         public void MudarTodasCores()
@@ -75,42 +147,55 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
-                //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
-                int _idCliente = bd.BuscarIdCliente(cmbClientes.SelectedItem.ToString());
-                //Pego a data de hoje.
-                DateTime data = DateTime.Now;
-
-                try
-                {
-                    //Insiro o servico com os dados.
-                    if (txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
-                    {
-                        id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, "------------", txtSituacaoOrdens.Text);
-                    }
-                    else
-                    {
-                        id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, txtSenhaOrdens.Text, txtSituacaoOrdens.Text);
-                    }
-
-
-                    //Reseto os campos.
-                    txtAparelhoOrdens.Text = "";
-                    txtDefeitoOrdens.Text = "";
-                    txtSenhaOrdens.Text = "";
-                    txtSituacaoOrdens.Text = "";
-
-                    //Mensagem de Conclusao
-                    ms.InserirServicoSucesso();
-
-                    //Atualizo a tabela
-                    preencherTableServ.Preencher(table_OrdensServicos);
-                }
-                catch (Exception ex)
-                {
-                    //Mensagem de Erro
-                    me.ErroInserirServico(ex);
-                }
+                form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral);
+                formPrevisaoEntrega.ShowDialog();
             }
+
+
+
+            //if (txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(txtAparelhoOrdens.Text))
+            //{
+            //    MessageBox.Show("Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //else
+            //{
+            //    //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
+            //    int _idCliente = bd.BuscarIdCliente(cmbClientes.SelectedItem.ToString());
+            //    //Pego a data de hoje.
+            //    DateTime data = DateTime.Now;
+
+            //    try
+            //    {
+            //        //Insiro o servico com os dados.
+            //        if (txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
+            //        {
+            //            id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, "------------", txtSituacaoOrdens.Text);
+            //        }
+            //        else
+            //        {
+            //            id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, txtSenhaOrdens.Text, txtSituacaoOrdens.Text);
+            //        }
+
+
+            //        //Reseto os campos.
+            //        txtAparelhoOrdens.Text = "";
+            //        txtDefeitoOrdens.Text = "";
+            //        txtSenhaOrdens.Text = "";
+            //        txtSituacaoOrdens.Text = "";
+
+            //        //Mensagem de Conclusao
+            //        ms.InserirServicoSucesso();
+
+            //        //Atualizo a tabela
+            //        preencherTableServ.Preencher(table_OrdensServicos);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        //Mensagem de Erro
+            //        me.ErroInserirServico(ex);
+            //    }
+            //}
         }
 
         private void txtAparelhoOrdens_Enter(object sender, EventArgs e)
@@ -229,12 +314,15 @@ namespace PFC___StandBy_CSharp.Forms
             if (txtPesquisarCliente.Text == "")
             {
                 preencherTableServ.Preencher(table_OrdensServicos);
+                table_OrdensServicos.ClearSelection();
             }
             else
             {
                 try
                 {
                     preencherTableServ.PreencherServicosPorNomeCliente(table_OrdensServicos, txtPesquisarCliente.Text);
+                    //table_OrdensServicos.Refresh();
+                    table_OrdensServicos.ClearSelection();
                 }
                 catch (Exception ex)
                 {
@@ -243,18 +331,24 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void table_OrdensServicos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void table_OrdensServicos_DoubleClick(object sender, EventArgs e)
         {
+            EditarUmServico();
+        }
+
+        public void EditarUmServico()
+        {
+            string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
+            string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
             float lucro = float.Parse(table_OrdensServicos.SelectedCells[10].Value.ToString());
             form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
             editarServicos.lblIDservico.Text = table_OrdensServicos.SelectedCells[0].Value.ToString();
             editarServicos.lblIDcliente.Text = table_OrdensServicos.SelectedCells[1].Value.ToString();
             editarServicos.dtpDataEdit.Value = Convert.ToDateTime(table_OrdensServicos.SelectedCells[2].Value.ToString());
             editarServicos.lblClienteNome.Text = table_OrdensServicos.SelectedCells[3].Value.ToString();
+            editarServicos.txtClienteNome.Text = table_OrdensServicos.SelectedCells[3].Value.ToString();
+            editarServicos.txtCPFCliente.Text = _CPFCliente;
+            editarServicos.txtTelefoneCliente.Text = _TELCliente;
             editarServicos.txtAparelhoEdit.Text = table_OrdensServicos.SelectedCells[4].Value.ToString();
             editarServicos.txtDefeitoEdit.Text = table_OrdensServicos.SelectedCells[5].Value.ToString();
             editarServicos.txtSenhaEdit.Text = table_OrdensServicos.SelectedCells[7].Value.ToString();
@@ -263,42 +357,17 @@ namespace PFC___StandBy_CSharp.Forms
             editarServicos.txtPecaValorEdit.Text = table_OrdensServicos.SelectedCells[9].Value.ToString();
             editarServicos.txtLucroValorEdit.Text = table_OrdensServicos.SelectedCells[10].Value.ToString();
             editarServicos.txtServicoEdit.Text = table_OrdensServicos.SelectedCells[11].Value.ToString();
-
-            if (lucro > 0)
+            if (table_OrdensServicos.SelectedCells[12].Value == DBNull.Value)
             {
-                editarServicos.txtLucroValorEdit.LineIdleColor = Color.LimeGreen;
-            }
-            else if (lucro == 0)
-            {
-                editarServicos.txtLucroValorEdit.LineIdleColor = Color.White;
+                //MessageBox.Show("Sem data");
+                editarServicos.dtpDataEditPrevisao.FormatCustom = " ";
+                editarServicos.dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+                //editarServicos.dtpDataEditPrevisao.Value = DateTime.Parse("00/00/0000");
             }
             else
             {
-                editarServicos.txtLucroValorEdit.LineIdleColor = Color.Red;
+                editarServicos.dtpDataEditPrevisao.Value = Convert.ToDateTime(table_OrdensServicos.SelectedCells[12].Value.ToString());
             }
-
-            editarServicos.LabelResize();
-
-            editarServicos.ShowDialog(this);
-            table_OrdensServicos.Refresh();
-        }
-
-        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            float lucro = float.Parse(table_OrdensServicos.SelectedCells[10].Value.ToString());
-            form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
-            editarServicos.lblIDservico.Text = table_OrdensServicos.SelectedCells[0].Value.ToString();
-            editarServicos.lblIDcliente.Text = table_OrdensServicos.SelectedCells[1].Value.ToString();
-            editarServicos.dtpDataEdit.Value = Convert.ToDateTime(table_OrdensServicos.SelectedCells[2].Value.ToString());
-            editarServicos.lblClienteNome.Text = table_OrdensServicos.SelectedCells[3].Value.ToString();
-            editarServicos.txtAparelhoEdit.Text = table_OrdensServicos.SelectedCells[4].Value.ToString();
-            editarServicos.txtDefeitoEdit.Text = table_OrdensServicos.SelectedCells[5].Value.ToString();
-            editarServicos.txtSenhaEdit.Text = table_OrdensServicos.SelectedCells[7].Value.ToString();
-            editarServicos.txtSituacaoEdit.Text = table_OrdensServicos.SelectedCells[6].Value.ToString();
-            editarServicos.txtServicoValorEdit.Text = table_OrdensServicos.SelectedCells[8].Value.ToString();
-            editarServicos.txtPecaValorEdit.Text = table_OrdensServicos.SelectedCells[9].Value.ToString();
-            editarServicos.txtLucroValorEdit.Text = table_OrdensServicos.SelectedCells[10].Value.ToString();
-            editarServicos.txtServicoEdit.Text = table_OrdensServicos.SelectedCells[11].Value.ToString();
 
             if (lucro > 0)
             {
@@ -316,7 +385,12 @@ namespace PFC___StandBy_CSharp.Forms
             editarServicos.LabelResize();
 
             editarServicos.ShowDialog();
-            table_OrdensServicos.Refresh();
+            //table_OrdensServicos.Refresh();
+            refreshTable();
+        }
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditarUmServico();
         }
 
         private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -365,48 +439,58 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void CadastrarServicoNovo()
         {
-            if (txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(txtAparelhoOrdens.Text))
-            {
-                MessageBox.Show("Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
-                int _idCliente = bd.BuscarIdCliente(cmbClientes.SelectedItem.ToString());
-                //Pego a data de hoje.
-                DateTime data = DateTime.Now;
 
-                try
-                {
-                    //Insiro o servico com os dados.
-                    if (txtSenhaOrdens.Text.Equals("Digite a senha do celular") || string.IsNullOrWhiteSpace(txtSenhaOrdens.Text))
-                    {
-                        id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, "------------", txtSituacaoOrdens.Text);
-                    }
-                    else
-                    {
-                        id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, txtSenhaOrdens.Text, txtSituacaoOrdens.Text);
-                    }
+            form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral);
 
-                    //Reseto os campos.
-                    txtAparelhoOrdens.Text = "";
-                    txtDefeitoOrdens.Text = "";
-                    txtSenhaOrdens.Text = "";
-                    txtSituacaoOrdens.Text = "";
+            formPrevisaoEntrega.ShowDialog();
 
-                    //Mensagem de Conclusao
-                    ms.InserirServicoSucesso();
+            //if (txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(txtAparelhoOrdens.Text))
+            //{
+            //    MessageBox.Show("Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //else
+            //{
+            //    //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
+            //    int _idCliente = bd.BuscarIdCliente(cmbClientes.SelectedItem.ToString());
+            //    //Pego a data de hoje.
+            //    DateTime data = DateTime.Now;
 
-                    //Atualizo a tabela
-                    preencherTableServ.Preencher(table_OrdensServicos);
-                }
-                catch (Exception ex)
-                {
-                    //Mensagem de Erro
-                    me.ErroInserirServico(ex);
-                }
-            }
+            //    try
+            //    {
+            //        //Insiro o servico com os dados.
+            //        if (txtSenhaOrdens.Text.Equals("Digite a senha do celular") || string.IsNullOrWhiteSpace(txtSenhaOrdens.Text))
+            //        {
+            //            id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, "------------", txtSituacaoOrdens.Text);
+            //        }
+            //        else
+            //        {
+            //            id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, txtSenhaOrdens.Text, txtSituacaoOrdens.Text);
+            //        }
+
+            //        //Reseto os campos.
+            //        txtAparelhoOrdens.Text = "";
+            //        txtDefeitoOrdens.Text = "";
+            //        txtSenhaOrdens.Text = "";
+            //        txtSituacaoOrdens.Text = "";
+
+            //        //Mensagem de Conclusao
+            //        ms.InserirServicoSucesso();
+
+            //        //Atualizo a tabela
+            //        preencherTableServ.Preencher(table_OrdensServicos);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        //Mensagem de Erro
+            //        me.ErroInserirServico(ex);
+            //    }
+            //}
+        }
+
+        private void table_OrdensServicos_MouseLeave(object sender, EventArgs e)
+        {
+            table_OrdensServicos.ClearSelection();
         }
     }
 }
