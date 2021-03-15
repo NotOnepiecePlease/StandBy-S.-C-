@@ -1,76 +1,76 @@
 
 
 
+
+
 <h2>StandBy System - C#</h2>
 
 Sistema de gerenciamento de faturamento, clientes, dispositivos e serviços para uma Assistência de Dispositivos Moveis 
 (Celulares, tablets, notebooks etc...)
+
+Este sistema foi desenvolvido ao gosto do cliente, totalmente customizado de acordo com as necessidades do mesmo, portanto se utilizado para outros fins ou outra assistência técnica, muito provavelmente será necessário fazer pequenos ajustes ou grandes mudanças.
+
+Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o desenvolvimento das minhas habilidades.
 &nbsp;
 &nbsp;
 **
 ## CONCLUIDOS
 <b>== Modulo de Serviços </b>
 
-- [x] Cadastro de Serviços *[OK]*
-- [x] Edição de Serviços *[OK]*
-- [x] Conclusão de Serviços *[OK]*
-- [x] Remoção de Serviços *[OK]*
-- [x] Exibição de Serviços *[OK]*
-- [x] Busca de Serviços por Nome *[OK]*
-- [x] Sistema RGB, altera as cores em todos os forms. *[OK]*
-- [x] Exibição dos Gráficos semanais e mensais.*[OK]*
-- [x] <b>**Vinculado com a Tabela de clientes (FK~)**</b> *[OK]*
+- [x] Cadastro de Serviços *****[OK]*****
+- [x] Edição de Serviços ***[OK]***
+- [x] Conclusão de Serviços ***[OK]***
+- [x] Remoção de Serviços ***[OK]***
+- [x] Exibição de Serviços ***[OK]***
+- [x] Busca de Serviços por Nome ***[OK]***
+- [x] Sistema RGB, altera as cores em todos os forms. ***[OK]***
+- [x] Exibição dos Gráficos semanais e mensais. ***[OK]***
+- [x] <b>**Vinculado com a Tabela de clientes (FK~)**</b> ***[OK]***
+- [x] Sistema de Atraso. ***[OK]***
+		- Mais de 12 horas para entrega = **VERDE**
+		- Entre 0 e 12 horas para a entrega = **LARANJA**
+		- Tempo de entrega finalizado = **VERMELHO**
 
 <b>== Modulo de Clientes</b>
-- [x] Cadastro de Clientes *[OK]*
-- [x] Edição de Clientes *[OK]*
-- [x] Remoção de Clientes *[OK]*
-- [x] Exibição de Clientes *[OK]*
-- [x] Busca de Clientes por Nome *[OK]*
-- [x] **Clientes nao podem ser removidos se existirem serviços vinculados** *[OK]*
+- [x] Cadastro de Clientes (Nome, Telefone e CPF) ***[OK]***
+- [x] Edição de Clientes ***[OK]***
+- [x] Remoção de Clientes ***[OK]***
+- [x] Exibição de Clientes ***[OK]***
+- [x] Busca de Clientes por Nome ***[OK]***
+- [x] **Clientes nao podem ser removidos se existirem serviços vinculados** ***[OK]***
 
 <b>== Modulo de Conclusões</b>
-- [x] Cancelamento da conclusão de um serviço *[OK]*
-- [x] Busca por serviços concluídos *[OK]*
+- [x] Cancelamento da conclusão de um serviço ***[OK]***
+- [x] Busca por serviços concluídos ***[OK]***
 
 <b>== Modulo de Lucros</b>
-- [x] Busca dos lucros entre datas determinadas*[OK]*
-- [x] Cadastro de gastos com a empresa*[OK]*
-- [x] Cadastro de gastos temporários*[OK]*
-- [x] Calculo dos lucros do mes atual automaticamente*[OK]*
+- [x] Busca dos lucros entre datas determinadas ***[OK]***
+- [x] Cadastro de gastos com a empresa ***[OK]***
+- [x] Cadastro de gastos temporários ***[OK]***
+- [x] Calculo dos lucros do mes atual automaticamente ***[OK]***
 
 <b>== Graficos</b>
-- [x] Dados dos lucros semanais*[OK]*
-- [x] Dados dos lucros mensais*[OK]*
-- [x] Dados dos lucros anuais*[OK]*
+- [x] Dados dos lucros semanais ***[OK]***
+- [x] Dados dos lucros mensais ***[OK]***
+- [x] Dados dos lucros anuais ***[OK]***
 
 <b>== Tela de Anotações</b>
-- [x] Inserir anotações*[OK]*
-- [x] Abrir anotações salvas*[OK]*
-- [x] Salvar anotações*[OK]*
-- [x] Customização do bloco de notas para atender o cliente.*[OK]*
+- [x] Inserir anotações ***[OK]***
+- [x] Abrir anotações salvas ***[OK]***
+- [x] Salvar anotações ***[OK]***
+- [x] Customização do bloco de notas para atender o cliente. ***[OK]***
 
-<b>== Modulo de Impressão/Nota</b>
-- [x] Imprimir nota em Doc Word. (nao fiscal)*[OK]*
-- [x] Salvar Doc Word.*[OK]*
-- [x] Template personalizável a gosto do cliente.*[OK]*
+<b>== Modulo de Impressão</b>
+- [x] Imprimir nota nao fiscal. ***[OK]***
+- [x] Dados gerados automaticamente de acordo com o serviço ***[OK]***
+- [x] Dados podem ser editados para customização da nota. ***[OK]***
 
 <b>== Modulo de Garantias</b>
-- [x] Adicionar quantidade em dias de garantia para o cliente*[OK]*
-- [x] Tela para verificação das garantias*[OK]*
-
-<b>== Modulo de Orçamentos</b>
-- [x] Cadastro de Dispositivos novos por Marca (Pecas)
-- [x] Fazer orçamento para o cliente
+- [x] Adicionar quantidade em dias de garantia para o cliente. ***[OK]***
+- [x] Tela para verificação das garantias. ***[OK]***
 
 &nbsp;
-=======
-## NÃO CONCLUÍDOS
-- Botoes de atalho para algumas utilidades (ainda a decidir pelo cliente)
 
-&nbsp;
-&nbsp;
-&nbsp;
 
 |PRINTS DO PROJETO POR ORDEM CRESCENTE DE ATUALIZAÇÕES, OU SEJA, PARA VER O PROJETO NO ESTADO MAIS RECENTE BASTA IR PARA AS ULTIMAS IMAGENS.|  |
 |-------------------------------------------------------------------------------------------------------------------------------------------|--|
