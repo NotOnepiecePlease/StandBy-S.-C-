@@ -23,13 +23,11 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_WordNota : Form
     {
-        
+
         int qntDiasGarantia = 0;
         string diretorioArquivoPadrao = Settings.Default.diretorio_default_word;
-        //string diretorioPadrao = @".\NotaWord";
+        string diretorioPadrao = @".\NotaWord";
         int[] corGeral = { 0, 0, 0 };
-        List<int> processosAntes;
-        List<int> processosDepois;
         form_OrdensServ_Edit ordensServ;
         Formatar apenasNumeros = new Formatar();
         InserirDados ins_Dados = new InserirDados();
@@ -102,199 +100,6 @@ namespace PFC___StandBy_CSharp.Forms
             lblImpressoraPdrao.Left = (this.Width / 2) - (lblImpressoraPdrao.Width / 2);
             lblArquivoPadrao.Left = (this.Width / 2) - (lblArquivoPadrao.Width / 2);
         }
-        //Methode Find and Replace:
-        //private void FindAndReplace(Word.Application wordApp, object findText, object replaceWithText)
-        //{
-        //    object matchCase = true;
-        //    object matchWholeWord = true;
-        //    object matchWildCards = false;
-        //    object matchSoundLike = false;
-        //    object nmatchAllForms = false;
-        //    object forward = true;
-        //    object format = false;
-        //    object matchKashida = false;
-        //    object matchDiactitics = false;
-        //    object matchAlefHamza = false;
-        //    object matchControl = false;
-        //    object read_only = false;
-        //    object visible = true;
-        //    object replace = 2;
-        //    object wrap = 1;
-
-        //    wordApp.Selection.Find.Execute(ref findText,
-        //                ref matchCase, ref matchWholeWord,
-        //                ref matchWildCards, ref matchSoundLike,
-        //                ref nmatchAllForms, ref forward,
-        //                ref wrap, ref format, ref replaceWithText,
-        //                ref replace, ref matchKashida,
-        //                ref matchDiactitics, ref matchAlefHamza,
-        //                ref matchControl);
-        //}
-
-
-
-        //string pathImage = null;
-        //Methode Create the document :
-        //private void CreateWordDocument(object filename, object savaAs, string DiasGarantia)
-        //{
-        //    List<int> processesbeforegen = getRunningProcesses();
-        //    object missing = Missing.Value;
-        //    //string tempPath=null;
-
-        //    Word.Application wordApp = new Word.Application();
-
-        //    Word.Document aDoc = null;
-
-        //    try
-        //    {
-        //        if (File.Exists((string)filename))
-        //        {
-        //            DateTime today = DateTime.Now;
-
-        //            object readOnly = false; //default
-        //            object isVisible = false;
-
-        //            wordApp.Visible = false;
-
-        //            aDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
-        //                                        ref missing, ref missing, ref missing,
-        //                                        ref missing, ref missing, ref missing,
-        //                                        ref missing, ref missing, ref missing,
-        //                                        ref missing, ref missing, ref missing, ref missing);
-
-        //            aDoc.Activate();
-
-        //            //Find and replace:
-        //            //MessageBox.Show("Alterando Strings");
-        //            this.FindAndReplace(wordApp, "<serviço>", txtServico.Text);
-        //            this.FindAndReplace(wordApp, "<aparelho>", txtModelo.Text);
-        //            this.FindAndReplace(wordApp, "<valor>", txtValor.Text);
-        //            this.FindAndReplace(wordApp, "<cliente>", txtCliente.Text);
-        //            this.FindAndReplace(wordApp, "<cpf>", txtCPF.Text);
-        //            this.FindAndReplace(wordApp, "<dias>", DiasGarantia);
-        //            this.FindAndReplace(wordApp, "<data>", DateTime.Now.ToShortDateString());
-
-        //            //insert the picture:
-        //            //Image img = resizeImage(pathImage, new Size(200, 90));
-        //            //tempPath = System.Windows.Forms.Application.StartupPath + "\\Images\\~Temp\\temp.jpg";
-        //            //img.Save(tempPath);
-
-        //            //Object oMissed = aDoc.Paragraphs[1].Range; //the position you want to insert
-        //            //Object oLinkToFile = false;  //default
-        //            //Object oSaveWithDocument = true;//default
-        //            //aDoc.InlineShapes.AddPicture(tempPath, ref  oLinkToFile, ref  oSaveWithDocument, ref oMissed);
-
-        //            #region Print Document :
-        //            //object copies = "1";
-        //            //object pages = "1";
-        //            //object range = Word.WdPrintOutRange.wdPrintCurrentPage;
-        //            //object items = Word.WdPrintOutItem.wdPrintDocumentContent;
-        //            //object pageType = Word.WdPrintOutPages.wdPrintAllPages;
-        //            //object oTrue = true;
-        //            //object oFalse = false;
-
-        //            //Word.Document document = aDoc;
-        //            //object nullobj = Missing.Value;
-        //            //int dialogResult = wordApp.Dialogs[Word.WdWordDialog.wdDialogFilePrint].Show(ref nullobj);
-        //            //wordApp.Visible = false;
-        //            //if (dialogResult == 1)
-        //            //{
-        //            //    document.PrintOut(
-        //            //    ref oTrue, ref oFalse, ref range, ref missing, ref missing, ref missing,
-        //            //    ref items, ref copies, ref pages, ref pageType, ref oFalse, ref oTrue,
-        //            //    ref missing, ref oFalse, ref missing, ref missing, ref missing, ref missing);
-        //            //}
-
-        //            #endregion
-
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("O Arquivo word de nota fiscal não existe ou esta corrompido.\n\n");
-        //            return;
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        MessageBox.Show("O Arquivo word de nota fiscal não existe ou esta corrompido.\n\n\nErro: " + e);
-        //    }
-
-
-        //    //Save as: filename
-        //    //MessageBox.Show("Salvando arquivo...");
-        //    try
-        //    {
-        //        aDoc.SaveAs2(ref savaAs, ref missing, ref missing, ref missing,
-        //            ref missing, ref missing, ref missing,
-        //            ref missing, ref missing, ref missing,
-        //            ref missing, ref missing, ref missing,
-        //            ref missing, ref missing, ref missing);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        MessageBox.Show("O arquivo word utilizado como base para a impressão, já esta aberto, por favor feche o arquivo word" +
-        //            " ou finalize o processo chamado 'WINWORD.EXE' no seu gerenciador de tarefas e tente novamente.\n\n\n\nERRO: " + e, "Word em uso", MessageBoxButtons.OK,
-        //            MessageBoxIcon.Information);
-        //    }
-
-
-        //    //Close Document:
-        //    //aDoc.Close(ref missing, ref missing, ref missing);
-        //    //File.Delete(tempPath);
-        //    //MessageBox.Show("Arquivo Criado.");
-        //    List<int> processesaftergen = getRunningProcesses();
-        //    killProcesses(processesbeforegen, processesaftergen);
-        //}
-
-
-        //public List<int> getRunningProcesses()
-        //{
-        //    List<int> ProcessIDs = new List<int>();
-        //    //here we're going to get a list of all running processes on
-        //    //the computer
-        //    foreach (Process clsProcess in Process.GetProcesses())
-        //    {
-        //        if (Process.GetCurrentProcess().Id == clsProcess.Id)
-        //            continue;
-        //        if (clsProcess.ProcessName.Contains("WINWORD"))
-        //        {
-        //            ProcessIDs.Add(clsProcess.Id);
-        //        }
-        //    }
-        //    return ProcessIDs;
-        //}
-
-
-        //private void killProcesses(List<int> processesbeforegen, List<int> processesaftergen)
-        //{
-        //    //Percorre a lista de processos depois de criar o doc
-        //    foreach (int pidafter in processesaftergen)
-        //    {
-        //        bool processfound = false;
-        //        //percorre a lista de processos antes de criar o doc
-        //        foreach (int pidbefore in processesbeforegen)
-        //        {
-        //            //Se o processo de antes for igual aos depois.
-        //            if (pidafter == pidbefore)
-        //            {
-        //                //Processo encontrado
-        //                processfound = true;
-        //            }
-        //        }
-
-        //        if (processfound == false)
-        //        {
-        //            try
-        //            {
-        //                Process clsProcess = Process.GetProcessById(pidafter);
-        //                clsProcess.Kill();
-        //            }
-        //            catch (Exception)
-        //            {
-        //            }
-        //        }
-        //    }
-        //}
 
         //Méthode Enabled Controles:
         private void tEnabled(bool state)
@@ -321,35 +126,22 @@ namespace PFC___StandBy_CSharp.Forms
                 tEnabled(true);
             }
         }
-        public bool VerificarArquivoEmUso(string caminhoArquivo)
-        {
-            try
-            {
-                FileStream fs = File.OpenWrite(caminhoArquivo);
-                fs.Close();
-                return false;
-            }
-            catch (IOException)
-            {
-                DirectoryInfo nomeDoc = new DirectoryInfo(caminhoArquivo);
-                MessageBox.Show("O Documento: '" + nomeDoc.Name + "' está aberto, por favor feche antes de seguir", "Documento Aberto",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return true;
-            }
-        }
+
         private void btnCriarWord_Click(object sender, EventArgs e)
         {
-            //ImprimirOLD();
-            Imprimir();
+            ImprimirNota();
+            //GerarImpressaoNota();
         }
 
-        public void Imprimir()
+        public void GerarImpressaoNota()
         {
             using (PrintPreviewDialog dialog = new PrintPreviewDialog())
             {
                 dialog.Document = printDocument1;
                 ((Form)dialog).WindowState = FormWindowState.Maximized;
-                dialog.ShowDialog();
+                dialog.PrintPreviewControl.Zoom = 200 / 100f;
+                //dialog.ShowDialog();
+                printDocument1.Print();
                 //dialog.Close();
             }
         }
@@ -359,16 +151,17 @@ namespace PFC___StandBy_CSharp.Forms
             StringFormat sfcenter = new StringFormat();
             sfcenter.LineAlignment = StringAlignment.Center;
             sfcenter.Alignment = StringAlignment.Center;
+            //this.PrintPreviewControl1.Zoom = 0.25;
 
-
-            int x = 220, y = 10; //start position
+            int x = 140, y = 10; //start position
             x += 0; //left align texts with logo image
             y += 30; //some space below logo
 
-            var fntregular = new Font("Calibri (Corpo)", 10, FontStyle.Regular);
-            var fntbold = new Font("Calibri (Corpo)", 11, FontStyle.Bold);
+            var fntregular = new Font("Calibri (Corpo)", 8, FontStyle.Regular);
+            var fntbold = new Font("Calibri (Corpo)", 9, FontStyle.Bold);
             int dy = (int)fntregular.GetHeight(e.Graphics); //20; //line height spacing
 
+            //e.Graphics.ScaleTransform(0.5F, 0.5F);
             e.Graphics.DrawString("STANDBY ASSISTÊNCIA TÉCNICA", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             e.Graphics.DrawString("CNPJ - 33.393.551/0001-11", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
@@ -385,118 +178,71 @@ namespace PFC___StandBy_CSharp.Forms
             y += dy;
             y += dy;
             y += dy;
-            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString("____________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             e.Graphics.DrawString("DESCRIÇÃO DO SERVIÇO", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
-            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString("____________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+            y += dy;
+            y += dy; //Menos = Direita | Mais valor = Esquerda
+            e.Graphics.DrawString("♥ Serviço - ", fntregular, Brushes.Black, new PointF(x - 140, y));
+            e.Graphics.DrawString(txtServico.Text, fntbold, Brushes.Black, new PointF(x - 80, y));
+            y += dy;
+            e.Graphics.DrawString("♣ Modelo do Aparelho - ", fntregular, Brushes.Black, new PointF(x - 140, y));
+            e.Graphics.DrawString(txtModelo.Text, fntbold, Brushes.Black, new PointF(x - 15, y));
+            y += dy;
+            e.Graphics.DrawString("♦ Valor - ", fntregular, Brushes.Black, new PointF(x - 140, y));
+            e.Graphics.DrawString(txtValor.Text, fntbold, Brushes.Black, new PointF(x - 90, y));
+            y += dy;
+            e.Graphics.DrawString("♠ Cliente - ", fntregular, Brushes.Black, new PointF(x - 140, y));
+            e.Graphics.DrawString(txtCliente.Text, fntbold, Brushes.Black, new PointF(x - 80, y));
+            y += dy;
+            e.Graphics.DrawString("• CPF - ", fntregular, Brushes.Black, new PointF(x - 100, y + 5));
+            e.Graphics.DrawString(txtCPF.Text, fntbold, Brushes.Black, new PointF(x - 60, y + 4));
             y += dy;
             y += dy;
-            e.Graphics.DrawString("♥ Serviço - ", fntregular, Brushes.Black, new PointF(x - 215, y));
-            e.Graphics.DrawString(txtServico.Text, fntbold, Brushes.Black, new PointF(x - 140, y));
-            y += dy;
-            e.Graphics.DrawString("♣ Modelo do aparelho - ", fntregular, Brushes.Black, new PointF(x - 215, y));
-            e.Graphics.DrawString(txtModelo.Text, fntbold, Brushes.Black, new PointF(x - 60, y));
-            y += dy;
-            e.Graphics.DrawString("♦ Valor - ", fntregular, Brushes.Black, new PointF(x - 215, y));
-            e.Graphics.DrawString(txtValor.Text, fntbold, Brushes.Black, new PointF(x - 150, y));
-            y += dy;
-            e.Graphics.DrawString("♠ Cliente - ", fntregular, Brushes.Black, new PointF(x - 215, y));
-            e.Graphics.DrawString(txtCliente.Text, fntbold, Brushes.Black, new PointF(x - 140, y));
-            y += dy;
-            e.Graphics.DrawString("• CPF - ", fntregular, Brushes.Black, new PointF(x - 180, y));
-            e.Graphics.DrawString(txtCPF.Text, fntbold, Brushes.Black, new PointF(x - 130, y));
-            y += dy;
-            y += dy;
-            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString("____________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             e.Graphics.DrawString("GARANTIA", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
-            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString("____________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             y += dy;
-            e.Graphics.DrawString(qntDiasGarantia+".", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString(qntDiasGarantia + " dias.", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             e.Graphics.DrawString("Não cobre danos causados pelo cliente.", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             y += dy;
-            e.Graphics.DrawString("DATA <data>", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString("DATA " + DateTime.Now.ToShortDateString(), fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
-            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString("____________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             y += dy;
             e.Graphics.DrawString("Volte Sempre!", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             y += dy;
             e.Graphics.DrawString("NÃO É VÁLIDO COMO DOCUMENTO FISCAL", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+
         }
 
-        //public void ImprimirOLD()
-        //{
-        //    if (File.Exists(tFilename.Text))
-        //    {
-        //        DirectoryInfo diretorioDaLabel = new DirectoryInfo(tFilename.Text);
-        //        DirectoryInfo directoryInfo = new DirectoryInfo(@".\NotaWord");
-        //        if (Directory.Exists(directoryInfo.FullName))
-        //        {
-        //            //Aqui eu pego o caminho completo até o arquivo ~cliente1.docx~
-        //            DirectoryInfo directorySave = new DirectoryInfo(@".\NotaWord\cliente1.docx");
-        //            SaveDoc.FileName = directorySave.FullName;
-        //            //Se o documento nao estiver aberto, aparece o erro.
-        //            if (!VerificarArquivoEmUso(diretorioDaLabel.FullName) == true)
-        //            {
-        //                string DiasGarantia = QuantosDiasGarantia();
-
-        //                //Caso de um bug e nada de garantia seja preenchido a impressao nao vai acontecer.
-        //                if (!DiasGarantia.Equals("0"))
-        //                {
-        //                    //Criar o documento
-        //                    CreateWordDocument(diretorioDaLabel.FullName, SaveDoc.FileName, DiasGarantia);
-
-        //                    //Pego uma lista de processos antes de abrir o word pra imprimir
-        //                    //pra poder fechar o processo correto quando terminar de imprimir.
-        //                    processosAntes = getRunningProcesses();
-        //                    Word.Application application = new Word.Application();
-        //                    string caminhoContrato = directorySave.FullName;
-        //                    Document document = application.Documents.Open(caminhoContrato);
-        //                    document.Activate();
-        //                    document.PrintPreview();
-        //                    document.PrintOut();
-        //                    processosDepois = getRunningProcesses();
-        //                    ordensServ.ImprimiuAlgumaNota = 1;
-        //                    //this.Close();
-        //                    if (switchGarantia.Checked == true)
-        //                    {
-        //                        ins_Dados.InserirGarantia(Convert.ToInt32(lblIDServico.Text), Convert.ToInt32(lblIDCliente.Text), Convert.ToInt32(qntDiasGarantia));
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("A Pasta 'NotaWord' não existia nos arquivos do sistema StandBy\nmas nós criamos ela para você, clique em 'Imprimir' novamente.", "Diretorio Nao Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            Directory.CreateDirectory(directoryInfo.FullName);
-        //            //MessageBox.Show("Diretorio Criado!: \n\n" + directoryInfo.FullName + "\n\nColoque o documento word de notas dentro dele!", "Diretorio Criado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        }
-
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("O Documento word usado como padrao nao foi encontrado, por favor, encontre o arquivo manualmente a seguir...",
-        //            "Arquivo nao encontrado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        //        if (LoadDoc.ShowDialog() == DialogResult.OK)
-        //        {
-        //            tFilename.Text = LoadDoc.FileName;
-        //            Settings.Default.diretorio_default_word = LoadDoc.FileName;
-        //            Settings.Default.Save();
-        //            tEnabled(true);
-        //            MessageBox.Show("Pode imprimir normalmente!", "Tudo certo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        }
-        //    }
-        //}
+        public void ImprimirNota()
+        {
+            string DiasGarantia = QuantosDiasGarantia();
+            GerarImpressaoNota();
+            //Caso de um bug e nada de garantia seja preenchido a impressao nao vai acontecer.
+            if (!DiasGarantia.Equals("0"))
+            {
+                if (switchGarantia.Checked == true)
+                {
+                    ins_Dados.InserirGarantia(Convert.ToInt32(lblIDServico.Text), Convert.ToInt32(lblIDCliente.Text), Convert.ToInt32(qntDiasGarantia));
+                }
+            }
+            this.Close();
+        }
 
         public string QuantosDiasGarantia()
         {
             int numero;
             //MessageBox.Show(int.TryParse(txtGarantia.Text, out numero).ToString());
+
             //Se a garantia estiver habilitada, todas as checks desmarcadas e o usuario digitar algum numero na textbox, garantia valida.
             if (switchGarantia.Checked == true && checkboxUmMes.Checked == false && checkboxDoisMeses.Checked == false && checkboxTresMeses.Checked == false && int.TryParse(txtGarantia.Text, out numero) == true)
             {
@@ -658,13 +404,13 @@ namespace PFC___StandBy_CSharp.Forms
             else
             {
                 checkboxUmMes.Enabled = true;
-                checkboxUmMes.Checked = true;
+                checkboxUmMes.Checked = false;
 
                 checkboxDoisMeses.Enabled = true;
                 checkboxDoisMeses.Checked = false;
 
                 checkboxTresMeses.Enabled = true;
-                checkboxTresMeses.Checked = false;
+                checkboxTresMeses.Checked = true;
 
                 txtGarantia.Enabled = false;
                 txtGarantia.Text = "";

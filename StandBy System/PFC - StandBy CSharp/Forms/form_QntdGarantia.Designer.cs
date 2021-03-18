@@ -78,7 +78,7 @@
             // 
             // btnConcluirServico
             // 
-            this.btnConcluirServico.AccessibleDescription = "Imprimir nota para cliente";
+            this.btnConcluirServico.AccessibleDescription = "GerarImpressaoNota nota para cliente";
             this.btnConcluirServico.Animated = true;
             this.btnConcluirServico.AnimationHoverSpeed = 0.07F;
             this.btnConcluirServico.AnimationSpeed = 0.03F;

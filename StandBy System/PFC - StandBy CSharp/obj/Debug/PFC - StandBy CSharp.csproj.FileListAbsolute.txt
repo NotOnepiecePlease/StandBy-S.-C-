@@ -71,6 +71,7 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\StandBy System.pdb
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.dll
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.dll
@@ -78,6 +79,7 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Guna.UI.dll
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.xml
@@ -111,4 +113,3 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CopyComplete
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.pdb
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csprojAssemblyReference.cache

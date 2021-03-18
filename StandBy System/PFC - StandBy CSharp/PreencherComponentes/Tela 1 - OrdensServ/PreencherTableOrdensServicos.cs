@@ -44,6 +44,9 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                 mErro.ErroPreencherTabelaServicos(ex);
             }
 
+
+            
+
         }
 
         public void PreencherServicosPorNomeCliente(DataGridView tabelaServicos, string _nomeCliente)
@@ -79,8 +82,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                     tabelaServicos.AllowUserToDeleteRows = false;
                     tabelaServicos.DataSource = datatable;
                     tabelaServicos.Sort(tabelaServicos.Columns["idServico"], ListSortDirection.Descending);
-                    //tabelaServicos.Refresh();
-                    //CloseConnection();
                 }
 
 

@@ -2,13 +2,7 @@
 using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.PreencherComponentes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -36,9 +30,15 @@ namespace PFC___StandBy_CSharp.Forms
             cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
             table_OrdensServicos.ClearSelection();
             //VerificarAtraso();
+            //timer1.Start();
         }
 
         private void table_OrdensServicos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //AtualizarAtrasosCores();
+        }
+
+        public void AtualizarAtrasosCores()
         {
             foreach (DataGridViewRow row in table_OrdensServicos.Rows)
             {
@@ -55,38 +55,24 @@ namespace PFC___StandBy_CSharp.Forms
 
                     if (DiasParaEntrega.TotalHours < 0)
                     {
-                        //row.DefaultCellStyle.BackColor = Color.Red;
                         row.Cells[2].Style.BackColor = Color.Red;
                         row.Cells[2].Style.ForeColor = Color.Black;
                     }
                     else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
                     {
-                        //row.DefaultCellStyle.BackColor = Color.Orange;
                         row.Cells[2].Style.BackColor = Color.Orange;
                         row.Cells[2].Style.ForeColor = Color.Black;
                     }
                     else if (DiasParaEntrega.TotalHours > 12)
                     {
-                        //row.DefaultCellStyle.BackColor = Color.Lime;
                         row.Cells[2].Style.BackColor = Color.Lime;
                         row.Cells[2].Style.ForeColor = Color.Black;
                     }
                     else
                     {
-                        //row.DefaultCellStyle.BackColor = Color.FromArgb(30, 30, 46);
                         row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
                         row.Cells[2].Style.ForeColor = Color.Gray;
                     }
-                    //MessageBox.Show(DiasParaEntrega.ToString());
-                    //if (DiasParaEntrega.Ticks < 18)
-                    //{
-
-                    //Aqui vai colorir apenas a Celula
-                    //row.Cells[7].Style.BackColor = Color.Red;
-
-                    //Aqui colore a linha inteira
-                    //row.DefaultCellStyle.BackColor = Color.Lime;
-                    //}
                 }
             }
         }
@@ -306,11 +292,13 @@ namespace PFC___StandBy_CSharp.Forms
                 txtPesquisarCliente.Font = new Font(txtSituacaoOrdens.Font, FontStyle.Italic);
                 txtPesquisarCliente.ForeColor = Color.Silver;
                 txtPesquisarCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                timer1.Start();
             }
         }
 
         private void txtPesquisarCliente_KeyUp(object sender, KeyEventArgs e)
         {
+            timer1.Stop();
             if (txtPesquisarCliente.Text == "")
             {
                 preencherTableServ.Preencher(table_OrdensServicos);
@@ -362,11 +350,13 @@ namespace PFC___StandBy_CSharp.Forms
                 //MessageBox.Show("Sem data");
                 editarServicos.dtpDataEditPrevisao.FormatCustom = " ";
                 editarServicos.dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+                editarServicos.chkSemData.Checked = true;
                 //editarServicos.dtpDataEditPrevisao.Value = DateTime.Parse("00/00/0000");
             }
             else
             {
                 editarServicos.dtpDataEditPrevisao.Value = Convert.ToDateTime(table_OrdensServicos.SelectedCells[12].Value.ToString());
+                editarServicos.chkSemData.Checked = false;
             }
 
             if (lucro > 0)
@@ -386,7 +376,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             editarServicos.ShowDialog();
             //table_OrdensServicos.Refresh();
-            refreshTable();
+            //refreshTable();
         }
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -491,6 +481,23 @@ namespace PFC___StandBy_CSharp.Forms
         private void table_OrdensServicos_MouseLeave(object sender, EventArgs e)
         {
             table_OrdensServicos.ClearSelection();
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //AtualizarAtrasosCores();
+            preencherTableServ.Preencher(table_OrdensServicos);
+        }
+
+        private void table_OrdensServicos_MouseEnter(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void table_OrdensServicos_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            AtualizarAtrasosCores();
         }
     }
 }

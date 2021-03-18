@@ -31,6 +31,7 @@ namespace PFC___StandBy_CSharp.Forms
         //form_OrdensServ form = new form_OrdensServ();
         int[] corGeral = new int[] { 0, 0, 0 };
         public int ImprimiuAlgumaNota = 0;
+        
 
         public form_OrdensServ_Edit(form_OrdensServ formServ, int[] _cor)
         {
@@ -40,6 +41,7 @@ namespace PFC___StandBy_CSharp.Forms
             corGeral = _cor;
             MudarCores();
             CalcularLucro();
+            dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
         }
         public form_OrdensServ_Edit(form_Lucros formLucros, int[] _cor)
         {
@@ -49,6 +51,7 @@ namespace PFC___StandBy_CSharp.Forms
             corGeral = _cor;
             MudarCores();
             CalcularLucro();
+            dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
         }
         public form_OrdensServ_Edit()
         {
@@ -122,14 +125,41 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnEditarServico_Click(object sender, EventArgs e)
         {
-            if (dtpDataEditPrevisao.Value.Date == DateTime.Parse("26/03/2020"))
+            if (chkSemData.Checked == true)
             {
-                //MessageBox.Show("e igual sim: " + dtpDataEditPrevisao.Value.ToString());
                 SalvarEdicoesServico(DateTime.Parse("26/03/2020"));
+                formServ1.refreshTable();
             }
             else
             {
                 SalvarEdicoesServico(dtpDataEditPrevisao.Value);
+                formServ1.refreshTable();
+            }
+            //if (dtpDataEditPrevisao.Value.Date == DateTime.Parse("26/03/2020"))
+            //{
+            //    //MessageBox.Show("e igual sim: " + dtpDataEditPrevisao.Value.ToString());
+            //    SalvarEdicoesServico(DateTime.Parse("26/03/2020"));
+            //}
+            //else
+            //{
+            //    SalvarEdicoesServico(dtpDataEditPrevisao.Value);
+            //}
+        }
+        private void chkSemData_Click(object sender, EventArgs e)
+        {
+            if (chkSemData.Checked == true)
+            {
+                dtpDataEditPrevisao.Enabled = false;
+                dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+                dtpDataEditPrevisao.FormatCustom = " ";
+                dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+            }
+            else
+            {
+                dtpDataEditPrevisao.Enabled = true;
+                dtpDataEditPrevisao.Value = DateTime.Today;
+                dtpDataEditPrevisao.FormatCustom = "dd/MM/yyyy";
+                dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
             }
         }
         private void SalvarEdicoesServico(DateTime DataPrevisao)
@@ -191,7 +221,7 @@ namespace PFC___StandBy_CSharp.Forms
         }
         private void form_OrdensServ_Edit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DeletarArquivoWordCliente();
+            //DeletarArquivoWordCliente();
         }
 
         public void DeletarArquivoWordCliente()
@@ -208,12 +238,12 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
         {
             imprimirNota();
-           // PrintPreviewDialog dialog = new PrintPreviewDialog();
-           // dialog.Document = printDocument1;
-           // //printPreviewDialog1.Document = printDocument1;
-           // ((Form)dialog).WindowState = FormWindowState.Maximized;
-           // dialog.ShowDialog();
-           //// printPreviewDialog1.ShowDialog();
+            // PrintPreviewDialog dialog = new PrintPreviewDialog();
+            // dialog.Document = printDocument1;
+            // //printPreviewDialog1.Document = printDocument1;
+            // ((Form)dialog).WindowState = FormWindowState.Maximized;
+            // dialog.ShowDialog();
+            //// printPreviewDialog1.ShowDialog();
 
 
         }
@@ -223,7 +253,7 @@ namespace PFC___StandBy_CSharp.Forms
             StringFormat sfcenter = new StringFormat();
             sfcenter.LineAlignment = StringAlignment.Center;
             sfcenter.Alignment = StringAlignment.Center;
-           
+
 
             int x = 220, y = 10; //start position
             x += 0; //left align texts with logo image
@@ -233,38 +263,38 @@ namespace PFC___StandBy_CSharp.Forms
             var fntbold = new Font("Calibri (Corpo)", 10, FontStyle.Bold);
             int dy = (int)fntregular.GetHeight(e.Graphics); //20; //line height spacing
 
-            e.Graphics.DrawString("STANDBY ASSISTÊNCIA TÉCNICA", fntbold, Brushes.Black, new PointF(x, y), sfcenter); 
+            e.Graphics.DrawString("STANDBY ASSISTÊNCIA TÉCNICA", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
-            e.Graphics.DrawString("CNPJ - 33.393.551/0001-11", fntregular, Brushes.Black, new PointF(x, y), sfcenter); 
+            e.Graphics.DrawString("CNPJ - 33.393.551/0001-11", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
-            e.Graphics.DrawString("Rua Segundo Sendes, 197B. Gleba B, Camaçari BA", fntregular, Brushes.Black, new PointF(x, y), sfcenter); 
+            e.Graphics.DrawString("Rua Segundo Sendes, 197B. Gleba B, Camaçari BA", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
-            e.Graphics.DrawString("Contato 71 98305-5871", fntregular, Brushes.Black, new PointF(x, y), sfcenter); 
+            e.Graphics.DrawString("Contato 71 98305-5871", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
-            e.Graphics.DrawString("Técnico Responsável - Cleison Ribeiro", fntregular, Brushes.Black, new PointF(x, y), sfcenter); 
-            y += dy; 
-            y += dy; 
-            e.Graphics.DrawString("Documento Auxiliar de Venda", fntbold, Brushes.Black, new PointF(x, y), sfcenter); 
+            e.Graphics.DrawString("Técnico Responsável - Cleison Ribeiro", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             y += dy;
+            e.Graphics.DrawString("Documento Auxiliar de Venda", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             y += dy;
-            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter); 
-            y += dy;
-            e.Graphics.DrawString("DESCRIÇÃO DO SERVIÇO", fntbold, Brushes.Black, new PointF(x, y), sfcenter); 
-            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter); 
             y += dy;
             y += dy;
-            e.Graphics.DrawString("♥ Serviço - <serviço>", fntregular, Brushes.Black, new PointF(x-215, y)); 
+            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
-            e.Graphics.DrawString("♣ Modelo do aparelho - <aparelho>", fntregular, Brushes.Black, new PointF(x-215, y)); 
+            e.Graphics.DrawString("DESCRIÇÃO DO SERVIÇO", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
-            e.Graphics.DrawString("♦ Valor - <valor>", fntregular, Brushes.Black, new PointF(x-215, y)); 
             y += dy;
-            e.Graphics.DrawString("♠ Cliente - <cliente>", fntregular, Brushes.Black, new PointF(x-215, y)); 
+            e.Graphics.DrawString("♥ Serviço - <serviço>", fntregular, Brushes.Black, new PointF(x - 215, y));
             y += dy;
-            e.Graphics.DrawString("• CPF - ", fntregular, Brushes.Black, new PointF(x-180, y)); 
-            e.Graphics.DrawString(txtCPFCliente.Text, fntbold, Brushes.Black, new PointF(x-130, y)); 
+            e.Graphics.DrawString("♣ Modelo do aparelho - <aparelho>", fntregular, Brushes.Black, new PointF(x - 215, y));
+            y += dy;
+            e.Graphics.DrawString("♦ Valor - <valor>", fntregular, Brushes.Black, new PointF(x - 215, y));
+            y += dy;
+            e.Graphics.DrawString("♠ Cliente - <cliente>", fntregular, Brushes.Black, new PointF(x - 215, y));
+            y += dy;
+            e.Graphics.DrawString("• CPF - ", fntregular, Brushes.Black, new PointF(x - 180, y));
+            e.Graphics.DrawString(txtCPFCliente.Text, fntbold, Brushes.Black, new PointF(x - 130, y));
             y += dy;
             y += dy;
             e.Graphics.DrawString("____________________________________________________", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
@@ -336,6 +366,10 @@ namespace PFC___StandBy_CSharp.Forms
         {
             dtpDataEditPrevisao.FormatCustom = "dd/MM/yyyy";
             dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+            if (dtpDataEditPrevisao.Value != DateTime.Parse("26/03/2020"))
+            {
+                chkSemData.Checked = false;
+            }
         }
 
         private void btnSemData_Click(object sender, EventArgs e)
@@ -344,6 +378,5 @@ namespace PFC___StandBy_CSharp.Forms
             dtpDataEditPrevisao.FormatCustom = " ";
             dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
         }
-
     }
 }

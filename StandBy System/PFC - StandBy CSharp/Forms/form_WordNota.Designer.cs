@@ -107,7 +107,7 @@
             this.panelDrag.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDrag.Location = new System.Drawing.Point(0, 0);
             this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(333, 679);
+            this.panelDrag.Size = new System.Drawing.Size(333, 612);
             this.panelDrag.TabIndex = 2;
             // 
             // lblIDCliente
@@ -139,7 +139,7 @@
             this.lblGarantiaStatus.AutoSize = true;
             this.lblGarantiaStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGarantiaStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblGarantiaStatus.Location = new System.Drawing.Point(166, 459);
+            this.lblGarantiaStatus.Location = new System.Drawing.Point(166, 396);
             this.lblGarantiaStatus.Name = "lblGarantiaStatus";
             this.lblGarantiaStatus.Size = new System.Drawing.Size(85, 17);
             this.lblGarantiaStatus.TabIndex = 33;
@@ -151,7 +151,7 @@
             this.switchGarantia.CheckedOffColor = System.Drawing.Color.DarkGray;
             this.switchGarantia.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.switchGarantia.FillColor = System.Drawing.Color.White;
-            this.switchGarantia.Location = new System.Drawing.Point(123, 460);
+            this.switchGarantia.Location = new System.Drawing.Point(123, 397);
             this.switchGarantia.Name = "switchGarantia";
             this.switchGarantia.Size = new System.Drawing.Size(38, 20);
             this.switchGarantia.TabIndex = 31;
@@ -162,7 +162,7 @@
             this.lblMes3.AutoSize = true;
             this.lblMes3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMes3.ForeColor = System.Drawing.Color.White;
-            this.lblMes3.Location = new System.Drawing.Point(228, 489);
+            this.lblMes3.Location = new System.Drawing.Point(228, 426);
             this.lblMes3.Name = "lblMes3";
             this.lblMes3.Size = new System.Drawing.Size(57, 17);
             this.lblMes3.TabIndex = 27;
@@ -175,7 +175,7 @@
             this.checkboxTresMeses.CheckedOffColor = System.Drawing.Color.Gray;
             this.checkboxTresMeses.CheckedOnColor = System.Drawing.Color.SeaGreen;
             this.checkboxTresMeses.FillColor = System.Drawing.Color.White;
-            this.checkboxTresMeses.Location = new System.Drawing.Point(206, 487);
+            this.checkboxTresMeses.Location = new System.Drawing.Point(206, 424);
             this.checkboxTresMeses.Name = "checkboxTresMeses";
             this.checkboxTresMeses.Size = new System.Drawing.Size(20, 20);
             this.checkboxTresMeses.TabIndex = 26;
@@ -186,7 +186,7 @@
             this.lblMes2.AutoSize = true;
             this.lblMes2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMes2.ForeColor = System.Drawing.Color.White;
-            this.lblMes2.Location = new System.Drawing.Point(152, 488);
+            this.lblMes2.Location = new System.Drawing.Point(152, 425);
             this.lblMes2.Name = "lblMes2";
             this.lblMes2.Size = new System.Drawing.Size(57, 17);
             this.lblMes2.TabIndex = 25;
@@ -199,7 +199,7 @@
             this.checkboxDoisMeses.CheckedOffColor = System.Drawing.Color.Gray;
             this.checkboxDoisMeses.CheckedOnColor = System.Drawing.Color.SeaGreen;
             this.checkboxDoisMeses.FillColor = System.Drawing.Color.White;
-            this.checkboxDoisMeses.Location = new System.Drawing.Point(133, 487);
+            this.checkboxDoisMeses.Location = new System.Drawing.Point(133, 424);
             this.checkboxDoisMeses.Name = "checkboxDoisMeses";
             this.checkboxDoisMeses.Size = new System.Drawing.Size(20, 20);
             this.checkboxDoisMeses.TabIndex = 24;
@@ -210,7 +210,7 @@
             this.lblMes1.AutoSize = true;
             this.lblMes1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMes1.ForeColor = System.Drawing.Color.White;
-            this.lblMes1.Location = new System.Drawing.Point(81, 489);
+            this.lblMes1.Location = new System.Drawing.Point(81, 426);
             this.lblMes1.Name = "lblMes1";
             this.lblMes1.Size = new System.Drawing.Size(44, 17);
             this.lblMes1.TabIndex = 23;
@@ -223,7 +223,7 @@
             this.checkboxUmMes.CheckedOffColor = System.Drawing.Color.Gray;
             this.checkboxUmMes.CheckedOnColor = System.Drawing.Color.SeaGreen;
             this.checkboxUmMes.FillColor = System.Drawing.Color.White;
-            this.checkboxUmMes.Location = new System.Drawing.Point(60, 487);
+            this.checkboxUmMes.Location = new System.Drawing.Point(60, 424);
             this.checkboxUmMes.Name = "checkboxUmMes";
             this.checkboxUmMes.Size = new System.Drawing.Size(20, 20);
             this.checkboxUmMes.TabIndex = 22;
@@ -237,7 +237,7 @@
             this.txtGarantia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGarantia.ForeColor = System.Drawing.Color.Silver;
             this.txtGarantia.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtGarantia.Location = new System.Drawing.Point(60, 513);
+            this.txtGarantia.Location = new System.Drawing.Point(60, 450);
             this.txtGarantia.Name = "txtGarantia";
             this.txtGarantia.PasswordChar = '\0';
             this.txtGarantia.SelectedText = "";
@@ -253,7 +253,7 @@
             this.lblGarantia.AutoSize = true;
             this.lblGarantia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGarantia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.lblGarantia.Location = new System.Drawing.Point(57, 460);
+            this.lblGarantia.Location = new System.Drawing.Point(57, 397);
             this.lblGarantia.Name = "lblGarantia";
             this.lblGarantia.Size = new System.Drawing.Size(60, 17);
             this.lblGarantia.TabIndex = 20;
@@ -279,7 +279,7 @@
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 622);
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 559);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(333, 5);
             this.gunaPanel1.TabIndex = 18;
@@ -287,13 +287,13 @@
             // lblArquivoPadrao
             // 
             this.lblArquivoPadrao.AutoSize = true;
-            this.lblArquivoPadrao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArquivoPadrao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArquivoPadrao.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblArquivoPadrao.Location = new System.Drawing.Point(124, 57);
+            this.lblArquivoPadrao.Location = new System.Drawing.Point(95, 13);
             this.lblArquivoPadrao.Name = "lblArquivoPadrao";
-            this.lblArquivoPadrao.Size = new System.Drawing.Size(85, 17);
+            this.lblArquivoPadrao.Size = new System.Drawing.Size(141, 21);
             this.lblArquivoPadrao.TabIndex = 17;
-            this.lblArquivoPadrao.Text = "Pasta Padrao";
+            this.lblArquivoPadrao.Text = "Impressão da Nota";
             // 
             // lblImpressoraPdrao
             // 
@@ -301,7 +301,7 @@
             this.lblImpressoraPdrao.AutoSize = true;
             this.lblImpressoraPdrao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImpressoraPdrao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.lblImpressoraPdrao.Location = new System.Drawing.Point(106, 654);
+            this.lblImpressoraPdrao.Location = new System.Drawing.Point(106, 589);
             this.lblImpressoraPdrao.Name = "lblImpressoraPdrao";
             this.lblImpressoraPdrao.Size = new System.Drawing.Size(104, 17);
             this.lblImpressoraPdrao.TabIndex = 16;
@@ -312,7 +312,7 @@
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel6.ForeColor = System.Drawing.SystemColors.Control;
-            this.gunaLabel6.Location = new System.Drawing.Point(106, 634);
+            this.gunaLabel6.Location = new System.Drawing.Point(106, 571);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(123, 17);
             this.gunaLabel6.TabIndex = 15;
@@ -336,7 +336,7 @@
             this.btnPastaPadrao.Image = null;
             this.btnPastaPadrao.ImageSize = new System.Drawing.Size(20, 20);
             this.btnPastaPadrao.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnPastaPadrao.Location = new System.Drawing.Point(178, 28);
+            this.btnPastaPadrao.Location = new System.Drawing.Point(6, 119);
             this.btnPastaPadrao.Name = "btnPastaPadrao";
             this.btnPastaPadrao.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPastaPadrao.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -344,10 +344,11 @@
             this.btnPastaPadrao.OnHoverImage = null;
             this.btnPastaPadrao.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnPastaPadrao.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPastaPadrao.Size = new System.Drawing.Size(152, 27);
+            this.btnPastaPadrao.Size = new System.Drawing.Size(18, 27);
             this.btnPastaPadrao.TabIndex = 14;
             this.btnPastaPadrao.Text = "Restaurar Pasta Padrao";
             this.btnPastaPadrao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPastaPadrao.Visible = false;
             this.btnPastaPadrao.Click += new System.EventHandler(this.btnPastaPadrao_Click);
             // 
             // tFilename
@@ -358,12 +359,13 @@
             this.tFilename.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tFilename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tFilename.LineColor = System.Drawing.Color.Gainsboro;
-            this.tFilename.Location = new System.Drawing.Point(5, 79);
+            this.tFilename.Location = new System.Drawing.Point(6, 152);
             this.tFilename.Name = "tFilename";
             this.tFilename.PasswordChar = '\0';
             this.tFilename.SelectedText = "";
-            this.tFilename.Size = new System.Drawing.Size(324, 26);
+            this.tFilename.Size = new System.Drawing.Size(16, 26);
             this.tFilename.TabIndex = 13;
+            this.tFilename.Visible = false;
             // 
             // txtCPF
             // 
@@ -373,7 +375,7 @@
             this.txtCPF.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPF.ForeColor = System.Drawing.Color.White;
             this.txtCPF.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtCPF.Location = new System.Drawing.Point(60, 340);
+            this.txtCPF.Location = new System.Drawing.Point(60, 277);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PasswordChar = '\0';
             this.txtCPF.SelectedText = "";
@@ -389,7 +391,7 @@
             this.txtCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.ForeColor = System.Drawing.Color.White;
             this.txtCliente.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtCliente.Location = new System.Drawing.Point(60, 130);
+            this.txtCliente.Location = new System.Drawing.Point(60, 67);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.PasswordChar = '\0';
             this.txtCliente.SelectedText = "";
@@ -405,7 +407,7 @@
             this.txtValor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValor.ForeColor = System.Drawing.Color.White;
             this.txtValor.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtValor.Location = new System.Drawing.Point(60, 410);
+            this.txtValor.Location = new System.Drawing.Point(60, 347);
             this.txtValor.Name = "txtValor";
             this.txtValor.PasswordChar = '\0';
             this.txtValor.SelectedText = "";
@@ -421,7 +423,7 @@
             this.txtModelo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelo.ForeColor = System.Drawing.Color.White;
             this.txtModelo.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtModelo.Location = new System.Drawing.Point(60, 270);
+            this.txtModelo.Location = new System.Drawing.Point(60, 207);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.PasswordChar = '\0';
             this.txtModelo.SelectedText = "";
@@ -437,7 +439,7 @@
             this.txtServico.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServico.ForeColor = System.Drawing.Color.White;
             this.txtServico.LineColor = System.Drawing.Color.Gainsboro;
-            this.txtServico.Location = new System.Drawing.Point(60, 200);
+            this.txtServico.Location = new System.Drawing.Point(60, 137);
             this.txtServico.Name = "txtServico";
             this.txtServico.PasswordChar = '\0';
             this.txtServico.SelectedText = "";
@@ -450,7 +452,7 @@
             this.gunaLabel5.AutoSize = true;
             this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel5.Location = new System.Drawing.Point(57, 320);
+            this.gunaLabel5.Location = new System.Drawing.Point(57, 257);
             this.gunaLabel5.Name = "gunaLabel5";
             this.gunaLabel5.Size = new System.Drawing.Size(32, 17);
             this.gunaLabel5.TabIndex = 7;
@@ -461,7 +463,7 @@
             this.gunaLabel4.AutoSize = true;
             this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel4.Location = new System.Drawing.Point(57, 110);
+            this.gunaLabel4.Location = new System.Drawing.Point(57, 47);
             this.gunaLabel4.Name = "gunaLabel4";
             this.gunaLabel4.Size = new System.Drawing.Size(50, 17);
             this.gunaLabel4.TabIndex = 6;
@@ -472,7 +474,7 @@
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel3.Location = new System.Drawing.Point(57, 390);
+            this.gunaLabel3.Location = new System.Drawing.Point(57, 327);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(41, 17);
             this.gunaLabel3.TabIndex = 5;
@@ -483,7 +485,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel2.Location = new System.Drawing.Point(57, 250);
+            this.gunaLabel2.Location = new System.Drawing.Point(57, 187);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(64, 17);
             this.gunaLabel2.TabIndex = 4;
@@ -494,7 +496,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.gunaLabel1.Location = new System.Drawing.Point(57, 180);
+            this.gunaLabel1.Location = new System.Drawing.Point(57, 117);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(53, 17);
             this.gunaLabel1.TabIndex = 3;
@@ -518,7 +520,7 @@
             this.btnCarregarWord.Image = null;
             this.btnCarregarWord.ImageSize = new System.Drawing.Size(20, 20);
             this.btnCarregarWord.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCarregarWord.Location = new System.Drawing.Point(6, 28);
+            this.btnCarregarWord.Location = new System.Drawing.Point(8, 82);
             this.btnCarregarWord.Name = "btnCarregarWord";
             this.btnCarregarWord.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCarregarWord.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -526,15 +528,16 @@
             this.btnCarregarWord.OnHoverImage = null;
             this.btnCarregarWord.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnCarregarWord.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCarregarWord.Size = new System.Drawing.Size(152, 27);
+            this.btnCarregarWord.Size = new System.Drawing.Size(16, 27);
             this.btnCarregarWord.TabIndex = 2;
             this.btnCarregarWord.Text = "Carregar Template Word";
             this.btnCarregarWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCarregarWord.Visible = false;
             this.btnCarregarWord.Click += new System.EventHandler(this.btnCarregarWord_Click);
             // 
             // btnCriarWord
             // 
-            this.btnCriarWord.AccessibleDescription = "Imprimir nota para cliente";
+            this.btnCriarWord.AccessibleDescription = "GerarImpressaoNota nota para cliente";
             this.btnCriarWord.Animated = true;
             this.btnCriarWord.AnimationHoverSpeed = 0.07F;
             this.btnCriarWord.AnimationSpeed = 0.03F;
@@ -553,7 +556,7 @@
             this.btnCriarWord.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCriarWord.ImageSize = new System.Drawing.Size(40, 40);
             this.btnCriarWord.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCriarWord.Location = new System.Drawing.Point(137, 554);
+            this.btnCriarWord.Location = new System.Drawing.Point(137, 491);
             this.btnCriarWord.Name = "btnCriarWord";
             this.btnCriarWord.OnHoverBaseColor = System.Drawing.Color.Black;
             this.btnCriarWord.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -585,7 +588,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 679);
+            this.ClientSize = new System.Drawing.Size(333, 612);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
