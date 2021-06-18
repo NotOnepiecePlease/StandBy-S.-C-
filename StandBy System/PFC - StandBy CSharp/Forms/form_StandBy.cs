@@ -10,6 +10,7 @@ using System.Net;
 using System.Diagnostics;
 using PFC___StandBy_CSharp.ChecarUpdates;
 using PFC___StandBy_CSharp.Dados;
+using System.Net.Sockets;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -29,15 +30,30 @@ namespace PFC___StandBy_CSharp.Forms
             //verificarUpd.ChecarVersao();
             //Thread.Sleep(2000);
             InitializeComponent();
-            
+
             IniciarPainelCor();
             CarregarGraficos();
-            
+
+            lblVersion.Text = VerMeuIPV4();
+
             btnMenuSuperior.DisabledColor = Color.Transparent;
             if (btnMenuSuperior.Enabled == false)
             {
                 btnMenuSuperior.Cursor = Cursors.Default;
             }
+        }
+
+        private static string VerMeuIPV4()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
         }
 
         private void CarregarGraficos()
@@ -296,7 +312,7 @@ namespace PFC___StandBy_CSharp.Forms
                 OpenChildForm(new form_OrdensServ(corGeral));
                 //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO ORDENS DE SERVICO.png");
             }
-            
+
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -310,7 +326,7 @@ namespace PFC___StandBy_CSharp.Forms
                 OpenChildForm(new form_CadastroClientes(corGeral));
                 //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO CADASTRO CLIENTES.png");
             }
-            
+
         }
 
         private void btnConcluidos_Click(object sender, EventArgs e)
@@ -324,7 +340,7 @@ namespace PFC___StandBy_CSharp.Forms
                 OpenChildForm(new form_Concluidos(corGeral));
                 //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\SERVICOS COMPLETOS.png");
             }
-            
+
             //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO CADASTRO CLIENTES.png");
         }
 
@@ -381,19 +397,20 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            DialogResult dialog1 = MessageBox.Show("Voce esta prestes a resetar o mês, fazendo isso voce armazena todos os dados" +
-                "com segurança no banco de dados e reinicia todas as tabelas dos dados do mês em questão, essa ação é irreversivel," +
-                " você tem certeza disso?","----- PERIGO -----", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+            MessageBox.Show("Funcao desativada por nao ser necessaria.","!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //DialogResult dialog1 = MessageBox.Show("Voce esta prestes a resetar o mês, fazendo isso voce armazena todos os dados" +
+            //    "com segurança no banco de dados e reinicia todas as tabelas dos dados do mês em questão, essa ação é irreversivel," +
+            //    " você tem certeza disso?", "----- PERIGO -----", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
 
-            if(dialog1 == DialogResult.Yes)
-            {
-                DialogResult dialog2 = MessageBox.Show("ULTIMO AVISO!!!\n\nEfetue o reset apenas se você tiver permissão para isso, essa ação" +
-                    " não poderá ser desfeita, voce tem certeza do que está fazendo?", "ULTIMO AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
-                if (dialog2 == DialogResult.Yes)
-                {
-                    ad.ResetarDadosMensais();
-                }
-            }
+            //if (dialog1 == DialogResult.Yes)
+            //{
+            //    DialogResult dialog2 = MessageBox.Show("ULTIMO AVISO!!!\n\nEfetue o reset apenas se você tiver permissão para isso, essa ação" +
+            //        " não poderá ser desfeita, voce tem certeza do que está fazendo?", "ULTIMO AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+            //    if (dialog2 == DialogResult.Yes)
+            //    {
+            //        ad.ResetarDadosMensais();
+            //    }
+            //}
         }
 
         private void form_StandBy_FormClosing(object sender, FormClosingEventArgs e)

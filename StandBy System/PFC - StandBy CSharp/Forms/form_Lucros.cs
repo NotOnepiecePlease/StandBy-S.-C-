@@ -89,9 +89,6 @@ namespace PFC___StandBy_CSharp.Forms
                 circle1.animated = true;
                 backWork1.RunWorkerAsync();
 
-                //circle2.animated = true;
-                //backWork2.RunWorkerAsync();
-
                 circle3.animated = true;
                 backWork3.RunWorkerAsync();
 
@@ -154,55 +151,6 @@ namespace PFC___StandBy_CSharp.Forms
                 lblLucroLiquido.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorLucroLiquido);
             }
             circle1.animated = false;
-        }
-
-        private void backWork2_DoWork(object sender, DoWorkEventArgs e)
-        {
-            //lblValorPeca.Location = new Point(581, 94);
-            //lblValorPeca.Text = "Calculando...";
-
-            //animateCircle2.ShowSync(circle2);
-            //circle2.Visible = true;
-
-            //animateCircle2.ShowSync(lblValorPeca);
-            //lblValorPeca.Visible = true;
-
-            //animateCircle2.ShowSync(lblDesc2);
-            //lblDesc2.Visible = true;
-
-            //for (int i = 0; i <= 100; i++)
-            //{
-            //    circle2.Value = i;
-            //    Thread.Sleep(20);
-            //}
-        }
-
-        private void backWork2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            //decimal valorDecimal = Convert.ToDecimal(tab_Lucros.getPecas().ToString("0.00"));
-            //lblValorPeca.Text = valorDecimal.ToString();
-            //if (Convert.ToDecimal(lblValorPeca.Text) <= 0)
-            //{
-            //    lblValorPeca.Text = "00.00";
-            //    lblValorPeca.Location = new Point(617, 94);
-            //}
-            //decimal valor = Convert.ToDecimal(lblValorPeca.Text);
-            //if (valor > 99.99m && valor < 999.99m)
-            //{
-            //    lblValorPeca.Location = new Point(612, 94);
-            //}
-            //else if (valor > 999.99m && valor < 9999.99m)
-            //{
-            //    lblValorPeca.Location = new Point(603, 94);
-            //    lblValorPeca.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
-            //}
-            //else if (valor > 9999.99m)
-            //{
-            //    lblValorPeca.Location = new Point(598, 94);
-            //    lblValorPeca.Text = String.Format(new CultureInfo("pt-BR"), "{0:n}", valorDecimal);
-            //}
-            //lblDesc2.Text = "Peças Totais";
-            //circle2.animated = false;
         }
 
         private void backWork3_DoWork(object sender, DoWorkEventArgs e)

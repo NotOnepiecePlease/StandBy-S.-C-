@@ -38,9 +38,6 @@
             this.txtPesquisarConcluidos = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btnPesquisarConcluidos = new FontAwesome.Sharp.IconButton();
             this.table_ServicosConcluidos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.naoConcluidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuVerGarantia = new System.Windows.Forms.ToolStripMenuItem();
             this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,8 +52,15 @@
             this.servico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataConclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.naoConcluidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuVerGarantia = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosConcluidos)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,31 +190,6 @@
             this.table_ServicosConcluidos.TabIndex = 1;
             this.table_ServicosConcluidos.TabStop = false;
             // 
-            // menu
-            // 
-            this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.naoConcluidoToolStripMenuItem1,
-            this.menuVerGarantia});
-            this.menu.Name = "menu";
-            this.menu.ShowImageMargin = false;
-            this.menu.Size = new System.Drawing.Size(128, 48);
-            // 
-            // naoConcluidoToolStripMenuItem1
-            // 
-            this.naoConcluidoToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.naoConcluidoToolStripMenuItem1.Name = "naoConcluidoToolStripMenuItem1";
-            this.naoConcluidoToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
-            this.naoConcluidoToolStripMenuItem1.Text = "Nao concluido";
-            this.naoConcluidoToolStripMenuItem1.Click += new System.EventHandler(this.naoConcluidoToolStripMenuItem1_Click);
-            // 
-            // menuVerGarantia
-            // 
-            this.menuVerGarantia.Name = "menuVerGarantia";
-            this.menuVerGarantia.Size = new System.Drawing.Size(127, 22);
-            this.menuVerGarantia.Text = "Ver garantia";
-            this.menuVerGarantia.Click += new System.EventHandler(this.menuVerGarantia_Click);
-            // 
             // idServico
             // 
             this.idServico.DataPropertyName = "sv_id";
@@ -322,6 +301,56 @@
             this.DataConclusao.ReadOnly = true;
             this.DataConclusao.Visible = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(80, 26);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(79, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // menu
+            // 
+            this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.naoConcluidoToolStripMenuItem1,
+            this.menuVerGarantia,
+            this.editarToolStripMenuItem1});
+            this.menu.Name = "menu";
+            this.menu.ShowImageMargin = false;
+            this.menu.Size = new System.Drawing.Size(128, 70);
+            // 
+            // naoConcluidoToolStripMenuItem1
+            // 
+            this.naoConcluidoToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.naoConcluidoToolStripMenuItem1.Name = "naoConcluidoToolStripMenuItem1";
+            this.naoConcluidoToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.naoConcluidoToolStripMenuItem1.Text = "Nao concluido";
+            this.naoConcluidoToolStripMenuItem1.Click += new System.EventHandler(this.naoConcluidoToolStripMenuItem1_Click);
+            // 
+            // menuVerGarantia
+            // 
+            this.menuVerGarantia.Name = "menuVerGarantia";
+            this.menuVerGarantia.Size = new System.Drawing.Size(127, 22);
+            this.menuVerGarantia.Text = "Ver garantia";
+            this.menuVerGarantia.Click += new System.EventHandler(this.menuVerGarantia_Click);
+            // 
+            // editarToolStripMenuItem1
+            // 
+            this.editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
+            this.editarToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.editarToolStripMenuItem1.Text = "Editar";
+            this.editarToolStripMenuItem1.Click += new System.EventHandler(this.editarToolStripMenuItem1_Click);
+            // 
             // form_Concluidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +364,7 @@
             this.Text = "form_Concluidos";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosConcluidos)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -363,5 +393,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servico;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_status;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataConclusao;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
     }
 }

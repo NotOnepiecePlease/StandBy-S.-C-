@@ -96,18 +96,6 @@ namespace PFC___StandBy_CSharp.Forms
             desfazer.lblIDServico.Text = idServico.ToString();
             desfazer.CentralizarLabels();
             desfazer.ShowDialog();
-            //DialogResult resultado = MessageBox.Show("Tem certeza que deseja cancelar a conclusão do serviço abaixo?\n\n" +
-            //    "Data: "+String.Format("{0:d}",Data)+"\n" +
-            //    "Cliente: "+NomeCliente+"\n" +
-            //    "Aparelho: "+Aparelho+"\n" +
-            //    "Defeito: "+Defeito+"\n" +
-            //    "Situação: "+Situacao+"\n", "CANCELAR CONCLUSÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //if (resultado == DialogResult.Yes)
-            //{
-            //    int idservico = int.Parse(table_ServicosConcluidos.SelectedCells[0].Value.ToString());
-            //    ad.CancelarConclusaoServicos(idservico);
-            //    refreshTable();
-            //}
         }
 
         private void txtPesquisarConcluidos_KeyUp(object sender, KeyEventArgs e)
@@ -150,6 +138,27 @@ namespace PFC___StandBy_CSharp.Forms
                 verGarantia.lblSemGarantia.Visible = true;
                 verGarantia.ShowDialog();
             }
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
+            editarServicos.lblIDservico.Text = table_ServicosConcluidos.SelectedCells[0].Value.ToString();
+            editarServicos.dtpDataEdit.Value = Convert.ToDateTime(table_ServicosConcluidos.SelectedCells[2].Value.ToString());
+            editarServicos.txtClienteNome.Text = table_ServicosConcluidos.SelectedCells[3].Value.ToString();
+            editarServicos.txtAparelhoEdit.Text = table_ServicosConcluidos.SelectedCells[4].Value.ToString();
+            editarServicos.txtDefeitoEdit.Text = table_ServicosConcluidos.SelectedCells[5].Value.ToString();
+            editarServicos.txtSituacaoEdit.Text = table_ServicosConcluidos.SelectedCells[6].Value.ToString();
+            editarServicos.txtServicoValorEdit.Text = table_ServicosConcluidos.SelectedCells[8].Value.ToString();
+            editarServicos.txtPecaValorEdit.Text = table_ServicosConcluidos.SelectedCells[9].Value.ToString();
+            editarServicos.txtLucroValorEdit.Text = table_ServicosConcluidos.SelectedCells[10].Value.ToString();
+            editarServicos.btnConcluirServico.Visible = false;
+            editarServicos.ShowDialog();
         }
     }
 }

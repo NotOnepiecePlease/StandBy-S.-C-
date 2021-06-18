@@ -55,13 +55,14 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtNomeCliente_Enter(object sender, EventArgs e)
         {
-            if (txtNomeCliente.Text == "Nome do Cliente")
-            {
-                txtNomeCliente.Text = "";
-                txtNomeCliente.Font = new Font(txtNomeCliente.Font, FontStyle.Regular);
-                txtNomeCliente.LineIdleColor = Color.White;
-                txtNomeCliente.ForeColor = Color.White;
-            }
+            MessageBox.Show("teste");
+            //if (txtNomeCliente.Text == "Nome do Cliente")
+            //{
+            //    txtNomeCliente.Text = "";
+            //    txtNomeCliente.Font = new Font(txtNomeCliente.Font, FontStyle.Regular);
+            //    txtNomeCliente.LineIdleColor = Color.White;
+            //    txtNomeCliente.ForeColor = Color.White;
+            //}
         }
 
         private void txtNomeCliente_Leave(object sender, EventArgs e)

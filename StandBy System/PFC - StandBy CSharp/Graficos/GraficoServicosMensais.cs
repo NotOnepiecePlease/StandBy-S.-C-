@@ -129,7 +129,7 @@ namespace PFC___StandBy_CSharp.Graficos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERRO: " + ex);
+                MessageBox.Show("ERRO: Nao foi possivel carregar graficos pois nao existem dados! \n\n\n" + ex,"Sem Dados!",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         } //procedure
     }

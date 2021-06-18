@@ -16,14 +16,8 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_OrdensServ_Edit : Form
     {
-        // Declare a string to hold the entire document contents.
-        private string documentContents;
-
-        // Declare a variable to hold the portion of the document that
-        // is not printed.
-        private string stringToPrint;
-
         form_OrdensServ formServ1;
+        form_Concluidos formConcl1;
         form_Lucros formLucros1;
         AlterarDados ad = new AlterarDados();
         BuscarDados bd = new BuscarDados();
@@ -53,7 +47,17 @@ namespace PFC___StandBy_CSharp.Forms
             CalcularLucro();
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
         }
-        public form_OrdensServ_Edit()
+        public form_OrdensServ_Edit(form_Concluidos formConcluidos, int[] _cor)
+        {
+            InitializeComponent();
+            formConcl1 = formConcluidos;
+            this.ActiveControl = txtAparelhoEdit;
+            corGeral = _cor;
+            MudarCores();
+            CalcularLucro();
+            dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+        }
+        public form_OrdensServ_Edit(form_Concluidos form_Concluidos)
         {
             InitializeComponent();
         }
@@ -128,22 +132,25 @@ namespace PFC___StandBy_CSharp.Forms
             if (chkSemData.Checked == true)
             {
                 SalvarEdicoesServico(DateTime.Parse("26/03/2020"));
-                formServ1.refreshTable();
+                try
+                {
+                    formServ1.refreshTable();
+                }
+                catch (Exception)
+                {
+                } 
             }
             else
             {
                 SalvarEdicoesServico(dtpDataEditPrevisao.Value);
-                formServ1.refreshTable();
+                try
+                {
+                    formServ1.refreshTable();
+                }
+                catch (Exception)
+                {
+                }
             }
-            //if (dtpDataEditPrevisao.Value.Date == DateTime.Parse("26/03/2020"))
-            //{
-            //    //MessageBox.Show("e igual sim: " + dtpDataEditPrevisao.Value.ToString());
-            //    SalvarEdicoesServico(DateTime.Parse("26/03/2020"));
-            //}
-            //else
-            //{
-            //    SalvarEdicoesServico(dtpDataEditPrevisao.Value);
-            //}
         }
         private void chkSemData_Click(object sender, EventArgs e)
         {
@@ -238,14 +245,6 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
         {
             imprimirNota();
-            // PrintPreviewDialog dialog = new PrintPreviewDialog();
-            // dialog.Document = printDocument1;
-            // //printPreviewDialog1.Document = printDocument1;
-            // ((Form)dialog).WindowState = FormWindowState.Maximized;
-            // dialog.ShowDialog();
-            //// printPreviewDialog1.ShowDialog();
-
-
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

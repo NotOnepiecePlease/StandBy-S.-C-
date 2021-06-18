@@ -1,2 +1,0 @@
-1 - Criamos uma classe para ser o modelo para a tabela, ela que vai gerenciar tudo quanto linhas, colunas e valores da tabela quando for preencher.
-1.1 - Criamos as Variaveis para o auxilio do processo, uma variavel Array que recebera as linhas e uma variavel vetor String para receber os nomes das colunas.

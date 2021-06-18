@@ -65,6 +65,16 @@
             this.datepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.btnExecutarThread = new Guna.UI.WinForms.GunaAdvenceButton();
             this.tabelaLucros = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cl_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_aparelho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_defeito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_valorservico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_valorpeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_lucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataConclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
@@ -91,16 +101,6 @@
             this.animateRealSimbol = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.animateCircle4 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.backWork4 = new System.ComponentModel.BackgroundWorker();
-            this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_aparelho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_defeito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_valorservico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_valorpeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_lucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataConclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelLucros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaGastos)).BeginInit();
             this.menu.SuspendLayout();
@@ -585,6 +585,84 @@
             this.tabelaLucros.TabIndex = 11;
             this.tabelaLucros.DoubleClick += new System.EventHandler(this.tabelaLucros_DoubleClick);
             // 
+            // idServico
+            // 
+            this.idServico.DataPropertyName = "sv_id";
+            this.idServico.HeaderText = "idServico";
+            this.idServico.Name = "idServico";
+            this.idServico.ReadOnly = true;
+            this.idServico.Visible = false;
+            // 
+            // sv_data
+            // 
+            this.sv_data.DataPropertyName = "sv_data";
+            this.sv_data.HeaderText = "Entrada";
+            this.sv_data.Name = "sv_data";
+            this.sv_data.ReadOnly = true;
+            // 
+            // cl_nome
+            // 
+            this.cl_nome.DataPropertyName = "cl_nome";
+            this.cl_nome.HeaderText = "Cliente";
+            this.cl_nome.Name = "cl_nome";
+            this.cl_nome.ReadOnly = true;
+            this.cl_nome.Width = 170;
+            // 
+            // sv_aparelho
+            // 
+            this.sv_aparelho.DataPropertyName = "sv_aparelho";
+            this.sv_aparelho.HeaderText = "Aparelho";
+            this.sv_aparelho.Name = "sv_aparelho";
+            this.sv_aparelho.ReadOnly = true;
+            // 
+            // sv_defeito
+            // 
+            this.sv_defeito.DataPropertyName = "sv_defeito";
+            this.sv_defeito.HeaderText = "Defeito";
+            this.sv_defeito.Name = "sv_defeito";
+            this.sv_defeito.ReadOnly = true;
+            this.sv_defeito.Visible = false;
+            this.sv_defeito.Width = 150;
+            // 
+            // sv_situacao
+            // 
+            this.sv_situacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sv_situacao.DataPropertyName = "sv_situacao";
+            this.sv_situacao.HeaderText = "Situação";
+            this.sv_situacao.Name = "sv_situacao";
+            this.sv_situacao.ReadOnly = true;
+            // 
+            // sv_valorservico
+            // 
+            this.sv_valorservico.DataPropertyName = "sv_valorservico";
+            this.sv_valorservico.HeaderText = "R$ Serviço";
+            this.sv_valorservico.Name = "sv_valorservico";
+            this.sv_valorservico.ReadOnly = true;
+            this.sv_valorservico.Width = 60;
+            // 
+            // sv_valorpeca
+            // 
+            this.sv_valorpeca.DataPropertyName = "sv_valorpeca";
+            this.sv_valorpeca.HeaderText = "R$ Peça";
+            this.sv_valorpeca.Name = "sv_valorpeca";
+            this.sv_valorpeca.ReadOnly = true;
+            this.sv_valorpeca.Width = 60;
+            // 
+            // sv_lucro
+            // 
+            this.sv_lucro.DataPropertyName = "sv_lucro";
+            this.sv_lucro.HeaderText = "R$ Lucro";
+            this.sv_lucro.Name = "sv_lucro";
+            this.sv_lucro.ReadOnly = true;
+            this.sv_lucro.Width = 60;
+            // 
+            // DataConclusao
+            // 
+            this.DataConclusao.DataPropertyName = "sv_data_conclusao";
+            this.DataConclusao.HeaderText = "Saida";
+            this.DataConclusao.Name = "DataConclusao";
+            this.DataConclusao.ReadOnly = true;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
@@ -973,8 +1051,6 @@
             // backWork2
             // 
             this.backWork2.WorkerReportsProgress = true;
-            this.backWork2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backWork2_DoWork);
-            this.backWork2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backWork2_RunWorkerCompleted);
             // 
             // backWork3
             // 
@@ -1034,84 +1110,6 @@
             this.backWork4.WorkerReportsProgress = true;
             this.backWork4.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backWork4_DoWork);
             this.backWork4.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backWork4_RunWorkerCompleted);
-            // 
-            // idServico
-            // 
-            this.idServico.DataPropertyName = "sv_id";
-            this.idServico.HeaderText = "idServico";
-            this.idServico.Name = "idServico";
-            this.idServico.ReadOnly = true;
-            this.idServico.Visible = false;
-            // 
-            // sv_data
-            // 
-            this.sv_data.DataPropertyName = "sv_data";
-            this.sv_data.HeaderText = "Entrada";
-            this.sv_data.Name = "sv_data";
-            this.sv_data.ReadOnly = true;
-            // 
-            // cl_nome
-            // 
-            this.cl_nome.DataPropertyName = "cl_nome";
-            this.cl_nome.HeaderText = "Cliente";
-            this.cl_nome.Name = "cl_nome";
-            this.cl_nome.ReadOnly = true;
-            this.cl_nome.Width = 170;
-            // 
-            // sv_aparelho
-            // 
-            this.sv_aparelho.DataPropertyName = "sv_aparelho";
-            this.sv_aparelho.HeaderText = "Aparelho";
-            this.sv_aparelho.Name = "sv_aparelho";
-            this.sv_aparelho.ReadOnly = true;
-            // 
-            // sv_defeito
-            // 
-            this.sv_defeito.DataPropertyName = "sv_defeito";
-            this.sv_defeito.HeaderText = "Defeito";
-            this.sv_defeito.Name = "sv_defeito";
-            this.sv_defeito.ReadOnly = true;
-            this.sv_defeito.Visible = false;
-            this.sv_defeito.Width = 150;
-            // 
-            // sv_situacao
-            // 
-            this.sv_situacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sv_situacao.DataPropertyName = "sv_situacao";
-            this.sv_situacao.HeaderText = "Situação";
-            this.sv_situacao.Name = "sv_situacao";
-            this.sv_situacao.ReadOnly = true;
-            // 
-            // sv_valorservico
-            // 
-            this.sv_valorservico.DataPropertyName = "sv_valorservico";
-            this.sv_valorservico.HeaderText = "R$ Serviço";
-            this.sv_valorservico.Name = "sv_valorservico";
-            this.sv_valorservico.ReadOnly = true;
-            this.sv_valorservico.Width = 60;
-            // 
-            // sv_valorpeca
-            // 
-            this.sv_valorpeca.DataPropertyName = "sv_valorpeca";
-            this.sv_valorpeca.HeaderText = "R$ Peça";
-            this.sv_valorpeca.Name = "sv_valorpeca";
-            this.sv_valorpeca.ReadOnly = true;
-            this.sv_valorpeca.Width = 60;
-            // 
-            // sv_lucro
-            // 
-            this.sv_lucro.DataPropertyName = "sv_lucro";
-            this.sv_lucro.HeaderText = "R$ Lucro";
-            this.sv_lucro.Name = "sv_lucro";
-            this.sv_lucro.ReadOnly = true;
-            this.sv_lucro.Width = 60;
-            // 
-            // DataConclusao
-            // 
-            this.DataConclusao.DataPropertyName = "sv_data_conclusao";
-            this.DataConclusao.HeaderText = "Saida";
-            this.DataConclusao.Name = "DataConclusao";
-            this.DataConclusao.ReadOnly = true;
             // 
             // form_Lucros
             // 

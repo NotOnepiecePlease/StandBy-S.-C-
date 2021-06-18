@@ -30,7 +30,7 @@ namespace PFC___StandBy_CSharp.Forms
             cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
             table_OrdensServicos.ClearSelection();
             //VerificarAtraso();
-            //timer1.Start();
+            timer1.Start();
         }
 
         private void table_OrdensServicos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -42,37 +42,39 @@ namespace PFC___StandBy_CSharp.Forms
         {
             foreach (DataGridViewRow row in table_OrdensServicos.Rows)
             {
-                if (row.Cells[12].Value != DBNull.Value && Convert.ToInt32(row.Cells[13].Value) == 1)
+                try
                 {
-                    DateTime dataEntrega = Convert.ToDateTime(row.Cells[12].Value);
-                    DateTime dataAtual = DateTime.Now;
+                    if (row.Cells[12].Value != DBNull.Value && Convert.ToInt32(row.Cells[13].Value) == 1)
+                    {
+                        DateTime dataEntrega = Convert.ToDateTime(row.Cells[12].Value);
+                        DateTime dataAtual = DateTime.Now;
 
-                    TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
+                        TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
 
-                    //MessageBox.Show("Horas: " + DiasParaEntrega.TotalHours + "//Data: "+ Convert.ToDateTime(row.Cells[12].Value));
-                    //int DiasParaEntrega = (int)Convert.ToDateTime(row.Cells[12].Value).Subtract(DateTime.Now.Date).TotalDays;
-                    //DateTime data = DateTime.Now.Date.s  Convert.ToDateTime(row.Cells[12].Value);
-
-                    if (DiasParaEntrega.TotalHours < 0)
-                    {
-                        row.Cells[2].Style.BackColor = Color.Red;
-                        row.Cells[2].Style.ForeColor = Color.Black;
+                        if (DiasParaEntrega.TotalHours < 0)
+                        {
+                            row.Cells[2].Style.BackColor = Color.Red;
+                            row.Cells[2].Style.ForeColor = Color.Black;
+                        }
+                        else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
+                        {
+                            row.Cells[2].Style.BackColor = Color.Orange;
+                            row.Cells[2].Style.ForeColor = Color.Black;
+                        }
+                        else if (DiasParaEntrega.TotalHours > 12)
+                        {
+                            row.Cells[2].Style.BackColor = Color.Lime;
+                            row.Cells[2].Style.ForeColor = Color.Black;
+                        }
+                        else
+                        {
+                            row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
+                            row.Cells[2].Style.ForeColor = Color.Gray;
+                        }
                     }
-                    else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
-                    {
-                        row.Cells[2].Style.BackColor = Color.Orange;
-                        row.Cells[2].Style.ForeColor = Color.Black;
-                    }
-                    else if (DiasParaEntrega.TotalHours > 12)
-                    {
-                        row.Cells[2].Style.BackColor = Color.Lime;
-                        row.Cells[2].Style.ForeColor = Color.Black;
-                    }
-                    else
-                    {
-                        row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
-                        row.Cells[2].Style.ForeColor = Color.Gray;
-                    }
+                }
+                catch (Exception ex)
+                {
                 }
             }
         }
@@ -136,52 +138,6 @@ namespace PFC___StandBy_CSharp.Forms
                 form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral);
                 formPrevisaoEntrega.ShowDialog();
             }
-
-
-
-            //if (txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(txtAparelhoOrdens.Text))
-            //{
-            //    MessageBox.Show("Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else
-            //{
-            //    //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
-            //    int _idCliente = bd.BuscarIdCliente(cmbClientes.SelectedItem.ToString());
-            //    //Pego a data de hoje.
-            //    DateTime data = DateTime.Now;
-
-            //    try
-            //    {
-            //        //Insiro o servico com os dados.
-            //        if (txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
-            //        {
-            //            id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, "------------", txtSituacaoOrdens.Text);
-            //        }
-            //        else
-            //        {
-            //            id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, txtSenhaOrdens.Text, txtSituacaoOrdens.Text);
-            //        }
-
-
-            //        //Reseto os campos.
-            //        txtAparelhoOrdens.Text = "";
-            //        txtDefeitoOrdens.Text = "";
-            //        txtSenhaOrdens.Text = "";
-            //        txtSituacaoOrdens.Text = "";
-
-            //        //Mensagem de Conclusao
-            //        ms.InserirServicoSucesso();
-
-            //        //Atualizo a tabela
-            //        preencherTableServ.Preencher(table_OrdensServicos);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        //Mensagem de Erro
-            //        me.ErroInserirServico(ex);
-            //    }
-            //}
         }
 
         private void txtAparelhoOrdens_Enter(object sender, EventArgs e)
@@ -429,53 +385,8 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void CadastrarServicoNovo()
         {
-
             form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral);
-
             formPrevisaoEntrega.ShowDialog();
-
-            //if (txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(txtAparelhoOrdens.Text))
-            //{
-            //    MessageBox.Show("Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else
-            //{
-            //    //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
-            //    int _idCliente = bd.BuscarIdCliente(cmbClientes.SelectedItem.ToString());
-            //    //Pego a data de hoje.
-            //    DateTime data = DateTime.Now;
-
-            //    try
-            //    {
-            //        //Insiro o servico com os dados.
-            //        if (txtSenhaOrdens.Text.Equals("Digite a senha do celular") || string.IsNullOrWhiteSpace(txtSenhaOrdens.Text))
-            //        {
-            //            id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, "------------", txtSituacaoOrdens.Text);
-            //        }
-            //        else
-            //        {
-            //            id.InserirServico(data, _idCliente, txtAparelhoOrdens.Text, txtDefeitoOrdens.Text, txtSenhaOrdens.Text, txtSituacaoOrdens.Text);
-            //        }
-
-            //        //Reseto os campos.
-            //        txtAparelhoOrdens.Text = "";
-            //        txtDefeitoOrdens.Text = "";
-            //        txtSenhaOrdens.Text = "";
-            //        txtSituacaoOrdens.Text = "";
-
-            //        //Mensagem de Conclusao
-            //        ms.InserirServicoSucesso();
-
-            //        //Atualizo a tabela
-            //        preencherTableServ.Preencher(table_OrdensServicos);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        //Mensagem de Erro
-            //        me.ErroInserirServico(ex);
-            //    }
-            //}
         }
 
         private void table_OrdensServicos_MouseLeave(object sender, EventArgs e)
@@ -488,6 +399,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             //AtualizarAtrasosCores();
             preencherTableServ.Preencher(table_OrdensServicos);
+            table_OrdensServicos.ClearSelection();
         }
 
         private void table_OrdensServicos_MouseEnter(object sender, EventArgs e)

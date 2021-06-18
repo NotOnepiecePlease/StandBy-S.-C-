@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFC - StandBy CSharp", "PFC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBAutoUpdate", "SBAutoUpdate\SBAutoUpdate.csproj", "{CEFA9E7A-64A3-490C-918D-7E86A0E1413D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandBy - CLIENT.SERVER", "StandBy - CLIENT.SERVER\StandBy - CLIENT.SERVER.csproj", "{08A6924E-C3FE-4EDC-8EEF-1EB0D5C88E00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CEFA9E7A-64A3-490C-918D-7E86A0E1413D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEFA9E7A-64A3-490C-918D-7E86A0E1413D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEFA9E7A-64A3-490C-918D-7E86A0E1413D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08A6924E-C3FE-4EDC-8EEF-1EB0D5C88E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A6924E-C3FE-4EDC-8EEF-1EB0D5C88E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A6924E-C3FE-4EDC-8EEF-1EB0D5C88E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A6924E-C3FE-4EDC-8EEF-1EB0D5C88E00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
