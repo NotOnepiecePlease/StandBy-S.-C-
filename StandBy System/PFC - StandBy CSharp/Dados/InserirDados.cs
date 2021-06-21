@@ -51,12 +51,21 @@ namespace PFC___StandBy_CSharp.Dados
             }
         }
 
-        public void InserirCliente(string nome, string cpf, string tel)
+        public void InserirCliente(string _nome, string _cpf, string _tel)
         {
-            bool CpfExistente = verificarExistencia.VerificarExistenciaCPF(cpf);
+            bool CpfExistente = false;
+            if(_cpf.Equals("SEM CPF/CNPJ"))
+            {
+                CpfExistente = false;
+            }
+            else
+            {
+                CpfExistente = verificarExistencia.VerificarExistenciaCPF(_cpf);
+            }
+
             if (CpfExistente == true)
             {
-                MessageBox.Show("CPF Já existe, verifique se o cliente já esta cadastrado.", "CPF Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("CPF/CNPJ Já existe, verifique se o cliente já esta cadastrado.", "CPF/CNPJ Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -67,9 +76,16 @@ namespace PFC___StandBy_CSharp.Dados
                     {
                         //Inserção
                         String qry = "insert into dbo.tb_clientes (cl_nome, cl_telefone, cl_cpf) " +
-                            "VALUES ('" + nome + "','" + tel + "','" + cpf + "')";
+                            "VALUES (@Nome, @Telefone, @CpfOuCnpj)";
+
+                        //String qry = "insert into dbo.tb_clientes (cl_nome, cl_telefone, cl_cpf) " +
+                        //    "VALUES ('" + nome + "','" + tel + "','" + cpf + "')";
 
                         SqlCommand cmd = new SqlCommand(qry, con);
+
+                        cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = _nome;
+                        cmd.Parameters.Add("@Telefone", SqlDbType.VarChar).Value = _tel;
+                        cmd.Parameters.Add("@CpfOuCnpj", SqlDbType.VarChar).Value = _cpf;
                         cmd.ExecuteNonQuery();
 
                         //Checagem

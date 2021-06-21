@@ -28,8 +28,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                 DataTable datatable = new DataTable();
                 adapter.Fill(datatable);
 
-
-
                 tabelaServicos.AutoGenerateColumns = false;
                 tabelaServicos.AllowUserToAddRows = false;
                 tabelaServicos.AllowUserToResizeColumns = true;
@@ -43,10 +41,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
             {
                 mErro.ErroPreencherTabelaServicos(ex);
             }
-
-
-            
-
         }
 
         public void PreencherServicosPorNomeCliente(DataGridView tabelaServicos, string _nomeCliente)
