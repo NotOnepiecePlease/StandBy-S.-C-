@@ -51,14 +51,28 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
-                string CpfSemPontos = txtCpf.Text.ToString().Replace(".", "").Replace("-", "");
-                long cpf = Convert.ToInt64(CpfSemPontos);
-                // long cpf = Convert.ToInt64(txtCpf.Text);
-                string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
-                int id = int.Parse(lblID.Text);
-                ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CPFformatado);
-                cadCliente.refreshTable();
-                this.Close();
+                string numeroSemPontosTracos = txtCpf.Text.ToString().Replace(".", "").Replace("-", "");
+                if (numeroSemPontosTracos.Length > 13)
+                {
+                    long cnpj = Convert.ToInt64(numeroSemPontosTracos);
+                    // long cpf = Convert.ToInt64(txtCpf.Text);
+                    string CNPJformatado = String.Format(@"{0:00\.000\.000\/0000-00}", cnpj);
+                    int id = int.Parse(lblID.Text);
+                    ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CNPJformatado);
+                    cadCliente.refreshTable();
+                    this.Close();
+                }
+                else
+                {
+                    long cpf = Convert.ToInt64(numeroSemPontosTracos);
+                    // long cpf = Convert.ToInt64(txtCpf.Text);
+                    string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
+                    int id = int.Parse(lblID.Text);
+                    ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CPFformatado);
+                    cadCliente.refreshTable();
+                    this.Close();
+                }
+                
             }
             
         }
@@ -90,6 +104,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(txtCpf.TextLength.ToString());
             EditarCliente();
         }
 

@@ -53,9 +53,8 @@ namespace PFC___StandBy_CSharp.MsgBox
 
         public void ErroAlterarServico(Exception e)
         {
-            MessageBox.Show("(OR-SV06)Erro ao alterar o serviço do cliente!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //form_ALERT message = new form_ALERT("(OR-SV06)Erro ao alterar o serviço do cliente!", form_ALERT.AlertType.Erro);
-            //message.Show();
+            MessageBox.Show("(OR-SV06)Erro ao alterar o serviço do cliente!\nERRO: " + e + "", 
+                "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void ErroDeletarServico(Exception e)
@@ -103,8 +102,7 @@ namespace PFC___StandBy_CSharp.MsgBox
         public void ErroAlterarCliente(Exception e)
         {
             MessageBox.Show("(CAD-CL01)Erro ao alterar o serviço do cliente!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //form_ALERT message = new form_ALERT("(CAD-CL01)Erro ao alterar o serviço do cliente!", form_ALERT.AlertType.Erro);
-            //message.Show();
+            //
         }
 
         public void ErroInserirCliente(Exception e)

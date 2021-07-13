@@ -139,9 +139,9 @@
             this.lblVersion.ForeColor = System.Drawing.SystemColors.Control;
             this.lblVersion.Location = new System.Drawing.Point(3, 9);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(32, 15);
+            this.lblVersion.Size = new System.Drawing.Size(30, 15);
             this.lblVersion.TabIndex = 9;
-            this.lblVersion.Text = "5.1.0";
+            this.lblVersion.Text = "5.1.1";
             // 
             // iconMenu
             // 

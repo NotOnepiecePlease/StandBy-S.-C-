@@ -60,8 +60,16 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
                 //string procedure = "GastosBuscarEntreDatas";
                 string query = "select gst_id, gst_data, gst_produto, gst_valor, gst_temporario " +
                     "from tb_gastos " +
-                    "where gst_temporario = @_Temp and month(gst_data) = MONTH(GETDATE()) " +
+                    "where gst_temporario = @_Temp and month(gst_data) = MONTH(GETDATE()) and year(gst_data) = YEAR(GETDATE()) " +
                     "order by gst_id desc";
+
+                //-- Essa era a query que eu usava antes mas a busca estava buscando apenas por mes
+                //-- ignorando o ano
+
+                //string query = "select gst_id, gst_data, gst_produto, gst_valor, gst_temporario " +
+                //    "from tb_gastos " +
+                //    "where gst_temporario = @_Temp and month(gst_data) = MONTH(GETDATE()) " +
+                //    "order by gst_id desc";
 
                 //SqlCommand cmd = new SqlCommand(procedure, conexao);
                 SqlCommand cmd = new SqlCommand(query, conexao);

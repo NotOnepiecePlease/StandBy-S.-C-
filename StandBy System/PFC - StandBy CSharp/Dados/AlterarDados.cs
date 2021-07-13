@@ -64,15 +64,13 @@ namespace PFC___StandBy_CSharp.Dados
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERRO: " + ex);
                 mErro.ErroAlterarServico(ex);
             }
-        } //Procedure
+        }
 
-        public void AlterarClientes(int _idcliente, string _nome, string _telefone, string _cpf)
+        public void AlterarClientes(int _idcliente, string _nome, string _telefone, string _cpfOuCnpj)
         {
-            bool cpfExistente = verificarExistencia.VerificarExistenciaCPF(_cpf);
-
+            bool cpfExistente = verificarExistencia.VerificarExistenciaCPF(_cpfOuCnpj);
             //if(cpfExistente == true)
             //{
             //    MessageBox.Show("CPF Já existe, verifique se o cliente já esta cadastrado.", "CPF Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -89,7 +87,7 @@ namespace PFC___StandBy_CSharp.Dados
 
                     cmd.Parameters.AddWithValue("@_nome", SqlDbType.VarChar).Value = _nome;
                     cmd.Parameters.AddWithValue("@_telefone", SqlDbType.VarChar).Value = _telefone;
-                    cmd.Parameters.AddWithValue("@_cpf", SqlDbType.VarChar).Value = _cpf;
+                    cmd.Parameters.AddWithValue("@_cpf", SqlDbType.VarChar).Value = _cpfOuCnpj;
                     cmd.Parameters.AddWithValue("@_idcliente", SqlDbType.VarChar).Value = _idcliente;
 
                     cmd.ExecuteNonQuery();
@@ -100,7 +98,6 @@ namespace PFC___StandBy_CSharp.Dados
             catch (Exception ex)
             {
                 mErro.ErroAlterarCliente(ex);
-
             }
             //}
         }
@@ -126,7 +123,6 @@ namespace PFC___StandBy_CSharp.Dados
             }
             catch (Exception ex)
             {
-
                 mErro.ErroAoConcluirServico(ex);
             }
         }
@@ -150,7 +146,6 @@ namespace PFC___StandBy_CSharp.Dados
             }
             catch (Exception ex)
             {
-
                 mErro.ErroAoCancelarConclusao(ex);
             }
         }
@@ -206,7 +201,6 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 MessageBox.Show("Erro ao resetar o mes!\n\n" + ex, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

@@ -181,7 +181,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             form_CadastroClientes_Edit editarCliente = new form_CadastroClientes_Edit(this, corGeral);
-            string cpfSemformatar = table_Clientes.SelectedCells[2].Value.ToString().Replace(".", "").Replace("-", "");
+            string cpfSemformatar = table_Clientes.SelectedCells[2].Value.ToString().Replace(".", "").Replace("-", "").Replace("/", "");
             editarCliente.lblID.Text = table_Clientes.SelectedCells[0].Value.ToString();
             editarCliente.txtNomeCliente.Text = table_Clientes.SelectedCells[1].Value.ToString();
             editarCliente.txtCpf.Text = cpfSemformatar;

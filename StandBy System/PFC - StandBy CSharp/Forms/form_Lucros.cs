@@ -136,7 +136,7 @@ namespace PFC___StandBy_CSharp.Forms
                 lblLucroLiquido.Location = new Point(720, 86);
             }
             decimal valor = Convert.ToDecimal(lblLucroLiquido.Text);
-            if (valor > 99.99m && valor < 999.99m)
+            if (valor > 10.00m && valor < 999.99m)
             {
                 lblLucroLiquido.Location = new Point(715, 86);
             }
@@ -187,7 +187,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             //lblLucro.Text = (r3.NextDouble() * 1000).ToString("0.00");
             decimal valor = Convert.ToDecimal(lblLucro.Text);
-            if (valor > 99.99m && valor < 999.99m)
+            if (valor > 10.00m && valor < 999.99m)
             {
                 lblLucro.Location = new Point(490, 86);
             }
@@ -238,7 +238,7 @@ namespace PFC___StandBy_CSharp.Forms
                 lblGastosValor.Location = new Point(270, 86);
             }
             decimal valor = Convert.ToDecimal(lblGastosValor.Text);
-            if (valor > 99.99m && valor < 999.99m)
+            if (valor > 10.00m && valor < 999.99m)
             {
                 lblGastosValor.Location = new Point(265, 86);
             }

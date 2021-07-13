@@ -325,7 +325,6 @@
             this.lblIDservico.Size = new System.Drawing.Size(70, 16);
             this.lblIDservico.TabIndex = 20;
             this.lblIDservico.Text = "ID Servico";
-            this.lblIDservico.Visible = false;
             // 
             // groupBox3
             // 
@@ -401,7 +400,6 @@
             this.lblIDcliente.Size = new System.Drawing.Size(65, 16);
             this.lblIDcliente.TabIndex = 6;
             this.lblIDcliente.Text = "ID Cliente";
-            this.lblIDcliente.Visible = false;
             // 
             // groupBox2
             // 

@@ -83,7 +83,6 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csprojAssemblyReference.cache
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.exe.config
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Loading.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ALERT.resources
