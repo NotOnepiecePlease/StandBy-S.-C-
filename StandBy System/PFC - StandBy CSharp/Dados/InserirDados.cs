@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Forms;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -16,6 +17,15 @@ namespace PFC___StandBy_CSharp.Dados
         MensagensErro mErro = new MensagensErro();
         MensagensSucesso mSucesso = new MensagensSucesso();
         VerificarExistencia verificarExistencia = new VerificarExistencia();
+
+        public void Alert(string msg, form_AlertMessage.enmType type)
+        {
+            form_AlertMessage frm = new form_AlertMessage();
+            frm.showAlert(msg, type);
+        }
+
+
+        #region Inserir Servico
         public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo)
         {
             {
@@ -50,8 +60,10 @@ namespace PFC___StandBy_CSharp.Dados
                 //conexaoSQL.Close();
             }
         }
+        #endregion
 
-        public void InserirCliente(string _nome, string _cpf, string _tel)
+        #region Inserir Cliente
+        public void InserirCliente(string _nome, string _cpf, string _telPrincipal, string _telRecados)
         {
             bool CpfExistente = false;
             if(_cpf.Equals("SEM CPF/CNPJ"))
@@ -75,8 +87,8 @@ namespace PFC___StandBy_CSharp.Dados
                     using (SqlConnection con = OpenConnection())
                     {
                         //Inserção
-                        String qry = "insert into dbo.tb_clientes (cl_nome, cl_telefone, cl_cpf) " +
-                            "VALUES (@Nome, @Telefone, @CpfOuCnpj)";
+                        String qry = "insert into dbo.tb_clientes (cl_nome, cl_telefone, cl_cpf, cl_telefone_recado) " +
+                            "VALUES (@Nome, @TelefonePrincipal, @CpfOuCnpj, @TelefoneRecados)";
 
                         //String qry = "insert into dbo.tb_clientes (cl_nome, cl_telefone, cl_cpf) " +
                         //    "VALUES ('" + nome + "','" + tel + "','" + cpf + "')";
@@ -84,8 +96,9 @@ namespace PFC___StandBy_CSharp.Dados
                         SqlCommand cmd = new SqlCommand(qry, con);
 
                         cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = _nome;
-                        cmd.Parameters.Add("@Telefone", SqlDbType.VarChar).Value = _tel;
+                        cmd.Parameters.Add("@TelefonePrincipal", SqlDbType.VarChar).Value = _telPrincipal;
                         cmd.Parameters.Add("@CpfOuCnpj", SqlDbType.VarChar).Value = _cpf;
+                        cmd.Parameters.Add("@TelefoneRecados", SqlDbType.VarChar).Value = _telRecados;
                         cmd.ExecuteNonQuery();
 
                         //Checagem
@@ -100,7 +113,9 @@ namespace PFC___StandBy_CSharp.Dados
                 }
             }
         }
+        #endregion
 
+        #region Inserir Gasto
         public void InserirGasto(DateTime _data, string _produto, decimal _valor, int _temporario)
         {
 
@@ -119,7 +134,9 @@ namespace PFC___StandBy_CSharp.Dados
                 cmd.ExecuteNonQuery();
             }
         }
+        #endregion
 
+        #region Inserir Garantia
         public void InserirGarantia(int _idServico, int _idCliente, int _qntDiasGarantia)
         {
             try
@@ -143,7 +160,9 @@ namespace PFC___StandBy_CSharp.Dados
                 MessageBox.Show("Nao foi possivel inserir a garantia no banco de dados.\n\n\nErro: " + ex);
             }
         }
+        #endregion
 
+        #region Inserir Orcamento
         public void InserirOrcamento(string _marca, string _modelo, decimal _peca, decimal _valor, decimal _total)
         {
             try
@@ -170,5 +189,8 @@ namespace PFC___StandBy_CSharp.Dados
                 MessageBox.Show("Erro: \n\n"+ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
+
+
     }
 }

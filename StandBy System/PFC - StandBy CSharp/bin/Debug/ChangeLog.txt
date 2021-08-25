@@ -1,9 +1,0 @@
-- Agora voce pode ver o nome, telefone e CPF do cliente na aba de edicao de servicos
-
-- Agora o slide dos gastos exibe apenas os gastos do mes atual
-
-- Aba de lucros agora da pra visualizar e editar os servicos
-
-- Aba de servicos concluidos agora mostra os dias faltantes da garantia.
-
-- Tabela de lucros agora tem o campo de "Conlusao"

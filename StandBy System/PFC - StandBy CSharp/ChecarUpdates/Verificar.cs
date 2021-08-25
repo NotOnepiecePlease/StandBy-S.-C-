@@ -18,7 +18,9 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
 
             try
             {
-                if (!webClient.DownloadString("https://pastebin.com/raw/ibWAkD4c").Contains("2.2.5"))
+                //MessageBox.Show(webClient.DownloadString("https://www.dropbox.com/s/revwuo9ry89po4t/UpdateVersionStandBY.txt?dl=1"));
+                if (!webClient.DownloadString("https://www.dropbox.com/s/revwuo9ry89po4t/UpdateVersionStandBY.txt?dl=1").Contains("5.5.0"))
+                //if (!webClient.DownloadString("https://pastebin.com/raw/ibWAkD4c").Contains("5.2.2"))
                 {
                     if (MessageBox.Show("Existe uma nova versão do sistema StandBy,\ndeseja atualizar o sistema agora?",
                         "Nova Atualização", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==

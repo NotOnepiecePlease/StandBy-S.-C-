@@ -44,39 +44,74 @@ namespace SBAutoUpdate
 
                 if (progress.Value == 50)
                 {
+                    foreach (var process in Process.GetProcessesByName("StandBy System"))
+                    {
+                        process.Kill();
+                    }
+                    Thread.Sleep(3000);
                     try
                     {
+                        string myDir = @".\";
+                        List<string> keepFiles = new List<string>();
+
+                        keepFiles.Add("Guna.UI.dll");
+                        keepFiles.Add("Bunifu_UI_v1.5.3.dll");
+                        keepFiles.Add("Bunifu_UI_v1.5.3.xml");
+                        keepFiles.Add("SBAutoUpdate.exe");
+                        keepFiles.Add("SBAutoUpdate.exe.config");
+                        keepFiles.Add("SBAutoUpdate.pdb");
+
+                        DeleteAllExcept(myDir, keepFiles, true);
+
+
                         var client = new WebClient();
-                        //Directory.Delete(@".\", true);
-                        File.Delete(@".\StandBy System.exe");
-                        //File.Delete(@".\Bunifu.Core.dll");
-                        File.Delete(@".\BunifuDataViz.dll");
-                        File.Delete(@".\BunifuDataViz.xml");
-                        File.Delete(@".\FontAwesome.Sharp.dll");
-                        File.Delete(@".\StandBy System.exe.config");
-                        File.Delete(@".\StandBy System.pdb");
-                        File.Delete(@".\Cupom fiscal.docx");
                         //Directory.CreateDirectory(@".\");
-                        client.DownloadFile("https://forum.brvipmodteam.ga/standbysystem/Update.zip", "Update.zip");
-                        string zipPath = @".\Update.zip";
+                        client.DownloadFile("https://www.dropbox.com/s/8a5oekhvwuujhqx/Update.zip?dl=1", "Update.zip");
+                        DirectoryInfo di2 = new DirectoryInfo("Update.zip");
+                        Thread.Sleep(10);
+                        //Thread.Sleep(5000);
+                        string zipPath = @"..\Update.zip";
                         string extractPath = @".\";
-                        ZipFile.ExtractToDirectory(zipPath, extractPath);
-                        File.Delete(@".\Update.zip");
+                        //ZipFile.ExtractToDirectory(zipPath, extractPath);
+                        ZipFile.ExtractToDirectory(di2.FullName, extractPath);
+                        File.Delete(@"..\Update.zip");
                     }
                     catch (Exception ex)
                     {
 
                         MessageBox.Show("ERRO: \n\n" + ex);
+                        Application.Exit();
                     }
-                    
+
                 }
                 else if (progress.Value == 100)
                 {
-                    if (MessageBox.Show("Atualizado com Sucesso!\nO StandBy System vai abrir automaticamente em alguns segundos...", 
+                    if (MessageBox.Show("Atualizado com Sucesso!\nO StandBy System vai abrir automaticamente em alguns segundos...",
                         "APROVEITE!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                     {
                         Process.Start(@".\StandBy System.exe");
+                        File.Delete(@"..\Update.zip");
                     }
+                }
+            }
+        }
+
+        public static void DeleteAllExcept(string folderPath, List<string> except, bool recursive = true)
+        {
+            var dir = new DirectoryInfo(folderPath);
+
+            //Delete files excluding the list of file names
+            foreach (var fi in dir.GetFiles().Where(n => !except.Contains(n.Name)))
+            {
+                fi.Delete();
+            }
+
+            //Loop sub directories if recursive == true
+            if (recursive)
+            {
+                foreach (var di in dir.GetDirectories())
+                {
+                    DeleteAllExcept(di.FullName, except, recursive);
                 }
             }
         }

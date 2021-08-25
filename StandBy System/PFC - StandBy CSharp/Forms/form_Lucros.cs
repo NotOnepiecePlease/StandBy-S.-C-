@@ -26,13 +26,12 @@ namespace PFC___StandBy_CSharp.Forms
             //Impedir que a thread de erro
             CheckForIllegalCrossThreadCalls = false;
             MudarCores();
-            datepicker1.Value = new DateTime(2020, 01, 01);
+            datepicker1.Value = new DateTime(DateTime.Now.Year, 01, 01);
             datepicker2.Value = DateTime.Now;
         }
 
         public void MudarCores()
         {
-            btnAddGastos.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnLucroUltimos30Dias.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             circle1.ProgressColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             //circle2.ProgressColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -43,6 +42,10 @@ namespace PFC___StandBy_CSharp.Forms
             menu.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             menu.Items[0].BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             menu.Items[1].BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnAddGastos.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnAddGastos.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnGastosControle.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnGastosControle.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
         public void PegarDatasDatePicker()
         {
@@ -424,12 +427,12 @@ namespace PFC___StandBy_CSharp.Forms
                 if (checkGastos.Checked == true)
                 {
                     lblGastos.Text = "Exibindo Gastos Temp";
-                    tab_Gastos.PreencherGastosEntreDatas(tabelaGastos, datep1, datep2, 1);
+                    tab_Gastos.PreencherGastosMesAtual(tabelaGastos, datep1, datep2, 1);
                 }
                 else
                 {
                     lblGastos.Text = "Exibindo Gastos Reais";
-                    tab_Gastos.PreencherGastosEntreDatas(tabelaGastos, datep1, datep2, 0);
+                    tab_Gastos.PreencherGastosMesAtual(tabelaGastos, datep1, datep2, 0);
                 }
                 //tab_Lucros.Preencher(tabelaLucros, datep1, datep2, lblLucro);
                 tab_Lucros.PreencherLucroMesAtual(tabelaLucros, lblLucro);
@@ -492,6 +495,12 @@ namespace PFC___StandBy_CSharp.Forms
         private void tabelaLucros_DoubleClick(object sender, EventArgs e)
         {
             ExibirLucrosTela();
+        }
+
+        private void btnGastosControle_Click(object sender, EventArgs e)
+        {
+            form_Gastos formGastos = new form_Gastos(corGeral);
+            formGastos.ShowDialog();
         }
     }
 }

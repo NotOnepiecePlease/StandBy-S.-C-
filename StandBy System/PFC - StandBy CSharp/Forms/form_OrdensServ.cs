@@ -284,6 +284,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
             string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
+            string _TEL_RECCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
             float lucro = float.Parse(table_OrdensServicos.SelectedCells[10].Value.ToString());
             form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
             editarServicos.lblIDservico.Text = table_OrdensServicos.SelectedCells[0].Value.ToString();
@@ -293,6 +294,7 @@ namespace PFC___StandBy_CSharp.Forms
             editarServicos.txtClienteNome.Text = table_OrdensServicos.SelectedCells[3].Value.ToString();
             editarServicos.txtCPFCliente.Text = _CPFCliente;
             editarServicos.txtTelefoneCliente.Text = _TELCliente;
+            editarServicos.txtTelefoneRecado.Text = _TEL_RECCliente;
             editarServicos.txtAparelhoEdit.Text = table_OrdensServicos.SelectedCells[4].Value.ToString();
             editarServicos.txtDefeitoEdit.Text = table_OrdensServicos.SelectedCells[5].Value.ToString();
             editarServicos.txtSenhaEdit.Text = table_OrdensServicos.SelectedCells[7].Value.ToString();

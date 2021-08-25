@@ -21,7 +21,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes
             DataTable datatable = new DataTable();
             using (SqlConnection con = OpenConnection())
             {
-                string Query = "select cl_id, cl_nome, cl_cpf, cl_telefone from tb_clientes";
+                string Query = "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado from tb_clientes";
                 SqlDataAdapter adapter = new SqlDataAdapter(Query, con);
 
                 adapter.SelectCommand.ExecuteNonQuery();
@@ -41,7 +41,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes
             using (SqlConnection con = OpenConnection())
             {
                 DataTable datatable = new DataTable();
-                string query = "select cl_id, cl_nome, cl_cpf, cl_telefone from tb_clientes where cl_nome like @nomeCliente";
+                string query = "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado from tb_clientes where cl_nome like @nomeCliente";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@nomeCliente", String.Format("%{0}%", _nomeCliente));
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

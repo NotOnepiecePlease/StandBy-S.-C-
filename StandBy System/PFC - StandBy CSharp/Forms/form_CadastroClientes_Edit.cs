@@ -45,7 +45,7 @@ namespace PFC___StandBy_CSharp.Forms
                 
                 //string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
                 int id = int.Parse(lblID.Text);
-                ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, txtCpf.Text);
+                ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, txtCpf.Text, txtTelefoneRecados.Text);
                 cadCliente.refreshTable();
                 this.Close();
             }
@@ -58,7 +58,7 @@ namespace PFC___StandBy_CSharp.Forms
                     // long cpf = Convert.ToInt64(txtCpf.Text);
                     string CNPJformatado = String.Format(@"{0:00\.000\.000\/0000-00}", cnpj);
                     int id = int.Parse(lblID.Text);
-                    ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CNPJformatado);
+                    ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CNPJformatado, txtTelefoneRecados.Text);
                     cadCliente.refreshTable();
                     this.Close();
                 }
@@ -68,13 +68,11 @@ namespace PFC___StandBy_CSharp.Forms
                     // long cpf = Convert.ToInt64(txtCpf.Text);
                     string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
                     int id = int.Parse(lblID.Text);
-                    ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CPFformatado);
+                    ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CPFformatado, txtTelefoneRecados.Text);
                     cadCliente.refreshTable();
                     this.Close();
                 }
-                
             }
-            
         }
         public void MudarCores()
         {
@@ -130,6 +128,11 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 EditarCliente();
             }
+        }
+
+        private void cardFundo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

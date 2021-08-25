@@ -156,5 +156,22 @@ namespace PFC___StandBy_CSharp.Dados
                 return dr.GetString(0);
             }
         }
+
+        public string BuscarTelefoneRecadoCliente(int _idCliente)
+        {
+            using (SqlConnection conexao = OpenConnection())
+            {
+                SqlDataReader dr;
+                string query = "select cl_telefone_recado from tb_clientes where cl_id = @IdCliente";
+
+                SqlCommand cmd = new SqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@IdCliente", _idCliente);
+                dr = cmd.ExecuteReader();
+
+                dr.Read();
+
+                 return dr.GetString(0);
+            }
+        }
     }
 }

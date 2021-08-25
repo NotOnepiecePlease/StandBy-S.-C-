@@ -437,9 +437,9 @@
         private Guna.UI.WinForms.GunaLabel lblAgo;
         private Guna.UI.WinForms.GunaLabel lblJul;
         private Guna.UI.WinForms.GunaPanel panelTop;
-        private Guna.UI.WinForms.GunaComboBox cmbAno;
         private Guna.UI.WinForms.GunaCircleButton btnPesquisarAno;
         private Guna.UI.WinForms.GunaPanel panelLinhaTopo;
         private Guna.UI.WinForms.GunaAdvenceButton btnfechar;
+        public Guna.UI.WinForms.GunaComboBox cmbAno;
     }
 }

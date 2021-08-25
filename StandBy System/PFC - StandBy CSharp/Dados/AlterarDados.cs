@@ -68,7 +68,7 @@ namespace PFC___StandBy_CSharp.Dados
             }
         }
 
-        public void AlterarClientes(int _idcliente, string _nome, string _telefone, string _cpfOuCnpj)
+        public void AlterarClientes(int _idcliente, string _nome, string _telefone, string _cpfOuCnpj, string _telefoneRecados)
         {
             bool cpfExistente = verificarExistencia.VerificarExistenciaCPF(_cpfOuCnpj);
             //if(cpfExistente == true)
@@ -81,12 +81,20 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    SqlCommand cmd = new SqlCommand("AlterarClientes", con);
+                    string query = "UPDATE [dbo].[tb_clientes] " +
+                        "SET[cl_nome] = @_nome " +
+                        ",[cl_telefone] = @_telefone " +
+                        ",[cl_telefone_recado] = @_telefoneRecados " +
+                        ",[cl_cpf] = @_cpf " +
+                        " WHERE cl_id = @_idcliente";
+                    //SqlCommand cmd = new SqlCommand("AlterarClientes", con);
+                    SqlCommand cmd = new SqlCommand(query, con);
 
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@_nome", SqlDbType.VarChar).Value = _nome;
                     cmd.Parameters.AddWithValue("@_telefone", SqlDbType.VarChar).Value = _telefone;
+                    cmd.Parameters.AddWithValue("@_telefoneRecados", SqlDbType.VarChar).Value = _telefoneRecados;
                     cmd.Parameters.AddWithValue("@_cpf", SqlDbType.VarChar).Value = _cpfOuCnpj;
                     cmd.Parameters.AddWithValue("@_idcliente", SqlDbType.VarChar).Value = _idcliente;
 

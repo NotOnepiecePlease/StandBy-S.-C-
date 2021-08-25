@@ -44,6 +44,7 @@
             BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
             this.panelLucros = new Guna.UI.WinForms.GunaPanel();
+            this.btnGastosControle = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnLucroUltimos30Dias = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panelBarH = new Guna.UI.WinForms.GunaPanel();
             this.btnAddGastos = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -113,6 +114,7 @@
             // panelLucros
             // 
             this.panelLucros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panelLucros.Controls.Add(this.btnGastosControle);
             this.panelLucros.Controls.Add(this.btnLucroUltimos30Dias);
             this.panelLucros.Controls.Add(this.panelBarH);
             this.panelLucros.Controls.Add(this.btnAddGastos);
@@ -135,6 +137,45 @@
             this.panelLucros.Name = "panelLucros";
             this.panelLucros.Size = new System.Drawing.Size(1081, 665);
             this.panelLucros.TabIndex = 0;
+            // 
+            // btnGastosControle
+            // 
+            this.btnGastosControle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGastosControle.AnimationHoverSpeed = 0.07F;
+            this.btnGastosControle.AnimationSpeed = 0.03F;
+            this.btnGastosControle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.btnGastosControle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnGastosControle.BorderSize = 1;
+            this.btnGastosControle.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnGastosControle.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnGastosControle.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGastosControle.CheckedImage = null;
+            this.btnGastosControle.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.animateCircle2.SetDecoration(this.btnGastosControle, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle1.SetDecoration(this.btnGastosControle, BunifuAnimatorNS.DecorationType.None);
+            this.animateRealSimbol.SetDecoration(this.btnGastosControle, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle3.SetDecoration(this.btnGastosControle, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle4.SetDecoration(this.btnGastosControle, BunifuAnimatorNS.DecorationType.None);
+            this.btnGastosControle.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnGastosControle.FocusedColor = System.Drawing.Color.Empty;
+            this.btnGastosControle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGastosControle.ForeColor = System.Drawing.Color.White;
+            this.btnGastosControle.Image = null;
+            this.btnGastosControle.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnGastosControle.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnGastosControle.Location = new System.Drawing.Point(108, 396);
+            this.btnGastosControle.Name = "btnGastosControle";
+            this.btnGastosControle.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnGastosControle.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnGastosControle.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGastosControle.OnHoverImage = null;
+            this.btnGastosControle.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnGastosControle.OnPressedColor = System.Drawing.Color.Black;
+            this.btnGastosControle.Size = new System.Drawing.Size(63, 34);
+            this.btnGastosControle.TabIndex = 30;
+            this.btnGastosControle.Text = "Gastos";
+            this.btnGastosControle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnGastosControle.Click += new System.EventHandler(this.btnGastosControle_Click);
             // 
             // btnLucroUltimos30Dias
             // 
@@ -195,7 +236,8 @@
             this.btnAddGastos.AnimationHoverSpeed = 0.07F;
             this.btnAddGastos.AnimationSpeed = 0.03F;
             this.btnAddGastos.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.btnAddGastos.BorderColor = System.Drawing.Color.Black;
+            this.btnAddGastos.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnAddGastos.BorderSize = 1;
             this.btnAddGastos.CheckedBaseColor = System.Drawing.Color.Gray;
             this.btnAddGastos.CheckedBorderColor = System.Drawing.Color.Black;
             this.btnAddGastos.CheckedForeColor = System.Drawing.Color.White;
@@ -221,7 +263,7 @@
             this.btnAddGastos.OnHoverImage = null;
             this.btnAddGastos.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnAddGastos.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddGastos.Size = new System.Drawing.Size(178, 26);
+            this.btnAddGastos.Size = new System.Drawing.Size(63, 34);
             this.btnAddGastos.TabIndex = 26;
             this.btnAddGastos.Text = "Adicionar Gastos";
             this.btnAddGastos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1199,5 +1241,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_valorpeca;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_lucro;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataConclusao;
+        private Guna.UI.WinForms.GunaAdvenceButton btnGastosControle;
     }
 }

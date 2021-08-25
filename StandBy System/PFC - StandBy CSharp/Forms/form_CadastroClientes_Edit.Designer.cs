@@ -30,23 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.cardFundo = new Bunifu.Framework.UI.BunifuCards();
+            this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lblID = new Guna.UI.WinForms.GunaLabel();
             this.btnEditar = new Guna.UI.WinForms.GunaGradientButton();
             this.sep3 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.iconTelefone = new FontAwesome.Sharp.IconPictureBox();
+            this.iconTelefoneRecados = new FontAwesome.Sharp.IconPictureBox();
             this.sep2 = new Guna.UI.WinForms.GunaGradient2Panel();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtTelefoneRecados = new System.Windows.Forms.TextBox();
             this.iconCPF = new FontAwesome.Sharp.IconPictureBox();
             this.sep1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.iconCliente = new FontAwesome.Sharp.IconPictureBox();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
+            this.iconTelefone = new FontAwesome.Sharp.IconPictureBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.cardFundo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTelefone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTelefoneRecados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCPF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTelefone)).BeginInit();
             this.SuspendLayout();
             // 
             // cardFundo
@@ -55,24 +59,52 @@
             this.cardFundo.BorderRadius = 5;
             this.cardFundo.BottomSahddow = true;
             this.cardFundo.color = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.cardFundo.Controls.Add(this.gunaGradient2Panel1);
+            this.cardFundo.Controls.Add(this.txtTelefone);
             this.cardFundo.Controls.Add(this.lblID);
             this.cardFundo.Controls.Add(this.btnEditar);
             this.cardFundo.Controls.Add(this.sep3);
-            this.cardFundo.Controls.Add(this.iconTelefone);
+            this.cardFundo.Controls.Add(this.iconTelefoneRecados);
             this.cardFundo.Controls.Add(this.sep2);
-            this.cardFundo.Controls.Add(this.txtTelefone);
+            this.cardFundo.Controls.Add(this.txtTelefoneRecados);
             this.cardFundo.Controls.Add(this.iconCPF);
             this.cardFundo.Controls.Add(this.sep1);
             this.cardFundo.Controls.Add(this.txtCpf);
             this.cardFundo.Controls.Add(this.iconCliente);
             this.cardFundo.Controls.Add(this.txtNomeCliente);
+            this.cardFundo.Controls.Add(this.iconTelefone);
             this.cardFundo.LeftSahddow = false;
             this.cardFundo.Location = new System.Drawing.Point(0, 0);
             this.cardFundo.Name = "cardFundo";
             this.cardFundo.RightSahddow = true;
             this.cardFundo.ShadowDepth = 20;
-            this.cardFundo.Size = new System.Drawing.Size(393, 329);
+            this.cardFundo.Size = new System.Drawing.Size(393, 392);
             this.cardFundo.TabIndex = 0;
+            this.cardFundo.Paint += new System.Windows.Forms.PaintEventHandler(this.cardFundo_Paint);
+            // 
+            // gunaGradient2Panel1
+            // 
+            this.gunaGradient2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradient2Panel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.gunaGradient2Panel1.GradientColor2 = System.Drawing.Color.DeepPink;
+            this.gunaGradient2Panel1.Location = new System.Drawing.Point(69, 199);
+            this.gunaGradient2Panel1.Name = "gunaGradient2Panel1";
+            this.gunaGradient2Panel1.Size = new System.Drawing.Size(243, 2);
+            this.gunaGradient2Panel1.TabIndex = 9;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.BackColor = System.Drawing.Color.Black;
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefone.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtTelefone.Location = new System.Drawing.Point(101, 175);
+            this.txtTelefone.MaxLength = 14;
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(205, 22);
+            this.txtTelefone.TabIndex = 7;
+            this.txtTelefone.Text = "719928551130";
+            this.txtTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblID
             // 
@@ -100,7 +132,7 @@
             this.btnEditar.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_account_512px;
             this.btnEditar.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEditar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditar.Location = new System.Drawing.Point(110, 246);
+            this.btnEditar.Location = new System.Drawing.Point(110, 286);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
             this.btnEditar.OnHoverBaseColor2 = System.Drawing.Color.White;
@@ -119,51 +151,51 @@
             this.sep3.BackColor = System.Drawing.Color.Transparent;
             this.sep3.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
             this.sep3.GradientColor2 = System.Drawing.Color.DeepPink;
-            this.sep3.Location = new System.Drawing.Point(69, 210);
+            this.sep3.Location = new System.Drawing.Point(69, 254);
             this.sep3.Name = "sep3";
             this.sep3.Size = new System.Drawing.Size(243, 2);
             this.sep3.TabIndex = 6;
             // 
-            // iconTelefone
+            // iconTelefoneRecados
             // 
-            this.iconTelefone.IconChar = FontAwesome.Sharp.IconChar.Phone;
-            this.iconTelefone.IconColor = System.Drawing.Color.White;
-            this.iconTelefone.Location = new System.Drawing.Point(65, 181);
-            this.iconTelefone.Name = "iconTelefone";
-            this.iconTelefone.Size = new System.Drawing.Size(32, 32);
-            this.iconTelefone.TabIndex = 5;
-            this.iconTelefone.TabStop = false;
+            this.iconTelefoneRecados.IconChar = FontAwesome.Sharp.IconChar.Phone;
+            this.iconTelefoneRecados.IconColor = System.Drawing.Color.White;
+            this.iconTelefoneRecados.Location = new System.Drawing.Point(65, 225);
+            this.iconTelefoneRecados.Name = "iconTelefoneRecados";
+            this.iconTelefoneRecados.Size = new System.Drawing.Size(32, 32);
+            this.iconTelefoneRecados.TabIndex = 5;
+            this.iconTelefoneRecados.TabStop = false;
             // 
             // sep2
             // 
             this.sep2.BackColor = System.Drawing.Color.Transparent;
             this.sep2.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
             this.sep2.GradientColor2 = System.Drawing.Color.DeepPink;
-            this.sep2.Location = new System.Drawing.Point(69, 148);
+            this.sep2.Location = new System.Drawing.Point(69, 144);
             this.sep2.Name = "sep2";
             this.sep2.Size = new System.Drawing.Size(243, 2);
             this.sep2.TabIndex = 6;
             // 
-            // txtTelefone
+            // txtTelefoneRecados
             // 
-            this.txtTelefone.BackColor = System.Drawing.Color.Black;
-            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefone.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtTelefone.Location = new System.Drawing.Point(101, 186);
-            this.txtTelefone.MaxLength = 15;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(205, 22);
-            this.txtTelefone.TabIndex = 4;
-            this.txtTelefone.Text = "71992855223";
-            this.txtTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTelefone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
+            this.txtTelefoneRecados.BackColor = System.Drawing.Color.Black;
+            this.txtTelefoneRecados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefoneRecados.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefoneRecados.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtTelefoneRecados.Location = new System.Drawing.Point(101, 230);
+            this.txtTelefoneRecados.MaxLength = 100;
+            this.txtTelefoneRecados.Name = "txtTelefoneRecados";
+            this.txtTelefoneRecados.Size = new System.Drawing.Size(205, 22);
+            this.txtTelefoneRecados.TabIndex = 4;
+            this.txtTelefoneRecados.Text = "71992855223";
+            this.txtTelefoneRecados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTelefoneRecados.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
             // 
             // iconCPF
             // 
             this.iconCPF.IconChar = FontAwesome.Sharp.IconChar.IdCard;
             this.iconCPF.IconColor = System.Drawing.Color.White;
-            this.iconCPF.Location = new System.Drawing.Point(65, 119);
+            this.iconCPF.Location = new System.Drawing.Point(65, 115);
             this.iconCPF.Name = "iconCPF";
             this.iconCPF.Size = new System.Drawing.Size(32, 32);
             this.iconCPF.TabIndex = 5;
@@ -185,7 +217,7 @@
             this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpf.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtCpf.Location = new System.Drawing.Point(101, 124);
+            this.txtCpf.Location = new System.Drawing.Point(101, 120);
             this.txtCpf.MaxLength = 14;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(205, 22);
@@ -219,6 +251,16 @@
             this.txtNomeCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNomeCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeCliente_KeyDown);
             // 
+            // iconTelefone
+            // 
+            this.iconTelefone.IconChar = FontAwesome.Sharp.IconChar.Phone;
+            this.iconTelefone.IconColor = System.Drawing.Color.White;
+            this.iconTelefone.Location = new System.Drawing.Point(65, 170);
+            this.iconTelefone.Name = "iconTelefone";
+            this.iconTelefone.Size = new System.Drawing.Size(32, 32);
+            this.iconTelefone.TabIndex = 10;
+            this.iconTelefone.TabStop = false;
+            // 
             // gunaDragControl1
             // 
             this.gunaDragControl1.TargetControl = this.cardFundo;
@@ -233,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(384, 329);
+            this.ClientSize = new System.Drawing.Size(384, 364);
             this.Controls.Add(this.cardFundo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
@@ -245,9 +287,10 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_CadastroClientes_Edit_KeyDown);
             this.cardFundo.ResumeLayout(false);
             this.cardFundo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconTelefone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTelefoneRecados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCPF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconTelefone)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,16 +300,19 @@
         private Bunifu.Framework.UI.BunifuCards cardFundo;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
         private FontAwesome.Sharp.IconPictureBox iconCliente;
-        private Guna.UI.WinForms.GunaGradient2Panel sep1;
         private Guna.UI.WinForms.GunaGradientButton btnEditar;
-        private Guna.UI.WinForms.GunaGradient2Panel sep3;
-        private FontAwesome.Sharp.IconPictureBox iconTelefone;
-        private Guna.UI.WinForms.GunaGradient2Panel sep2;
+        private FontAwesome.Sharp.IconPictureBox iconTelefoneRecados;
         private FontAwesome.Sharp.IconPictureBox iconCPF;
-        public System.Windows.Forms.TextBox txtNomeCliente;
-        public System.Windows.Forms.TextBox txtTelefone;
-        public System.Windows.Forms.TextBox txtCpf;
         public Guna.UI.WinForms.GunaLabel lblID;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private Guna.UI.WinForms.GunaGradient2Panel gunaGradient2Panel1;
+        public System.Windows.Forms.TextBox txtTelefone;
+        private Guna.UI.WinForms.GunaGradient2Panel sep3;
+        private Guna.UI.WinForms.GunaGradient2Panel sep2;
+        public System.Windows.Forms.TextBox txtTelefoneRecados;
+        private Guna.UI.WinForms.GunaGradient2Panel sep1;
+        public System.Windows.Forms.TextBox txtCpf;
+        public System.Windows.Forms.TextBox txtNomeCliente;
+        private FontAwesome.Sharp.IconPictureBox iconTelefone;
     }
 }

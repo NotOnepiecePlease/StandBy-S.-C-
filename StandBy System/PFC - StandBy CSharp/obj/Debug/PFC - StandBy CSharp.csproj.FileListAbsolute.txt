@@ -69,28 +69,21 @@ F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\StandBy System.exe.config
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\StandBy System.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\StandBy System.pdb
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\FontAwesome.Sharp.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Guna.UI.dll
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.exe.config
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Loading.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ALERT.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_AlertMessage.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes_Edit.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluidos.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluido_Desfazer.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_DiaEntrega.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Gastos.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir.resources
@@ -113,3 +106,7 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CopyComplete
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\StandBy System.pdb
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.ToggleSwitch.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.Fody.CopyLocal.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.AssemblyReference.cache

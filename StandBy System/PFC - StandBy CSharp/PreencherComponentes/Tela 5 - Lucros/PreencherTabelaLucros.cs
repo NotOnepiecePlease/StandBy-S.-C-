@@ -103,7 +103,9 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
                         "FROM tb_servicos " +
                         "INNER JOIN tb_clientes " +
                         "ON sv_cl_idcliente = cl_id " +
-                        "where month(sv_data_conclusao) = MONTH(GETDATE()) and sv_status = 0 order by sv_data_conclusao desc";
+                        "where month(sv_data_conclusao) = MONTH(GETDATE()) " +
+                        "and year(sv_data_conclusao) = YEAR(GETDATE()) " +
+                        "and sv_status = 0 order by sv_data_conclusao desc";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     //cmd.Parameters.AddWithValue("@tabela", tabela);

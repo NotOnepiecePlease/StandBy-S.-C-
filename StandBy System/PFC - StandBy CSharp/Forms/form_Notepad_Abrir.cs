@@ -43,11 +43,24 @@ namespace PFC___StandBy_CSharp.Forms
             label1.Text = pasta.ToString();
             listBox1.Items.Clear();
             DirectoryInfo dir_files = new DirectoryInfo(diretorio);
-            FileInfo[] files = dir_files.GetFiles("*.txt", SearchOption.TopDirectoryOnly);
-            foreach (var fill in files)
+            try
             {
-                listBox1.Items.Add(fill.Name);
+                FileInfo[] files = dir_files.GetFiles("*.txt", SearchOption.TopDirectoryOnly);
+                foreach (var fill in files)
+                {
+                    listBox1.Items.Add(fill.Name);
+                }
             }
+            catch (Exception)
+            {
+                Directory.CreateDirectory("Anotacoes");
+                FileInfo[] files = dir_files.GetFiles("*.txt", SearchOption.TopDirectoryOnly);
+                foreach (var fill in files)
+                {
+                    listBox1.Items.Add(fill.Name);
+                }
+            }
+            
         }
 
         private void btnBuscarPasta_Click(object sender, EventArgs e)

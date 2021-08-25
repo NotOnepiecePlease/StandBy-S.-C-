@@ -17,25 +17,29 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
     {
         MensagensErro mErro = new MensagensErro();
         MensagensSucesso mSucesso = new MensagensSucesso();
-        public void Preencher(DataGridView tabelaServicos)
+        public void Preencher(DataGridView _tabelaServicos)
         {
             try
             {
-                SqlConnection con = OpenConnection();
-                SqlDataAdapter adapter = new SqlDataAdapter("select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
-                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo from tb_servicos INNER JOIN tb_clientes on tb_servicos.sv_cl_idcliente = tb_clientes.cl_id WHERE sv_status = 1 and sv_ativo = 1", con);
-                //SqlDataAdapter adapter = new SqlDataAdapter("Select sv_data, sv_aparelho, sv_defeito, sv_senha, sv_situacao from tb_servicos", con);
-                DataTable datatable = new DataTable();
-                adapter.Fill(datatable);
+                using (SqlConnection con = OpenConnection())
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
+                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo " +
+                    "FROM tb_servicos " +
+                    "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
+                    "WHERE sv_status = 1 and sv_ativo = 1 order by sv_id desc", con);
+                    //SqlDataAdapter adapter = new SqlDataAdapter("Select sv_data, sv_aparelho, sv_defeito, sv_senha, sv_situacao from tb_servicos", con);
+                    DataTable datatable = new DataTable();
+                    adapter.Fill(datatable);
 
-                tabelaServicos.AutoGenerateColumns = false;
-                tabelaServicos.AllowUserToAddRows = false;
-                tabelaServicos.AllowUserToResizeColumns = true;
-                tabelaServicos.AllowUserToDeleteRows = false;
-                tabelaServicos.DataSource = datatable;
-                tabelaServicos.Sort(tabelaServicos.Columns["idServico"], ListSortDirection.Descending);
-                tabelaServicos.ClearSelection();
-                CloseConnection();
+                    _tabelaServicos.AutoGenerateColumns = false;
+                    _tabelaServicos.AllowUserToAddRows = false;
+                    _tabelaServicos.AllowUserToResizeColumns = true;
+                    _tabelaServicos.AllowUserToDeleteRows = false;
+                    _tabelaServicos.DataSource = datatable;
+                    //tabelaServicos.Sort(tabelaServicos.Columns["idServico"], ListSortDirection.Descending);
+                    _tabelaServicos.ClearSelection();
+                }
             }
             catch (Exception ex)
             {
@@ -43,7 +47,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
             }
         }
 
-        public void PreencherServicosPorNomeCliente(DataGridView tabelaServicos, string _nomeCliente)
+        public void PreencherServicosPorNomeCliente(DataGridView _tabelaServicos, string _nomeCliente)
         {
             try
             {
@@ -58,7 +62,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                         "INNER JOIN tb_clientes " +
                         "ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
                         "WHERE cl_nome like @NomeCliente " +
-                        "AND sv_status = 1 and sv_ativo = 1";
+                        "AND sv_status = 1 and sv_ativo = 1 order by sv_id desc";
 
                     //Crio um novo objeto pra armazenar a Query e a conexao.
                     SqlDataAdapter adapter = new SqlDataAdapter(Query, con);
@@ -70,12 +74,12 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
 
                     adapter.Fill(datatable);
 
-                    tabelaServicos.AutoGenerateColumns = false;
-                    tabelaServicos.AllowUserToAddRows = false;
-                    tabelaServicos.AllowUserToResizeColumns = true;
-                    tabelaServicos.AllowUserToDeleteRows = false;
-                    tabelaServicos.DataSource = datatable;
-                    tabelaServicos.Sort(tabelaServicos.Columns["idServico"], ListSortDirection.Descending);
+                    _tabelaServicos.AutoGenerateColumns = false;
+                    _tabelaServicos.AllowUserToAddRows = false;
+                    _tabelaServicos.AllowUserToResizeColumns = true;
+                    _tabelaServicos.AllowUserToDeleteRows = false;
+                    _tabelaServicos.DataSource = datatable;
+                    //tabelaServicos.Sort(tabelaServicos.Columns["idServico"], ListSortDirection.Descending);
                 }
 
 

@@ -1,16 +1,12 @@
-﻿using PFC___StandBy_CSharp.PreencherComponentes;
+﻿using PFC___StandBy_CSharp.ChecarUpdates;
+using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.Graficos;
 using System;
 using System.Drawing;
-using System.Windows.Forms;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Linq;
 using System.Net;
-using System.Diagnostics;
-using PFC___StandBy_CSharp.ChecarUpdates;
-using PFC___StandBy_CSharp.Dados;
 using System.Net.Sockets;
+using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -21,28 +17,35 @@ namespace PFC___StandBy_CSharp.Forms
         GraficoServicosMensais GraficoMensal = new GraficoServicosMensais();
         Verificar verificarUpd = new Verificar();
         AlterarDados ad = new AlterarDados();
+        BackupDados bckpData = new BackupDados();
         private Form currentChildForm;
         int anoAtual = DateTime.Now.Year;
         int mesAtual = DateTime.Now.Month;
         int[] corGeral = new int[3] { 0, 0, 0 };
         public form_StandBy()
         {
-            //verificarUpd.ChecarVersao();
             //Thread.Sleep(2000);
             InitializeComponent();
-
+            //randomizarCores(100);
             IniciarPainelCor();
             CarregarGraficos();
+            //bckpData.criarPasta();
 
-            lblVersion.Text = VerMeuIPV4();
+            //lblVersion.Text = VerMeuIPV4();
 
             btnMenuSuperior.DisabledColor = Color.Transparent;
             if (btnMenuSuperior.Enabled == false)
             {
                 btnMenuSuperior.Cursor = Cursors.Default;
             }
+            verificarUpd.ChecarVersao();
         }
 
+        public void Alert(string msg, form_AlertMessage.enmType type)
+        {
+            form_AlertMessage frm = new form_AlertMessage();
+            frm.showAlert(msg, type);
+        }
         private static string VerMeuIPV4()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
@@ -200,12 +203,19 @@ namespace PFC___StandBy_CSharp.Forms
 
         }
 
-        private void btnMudarCor_Click(object sender, EventArgs e)
+        private void randomizarCores(int _corInicial)
         {
+            //Deixar random
+            //Random random = new Random();
+            //corGeral[0] = random.Next(_corInicial, 255);
+            //corGeral[1] = random.Next(_corInicial, 255);
+            //corGeral[2] = random.Next(_corInicial, 255);
+
+            //Cor fixa
             Random random = new Random();
-            corGeral[0] = random.Next(0, 255);
-            corGeral[1] = random.Next(0, 255);
-            corGeral[2] = random.Next(0, 255);
+            corGeral[0] = random.Next(_corInicial, 255);
+            corGeral[1] = random.Next(_corInicial, 255);
+            corGeral[2] = random.Next(_corInicial, 255);
 
             track_RED.Value = corGeral[0];
             track_GREEN.Value = corGeral[1];
@@ -229,6 +239,10 @@ namespace PFC___StandBy_CSharp.Forms
             btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnReset.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+        }
+        private void btnMudarCor_Click(object sender, EventArgs e)
+        {
+            randomizarCores(0);
         }
 
         public void ResetarCor()
@@ -367,6 +381,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
+                //OpenChildForm(new form_Gastos(corGeral));
                 OpenChildForm(new form_Orcamento(corGeral));
                 //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\ORCAMENTOS.png");
             }

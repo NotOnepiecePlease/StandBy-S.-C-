@@ -23,8 +23,22 @@ namespace PFC___StandBy_CSharp.Forms
             corGeral = corRgb;
             graficoAno.Preencher(bunifuDataViz1, anoAtual, lblJan, lblFev, lblMar, lblAbr, lblMai, lblJun, lblJul, lblAgo, lblSet, lblOut, lblNov, lblDez, corGeral);
             cmbAno.SelectedIndex = 0;
+            AnoAtual();
             //totalGanhoAno.TotalGanho(lblValorGanhoAnualmente, anoAtual);
             MudarCores();
+        }
+
+        public void AnoAtual()
+        {
+            foreach (string data in cmbAno.Items)
+            {
+                if (data.Equals(DateTime.Now.Year.ToString()))
+                {
+                    string txt = string.Format("Ano {0} Index {1}", data, cmbAno.Items.IndexOf(data));
+                    cmbAno.SelectedIndex = cmbAno.Items.IndexOf(data);
+                    //MessageBox.Show(txt);
+                }
+            }
         }
 
         public void MudarCores()
