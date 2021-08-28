@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Forms;
+using System.Runtime.InteropServices;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -26,7 +27,7 @@ namespace PFC___StandBy_CSharp.Dados
 
 
         #region Inserir Servico
-        public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo)
+        public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo, [Optional] byte[] image)
         {
             {
                 //Abro a conexao.

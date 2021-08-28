@@ -413,5 +413,61 @@ namespace PFC___StandBy_CSharp.Forms
         {
             AtualizarAtrasosCores();
         }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            form_PasswordPattern pp = new form_PasswordPattern();
+            pp.Show();
+        }
+
+        private void btnInvisivel_Click(object sender, EventArgs e)
+        {
+            lblCliente.Visible = false;
+            lblAparelho.Visible = false;
+            lblDefeito.Visible = false;
+            lblSenha.Visible = false;
+            lblSituacao.Visible = false;
+            cmbClientes.Visible = false;
+            txtAparelhoOrdens.Visible = false;
+            txtDefeitoOrdens.Visible = false;
+            txtSenhaOrdens.Visible = false;
+            txtSituacaoOrdens.Visible = false;
+            txtPesquisarCliente.Visible = false;
+            btnCadastrarOrdem.Visible = false;
+            btnPesquisarCliente.Visible = false;
+
+            table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width-2, 611);
+            table_OrdensServicos.Location = new Point(3, 35);
+            table_OrdensServicos.Anchor = AnchorStyles.Top;
+            table_OrdensServicos.Anchor = AnchorStyles.Left;
+            table_OrdensServicos.Anchor = AnchorStyles.Right;
+            table_OrdensServicos.Anchor = AnchorStyles.Bottom;
+            table_OrdensServicos.Refresh();
+            table_OrdensServicos.Update();
+            btnInvisivel.Visible = false;
+            btnVisivel.Visible = true;
+        }
+
+        private void btnVisivel_Click(object sender, EventArgs e)
+        {
+            table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 420);
+            table_OrdensServicos.Location = new Point(3, 225);
+
+            lblCliente.Visible = true;
+            lblAparelho.Visible = true;
+            lblDefeito.Visible = true;
+            lblSenha.Visible = true;
+            lblSituacao.Visible = true;
+            cmbClientes.Visible = true;
+            txtAparelhoOrdens.Visible = true;
+            txtDefeitoOrdens.Visible = true;
+            txtSenhaOrdens.Visible = true;
+            txtSituacaoOrdens.Visible = true;
+            txtPesquisarCliente.Visible = true;
+            btnCadastrarOrdem.Visible = true;
+            btnPesquisarCliente.Visible = true;
+            btnInvisivel.Visible = true;
+            btnVisivel.Visible = false;
+        }
     }
 }

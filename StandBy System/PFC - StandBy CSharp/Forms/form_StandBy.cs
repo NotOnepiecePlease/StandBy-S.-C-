@@ -3,6 +3,7 @@ using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.Graficos;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -22,16 +23,15 @@ namespace PFC___StandBy_CSharp.Forms
         int anoAtual = DateTime.Now.Year;
         int mesAtual = DateTime.Now.Month;
         int[] corGeral = new int[3] { 0, 0, 0 };
+        private static string pastaRaiz = @"./PasswordPattern";
         public form_StandBy()
         {
-            //Thread.Sleep(2000);
             InitializeComponent();
             //randomizarCores(100);
             IniciarPainelCor();
             CarregarGraficos();
+            criarPastaDasSenhas();
             //bckpData.criarPasta();
-
-            //lblVersion.Text = VerMeuIPV4();
 
             btnMenuSuperior.DisabledColor = Color.Transparent;
             if (btnMenuSuperior.Enabled == false)
@@ -41,22 +41,16 @@ namespace PFC___StandBy_CSharp.Forms
             verificarUpd.ChecarVersao();
         }
 
-        public void Alert(string msg, form_AlertMessage.enmType type)
+        public void criarPastaDasSenhas()
         {
-            form_AlertMessage frm = new form_AlertMessage();
-            frm.showAlert(msg, type);
-        }
-        private static string VerMeuIPV4()
-        {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList)
+            if (Directory.Exists(pastaRaiz))
             {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
+                //Caso exista a pasta, nao faz nada.
             }
-            throw new Exception("No network adapters with an IPv4 address in the system!");
+            else
+            {
+                Directory.CreateDirectory(pastaRaiz);
+            }
         }
 
         private void CarregarGraficos()
@@ -396,7 +390,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void form_StandBy_KeyDown(object sender, KeyEventArgs e)
         {
             //MessageBox.Show("Teste");
-            if (e.KeyCode == Keys.Tab)
+            if (e.KeyCode == Keys.F2)
             {
                 if (Application.OpenForms.OfType<form_OrdensServ>().Count() > 0)
                 {
