@@ -1,8 +1,9 @@
 
 
-
-
-
+![enter image description here](https://img.shields.io/badge/Maintained-yes-green.svg)
+![enter image description here](https://aleen42.github.io/badges/src/photoshop.svg)
+![enter image description here](https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+![enter image description here](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 <h2>StandBy System - C#</h2>
 
 Sistema de gerenciamento de faturamento, clientes, dispositivos e serviços para uma Assistência de Dispositivos Moveis 
@@ -18,21 +19,39 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 <b>== Modulo de Serviços </b>
 
 - [x] Cadastro de Serviços *****[OK]*****
+- fk_Cliente
+- Aparelho (Modelo)
+- Defeito
+- Senha (Texto)
+- Senha (Padrão Lock Screen Android)
+- Descrição do Aparelho
+--
 - [x] Edição de Serviços ***[OK]***
+- Data de Cadastro
+- Aparelho (Modelo)
+- Defeito
+- Senha (Texto)
+- Senha (Padrão Lock Screen Android)
+- Descrição do Aparelho
+- Valor Serviço R$
+- Valor Peça R$
+- Lucro Serviço R$
+- Serviço Feito
+- Data Entrega/Data Analise
+--
 - [x] Conclusão de Serviços ***[OK]***
 - [x] Remoção de Serviços ***[OK]***
 - [x] Exibição de Serviços ***[OK]***
 - [x] Busca de Serviços por Nome ***[OK]***
 - [x] Sistema RGB, altera as cores em todos os forms. ***[OK]***
 - [x] Exibição dos Gráficos semanais e mensais. ***[OK]***
-- [x] <b>**Vinculado com a Tabela de clientes (FK~)**</b> ***[OK]***
-- [x] Sistema de Atraso. ***[OK]***&nbsp;
+- [x] Sistema de Atraso. ***[OK]*** &nbsp;
 		- Mais de 12 horas para entrega = **VERDE**&nbsp;
 		- Entre 0 e 12 horas para a entrega = **LARANJA**&nbsp;
 		- Tempo de entrega finalizado = **VERMELHO**
 
 <b>== Modulo de Clientes</b>
-- [x] Cadastro de Clientes (Nome, Telefone e CPF) ***[OK]***
+- [x] Cadastro de Clientes (Nome, Telefone Principal, Telefone Alternativo, CPF e CNPJ) ***[OK]***
 - [x] Edição de Clientes ***[OK]***
 - [x] Remoção de Clientes ***[OK]***
 - [x] Exibição de Clientes ***[OK]***
@@ -43,9 +62,11 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 - [x] Cancelamento da conclusão de um serviço ***[OK]***
 - [x] Busca por serviços concluídos ***[OK]***
 
-<b>== Modulo de Lucros</b>
+<b>== Modulo de Lucros/Gastos</b>
 - [x] Busca dos lucros entre datas determinadas ***[OK]***
 - [x] Cadastro de gastos com a empresa ***[OK]***
+- [x] Busca de dados por nome
+- [x] Busca de dados entre datas
 - [x] Cadastro de gastos temporários ***[OK]***
 - [x] Calculo dos lucros do mes atual automaticamente ***[OK]***
 
@@ -69,32 +90,37 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 - [x] Adicionar quantidade em dias de garantia para o cliente. ***[OK]***
 - [x] Tela para verificação das garantias. ***[OK]***
 
+<b>== Modulo de Update</b>
+- [x] Verificação de Versão na nuvem. ***[OK]***
+- [x] Automaticamente baixa e instala o sistema. ***[OK]***
+
 &nbsp;
 
+<center>
 
-|PRINTS DO PROJETO POR ORDEM CRESCENTE DE ATUALIZAÇÕES, OU SEJA, PARA VER O PROJETO NO ESTADO MAIS RECENTE BASTA IR PARA AS ULTIMAS IMAGENS.|  |
-|-------------------------------------------------------------------------------------------------------------------------------------------|--|
-|                                                                                                                                           |  |
+## ALGUMAS IMAGENS SÃO DE VERSÕES ANTERIORES DO SISTEMA POIS NÃO SOFRERAM ALTERAÇÕES SIGNIFICATIVAS NA FORMA DE AGIR. 
 
-# **TELA PRINCIPAL**![alt text](https://images2.imgbox.com/f4/50/ReQcMLn6_o.png)
+</center>
+
+# **TELA PRINCIPAL**![alt text](https://i.imgur.com/AddK8aa.png)
 &nbsp;
 &nbsp;
-# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/Yf4fsjU.png)
+# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/9goum0w.png)
 &nbsp;
 &nbsp;
-# EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/RWMRlB4.png)
+# EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/c98xztQ.png)
 &nbsp;
 &nbsp;
-# CADASTRO DE CLIENTE![alt text](https://i.imgur.com/GeV7s4u.png)
+# CADASTRO DE CLIENTE![alt text](https://i.imgur.com/NYYGh4O.png)
 &nbsp;
 &nbsp;
-# EDIÇÃO DE CLIENTES![alt text](https://i.imgur.com/c36myTY.png)
+# EDIÇÃO DE CLIENTES![alt text](https://i.imgur.com/xBluBRJ.png)
 &nbsp;
 &nbsp;
-# SERVIÇOS CONCLUÍDOS![alt text](https://i.imgur.com/1loyIvp.png)
+# SERVIÇOS CONCLUÍDOS![alt text](https://i.imgur.com/jsVylBD.png)
 &nbsp;
 &nbsp;
-# GRÁFICO SERVIÇOS POR MÊS ![](https://i.imgur.com/q7kXySe.png)  
+# GRÁFICO SERVIÇOS POR MÊS ![](https://i.imgur.com/X6qoSjI.png)  
 &nbsp;
 &nbsp;
 # LUCROS POR DATAS![](https://i.imgur.com/xrw8pcY.gif)
@@ -121,8 +147,12 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 
 
 # MODULO DE GARANTIAS CUSTOM/30/60/90 dias.
-<<<<<<< HEAD
 ![enter image description here](https://i.imgur.com/H3EaqIm.gif)
 =======
 ![enter image description here](https://i.imgur.com/H3EaqIm.gif)
->>>>>>> master
+&nbsp;
+&nbsp;
+
+
+# MODULO DE AUTO UPDATE
+![enter image description here](https://i.imgur.com/M0oBOTQ.png)
