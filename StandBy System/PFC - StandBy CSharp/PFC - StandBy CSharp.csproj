@@ -385,6 +385,12 @@
     <Compile Include="Forms\form_PasswordPattern.Designer.cs">
       <DependentUpon>form_PasswordPattern.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\form_PasswordPatternExibir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_PasswordPatternExibir.Designer.cs">
+      <DependentUpon>form_PasswordPatternExibir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\form_QntdGarantia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_PasswordPattern.resx">
       <DependentUpon>form_PasswordPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_PasswordPatternExibir.resx">
+      <DependentUpon>form_PasswordPatternExibir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_QntdGarantia.resx">
       <DependentUpon>form_QntdGarantia.cs</DependentUpon>

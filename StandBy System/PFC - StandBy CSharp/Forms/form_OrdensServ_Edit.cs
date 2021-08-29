@@ -25,7 +25,7 @@ namespace PFC___StandBy_CSharp.Forms
         //form_OrdensServ form = new form_OrdensServ();
         int[] corGeral = new int[] { 0, 0, 0 };
         public int ImprimiuAlgumaNota = 0;
-        
+
 
         public form_OrdensServ_Edit(form_OrdensServ formServ, int[] _cor)
         {
@@ -138,7 +138,7 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 catch (Exception)
                 {
-                } 
+                }
             }
             else
             {
@@ -249,6 +249,10 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            //Iae adriano, to ligado que voce ta nesse metodo aqui pra adicionar o padrao na etiqueta
+            //aqui o video pra lhe ajudar a por imagem no docword:
+            //https://www.youtube.com/watch?v=2GcxY0nQxvA
+
             StringFormat sfcenter = new StringFormat();
             sfcenter.LineAlignment = StringAlignment.Center;
             sfcenter.Alignment = StringAlignment.Center;
@@ -376,6 +380,35 @@ namespace PFC___StandBy_CSharp.Forms
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
             dtpDataEditPrevisao.FormatCustom = " ";
             dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+        }
+
+        private Image ConvertByteArrayToImage(byte[] data)
+        {
+            if (data[0] != 0)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            return null;
+        }
+        private void btn_ExibirPadraoSenha_Click(object sender, EventArgs e)
+        {
+            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir())
+            {
+                passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(lblIDservico.Text));
+                if (passShow.pictureBox1.Image == null)
+                {
+                    passShow.lblSemPadrao.Visible = true;
+                }
+                else
+                {
+                    passShow.lblSemPadrao.Visible = false;
+                }
+
+                passShow.ShowDialog();
+            }
         }
     }
 }

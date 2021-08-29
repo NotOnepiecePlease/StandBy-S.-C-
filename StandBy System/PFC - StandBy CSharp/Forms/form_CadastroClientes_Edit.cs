@@ -86,10 +86,13 @@ namespace PFC___StandBy_CSharp.Forms
             sep1.GradientColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             sep2.GradientColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             sep3.GradientColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            gunaGradient2Panel1.GradientColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             sep1.GradientColor2 = Color.FromArgb(200, 200, 200);
             sep2.GradientColor2 = Color.FromArgb(200, 200, 200);
             sep3.GradientColor2 = Color.FromArgb(200, 200, 200);
+            gunaGradient2Panel1.GradientColor2 = Color.FromArgb(200, 200, 200);
+
         }
 
         private void form_CadastroClientes_Edit_KeyDown(object sender, KeyEventArgs e)

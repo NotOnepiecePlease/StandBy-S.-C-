@@ -16,6 +16,7 @@ namespace PFC___StandBy_CSharp.MsgBox
             frm.showAlert(msg, type);
         }
 
+        #region ORDENS DE SERVICO
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -44,9 +45,17 @@ namespace PFC___StandBy_CSharp.MsgBox
             //message.Show();
         }
 
+        public void AlterarSenhaPadraoSucesso()
+        {
+            Alert("Senha Padrão Alterada \ncom sucesso!", form_AlertMessage.enmType.Success);
+            //MessageBox.Show("Serviço deletado com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //form_ALERT message = new form_ALERT("Serviço deletado com sucesso!", form_ALERT.AlertType.Sucesso);
+            //message.Show();
+        }
+        #endregion
 
 
-
+        #region SERVICOS CONCLUIDOS
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -66,9 +75,10 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("Serviço concluido com sucesso!", form_ALERT.AlertType.Sucesso);
             //message.Show();
         }
+        #endregion
 
-        
 
+        #region CADASTRO DE CLIENTE
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -96,5 +106,6 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("Cliente deletado com sucesso!", form_ALERT.AlertType.Sucesso);
             //message.Show();
         }
+        #endregion
     }
 }

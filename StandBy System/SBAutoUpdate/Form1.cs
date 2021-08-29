@@ -70,7 +70,7 @@ namespace SBAutoUpdate
                         DirectoryInfo di2 = new DirectoryInfo("Update.zip");
                         Thread.Sleep(10);
                         //Thread.Sleep(5000);
-                        string zipPath = @"..\Update.zip";
+                        //string zipPath = @"..\Update.zip";
                         string extractPath = @".\";
                         //ZipFile.ExtractToDirectory(zipPath, extractPath);
                         ZipFile.ExtractToDirectory(di2.FullName, extractPath);

@@ -26,7 +26,6 @@ namespace PFC___StandBy_CSharp.Forms
 
         int qntDiasGarantia = 0;
         string diretorioArquivoPadrao = Settings.Default.diretorio_default_word;
-        string diretorioPadrao = @".\NotaWord";
         int[] corGeral = { 0, 0, 0 };
         form_OrdensServ_Edit ordensServ;
         Formatar apenasNumeros = new Formatar();

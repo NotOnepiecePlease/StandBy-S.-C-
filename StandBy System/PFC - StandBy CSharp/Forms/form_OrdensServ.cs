@@ -3,6 +3,7 @@ using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.PreencherComponentes;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -31,11 +32,6 @@ namespace PFC___StandBy_CSharp.Forms
             table_OrdensServicos.ClearSelection();
             //VerificarAtraso();
             timer1.Start();
-        }
-
-        private void table_OrdensServicos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //AtualizarAtrasosCores();
         }
 
         public void AtualizarAtrasosCores()
@@ -73,7 +69,7 @@ namespace PFC___StandBy_CSharp.Forms
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                 }
             }
@@ -98,6 +94,18 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void MudarTodasCores()
         {
+            btnSenhaPadrao.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnSenhaPadrao.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            btnSenhaPadrao.onHoverState.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnSenhaPadrao.onHoverState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            btnSenhaPadrao.OnIdleState.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnSenhaPadrao.OnIdleState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            btnSenhaPadrao.OnPressedState.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnSenhaPadrao.OnPressedState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
             btnCadastrarOrdem.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnPesquisarCliente.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtAparelhoOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -416,8 +424,8 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            form_PasswordPattern pp = new form_PasswordPattern();
-            pp.Show();
+            //form_PasswordPattern pp = new form_PasswordPattern(corGeral);
+            //pp.ShowDialog();
         }
 
         private void btnInvisivel_Click(object sender, EventArgs e)
@@ -436,7 +444,7 @@ namespace PFC___StandBy_CSharp.Forms
             btnCadastrarOrdem.Visible = false;
             btnPesquisarCliente.Visible = false;
 
-            table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width-2, 611);
+            table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 611);
             table_OrdensServicos.Location = new Point(3, 35);
             table_OrdensServicos.Anchor = AnchorStyles.Top;
             table_OrdensServicos.Anchor = AnchorStyles.Left;
@@ -468,6 +476,41 @@ namespace PFC___StandBy_CSharp.Forms
             btnPesquisarCliente.Visible = true;
             btnInvisivel.Visible = true;
             btnVisivel.Visible = false;
+        }
+
+        private Image ConvertByteArrayToImage(byte[] data)
+        {
+            if (data[0] != 0)
+            {
+                using (MemoryStream ms = new MemoryStream(data))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            return null;
+        }
+        private void verSenhaPadrãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir())
+            {
+                passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(table_OrdensServicos.SelectedCells[0].Value.ToString()));
+                if (passShow.pictureBox1.Image == null)
+                {
+                    passShow.lblSemPadrao.Visible = true;
+                }
+                else
+                {
+                    passShow.lblSemPadrao.Visible = false;
+                }
+
+                passShow.ShowDialog();
+            }
+        }
+
+        private void btnSenhaPadrao_Click(object sender, EventArgs e)
+        {
+            form_PasswordPattern pp = new form_PasswordPattern(corGeral);
+            pp.ShowDialog();
         }
     }
 }

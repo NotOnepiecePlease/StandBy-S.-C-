@@ -27,15 +27,15 @@ namespace PFC___StandBy_CSharp.Dados
 
 
         #region Inserir Servico
-        public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo, [Optional] byte[] image)
+        public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo, byte[] image)
         {
             {
                 //Abro a conexao.
                 using (SqlConnection conexaoSQL = OpenConnection())
                 {
                     //Defino a query que preciso com os parametros que vao ser criados logo apos.
-                    string query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_previsao_entrega, sv_existe_um_prazo) " +
-                        "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @PrevisaoEntrega, @SeExisteUmPrazo)";
+                    string query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_previsao_entrega, sv_existe_um_prazo, sv_senha_pattern) " +
+                        "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @PrevisaoEntrega, @SeExisteUmPrazo, @ImagePattern)";
 
                     //Crio um novo objeto do tipo "Comando em SQL" passando como argumento
                     //a minha query e uma conexao pra ele saber em que banco inserir.
@@ -53,6 +53,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = situacao;
                     cmd.Parameters.Add("@PrevisaoEntrega", SqlDbType.DateTime).Value = previsaoEntrega;
                     cmd.Parameters.Add("@SeExisteUmPrazo", SqlDbType.Int).Value = SeExisteUmPrazo;
+                    cmd.Parameters.Add("@ImagePattern", SqlDbType.Image).Value = image;
 
                     //Executo ta query completa
                     cmd.ExecuteNonQuery();

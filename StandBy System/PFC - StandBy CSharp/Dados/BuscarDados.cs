@@ -43,6 +43,31 @@ namespace PFC___StandBy_CSharp.Dados
             return idCliente;
         }
 
+        public byte[] BuscarImagem(string _idServico)
+        {
+            byte[] bytes;
+            using (SqlConnection con = OpenConnection())
+            {
+                string query = "select sv_senha_pattern from tb_servicos where sv_id = @idServico";
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataReader reader;
+
+                cmd.Parameters.AddWithValue("@idServico", SqlDbType.Int).Value = Convert.ToInt32(_idServico);
+                reader = cmd.ExecuteReader();
+
+                reader.Read();
+                try
+                {
+                    bytes = (byte[])reader[0];
+                    return bytes;
+                }
+                catch (Exception)
+                {
+                    return new byte[] { 0 };
+                }
+            }
+        }
+
         public void BuscarServicosDoCliente(string _nomeCliente)
         {
             using (SqlConnection con = OpenConnection())
@@ -170,7 +195,7 @@ namespace PFC___StandBy_CSharp.Dados
 
                 dr.Read();
 
-                 return dr.GetString(0);
+                return dr.GetString(0);
             }
         }
     }

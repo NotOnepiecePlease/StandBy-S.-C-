@@ -38,7 +38,7 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nao foi possivel estabelecer uma conexao para verificar a versão do sistema\n\nErro: "+ex, "Falha na Verificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Nao foi possivel verificar a versão do sistema, nao se preocupe, tudo funcionará normalmente.\n\n\nErro: "+ex, "Falha na Verificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             //return false;
         }

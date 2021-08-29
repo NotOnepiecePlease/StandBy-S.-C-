@@ -34,14 +34,16 @@ namespace GestureLockApp.GestureLockControl
 
         private void ApplyThemeToUtencils()
         {
-            Color c = Color.YellowGreen;
+            Color c = Color.DarkGray;
             gesturePen.Color = Color.FromArgb(100, c.R, c.G, c.B);
             padPen.Color = activeBrush.Color = c;
         }
 
         public override void RenderBackground(Graphics graphics, RectangleF bounds, Color backColor)
         {
-            graphics.Clear(Color.FromArgb(50, 50, 50));
+            //graphics.Clear(Color.FromArgb(50, 50, 50));
+            graphics.Clear(Color.FromArgb(23, 23, 36));
+           // graphics.Clear(Color.Transparent);
         }
 
         public override void RenderGesture(Graphics graphics, PointF[] polygon)

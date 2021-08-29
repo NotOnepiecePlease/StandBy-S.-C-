@@ -13,7 +13,6 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_StandBy : Form
     {
-        SemanaDoAno semanaAno = new SemanaDoAno();
         GraficoServicosSemanais GraficoSemanal = new GraficoServicosSemanais();
         GraficoServicosMensais GraficoMensal = new GraficoServicosMensais();
         Verificar verificarUpd = new Verificar();

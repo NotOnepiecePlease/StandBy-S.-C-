@@ -12,6 +12,7 @@ namespace PFC___StandBy_CSharp.MsgBox
 {
     class MensagensErro : conexao
     {
+        #region ORDENS DE SERVICO
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -70,7 +71,16 @@ namespace PFC___StandBy_CSharp.MsgBox
             //message.Show();
         }
 
+        public void ErroAoAlterarSenhaPadrao(Exception e)
+        {
+            MessageBox.Show("(OR-SV09)Erro ao alterar senha de padrão!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //form_ALERT message = new form_ALERT("(OR-SV08)Erro ao concluir serviço!", form_ALERT.AlertType.Erro);
+            //message.Show();
+        }
+        #endregion
 
+
+        #region SERVICOS CONCLUIDOS
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -81,8 +91,10 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+        #endregion
 
 
+        #region GARANTIAS
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -93,8 +105,10 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+        #endregion
 
 
+        #region CADASTRO DE CLIENTE
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -124,5 +138,6 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+        #endregion
     }
 }

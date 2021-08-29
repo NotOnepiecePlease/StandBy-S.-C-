@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,12 +25,13 @@ namespace PFC___StandBy_CSharp.Forms
         MensagensErro me = new MensagensErro();
         MensagensSucesso ms = new MensagensSucesso();
         PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
+        Image image1 = null;
         public form_DiaEntrega(form_OrdensServ _formServ, int[] _cor)
         {
             InitializeComponent();
             corGeral = _cor;
             formServ1 = _formServ;
-            
+
         }
 
         public void MudarCores()
@@ -106,6 +109,22 @@ namespace PFC___StandBy_CSharp.Forms
                 MessageBox.Show("Voce precisa marcar uma opção ou pressione ESC para voltar.");
             }
         }
+
+        private byte[] ConvertImageToByte(Image img)
+        {
+            if (image1 != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    img.Save(ms, ImageFormat.Png);
+                    return ms.ToArray();
+                }
+            }
+            else
+            {
+                return new byte[] { 0 };
+            }
+        }
         public void InserirServico(int PrevisaoEntrega, int SeExistePrazo)
         {
 
@@ -123,14 +142,26 @@ namespace PFC___StandBy_CSharp.Forms
 
                 try
                 {
+
+                    try
+                    {
+                        image1 = Image.FromFile(@"./PasswordPattern/Screen.png");
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    //inserirImage(ConvertImageToByte(image1));
+
+
                     //Insiro o servico com os dados.
                     if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
                     {
-                        id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, "------------", formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo);
+                        id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, "------------", formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
                     }
                     else
                     {
-                        id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, formServ1.txtSenhaOrdens.Text, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo);
+                        id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, formServ1.txtSenhaOrdens.Text, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
                     }
 
 
