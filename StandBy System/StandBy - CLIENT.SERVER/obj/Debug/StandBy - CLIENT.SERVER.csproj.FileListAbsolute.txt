@@ -14,4 +14,3 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SER
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.csproj.CopyComplete
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.pdb
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.csproj.AssemblyReference.cache

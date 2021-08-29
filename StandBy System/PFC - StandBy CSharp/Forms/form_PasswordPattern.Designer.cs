@@ -42,6 +42,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblPasswordIsCorrect = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblPasswordInNumbers = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lockScreenControl1 = new GestureLockApp.GestureLockControl.LockScreenControl();
+            this.lblIDServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,12 +218,24 @@ namespace PFC___StandBy_CSharp.Forms
             this.lockScreenControl1.Text = "lockScreenControl1";
             this.lockScreenControl1.PassCodeSubmitted += new System.EventHandler<GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs>(this.lockScreenControl1_PassCodeSubmitted);
             // 
+            // lblIDServico
+            // 
+            this.lblIDServico.AutoSize = true;
+            this.lblIDServico.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIDServico.Location = new System.Drawing.Point(-3, 267);
+            this.lblIDServico.Name = "lblIDServico";
+            this.lblIDServico.Size = new System.Drawing.Size(64, 13);
+            this.lblIDServico.TabIndex = 6;
+            this.lblIDServico.Text = "lblIDServico";
+            this.lblIDServico.Visible = false;
+            // 
             // form_PasswordPattern
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(261, 337);
+            this.Controls.Add(this.lblIDServico);
             this.Controls.Add(this.lblPasswordInNumbers);
             this.Controls.Add(this.lblPasswordIsCorrect);
             this.Controls.Add(this.btnSenhaIncorreta);
@@ -230,6 +243,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.Controls.Add(this.lockScreenControl1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "form_PasswordPattern";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -249,5 +263,6 @@ namespace PFC___StandBy_CSharp.Forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblPasswordIsCorrect;
         private Bunifu.Framework.UI.BunifuCustomLabel lblPasswordInNumbers;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblIDServico;
     }
 }

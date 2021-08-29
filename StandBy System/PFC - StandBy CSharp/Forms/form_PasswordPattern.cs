@@ -1,4 +1,5 @@
-﻿using PFC___StandBy_CSharp.SqlDbConnect;
+﻿using PFC___StandBy_CSharp.Dados;
+using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,14 +20,28 @@ namespace PFC___StandBy_CSharp.Forms
         private static string pastaRaiz = @"./PasswordPattern";
 
         conexao con = new conexao();
+        AlterarDados ad = new AlterarDados();
+        Image image1 = null;
+
         int[] corGeral = new int[3] { 0, 0, 0 };
+        bool isUpdate = false;
         public form_PasswordPattern(int[] _corRgb)
         {
             InitializeComponent();
             criarPastaDasSenhas();
             corGeral = _corRgb;
             MudarCores();
+            isUpdate = false;
+            this.Size = new Size(261, 239);
+        }
 
+        public form_PasswordPattern(int[] _corRgb, bool _isUpdate)
+        {
+            InitializeComponent();
+            criarPastaDasSenhas();
+            corGeral = _corRgb;
+            MudarCores();
+            isUpdate = _isUpdate;
             this.Size = new Size(261, 239);
         }
 
@@ -38,10 +53,10 @@ namespace PFC___StandBy_CSharp.Forms
 
             btnSenhaCorreta.onHoverState.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnSenhaCorreta.onHoverState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-        
+
             btnSenhaCorreta.OnIdleState.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnSenhaCorreta.OnIdleState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-        
+
             btnSenhaCorreta.OnPressedState.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnSenhaCorreta.OnPressedState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
@@ -191,7 +206,23 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnSenhaCorreta_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (isUpdate == false)
+            {
+                this.Close();
+            }
+            else
+            {
+                try
+                {
+                    image1 = Image.FromFile(@"./PasswordPattern/Screen.png");
+                }
+                catch (Exception)
+                {
+                }
+                //Atualizar senha
+                ad.AlterarSenhaPattern(ConvertImageToByte(image1), Convert.ToInt32(lblIDServico.Text));
+                this.Close();
+            }
         }
 
         private void btnSenhaIncorreta_Click(object sender, EventArgs e)
@@ -210,7 +241,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_PasswordPattern_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
             }

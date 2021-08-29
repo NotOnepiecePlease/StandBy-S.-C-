@@ -40,7 +40,7 @@ namespace StandBy___CLIENT.SERVER.PreencherComponentes
                     tabelaServicosAndamento.ClearSelection();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -67,7 +67,7 @@ namespace StandBy___CLIENT.SERVER.PreencherComponentes
                 tabelaServicos.ClearSelection();
                 CloseConnection();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //mErro.ErroPreencherTabelaServicos(ex);
             }
@@ -146,7 +146,7 @@ namespace StandBy___CLIENT.SERVER.PreencherComponentes
                 //tabelaServicos.DataSource = datatable;
                 //CloseConnection();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //mErro.ErroPreencherServicosCliente(ex);
             }

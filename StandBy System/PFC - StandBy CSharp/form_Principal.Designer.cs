@@ -291,7 +291,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::PFC___StandBy_CSharp.Properties.Resources._959ad3842394161b09d4cd3987c3f51c;
+            //this.pictureBox3.Image = global::PFC___StandBy_CSharp.Properties.Resources._959ad3842394161b09d4cd3987c3f51c;
             this.pictureBox3.Location = new System.Drawing.Point(0, -63);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1094, 763);

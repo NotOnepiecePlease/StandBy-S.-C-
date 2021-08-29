@@ -30,6 +30,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_AlertMessage));
             this.lblMsg = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -86,6 +87,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.Controls.Add(this.lblMsg);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_AlertMessage";
             this.Text = "form_AlertMessage";
             this.TopMost = true;

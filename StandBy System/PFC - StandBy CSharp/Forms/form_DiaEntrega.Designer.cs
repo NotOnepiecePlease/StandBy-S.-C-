@@ -30,10 +30,11 @@ namespace PFC___StandBy_CSharp.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_DiaEntrega));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new FontAwesome.Sharp.IconPictureBox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chk0d = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.btnConfirmarPrevisaoEntrega = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -50,7 +51,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk7d = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.chk5d = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.chk4d = new Bunifu.UI.WinForms.BunifuCheckBox();
-            this.btnClose = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,23 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(317, 213);
             this.panel1.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnClose.IconSize = 29;
+            this.btnClose.Location = new System.Drawing.Point(288, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnClose.Size = new System.Drawing.Size(29, 29);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnClose.TabIndex = 3;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.iconClose_Click);
             // 
             // bunifuCustomLabel8
             // 
@@ -160,11 +177,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnConfirmarPrevisaoEntrega.ColorContrastOnClick = 45;
             this.btnConfirmarPrevisaoEntrega.ColorContrastOnHover = 45;
             this.btnConfirmarPrevisaoEntrega.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnConfirmarPrevisaoEntrega.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnConfirmarPrevisaoEntrega.CustomizableEdges = borderEdges1;
             this.btnConfirmarPrevisaoEntrega.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnConfirmarPrevisaoEntrega.DisabledBorderColor = System.Drawing.Color.Empty;
             this.btnConfirmarPrevisaoEntrega.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -185,24 +202,24 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnConfirmarPrevisaoEntrega.IndicateFocus = false;
             this.btnConfirmarPrevisaoEntrega.Location = new System.Drawing.Point(40, 160);
             this.btnConfirmarPrevisaoEntrega.Name = "btnConfirmarPrevisaoEntrega";
-            stateProperties3.BorderColor = System.Drawing.Color.Gray;
-            stateProperties3.BorderRadius = 3;
-            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties3.BorderThickness = 1;
-            stateProperties3.FillColor = System.Drawing.Color.Gray;
-            stateProperties3.ForeColor = System.Drawing.Color.White;
-            stateProperties3.IconLeftImage = null;
-            stateProperties3.IconRightImage = null;
-            this.btnConfirmarPrevisaoEntrega.onHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.BorderRadius = 3;
-            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties4.BorderThickness = 1;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.IconLeftImage = null;
-            stateProperties4.IconRightImage = null;
-            this.btnConfirmarPrevisaoEntrega.OnPressedState = stateProperties4;
+            stateProperties1.BorderColor = System.Drawing.Color.Gray;
+            stateProperties1.BorderRadius = 3;
+            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties1.BorderThickness = 1;
+            stateProperties1.FillColor = System.Drawing.Color.Gray;
+            stateProperties1.ForeColor = System.Drawing.Color.White;
+            stateProperties1.IconLeftImage = null;
+            stateProperties1.IconRightImage = null;
+            this.btnConfirmarPrevisaoEntrega.onHoverState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties2.BorderRadius = 3;
+            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties2.BorderThickness = 1;
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties2.ForeColor = System.Drawing.Color.White;
+            stateProperties2.IconLeftImage = null;
+            stateProperties2.IconRightImage = null;
+            this.btnConfirmarPrevisaoEntrega.OnPressedState = stateProperties2;
             this.btnConfirmarPrevisaoEntrega.Size = new System.Drawing.Size(236, 34);
             this.btnConfirmarPrevisaoEntrega.TabIndex = 54;
             this.btnConfirmarPrevisaoEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -611,23 +628,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk4d.ToolTipText = null;
             this.chk4d.Click += new System.EventHandler(this.chk4d_Click);
             // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnClose.IconSize = 29;
-            this.btnClose.Location = new System.Drawing.Point(288, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.btnClose.Size = new System.Drawing.Size(29, 29);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnClose.TabIndex = 3;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.iconClose_Click);
-            // 
             // form_DiaEntrega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,6 +635,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.ClientSize = new System.Drawing.Size(317, 213);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "form_DiaEntrega";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

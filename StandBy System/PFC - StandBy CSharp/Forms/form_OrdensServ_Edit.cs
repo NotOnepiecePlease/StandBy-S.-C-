@@ -395,16 +395,24 @@ namespace PFC___StandBy_CSharp.Forms
         }
         private void btn_ExibirPadraoSenha_Click(object sender, EventArgs e)
         {
-            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir())
+            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(corGeral))
             {
                 passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(lblIDservico.Text));
                 if (passShow.pictureBox1.Image == null)
                 {
                     passShow.lblSemPadrao.Visible = true;
+                    passShow.lblDesejaCadastrar.Visible = true;
+                    passShow.btnSim.Visible = true;
+                    passShow.btnNao.Visible = true;
+                    passShow.lblIDServico.Text = lblIDservico.Text;
                 }
                 else
                 {
                     passShow.lblSemPadrao.Visible = false;
+                    passShow.lblDesejaCadastrar.Visible = false;
+                    passShow.btnSim.Visible = false;
+                    passShow.btnNao.Visible = false;
+                    passShow.lblIDServico.Text = lblIDservico.Text;
                 }
 
                 passShow.ShowDialog();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes_Edit));
             this.cardFundo = new Bunifu.Framework.UI.BunifuCards();
             this.gunaGradient2Panel1 = new Guna.UI.WinForms.GunaGradient2Panel();
             this.txtTelefone = new System.Windows.Forms.TextBox();
@@ -278,6 +279,7 @@
             this.ClientSize = new System.Drawing.Size(384, 364);
             this.Controls.Add(this.cardFundo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "form_CadastroClientes_Edit";
             this.ShowIcon = false;

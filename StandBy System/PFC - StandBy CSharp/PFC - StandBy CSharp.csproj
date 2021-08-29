@@ -59,7 +59,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>5ee7aec0f2f1d_wmY_icon.ico</ApplicationIcon>
+    <ApplicationIcon>icone.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -655,6 +655,7 @@
     <None Include="Resources\Alcatel-Logo1.png" />
     <None Include="Resources\AsusTek-black-logo2.png" />
     <None Include="Resources\asus.png" />
+    <Content Include="icone.ico" />
     <Content Include="Resources\Aviso.png" />
     <Content Include="Resources\Erro.png" />
     <None Include="Resources\TITULO CADASTRO CLIENTES.png" />
@@ -670,6 +671,7 @@
     <None Include="Resources\icons8_add_512px.png" />
     <None Include="Resources\icons8_cancel_25px_1.png" />
     <None Include="Resources\error.png" />
+    <None Include="Resources\icon.png" />
     <Content Include="Resources\icons8_edit_property_480px.png" />
     <None Include="Resources\icons8_tick_box_480px.png" />
     <None Include="Resources\icons8_edit_property_480px_1.png" />

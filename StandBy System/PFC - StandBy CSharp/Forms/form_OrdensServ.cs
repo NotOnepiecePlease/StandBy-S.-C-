@@ -491,7 +491,7 @@ namespace PFC___StandBy_CSharp.Forms
         }
         private void verSenhaPadrãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir())
+            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(corGeral))
             {
                 passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(table_OrdensServicos.SelectedCells[0].Value.ToString()));
                 if (passShow.pictureBox1.Image == null)

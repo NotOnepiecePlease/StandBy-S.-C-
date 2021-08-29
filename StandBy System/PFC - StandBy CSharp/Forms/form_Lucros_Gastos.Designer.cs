@@ -200,6 +200,7 @@
             this.ClientSize = new System.Drawing.Size(253, 265);
             this.Controls.Add(this.gunaPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "form_Lucros_Gastos";
             this.ShowIcon = false;

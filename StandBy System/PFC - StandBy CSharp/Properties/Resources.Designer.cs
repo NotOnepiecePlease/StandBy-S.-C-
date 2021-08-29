@@ -63,16 +63,6 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _959ad3842394161b09d4cd3987c3f51c {
-            get {
-                object obj = ResourceManager.GetObject("959ad3842394161b09d4cd3987c3f51c", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Alcatel_Logo {
             get {
                 object obj = ResourceManager.GetObject("Alcatel-Logo", resourceCulture);
