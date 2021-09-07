@@ -418,5 +418,23 @@ namespace PFC___StandBy_CSharp.Forms
                 passShow.ShowDialog();
             }
         }
+
+        private void btn_EditarPadraoSenha_Click(object sender, EventArgs e)
+        {
+            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(corGeral))
+            {
+                //passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(lblIDservico.Text));
+                passShow.lblSemPadrao.Visible = true;
+                passShow.lblDesejaCadastrar.Text = "Deseja Alterar?";
+                passShow.CentralizarLabels(passShow.lblDesejaCadastrar);
+                passShow.lblDesejaCadastrar.Visible = true;
+                passShow.btnSim.Visible = true;
+                passShow.btnNao.Visible = true;
+                passShow.lblIDServico.Text = lblIDservico.Text;
+
+
+                passShow.ShowDialog();
+            }
+        }
     }
 }

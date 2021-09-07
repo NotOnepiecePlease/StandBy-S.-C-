@@ -176,6 +176,15 @@
         4tirAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btn_EditarPadraoSenha.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACjSURBVFhH7ZihDcMwEEVvi1CDjBDeYoOizhGYCcwySnFp
+        RskCdU6NXOOLbR2p5Ans/6WvI0fe8yETkiIihvn7SrOLeM/vNIziE3l/bM6tMgxjF53nRdKD74pfLqC6
+        2HJzFB8CIAACIAACqkstFwIgAAIgQPEhAAIgAAIgoLrUcv8E5N8Ra5/VxRY7TTeJMZ6KXy7gHsLvU7R0
+        kAzPzA/F7zlEF4fdX756CsYJAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btn_ExibirPadraoSenha.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAAAXCAYAAAC74kmRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

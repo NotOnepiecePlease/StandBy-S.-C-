@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.Framework.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,6 +69,10 @@ namespace PFC___StandBy_CSharp.Forms
             passShow.lblIDServico.Text = lblIDServico.Text;
             passShow.ShowDialog();
             this.Close();
+        }
+        public void CentralizarLabels(BunifuCustomLabel label)
+        {
+            label.Left = (this.Width / 2) - (label.Width / 2);
         }
     }
 }

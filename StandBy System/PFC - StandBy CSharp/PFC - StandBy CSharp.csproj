@@ -64,6 +64,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
@@ -555,6 +558,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -656,7 +660,10 @@
     <None Include="Resources\AsusTek-black-logo2.png" />
     <None Include="Resources\asus.png" />
     <Content Include="icone.ico" />
+    <None Include="Resources\acessorios_512px.png" />
+    <None Include="Resources\acessoriosl_52px.png" />
     <Content Include="Resources\Aviso.png" />
+    <None Include="Resources\electrical_20px.png" />
     <Content Include="Resources\Erro.png" />
     <None Include="Resources\TITULO CADASTRO CLIENTES.png" />
     <None Include="Resources\TITULO STANDBY SYSTEM.png" />

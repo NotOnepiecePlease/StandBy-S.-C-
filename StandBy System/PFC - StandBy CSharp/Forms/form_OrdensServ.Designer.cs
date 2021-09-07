@@ -38,9 +38,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSituacaoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtAcessoriosOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.lblAcessoriosOrdens = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnInvisivel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSenhaPadrao = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txtSituacaoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtSenhaOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtDefeitoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
@@ -54,6 +56,18 @@
             this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtAparelhoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.table_OrdensServicos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verSenhaPadrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVisivel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.arredondarTabelaServ = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarComboboxCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarBotaoCadastrar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarBotaoPesquisarCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
+            this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,18 +82,7 @@
             this.servico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.previsao_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existe_um_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVisivel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.arredondarTabelaServ = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarComboboxCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarBotaoCadastrar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarBotaoPesquisarCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
-            this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.verSenhaPadrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -90,9 +93,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.txtSituacaoOrdens);
+            this.panel1.Controls.Add(this.txtAcessoriosOrdens);
+            this.panel1.Controls.Add(this.lblAcessoriosOrdens);
             this.panel1.Controls.Add(this.btnInvisivel);
             this.panel1.Controls.Add(this.btnSenhaPadrao);
-            this.panel1.Controls.Add(this.txtSituacaoOrdens);
             this.panel1.Controls.Add(this.txtSenhaOrdens);
             this.panel1.Controls.Add(this.txtDefeitoOrdens);
             this.panel1.Controls.Add(this.cmbClientes);
@@ -113,6 +118,81 @@
             this.panel1.Size = new System.Drawing.Size(1081, 665);
             this.panel1.TabIndex = 0;
             this.panel1.TabStop = true;
+            // 
+            // txtSituacaoOrdens
+            // 
+            this.txtSituacaoOrdens.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSituacaoOrdens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtSituacaoOrdens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtSituacaoOrdens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtSituacaoOrdens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtSituacaoOrdens.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSituacaoOrdens.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSituacaoOrdens.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtSituacaoOrdens.ForeColor = System.Drawing.Color.Silver;
+            this.txtSituacaoOrdens.HintForeColor = System.Drawing.Color.Transparent;
+            this.txtSituacaoOrdens.HintText = "";
+            this.txtSituacaoOrdens.isPassword = false;
+            this.txtSituacaoOrdens.LineFocusedColor = System.Drawing.Color.Lavender;
+            this.txtSituacaoOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.txtSituacaoOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
+            this.txtSituacaoOrdens.LineThickness = 2;
+            this.txtSituacaoOrdens.Location = new System.Drawing.Point(4, 129);
+            this.txtSituacaoOrdens.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSituacaoOrdens.MaxLength = 500;
+            this.txtSituacaoOrdens.Name = "txtSituacaoOrdens";
+            this.txtSituacaoOrdens.Size = new System.Drawing.Size(583, 34);
+            this.txtSituacaoOrdens.TabIndex = 43;
+            this.txtSituacaoOrdens.Text = "Situação do aparelho";
+            this.txtSituacaoOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSituacaoOrdens.Enter += new System.EventHandler(this.txtSituacaoOrdens_Enter);
+            this.txtSituacaoOrdens.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSituacaoOrdens_KeyDown);
+            this.txtSituacaoOrdens.Leave += new System.EventHandler(this.txtSituacaoOrdens_Leave);
+            // 
+            // txtAcessoriosOrdens
+            // 
+            this.txtAcessoriosOrdens.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAcessoriosOrdens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtAcessoriosOrdens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtAcessoriosOrdens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtAcessoriosOrdens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtAcessoriosOrdens.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtAcessoriosOrdens.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAcessoriosOrdens.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtAcessoriosOrdens.ForeColor = System.Drawing.Color.Silver;
+            this.txtAcessoriosOrdens.HintForeColor = System.Drawing.Color.Transparent;
+            this.txtAcessoriosOrdens.HintText = "";
+            this.txtAcessoriosOrdens.isPassword = false;
+            this.txtAcessoriosOrdens.LineFocusedColor = System.Drawing.Color.Lavender;
+            this.txtAcessoriosOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.txtAcessoriosOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
+            this.txtAcessoriosOrdens.LineThickness = 2;
+            this.txtAcessoriosOrdens.Location = new System.Drawing.Point(609, 129);
+            this.txtAcessoriosOrdens.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAcessoriosOrdens.MaxLength = 500;
+            this.txtAcessoriosOrdens.Name = "txtAcessoriosOrdens";
+            this.txtAcessoriosOrdens.Size = new System.Drawing.Size(406, 34);
+            this.txtAcessoriosOrdens.TabIndex = 41;
+            this.txtAcessoriosOrdens.Text = "Acessorios que vieram junto c/ aparelho";
+            this.txtAcessoriosOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAcessoriosOrdens.Enter += new System.EventHandler(this.txtAcessoriosOrdens_Enter);
+            this.txtAcessoriosOrdens.Leave += new System.EventHandler(this.txtAcessoriosOrdens_Leave);
+            // 
+            // lblAcessoriosOrdens
+            // 
+            this.lblAcessoriosOrdens.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAcessoriosOrdens.BackColor = System.Drawing.Color.Transparent;
+            this.lblAcessoriosOrdens.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.lblAcessoriosOrdens.ForeColor = System.Drawing.Color.Lavender;
+            this.lblAcessoriosOrdens.Image = global::PFC___StandBy_CSharp.Properties.Resources.electrical_20px;
+            this.lblAcessoriosOrdens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAcessoriosOrdens.Location = new System.Drawing.Point(755, 92);
+            this.lblAcessoriosOrdens.Name = "lblAcessoriosOrdens";
+            this.lblAcessoriosOrdens.Size = new System.Drawing.Size(143, 33);
+            this.lblAcessoriosOrdens.TabIndex = 40;
+            this.lblAcessoriosOrdens.Text = "Acessorios";
+            this.lblAcessoriosOrdens.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnInvisivel
             // 
@@ -214,37 +294,6 @@
             this.btnSenhaPadrao.UseDefaultRadiusAndThickness = true;
             this.btnSenhaPadrao.Click += new System.EventHandler(this.btnSenhaPadrao_Click);
             // 
-            // txtSituacaoOrdens
-            // 
-            this.txtSituacaoOrdens.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSituacaoOrdens.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtSituacaoOrdens.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtSituacaoOrdens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtSituacaoOrdens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtSituacaoOrdens.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtSituacaoOrdens.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSituacaoOrdens.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtSituacaoOrdens.ForeColor = System.Drawing.Color.Silver;
-            this.txtSituacaoOrdens.HintForeColor = System.Drawing.Color.Transparent;
-            this.txtSituacaoOrdens.HintText = "";
-            this.txtSituacaoOrdens.isPassword = false;
-            this.txtSituacaoOrdens.LineFocusedColor = System.Drawing.Color.Lavender;
-            this.txtSituacaoOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.txtSituacaoOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
-            this.txtSituacaoOrdens.LineThickness = 2;
-            this.txtSituacaoOrdens.Location = new System.Drawing.Point(3, 128);
-            this.txtSituacaoOrdens.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSituacaoOrdens.MaxLength = 500;
-            this.txtSituacaoOrdens.Name = "txtSituacaoOrdens";
-            this.txtSituacaoOrdens.Size = new System.Drawing.Size(1012, 34);
-            this.txtSituacaoOrdens.TabIndex = 5;
-            this.txtSituacaoOrdens.Text = "Situação do aparelho";
-            this.txtSituacaoOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSituacaoOrdens.Enter += new System.EventHandler(this.txtSituacaoOrdens_Enter);
-            this.txtSituacaoOrdens.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSituacaoOrdens_KeyDown);
-            this.txtSituacaoOrdens.Leave += new System.EventHandler(this.txtSituacaoOrdens_Leave);
-            // 
             // txtSenhaOrdens
             // 
             this.txtSenhaOrdens.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -333,7 +382,7 @@
             this.btnPesquisarCliente.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btnPesquisarCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.btnPesquisarCliente.IconSize = 50;
-            this.btnPesquisarCliente.Location = new System.Drawing.Point(1023, 172);
+            this.btnPesquisarCliente.Location = new System.Drawing.Point(1023, 185);
             this.btnPesquisarCliente.Name = "btnPesquisarCliente";
             this.btnPesquisarCliente.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnPesquisarCliente.Rotation = 0D;
@@ -356,7 +405,7 @@
             this.txtPesquisarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtPesquisarCliente.ForeColor = System.Drawing.Color.Silver;
             this.txtPesquisarCliente.isPassword = false;
-            this.txtPesquisarCliente.Location = new System.Drawing.Point(3, 172);
+            this.txtPesquisarCliente.Location = new System.Drawing.Point(3, 185);
             this.txtPesquisarCliente.Margin = new System.Windows.Forms.Padding(5);
             this.txtPesquisarCliente.MaxLength = 32767;
             this.txtPesquisarCliente.Name = "txtPesquisarCliente";
@@ -393,13 +442,13 @@
             // 
             // lblSituacao
             // 
-            this.lblSituacao.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSituacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSituacao.BackColor = System.Drawing.Color.Transparent;
             this.lblSituacao.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.lblSituacao.ForeColor = System.Drawing.Color.Lavender;
             this.lblSituacao.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_comments_20px;
             this.lblSituacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSituacao.Location = new System.Drawing.Point(440, 98);
+            this.lblSituacao.Location = new System.Drawing.Point(145, 92);
             this.lblSituacao.Name = "lblSituacao";
             this.lblSituacao.Size = new System.Drawing.Size(143, 33);
             this.lblSituacao.TabIndex = 34;
@@ -533,13 +582,14 @@
             this.lucro,
             this.servico,
             this.previsao_entrega,
-            this.existe_um_prazo});
+            this.existe_um_prazo,
+            this.sv_acessorios});
             this.table_OrdensServicos.ContextMenuStrip = this.contextMenuStrip1;
             this.table_OrdensServicos.DoubleBuffered = true;
             this.table_OrdensServicos.EnableHeadersVisualStyles = false;
             this.table_OrdensServicos.HeaderBgColor = System.Drawing.SystemColors.Control;
             this.table_OrdensServicos.HeaderForeColor = System.Drawing.Color.Black;
-            this.table_OrdensServicos.Location = new System.Drawing.Point(3, 226);
+            this.table_OrdensServicos.Location = new System.Drawing.Point(3, 239);
             this.table_OrdensServicos.Name = "table_OrdensServicos";
             this.table_OrdensServicos.ReadOnly = true;
             this.table_OrdensServicos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -559,13 +609,116 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_OrdensServicos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_OrdensServicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_OrdensServicos.Size = new System.Drawing.Size(1066, 420);
+            this.table_OrdensServicos.Size = new System.Drawing.Size(1066, 407);
             this.table_OrdensServicos.TabIndex = 0;
             this.table_OrdensServicos.TabStop = false;
             this.table_OrdensServicos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.table_OrdensServicos_CellFormatting_1);
             this.table_OrdensServicos.DoubleClick += new System.EventHandler(this.table_OrdensServicos_DoubleClick);
             this.table_OrdensServicos.MouseEnter += new System.EventHandler(this.table_OrdensServicos_MouseEnter);
             this.table_OrdensServicos.MouseLeave += new System.EventHandler(this.table_OrdensServicos_MouseLeave);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.deletarToolStripMenuItem,
+            this.verSenhaPadrãoToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(141, 70);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // deletarToolStripMenuItem
+            // 
+            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
+            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.deletarToolStripMenuItem.Text = "Deletar";
+            this.deletarToolStripMenuItem.Click += new System.EventHandler(this.deletarToolStripMenuItem_Click);
+            // 
+            // verSenhaPadrãoToolStripMenuItem
+            // 
+            this.verSenhaPadrãoToolStripMenuItem.Name = "verSenhaPadrãoToolStripMenuItem";
+            this.verSenhaPadrãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.verSenhaPadrãoToolStripMenuItem.Text = "Ver Senha Padrão";
+            this.verSenhaPadrãoToolStripMenuItem.Click += new System.EventHandler(this.verSenhaPadrãoToolStripMenuItem_Click);
+            // 
+            // btnVisivel
+            // 
+            this.btnVisivel.Active = false;
+            this.btnVisivel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.btnVisivel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnVisivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVisivel.BorderRadius = 0;
+            this.btnVisivel.ButtonText = "";
+            this.btnVisivel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVisivel.DisabledColor = System.Drawing.Color.Gray;
+            this.btnVisivel.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnVisivel.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnVisivel.Iconimage")));
+            this.btnVisivel.Iconimage_right = null;
+            this.btnVisivel.Iconimage_right_Selected = null;
+            this.btnVisivel.Iconimage_Selected = null;
+            this.btnVisivel.IconMarginLeft = 0;
+            this.btnVisivel.IconMarginRight = 0;
+            this.btnVisivel.IconRightVisible = true;
+            this.btnVisivel.IconRightZoom = 0D;
+            this.btnVisivel.IconVisible = true;
+            this.btnVisivel.IconZoom = 50D;
+            this.btnVisivel.IsTab = false;
+            this.btnVisivel.Location = new System.Drawing.Point(0, 0);
+            this.btnVisivel.Name = "btnVisivel";
+            this.btnVisivel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnVisivel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.btnVisivel.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnVisivel.selected = false;
+            this.btnVisivel.Size = new System.Drawing.Size(34, 35);
+            this.btnVisivel.TabIndex = 37;
+            this.btnVisivel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnVisivel.Textcolor = System.Drawing.Color.White;
+            this.btnVisivel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisivel.Visible = false;
+            this.btnVisivel.Click += new System.EventHandler(this.btnVisivel_Click);
+            // 
+            // arredondarTabelaServ
+            // 
+            this.arredondarTabelaServ.ElipseRadius = 1;
+            this.arredondarTabelaServ.TargetControl = this.table_OrdensServicos;
+            // 
+            // arredondarComboboxCliente
+            // 
+            this.arredondarComboboxCliente.ElipseRadius = 10;
+            this.arredondarComboboxCliente.TargetControl = this.cmbClientes;
+            // 
+            // arredondarBotaoCadastrar
+            // 
+            this.arredondarBotaoCadastrar.ElipseRadius = 20;
+            this.arredondarBotaoCadastrar.TargetControl = this.btnCadastrarOrdem;
+            // 
+            // arredondarBotaoPesquisarCliente
+            // 
+            this.arredondarBotaoPesquisarCliente.ElipseRadius = 20;
+            this.arredondarBotaoPesquisarCliente.TargetControl = this.btnPesquisarCliente;
+            // 
+            // standbyDataSet
+            // 
+            this.standbyDataSet.DataSetName = "standbyDataSet";
+            this.standbyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // standbyDataSetBindingSource
+            // 
+            this.standbyDataSetBindingSource.DataSource = this.standbyDataSet;
+            this.standbyDataSetBindingSource.Position = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // idServico
             // 
@@ -678,108 +831,13 @@
             this.existe_um_prazo.ReadOnly = true;
             this.existe_um_prazo.Visible = false;
             // 
-            // contextMenuStrip1
+            // sv_acessorios
             // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem,
-            this.deletarToolStripMenuItem,
-            this.verSenhaPadrãoToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(141, 70);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
-            // deletarToolStripMenuItem
-            // 
-            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
-            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.deletarToolStripMenuItem.Text = "Deletar";
-            this.deletarToolStripMenuItem.Click += new System.EventHandler(this.deletarToolStripMenuItem_Click);
-            // 
-            // btnVisivel
-            // 
-            this.btnVisivel.Active = false;
-            this.btnVisivel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.btnVisivel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnVisivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVisivel.BorderRadius = 0;
-            this.btnVisivel.ButtonText = "";
-            this.btnVisivel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVisivel.DisabledColor = System.Drawing.Color.Gray;
-            this.btnVisivel.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnVisivel.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnVisivel.Iconimage")));
-            this.btnVisivel.Iconimage_right = null;
-            this.btnVisivel.Iconimage_right_Selected = null;
-            this.btnVisivel.Iconimage_Selected = null;
-            this.btnVisivel.IconMarginLeft = 0;
-            this.btnVisivel.IconMarginRight = 0;
-            this.btnVisivel.IconRightVisible = true;
-            this.btnVisivel.IconRightZoom = 0D;
-            this.btnVisivel.IconVisible = true;
-            this.btnVisivel.IconZoom = 50D;
-            this.btnVisivel.IsTab = false;
-            this.btnVisivel.Location = new System.Drawing.Point(0, 0);
-            this.btnVisivel.Name = "btnVisivel";
-            this.btnVisivel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnVisivel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.btnVisivel.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnVisivel.selected = false;
-            this.btnVisivel.Size = new System.Drawing.Size(34, 35);
-            this.btnVisivel.TabIndex = 37;
-            this.btnVisivel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnVisivel.Textcolor = System.Drawing.Color.White;
-            this.btnVisivel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisivel.Visible = false;
-            this.btnVisivel.Click += new System.EventHandler(this.btnVisivel_Click);
-            // 
-            // arredondarTabelaServ
-            // 
-            this.arredondarTabelaServ.ElipseRadius = 1;
-            this.arredondarTabelaServ.TargetControl = this.table_OrdensServicos;
-            // 
-            // arredondarComboboxCliente
-            // 
-            this.arredondarComboboxCliente.ElipseRadius = 10;
-            this.arredondarComboboxCliente.TargetControl = this.cmbClientes;
-            // 
-            // arredondarBotaoCadastrar
-            // 
-            this.arredondarBotaoCadastrar.ElipseRadius = 20;
-            this.arredondarBotaoCadastrar.TargetControl = this.btnCadastrarOrdem;
-            // 
-            // arredondarBotaoPesquisarCliente
-            // 
-            this.arredondarBotaoPesquisarCliente.ElipseRadius = 20;
-            this.arredondarBotaoPesquisarCliente.TargetControl = this.btnPesquisarCliente;
-            // 
-            // standbyDataSet
-            // 
-            this.standbyDataSet.DataSetName = "standbyDataSet";
-            this.standbyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // standbyDataSetBindingSource
-            // 
-            this.standbyDataSetBindingSource.DataSource = this.standbyDataSet;
-            this.standbyDataSetBindingSource.Position = 0;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // verSenhaPadrãoToolStripMenuItem
-            // 
-            this.verSenhaPadrãoToolStripMenuItem.Name = "verSenhaPadrãoToolStripMenuItem";
-            this.verSenhaPadrãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.verSenhaPadrãoToolStripMenuItem.Text = "Ver Senha Padrão";
-            this.verSenhaPadrãoToolStripMenuItem.Click += new System.EventHandler(this.verSenhaPadrãoToolStripMenuItem_Click);
+            this.sv_acessorios.DataPropertyName = "sv_acessorios";
+            this.sv_acessorios.HeaderText = "sv_acessorios";
+            this.sv_acessorios.Name = "sv_acessorios";
+            this.sv_acessorios.ReadOnly = true;
+            this.sv_acessorios.Visible = false;
             // 
             // form_OrdensServ
             // 
@@ -826,8 +884,15 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAparelhoOrdens;
         public System.Windows.Forms.ComboBox cmbClientes;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtDefeitoOrdens;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtSituacaoOrdens;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtSenhaOrdens;
+        private System.Windows.Forms.Timer timer1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSenhaPadrao;
+        private Bunifu.Framework.UI.BunifuFlatButton btnInvisivel;
+        private Bunifu.Framework.UI.BunifuFlatButton btnVisivel;
+        private System.Windows.Forms.ToolStripMenuItem verSenhaPadrãoToolStripMenuItem;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblAcessoriosOrdens;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtAcessoriosOrdens;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox txtSituacaoOrdens;
         private System.Windows.Forms.DataGridViewTextBoxColumn idServico;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
@@ -842,10 +907,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servico;
         private System.Windows.Forms.DataGridViewTextBoxColumn previsao_entrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn existe_um_prazo;
-        private System.Windows.Forms.Timer timer1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSenhaPadrao;
-        private Bunifu.Framework.UI.BunifuFlatButton btnInvisivel;
-        private Bunifu.Framework.UI.BunifuFlatButton btnVisivel;
-        private System.Windows.Forms.ToolStripMenuItem verSenhaPadrãoToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
     }
 }

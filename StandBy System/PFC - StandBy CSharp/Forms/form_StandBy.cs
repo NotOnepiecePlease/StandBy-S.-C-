@@ -37,7 +37,8 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 btnMenuSuperior.Cursor = Cursors.Default;
             }
-            verificarUpd.ChecarVersao();
+            //verificarUpd.ChecarVersao();
+            backgroundWorker1.RunWorkerAsync();
         }
 
         public void criarPastaDasSenhas()
@@ -240,23 +241,25 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void ResetarCor()
         {
-            btnServicosPorMes.colorActive = Color.FromArgb(255, 0, 103);
-            btnDesligarPc.colorActive = Color.FromArgb(255, 0, 103);
-            buniCardSemanais.color = Color.FromArgb(255, 0, 103);
-            buniCardsMensais.color = Color.FromArgb(255, 0, 103);
-            buniCardsBotoes.color = Color.FromArgb(255, 0, 103);
-            buniCardsCores.color = Color.FromArgb(255, 0, 103);
-            panelMenu.GradientBottomLeft = Color.FromArgb(255, 0, 103);
-            panelMenu.GradientBottomRight = Color.FromArgb(255, 0, 103);
-            panelMenu.GradientTopLeft = Color.FromArgb(255, 0, 103);
-            btnNotepad.colorActive = Color.FromArgb(255, 0, 103);
-            btnReset.colorActive = Color.FromArgb(255, 0, 103);
-            iconClose.IconColor = Color.FromArgb(255, 0, 103);
+            Color cor = Color.FromArgb(255, 0, 103);
+            btnServicosPorMes.colorActive = cor;
+            btnDesligarPc.colorActive = cor;
+            buniCardSemanais.color = cor;
+            buniCardsMensais.color = cor;
+            buniCardsBotoes.color = cor;
+            buniCardsCores.color = cor;
+            panelMenu.GradientBottomLeft = cor;
+            panelMenu.GradientBottomRight = cor;
+            panelMenu.GradientTopLeft = cor;
+            btnNotepad.colorActive = cor;
+            btnReset.colorActive = cor;
+            iconClose.IconColor = cor;
+            corGeral = new int[] { 255,0,103};
 
             track_RED.Value = 255;
             track_GREEN.Value = 0;
             track_BLUE.Value = 103;
-            panel_CorGeral.BackColor = Color.FromArgb(255, 0, 103);
+            panel_CorGeral.BackColor = cor;
         }
 
         private void track_RED_ValueChanged(object sender, EventArgs e)
@@ -405,7 +408,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcao desativada por nao ser necessaria.","!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Funcao desativada pois o sistema efetua o reset automaticamente.","!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //DialogResult dialog1 = MessageBox.Show("Voce esta prestes a resetar o mês, fazendo isso voce armazena todos os dados" +
             //    "com segurança no banco de dados e reinicia todas as tabelas dos dados do mês em questão, essa ação é irreversivel," +
             //    " você tem certeza disso?", "----- PERIGO -----", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
@@ -424,6 +427,43 @@ namespace PFC___StandBy_CSharp.Forms
         private void form_StandBy_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void form_StandBy_Resize(object sender, EventArgs e)
+        {
+            //if (this.WindowState == FormWindowState.Minimized)
+            //{
+            //    Hide();
+            //    notifyIcon1.Visible = true;
+            //    notifyIcon1.ShowBalloonTip(1000);
+            //}
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
+        }
+
+        private void notifyIcon1_BalloonTipShown(object sender, EventArgs e)
+        {
+            //notifyIcon1.ShowBalloonTip(1000);
+        }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+           // notifyIcon1.ShowBalloonTip(1000);
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            verificarUpd.ChecarVersao(this);
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            lblUpdate.Visible = false;
         }
     }
 }

@@ -74,23 +74,23 @@ namespace PFC___StandBy_CSharp.Forms
                 }
             }
         }
-        private void VerificarAtraso()
-        {
-            foreach (DataGridViewRow row in table_OrdensServicos.Rows)
-            {
-                if (Convert.ToString(row.Cells[7].Value) == "teemo")
-                {
-                    // Se for negativo, fica vermelho
-                    //row.Cells[12].Value = "DONE";
-                    MessageBox.Show(Convert.ToString(row.Cells[3].Value));
-                    //row.Cells[3].Style.BackColor = Color.Red;
-                    row.Cells[7].Style.BackColor = Color.Red;
+        //private void VerificarAtraso()
+        //{
+        //    foreach (DataGridViewRow row in table_OrdensServicos.Rows)
+        //    {
+        //        if (Convert.ToString(row.Cells[7].Value) == "teemo")
+        //        {
+        //            // Se for negativo, fica vermelho
+        //            //row.Cells[12].Value = "DONE";
+        //            MessageBox.Show(Convert.ToString(row.Cells[3].Value));
+        //            //row.Cells[3].Style.BackColor = Color.Red;
+        //            row.Cells[7].Style.BackColor = Color.Red;
 
-                    //table_OrdensServicos.RowsDefaultCellStyle.SelectionBackColor = Color.Red;
-                }
-            }
-            //table_OrdensServicos.BackgroundColor = Color.Red;
-        }
+        //            //table_OrdensServicos.RowsDefaultCellStyle.SelectionBackColor = Color.Red;
+        //        }
+        //    }
+        //    //table_OrdensServicos.BackgroundColor = Color.Red;
+        //}
 
         public void MudarTodasCores()
         {
@@ -307,6 +307,7 @@ namespace PFC___StandBy_CSharp.Forms
             editarServicos.txtDefeitoEdit.Text = table_OrdensServicos.SelectedCells[5].Value.ToString();
             editarServicos.txtSenhaEdit.Text = table_OrdensServicos.SelectedCells[7].Value.ToString();
             editarServicos.txtSituacaoEdit.Text = table_OrdensServicos.SelectedCells[6].Value.ToString();
+            editarServicos.txtAcessoriosEdit.Text = table_OrdensServicos.SelectedCells[14].Value.ToString();
             editarServicos.txtServicoValorEdit.Text = table_OrdensServicos.SelectedCells[8].Value.ToString();
             editarServicos.txtPecaValorEdit.Text = table_OrdensServicos.SelectedCells[9].Value.ToString();
             editarServicos.txtLucroValorEdit.Text = table_OrdensServicos.SelectedCells[10].Value.ToString();
@@ -435,14 +436,19 @@ namespace PFC___StandBy_CSharp.Forms
             lblDefeito.Visible = false;
             lblSenha.Visible = false;
             lblSituacao.Visible = false;
+            lblAcessoriosOrdens.Visible = false;
             cmbClientes.Visible = false;
             txtAparelhoOrdens.Visible = false;
             txtDefeitoOrdens.Visible = false;
             txtSenhaOrdens.Visible = false;
             txtSituacaoOrdens.Visible = false;
+            txtSituacaoOrdens.Visible = false;
+            txtAcessoriosOrdens.Visible = false;
             txtPesquisarCliente.Visible = false;
             btnCadastrarOrdem.Visible = false;
             btnPesquisarCliente.Visible = false;
+            btnSenhaPadrao.Visible = false;
+            
 
             table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 611);
             table_OrdensServicos.Location = new Point(3, 35);
@@ -459,23 +465,27 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnVisivel_Click(object sender, EventArgs e)
         {
             table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 420);
-            table_OrdensServicos.Location = new Point(3, 225);
+            table_OrdensServicos.Location = new Point(3, 239);
 
             lblCliente.Visible = true;
             lblAparelho.Visible = true;
             lblDefeito.Visible = true;
             lblSenha.Visible = true;
             lblSituacao.Visible = true;
+            lblAcessoriosOrdens.Visible = true;
             cmbClientes.Visible = true;
             txtAparelhoOrdens.Visible = true;
             txtDefeitoOrdens.Visible = true;
             txtSenhaOrdens.Visible = true;
+            //txtSituacaoOrdensOLD.Visible = true;
             txtSituacaoOrdens.Visible = true;
+            txtAcessoriosOrdens.Visible = true;
             txtPesquisarCliente.Visible = true;
             btnCadastrarOrdem.Visible = true;
             btnPesquisarCliente.Visible = true;
             btnInvisivel.Visible = true;
             btnVisivel.Visible = false;
+            btnSenhaPadrao.Visible = true;
         }
 
         private Image ConvertByteArrayToImage(byte[] data)
@@ -497,10 +507,17 @@ namespace PFC___StandBy_CSharp.Forms
                 if (passShow.pictureBox1.Image == null)
                 {
                     passShow.lblSemPadrao.Visible = true;
+                    passShow.lblSemPadrao.Location = new Point(49, 102);
+                    passShow.lblDesejaCadastrar.Visible = false;
+                    passShow.btnSim.Visible = false;
+                    passShow.btnNao.Visible = false;
                 }
                 else
                 {
                     passShow.lblSemPadrao.Visible = false;
+                    passShow.lblDesejaCadastrar.Visible = false;
+                    passShow.btnSim.Visible = false;
+                    passShow.btnNao.Visible = false;
                 }
 
                 passShow.ShowDialog();
@@ -511,6 +528,28 @@ namespace PFC___StandBy_CSharp.Forms
         {
             form_PasswordPattern pp = new form_PasswordPattern(corGeral);
             pp.ShowDialog();
+        }
+
+        private void txtAcessoriosOrdens_Enter(object sender, EventArgs e)
+        {
+            if (txtAcessoriosOrdens.Text == "Acessorios que vieram junto c/ aparelho")
+            {
+                txtAcessoriosOrdens.Text = "";
+                txtAcessoriosOrdens.Font = new Font(txtAcessoriosOrdens.Font, FontStyle.Regular);
+                txtAcessoriosOrdens.LineIdleColor = Color.White;
+                txtAcessoriosOrdens.ForeColor = Color.White;
+            }
+        }
+
+        private void txtAcessoriosOrdens_Leave(object sender, EventArgs e)
+        {
+            if (txtAcessoriosOrdens.Text == "" || string.IsNullOrWhiteSpace(txtAcessoriosOrdens.Text))
+            {
+                txtAcessoriosOrdens.Text = "Acessorios que vieram junto c/ aparelho";
+                txtAcessoriosOrdens.Font = new Font(txtAcessoriosOrdens.Font, FontStyle.Italic);
+                txtAcessoriosOrdens.ForeColor = Color.Silver;
+                txtAcessoriosOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            }
         }
     }
 }

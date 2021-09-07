@@ -24,7 +24,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                 using (SqlConnection con = OpenConnection())
                 {
                     SqlDataAdapter adapter = new SqlDataAdapter("select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
-                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo " +
+                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios " +
                     "FROM tb_servicos " +
                     "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
                     "WHERE sv_status = 1 and sv_ativo = 1 order by sv_id desc", con);

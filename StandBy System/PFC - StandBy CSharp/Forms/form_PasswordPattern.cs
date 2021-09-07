@@ -1,4 +1,5 @@
-﻿using PFC___StandBy_CSharp.Dados;
+﻿using Bunifu.Framework.UI;
+using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
 using System.Collections.Generic;
@@ -97,9 +98,9 @@ namespace PFC___StandBy_CSharp.Forms
             frm.DrawToBitmap(Image, new Rectangle(0, 0, frm.Width, frm.Height));
             Image.Save(ImagePath, ImageFormat.Png);
         }
-        public void CentralizarLabels()
+        public void CentralizarLabels(BunifuCustomLabel label)
         {
-            lblPasswordInNumbers.Left = (this.Width / 2) - (lblPasswordInNumbers.Width / 2);
+            label.Left = (this.Width / 2) - (label.Width / 2);
         }
         private void lockScreenControl1_PassCodeSubmitted(object sender, GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs e)
         {
@@ -120,7 +121,7 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 cnt++;
             }
-            CentralizarLabels();
+            CentralizarLabels(lblPasswordInNumbers);
             this.Size = new Size(261, 337);
             SaveScreenshot(this);
             //Desativo a visibilidade da lockscreen
@@ -130,6 +131,12 @@ namespace PFC___StandBy_CSharp.Forms
             //Aqui eu pego a imagem salva da senha e mostro do picturebox
             //pictureBox1.Image = ConvertByteArrayToImage(buscarImagem());
             Image image1 = GetCopyImage(@"./PasswordPattern/Screen.png");
+
+            //Deleto a imagem
+            //var dir = new DirectoryInfo(@"./PasswordPattern/");
+            //var files = dir.GetFiles().FirstOrDefault();
+            //files.Delete();
+
             pictureBox1.Image = image1;
 
             //Label q pergunta se a senha esta correta
@@ -214,7 +221,10 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 try
                 {
-                    image1 = Image.FromFile(@"./PasswordPattern/Screen.png");
+                    image1 = GetCopyImage(@"./PasswordPattern/Screen.png");
+                    var dir = new DirectoryInfo(@"./PasswordPattern/");
+                    var files = dir.GetFiles().FirstOrDefault();
+                    files.Delete();
                 }
                 catch (Exception)
                 {

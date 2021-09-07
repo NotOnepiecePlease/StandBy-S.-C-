@@ -63,6 +63,36 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _959ad3842394161b09d4cd3987c3f51c {
+            get {
+                object obj = ResourceManager.GetObject("959ad3842394161b09d4cd3987c3f51c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap acessorios_512px {
+            get {
+                object obj = ResourceManager.GetObject("acessorios_512px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap acessoriosl_52px {
+            get {
+                object obj = ResourceManager.GetObject("acessoriosl_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Alcatel_Logo {
             get {
                 object obj = ResourceManager.GetObject("Alcatel-Logo", resourceCulture);
@@ -86,6 +116,16 @@ namespace PFC___StandBy_CSharp.Properties {
         internal static System.Drawing.Bitmap bg_ordensServicos {
             get {
                 object obj = ResourceManager.GetObject("bg_ordensServicos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap electrical_20px {
+            get {
+                object obj = ResourceManager.GetObject("electrical_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

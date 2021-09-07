@@ -21,7 +21,7 @@ namespace PFC___StandBy_CSharp.Dados
                 if (File.Exists(caminhoTXT))
                 {
                     // This path is a file
-                    Console.WriteLine("Existe");
+                   // Console.WriteLine("Existe");
                 }
                 else
                 {

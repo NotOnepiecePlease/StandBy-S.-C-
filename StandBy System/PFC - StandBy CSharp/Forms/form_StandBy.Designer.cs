@@ -33,6 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_StandBy));
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.panelTopStandBy = new System.Windows.Forms.Panel();
+            this.lblUpdate = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblVersion = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.iconMenu = new FontAwesome.Sharp.IconPictureBox();
             this.iconMinimize = new FontAwesome.Sharp.IconPictureBox();
@@ -91,6 +92,8 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelTopStandBy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
@@ -115,6 +118,7 @@
             // panelTopStandBy
             // 
             this.panelTopStandBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panelTopStandBy.Controls.Add(this.lblUpdate);
             this.panelTopStandBy.Controls.Add(this.lblVersion);
             this.panelTopStandBy.Controls.Add(this.iconMenu);
             this.panelTopStandBy.Controls.Add(this.iconMinimize);
@@ -130,6 +134,20 @@
             this.panelTopStandBy.Size = new System.Drawing.Size(1280, 34);
             this.panelTopStandBy.TabIndex = 0;
             // 
+            // lblUpdate
+            // 
+            this.lblUpdate.AutoSize = true;
+            this.animationMenuShow1.SetDecoration(this.lblUpdate, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.lblUpdate, BunifuAnimatorNS.DecorationType.None);
+            this.lblUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblUpdate.Location = new System.Drawing.Point(40, 9);
+            this.lblUpdate.Name = "lblUpdate";
+            this.lblUpdate.Size = new System.Drawing.Size(144, 15);
+            this.lblUpdate.TabIndex = 10;
+            this.lblUpdate.Text = "Verificando atualizações...";
+            this.lblUpdate.Visible = false;
+            // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
@@ -141,7 +159,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(34, 15);
             this.lblVersion.TabIndex = 9;
-            this.lblVersion.Text = "5.6.0";
+            this.lblVersion.Text = "5.8.0";
             // 
             // iconMenu
             // 
@@ -151,7 +169,7 @@
             this.iconMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
             this.iconMenu.IconColor = System.Drawing.Color.White;
             this.iconMenu.IconSize = 28;
-            this.iconMenu.Location = new System.Drawing.Point(109, 0);
+            this.iconMenu.Location = new System.Drawing.Point(245, 4);
             this.iconMenu.Name = "iconMenu";
             this.iconMenu.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.iconMenu.Size = new System.Drawing.Size(28, 31);
@@ -812,7 +830,7 @@
             this.btnNotepad.ImageZoom = 50;
             this.btnNotepad.LabelPosition = 34;
             this.btnNotepad.LabelText = "Anotações";
-            this.btnNotepad.Location = new System.Drawing.Point(0, 0);
+            this.btnNotepad.Location = new System.Drawing.Point(0, 4);
             this.btnNotepad.Margin = new System.Windows.Forms.Padding(6);
             this.btnNotepad.Name = "btnNotepad";
             this.btnNotepad.Size = new System.Drawing.Size(106, 87);
@@ -1191,6 +1209,22 @@
             this.bunifuElipse4.ElipseRadius = 3;
             this.bunifuElipse4.TargetControl = this.btnDesligarPc;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "Clique duas vezes para me abrir =)";
+            this.notifyIcon1.BalloonTipTitle = "Estou aqui!";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "StandBy System";
+            this.notifyIcon1.BalloonTipShown += new System.EventHandler(this.notifyIcon1_BalloonTipShown);
+            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // form_StandBy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1210,6 +1244,7 @@
             this.Text = "StandBy System";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_StandBy_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_StandBy_KeyDown);
+            this.Resize += new System.EventHandler(this.form_StandBy_Resize);
             this.panelTopStandBy.ResumeLayout(false);
             this.panelTopStandBy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).EndInit();
@@ -1299,5 +1334,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblVersion;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblUpdate;
     }
 }

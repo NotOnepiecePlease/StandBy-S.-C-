@@ -36,7 +36,7 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
 
             datasourceTXT = File.ReadAllLines(txtPath).ToList();
             ConnectionString = String.Format("Data Source={0};Initial Catalog=standby_org;Integrated Security=True", datasourceTXT.FirstOrDefault().ToString());
-            Console.Write("teste");
+            //Console.Write("teste");
         }
         public SqlConnection OpenConnection()
         {

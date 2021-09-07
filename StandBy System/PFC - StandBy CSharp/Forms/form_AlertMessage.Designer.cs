@@ -89,6 +89,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_AlertMessage";
+            this.ShowInTaskbar = false;
             this.Text = "form_AlertMessage";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();

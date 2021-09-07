@@ -42,6 +42,11 @@ namespace SBAutoUpdate
                 progress.Value += 2;
                 Update.ReportProgress(2);
 
+                foreach (var process in Process.GetProcessesByName("StandBy System"))
+                {
+                    process.Kill();
+                }
+
                 if (progress.Value == 50)
                 {
                     foreach (var process in Process.GetProcessesByName("StandBy System"))

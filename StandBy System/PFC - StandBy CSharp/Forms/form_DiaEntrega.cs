@@ -145,7 +145,10 @@ namespace PFC___StandBy_CSharp.Forms
 
                     try
                     {
-                        image1 = Image.FromFile(@"./PasswordPattern/Screen.png");
+                        image1 = GetCopyImage(@"./PasswordPattern/Screen.png");
+                        var dir = new DirectoryInfo(@"./PasswordPattern/");
+                        var files = dir.GetFiles().FirstOrDefault();
+                        files.Delete();
                     }
                     catch (Exception)
                     {
@@ -155,14 +158,35 @@ namespace PFC___StandBy_CSharp.Forms
 
 
                     //Insiro o servico com os dados.
+                    string senha;
+                    string acessorios;
                     if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
                     {
-                        id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, "------------", formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
+                        senha = "------------";
                     }
                     else
                     {
-                        id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, formServ1.txtSenhaOrdens.Text, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
+                        senha = formServ1.txtSenhaOrdens.Text;
                     }
+
+                    if(formServ1.txtAcessoriosOrdens.Text.Equals("Acessorios que vieram junto c/ aparelho"))
+                    {
+                        acessorios = "------------";
+                    }
+                    else
+                    {
+                        acessorios = formServ1.txtAcessoriosOrdens.Text;
+                    }
+
+                    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1), acessorios);
+                    //if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
+                    //{
+                    //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
+                    //}
+                    //else
+                    //{
+                    //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, formServ1.txtSenhaOrdens.Text, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
+                    //}
 
 
                     //Reseto os campos.
@@ -170,6 +194,7 @@ namespace PFC___StandBy_CSharp.Forms
                     formServ1.txtDefeitoOrdens.Text = "";
                     formServ1.txtSenhaOrdens.Text = "";
                     formServ1.txtSituacaoOrdens.Text = "";
+                    formServ1.txtAcessoriosOrdens.Text = "";
 
                     //Mensagem de Conclusao
                     ms.InserirServicoSucesso();
@@ -184,6 +209,15 @@ namespace PFC___StandBy_CSharp.Forms
                 }
             }
             this.Close();
+        }
+
+        private Image GetCopyImage(string path)
+        {
+            using (Image im = Image.FromFile(path))
+            {
+                Bitmap bm = new Bitmap(im);
+                return bm;
+            }
         }
         private void form_DiaEntrega_KeyDown(object sender, KeyEventArgs e)
         {
