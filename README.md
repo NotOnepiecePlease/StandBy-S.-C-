@@ -24,7 +24,8 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 - Defeito
 - Senha (Texto)
 - Senha (Padrão Lock Screen Android)
-- Descrição do Aparelho
+- Situação do Aparelho
+- Acessorios que vieram juntos.
 --
 - [x] Edição de Serviços ***[OK]***
 - Data de Cadastro
@@ -32,7 +33,8 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 - Defeito
 - Senha (Texto)
 - Senha (Padrão Lock Screen Android)
-- Descrição do Aparelho
+- Situação do Aparelho
+- Acessorios que vieram juntos.
 - Valor Serviço R$
 - Valor Peça R$
 - Lucro Serviço R$

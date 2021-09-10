@@ -1,4 +1,5 @@
-﻿using PFC___StandBy_CSharp.MsgBox;
+﻿using PFC___StandBy_CSharp.Dados;
+using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
 using System.Collections.Generic;
@@ -17,20 +18,38 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
     {
         MensagensErro mErro = new MensagensErro();
         MensagensSucesso mSucesso = new MensagensSucesso();
+        AlterarDados ad = new AlterarDados();
         public void Preencher(DataGridView _tabelaServicos)
         {
             try
             {
                 using (SqlConnection con = OpenConnection())
                 {
+                    //Query antiga:
+                    //"select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
+                    //"sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo " +
+                    //"FROM tb_servicos " +
+                    //"INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
+                    //"WHERE sv_status = 1 and sv_ativo = 1 order by sv_id desc"
+
                     SqlDataAdapter adapter = new SqlDataAdapter("select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
-                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios " +
+                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo " +
                     "FROM tb_servicos " +
                     "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
-                    "WHERE sv_status = 1 and sv_ativo = 1 order by sv_id desc", con);
-                    //SqlDataAdapter adapter = new SqlDataAdapter("Select sv_data, sv_aparelho, sv_defeito, sv_senha, sv_situacao from tb_servicos", con);
+                    "WHERE sv_status = 1 and sv_ativo = 1 order by sv_cor_tempo desc, sv_previsao_entrega asc, sv_id desc", con);
+
                     DataTable datatable = new DataTable();
                     adapter.Fill(datatable);
+
+                    foreach (DataRow linha in datatable.Rows)
+                    {
+                        if (linha[12] != DBNull.Value)
+                        {
+                            ad.atualizarColunaTempoCores(Convert.ToInt32(linha[0].ToString()), Convert.ToDateTime(linha[12]));
+                        }
+                        //string nome = linha["cnpj"].ToString();
+                        //MessageBox.Show(linha[0].ToString() + " - "+ DateTime.Parse(linha[12].ToString()));
+                    }
 
                     _tabelaServicos.AutoGenerateColumns = false;
                     _tabelaServicos.AllowUserToAddRows = false;

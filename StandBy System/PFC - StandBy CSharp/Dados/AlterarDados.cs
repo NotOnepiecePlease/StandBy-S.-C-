@@ -19,6 +19,65 @@ namespace PFC___StandBy_CSharp.Dados
         VerificarExistencia verificarExistencia = new VerificarExistencia();
 
 
+        #region Atualizar coluna das cores
+        public void atualizarColunaTempoCores(int _id, DateTime _previsaoEntrega)
+        {
+            try
+            {
+                using(SqlConnection con = OpenConnection())
+                {
+                    //0 = sem cor
+                    //1 = verde
+                    //2 = amarelo/laranja
+                    //3 = vermelho
+                    string Query = "";
+
+                    DateTime dataEntrega = _previsaoEntrega;
+                    DateTime dataAtual = DateTime.Now;
+
+                    TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
+
+                    if (DiasParaEntrega.TotalHours < 0)
+                    {
+                        //row.Cells[2].Style.BackColor = Color.Red;
+                        //row.Cells[2].Style.ForeColor = Color.Black;
+                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 3 WHERE sv_id = @_IdServico";
+                    }
+                    else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
+                    {
+                        //row.Cells[2].Style.BackColor = Color.Orange;
+                        //row.Cells[2].Style.ForeColor = Color.Black;
+                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 2 WHERE sv_id = @_IdServico";
+                    }
+                    else if (DiasParaEntrega.TotalHours > 12)
+                    {
+                        //row.Cells[2].Style.BackColor = Color.Lime;
+                        //row.Cells[2].Style.ForeColor = Color.Black;
+                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 1 WHERE sv_id = @_IdServico";
+                    }
+                    else
+                    {
+                        //row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
+                        //row.Cells[2].Style.ForeColor = Color.Gray;
+                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 0 WHERE sv_id = @_IdServico";
+                    }
+
+                    SqlCommand cmd = new SqlCommand(Query, con);
+
+                    cmd.Parameters.AddWithValue("@_IdServico", SqlDbType.Int).Value = _id;
+
+                    cmd.ExecuteNonQuery();
+
+                    //Msg Sucesso
+                }
+            }
+            catch (Exception)
+            {
+                //Msg Erro
+            }
+        }
+        #endregion
+
         #region Alterar Senha de Padrão
         public void AlterarSenhaPattern(byte[] _image, int _idServico)
         {

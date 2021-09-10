@@ -42,22 +42,30 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     if (row.Cells[12].Value != DBNull.Value && Convert.ToInt32(row.Cells[13].Value) == 1)
                     {
+                        //row.Cells[12] = é a coluna sv_previsao_entrega
                         DateTime dataEntrega = Convert.ToDateTime(row.Cells[12].Value);
                         DateTime dataAtual = DateTime.Now;
 
                         TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
 
+                        //0 = sem cor
+                        //1 = verde
+                        //2 = amarelo/laranja
+                        //3 = vermelho
                         if (DiasParaEntrega.TotalHours < 0)
+                        //if (Convert.ToInt32(row.Cells[2].Value) == 3)
                         {
                             row.Cells[2].Style.BackColor = Color.Red;
                             row.Cells[2].Style.ForeColor = Color.Black;
                         }
                         else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
+                        //else if (Convert.ToInt32(row.Cells[2].Value) == 2)
                         {
                             row.Cells[2].Style.BackColor = Color.Orange;
                             row.Cells[2].Style.ForeColor = Color.Black;
                         }
                         else if (DiasParaEntrega.TotalHours > 12)
+                        //else if (Convert.ToInt32(row.Cells[2].Value) == 1)
                         {
                             row.Cells[2].Style.BackColor = Color.Lime;
                             row.Cells[2].Style.ForeColor = Color.Black;
@@ -290,24 +298,34 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void EditarUmServico()
         {
-            string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
+
+
             string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
             string _TEL_RECCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
             float lucro = float.Parse(table_OrdensServicos.SelectedCells[10].Value.ToString());
             form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
+            try
+            {
+                string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
+                editarServicos.txtCPFCliente.Text = _CPFCliente;
+                editarServicos.txtAcessoriosEdit.Text = table_OrdensServicos.SelectedCells[14].Value.ToString();
+            }
+            catch (Exception)
+            {
+            }
             editarServicos.lblIDservico.Text = table_OrdensServicos.SelectedCells[0].Value.ToString();
             editarServicos.lblIDcliente.Text = table_OrdensServicos.SelectedCells[1].Value.ToString();
             editarServicos.dtpDataEdit.Value = Convert.ToDateTime(table_OrdensServicos.SelectedCells[2].Value.ToString());
             editarServicos.lblClienteNome.Text = table_OrdensServicos.SelectedCells[3].Value.ToString();
             editarServicos.txtClienteNome.Text = table_OrdensServicos.SelectedCells[3].Value.ToString();
-            editarServicos.txtCPFCliente.Text = _CPFCliente;
+
             editarServicos.txtTelefoneCliente.Text = _TELCliente;
             editarServicos.txtTelefoneRecado.Text = _TEL_RECCliente;
             editarServicos.txtAparelhoEdit.Text = table_OrdensServicos.SelectedCells[4].Value.ToString();
             editarServicos.txtDefeitoEdit.Text = table_OrdensServicos.SelectedCells[5].Value.ToString();
             editarServicos.txtSenhaEdit.Text = table_OrdensServicos.SelectedCells[7].Value.ToString();
             editarServicos.txtSituacaoEdit.Text = table_OrdensServicos.SelectedCells[6].Value.ToString();
-            editarServicos.txtAcessoriosEdit.Text = table_OrdensServicos.SelectedCells[14].Value.ToString();
+
             editarServicos.txtServicoValorEdit.Text = table_OrdensServicos.SelectedCells[8].Value.ToString();
             editarServicos.txtPecaValorEdit.Text = table_OrdensServicos.SelectedCells[9].Value.ToString();
             editarServicos.txtLucroValorEdit.Text = table_OrdensServicos.SelectedCells[10].Value.ToString();
@@ -318,7 +336,6 @@ namespace PFC___StandBy_CSharp.Forms
                 editarServicos.dtpDataEditPrevisao.FormatCustom = " ";
                 editarServicos.dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
                 editarServicos.chkSemData.Checked = true;
-                //editarServicos.dtpDataEditPrevisao.Value = DateTime.Parse("00/00/0000");
             }
             else
             {
@@ -448,7 +465,7 @@ namespace PFC___StandBy_CSharp.Forms
             btnCadastrarOrdem.Visible = false;
             btnPesquisarCliente.Visible = false;
             btnSenhaPadrao.Visible = false;
-            
+
 
             table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 611);
             table_OrdensServicos.Location = new Point(3, 35);

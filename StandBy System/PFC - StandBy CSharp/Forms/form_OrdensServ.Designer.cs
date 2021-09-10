@@ -83,6 +83,7 @@
             this.previsao_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existe_um_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_cor_tempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -583,7 +584,8 @@
             this.servico,
             this.previsao_entrega,
             this.existe_um_prazo,
-            this.sv_acessorios});
+            this.sv_acessorios,
+            this.sv_cor_tempo});
             this.table_OrdensServicos.ContextMenuStrip = this.contextMenuStrip1;
             this.table_OrdensServicos.DoubleBuffered = true;
             this.table_OrdensServicos.EnableHeadersVisualStyles = false;
@@ -839,6 +841,14 @@
             this.sv_acessorios.ReadOnly = true;
             this.sv_acessorios.Visible = false;
             // 
+            // sv_cor_tempo
+            // 
+            this.sv_cor_tempo.DataPropertyName = "sv_cor_tempo";
+            this.sv_cor_tempo.HeaderText = "sv_cor_tempo";
+            this.sv_cor_tempo.Name = "sv_cor_tempo";
+            this.sv_cor_tempo.ReadOnly = true;
+            this.sv_cor_tempo.Visible = false;
+            // 
             // form_OrdensServ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -908,5 +918,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn previsao_entrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn existe_um_prazo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
     }
 }
