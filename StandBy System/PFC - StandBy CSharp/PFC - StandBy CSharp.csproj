@@ -81,6 +81,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
@@ -662,6 +665,8 @@
     <Content Include="icone.ico" />
     <None Include="Resources\acessorios_512px.png" />
     <None Include="Resources\acessoriosl_52px.png" />
+    <None Include="Resources\894798-200.png" />
+    <None Include="Resources\894798-2001.png" />
     <Content Include="Resources\Aviso.png" />
     <None Include="Resources\electrical_20px.png" />
     <Content Include="Resources\Erro.png" />

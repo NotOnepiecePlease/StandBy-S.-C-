@@ -34,8 +34,20 @@ namespace PFC___StandBy_CSharp.Dados
                 using (SqlConnection conexaoSQL = OpenConnection())
                 {
                     //Defino a query que preciso com os parametros que vao ser criados logo apos.
-                    string query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_previsao_entrega, sv_existe_um_prazo, sv_senha_pattern, sv_acessorios) " +
-                        "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @PrevisaoEntrega, @SeExisteUmPrazo, @ImagePattern, @Acessorios)";
+                    string query = "";
+                    if (DiasParaEntregar == 0)
+                    {
+                        query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_existe_um_prazo, sv_senha_pattern, sv_acessorios, sv_cor_tempo) " +
+                        "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @SeExisteUmPrazo, @ImagePattern, @Acessorios, @CorTempo)";
+                    }
+                    else
+                    {
+                        query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_previsao_entrega, sv_existe_um_prazo, sv_senha_pattern, sv_acessorios, sv_cor_tempo) " +
+                        "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @PrevisaoEntrega, @SeExisteUmPrazo, @ImagePattern, @Acessorios, @CorTempo)";
+                    }
+                    
+                    
+                    
 
                     //Crio um novo objeto do tipo "Comando em SQL" passando como argumento
                     //a minha query e uma conexao pra ele saber em que banco inserir.
@@ -51,10 +63,18 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@Defeito", SqlDbType.VarChar).Value = defeito;
                     cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = senha;
                     cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = situacao;
-                    cmd.Parameters.Add("@PrevisaoEntrega", SqlDbType.DateTime).Value = previsaoEntrega;
+                    if (DiasParaEntregar == 0)
+                    { 
+
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add("@PrevisaoEntrega", SqlDbType.DateTime).Value = previsaoEntrega;
+                    }
                     cmd.Parameters.Add("@SeExisteUmPrazo", SqlDbType.Int).Value = SeExisteUmPrazo;
                     cmd.Parameters.Add("@ImagePattern", SqlDbType.Image).Value = image;
                     cmd.Parameters.Add("@Acessorios", SqlDbType.VarChar).Value = acessorios;
+                    cmd.Parameters.Add("@CorTempo", SqlDbType.Int).Value = 4;
 
                     //Executo ta query completa
                     cmd.ExecuteNonQuery();
@@ -69,7 +89,7 @@ namespace PFC___StandBy_CSharp.Dados
         public void InserirCliente(string _nome, string _cpf, string _telPrincipal, string _telRecados)
         {
             bool CpfExistente = false;
-            if(_cpf.Equals("SEM CPF/CNPJ"))
+            if (_cpf.Equals("SEM CPF/CNPJ"))
             {
                 CpfExistente = false;
             }
@@ -189,7 +209,7 @@ namespace PFC___StandBy_CSharp.Dados
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: \n\n"+ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro: \n\n" + ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion

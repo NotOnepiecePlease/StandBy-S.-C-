@@ -63,6 +63,26 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _894798_200 {
+            get {
+                object obj = ResourceManager.GetObject("894798-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _894798_2001 {
+            get {
+                object obj = ResourceManager.GetObject("894798-2001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _959ad3842394161b09d4cd3987c3f51c {
             get {
                 object obj = ResourceManager.GetObject("959ad3842394161b09d4cd3987c3f51c", resourceCulture);

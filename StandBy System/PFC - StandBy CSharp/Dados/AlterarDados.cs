@@ -26,7 +26,7 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using(SqlConnection con = OpenConnection())
                 {
-                    //0 = sem cor
+                    //4 = sem cor
                     //1 = verde
                     //2 = amarelo/laranja
                     //3 = vermelho
@@ -59,7 +59,7 @@ namespace PFC___StandBy_CSharp.Dados
                     {
                         //row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
                         //row.Cells[2].Style.ForeColor = Color.Gray;
-                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 0 WHERE sv_id = @_IdServico";
+                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 4 WHERE sv_id = @_IdServico";
                     }
 
                     SqlCommand cmd = new SqlCommand(Query, con);
@@ -71,9 +71,10 @@ namespace PFC___StandBy_CSharp.Dados
                     //Msg Sucesso
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 //Msg Erro
+                mErro.ErroAoAtualizarCoresTempo(e);
             }
         }
         #endregion
@@ -106,7 +107,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Alterar Servicos
         public void AlterarServico(int _idServico, DateTime _data, string _aparelho, string _defeito, string _senha,
-            string _situacao, float _valorServico, float _valorPeca, float _lucro, string _servico, DateTime _dataPrevisao)
+            string _situacao, float _valorServico, float _valorPeca, float _lucro, string _servico, DateTime _dataPrevisao, string _acessorios)
         {
             try
             {
@@ -117,13 +118,13 @@ namespace PFC___StandBy_CSharp.Dados
                     {
                         query = "update tb_servicos set sv_data = @Data, sv_aparelho = @Aparelho, sv_defeito = @Defeito, " +
                         "sv_senha = @Senha, sv_situacao = @Situacao, sv_valorservico = @ValorServico, sv_valorpeca = @ValorPeca, " +
-                        "sv_lucro = @Lucro, sv_servico = @Servico, sv_previsao_entrega = null, sv_existe_um_prazo = 0 where sv_id = @IdServico";
+                        "sv_lucro = @Lucro, sv_servico = @Servico, sv_previsao_entrega = null, sv_existe_um_prazo = 0, sv_acessorios = @Acessorios, sv_cor_tempo = 4 where sv_id = @IdServico";
                     }
                     else
                     {
                         query = "update tb_servicos set sv_data = @Data, sv_aparelho = @Aparelho, sv_defeito = @Defeito, " +
                         "sv_senha = @Senha, sv_situacao = @Situacao, sv_valorservico = @ValorServico, sv_valorpeca = @ValorPeca, " +
-                        "sv_lucro = @Lucro, sv_servico = @Servico, sv_previsao_entrega = @DataPrevisao, sv_existe_um_prazo = 1 where sv_id = @IdServico";
+                        "sv_lucro = @Lucro, sv_servico = @Servico, sv_previsao_entrega = @DataPrevisao, sv_existe_um_prazo = 1, sv_acessorios = @Acessorios where sv_id = @IdServico";
                     }
 
                     //SqlCommand cmd = new SqlCommand("AlterarServicos", con);
@@ -142,6 +143,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@Servico", SqlDbType.NVarChar).Value = _servico;
                     cmd.Parameters.Add("@IdServico", SqlDbType.Int).Value = _idServico;
                     cmd.Parameters.Add("@DataPrevisao", SqlDbType.DateTime).Value = _dataPrevisao;
+                    cmd.Parameters.Add("@Acessorios", SqlDbType.NVarChar).Value = _acessorios;
                     cmd.ExecuteNonQuery();
 
                     con.Close();

@@ -169,7 +169,7 @@ namespace PFC___StandBy_CSharp.Forms
                         senha = formServ1.txtSenhaOrdens.Text;
                     }
 
-                    if(formServ1.txtAcessoriosOrdens.Text.Equals("Acessorios que vieram junto c/ aparelho"))
+                    if (formServ1.txtAcessoriosOrdens.Text.Equals("Acessorios que vieram junto c/ aparelho"))
                     {
                         acessorios = "------------";
                     }
@@ -179,6 +179,19 @@ namespace PFC___StandBy_CSharp.Forms
                     }
 
                     id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1), acessorios);
+                    //Abrir tela de edição após o cadastro
+                    
+                    int idUltimoServicoAdicionado = bd.BuscarIdUltimoServicoAdicionado();
+                    List<object> dados = new List<object>();
+
+                    dados = bd.BuscarServicoPorID(idUltimoServicoAdicionado);
+                    EditarUmServicoPelaID(dados);
+
+
+
+
+
+
                     //if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
                     //{
                     //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
@@ -201,6 +214,7 @@ namespace PFC___StandBy_CSharp.Forms
 
                     //Atualizo a tabela
                     preencherTableServ.Preencher(formServ1.table_OrdensServicos);
+                    preencherTableServ.Preencher(formServ1.table_OrdensServicos);
                 }
                 catch (Exception ex)
                 {
@@ -209,6 +223,72 @@ namespace PFC___StandBy_CSharp.Forms
                 }
             }
             this.Close();
+        }
+
+        public void EditarUmServicoPelaID(List<object> dados)
+        {
+            form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
+
+            string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(dados[1]));
+            string _TEL_RECCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(dados[1]));
+            float lucro = float.Parse(dados[10].ToString());
+            try
+            {
+                string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(dados[1]));
+                editarServicos.txtCPFCliente.Text = _CPFCliente;
+                editarServicos.txtAcessoriosEdit.Text = dados[14].ToString();
+            }
+            catch (Exception)
+            {
+            }
+            editarServicos.lblIDservico.Text = dados[0].ToString();
+            editarServicos.lblIDcliente.Text = dados[1].ToString();
+            editarServicos.dtpDataEdit.Value = Convert.ToDateTime(dados[2].ToString());
+            editarServicos.lblClienteNome.Text = dados[3].ToString();
+            editarServicos.txtClienteNome.Text = dados[3].ToString();
+
+            editarServicos.txtTelefoneCliente.Text = _TELCliente;
+            editarServicos.txtTelefoneRecado.Text = _TEL_RECCliente;
+            editarServicos.txtAparelhoEdit.Text = dados[4].ToString();
+            editarServicos.txtDefeitoEdit.Text = dados[5].ToString();
+            editarServicos.txtSenhaEdit.Text = dados[7].ToString();
+            editarServicos.txtSituacaoEdit.Text = dados[6].ToString();
+
+            editarServicos.txtServicoValorEdit.Text = dados[8].ToString();
+            editarServicos.txtPecaValorEdit.Text = dados[9].ToString();
+            editarServicos.txtLucroValorEdit.Text = dados[10].ToString();
+            editarServicos.txtServicoEdit.Text = dados[11].ToString();
+            if (dados[12] == DBNull.Value)
+            {
+                //MessageBox.Show("Sem data");
+                editarServicos.dtpDataEditPrevisao.FormatCustom = " ";
+                editarServicos.dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+                editarServicos.chkSemData.Checked = true;
+            }
+            else
+            {
+                editarServicos.dtpDataEditPrevisao.Value = Convert.ToDateTime(dados[12].ToString());
+                editarServicos.chkSemData.Checked = false;
+            }
+
+            if (lucro > 0)
+            {
+                editarServicos.txtLucroValorEdit.LineIdleColor = Color.LimeGreen;
+            }
+            else if (lucro == 0)
+            {
+                editarServicos.txtLucroValorEdit.LineIdleColor = Color.White;
+            }
+            else
+            {
+                editarServicos.txtLucroValorEdit.LineIdleColor = Color.Red;
+            }
+
+            editarServicos.LabelResize();
+
+            editarServicos.ShowDialog();
+            //table_OrdensServicos.Refresh();
+            //refreshTable();
         }
 
         private Image GetCopyImage(string path)

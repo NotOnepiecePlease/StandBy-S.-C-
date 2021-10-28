@@ -19,12 +19,14 @@ namespace PFC___StandBy_CSharp.Forms
         form_OrdensServ formServ1;
         form_Concluidos formConcl1;
         form_Lucros formLucros1;
+        form_DiaEntrega formDiaEntrega1;
         AlterarDados ad = new AlterarDados();
         BuscarDados bd = new BuscarDados();
         MensagensErro mErro = new MensagensErro();
         //form_OrdensServ form = new form_OrdensServ();
         int[] corGeral = new int[] { 0, 0, 0 };
         public int ImprimiuAlgumaNota = 0;
+        public bool atualizarOuNaoATabelaDeServicos = false;
 
 
         public form_OrdensServ_Edit(form_OrdensServ formServ, int[] _cor)
@@ -56,6 +58,17 @@ namespace PFC___StandBy_CSharp.Forms
             MudarCores();
             CalcularLucro();
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+        }
+        public form_OrdensServ_Edit(form_DiaEntrega formDiaEntrega, int[] _cor)
+        {
+            InitializeComponent();
+            formDiaEntrega1 = formDiaEntrega;
+            this.ActiveControl = txtAparelhoEdit;
+            corGeral = _cor;
+            MudarCores();
+            CalcularLucro();
+            dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+            atualizarOuNaoATabelaDeServicos = true;
         }
         public form_OrdensServ_Edit(form_Concluidos form_Concluidos)
         {
@@ -134,7 +147,12 @@ namespace PFC___StandBy_CSharp.Forms
                 SalvarEdicoesServico(DateTime.Parse("26/03/2020"));
                 try
                 {
+                    if(atualizarOuNaoATabelaDeServicos == false)
+                    {
+
                     formServ1.refreshTable();
+                    formServ1.refreshTable();
+                    }
                 }
                 catch (Exception)
                 {
@@ -145,7 +163,12 @@ namespace PFC___StandBy_CSharp.Forms
                 SalvarEdicoesServico(dtpDataEditPrevisao.Value);
                 try
                 {
-                    formServ1.refreshTable();
+                    if (atualizarOuNaoATabelaDeServicos == false)
+                    {
+
+                        formServ1.refreshTable();
+                        formServ1.refreshTable();
+                    }
                 }
                 catch (Exception)
                 {
@@ -176,7 +199,7 @@ namespace PFC___StandBy_CSharp.Forms
             float lucro = valorServico - valorPeca;
 
             ad.AlterarServico(Int32.Parse(lblIDservico.Text), dtpDataEdit.Value, txtAparelhoEdit.Text, txtDefeitoEdit.Text, txtSenhaEdit.Text, txtSituacaoEdit.Text,
-                float.Parse(txtServicoValorEdit.Text), float.Parse(txtPecaValorEdit.Text), lucro, txtServicoEdit.Text, DataPrevisao);
+                float.Parse(txtServicoValorEdit.Text), float.Parse(txtPecaValorEdit.Text), lucro, txtServicoEdit.Text, DataPrevisao, txtAcessoriosEdit.Text);
             //formServ1.refreshTable();
             this.Close();
         }
@@ -244,7 +267,16 @@ namespace PFC___StandBy_CSharp.Forms
         }
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
         {
-            imprimirNota();
+            string cpfCliente = bd.BuscarCPFCliente(Convert.ToInt32(lblIDcliente.Text));
+            if(cpfCliente.Length < 14)
+            {
+                MessageBox.Show("A Nota só pode ser emitida para clientes com CPF cadastrado.", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                imprimirNota();
+            }
+            //MessageBox.Show(""+cpfCliente.Length);
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

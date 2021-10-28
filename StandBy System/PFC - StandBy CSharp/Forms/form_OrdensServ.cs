@@ -4,6 +4,7 @@ using PFC___StandBy_CSharp.PreencherComponentes;
 using System;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -32,8 +33,8 @@ namespace PFC___StandBy_CSharp.Forms
             table_OrdensServicos.ClearSelection();
             //VerificarAtraso();
             timer1.Start();
-        }
 
+        }
         public void AtualizarAtrasosCores()
         {
             foreach (DataGridViewRow row in table_OrdensServicos.Rows)
@@ -148,6 +149,19 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 MessageBox.Show("Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtAcessoriosOrdens.Text.Equals("Vieram junto c/ aparelho"))
+            {
+                DialogResult dialogResult = MessageBox.Show("O Aparelho veio com algum acessorio com ele? (ex: carregador, capa, bolsa..)", "VERIFICAÇÂO", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //Volta pra tela pra digitar
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral);
+                    formPrevisaoEntrega.ShowDialog();
+                }
             }
             else
             {
@@ -448,23 +462,24 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnInvisivel_Click(object sender, EventArgs e)
         {
+            btnPatternIcon.Visible = false;
             lblCliente.Visible = false;
             lblAparelho.Visible = false;
             lblDefeito.Visible = false;
             lblSenha.Visible = false;
-            lblSituacao.Visible = false;
+            //lblSituacao.Visible = false;
             lblAcessoriosOrdens.Visible = false;
             cmbClientes.Visible = false;
             txtAparelhoOrdens.Visible = false;
             txtDefeitoOrdens.Visible = false;
             txtSenhaOrdens.Visible = false;
-            txtSituacaoOrdens.Visible = false;
-            txtSituacaoOrdens.Visible = false;
+           // txtSituacaoOrdens.Visible = false;
+           // txtSituacaoOrdens.Visible = false;
             txtAcessoriosOrdens.Visible = false;
             txtPesquisarCliente.Visible = false;
             btnCadastrarOrdem.Visible = false;
             btnPesquisarCliente.Visible = false;
-            btnSenhaPadrao.Visible = false;
+            //btnSenhaPadrao.Visible = false;
 
 
             table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 611);
@@ -481,28 +496,29 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnVisivel_Click(object sender, EventArgs e)
         {
-            table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 420);
-            table_OrdensServicos.Location = new Point(3, 239);
+            table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 492);
+            table_OrdensServicos.Location = new Point(3, 150);
 
+            btnPatternIcon.Visible = true;
             lblCliente.Visible = true;
             lblAparelho.Visible = true;
             lblDefeito.Visible = true;
             lblSenha.Visible = true;
-            lblSituacao.Visible = true;
+            //lblSituacao.Visible = true;
             lblAcessoriosOrdens.Visible = true;
             cmbClientes.Visible = true;
             txtAparelhoOrdens.Visible = true;
             txtDefeitoOrdens.Visible = true;
             txtSenhaOrdens.Visible = true;
             //txtSituacaoOrdensOLD.Visible = true;
-            txtSituacaoOrdens.Visible = true;
+           // txtSituacaoOrdens.Visible = true;
             txtAcessoriosOrdens.Visible = true;
             txtPesquisarCliente.Visible = true;
             btnCadastrarOrdem.Visible = true;
             btnPesquisarCliente.Visible = true;
             btnInvisivel.Visible = true;
             btnVisivel.Visible = false;
-            btnSenhaPadrao.Visible = true;
+            //btnSenhaPadrao.Visible = true;
         }
 
         private Image ConvertByteArrayToImage(byte[] data)
@@ -549,7 +565,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtAcessoriosOrdens_Enter(object sender, EventArgs e)
         {
-            if (txtAcessoriosOrdens.Text == "Acessorios que vieram junto c/ aparelho")
+            if (txtAcessoriosOrdens.Text == "Vieram junto c/ aparelho")
             {
                 txtAcessoriosOrdens.Text = "";
                 txtAcessoriosOrdens.Font = new Font(txtAcessoriosOrdens.Font, FontStyle.Regular);
@@ -562,10 +578,24 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (txtAcessoriosOrdens.Text == "" || string.IsNullOrWhiteSpace(txtAcessoriosOrdens.Text))
             {
-                txtAcessoriosOrdens.Text = "Acessorios que vieram junto c/ aparelho";
+                txtAcessoriosOrdens.Text = "Vieram junto c/ aparelho";
                 txtAcessoriosOrdens.Font = new Font(txtAcessoriosOrdens.Font, FontStyle.Italic);
                 txtAcessoriosOrdens.ForeColor = Color.Silver;
                 txtAcessoriosOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            }
+        }
+
+        private void btnPatternIcon_Click(object sender, EventArgs e)
+        {
+            form_PasswordPattern pp = new form_PasswordPattern(corGeral);
+            pp.ShowDialog();
+        }
+
+        private void txtAcessoriosOrdens_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CadastrarServicoNovo();
             }
         }
     }

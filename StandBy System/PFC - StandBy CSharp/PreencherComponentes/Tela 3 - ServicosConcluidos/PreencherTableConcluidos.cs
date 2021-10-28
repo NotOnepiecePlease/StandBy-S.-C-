@@ -14,12 +14,16 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_3___ServicosConcluidos
 {
     class PreencherTableConcluidos : conexao
     {
-        public void Preencher(DataGridView table_ServicosConcluidos)
+        public void Preencher(DataGridView table_ServicosConcluidos, int _numeroPagina, int _dadosPorPagina)
         {
             using (SqlConnection con = OpenConnection())
             {
                 //0 Concluido | 1 Ta em servico
                 SqlCommand cmd = new SqlCommand("SelecionarServicos_Done", con);
+
+                cmd.Parameters.AddWithValue("@PageNumber", _numeroPagina);
+                cmd.Parameters.AddWithValue("@RowsOfPage", _dadosPorPagina);
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

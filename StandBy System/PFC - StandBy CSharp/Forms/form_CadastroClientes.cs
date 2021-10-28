@@ -256,35 +256,48 @@ namespace PFC___StandBy_CSharp.Forms
             //Verificando se o usuario nao deixou nada em branco
             //if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || string.IsNullOrWhiteSpace(txtCPFCliente.Text)
             //    || txtNomeCliente.Text == "Nome do Cliente" || txtCPFCliente.Text == "CPF do Cliente")
+            //if (chkTelRecados.Checked == true && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")
+            //    || chkTelRecados.Checked == true && txtTratarCom.Text.Equals("Quem recebe o recado")
+            //    || chkTelRecados.Checked == true && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente") && txtTratarCom.Text.Equals("Quem recebe o recado"))
+            //{
+            //    MessageBox.Show("Favor preencher todos os campos do numero de recado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+            //}
+            //else
             if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || txtNomeCliente.Text == "Nome do Cliente")
             {
                 MessageBox.Show("Campos de nome está vazio, favor preencha-o", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (chkSemCPF.Checked == true)
+            else if (!(txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")) && txtTratarCom.Text.Equals("Quem recebe o recado"))
+            {
+                MessageBox.Show("Você preencheu o numero mas esqueceu de especificar com quem deixar o recado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //else if (chkSemCPF.Checked == true)
+            else if (txtCPFCliente.Text.Equals("CPF do Cliente"))
             {
                 //Pegar os dados dos campos
                 string nome = txtNomeCliente.Text.ToString();
                 //long cpf = Convert.ToInt64(txtCPFCliente.Text);
                 string telPrincipal = txtTelefoneCliente.Text.ToString();
                 string telRecados = txtTelefoneRecado.Text.ToString();
-
+                string tratarCom = " | " + txtTratarCom.Text.ToString();
+                
                 //string CpfOuCnpjFORMATADO = String.Format(@"{0:000\.000\.000\-00}", cpf);
                 //txt.Text = CpfOuCnpjFORMATADO;
-                if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && chkTelRecados.Checked == false)
+                if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
                     id.InserirCliente(nome, "SEM CPF/CNPJ", "", "");
                 }
-                else if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && chkTelRecados.Checked == true)
+                else if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && !(txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")))
                 {
-                    id.InserirCliente(nome, "SEM CPF/CNPJ", "", telRecados);
+                    id.InserirCliente(nome, "SEM CPF/CNPJ", "", telRecados + tratarCom);
                 }
-                else if (!string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) && !txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && chkTelRecados.Checked == false)
+                else if (!string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) && !txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
                     id.InserirCliente(nome, "SEM CPF/CNPJ", telPrincipal, "");
                 }
                 else
                 {
-                    id.InserirCliente(nome, "SEM CPF/CNPJ", telPrincipal, telRecados);
+                    id.InserirCliente(nome, "SEM CPF/CNPJ", telPrincipal, telRecados + tratarCom);
                 }
             }
             else
@@ -294,6 +307,7 @@ namespace PFC___StandBy_CSharp.Forms
                 long cpf = Convert.ToInt64(txtCPFCliente.Text);
                 string telPrincipal = txtTelefoneCliente.Text.ToString();
                 string telRecados = txtTelefoneRecado.Text.ToString();
+                string tratarCom = " | " + txtTratarCom.Text.ToString();
 
                 string CpfOuCnpjFORMATADO;
                 if (chkCnpj.Checked == true)
@@ -305,21 +319,21 @@ namespace PFC___StandBy_CSharp.Forms
                     CpfOuCnpjFORMATADO = String.Format(@"{0:000\.000\.000\-00}", cpf);
                 }
                 //txt.Text = CpfOuCnpjFORMATADO;
-                if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && chkTelRecados.Checked == false)
+                if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
                     id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", "");
                 }
-                else if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && chkTelRecados.Checked == true)
+                else if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && !(txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")))
                 {
-                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", telRecados);
+                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", telRecados + tratarCom);
                 }
-                else if (!string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) && !txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && chkTelRecados.Checked == false)
+                else if (!string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) && !txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
                     id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, "");
                 }
                 else
                 {
-                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, telRecados);
+                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, telRecados + tratarCom);
                 }
             }
 
@@ -330,7 +344,7 @@ namespace PFC___StandBy_CSharp.Forms
             txtPesquisarCADCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             txtNomeCliente.Text = "Nome do Cliente";
-            txtNomeCliente.Font = new Font(txtTelefoneCliente.Font, FontStyle.Italic);
+            txtNomeCliente.Font = new Font(txtNomeCliente.Font, FontStyle.Italic);
             txtNomeCliente.ForeColor = Color.Silver;
             txtNomeCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
@@ -344,6 +358,11 @@ namespace PFC___StandBy_CSharp.Forms
             txtTelefoneRecado.ForeColor = Color.Silver;
             txtTelefoneRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
+            txtTratarCom.Text = "Quem recebe o recado";
+            txtTratarCom.Font = new Font(txtTratarCom.Font, FontStyle.Italic);
+            txtTratarCom.ForeColor = Color.Silver;
+            txtTratarCom.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
             txtCPFCliente.Text = "CPF do Cliente";
             txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
             txtCPFCliente.ForeColor = Color.Silver;
@@ -352,62 +371,21 @@ namespace PFC___StandBy_CSharp.Forms
             chkCnpj.Checked = false;
             chkSemCPF.Checked = false;
 
-            txtTelefoneRecado.Font = new Font(txtTelefoneRecado.Font, FontStyle.Italic);
-            txtTelefoneRecado.ForeColor = Color.Silver;
-            txtTelefoneRecado.LineIdleColor = Color.Gray;
-            txtTelefoneRecado.LineMouseHoverColor = Color.Gray;
-            chkTelRecados.Checked = false;
-            txtTelefoneRecado.Enabled = false;
+            //txtTelefoneRecado.Font = new Font(txtTelefoneRecado.Font, FontStyle.Italic);
+            //txtTelefoneRecado.ForeColor = Color.Silver;
+            //txtTelefoneRecado.LineIdleColor = Color.Gray;
+            //txtTelefoneRecado.LineMouseHoverColor = Color.Gray;
+            //chkTelRecados.Checked = false;
+            //txtTelefoneRecado.Enabled = false;
+
+            //txtTratarCom.Font = new Font(txtTratarCom.Font, FontStyle.Italic);
+            //txtTratarCom.ForeColor = Color.Silver;
+            //txtTratarCom.LineIdleColor = Color.Gray;
+            //txtTratarCom.LineMouseHoverColor = Color.Gray;
+            ////chkTelRecados.Checked = false;
+            //txtTratarCom.Enabled = false;
 
             refreshTable();
-
-
-            //if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || string.IsNullOrWhiteSpace(txtCPFCliente.Text)
-            //    || txtNomeCliente.Text == "Nome do Cliente" || txtCPFCliente.Text == "CPF do Cliente")
-            //{
-            //    MessageBox.Show("Campos de nome ou cpf estão vazios, favor preencha-os", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            //    //Pegar os dados dos campos
-            //    string nome = txtNomeCliente.Text.ToString();
-            //    long cpf = Convert.ToInt64(txtCPFCliente.Text);
-            //    string tel;
-            //    if (txtTelefoneCliente.Text == "Telefone Principal do Cliente")
-            //    {
-            //        tel = null;
-            //    }
-            //    else
-            //    {
-            //        tel = txtTelefoneCliente.Text.ToString();
-            //    }
-            //    string CpfOuCnpjFORMATADO = String.Format(@"{0:\000\.000\.000\-00}", cpf);
-            //    //txt.Text = CpfOuCnpjFORMATADO;
-            //    id.InserirCliente(nome, CpfOuCnpjFORMATADO, tel);
-            //}
-
-            ////Limpar os campos
-            //txtPesquisarCADCliente.Text = "Digite o nome do cliente que deseja buscar os serviços";
-            //txtPesquisarCADCliente.Font = new Font(txtPesquisarCADCliente.Font, FontStyle.Italic);
-            //txtPesquisarCADCliente.ForeColor = Color.Silver;
-            //txtPesquisarCADCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            //txtNomeCliente.Text = "Nome do Cliente";
-            //txtNomeCliente.Font = new Font(txtTelefoneCliente.Font, FontStyle.Italic);
-            //txtNomeCliente.ForeColor = Color.Silver;
-            //txtNomeCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            //txtTelefoneCliente.Text = "Telefone Principal do Cliente";
-            //txtTelefoneCliente.Font = new Font(txtTelefoneCliente.Font, FontStyle.Italic);
-            //txtTelefoneCliente.ForeColor = Color.Silver;
-            //txtTelefoneCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            //txtCPFCliente.Text = "CPF do Cliente";
-            //txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
-            //txtCPFCliente.ForeColor = Color.Silver;
-            //txtCPFCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            //refreshTable();
         }
         private void txtNomeCliente_KeyDown(object sender, KeyEventArgs e)
         {
@@ -515,6 +493,12 @@ namespace PFC___StandBy_CSharp.Forms
                 txtTelefoneRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
                 txtTelefoneRecado.LineMouseHoverColor = Color.Lavender;
                 txtTelefoneRecado.Enabled = true;
+
+                txtTratarCom.Font = new Font(txtTratarCom.Font, FontStyle.Italic);
+                txtTratarCom.ForeColor = Color.Silver;
+                txtTratarCom.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                txtTratarCom.LineMouseHoverColor = Color.Lavender;
+                txtTratarCom.Enabled = true;
             }
             else
             {
@@ -531,6 +515,13 @@ namespace PFC___StandBy_CSharp.Forms
                 txtTelefoneRecado.LineIdleColor = Color.Gray;
                 txtTelefoneRecado.LineMouseHoverColor = Color.Gray;
                 txtTelefoneRecado.Enabled = false;
+
+                txtTratarCom.Font = new Font(txtTratarCom.Font, FontStyle.Italic);
+                txtTratarCom.Text = "Quem recebe o recado";
+                txtTratarCom.ForeColor = Color.Silver;
+                txtTratarCom.LineIdleColor = Color.Gray;
+                txtTratarCom.LineMouseHoverColor = Color.Gray;
+                txtTratarCom.Enabled = false;
             }
         }
 
@@ -541,7 +532,7 @@ namespace PFC___StandBy_CSharp.Forms
                 if (txtTelefoneRecado.Text == "Telefone de Recados do Cliente")
                 {
                     txtTelefoneRecado.Text = "";
-                    txtTelefoneRecado.Font = new Font(txtTelefoneCliente.Font, FontStyle.Regular);
+                    txtTelefoneRecado.Font = new Font(txtTelefoneRecado.Font, FontStyle.Regular);
                     txtTelefoneRecado.LineIdleColor = Color.White;
                     txtTelefoneRecado.ForeColor = Color.White;
                 }
@@ -555,7 +546,7 @@ namespace PFC___StandBy_CSharp.Forms
                 if (txtTelefoneRecado.Text == "")
                 {
                     txtTelefoneRecado.Text = "Telefone de Recados do Cliente";
-                    txtTelefoneRecado.Font = new Font(txtTelefoneCliente.Font, FontStyle.Italic);
+                    txtTelefoneRecado.Font = new Font(txtTelefoneRecado.Font, FontStyle.Italic);
                     txtTelefoneRecado.ForeColor = Color.Silver;
                     txtTelefoneRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
                 }
@@ -564,6 +555,42 @@ namespace PFC___StandBy_CSharp.Forms
         }
 
         private void txtTelefoneRecado_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CadastrarNovoCliente();
+            }
+        }
+
+        private void txtTratarCom_Enter(object sender, EventArgs e)
+        {
+            if (txtTratarCom.Enabled == true)
+            {
+                if (txtTratarCom.Text == "Quem recebe o recado")
+                {
+                    txtTratarCom.Text = "";
+                    txtTratarCom.Font = new Font(txtTratarCom.Font, FontStyle.Regular);
+                    txtTratarCom.LineIdleColor = Color.White;
+                    txtTratarCom.ForeColor = Color.White;
+                }
+            }
+        }
+
+        private void txtTratarCom_Leave(object sender, EventArgs e)
+        {
+            if (txtTratarCom.Enabled == true)
+            {
+                if (txtTratarCom.Text == "")
+                {
+                    txtTratarCom.Text = "Quem recebe o recado";
+                    txtTratarCom.Font = new Font(txtTratarCom.Font, FontStyle.Italic);
+                    txtTratarCom.ForeColor = Color.Silver;
+                    txtTratarCom.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                }
+            }
+        }
+
+        private void txtTratarCom_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {

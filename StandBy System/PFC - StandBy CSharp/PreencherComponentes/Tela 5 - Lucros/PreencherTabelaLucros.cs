@@ -40,7 +40,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
                 //string procedure = "BuscarLucroEntreDatas";
                 string query = "select sv_id, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_valorservico, sv_valorpeca, sv_lucro, sv_data_conclusao from tb_servicos " +
                     "INNER JOIN tb_clientes " +
-                    "ON sv_cl_idcliente = cl_id where sv_data between @_Data1 and @_Data2 " +
+                    "ON sv_cl_idcliente = cl_id where sv_data_conclusao between @_Data1 and @_Data2 " +
                     "and sv_status = 0 order by sv_data_conclusao desc";
 
                 SqlCommand cmd = new SqlCommand(query, con);

@@ -1,0 +1,17 @@
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.exe.config
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.exe
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.pdb
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu_UI_v1.5.3.dll
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\FontAwesome.Sharp.dll
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Guna.UI.dll
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu_UI_v1.5.3.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Form1.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_ServicosAndamento.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_TodosServicos.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Properties.Resources.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.GenerateResource.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.CoreCompileInputs.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.CopyComplete
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.exe
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.pdb
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.AssemblyReference.cache

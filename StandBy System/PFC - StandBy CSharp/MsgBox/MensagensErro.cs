@@ -77,6 +77,13 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(OR-SV08)Erro ao concluir serviço!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+
+        public void ErroAoAtualizarCoresTempo(Exception e)
+        {
+            MessageBox.Show("(OR-SV10)Erro ao atualizar as cores do status!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //form_ALERT message = new form_ALERT("(OR-SV08)Erro ao concluir serviço!", form_ALERT.AlertType.Erro);
+            //message.Show();
+        }
         #endregion
 
 

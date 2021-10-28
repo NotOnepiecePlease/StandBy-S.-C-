@@ -38,6 +38,8 @@ namespace PFC___StandBy_CSharp.Forms
                 btnMenuSuperior.Cursor = Cursors.Default;
             }
             //verificarUpd.ChecarVersao();
+
+            //Aqui verifica a versao
             backgroundWorker1.RunWorkerAsync();
         }
 

@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTratarCom = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chkTelRecados = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.txtTelefoneRecado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -52,15 +54,15 @@
             this.lblTelefonePrincipal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.table_Clientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TelRecado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_Clientes)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -69,6 +71,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.txtTratarCom);
+            this.panel1.Controls.Add(this.bunifuCustomLabel3);
             this.panel1.Controls.Add(this.bunifuCustomLabel2);
             this.panel1.Controls.Add(this.chkTelRecados);
             this.panel1.Controls.Add(this.txtTelefoneRecado);
@@ -92,6 +96,50 @@
             this.panel1.Size = new System.Drawing.Size(1081, 665);
             this.panel1.TabIndex = 1;
             // 
+            // txtTratarCom
+            // 
+            this.txtTratarCom.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTratarCom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtTratarCom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtTratarCom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtTratarCom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtTratarCom.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTratarCom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTratarCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtTratarCom.ForeColor = System.Drawing.Color.Silver;
+            this.txtTratarCom.HintForeColor = System.Drawing.Color.Transparent;
+            this.txtTratarCom.HintText = "";
+            this.txtTratarCom.isPassword = false;
+            this.txtTratarCom.LineFocusedColor = System.Drawing.Color.Lavender;
+            this.txtTratarCom.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.txtTratarCom.LineMouseHoverColor = System.Drawing.Color.Lavender;
+            this.txtTratarCom.LineThickness = 2;
+            this.txtTratarCom.Location = new System.Drawing.Point(564, 295);
+            this.txtTratarCom.Margin = new System.Windows.Forms.Padding(5);
+            this.txtTratarCom.MaxLength = 100;
+            this.txtTratarCom.Name = "txtTratarCom";
+            this.txtTratarCom.Size = new System.Drawing.Size(239, 32);
+            this.txtTratarCom.TabIndex = 8;
+            this.txtTratarCom.Text = "Quem recebe o recado";
+            this.txtTratarCom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTratarCom.Enter += new System.EventHandler(this.txtTratarCom_Enter);
+            this.txtTratarCom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTratarCom_KeyDown);
+            this.txtTratarCom.Leave += new System.EventHandler(this.txtTratarCom_Leave);
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Lavender;
+            this.bunifuCustomLabel3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(572, 267);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(222, 33);
+            this.bunifuCustomLabel3.TabIndex = 42;
+            this.bunifuCustomLabel3.Text = "Tratar com:";
+            this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -105,6 +153,7 @@
             this.bunifuCustomLabel2.TabIndex = 40;
             this.bunifuCustomLabel2.Text = "Tel Recado";
             this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuCustomLabel2.Visible = false;
             // 
             // chkTelRecados
             // 
@@ -156,9 +205,10 @@
             this.chkTelRecados.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
             this.chkTelRecados.Size = new System.Drawing.Size(21, 21);
             this.chkTelRecados.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.chkTelRecados.TabIndex = 7;
+            this.chkTelRecados.TabIndex = 6;
             this.chkTelRecados.ThreeState = false;
             this.chkTelRecados.ToolTipText = null;
+            this.chkTelRecados.Visible = false;
             this.chkTelRecados.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkTelRecados_CheckedChanged);
             // 
             // txtTelefoneRecado
@@ -170,22 +220,21 @@
             this.txtTelefoneRecado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtTelefoneRecado.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtTelefoneRecado.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefoneRecado.Enabled = false;
             this.txtTelefoneRecado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtTelefoneRecado.ForeColor = System.Drawing.Color.Silver;
             this.txtTelefoneRecado.HintForeColor = System.Drawing.Color.Transparent;
             this.txtTelefoneRecado.HintText = "";
             this.txtTelefoneRecado.isPassword = false;
             this.txtTelefoneRecado.LineFocusedColor = System.Drawing.Color.Lavender;
-            this.txtTelefoneRecado.LineIdleColor = System.Drawing.Color.Silver;
-            this.txtTelefoneRecado.LineMouseHoverColor = System.Drawing.Color.Silver;
+            this.txtTelefoneRecado.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.txtTelefoneRecado.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtTelefoneRecado.LineThickness = 2;
             this.txtTelefoneRecado.Location = new System.Drawing.Point(261, 295);
             this.txtTelefoneRecado.Margin = new System.Windows.Forms.Padding(5);
             this.txtTelefoneRecado.MaxLength = 100;
             this.txtTelefoneRecado.Name = "txtTelefoneRecado";
-            this.txtTelefoneRecado.Size = new System.Drawing.Size(542, 32);
-            this.txtTelefoneRecado.TabIndex = 6;
+            this.txtTelefoneRecado.Size = new System.Drawing.Size(274, 32);
+            this.txtTelefoneRecado.TabIndex = 7;
             this.txtTelefoneRecado.Text = "Telefone de Recados do Cliente";
             this.txtTelefoneRecado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTelefoneRecado.Enter += new System.EventHandler(this.txtTelefoneRecado_Enter);
@@ -199,11 +248,11 @@
             this.lblTelefoneRecados.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.lblTelefoneRecados.ForeColor = System.Drawing.Color.Lavender;
             this.lblTelefoneRecados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTelefoneRecados.Location = new System.Drawing.Point(440, 267);
+            this.lblTelefoneRecados.Location = new System.Drawing.Point(287, 267);
             this.lblTelefoneRecados.Name = "lblTelefoneRecados";
-            this.lblTelefoneRecados.Size = new System.Drawing.Size(194, 33);
+            this.lblTelefoneRecados.Size = new System.Drawing.Size(222, 33);
             this.lblTelefoneRecados.TabIndex = 38;
-            this.lblTelefoneRecados.Text = "Telefone - Recado";
+            this.lblTelefoneRecados.Text = "Número para Recados";
             this.lblTelefoneRecados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuCustomLabel5
@@ -213,7 +262,7 @@
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.Lavender;
             this.bunifuCustomLabel5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(846, 165);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(846, 153);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(55, 21);
             this.bunifuCustomLabel5.TabIndex = 36;
@@ -239,7 +288,7 @@
             this.chkCnpj.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chkCnpj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkCnpj.CustomCheckmarkImage = null;
-            this.chkCnpj.Location = new System.Drawing.Point(822, 165);
+            this.chkCnpj.Location = new System.Drawing.Point(822, 153);
             this.chkCnpj.MinimumSize = new System.Drawing.Size(17, 17);
             this.chkCnpj.Name = "chkCnpj";
             this.chkCnpj.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
@@ -270,7 +319,7 @@
             this.chkCnpj.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
             this.chkCnpj.Size = new System.Drawing.Size(21, 21);
             this.chkCnpj.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.chkCnpj.TabIndex = 4;
+            this.chkCnpj.TabIndex = 3;
             this.chkCnpj.ThreeState = false;
             this.chkCnpj.ToolTipText = null;
             this.chkCnpj.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkCnpj_CheckedChanged);
@@ -282,12 +331,13 @@
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Lavender;
             this.bunifuCustomLabel4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(846, 139);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(846, 113);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(55, 21);
             this.bunifuCustomLabel4.TabIndex = 34;
             this.bunifuCustomLabel4.Text = "SEM CPF";
             this.bunifuCustomLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel4.Visible = false;
             // 
             // chkSemCPF
             // 
@@ -308,7 +358,7 @@
             this.chkSemCPF.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chkSemCPF.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkSemCPF.CustomCheckmarkImage = null;
-            this.chkSemCPF.Location = new System.Drawing.Point(822, 138);
+            this.chkSemCPF.Location = new System.Drawing.Point(822, 112);
             this.chkSemCPF.MinimumSize = new System.Drawing.Size(17, 17);
             this.chkSemCPF.Name = "chkSemCPF";
             this.chkSemCPF.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
@@ -339,9 +389,10 @@
             this.chkSemCPF.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
             this.chkSemCPF.Size = new System.Drawing.Size(21, 21);
             this.chkSemCPF.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.chkSemCPF.TabIndex = 3;
+            this.chkSemCPF.TabIndex = 60;
             this.chkSemCPF.ThreeState = false;
             this.chkSemCPF.ToolTipText = null;
+            this.chkSemCPF.Visible = false;
             this.chkSemCPF.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkSemCPF_CheckedChanged);
             // 
             // txtTelefoneCliente
@@ -367,7 +418,7 @@
             this.txtTelefoneCliente.MaxLength = 15;
             this.txtTelefoneCliente.Name = "txtTelefoneCliente";
             this.txtTelefoneCliente.Size = new System.Drawing.Size(542, 32);
-            this.txtTelefoneCliente.TabIndex = 5;
+            this.txtTelefoneCliente.TabIndex = 4;
             this.txtTelefoneCliente.Text = "Telefone Principal do Cliente";
             this.txtTelefoneCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTelefoneCliente.Enter += new System.EventHandler(this.txtTelefoneCliente_Enter);
@@ -451,7 +502,7 @@
             this.txtPesquisarCADCliente.MaxLength = 32767;
             this.txtPesquisarCADCliente.Name = "txtPesquisarCADCliente";
             this.txtPesquisarCADCliente.Size = new System.Drawing.Size(497, 32);
-            this.txtPesquisarCADCliente.TabIndex = 8;
+            this.txtPesquisarCADCliente.TabIndex = 9;
             this.txtPesquisarCADCliente.Text = "Digite o nome do cliente que deseja buscar os serviços";
             this.txtPesquisarCADCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPesquisarCADCliente.Enter += new System.EventHandler(this.txtPesquisarCADCliente_Enter);
@@ -477,7 +528,7 @@
             this.btnCadastrarCliente.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnCadastrarCliente.Rotation = 0D;
             this.btnCadastrarCliente.Size = new System.Drawing.Size(37, 32);
-            this.btnCadastrarCliente.TabIndex = 9;
+            this.btnCadastrarCliente.TabIndex = 10;
             this.btnCadastrarCliente.UseVisualStyleBackColor = false;
             this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click);
             // 
@@ -506,7 +557,7 @@
             this.lblTelefonePrincipal.Name = "lblTelefonePrincipal";
             this.lblTelefonePrincipal.Size = new System.Drawing.Size(203, 33);
             this.lblTelefonePrincipal.TabIndex = 31;
-            this.lblTelefonePrincipal.Text = "Telefone - Principal";
+            this.lblTelefonePrincipal.Text = "Número do Cliente";
             this.lblTelefonePrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuCustomLabel1
@@ -581,35 +632,6 @@
             this.table_Clientes.TabStop = false;
             this.table_Clientes.DoubleClick += new System.EventHandler(this.table_Clientes_DoubleClick);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem,
-            this.excluirToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(85, 48);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(84, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
-            // excluirToolStripMenuItem
-            // 
-            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(84, 22);
-            this.excluirToolStripMenuItem.Text = "Excluir";
-            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 10;
-            this.bunifuElipse1.TargetControl = this.table_Clientes;
-            // 
             // cl_id
             // 
             this.cl_id.DataPropertyName = "cl_id";
@@ -651,6 +673,35 @@
             this.Situacao.Name = "Situacao";
             this.Situacao.ReadOnly = true;
             this.Situacao.Width = 150;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.excluirToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(85, 48);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(84, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(84, 22);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this.table_Clientes;
             // 
             // form_CadastroClientes
             // 
@@ -698,5 +749,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn TelRecado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Situacao;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtTratarCom;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }

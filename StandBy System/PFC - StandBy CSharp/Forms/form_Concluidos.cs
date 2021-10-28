@@ -14,22 +14,38 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Concluidos : Form
     {
-        PreencherTableConcluidos preencherTable = new PreencherTableConcluidos();
+        PreencherTableConcluidos preencherTableConcluidos = new PreencherTableConcluidos();
         AlterarDados ad = new AlterarDados();
         BuscarDados bd = new BuscarDados();
+        //MessageErro mErro = new MessageErro();
         VerificarExistencia ve = new VerificarExistencia();
         int[] corGeral = new int[3] { 0, 0, 0 };
+        int linhasExibidas = 24;
+        int paginaAtual = 1;
         public form_Concluidos(int[] corGeral)
         {
             InitializeComponent();
-            preencherTable.Preencher(table_ServicosConcluidos);
+            preencherTableConcluidos.Preencher(table_ServicosConcluidos, 1, 24);
+            atualizarLinhasExibidas();
+            lblResultadosTotais.Text = Convert.ToString(bd.BuscarTotalServicosConcluidos());
             this.corGeral = corGeral;
+
+            //Slider
+            //horizontalSlider.Maximum = Convert.ToInt32(Math.Ceiling(bd.BuscarTotalServicosConcluidos() / 24d));
+            //MessageBox.Show(horizontalSlider.Maximum.ToString());
+            //horizontalSlider.Value = 1;
+
             MudarCores();
+        }
+
+        public void atualizarLinhasExibidas()
+        {
+            lblResultadosExibidos.Text = Convert.ToString(linhasExibidas);
         }
 
         public void refreshTable()
         {
-            preencherTable.Preencher(table_ServicosConcluidos);
+            preencherTableConcluidos.Preencher(table_ServicosConcluidos, 1, 24);
         }
 
         public void MudarCores()
@@ -102,17 +118,21 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (txtPesquisarConcluidos.Text == "")
             {
-                preencherTable.Preencher(table_ServicosConcluidos);
+                preencherTableConcluidos.Preencher(table_ServicosConcluidos, 1, 24);
+                linhasExibidas = 24;
+                paginaAtual = 1;
+                lblResultadosExibidos.Text = Convert.ToString(24);
             }
             else
             {
                 try
                 {
-                    preencherTable.PreencherPorNomeCliente(table_ServicosConcluidos, txtPesquisarConcluidos.Text);
+                    preencherTableConcluidos.PreencherPorNomeCliente(table_ServicosConcluidos, txtPesquisarConcluidos.Text);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("ERRO: " + ex + "");
+                    //mErr
                 }
             }
         }
@@ -142,7 +162,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -159,6 +179,55 @@ namespace PFC___StandBy_CSharp.Forms
             editarServicos.txtLucroValorEdit.Text = table_ServicosConcluidos.SelectedCells[10].Value.ToString();
             editarServicos.btnConcluirServico.Visible = false;
             editarServicos.ShowDialog();
+        }
+
+        private void btnArrowRight_Click(object sender, EventArgs e)
+        {
+            linhasExibidas += 24;
+            paginaAtual += 1;
+
+            if (linhasExibidas < Convert.ToInt32(lblResultadosTotais.Text)+24)
+            {
+                btnArrowRight.Enabled = false;
+                btnArrowRight.IconColor = Color.Gray;
+                preencherTableConcluidos.Preencher(table_ServicosConcluidos, paginaAtual, 24);
+                table_ServicosConcluidos.Update();
+                table_ServicosConcluidos.Refresh();
+                //btnArrowRight.Enabled = false;
+                atualizarLinhasExibidas();
+            }
+            else
+            {
+                linhasExibidas = Convert.ToInt32(lblResultadosTotais.Text);
+                atualizarLinhasExibidas();
+            }
+            btnArrowRight.Enabled = true;
+            btnArrowRight.IconColor = Color.White;
+        }
+
+        private void btnArrowLeft_Click(object sender, EventArgs e)
+        {
+            linhasExibidas -= 24;
+            paginaAtual -= 1;
+            if (linhasExibidas < 24) { linhasExibidas = 24; }
+            else
+            {
+                preencherTableConcluidos.Preencher(table_ServicosConcluidos, paginaAtual, 24);
+                table_ServicosConcluidos.Update();
+                table_ServicosConcluidos.Refresh();
+            }
+            atualizarLinhasExibidas();
+        }
+
+        private void horizontalSlider_ValueChanged(object sender, Utilities.BunifuSlider.BunifuHScrollBar.ValueChangedEventArgs e)
+        {
+            //preencherTableConcluidos.Preencher(table_ServicosConcluidos, horizontalSlider.Value, 24);
+        }
+
+        private void table_ServicosConcluidos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            // MessageBox.Show("Teste");
+            //btnArrowRight.Enabled = true;
         }
     }
 }

@@ -145,10 +145,10 @@
   </data>
   <data name="btnSenhaPadrao.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADgAAAAWCAYAAACVIF9YAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACESURBVFhH7c+xDYAgEIXhAxZxFCdwC2A4a1tHYQErW8Gg
-        JK8yLPDkLvmre80nQ1yVON0mrMWG+ocuE7ZmAk+kGL/nzpC8BN4L7A/oA0+BtIGnQNrAUyBt4CmQNvAU
-        SBt4CqQNPAXSBt4YwPR9spetP8ETyS7OxfqjN2Ss4bLzC3h/PpEHxE0NuQHN+f8AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAA0AAAAWCAYAAAAb+hYkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABpSURBVDhP7cuxEYAgEETRBRqxFCuwC6A4Y1NLoQEjUw8H
+        xVkT5ww05mZ+dPvw+wpit5swZhvKW5sJU92RANn4WZShUiI5kT5QI2mIpCGShkgulJ5PLbF+JQHExT5b
+        v2jDuwrE+YHk6wEHtn0IrcI6iscAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="idServico.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -232,14 +232,14 @@
   <metadata name="arredondarBotaoPesquisarCliente.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>594, 17</value>
   </metadata>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1336, 17</value>
+  </metadata>
   <metadata name="standbyDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>983, 17</value>
   </metadata>
   <metadata name="standbyDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1120, 17</value>
-  </metadata>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1336, 17</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

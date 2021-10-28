@@ -157,9 +157,9 @@
             this.lblVersion.ForeColor = System.Drawing.SystemColors.Control;
             this.lblVersion.Location = new System.Drawing.Point(3, 9);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(32, 15);
+            this.lblVersion.Size = new System.Drawing.Size(34, 15);
             this.lblVersion.TabIndex = 9;
-            this.lblVersion.Text = "5.8.1";
+            this.lblVersion.Text = "5.9.8";
             // 
             // iconMenu
             // 
@@ -361,6 +361,7 @@
             this.animationMenuShow1.SetDecoration(this.btnOrcamentos, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.btnOrcamentos, BunifuAnimatorNS.DecorationType.None);
             this.btnOrcamentos.DisabledColor = System.Drawing.Color.Gray;
+            this.btnOrcamentos.Enabled = false;
             this.btnOrcamentos.Iconcolor = System.Drawing.Color.Transparent;
             this.btnOrcamentos.Iconimage = global::PFC___StandBy_CSharp.Properties.Resources.icons8_estimate_96px;
             this.btnOrcamentos.Iconimage_right = null;

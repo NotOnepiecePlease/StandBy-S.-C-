@@ -35,6 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Concluidos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnArrowLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.btnArrowRight = new FontAwesome.Sharp.IconPictureBox();
+            this.lblResultadosExibidos = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblResultadosTotais = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtPesquisarConcluidos = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btnPesquisarConcluidos = new FontAwesome.Sharp.IconButton();
             this.table_ServicosConcluidos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -52,21 +58,29 @@
             this.servico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataConclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.naoConcluidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuVerGarantia = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnArrowLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnArrowRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosConcluidos)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.menu.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.btnArrowLeft);
+            this.panel1.Controls.Add(this.btnArrowRight);
+            this.panel1.Controls.Add(this.lblResultadosExibidos);
+            this.panel1.Controls.Add(this.bunifuCustomLabel3);
+            this.panel1.Controls.Add(this.bunifuCustomLabel2);
+            this.panel1.Controls.Add(this.lblResultadosTotais);
             this.panel1.Controls.Add(this.txtPesquisarConcluidos);
             this.panel1.Controls.Add(this.btnPesquisarConcluidos);
             this.panel1.Controls.Add(this.table_ServicosConcluidos);
@@ -75,6 +89,88 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1081, 665);
             this.panel1.TabIndex = 0;
+            // 
+            // btnArrowLeft
+            // 
+            this.btnArrowLeft.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnArrowLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnArrowLeft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArrowLeft.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            this.btnArrowLeft.IconColor = System.Drawing.Color.White;
+            this.btnArrowLeft.IconSize = 28;
+            this.btnArrowLeft.Location = new System.Drawing.Point(532, 45);
+            this.btnArrowLeft.Name = "btnArrowLeft";
+            this.btnArrowLeft.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnArrowLeft.Size = new System.Drawing.Size(28, 31);
+            this.btnArrowLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnArrowLeft.TabIndex = 14;
+            this.btnArrowLeft.TabStop = false;
+            this.btnArrowLeft.Click += new System.EventHandler(this.btnArrowLeft_Click);
+            // 
+            // btnArrowRight
+            // 
+            this.btnArrowRight.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnArrowRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnArrowRight.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArrowRight.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+            this.btnArrowRight.IconColor = System.Drawing.Color.White;
+            this.btnArrowRight.IconSize = 28;
+            this.btnArrowRight.Location = new System.Drawing.Point(566, 45);
+            this.btnArrowRight.Name = "btnArrowRight";
+            this.btnArrowRight.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnArrowRight.Size = new System.Drawing.Size(28, 31);
+            this.btnArrowRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnArrowRight.TabIndex = 13;
+            this.btnArrowRight.TabStop = false;
+            this.btnArrowRight.Click += new System.EventHandler(this.btnArrowRight_Click);
+            // 
+            // lblResultadosExibidos
+            // 
+            this.lblResultadosExibidos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblResultadosExibidos.AutoSize = true;
+            this.lblResultadosExibidos.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.lblResultadosExibidos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblResultadosExibidos.Location = new System.Drawing.Point(479, 46);
+            this.lblResultadosExibidos.Name = "lblResultadosExibidos";
+            this.lblResultadosExibidos.Size = new System.Drawing.Size(45, 28);
+            this.lblResultadosExibidos.TabIndex = 11;
+            this.lblResultadosExibidos.Text = "999";
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(384, 48);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(89, 25);
+            this.bunifuCustomLabel3.TabIndex = 10;
+            this.bunifuCustomLabel3.Text = "Exibindo:";
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(601, 48);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(82, 25);
+            this.bunifuCustomLabel2.TabIndex = 9;
+            this.bunifuCustomLabel2.Text = "Total de:";
+            // 
+            // lblResultadosTotais
+            // 
+            this.lblResultadosTotais.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblResultadosTotais.AutoSize = true;
+            this.lblResultadosTotais.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.lblResultadosTotais.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblResultadosTotais.Location = new System.Drawing.Point(682, 46);
+            this.lblResultadosTotais.Name = "lblResultadosTotais";
+            this.lblResultadosTotais.Size = new System.Drawing.Size(56, 28);
+            this.lblResultadosTotais.TabIndex = 8;
+            this.lblResultadosTotais.Text = "9999";
             // 
             // txtPesquisarConcluidos
             // 
@@ -89,11 +185,11 @@
             this.txtPesquisarConcluidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtPesquisarConcluidos.ForeColor = System.Drawing.Color.Silver;
             this.txtPesquisarConcluidos.isPassword = false;
-            this.txtPesquisarConcluidos.Location = new System.Drawing.Point(3, 6);
+            this.txtPesquisarConcluidos.Location = new System.Drawing.Point(5, 6);
             this.txtPesquisarConcluidos.Margin = new System.Windows.Forms.Padding(5);
             this.txtPesquisarConcluidos.MaxLength = 32767;
             this.txtPesquisarConcluidos.Name = "txtPesquisarConcluidos";
-            this.txtPesquisarConcluidos.Size = new System.Drawing.Size(1018, 46);
+            this.txtPesquisarConcluidos.Size = new System.Drawing.Size(1016, 36);
             this.txtPesquisarConcluidos.TabIndex = 7;
             this.txtPesquisarConcluidos.Text = "Digite o nome do cliente que deseja buscar os serviços";
             this.txtPesquisarConcluidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -118,7 +214,7 @@
             this.btnPesquisarConcluidos.Name = "btnPesquisarConcluidos";
             this.btnPesquisarConcluidos.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnPesquisarConcluidos.Rotation = 0D;
-            this.btnPesquisarConcluidos.Size = new System.Drawing.Size(49, 46);
+            this.btnPesquisarConcluidos.Size = new System.Drawing.Size(49, 36);
             this.btnPesquisarConcluidos.TabIndex = 3;
             this.btnPesquisarConcluidos.TabStop = false;
             this.btnPesquisarConcluidos.UseVisualStyleBackColor = false;
@@ -166,7 +262,7 @@
             this.table_ServicosConcluidos.EnableHeadersVisualStyles = false;
             this.table_ServicosConcluidos.HeaderBgColor = System.Drawing.SystemColors.Control;
             this.table_ServicosConcluidos.HeaderForeColor = System.Drawing.Color.Black;
-            this.table_ServicosConcluidos.Location = new System.Drawing.Point(3, 59);
+            this.table_ServicosConcluidos.Location = new System.Drawing.Point(3, 80);
             this.table_ServicosConcluidos.Name = "table_ServicosConcluidos";
             this.table_ServicosConcluidos.ReadOnly = true;
             this.table_ServicosConcluidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -186,9 +282,10 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_ServicosConcluidos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_ServicosConcluidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_ServicosConcluidos.Size = new System.Drawing.Size(1075, 594);
+            this.table_ServicosConcluidos.Size = new System.Drawing.Size(1075, 582);
             this.table_ServicosConcluidos.TabIndex = 1;
             this.table_ServicosConcluidos.TabStop = false;
+            this.table_ServicosConcluidos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.table_ServicosConcluidos_DataBindingComplete);
             // 
             // idServico
             // 
@@ -301,23 +398,6 @@
             this.DataConclusao.ReadOnly = true;
             this.DataConclusao.Visible = false;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(80, 26);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(79, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
@@ -351,6 +431,23 @@
             this.editarToolStripMenuItem1.Text = "Editar";
             this.editarToolStripMenuItem1.Click += new System.EventHandler(this.editarToolStripMenuItem1_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(80, 26);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(79, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
             // form_Concluidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,9 +460,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_Concluidos";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnArrowLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnArrowRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosConcluidos)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.menu.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -396,5 +496,11 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblResultadosExibidos;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblResultadosTotais;
+        private FontAwesome.Sharp.IconPictureBox btnArrowRight;
+        private FontAwesome.Sharp.IconPictureBox btnArrowLeft;
     }
 }
