@@ -503,6 +503,16 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap identification_documents_20px {
+            get {
+                object obj = ResourceManager.GetObject("identification_documents_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap info {
             get {
                 object obj = ResourceManager.GetObject("info", resourceCulture);
@@ -583,6 +593,16 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap phone_20px {
+            get {
+                object obj = ResourceManager.GetObject("phone_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap samsung_logo_png_samsung_logo_png_2104 {
             get {
                 object obj = ResourceManager.GetObject("samsung-logo-png-samsung-logo-png-2104", resourceCulture);
@@ -606,6 +626,16 @@ namespace PFC___StandBy_CSharp.Properties {
         internal static System.Drawing.Bitmap SERVICOS_COMPLETOS {
             get {
                 object obj = ResourceManager.GetObject("SERVICOS_COMPLETOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sms_20px {
+            get {
+                object obj = ResourceManager.GetObject("sms_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -267,10 +267,10 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 MessageBox.Show("Campos de nome está vazio, favor preencha-o", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (!(txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")) && txtTratarCom.Text.Equals("Quem recebe o recado"))
-            {
-                MessageBox.Show("Você preencheu o numero mas esqueceu de especificar com quem deixar o recado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //else if (!(txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")) && txtTratarCom.Text.Equals("Quem recebe o recado"))
+            //{
+            //    MessageBox.Show("Você preencheu o numero mas esqueceu de especificar com quem deixar o recado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
             //else if (chkSemCPF.Checked == true)
             else if (txtCPFCliente.Text.Equals("CPF do Cliente"))
             {
@@ -283,13 +283,16 @@ namespace PFC___StandBy_CSharp.Forms
                 
                 //string CpfOuCnpjFORMATADO = String.Format(@"{0:000\.000\.000\-00}", cpf);
                 //txt.Text = CpfOuCnpjFORMATADO;
+
+                //txtTelefoneRecado nao esta sendo usado mais.
                 if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
                     id.InserirCliente(nome, "SEM CPF/CNPJ", "", "");
                 }
                 else if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && !(txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")))
                 {
-                    id.InserirCliente(nome, "SEM CPF/CNPJ", "", telRecados + tratarCom);
+                    //id.InserirCliente(nome, "SEM CPF/CNPJ", "", telRecados + tratarCom);
+                    id.InserirCliente(nome, "SEM CPF/CNPJ", "", telRecados);
                 }
                 else if (!string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) && !txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
@@ -297,7 +300,7 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 else
                 {
-                    id.InserirCliente(nome, "SEM CPF/CNPJ", telPrincipal, telRecados + tratarCom);
+                    id.InserirCliente(nome, "SEM CPF/CNPJ", telPrincipal, telRecados);
                 }
             }
             else
@@ -325,7 +328,8 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 else if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && !(txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")))
                 {
-                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", telRecados + tratarCom);
+                    //id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", telRecados + tratarCom);
+                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", telRecados);
                 }
                 else if (!string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) && !txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
@@ -333,7 +337,8 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 else
                 {
-                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, telRecados + tratarCom);
+                    //id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, telRecados + tratarCom);
+                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, telRecados);
                 }
             }
 
@@ -444,13 +449,13 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (chkCnpj.Checked == true)
             {
-                lblCpf.Text = "CNPJ";
+                lblCpf.Text = "CNPJ:";
                 txtCPFCliente.Text = "CNPJ do Cliente";
                 txtCPFCliente.MaxLength = 14;
             }
             else
             {
-                lblCpf.Text = "CPF";
+                lblCpf.Text = "CPF:";
                 txtCPFCliente.Text = "CPF do Cliente";
                 txtCPFCliente.MaxLength = 11;
             }

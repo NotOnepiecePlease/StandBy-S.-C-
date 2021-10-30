@@ -704,6 +704,7 @@
     <None Include="Resources\icons8_reset_480px_1.png" />
     <None Include="Resources\icons8_ok_45px.png" />
     <None Include="Resources\info.png" />
+    <None Include="Resources\identification_documents_20px.png" />
     <Content Include="Resources\Loading.png" />
     <None Include="Resources\samsung-logo-png-samsung-logo-png-2104.png" />
     <None Include="Resources\motorola-logo-1.png" />
@@ -712,6 +713,8 @@
     <None Include="Resources\LUCROS.png" />
     <None Include="Resources\ORCAMENTOS.png" />
     <None Include="Resources\SERVICOS COMPLETOS.png" />
+    <None Include="Resources\phone_20px.png" />
+    <None Include="Resources\sms_20px.png" />
     <Content Include="Resources\Sucesso.png" />
   </ItemGroup>
   <ItemGroup>
