@@ -449,13 +449,13 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (chkCnpj.Checked == true)
             {
-                lblCpf.Text = "CNPJ:";
+                lblCpf.Text = "CNPJ";
                 txtCPFCliente.Text = "CNPJ do Cliente";
                 txtCPFCliente.MaxLength = 14;
             }
             else
             {
-                lblCpf.Text = "CPF:";
+                lblCpf.Text = "CPF";
                 txtCPFCliente.Text = "CPF do Cliente";
                 txtCPFCliente.MaxLength = 11;
             }
