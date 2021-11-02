@@ -167,7 +167,7 @@ namespace PFC___StandBy_CSharp.Forms
             y += dy;
             e.Graphics.DrawString("Rua Segundo Sendes, 197B. Gleba B, Camaçari BA", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
-            e.Graphics.DrawString("Contato 71 98305-5871", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
+            e.Graphics.DrawString("Contato 71 98239-6014", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;
             e.Graphics.DrawString("Técnico Responsável - Cleison Ribeiro", fntregular, Brushes.Black, new PointF(x, y), sfcenter);
             y += dy;

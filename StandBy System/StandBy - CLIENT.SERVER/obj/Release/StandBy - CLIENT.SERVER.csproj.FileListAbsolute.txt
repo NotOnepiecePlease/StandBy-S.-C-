@@ -5,7 +5,6 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SER
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\FontAwesome.Sharp.dll
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Guna.UI.dll
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu_UI_v1.5.3.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.AssemblyReference.cache
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Form1.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_ServicosAndamento.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_TodosServicos.resources
