@@ -29,23 +29,27 @@ namespace StandBy___CLIENT.SERVER
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new FontAwesome.Sharp.IconPictureBox();
             this.panelCentral = new System.Windows.Forms.Panel();
             this.imgbuttonTitulo = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelFundoMenus = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.btnTodosServicos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnServicosAndamento = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnExit = new FontAwesome.Sharp.IconPictureBox();
+            this.lblIp = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.arrastarForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgbuttonTitulo)).BeginInit();
             this.panelFundoMenus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.lblIp);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.panelCentral);
             this.panel1.Controls.Add(this.imgbuttonTitulo);
@@ -55,6 +59,22 @@ namespace StandBy___CLIENT.SERVER
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 720);
             this.panel1.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnExit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnExit.IconSize = 29;
+            this.btnExit.Location = new System.Drawing.Point(1246, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(29, 29);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnExit.TabIndex = 11;
+            this.btnExit.TabStop = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panelCentral
             // 
@@ -164,21 +184,22 @@ namespace StandBy___CLIENT.SERVER
             this.btnServicosAndamento.TextFont = new System.Drawing.Font("Bahnschrift SemiCondensed", 11.25F);
             this.btnServicosAndamento.Click += new System.EventHandler(this.btnServicosAndamento_Click_1);
             // 
-            // btnExit
+            // lblIp
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnExit.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnExit.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnExit.IconSize = 29;
-            this.btnExit.Location = new System.Drawing.Point(1246, 5);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(29, 29);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnExit.TabIndex = 11;
-            this.btnExit.TabStop = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.lblIp.AutoSize = true;
+            this.lblIp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIp.Location = new System.Drawing.Point(12, 9);
+            this.lblIp.Name = "lblIp";
+            this.lblIp.Size = new System.Drawing.Size(103, 13);
+            this.lblIp.TabIndex = 12;
+            this.lblIp.Text = "bunifuCustomLabel1";
+            // 
+            // arrastarForm
+            // 
+            this.arrastarForm.Fixed = true;
+            this.arrastarForm.Horizontal = true;
+            this.arrastarForm.TargetControl = this.panel1;
+            this.arrastarForm.Vertical = true;
             // 
             // Form1
             // 
@@ -191,9 +212,10 @@ namespace StandBy___CLIENT.SERVER
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgbuttonTitulo)).EndInit();
             this.panelFundoMenus.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,6 +229,8 @@ namespace StandBy___CLIENT.SERVER
         private Bunifu.Framework.UI.BunifuFlatButton btnServicosAndamento;
         private System.Windows.Forms.Panel panelCentral;
         private FontAwesome.Sharp.IconPictureBox btnExit;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblIp;
+        private Bunifu.Framework.UI.BunifuDragControl arrastarForm;
     }
 }
 

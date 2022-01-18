@@ -30,7 +30,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@IdServico", SqlDbType.Int).Value = _idServico;
 
                     cmd.ExecuteNonQuery();
-                    con.Close();
+                    //con.Close();
                     mSucesso.DeletarServicoSucesso();
                 }
             }

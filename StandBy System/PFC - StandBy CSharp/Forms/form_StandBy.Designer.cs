@@ -157,9 +157,9 @@
             this.lblVersion.ForeColor = System.Drawing.SystemColors.Control;
             this.lblVersion.Location = new System.Drawing.Point(3, 9);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(37, 15);
+            this.lblVersion.Size = new System.Drawing.Size(39, 15);
             this.lblVersion.TabIndex = 9;
-            this.lblVersion.Text = "5.9.11";
+            this.lblVersion.Text = "5.10.3";
             // 
             // iconMenu
             // 
@@ -782,7 +782,6 @@
             this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.animationMenuHide1.SetDecoration(this.btnReset, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuShow1.SetDecoration(this.btnReset, BunifuAnimatorNS.DecorationType.None);
-            this.btnReset.Enabled = false;
             this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_reset_480px_1;

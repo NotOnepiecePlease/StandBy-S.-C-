@@ -48,6 +48,7 @@ namespace PFC___StandBy_CSharp.Forms
             MudarCores();
             CalcularLucro();
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+            btnConcluirServico.Visible = false;
         }
         public form_OrdensServ_Edit(form_Concluidos formConcluidos, int[] _cor)
         {
@@ -147,11 +148,10 @@ namespace PFC___StandBy_CSharp.Forms
                 SalvarEdicoesServico(DateTime.Parse("26/03/2020"));
                 try
                 {
-                    if(atualizarOuNaoATabelaDeServicos == false)
+                    if (atualizarOuNaoATabelaDeServicos == false)
                     {
-
-                    formServ1.refreshTable();
-                    formServ1.refreshTable();
+                        formServ1.refreshTable();
+                        formServ1.refreshTable();
                     }
                 }
                 catch (Exception)
@@ -268,7 +268,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
         {
             string cpfCliente = bd.BuscarCPFCliente(Convert.ToInt32(lblIDcliente.Text));
-            if(cpfCliente.Length < 14)
+            if (cpfCliente.Length < 14)
             {
                 MessageBox.Show("A Nota só pode ser emitida para clientes com CPF cadastrado.", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

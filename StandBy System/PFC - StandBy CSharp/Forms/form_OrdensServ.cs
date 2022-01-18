@@ -312,8 +312,6 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void EditarUmServico()
         {
-
-
             string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
             string _TEL_RECCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
             float lucro = float.Parse(table_OrdensServicos.SelectedCells[10].Value.ToString());
@@ -452,15 +450,10 @@ namespace PFC___StandBy_CSharp.Forms
         private void table_OrdensServicos_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
         {
             AtualizarAtrasosCores();
+            //MessageBox.Show("Test");
         }
 
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-            //form_PasswordPattern pp = new form_PasswordPattern(corGeral);
-            //pp.ShowDialog();
-        }
-
-        private void btnInvisivel_Click(object sender, EventArgs e)
+        private void btnOcultarComponentes_Click(object sender, EventArgs e)
         {
             btnPatternIcon.Visible = false;
             lblCliente.Visible = false;
@@ -490,7 +483,7 @@ namespace PFC___StandBy_CSharp.Forms
             table_OrdensServicos.Anchor = AnchorStyles.Bottom;
             table_OrdensServicos.Refresh();
             table_OrdensServicos.Update();
-            btnInvisivel.Visible = false;
+            btnOcultarComponentes.Visible = false;
             btnVisivel.Visible = true;
         }
 
@@ -516,7 +509,7 @@ namespace PFC___StandBy_CSharp.Forms
             txtPesquisarCliente.Visible = true;
             btnCadastrarOrdem.Visible = true;
             btnPesquisarCliente.Visible = true;
-            btnInvisivel.Visible = true;
+            btnOcultarComponentes.Visible = true;
             btnVisivel.Visible = false;
             //btnSenhaPadrao.Visible = true;
         }

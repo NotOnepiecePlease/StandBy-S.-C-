@@ -12,13 +12,12 @@ using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.SqlDbConnect
 {
-
-
     public class conexao
     {
         BackupDados bckData = new BackupDados();
         //private string dataSQL = "a";
         //string ConnectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=standby_org;Integrated Security=True"; //de Cleison para iPhone
+        //                          "Server=localhost\\SQLEXPRESS;Database=SEU_BANCO;User Id=SEU_LOGIN;Password=SUA_SENHA;
         //string ConnectionString = "Data Source=localhost\\SQEXPRESS;Initial Catalog=standby_org;Integrated Security=True"; //de Cleison
         private string ConnectionString = "";
         //string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
@@ -36,7 +35,6 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
 
             datasourceTXT = File.ReadAllLines(txtPath).ToList();
             ConnectionString = String.Format("Data Source={0};Initial Catalog=standby_org;Integrated Security=True", datasourceTXT.FirstOrDefault().ToString());
-            //Console.Write("teste");
         }
         public SqlConnection OpenConnection()
         {

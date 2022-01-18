@@ -41,7 +41,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                     "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo " +
                     "FROM tb_servicos " +
                     "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
-                    "WHERE sv_status = 1 and sv_ativo = 1 order by sv_cor_tempo asc, sv_data asc, sv_id desc", con);
+                    "WHERE sv_status = 1 and sv_ativo = 1 order by sv_cor_tempo asc, sv_data desc, sv_id desc", con);
 
                     DataTable datatable = new DataTable();
                     adapter.Fill(datatable);

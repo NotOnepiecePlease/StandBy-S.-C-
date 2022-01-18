@@ -84,6 +84,11 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(OR-SV08)Erro ao concluir serviço!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+
+        public void ErroAoAbrirTelaDeEdicaoServicos(Exception e)
+        {
+            MessageBox.Show("(OR-SV11)Erro ao abrir tela de edição!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         #endregion
 
 

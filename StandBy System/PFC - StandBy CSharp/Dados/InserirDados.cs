@@ -19,13 +19,6 @@ namespace PFC___StandBy_CSharp.Dados
         MensagensSucesso mSucesso = new MensagensSucesso();
         VerificarExistencia verificarExistencia = new VerificarExistencia();
 
-        public void Alert(string msg, form_AlertMessage.enmType type)
-        {
-            form_AlertMessage frm = new form_AlertMessage();
-            frm.showAlert(msg, type);
-        }
-
-
         #region Inserir Servico
         public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo, byte[] image, string acessorios)
         {

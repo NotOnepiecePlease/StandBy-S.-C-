@@ -5,11 +5,11 @@ namespace StandBy___CLIENT.SERVER.Forms
 {
     public partial class form_ServicosAndamento : Form
     {
-        PreencherTableOrdensServicos preencher = new PreencherTableOrdensServicos();
+        PreencherTableTodosServicos preencherTableOrdensServ = new PreencherTableTodosServicos();
         public form_ServicosAndamento()
         {
             InitializeComponent();
-            preencher.PreencherServicosAndamento(table_ServicosAndamento);
+            preencherTableOrdensServ.Preencher(table_ServicosAndamento);
         }
     }
 }

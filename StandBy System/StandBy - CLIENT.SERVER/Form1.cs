@@ -1,6 +1,8 @@
 ﻿using StandBy___CLIENT.SERVER.Forms;
 using System;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Windows.Forms;
 
 namespace StandBy___CLIENT.SERVER
@@ -11,8 +13,20 @@ namespace StandBy___CLIENT.SERVER
         public Form1()
         {
             InitializeComponent();
+            PegarIp();
         }
 
+        public void PegarIp()
+        {
+            string localIP;
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            {
+                socket.Connect("8.8.8.8", 65530);
+                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                localIP = endPoint.Address.ToString();
+                lblIp.Text = localIP+",1433";
+            }
+        }
         private void OpenChildForm(Form formFilho)
         {
             //open only form

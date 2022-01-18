@@ -21,7 +21,7 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
             {
                 form.lblUpdate.Visible = true;
                 form.lblUpdate.Text = "Verificando atualizações...";
-                if (!webClient.DownloadString("https://www.dropbox.com/s/revwuo9ry89po4t/UpdateVersionStandBY.txt?dl=1").Contains("5.9.11"))
+                if (!webClient.DownloadString("https://www.dropbox.com/s/revwuo9ry89po4t/UpdateVersionStandBY.txt?dl=1").Contains("5.10.3"))
                 //if (!webClient.DownloadString("https://pastebin.com/raw/ibWAkD4c").Contains("5.7.1"))
                 {
                     //form.lblUpdate.Text = "Nova atualização disponivel, reinicie o sistema.";

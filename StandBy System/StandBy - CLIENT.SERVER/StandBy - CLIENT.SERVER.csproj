@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -44,6 +51,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dados\AlterarDados.cs" />
+    <Compile Include="Dados\BackupDados.cs" />
     <Compile Include="Dados\BuscarDados.cs" />
     <Compile Include="Dados\DeletarDados.cs" />
     <Compile Include="Dados\InserirDados.cs" />
@@ -80,9 +89,21 @@
     <Compile Include="Forms\form_TodosServicos.Designer.cs">
       <DependentUpon>form_TodosServicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\form_TodosServicos_Edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_TodosServicos_Edit.Designer.cs">
+      <DependentUpon>form_TodosServicos_Edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LockScreenAndroid\GestureSubmittedEventArgs.cs" />
+    <Compile Include="LockScreenAndroid\LockScreenControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LockScreenAndroid\LockScreenRenderer.cs" />
+    <Compile Include="LockScreenAndroid\YASSCOMLockScreenRenderer.cs" />
     <Compile Include="MsgBox\MensagensErro.cs" />
     <Compile Include="MsgBox\MensagensSucesso.cs" />
-    <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherTableOrdensServicos.cs" />
+    <Compile Include="PreencherComponentes\Tela 1 - Todos Servicos\PreencherTableTodosServicos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlDbConnect\conexao.cs" />
@@ -94,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_TodosServicos.resx">
       <DependentUpon>form_TodosServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_TodosServicos_Edit.resx">
+      <DependentUpon>form_TodosServicos_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

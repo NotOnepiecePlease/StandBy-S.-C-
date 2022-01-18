@@ -49,8 +49,8 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.servico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.previsao_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.existe_um_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.svEmAndamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.svDataAndamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_cor_tempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosAndamento)).BeginInit();
             this.SuspendLayout();
@@ -103,8 +103,8 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.servico,
             this.previsao_entrega,
             this.existe_um_prazo,
-            this.svEmAndamento,
-            this.svDataAndamento});
+            this.sv_acessorios,
+            this.sv_cor_tempo});
             this.table_ServicosAndamento.DoubleBuffered = true;
             this.table_ServicosAndamento.EnableHeadersVisualStyles = false;
             this.table_ServicosAndamento.HeaderBgColor = System.Drawing.SystemColors.Control;
@@ -129,8 +129,8 @@ namespace StandBy___CLIENT.SERVER.Forms
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_ServicosAndamento.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_ServicosAndamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_ServicosAndamento.Size = new System.Drawing.Size(1256, 609);
-            this.table_ServicosAndamento.TabIndex = 2;
+            this.table_ServicosAndamento.Size = new System.Drawing.Size(1256, 622);
+            this.table_ServicosAndamento.TabIndex = 1;
             this.table_ServicosAndamento.TabStop = false;
             // 
             // idServico
@@ -244,21 +244,21 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.existe_um_prazo.ReadOnly = true;
             this.existe_um_prazo.Visible = false;
             // 
-            // svEmAndamento
+            // sv_acessorios
             // 
-            this.svEmAndamento.DataPropertyName = "sv_form2_em_andamento";
-            this.svEmAndamento.HeaderText = "svEmAndamento";
-            this.svEmAndamento.Name = "svEmAndamento";
-            this.svEmAndamento.ReadOnly = true;
-            this.svEmAndamento.Visible = false;
+            this.sv_acessorios.DataPropertyName = "sv_acessorios";
+            this.sv_acessorios.HeaderText = "sv_acessorios";
+            this.sv_acessorios.Name = "sv_acessorios";
+            this.sv_acessorios.ReadOnly = true;
+            this.sv_acessorios.Visible = false;
             // 
-            // svDataAndamento
+            // sv_cor_tempo
             // 
-            this.svDataAndamento.DataPropertyName = "sv_form2_data_andamento";
-            this.svDataAndamento.HeaderText = "svDataAndamento";
-            this.svDataAndamento.Name = "svDataAndamento";
-            this.svDataAndamento.ReadOnly = true;
-            this.svDataAndamento.Visible = false;
+            this.sv_cor_tempo.DataPropertyName = "sv_cor_tempo";
+            this.sv_cor_tempo.HeaderText = "sv_cor_tempo";
+            this.sv_cor_tempo.Name = "sv_cor_tempo";
+            this.sv_cor_tempo.ReadOnly = true;
+            this.sv_cor_tempo.Visible = false;
             // 
             // form_ServicosAndamento
             // 
@@ -294,7 +294,7 @@ namespace StandBy___CLIENT.SERVER.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn servico;
         private System.Windows.Forms.DataGridViewTextBoxColumn previsao_entrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn existe_um_prazo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn svEmAndamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn svDataAndamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
     }
 }
