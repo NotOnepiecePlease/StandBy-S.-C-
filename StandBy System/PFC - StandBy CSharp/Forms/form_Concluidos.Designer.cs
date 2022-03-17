@@ -58,6 +58,8 @@
             this.servico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataConclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_previsao_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.naoConcluidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuVerGarantia = new System.Windows.Forms.ToolStripMenuItem();
@@ -189,7 +191,7 @@
             this.txtPesquisarConcluidos.Margin = new System.Windows.Forms.Padding(5);
             this.txtPesquisarConcluidos.MaxLength = 32767;
             this.txtPesquisarConcluidos.Name = "txtPesquisarConcluidos";
-            this.txtPesquisarConcluidos.Size = new System.Drawing.Size(1016, 36);
+            this.txtPesquisarConcluidos.Size = new System.Drawing.Size(1071, 36);
             this.txtPesquisarConcluidos.TabIndex = 7;
             this.txtPesquisarConcluidos.Text = "Digite o nome do cliente que deseja buscar os serviços";
             this.txtPesquisarConcluidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -210,14 +212,15 @@
             this.btnPesquisarConcluidos.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btnPesquisarConcluidos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.btnPesquisarConcluidos.IconSize = 50;
-            this.btnPesquisarConcluidos.Location = new System.Drawing.Point(1029, 6);
+            this.btnPesquisarConcluidos.Location = new System.Drawing.Point(875, 50);
             this.btnPesquisarConcluidos.Name = "btnPesquisarConcluidos";
             this.btnPesquisarConcluidos.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnPesquisarConcluidos.Rotation = 0D;
-            this.btnPesquisarConcluidos.Size = new System.Drawing.Size(49, 36);
+            this.btnPesquisarConcluidos.Size = new System.Drawing.Size(49, 23);
             this.btnPesquisarConcluidos.TabIndex = 3;
             this.btnPesquisarConcluidos.TabStop = false;
             this.btnPesquisarConcluidos.UseVisualStyleBackColor = false;
+            this.btnPesquisarConcluidos.Visible = false;
             this.btnPesquisarConcluidos.Click += new System.EventHandler(this.btnPesquisarConcluidos_Click);
             // 
             // table_ServicosConcluidos
@@ -256,7 +259,9 @@
             this.lucro,
             this.servico,
             this.sv_status,
-            this.DataConclusao});
+            this.DataConclusao,
+            this.sv_acessorios,
+            this.sv_previsao_entrega});
             this.table_ServicosConcluidos.ContextMenuStrip = this.menu;
             this.table_ServicosConcluidos.DoubleBuffered = true;
             this.table_ServicosConcluidos.EnableHeadersVisualStyles = false;
@@ -393,10 +398,26 @@
             // DataConclusao
             // 
             this.DataConclusao.DataPropertyName = "sv_data_conclusao";
-            this.DataConclusao.HeaderText = "DataConclusao";
+            this.DataConclusao.HeaderText = "Data Conclusao";
             this.DataConclusao.Name = "DataConclusao";
             this.DataConclusao.ReadOnly = true;
-            this.DataConclusao.Visible = false;
+            this.DataConclusao.Width = 97;
+            // 
+            // sv_acessorios
+            // 
+            this.sv_acessorios.DataPropertyName = "sv_acessorios";
+            this.sv_acessorios.HeaderText = "sv_acessorios";
+            this.sv_acessorios.Name = "sv_acessorios";
+            this.sv_acessorios.ReadOnly = true;
+            this.sv_acessorios.Visible = false;
+            // 
+            // sv_previsao_entrega
+            // 
+            this.sv_previsao_entrega.DataPropertyName = "sv_previsao_entrega";
+            this.sv_previsao_entrega.HeaderText = "sv_previsao_entrega";
+            this.sv_previsao_entrega.Name = "sv_previsao_entrega";
+            this.sv_previsao_entrega.ReadOnly = true;
+            this.sv_previsao_entrega.Visible = false;
             // 
             // menu
             // 
@@ -479,6 +500,15 @@
         private System.Windows.Forms.ContextMenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem naoConcluidoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem menuVerGarantia;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblResultadosExibidos;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblResultadosTotais;
+        private FontAwesome.Sharp.IconPictureBox btnArrowRight;
+        private FontAwesome.Sharp.IconPictureBox btnArrowLeft;
         private System.Windows.Forms.DataGridViewTextBoxColumn idServico;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
@@ -493,14 +523,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servico;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_status;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataConclusao;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblResultadosExibidos;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblResultadosTotais;
-        private FontAwesome.Sharp.IconPictureBox btnArrowRight;
-        private FontAwesome.Sharp.IconPictureBox btnArrowLeft;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_previsao_entrega;
     }
 }

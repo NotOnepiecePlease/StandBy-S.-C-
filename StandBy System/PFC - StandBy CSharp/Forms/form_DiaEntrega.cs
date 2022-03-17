@@ -130,7 +130,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             if (formServ1.txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(formServ1.txtAparelhoOrdens.Text))
             {
-                MessageBox.Show("Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
+                MessageBox.Show(@"Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else

@@ -14,14 +14,17 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Concluidos : Form
     {
-        PreencherTableConcluidos preencherTableConcluidos = new PreencherTableConcluidos();
-        AlterarDados ad = new AlterarDados();
-        BuscarDados bd = new BuscarDados();
+        private PreencherTableConcluidos preencherTableConcluidos = new PreencherTableConcluidos();
+        private AlterarDados ad = new AlterarDados();
+        private BuscarDados bd = new BuscarDados();
+
         //MessageErro mErro = new MessageErro();
-        VerificarExistencia ve = new VerificarExistencia();
-        int[] corGeral = new int[3] { 0, 0, 0 };
-        int linhasExibidas = 24;
-        int paginaAtual = 1;
+        private VerificarExistencia ve = new VerificarExistencia();
+
+        private int[] corGeral = new int[3] { 0, 0, 0 };
+        private int linhasExibidas = 24;
+        private int paginaAtual = 1;
+
         public form_Concluidos(int[] corGeral)
         {
             InitializeComponent();
@@ -59,12 +62,11 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnPesquisarConcluidos_Click(object sender, EventArgs e)
         {
-
         }
 
         private void naoConcluidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Tem certeza que deseja cancelar a conclusão desse serviço?", "CANCELAR CONCLUSÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult resultado = MessageBox.Show(@"Tem certeza que deseja cancelar a conclusão desse serviço?", "CANCELAR CONCLUSÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (resultado == DialogResult.Yes)
             {
@@ -140,6 +142,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void menuVerGarantia_Click(object sender, EventArgs e)
         {
             form_VerGarantia verGarantia = new form_VerGarantia(corGeral);
+            // MessageBox.Show(table_ServicosConcluidos.SelectedCells[0].Value.ToString());
             if (ve.VerificarExistenciaGarantia(Convert.ToInt32(table_ServicosConcluidos.SelectedCells[0].Value)))
             {
                 verGarantia.lblIDServico.Text = table_ServicosConcluidos.SelectedCells[0].Value.ToString();
@@ -162,7 +165,6 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         public void EditarServico()
@@ -173,6 +175,7 @@ namespace PFC___StandBy_CSharp.Forms
             dados = bd.BuscarServicoPorID(idServico);
             EditarUmServicoPelaID(dados);
         }
+
         private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             EditarServico();
@@ -211,6 +214,7 @@ namespace PFC___StandBy_CSharp.Forms
             editarServicos.dtpDataEdit.Value = Convert.ToDateTime(dados[2].ToString());
             editarServicos.lblClienteNome.Text = dados[3].ToString();
             editarServicos.txtClienteNome.Text = dados[3].ToString();
+            editarServicos.txtAcessoriosEdit.Text = dados[14].ToString();
 
             editarServicos.txtTelefoneCliente.Text = _TELCliente;
             editarServicos.txtTelefoneRecado.Text = _TEL_RECCliente;
@@ -223,6 +227,7 @@ namespace PFC___StandBy_CSharp.Forms
             editarServicos.txtPecaValorEdit.Text = dados[9].ToString();
             editarServicos.txtLucroValorEdit.Text = dados[10].ToString();
             editarServicos.txtServicoEdit.Text = dados[11].ToString();
+
             if (dados[12] == DBNull.Value)
             {
                 //MessageBox.Show("Sem data");
@@ -249,6 +254,7 @@ namespace PFC___StandBy_CSharp.Forms
                 editarServicos.txtLucroValorEdit.LineIdleColor = Color.Red;
             }
 
+            editarServicos.btnConcluirServico.Visible = false;
             editarServicos.LabelResize();
 
             editarServicos.ShowDialog();
@@ -261,7 +267,7 @@ namespace PFC___StandBy_CSharp.Forms
             linhasExibidas += 24;
             paginaAtual += 1;
 
-            if (linhasExibidas < Convert.ToInt32(lblResultadosTotais.Text)+24)
+            if (linhasExibidas < Convert.ToInt32(lblResultadosTotais.Text) + 24)
             {
                 btnArrowRight.Enabled = false;
                 btnArrowRight.IconColor = Color.Gray;

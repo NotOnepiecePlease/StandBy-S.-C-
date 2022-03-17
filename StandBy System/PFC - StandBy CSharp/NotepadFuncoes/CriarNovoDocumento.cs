@@ -18,7 +18,8 @@ namespace PFC___StandBy_CSharp.NotepadFuncoes
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Deseja realmente criar um novo documento?\nOs dados serão apagados!",
+                DialogResult dialogResult = MessageBox.Show(@"Deseja realmente criar um novo documento?
+Os dados serão apagados!",
                     "ALERTA!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if(dialogResult == DialogResult.Yes)
                 {

@@ -12,19 +12,19 @@ using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Dados
 {
-    class AlterarDados : conexao
+    public class AlterarDados : conexao
     {
-        MensagensErro mErro = new MensagensErro();
-        MensagensSucesso mSucesso = new MensagensSucesso();
-        VerificarExistencia verificarExistencia = new VerificarExistencia();
-
+        private MensagensErro mErro = new MensagensErro();
+        private MensagensSucesso mSucesso = new MensagensSucesso();
+        private VerificarExistencia verificarExistencia = new VerificarExistencia();
 
         #region Atualizar coluna das cores
+
         public void atualizarColunaTempoCores(int _id, DateTime _previsaoEntrega)
         {
             try
             {
-                using(SqlConnection con = OpenConnection())
+                using (SqlConnection con = OpenConnection())
                 {
                     //4 = sem cor
                     //1 = verde
@@ -77,14 +77,16 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoAtualizarCoresTempo(e);
             }
         }
-        #endregion
+
+        #endregion Atualizar coluna das cores
 
         #region Alterar Senha de Padrão
+
         public void AlterarSenhaPattern(byte[] _image, int _idServico)
         {
             try
             {
-                using(SqlConnection con = OpenConnection())
+                using (SqlConnection con = OpenConnection())
                 {
                     string query = "UPDATE tb_servicos SET sv_senha_pattern = @ImagePattern WHERE sv_id = @idServico";
 
@@ -103,9 +105,11 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoAlterarSenhaPadrao(ex);
             }
         }
-        #endregion
+
+        #endregion Alterar Senha de Padrão
 
         #region Alterar Servicos
+
         public void AlterarServico(int _idServico, DateTime _data, string _aparelho, string _defeito, string _senha,
             string _situacao, float _valorServico, float _valorPeca, float _lucro, string _servico, DateTime _dataPrevisao, string _acessorios)
         {
@@ -157,9 +161,11 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAlterarServico(ex);
             }
         }
-        #endregion
+
+        #endregion Alterar Servicos
 
         #region Alterar Clientes
+
         public void AlterarClientes(int _idcliente, string _nome, string _telefone, string _cpfOuCnpj, string _telefoneRecados)
         {
             bool cpfExistente = verificarExistencia.VerificarExistenciaCPF(_cpfOuCnpj);
@@ -201,9 +207,11 @@ namespace PFC___StandBy_CSharp.Dados
             }
             //}
         }
-        #endregion
+
+        #endregion Alterar Clientes
 
         #region Concluir Servicos
+
         public void ConcluirServicos(int _idServico)
         {
             try
@@ -228,9 +236,11 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoConcluirServico(ex);
             }
         }
-        #endregion
+
+        #endregion Concluir Servicos
 
         #region Cancelar Serviço concluido
+
         public void CancelarConclusaoServicos(int _idServico)
         {
             try
@@ -253,9 +263,11 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoCancelarConclusao(ex);
             }
         }
-        #endregion
+
+        #endregion Cancelar Serviço concluido
 
         #region Alterar os Gastos
+
         public void AlterarGastos(int _idGasto, int _realORtemp)
         {
             //Alterar para gasto fixo ou temporario
@@ -270,9 +282,11 @@ namespace PFC___StandBy_CSharp.Dados
                 cmd.ExecuteNonQuery();
             }
         }
-        #endregion
+
+        #endregion Alterar os Gastos
 
         #region Atualizar Gastos
+
         public void AtualizarGastos(DateTime _data, string _produto, decimal _valor, int _id)
         {
             //Atualizar dados dos gastos, como data ou nome do produto.
@@ -289,9 +303,11 @@ namespace PFC___StandBy_CSharp.Dados
                 cmd.ExecuteNonQuery();
             }
         }
-        #endregion
+
+        #endregion Atualizar Gastos
 
         #region Resetar Dados Mensais
+
         public void ResetarDadosMensais()
         {
             try
@@ -304,7 +320,7 @@ namespace PFC___StandBy_CSharp.Dados
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Mes resetado com sucesso, tenha um excelente trabalho este mês!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Mes resetado com sucesso, tenha um excelente trabalho este mês!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -312,6 +328,7 @@ namespace PFC___StandBy_CSharp.Dados
                 MessageBox.Show("Erro ao resetar o mes!\n\n" + ex, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        #endregion
+
+        #endregion Resetar Dados Mensais
     }
 }

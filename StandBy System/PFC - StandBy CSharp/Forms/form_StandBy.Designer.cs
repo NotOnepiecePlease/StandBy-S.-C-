@@ -157,9 +157,9 @@
             this.lblVersion.ForeColor = System.Drawing.SystemColors.Control;
             this.lblVersion.Location = new System.Drawing.Point(3, 9);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(39, 15);
+            this.lblVersion.Size = new System.Drawing.Size(37, 15);
             this.lblVersion.TabIndex = 9;
-            this.lblVersion.Text = "5.10.3";
+            this.lblVersion.Text = "5.11.0";
             // 
             // iconMenu
             // 
@@ -169,7 +169,7 @@
             this.iconMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
             this.iconMenu.IconColor = System.Drawing.Color.White;
             this.iconMenu.IconSize = 28;
-            this.iconMenu.Location = new System.Drawing.Point(245, 4);
+            this.iconMenu.Location = new System.Drawing.Point(245, 3);
             this.iconMenu.Name = "iconMenu";
             this.iconMenu.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.iconMenu.Size = new System.Drawing.Size(28, 31);

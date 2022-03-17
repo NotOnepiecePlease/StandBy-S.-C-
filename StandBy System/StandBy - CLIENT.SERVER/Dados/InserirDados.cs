@@ -52,7 +52,7 @@ namespace StandBy___CLIENT.SERVER.Dados
             bool CpfExistente = verificarExistencia.VerificarExistenciaCPF(cpf);
             if (CpfExistente == true)
             {
-                MessageBox.Show("CPF Já existe, verifique se o cliente já esta cadastrado.", "CPF Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"CPF Já existe, verifique se o cliente já esta cadastrado.", "CPF Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -142,7 +142,7 @@ namespace StandBy___CLIENT.SERVER.Dados
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Orçamento inserido com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Orçamento inserido com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

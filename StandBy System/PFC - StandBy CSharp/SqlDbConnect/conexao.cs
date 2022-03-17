@@ -48,7 +48,7 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
             }
             catch (Exception)
             {
-                MessageBox.Show("Nao foi possivel se conectar com o banco de dados!", "SEM CONEXAO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Nao foi possivel se conectar com o banco de dados!", "SEM CONEXAO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
             return con;

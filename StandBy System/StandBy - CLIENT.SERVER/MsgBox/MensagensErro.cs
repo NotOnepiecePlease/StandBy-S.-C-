@@ -6,6 +6,7 @@ namespace StandBy___CLIENT.SERVER.MsgBox
 {
     class MensagensErro : conexao
     {
+        #region ORDENS DE SERVICO
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -47,9 +48,8 @@ namespace StandBy___CLIENT.SERVER.MsgBox
 
         public void ErroAlterarServico(Exception e)
         {
-            MessageBox.Show("(OR-SV06)Erro ao alterar o serviço do cliente!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //form_ALERT message = new form_ALERT("(OR-SV06)Erro ao alterar o serviço do cliente!", form_ALERT.AlertType.Erro);
-            //message.Show();
+            MessageBox.Show("(OR-SV06)Erro ao alterar o serviço do cliente!\nERRO: " + e + "",
+                "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void ErroDeletarServico(Exception e)
@@ -65,7 +65,33 @@ namespace StandBy___CLIENT.SERVER.MsgBox
             //message.Show();
         }
 
+        public void ErroAoAlterarSenhaPadrao(Exception e)
+        {
+            MessageBox.Show("(OR-SV09)Erro ao alterar senha de padrão!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //form_ALERT message = new form_ALERT("(OR-SV08)Erro ao concluir serviço!", form_ALERT.AlertType.Erro);
+            //message.Show();
+        }
 
+        public void ErroAoAtualizarCoresTempo(Exception e)
+        {
+            MessageBox.Show("(OR-SV10)Erro ao atualizar as cores do status!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //form_ALERT message = new form_ALERT("(OR-SV08)Erro ao concluir serviço!", form_ALERT.AlertType.Erro);
+            //message.Show();
+        }
+
+        public void ErroAoAbrirTelaDeEdicaoServicos(Exception e)
+        {
+            MessageBox.Show("(OR-SV11)Erro ao abrir tela de edição!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void ErroAoBuscarIDUltimoServico(Exception e)
+        {
+            MessageBox.Show("(OR-SV12)Erro buscar o ultimo serviço!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        #endregion
+
+
+        #region SERVICOS CONCLUIDOS
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -76,8 +102,10 @@ namespace StandBy___CLIENT.SERVER.MsgBox
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+        #endregion
 
 
+        #region GARANTIAS
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -88,8 +116,10 @@ namespace StandBy___CLIENT.SERVER.MsgBox
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+        #endregion
 
 
+        #region CADASTRO DE CLIENTE
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -97,8 +127,7 @@ namespace StandBy___CLIENT.SERVER.MsgBox
         public void ErroAlterarCliente(Exception e)
         {
             MessageBox.Show("(CAD-CL01)Erro ao alterar o serviço do cliente!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //form_ALERT message = new form_ALERT("(CAD-CL01)Erro ao alterar o serviço do cliente!", form_ALERT.AlertType.Erro);
-            //message.Show();
+            //
         }
 
         public void ErroInserirCliente(Exception e)
@@ -116,9 +145,10 @@ namespace StandBy___CLIENT.SERVER.MsgBox
         }
         public void ErroClientePossuiServicos()
         {
-            MessageBox.Show("(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(@"(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //form_ALERT message = new form_ALERT("(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+        #endregion
     }
 }

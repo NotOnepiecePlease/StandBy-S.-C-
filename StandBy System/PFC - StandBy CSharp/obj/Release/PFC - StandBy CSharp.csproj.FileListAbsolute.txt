@@ -11,7 +11,6 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Release\BunifuDataViz.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Release\Bunifu_UI_v1.5.3.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\bin\Release\System.Diagnostics.DiagnosticSource.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Release\PFC - StandBy CSharp.csproj.AssemblyReference.cache
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.form_Loading.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_ALERT.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_AlertMessage.resources

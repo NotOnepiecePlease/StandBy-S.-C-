@@ -13,13 +13,14 @@ using System.Runtime.InteropServices;
 
 namespace PFC___StandBy_CSharp.Dados
 {
-    class InserirDados : conexao
+    internal class InserirDados : conexao
     {
-        MensagensErro mErro = new MensagensErro();
-        MensagensSucesso mSucesso = new MensagensSucesso();
-        VerificarExistencia verificarExistencia = new VerificarExistencia();
+        private readonly MensagensErro mErro = new MensagensErro();
+        private readonly MensagensSucesso mSucesso = new MensagensSucesso();
+        private readonly VerificarExistencia verificarExistencia = new VerificarExistencia();
 
         #region Inserir Servico
+
         public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo, byte[] image, string acessorios)
         {
             {
@@ -38,9 +39,6 @@ namespace PFC___StandBy_CSharp.Dados
                         query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_previsao_entrega, sv_existe_um_prazo, sv_senha_pattern, sv_acessorios, sv_cor_tempo) " +
                         "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @PrevisaoEntrega, @SeExisteUmPrazo, @ImagePattern, @Acessorios, @CorTempo)";
                     }
-                    
-                    
-                    
 
                     //Crio um novo objeto do tipo "Comando em SQL" passando como argumento
                     //a minha query e uma conexao pra ele saber em que banco inserir.
@@ -57,8 +55,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = senha;
                     cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = situacao;
                     if (DiasParaEntregar == 0)
-                    { 
-
+                    {
                     }
                     else
                     {
@@ -76,9 +73,11 @@ namespace PFC___StandBy_CSharp.Dados
                 //conexaoSQL.Close();
             }
         }
-        #endregion
+
+        #endregion Inserir Servico
 
         #region Inserir Cliente
+
         public void InserirCliente(string _nome, string _cpf, string _telPrincipal, string _telRecados)
         {
             bool CpfExistente = false;
@@ -93,7 +92,7 @@ namespace PFC___StandBy_CSharp.Dados
 
             if (CpfExistente == true)
             {
-                MessageBox.Show("CPF/CNPJ Já existe, verifique se o cliente já esta cadastrado.", "CPF/CNPJ Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"CPF/CNPJ Já existe, verifique se o cliente já esta cadastrado.", "CPF/CNPJ Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -129,15 +128,15 @@ namespace PFC___StandBy_CSharp.Dados
                 }
             }
         }
-        #endregion
+
+        #endregion Inserir Cliente
 
         #region Inserir Gasto
+
         public void InserirGasto(DateTime _data, string _produto, decimal _valor, int _temporario)
         {
-
             using (SqlConnection conexao = OpenConnection())
             {
-
                 string procedure = "GastosInserir";
                 SqlCommand cmd = new SqlCommand(procedure, conexao);
                 cmd.Parameters.AddWithValue("@_Data", _data);
@@ -150,9 +149,11 @@ namespace PFC___StandBy_CSharp.Dados
                 cmd.ExecuteNonQuery();
             }
         }
-        #endregion
+
+        #endregion Inserir Gasto
 
         #region Inserir Garantia
+
         public void InserirGarantia(int _idServico, int _idCliente, int _qntDiasGarantia)
         {
             try
@@ -176,9 +177,11 @@ namespace PFC___StandBy_CSharp.Dados
                 MessageBox.Show("Nao foi possivel inserir a garantia no banco de dados.\n\n\nErro: " + ex);
             }
         }
-        #endregion
+
+        #endregion Inserir Garantia
 
         #region Inserir Orcamento
+
         public void InserirOrcamento(string _marca, string _modelo, decimal _peca, decimal _valor, decimal _total)
         {
             try
@@ -197,7 +200,7 @@ namespace PFC___StandBy_CSharp.Dados
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Orçamento inserido com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Orçamento inserido com sucesso!", "SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -205,8 +208,7 @@ namespace PFC___StandBy_CSharp.Dados
                 MessageBox.Show("Erro: \n\n" + ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        #endregion
 
-
+        #endregion Inserir Orcamento
     }
 }

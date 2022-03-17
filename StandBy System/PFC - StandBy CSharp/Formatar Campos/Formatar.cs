@@ -22,7 +22,7 @@ namespace PFC___StandBy_CSharp.Formatar_Campos
                 else
                 {
                     e.Handled = true;
-                    MessageBox.Show("Apenas numeros e virgulas!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(@"Apenas numeros e virgulas!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -39,7 +39,7 @@ namespace PFC___StandBy_CSharp.Formatar_Campos
                 else
                 {
                     e.Handled = true;
-                    MessageBox.Show("Apenas numeros!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(@"Apenas numeros!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

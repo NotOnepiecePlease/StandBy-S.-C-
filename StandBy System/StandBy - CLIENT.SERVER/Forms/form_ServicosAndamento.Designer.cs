@@ -29,6 +29,7 @@ namespace StandBy___CLIENT.SERVER.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,8 +52,11 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.existe_um_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_cor_tempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolsANALISAR = new System.Windows.Forms.ToolStripMenuItem();
             this.panelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosAndamento)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -105,6 +109,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.existe_um_prazo,
             this.sv_acessorios,
             this.sv_cor_tempo});
+            this.table_ServicosAndamento.ContextMenuStrip = this.contextMenuStrip1;
             this.table_ServicosAndamento.DoubleBuffered = true;
             this.table_ServicosAndamento.EnableHeadersVisualStyles = false;
             this.table_ServicosAndamento.HeaderBgColor = System.Drawing.SystemColors.Control;
@@ -260,6 +265,23 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.sv_cor_tempo.ReadOnly = true;
             this.sv_cor_tempo.Visible = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsANALISAR});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(156, 48);
+            // 
+            // toolsANALISAR
+            // 
+            this.toolsANALISAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.toolsANALISAR.Name = "toolsANALISAR";
+            this.toolsANALISAR.Size = new System.Drawing.Size(155, 22);
+            this.toolsANALISAR.Text = "Ver Serviço";
+            this.toolsANALISAR.Click += new System.EventHandler(this.toolsANALISAR_Click);
+            // 
             // form_ServicosAndamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +294,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.Text = "form_ServicosAndamento";
             this.panelBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosAndamento)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -296,5 +319,7 @@ namespace StandBy___CLIENT.SERVER.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn existe_um_prazo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolsANALISAR;
     }
 }

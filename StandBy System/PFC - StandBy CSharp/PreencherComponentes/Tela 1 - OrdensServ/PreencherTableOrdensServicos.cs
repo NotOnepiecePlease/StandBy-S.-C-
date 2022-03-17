@@ -15,15 +15,17 @@ using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.PreencherComponentes
 {
-    class PreencherTableOrdensServicos : conexao
+    public class PreencherTableOrdensServicos : conexao
     {
-        MensagensErro mErro = new MensagensErro();
-        MensagensSucesso mSucesso = new MensagensSucesso();
-        AlterarDados ad = new AlterarDados();
+        private MensagensErro mErro = new MensagensErro();
+        private MensagensSucesso mSucesso = new MensagensSucesso();
+        private AlterarDados ad = new AlterarDados();
 
         [DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, Int32 wMsg, bool wParam, Int32 lParam);
+
         private const int WM_SETREDRAW = 11;
+
         public void Preencher(DataGridView _tabelaServicos)
         {
             try
@@ -50,19 +52,19 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                     {
                         if (linha[12] != DBNull.Value)
                         {
-                            //linha[0] = sv_id  
+                            //linha[0] = sv_id
                             //linha[12] = sv_previsao_entrega
                             ad.atualizarColunaTempoCores(Convert.ToInt32(linha[0].ToString()), Convert.ToDateTime(linha[12]));
                         }
                     }
                     //Sendmessage é um macete bem de corno pra melhorar performance da lista.
-                    SendMessage(_tabelaServicos.Handle, WM_SETREDRAW, false, 0);
+                    //SendMessage(_tabelaServicos.Handle, WM_SETREDRAW, false, 0); //Estava dando erro ao trocar de form, portanto foi removido.
                     _tabelaServicos.AutoGenerateColumns = false;
                     _tabelaServicos.AllowUserToAddRows = false;
                     _tabelaServicos.AllowUserToResizeColumns = true;
                     _tabelaServicos.AllowUserToDeleteRows = false;
                     _tabelaServicos.DataSource = datatable;
-                    SendMessage(_tabelaServicos.Handle, WM_SETREDRAW, true, 0);
+                    //SendMessage(_tabelaServicos.Handle, WM_SETREDRAW, true, 0); //Estava dando erro ao trocar de form, portanto foi removido.
                     _tabelaServicos.Refresh();
                     //tabelaServicos.Sort(tabelaServicos.Columns["idServico"], ListSortDirection.Descending);
                     _tabelaServicos.ClearSelection();
@@ -81,7 +83,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                 //Abro a Conexao
                 using (SqlConnection con = OpenConnection())
                 {
-
                     //Defino a query de select
                     string Query =
                         "SELECT sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
@@ -109,12 +110,8 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                     //tabelaServicos.Sort(tabelaServicos.Columns["idServico"], ListSortDirection.Descending);
                 }
 
-
-
                 //A Forma abaixo tambem funciona mas de uma forma diferente, entao vou deixar comentado
                 //pra nivel de conhecimento mesmo.
-
-
 
                 ////Abro a Conexao
                 //SqlConnection con = OpenConnection();
@@ -147,7 +144,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
             {
                 mErro.ErroPreencherServicosCliente(ex);
             }
-
         }
     }
 }

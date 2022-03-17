@@ -115,7 +115,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else if(RichTextContemTexto() == true)
             {
-                DialogResult dialogResult = MessageBox.Show("Deseja salvar suas anotações antes de sair?", "SAIR",
+                DialogResult dialogResult = MessageBox.Show(@"Deseja salvar suas anotações antes de sair?", "SAIR",
                     MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
 

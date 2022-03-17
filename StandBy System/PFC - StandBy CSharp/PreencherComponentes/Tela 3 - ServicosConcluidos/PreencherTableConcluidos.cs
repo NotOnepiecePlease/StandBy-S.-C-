@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_3___ServicosConcluidos
 {
-    class PreencherTableConcluidos : conexao
+    public class PreencherTableConcluidos : conexao
     {
         public void Preencher(DataGridView table_ServicosConcluidos, int _numeroPagina, int _dadosPorPagina)
         {
@@ -29,6 +29,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_3___ServicosConcluidos
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
 
+                table_ServicosConcluidos.Columns[14].DisplayIndex = 14;
                 //dt.Rows
                 table_ServicosConcluidos.DataSource = dt;
                 table_ServicosConcluidos.AutoGenerateColumns = false;

@@ -91,7 +91,8 @@ namespace SBAutoUpdate
                 }
                 else if (progress.Value == 100)
                 {
-                    if (MessageBox.Show("Atualizado com Sucesso!\nO StandBy System vai abrir automaticamente em alguns segundos...",
+                    if (MessageBox.Show(@"Atualizado com Sucesso!
+O StandBy System vai abrir automaticamente em alguns segundos...",
                         "APROVEITE!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                     {
                         Process.Start(@".\StandBy System.exe");

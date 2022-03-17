@@ -82,13 +82,15 @@ namespace PFC___StandBy_CSharp.Forms
             groupBox1.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             groupBox2.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             groupBox3.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            groupBox4.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
             txtAparelhoEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtDefeitoEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtPecaValorEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtSenhaEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtServicoValorEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //txtLucroValorEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtServicoEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
             panel2.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
         public void CalcularLucro()
@@ -270,7 +272,7 @@ namespace PFC___StandBy_CSharp.Forms
             string cpfCliente = bd.BuscarCPFCliente(Convert.ToInt32(lblIDcliente.Text));
             if (cpfCliente.Length < 14)
             {
-                MessageBox.Show("A Nota só pode ser emitida para clientes com CPF cadastrado.", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"A Nota só pode ser emitida para clientes com CPF cadastrado.", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

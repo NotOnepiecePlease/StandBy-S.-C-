@@ -81,7 +81,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             catch (Exception)
             {
-                MessageBox.Show("Nao existem dados neste ano.", "SEM DADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Nao existem dados neste ano.", "SEM DADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

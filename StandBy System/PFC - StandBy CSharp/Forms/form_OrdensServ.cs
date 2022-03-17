@@ -11,16 +11,16 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_OrdensServ : Form
     {
+        private BuscarDados bd = new BuscarDados();
+        private InserirDados id = new InserirDados();
+        private AlterarDados ad = new AlterarDados();
+        private DeletarDados dd = new DeletarDados();
+        private PreencherComboBoxCliente pc = new PreencherComboBoxCliente();
+        private MensagensErro me = new MensagensErro();
+        private MensagensSucesso ms = new MensagensSucesso();
+        private PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
+        private int[] corGeral = new int[3] { 0, 0, 0 };
 
-        BuscarDados bd = new BuscarDados();
-        InserirDados id = new InserirDados();
-        AlterarDados ad = new AlterarDados();
-        DeletarDados dd = new DeletarDados();
-        PreencherComboBoxCliente pc = new PreencherComboBoxCliente();
-        MensagensErro me = new MensagensErro();
-        MensagensSucesso ms = new MensagensSucesso();
-        PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
-        int[] corGeral = new int[3] { 0, 0, 0 };
         public form_OrdensServ(int[] corRGB)
         {
             InitializeComponent();
@@ -32,9 +32,9 @@ namespace PFC___StandBy_CSharp.Forms
             cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
             table_OrdensServicos.ClearSelection();
             //VerificarAtraso();
-            timer1.Start();
-
+            timerAtualizarTabela.Start();
         }
+
         public void AtualizarAtrasosCores()
         {
             foreach (DataGridViewRow row in table_OrdensServicos.Rows)
@@ -83,6 +83,7 @@ namespace PFC___StandBy_CSharp.Forms
                 }
             }
         }
+
         //private void VerificarAtraso()
         //{
         //    foreach (DataGridViewRow row in table_OrdensServicos.Rows)
@@ -122,14 +123,17 @@ namespace PFC___StandBy_CSharp.Forms
             txtSenhaOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtSituacaoOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtPesquisarCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtAcessoriosOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             //table_OrdensServicos.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             //cmbClientes.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             contextMenuStrip1.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
+
         public void refreshTable()
         {
             preencherTableServ.Preencher(table_OrdensServicos);
         }
+
         private void btnPesquisarCliente_Click(object sender, EventArgs e)
         {
             try
@@ -138,7 +142,6 @@ namespace PFC___StandBy_CSharp.Forms
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("ERRO: " + ex + "");
             }
         }
@@ -147,12 +150,12 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(txtAparelhoOrdens.Text))
             {
-                MessageBox.Show("Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
+                MessageBox.Show(@"Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (txtAcessoriosOrdens.Text.Equals("Vieram junto c/ aparelho"))
             {
-                DialogResult dialogResult = MessageBox.Show("O Aparelho veio com algum acessorio com ele? (ex: carregador, capa, bolsa..)", "VERIFICAÇÂO", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("O Aparelho veio com algum acessório com ele? (ex: carregador, capa, bolsa..)", "VERIFICAÇÃO", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     //Volta pra tela pra digitar
@@ -172,7 +175,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtAparelhoOrdens_Enter(object sender, EventArgs e)
         {
-            if (txtAparelhoOrdens.Text == "Modelo do aparelho")
+            if (txtAparelhoOrdens.Text == @"Modelo do aparelho")
             {
                 txtAparelhoOrdens.Text = "";
                 txtAparelhoOrdens.Font = new Font(txtAparelhoOrdens.Font, FontStyle.Regular);
@@ -185,7 +188,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (txtAparelhoOrdens.Text == "" || string.IsNullOrWhiteSpace(txtAparelhoOrdens.Text))
             {
-                txtAparelhoOrdens.Text = "Modelo do aparelho";
+                txtAparelhoOrdens.Text = @"Modelo do aparelho";
                 txtAparelhoOrdens.Font = new Font(txtAparelhoOrdens.Font, FontStyle.Italic);
                 txtAparelhoOrdens.ForeColor = Color.Silver;
                 txtAparelhoOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -194,7 +197,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtDefeitoOrdens_Enter(object sender, EventArgs e)
         {
-            if (txtDefeitoOrdens.Text == "Digite o defeito")
+            if (txtDefeitoOrdens.Text == @"Digite o defeito")
             {
                 txtDefeitoOrdens.Text = "";
                 txtDefeitoOrdens.Font = new Font(txtDefeitoOrdens.Font, FontStyle.Regular);
@@ -207,7 +210,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (txtDefeitoOrdens.Text == "" || string.IsNullOrWhiteSpace(txtDefeitoOrdens.Text))
             {
-                txtDefeitoOrdens.Text = "Digite o defeito";
+                txtDefeitoOrdens.Text = @"Digite o defeito";
                 txtDefeitoOrdens.Font = new Font(txtDefeitoOrdens.Font, FontStyle.Italic);
                 txtDefeitoOrdens.ForeColor = Color.Silver;
                 txtDefeitoOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -217,7 +220,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtSenhaOrdens_Enter(object sender, EventArgs e)
         {
-            if (txtSenhaOrdens.Text == "Digite a senha do celular")
+            if (txtSenhaOrdens.Text == @"Digite a senha do celular")
             {
                 txtSenhaOrdens.Text = "";
                 txtSenhaOrdens.Font = new Font(txtSenhaOrdens.Font, FontStyle.Regular);
@@ -230,7 +233,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (txtSenhaOrdens.Text == "" || string.IsNullOrWhiteSpace(txtSenhaOrdens.Text))
             {
-                txtSenhaOrdens.Text = "Digite a senha do celular";
+                txtSenhaOrdens.Text = @"Digite a senha do celular";
                 txtSenhaOrdens.Font = new Font(txtSenhaOrdens.Font, FontStyle.Italic);
                 txtSenhaOrdens.ForeColor = Color.Silver;
                 txtSenhaOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -239,7 +242,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtSituacaoOrdens_Enter(object sender, EventArgs e)
         {
-            if (txtSituacaoOrdens.Text == "Situação do aparelho")
+            if (txtSituacaoOrdens.Text == @"Situação do aparelho")
             {
                 txtSituacaoOrdens.Text = "";
                 txtSituacaoOrdens.Font = new Font(txtSituacaoOrdens.Font, FontStyle.Regular);
@@ -278,13 +281,13 @@ namespace PFC___StandBy_CSharp.Forms
                 txtPesquisarCliente.Font = new Font(txtSituacaoOrdens.Font, FontStyle.Italic);
                 txtPesquisarCliente.ForeColor = Color.Silver;
                 txtPesquisarCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-                timer1.Start();
+                timerAtualizarTabela.Start();
             }
         }
 
         private void txtPesquisarCliente_KeyUp(object sender, KeyEventArgs e)
         {
-            timer1.Stop();
+            timerAtualizarTabela.Stop();
             if (txtPesquisarCliente.Text == "")
             {
                 preencherTableServ.Preencher(table_OrdensServicos);
@@ -300,7 +303,7 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("ERRO: " + ex + "");
+                    MessageBox.Show(@"ERRO: " + ex + "");
                 }
             }
         }
@@ -374,6 +377,7 @@ namespace PFC___StandBy_CSharp.Forms
             //table_OrdensServicos.Refresh();
             //refreshTable();
         }
+
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditarUmServico();
@@ -381,7 +385,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Tem certeza que deseja deletar esse serviço?", "DELETAR SERVIÇO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult resultado = MessageBox.Show(@"Tem certeza que deseja deletar esse serviço?", "DELETAR SERVIÇO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (resultado == DialogResult.Yes)
             {
@@ -432,10 +436,10 @@ namespace PFC___StandBy_CSharp.Forms
         private void table_OrdensServicos_MouseLeave(object sender, EventArgs e)
         {
             table_OrdensServicos.ClearSelection();
-            timer1.Start();
+            timerAtualizarTabela.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timerAtualizarTabela_Tick(object sender, EventArgs e)
         {
             //AtualizarAtrasosCores();
             preencherTableServ.Preencher(table_OrdensServicos);
@@ -444,7 +448,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void table_OrdensServicos_MouseEnter(object sender, EventArgs e)
         {
-            timer1.Stop();
+            timerAtualizarTabela.Stop();
         }
 
         private void table_OrdensServicos_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
@@ -466,14 +470,13 @@ namespace PFC___StandBy_CSharp.Forms
             txtAparelhoOrdens.Visible = false;
             txtDefeitoOrdens.Visible = false;
             txtSenhaOrdens.Visible = false;
-           // txtSituacaoOrdens.Visible = false;
-           // txtSituacaoOrdens.Visible = false;
+            // txtSituacaoOrdens.Visible = false;
+            // txtSituacaoOrdens.Visible = false;
             txtAcessoriosOrdens.Visible = false;
             txtPesquisarCliente.Visible = false;
             btnCadastrarOrdem.Visible = false;
             btnPesquisarCliente.Visible = false;
             //btnSenhaPadrao.Visible = false;
-
 
             table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 611);
             table_OrdensServicos.Location = new Point(3, 35);
@@ -504,7 +507,7 @@ namespace PFC___StandBy_CSharp.Forms
             txtDefeitoOrdens.Visible = true;
             txtSenhaOrdens.Visible = true;
             //txtSituacaoOrdensOLD.Visible = true;
-           // txtSituacaoOrdens.Visible = true;
+            // txtSituacaoOrdens.Visible = true;
             txtAcessoriosOrdens.Visible = true;
             txtPesquisarCliente.Visible = true;
             btnCadastrarOrdem.Visible = true;
@@ -525,6 +528,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             return null;
         }
+
         private void verSenhaPadrãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(corGeral))

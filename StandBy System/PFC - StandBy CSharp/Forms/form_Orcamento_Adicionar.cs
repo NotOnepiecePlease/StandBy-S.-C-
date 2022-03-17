@@ -51,7 +51,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (string.IsNullOrEmpty(cmbMarca.SelectedItem.ToString()) || string.IsNullOrEmpty(txtModelo.Text) || string.IsNullOrEmpty(txtPeca.Text) || string.IsNullOrEmpty(txtTotal.Text) || string.IsNullOrEmpty(txtValor.Text))
             {
-                MessageBox.Show("Preencha todos os campos antes de clicar no botão!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Preencha todos os campos antes de clicar no botão!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

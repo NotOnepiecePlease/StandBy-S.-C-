@@ -48,26 +48,41 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.valorPeca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.previsao_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.existe_um_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataConclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_cor_tempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_previsao_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsANALISAR = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.toolsVerServico = new System.Windows.Forms.ToolStripMenuItem();
             this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
             this.arrastarForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.btnArrowLeft = new FontAwesome.Sharp.IconPictureBox();
+            this.btnArrowRight = new FontAwesome.Sharp.IconPictureBox();
+            this.lblResultadosExibidos = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblResultadosTotais = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtPesquisarConcluidos = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.btnPesquisarConcluidos = new FontAwesome.Sharp.IconButton();
             this.panelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_TodosServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnArrowLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnArrowRight)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBackground
             // 
             this.panelBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panelBackground.Controls.Add(this.btnArrowLeft);
+            this.panelBackground.Controls.Add(this.btnArrowRight);
+            this.panelBackground.Controls.Add(this.lblResultadosExibidos);
+            this.panelBackground.Controls.Add(this.bunifuCustomLabel3);
+            this.panelBackground.Controls.Add(this.bunifuCustomLabel2);
+            this.panelBackground.Controls.Add(this.lblResultadosTotais);
+            this.panelBackground.Controls.Add(this.txtPesquisarConcluidos);
+            this.panelBackground.Controls.Add(this.btnPesquisarConcluidos);
             this.panelBackground.Controls.Add(this.table_TodosServicos);
-            this.panelBackground.Controls.Add(this.label1);
             this.panelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBackground.Location = new System.Drawing.Point(0, 0);
             this.panelBackground.Name = "panelBackground";
@@ -78,7 +93,6 @@ namespace StandBy___CLIENT.SERVER.Forms
             // 
             this.table_TodosServicos.AllowUserToResizeRows = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
             this.table_TodosServicos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.table_TodosServicos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -89,9 +103,9 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.table_TodosServicos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.table_TodosServicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
@@ -110,16 +124,16 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.valorPeca,
             this.lucro,
             this.servico,
-            this.previsao_entrega,
-            this.existe_um_prazo,
+            this.sv_status,
+            this.DataConclusao,
             this.sv_acessorios,
-            this.sv_cor_tempo});
+            this.sv_previsao_entrega});
             this.table_TodosServicos.ContextMenuStrip = this.contextMenuStrip1;
             this.table_TodosServicos.DoubleBuffered = true;
             this.table_TodosServicos.EnableHeadersVisualStyles = false;
             this.table_TodosServicos.HeaderBgColor = System.Drawing.SystemColors.Control;
             this.table_TodosServicos.HeaderForeColor = System.Drawing.Color.Black;
-            this.table_TodosServicos.Location = new System.Drawing.Point(12, 12);
+            this.table_TodosServicos.Location = new System.Drawing.Point(12, 96);
             this.table_TodosServicos.Name = "table_TodosServicos";
             this.table_TodosServicos.ReadOnly = true;
             this.table_TodosServicos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -135,14 +149,15 @@ namespace StandBy___CLIENT.SERVER.Forms
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_TodosServicos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.table_TodosServicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_TodosServicos.Size = new System.Drawing.Size(1256, 609);
-            this.table_TodosServicos.TabIndex = 3;
+            this.table_TodosServicos.Size = new System.Drawing.Size(1256, 538);
+            this.table_TodosServicos.TabIndex = 2;
             this.table_TodosServicos.TabStop = false;
             this.table_TodosServicos.MouseEnter += new System.EventHandler(this.table_TodosServicos_MouseEnter);
+            this.table_TodosServicos.MouseLeave += new System.EventHandler(this.table_TodosServicos_MouseLeave);
             // 
             // idServico
             // 
@@ -239,21 +254,21 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.servico.ReadOnly = true;
             this.servico.Visible = false;
             // 
-            // previsao_entrega
+            // sv_status
             // 
-            this.previsao_entrega.DataPropertyName = "sv_previsao_entrega";
-            this.previsao_entrega.HeaderText = "previsao_entrega";
-            this.previsao_entrega.Name = "previsao_entrega";
-            this.previsao_entrega.ReadOnly = true;
-            this.previsao_entrega.Visible = false;
+            this.sv_status.DataPropertyName = "sv_status";
+            this.sv_status.HeaderText = "STATUS";
+            this.sv_status.Name = "sv_status";
+            this.sv_status.ReadOnly = true;
+            this.sv_status.Visible = false;
             // 
-            // existe_um_prazo
+            // DataConclusao
             // 
-            this.existe_um_prazo.DataPropertyName = "sv_existe_um_prazo";
-            this.existe_um_prazo.HeaderText = "existe_um_prazo";
-            this.existe_um_prazo.Name = "existe_um_prazo";
-            this.existe_um_prazo.ReadOnly = true;
-            this.existe_um_prazo.Visible = false;
+            this.DataConclusao.DataPropertyName = "sv_data_conclusao";
+            this.DataConclusao.HeaderText = "DataConclusao";
+            this.DataConclusao.Name = "DataConclusao";
+            this.DataConclusao.ReadOnly = true;
+            this.DataConclusao.Visible = false;
             // 
             // sv_acessorios
             // 
@@ -263,49 +278,30 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.sv_acessorios.ReadOnly = true;
             this.sv_acessorios.Visible = false;
             // 
-            // sv_cor_tempo
+            // sv_previsao_entrega
             // 
-            this.sv_cor_tempo.DataPropertyName = "sv_cor_tempo";
-            this.sv_cor_tempo.HeaderText = "sv_cor_tempo";
-            this.sv_cor_tempo.Name = "sv_cor_tempo";
-            this.sv_cor_tempo.ReadOnly = true;
-            this.sv_cor_tempo.Visible = false;
+            this.sv_previsao_entrega.DataPropertyName = "sv_previsao_entrega";
+            this.sv_previsao_entrega.HeaderText = "sv_previsao_entrega";
+            this.sv_previsao_entrega.Name = "sv_previsao_entrega";
+            this.sv_previsao_entrega.ReadOnly = true;
+            this.sv_previsao_entrega.Visible = false;
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testeToolStripMenuItem,
-            this.toolsANALISAR});
+            this.toolsVerServico});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 26);
             // 
-            // testeToolStripMenuItem
+            // toolsVerServico
             // 
-            this.testeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
-            this.testeToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.testeToolStripMenuItem.Text = "Editar Serviço";
-            this.testeToolStripMenuItem.Click += new System.EventHandler(this.testeToolStripMenuItem_Click);
-            // 
-            // toolsANALISAR
-            // 
-            this.toolsANALISAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.toolsANALISAR.Name = "toolsANALISAR";
-            this.toolsANALISAR.Size = new System.Drawing.Size(120, 22);
-            this.toolsANALISAR.Text = "ANALISAR";
-            this.toolsANALISAR.Click += new System.EventHandler(this.toolsANALISAR_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(595, 624);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.toolsVerServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.toolsVerServico.Name = "toolsVerServico";
+            this.toolsVerServico.Size = new System.Drawing.Size(106, 22);
+            this.toolsVerServico.Text = "Ver Serviço";
+            this.toolsVerServico.Click += new System.EventHandler(this.toolsVerServico_Click);
             // 
             // timerAtualizarTabela
             // 
@@ -317,8 +313,134 @@ namespace StandBy___CLIENT.SERVER.Forms
             // 
             this.arrastarForm.Fixed = true;
             this.arrastarForm.Horizontal = true;
-            this.arrastarForm.TargetControl = this.table_TodosServicos;
+            this.arrastarForm.TargetControl = null;
             this.arrastarForm.Vertical = true;
+            // 
+            // btnArrowLeft
+            // 
+            this.btnArrowLeft.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnArrowLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnArrowLeft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArrowLeft.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
+            this.btnArrowLeft.IconColor = System.Drawing.Color.White;
+            this.btnArrowLeft.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnArrowLeft.IconSize = 28;
+            this.btnArrowLeft.Location = new System.Drawing.Point(631, 53);
+            this.btnArrowLeft.Name = "btnArrowLeft";
+            this.btnArrowLeft.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnArrowLeft.Size = new System.Drawing.Size(28, 31);
+            this.btnArrowLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnArrowLeft.TabIndex = 22;
+            this.btnArrowLeft.TabStop = false;
+            // 
+            // btnArrowRight
+            // 
+            this.btnArrowRight.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnArrowRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnArrowRight.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnArrowRight.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+            this.btnArrowRight.IconColor = System.Drawing.Color.White;
+            this.btnArrowRight.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnArrowRight.IconSize = 28;
+            this.btnArrowRight.Location = new System.Drawing.Point(665, 53);
+            this.btnArrowRight.Name = "btnArrowRight";
+            this.btnArrowRight.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnArrowRight.Size = new System.Drawing.Size(28, 31);
+            this.btnArrowRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnArrowRight.TabIndex = 21;
+            this.btnArrowRight.TabStop = false;
+            // 
+            // lblResultadosExibidos
+            // 
+            this.lblResultadosExibidos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblResultadosExibidos.AutoSize = true;
+            this.lblResultadosExibidos.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.lblResultadosExibidos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblResultadosExibidos.Location = new System.Drawing.Point(578, 54);
+            this.lblResultadosExibidos.Name = "lblResultadosExibidos";
+            this.lblResultadosExibidos.Size = new System.Drawing.Size(45, 28);
+            this.lblResultadosExibidos.TabIndex = 20;
+            this.lblResultadosExibidos.Text = "999";
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(483, 56);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(89, 25);
+            this.bunifuCustomLabel3.TabIndex = 19;
+            this.bunifuCustomLabel3.Text = "Exibindo:";
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(700, 56);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(82, 25);
+            this.bunifuCustomLabel2.TabIndex = 18;
+            this.bunifuCustomLabel2.Text = "Total de:";
+            // 
+            // lblResultadosTotais
+            // 
+            this.lblResultadosTotais.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblResultadosTotais.AutoSize = true;
+            this.lblResultadosTotais.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.lblResultadosTotais.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblResultadosTotais.Location = new System.Drawing.Point(781, 54);
+            this.lblResultadosTotais.Name = "lblResultadosTotais";
+            this.lblResultadosTotais.Size = new System.Drawing.Size(56, 28);
+            this.lblResultadosTotais.TabIndex = 17;
+            this.lblResultadosTotais.Text = "9999";
+            // 
+            // txtPesquisarConcluidos
+            // 
+            this.txtPesquisarConcluidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisarConcluidos.BorderColorFocused = System.Drawing.Color.White;
+            this.txtPesquisarConcluidos.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.txtPesquisarConcluidos.BorderColorMouseHover = System.Drawing.Color.Lavender;
+            this.txtPesquisarConcluidos.BorderThickness = 2;
+            this.txtPesquisarConcluidos.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtPesquisarConcluidos.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPesquisarConcluidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtPesquisarConcluidos.ForeColor = System.Drawing.Color.Silver;
+            this.txtPesquisarConcluidos.isPassword = false;
+            this.txtPesquisarConcluidos.Location = new System.Drawing.Point(104, 14);
+            this.txtPesquisarConcluidos.Margin = new System.Windows.Forms.Padding(5);
+            this.txtPesquisarConcluidos.MaxLength = 32767;
+            this.txtPesquisarConcluidos.Name = "txtPesquisarConcluidos";
+            this.txtPesquisarConcluidos.Size = new System.Drawing.Size(1016, 36);
+            this.txtPesquisarConcluidos.TabIndex = 16;
+            this.txtPesquisarConcluidos.Text = "Digite o nome do cliente que deseja buscar os serviços";
+            this.txtPesquisarConcluidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPesquisarConcluidos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesquisarConcluidos_KeyUp);
+            // 
+            // btnPesquisarConcluidos
+            // 
+            this.btnPesquisarConcluidos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisarConcluidos.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisarConcluidos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPesquisarConcluidos.FlatAppearance.BorderSize = 0;
+            this.btnPesquisarConcluidos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisarConcluidos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnPesquisarConcluidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarConcluidos.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnPesquisarConcluidos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.btnPesquisarConcluidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPesquisarConcluidos.IconSize = 50;
+            this.btnPesquisarConcluidos.Location = new System.Drawing.Point(1128, 14);
+            this.btnPesquisarConcluidos.Name = "btnPesquisarConcluidos";
+            this.btnPesquisarConcluidos.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.btnPesquisarConcluidos.Size = new System.Drawing.Size(49, 36);
+            this.btnPesquisarConcluidos.TabIndex = 15;
+            this.btnPesquisarConcluidos.TabStop = false;
+            this.btnPesquisarConcluidos.UseVisualStyleBackColor = false;
             // 
             // form_TodosServicos
             // 
@@ -334,6 +456,8 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.panelBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_TodosServicos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnArrowLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnArrowRight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,10 +465,10 @@ namespace StandBy___CLIENT.SERVER.Forms
         #endregion
 
         private System.Windows.Forms.Panel panelBackground;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsANALISAR;
+        private System.Windows.Forms.ToolStripMenuItem toolsVerServico;
+        private System.Windows.Forms.Timer timerAtualizarTabela;
+        private Bunifu.Framework.UI.BunifuDragControl arrastarForm;
         public Bunifu.Framework.UI.BunifuCustomDataGrid table_TodosServicos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idServico;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
@@ -358,11 +482,17 @@ namespace StandBy___CLIENT.SERVER.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn valorPeca;
         private System.Windows.Forms.DataGridViewTextBoxColumn lucro;
         private System.Windows.Forms.DataGridViewTextBoxColumn servico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn previsao_entrega;
-        private System.Windows.Forms.DataGridViewTextBoxColumn existe_um_prazo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataConclusao;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
-        private System.Windows.Forms.Timer timerAtualizarTabela;
-        private Bunifu.Framework.UI.BunifuDragControl arrastarForm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_previsao_entrega;
+        private FontAwesome.Sharp.IconPictureBox btnArrowLeft;
+        private FontAwesome.Sharp.IconPictureBox btnArrowRight;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblResultadosExibidos;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblResultadosTotais;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtPesquisarConcluidos;
+        private FontAwesome.Sharp.IconButton btnPesquisarConcluidos;
     }
 }

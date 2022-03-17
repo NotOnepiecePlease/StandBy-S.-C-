@@ -378,7 +378,7 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Calma, primeiro voce deve carregar dados na tabela antes de clicar",
+                    MessageBox.Show(@"Calma, primeiro voce deve carregar dados na tabela antes de clicar",
                         "Calma...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -386,7 +386,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 if (gastoID == 0)
                 {
-                    MessageBox.Show("Primeiro clique no gasto que deseja alterar/deletar", "ALERTA!"
+                    MessageBox.Show(@"Primeiro clique no gasto que deseja alterar/deletar", "ALERTA!"
                         , MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }

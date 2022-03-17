@@ -55,14 +55,14 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     format_campos.TirarMascara(txtValor);
                     ins_Dados.InserirGasto(dataAtual, txtProduto.Text, Convert.ToDecimal(txtValor.Text), 0);
-                    MessageBox.Show("Sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     formLucros.PreencherTableConformCheck();
                 }
                 else if (radioGastoTemp.Checked == true && radioGastoReal.Checked == false)
                 {
                     format_campos.TirarMascara(txtValor);
                     ins_Dados.InserirGasto(dataAtual, txtProduto.Text, Convert.ToDecimal(txtValor.Text), 1);
-                    MessageBox.Show("Sucesso!, Pressione ESC para sair!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Sucesso!, Pressione ESC para sair!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     formLucros.PreencherTableConformCheck();
                 }
             }

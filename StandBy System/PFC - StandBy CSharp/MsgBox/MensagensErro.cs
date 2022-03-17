@@ -89,6 +89,11 @@ namespace PFC___StandBy_CSharp.MsgBox
         {
             MessageBox.Show("(OR-SV11)Erro ao abrir tela de edição!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public void ErroAoBuscarIDUltimoServico(Exception e)
+        {
+            MessageBox.Show("(OR-SV12)Erro buscar o ultimo serviço!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         #endregion
 
 
@@ -146,7 +151,7 @@ namespace PFC___StandBy_CSharp.MsgBox
         }
         public void ErroClientePossuiServicos()
         {
-            MessageBox.Show("(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(@"(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //form_ALERT message = new form_ALERT("(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", form_ALERT.AlertType.Erro);
             //message.Show();
         }
