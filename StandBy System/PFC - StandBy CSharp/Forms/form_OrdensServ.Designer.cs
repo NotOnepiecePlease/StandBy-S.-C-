@@ -57,6 +57,18 @@
             this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtAparelhoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.table_OrdensServicos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verSenhaPadrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVisivel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.arredondarTabelaServ = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarComboboxCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarBotaoCadastrar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarBotaoPesquisarCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
+            this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
+            this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,18 +85,7 @@
             this.existe_um_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_cor_tempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verSenhaPadrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVisivel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.arredondarTabelaServ = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarComboboxCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarBotaoCadastrar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarBotaoPesquisarCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
-            this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
-            this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sv_tempo_para_entregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -624,7 +625,8 @@
             this.previsao_entrega,
             this.existe_um_prazo,
             this.sv_acessorios,
-            this.sv_cor_tempo});
+            this.sv_cor_tempo,
+            this.sv_tempo_para_entregar});
             this.table_OrdensServicos.ContextMenuStrip = this.contextMenuStrip1;
             this.table_OrdensServicos.DoubleBuffered = true;
             this.table_OrdensServicos.EnableHeadersVisualStyles = false;
@@ -657,133 +659,6 @@
             this.table_OrdensServicos.DoubleClick += new System.EventHandler(this.table_OrdensServicos_DoubleClick);
             this.table_OrdensServicos.MouseEnter += new System.EventHandler(this.table_OrdensServicos_MouseEnter);
             this.table_OrdensServicos.MouseLeave += new System.EventHandler(this.table_OrdensServicos_MouseLeave);
-            // 
-            // idServico
-            // 
-            this.idServico.DataPropertyName = "sv_id";
-            this.idServico.HeaderText = "idServico";
-            this.idServico.Name = "idServico";
-            this.idServico.ReadOnly = true;
-            this.idServico.Visible = false;
-            // 
-            // idCliente
-            // 
-            this.idCliente.DataPropertyName = "sv_cl_idcliente";
-            this.idCliente.HeaderText = "idCliente";
-            this.idCliente.Name = "idCliente";
-            this.idCliente.ReadOnly = true;
-            this.idCliente.Visible = false;
-            // 
-            // Data
-            // 
-            this.Data.DataPropertyName = "sv_data";
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "cl_nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 200;
-            // 
-            // Aparelho
-            // 
-            this.Aparelho.DataPropertyName = "sv_aparelho";
-            this.Aparelho.HeaderText = "Aparelho";
-            this.Aparelho.Name = "Aparelho";
-            this.Aparelho.ReadOnly = true;
-            this.Aparelho.Width = 150;
-            // 
-            // Defeito
-            // 
-            this.Defeito.DataPropertyName = "sv_defeito";
-            this.Defeito.HeaderText = "Defeito";
-            this.Defeito.Name = "Defeito";
-            this.Defeito.ReadOnly = true;
-            this.Defeito.Width = 180;
-            // 
-            // Situacao
-            // 
-            this.Situacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Situacao.DataPropertyName = "sv_situacao";
-            this.Situacao.HeaderText = "Situacao";
-            this.Situacao.Name = "Situacao";
-            this.Situacao.ReadOnly = true;
-            // 
-            // Senha
-            // 
-            this.Senha.DataPropertyName = "sv_senha";
-            this.Senha.HeaderText = "Senha";
-            this.Senha.Name = "Senha";
-            this.Senha.ReadOnly = true;
-            this.Senha.Width = 60;
-            // 
-            // valorServico
-            // 
-            this.valorServico.DataPropertyName = "sv_valorservico";
-            this.valorServico.HeaderText = "valorServico";
-            this.valorServico.Name = "valorServico";
-            this.valorServico.ReadOnly = true;
-            this.valorServico.Visible = false;
-            // 
-            // valorPeca
-            // 
-            this.valorPeca.DataPropertyName = "sv_valorpeca";
-            this.valorPeca.HeaderText = "valorPeca";
-            this.valorPeca.Name = "valorPeca";
-            this.valorPeca.ReadOnly = true;
-            this.valorPeca.Visible = false;
-            // 
-            // lucro
-            // 
-            this.lucro.DataPropertyName = "sv_lucro";
-            this.lucro.HeaderText = "lucro";
-            this.lucro.Name = "lucro";
-            this.lucro.ReadOnly = true;
-            this.lucro.Visible = false;
-            // 
-            // servico
-            // 
-            this.servico.DataPropertyName = "sv_servico";
-            this.servico.HeaderText = "servico";
-            this.servico.Name = "servico";
-            this.servico.ReadOnly = true;
-            this.servico.Visible = false;
-            // 
-            // previsao_entrega
-            // 
-            this.previsao_entrega.DataPropertyName = "sv_previsao_entrega";
-            this.previsao_entrega.HeaderText = "previsao_entrega";
-            this.previsao_entrega.Name = "previsao_entrega";
-            this.previsao_entrega.ReadOnly = true;
-            this.previsao_entrega.Visible = false;
-            // 
-            // existe_um_prazo
-            // 
-            this.existe_um_prazo.DataPropertyName = "sv_existe_um_prazo";
-            this.existe_um_prazo.HeaderText = "existe_um_prazo";
-            this.existe_um_prazo.Name = "existe_um_prazo";
-            this.existe_um_prazo.ReadOnly = true;
-            this.existe_um_prazo.Visible = false;
-            // 
-            // sv_acessorios
-            // 
-            this.sv_acessorios.DataPropertyName = "sv_acessorios";
-            this.sv_acessorios.HeaderText = "sv_acessorios";
-            this.sv_acessorios.Name = "sv_acessorios";
-            this.sv_acessorios.ReadOnly = true;
-            this.sv_acessorios.Visible = false;
-            // 
-            // sv_cor_tempo
-            // 
-            this.sv_cor_tempo.DataPropertyName = "sv_cor_tempo";
-            this.sv_cor_tempo.HeaderText = "sv_cor_tempo";
-            this.sv_cor_tempo.Name = "sv_cor_tempo";
-            this.sv_cor_tempo.ReadOnly = true;
-            this.sv_cor_tempo.Visible = false;
             // 
             // contextMenuStrip1
             // 
@@ -888,6 +763,141 @@
             this.standbyDataSetBindingSource.DataSource = this.standbyDataSet;
             this.standbyDataSetBindingSource.Position = 0;
             // 
+            // idServico
+            // 
+            this.idServico.DataPropertyName = "sv_id";
+            this.idServico.HeaderText = "idServico";
+            this.idServico.Name = "idServico";
+            this.idServico.ReadOnly = true;
+            this.idServico.Visible = false;
+            // 
+            // idCliente
+            // 
+            this.idCliente.DataPropertyName = "sv_cl_idcliente";
+            this.idCliente.HeaderText = "idCliente";
+            this.idCliente.Name = "idCliente";
+            this.idCliente.ReadOnly = true;
+            this.idCliente.Visible = false;
+            // 
+            // Data
+            // 
+            this.Data.DataPropertyName = "sv_data";
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "cl_nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 200;
+            // 
+            // Aparelho
+            // 
+            this.Aparelho.DataPropertyName = "sv_aparelho";
+            this.Aparelho.HeaderText = "Aparelho";
+            this.Aparelho.Name = "Aparelho";
+            this.Aparelho.ReadOnly = true;
+            this.Aparelho.Width = 150;
+            // 
+            // Defeito
+            // 
+            this.Defeito.DataPropertyName = "sv_defeito";
+            this.Defeito.HeaderText = "Defeito";
+            this.Defeito.Name = "Defeito";
+            this.Defeito.ReadOnly = true;
+            this.Defeito.Width = 180;
+            // 
+            // Situacao
+            // 
+            this.Situacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Situacao.DataPropertyName = "sv_situacao";
+            this.Situacao.HeaderText = "Situacao";
+            this.Situacao.Name = "Situacao";
+            this.Situacao.ReadOnly = true;
+            // 
+            // Senha
+            // 
+            this.Senha.DataPropertyName = "sv_senha";
+            this.Senha.HeaderText = "Senha";
+            this.Senha.Name = "Senha";
+            this.Senha.ReadOnly = true;
+            this.Senha.Visible = false;
+            this.Senha.Width = 60;
+            // 
+            // valorServico
+            // 
+            this.valorServico.DataPropertyName = "sv_valorservico";
+            this.valorServico.HeaderText = "valorServico";
+            this.valorServico.Name = "valorServico";
+            this.valorServico.ReadOnly = true;
+            this.valorServico.Visible = false;
+            // 
+            // valorPeca
+            // 
+            this.valorPeca.DataPropertyName = "sv_valorpeca";
+            this.valorPeca.HeaderText = "valorPeca";
+            this.valorPeca.Name = "valorPeca";
+            this.valorPeca.ReadOnly = true;
+            this.valorPeca.Visible = false;
+            // 
+            // lucro
+            // 
+            this.lucro.DataPropertyName = "sv_lucro";
+            this.lucro.HeaderText = "lucro";
+            this.lucro.Name = "lucro";
+            this.lucro.ReadOnly = true;
+            this.lucro.Visible = false;
+            // 
+            // servico
+            // 
+            this.servico.DataPropertyName = "sv_servico";
+            this.servico.HeaderText = "servico";
+            this.servico.Name = "servico";
+            this.servico.ReadOnly = true;
+            this.servico.Visible = false;
+            // 
+            // previsao_entrega
+            // 
+            this.previsao_entrega.DataPropertyName = "sv_previsao_entrega";
+            this.previsao_entrega.HeaderText = "previsao_entrega";
+            this.previsao_entrega.Name = "previsao_entrega";
+            this.previsao_entrega.ReadOnly = true;
+            this.previsao_entrega.Visible = false;
+            // 
+            // existe_um_prazo
+            // 
+            this.existe_um_prazo.DataPropertyName = "sv_existe_um_prazo";
+            this.existe_um_prazo.HeaderText = "existe_um_prazo";
+            this.existe_um_prazo.Name = "existe_um_prazo";
+            this.existe_um_prazo.ReadOnly = true;
+            this.existe_um_prazo.Visible = false;
+            // 
+            // sv_acessorios
+            // 
+            this.sv_acessorios.DataPropertyName = "sv_acessorios";
+            this.sv_acessorios.HeaderText = "sv_acessorios";
+            this.sv_acessorios.Name = "sv_acessorios";
+            this.sv_acessorios.ReadOnly = true;
+            this.sv_acessorios.Visible = false;
+            // 
+            // sv_cor_tempo
+            // 
+            this.sv_cor_tempo.DataPropertyName = "sv_cor_tempo";
+            this.sv_cor_tempo.HeaderText = "sv_cor_tempo";
+            this.sv_cor_tempo.Name = "sv_cor_tempo";
+            this.sv_cor_tempo.ReadOnly = true;
+            this.sv_cor_tempo.Visible = false;
+            // 
+            // sv_tempo_para_entregar
+            // 
+            this.sv_tempo_para_entregar.DataPropertyName = "sv_tempo_para_entregar";
+            this.sv_tempo_para_entregar.HeaderText = "Tempo";
+            this.sv_tempo_para_entregar.Name = "sv_tempo_para_entregar";
+            this.sv_tempo_para_entregar.ReadOnly = true;
+            // 
             // form_OrdensServ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -942,6 +952,7 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblAcessoriosOrdens;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAcessoriosOrdens;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtSituacaoOrdens;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPatternIcon;
         private System.Windows.Forms.DataGridViewTextBoxColumn idServico;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
@@ -958,6 +969,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn existe_um_prazo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
-        private Bunifu.Framework.UI.BunifuFlatButton btnPatternIcon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_tempo_para_entregar;
     }
 }

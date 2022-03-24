@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,10 +36,7 @@ namespace StandBy___CLIENT.SERVER.SqlDbConnect
             List<string> datasourceTXT = new List<string>();
 
             datasourceTXT = File.ReadAllLines(txtPath).ToList();
-            //Desenvolvimento
             ConnectionString = String.Format("Data Source={0};Initial Catalog=standby_org;Integrated Security=True", datasourceTXT.FirstOrDefault().ToString());
-            //Produção
-            //ConnectionString = String.Format("Data Source={0};Network Library=DBMSSOCN;Initial Catalog=standby_org;User ID=admintcp;Password=123adr;", datasourceTXT.FirstOrDefault().ToString());
         }
 
         public SqlConnection OpenConnection()
@@ -68,6 +67,17 @@ namespace StandBy___CLIENT.SERVER.SqlDbConnect
         {
             SqlCommand cmd = new SqlCommand(Query_, con);
             cmd.ExecuteNonQuery();
+        }
+
+        public string PegarIp()
+        {
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            {
+                socket.Connect("8.8.8.8", 65530);
+                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                string localIP = endPoint.Address.ToString();
+                return localIP + ",1433";
+            }
         }
     }
 }

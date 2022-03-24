@@ -10,9 +10,10 @@ using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.MsgBox
 {
-    class MensagensErro : conexao
+    internal class MensagensErro : conexao
     {
         #region ORDENS DE SERVICO
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -54,7 +55,7 @@ namespace PFC___StandBy_CSharp.MsgBox
 
         public void ErroAlterarServico(Exception e)
         {
-            MessageBox.Show("(OR-SV06)Erro ao alterar o serviço do cliente!\nERRO: " + e + "", 
+            MessageBox.Show("(OR-SV06)Erro ao alterar o serviço do cliente!\nERRO: " + e + "",
                 "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
@@ -64,6 +65,7 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(OR-SV07)Erro ao deletar o serviço do cliente!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+
         public void ErroAoConcluirServico(Exception e)
         {
             MessageBox.Show("(OR-SV08)Erro ao concluir serviço!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -94,10 +96,16 @@ namespace PFC___StandBy_CSharp.MsgBox
         {
             MessageBox.Show("(OR-SV12)Erro buscar o ultimo serviço!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        #endregion
 
+        public void ErroAoAtualizarTempoRestanteEntrega(Exception e)
+        {
+            MessageBox.Show("(OR-SV13)Erro ao atualizar tempo entrega!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        #endregion ORDENS DE SERVICO
 
         #region SERVICOS CONCLUIDOS
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -108,10 +116,11 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
-        #endregion
 
+        #endregion SERVICOS CONCLUIDOS
 
         #region GARANTIAS
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -122,10 +131,11 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
-        #endregion
 
+        #endregion GARANTIAS
 
         #region CADASTRO DE CLIENTE
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -140,7 +150,7 @@ namespace PFC___StandBy_CSharp.MsgBox
         {
             MessageBox.Show("(CAD-CL02)Erro ao tentar inserir o cliente!\n\n" + e, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //form_ALERT message = new form_ALERT("(CAD-CL02)Erro ao tentar inserir o cliente!", form_ALERT.AlertType.Erro);
-            //message.Show(); 
+            //message.Show();
         }
 
         public void ErroDeletarCliente(Exception e)
@@ -149,12 +159,14 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("(CAD-CL03)Erro ao deletar o cliente!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+
         public void ErroClientePossuiServicos()
         {
             MessageBox.Show(@"(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //form_ALERT message = new form_ALERT("(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", form_ALERT.AlertType.Erro);
             //message.Show();
         }
-        #endregion
+
+        #endregion CADASTRO DE CLIENTE
     }
 }

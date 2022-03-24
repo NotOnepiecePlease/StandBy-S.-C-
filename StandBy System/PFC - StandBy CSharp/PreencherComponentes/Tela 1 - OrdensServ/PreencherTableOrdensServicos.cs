@@ -17,9 +17,9 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
 {
     public class PreencherTableOrdensServicos : conexao
     {
-        private MensagensErro mErro = new MensagensErro();
-        private MensagensSucesso mSucesso = new MensagensSucesso();
-        private AlterarDados ad = new AlterarDados();
+        private readonly MensagensErro mErro = new MensagensErro();
+        private readonly MensagensSucesso mSucesso = new MensagensSucesso();
+        private readonly AlterarDados ad = new AlterarDados();
 
         [DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, Int32 wMsg, bool wParam, Int32 lParam);
@@ -40,22 +40,94 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                     //"WHERE sv_status = 1 and sv_ativo = 1 order by sv_id desc"
 
                     SqlDataAdapter adapter = new SqlDataAdapter("select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
-                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo " +
+                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo, sv_tempo_para_entregar " +
                     "FROM tb_servicos " +
                     "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
                     "WHERE sv_status = 1 and sv_ativo = 1 order by sv_cor_tempo asc, sv_data desc, sv_id desc", con);
 
+                    //16
+
                     DataTable datatable = new DataTable();
                     adapter.Fill(datatable);
+                    //datatable.Columns.Add("T.Rest");
+                    //_tabelaServicos.Columns[15].Visible = true;
+                    //datatable.Columns[16].ColumnMapping =
 
                     foreach (DataRow linha in datatable.Rows)
                     {
+                        //Atualizar a coluna das cores
                         if (linha[12] != DBNull.Value)
                         {
                             //linha[0] = sv_id
                             //linha[12] = sv_previsao_entrega
                             ad.atualizarColunaTempoCores(Convert.ToInt32(linha[0].ToString()), Convert.ToDateTime(linha[12]));
+
+                            //Atualizar tempo resta de entrega (em minutos)
+                            DateTime dataEntrega = Convert.ToDateTime(linha[12]);
+                            DateTime dataAtual = DateTime.Now;
+                            TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
+
+                            if (DiasParaEntrega.Days > 0 || DiasParaEntrega.Days < 0)
+                            {
+                                string dias = " ";
+                                if (DiasParaEntrega.Days > 0)
+                                {
+                                    dias += DiasParaEntrega.Days + "dias";
+                                }
+                                else
+                                {
+                                    dias = DiasParaEntrega.Days + "dias";
+                                }
+                                //Atualiza a coluna sv_tempo_para_entregar com a quantidade de dias restantes para entregar o servico
+                                ad.AtualizarColunaTempoEntrega(dias, Convert.ToInt32(linha[0]));
+                            }
+                            else if (DiasParaEntrega.Hours > 0 || DiasParaEntrega.Hours < 0)
+                            {
+                                string horas = " ";
+                                if (DiasParaEntrega.Hours > 0)
+                                {
+                                    horas += DiasParaEntrega.Hours + "hrs";
+                                }
+                                else
+                                {
+                                    horas = DiasParaEntrega.Hours + "hrs";
+                                }
+                                ad.AtualizarColunaTempoEntrega(horas, Convert.ToInt32(linha[0]));
+                            }
+                            else if (DiasParaEntrega.Minutes > 0 || DiasParaEntrega.Minutes < 0)
+                            {
+                                string minutos = " ";
+                                if (DiasParaEntrega.Hours > 0)
+                                {
+                                    minutos += DiasParaEntrega.Minutes + "min";
+                                }
+                                else
+                                {
+                                    minutos = DiasParaEntrega.Minutes + "hrs";
+                                }
+                                //Atualiza a coluna sv_tempo_para_entregar com a quantidade de dias restantes para entregar o servico
+                                ad.AtualizarColunaTempoEntrega(minutos, Convert.ToInt32(linha[0]));
+                            }
+                            else
+                            {
+                                ad.AtualizarColunaTempoEntrega((""), Convert.ToInt32(linha[0]));
+                            }
                         }
+
+                        int teste = 0;
+                        // linha["T.Rest"] = "A";
+                        //if (linha[12] != DBNull.Value)
+                        //{
+                        //    DateTime dataEntrega = Convert.ToDateTime(linha[12]);
+                        //    DateTime dataAtual = DateTime.Now;
+                        //    TimeSpan TempoParaEntregar = dataEntrega.Subtract(dataAtual);
+
+                        //    linha[16] = 0;
+                        //}
+                        //else
+                        //{
+                        //    linha[16] = "---";
+                        //}
                     }
                     //Sendmessage é um macete bem de corno pra melhorar performance da lista.
                     //SendMessage(_tabelaServicos.Handle, WM_SETREDRAW, false, 0); //Estava dando erro ao trocar de form, portanto foi removido.

@@ -7,13 +7,18 @@ using System.Threading.Tasks;
 
 namespace PFC___StandBy_CSharp.Dados
 {
-    class BackupDados
+    internal class BackupDados
     {
         private static string pastaRaiz = @"./data";
         public string caminhoTXT = @"./data/dts.txt";
+
         //Adriano
         //private static string dataSource = "localhost\\SQLEXPRESS";
+
         private static string dataSource = "localhost\\SQEXPRESS";
+        private static string login = "sa";
+        private static string pass = "123adr";
+
         public void criarPasta()
         {
             if (Directory.Exists(pastaRaiz))
@@ -21,13 +26,15 @@ namespace PFC___StandBy_CSharp.Dados
                 if (File.Exists(caminhoTXT))
                 {
                     // This path is a file
-                   // Console.WriteLine("Existe");
+                    // Console.WriteLine("Existe");
                 }
                 else
                 {
                     using (StreamWriter sw = File.CreateText(caminhoTXT))
                     {
                         sw.WriteLine(dataSource);
+                        //sw.WriteLine(login);
+                        //sw.WriteLine(pass);
                     }
                 }
             }

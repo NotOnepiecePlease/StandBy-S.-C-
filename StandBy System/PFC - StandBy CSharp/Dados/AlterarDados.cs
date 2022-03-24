@@ -18,6 +18,28 @@ namespace PFC___StandBy_CSharp.Dados
         private MensagensSucesso mSucesso = new MensagensSucesso();
         private VerificarExistencia verificarExistencia = new VerificarExistencia();
 
+        public void AtualizarColunaTempoEntrega(string _tempo, int _id)
+        {
+            try
+            {
+                using (SqlConnection con = OpenConnection())
+                {
+                    string query = "update tb_servicos set sv_tempo_para_entregar = @tempo where sv_id = @id";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    cmd.Parameters.Add("@tempo", SqlDbType.VarChar).Value = _tempo;
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = _id;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                mErro.ErroAoAtualizarTempoRestanteEntrega(e);
+            }
+        }
+
         #region Atualizar coluna das cores
 
         public void atualizarColunaTempoCores(int _id, DateTime _previsaoEntrega)

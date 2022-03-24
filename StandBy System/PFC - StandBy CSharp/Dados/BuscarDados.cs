@@ -335,7 +335,7 @@ namespace PFC___StandBy_CSharp.Dados
             }
             catch (Exception)
             {
-                throw;
+                // throw;
             }
 
             return null;
