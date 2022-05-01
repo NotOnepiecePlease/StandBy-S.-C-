@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation10 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation9 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_StandBy));
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.panelTopStandBy = new System.Windows.Forms.Panel();
             this.lblUpdate = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblVersion = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -94,6 +94,9 @@
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.lblIpLocal = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.panelTopStandBy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
@@ -118,6 +121,9 @@
             // panelTopStandBy
             // 
             this.panelTopStandBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panelTopStandBy.Controls.Add(this.bunifuSeparator2);
+            this.panelTopStandBy.Controls.Add(this.lblIpLocal);
+            this.panelTopStandBy.Controls.Add(this.bunifuSeparator1);
             this.panelTopStandBy.Controls.Add(this.lblUpdate);
             this.panelTopStandBy.Controls.Add(this.lblVersion);
             this.panelTopStandBy.Controls.Add(this.iconMenu);
@@ -141,7 +147,7 @@
             this.animationMenuHide1.SetDecoration(this.lblUpdate, BunifuAnimatorNS.DecorationType.None);
             this.lblUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUpdate.Location = new System.Drawing.Point(40, 9);
+            this.lblUpdate.Location = new System.Drawing.Point(150, 9);
             this.lblUpdate.Name = "lblUpdate";
             this.lblUpdate.Size = new System.Drawing.Size(144, 15);
             this.lblUpdate.TabIndex = 10;
@@ -159,7 +165,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(39, 15);
             this.lblVersion.TabIndex = 9;
-            this.lblVersion.Text = "5.12.0";
+            this.lblVersion.Text = "5.13.0";
             // 
             // iconMenu
             // 
@@ -169,7 +175,7 @@
             this.iconMenu.IconChar = FontAwesome.Sharp.IconChar.Bars;
             this.iconMenu.IconColor = System.Drawing.Color.White;
             this.iconMenu.IconSize = 28;
-            this.iconMenu.Location = new System.Drawing.Point(245, 3);
+            this.iconMenu.Location = new System.Drawing.Point(513, 2);
             this.iconMenu.Name = "iconMenu";
             this.iconMenu.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.iconMenu.Size = new System.Drawing.Size(28, 31);
@@ -753,7 +759,7 @@
             this.btnDesligarPc.Name = "btnDesligarPc";
             this.btnDesligarPc.Size = new System.Drawing.Size(106, 87);
             this.btnDesligarPc.TabIndex = 1;
-            this.btnDesligarPc.Click += new System.EventHandler(this.bunifuTileButton3_Click);
+            this.btnDesligarPc.Click += new System.EventHandler(this.btnDesligarPc_Click);
             // 
             // bunifuCards6
             // 
@@ -1146,43 +1152,43 @@
             // 
             this.animationMenuShow1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuShow1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.animationMenuShow1.DefaultAnimation = animation1;
+            animation10.AnimateOnlyDifferences = true;
+            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
+            animation10.LeafCoeff = 0F;
+            animation10.MaxTime = 1F;
+            animation10.MinTime = 0F;
+            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
+            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
+            animation10.MosaicSize = 0;
+            animation10.Padding = new System.Windows.Forms.Padding(0);
+            animation10.RotateCoeff = 0F;
+            animation10.RotateLimit = 0F;
+            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
+            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
+            animation10.TimeCoeff = 0F;
+            animation10.TransparencyCoeff = 0F;
+            this.animationMenuShow1.DefaultAnimation = animation10;
             // 
             // animationMenuHide1
             // 
             this.animationMenuHide1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuHide1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.animationMenuHide1.DefaultAnimation = animation2;
+            animation9.AnimateOnlyDifferences = true;
+            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
+            animation9.LeafCoeff = 0F;
+            animation9.MaxTime = 1F;
+            animation9.MinTime = 0F;
+            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
+            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
+            animation9.MosaicSize = 0;
+            animation9.Padding = new System.Windows.Forms.Padding(0);
+            animation9.RotateCoeff = 0F;
+            animation9.RotateLimit = 0F;
+            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
+            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
+            animation9.TimeCoeff = 0F;
+            animation9.TransparencyCoeff = 0F;
+            this.animationMenuHide1.DefaultAnimation = animation9;
             // 
             // ArredondarBordaEsquerda
             // 
@@ -1224,6 +1230,54 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator1.BackgroundImage")));
+            this.bunifuSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator1.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.animationMenuHide1.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(42, 0);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator1.Size = new System.Drawing.Size(14, 34);
+            this.bunifuSeparator1.TabIndex = 3;
+            // 
+            // lblIpLocal
+            // 
+            this.lblIpLocal.AutoSize = true;
+            this.animationMenuShow1.SetDecoration(this.lblIpLocal, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.lblIpLocal, BunifuAnimatorNS.DecorationType.None);
+            this.lblIpLocal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIpLocal.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIpLocal.Location = new System.Drawing.Point(56, 9);
+            this.lblIpLocal.Name = "lblIpLocal";
+            this.lblIpLocal.Size = new System.Drawing.Size(82, 15);
+            this.lblIpLocal.TabIndex = 11;
+            this.lblIpLocal.Text = "999.168.0.136";
+            this.lblIpLocal.Click += new System.EventHandler(this.lblIpLocal_Click);
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
+            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.animationMenuHide1.SetDecoration(this.bunifuSeparator2, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.bunifuSeparator2, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(136, 0);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator2.Size = new System.Drawing.Size(14, 34);
+            this.bunifuSeparator2.TabIndex = 12;
             // 
             // form_StandBy
             // 
@@ -1337,5 +1391,8 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         public Bunifu.Framework.UI.BunifuCustomLabel lblUpdate;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblIpLocal;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
     }
 }

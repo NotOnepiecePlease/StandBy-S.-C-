@@ -31,18 +31,37 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
         //
         private SqlConnection con;
 
-        public void lerDataSourceSQL()
+        public void LerDataSourceSql()
         {
-            string txtPath = bckData.caminhoTXT;
+            string txtPath = bckData.CaminhoTxt;
 
-            List<string> datasourceTXT = File.ReadAllLines(txtPath).ToList();
-            connectionString = String.Format("Data Source={0};Initial Catalog=standby_org;Integrated Security=True", datasourceTXT.FirstOrDefault().ToString());
+            //Removo as letras e os espacos e deixo so as informações uteis
+
+            List<string> dadosSqlConexao = File.ReadAllLines(txtPath).Where(x => !x.Contains("#")).ToList();
+            string ip = dadosSqlConexao[0].TrimStart('I', 'P', '=').Trim();
+            string porta = dadosSqlConexao[1].TrimStart('P', 'O', 'R', 'T', '=').Trim();
+            string login = dadosSqlConexao[2].TrimStart('U', 'S', 'E', 'R', '=').Trim();
+            string senha = dadosSqlConexao[3].TrimStart('P', 'A', 'S', '=').Trim();
+            string type = dadosSqlConexao[4].TrimStart('T', 'Y', 'P', 'E', '=').Trim();
+
+            if (type.Equals("0"))//Se o tipo do sistema for o 0 (Sistema principal stand by)
+            {
+                connectionString = $"Server={ip};Database=standby_org;User Id={login};Password={senha};";
+            }
+            else if (type.Equals("1"))// se nao, se for do tipo 1 (cliente - server)
+            {
+                connectionString = $"Server={ip},{porta};Database=standby_org;User Id={login};Password={senha};";
+            }
+            else
+            {
+                MessageBox.Show(@"Configura corretamente o campo TYPE nas configurações!\nUtilize 0 se for o sistema principal\nUtilize 1 se for o sistema secundário");
+            }
         }
 
         public SqlConnection OpenConnection()
         {
             bckData.criarPasta();
-            lerDataSourceSQL();
+            LerDataSourceSql();
 
             con = new SqlConnection(connectionString);
             try
@@ -51,22 +70,10 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
             }
             catch (Exception)
             {
-                MessageBox.Show($"Nao foi possivel se conectar com o banco de dados!\nIP Local: {PegarIp()}", "SEM CONEXAO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Nao foi possivel se conectar com o banco de dados!\n\nIP Local: {PegarIp()}", "SEM CONEXAO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
             return con;
-        }
-
-        public void CloseConnection()
-        {
-            con.Close();
-        }
-
-        //Metodo para executar qualquer query que precise de Insert,Update ou Delete.
-        public void ExecuteQueries(string Query_)
-        {
-            SqlCommand cmd = new SqlCommand(Query_, con);
-            cmd.ExecuteNonQuery();
         }
 
         public string PegarIp()

@@ -1,14 +1,14 @@
 ﻿using StandBy___CLIENT.SERVER.MsgBox;
-using StandBy___CLIENT.SERVER.SqlDbConnect;
 using System;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.SqlDbConnect;
 
 namespace StandBy___CLIENT.SERVER.PreencherComponentes
 {
-    class PreencherTableConcluidos : conexao
+    internal class PreencherTableConcluidos : conexao
     {
         public void Preencher(DataGridView table_ServicosConcluidos, int _numeroPagina, int _dadosPorPagina)
         {

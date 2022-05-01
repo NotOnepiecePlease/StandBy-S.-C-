@@ -16,17 +16,20 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_CadastroClientes : Form
     {
-        PreencherTableClientes preencherClientes = new PreencherTableClientes();
-        DeletarDados dd = new DeletarDados();
-        VerificarExistencia ve = new VerificarExistencia();
-        InserirDados id = new InserirDados();
-        int[] corGeral = new int[3] { 0, 0, 0 };
+        private PreencherTableClientes preencherClientes = new PreencherTableClientes();
+        private DeletarDados dd = new DeletarDados();
+        private VerificarExistencia ve = new VerificarExistencia();
+        private InserirDados id = new InserirDados();
+        private BuscarDados bd = new BuscarDados();
+        private int[] corGeral = new int[3] { 0, 0, 0 };
+
         public form_CadastroClientes(int[] corRGB)
         {
             InitializeComponent();
             preencherClientes.Preencher(table_Clientes);
             corGeral = corRGB;
             MudarTodasCores();
+            lblQuantidadeClientes.Text = bd.buscarQuantidadeClientes().ToString();
         }
 
         public form_CadastroClientes()
@@ -178,14 +181,6 @@ namespace PFC___StandBy_CSharp.Forms
             CadastrarNovoCliente();
         }
 
-        private void txtPesquisarCADCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-
-            }
-        }
-
         public void chamarEdicaoCliente()
         {
             form_CadastroClientes_Edit editarCliente = new form_CadastroClientes_Edit(this, corGeral);
@@ -197,6 +192,7 @@ namespace PFC___StandBy_CSharp.Forms
             editarCliente.txtTelefoneRecados.Text = table_Clientes.SelectedCells[4].Value.ToString();
             editarCliente.ShowDialog();
         }
+
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             chamarEdicaoCliente();
@@ -250,9 +246,9 @@ namespace PFC___StandBy_CSharp.Forms
 
             MessageBox.Show(CpfOuCnpjFORMATADO);
         }
+
         public void CadastrarNovoCliente()
         {
-
             //Verificando se o usuario nao deixou nada em branco
             //if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || string.IsNullOrWhiteSpace(txtCPFCliente.Text)
             //    || txtNomeCliente.Text == "Nome do Cliente" || txtCPFCliente.Text == "CPF do Cliente")
@@ -260,7 +256,7 @@ namespace PFC___StandBy_CSharp.Forms
             //    || chkTelRecados.Checked == true && txtTratarCom.Text.Equals("Quem recebe o recado")
             //    || chkTelRecados.Checked == true && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente") && txtTratarCom.Text.Equals("Quem recebe o recado"))
             //{
-            //    MessageBox.Show("Favor preencher todos os campos do numero de recado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+            //    MessageBox.Show("Favor preencher todos os campos do numero de recado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
             //else
             if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || txtNomeCliente.Text == "Nome do Cliente")
@@ -280,7 +276,7 @@ namespace PFC___StandBy_CSharp.Forms
                 string telPrincipal = txtTelefoneCliente.Text.ToString();
                 string telRecados = txtTelefoneRecado.Text.ToString();
                 string tratarCom = " | " + txtTratarCom.Text.ToString();
-                
+
                 //string CpfOuCnpjFORMATADO = String.Format(@"{0:000\.000\.000\-00}", cpf);
                 //txt.Text = CpfOuCnpjFORMATADO;
 
@@ -392,6 +388,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             refreshTable();
         }
+
         private void txtNomeCliente_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -461,28 +458,6 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        public void ativarSecaoTelPrincipal()
-        {
-            lblTelefonePrincipal.Enabled = true;
-            txtTelefoneCliente.Enabled = true;
-        }
-        public void desativarSecaoTelPrincipal()
-        {
-            lblTelefonePrincipal.Enabled = false;
-            txtTelefoneCliente.Enabled = false;
-        }
-        public void ativarSecaoTelRecados()
-        {
-            lblTelefoneRecados.Enabled = true;
-            txtTelefoneRecado.Enabled = true;
-        }
-        public void desativarSecaoTelRecados()
-        {
-            lblTelefoneRecados.Enabled = false;
-            //lblTelefoneRecados.Location = new Point(578, 180);
-            txtTelefoneRecado.Enabled = false;
-        }
-
         private void chkTelRecados_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
         {
             if (chkTelRecados.Checked == true)
@@ -512,7 +487,6 @@ namespace PFC___StandBy_CSharp.Forms
                 //txtTelefoneCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
                 //txtTelefoneCliente.LineMouseHoverColor = Color.Lavender;
                 //txtTelefoneCliente.Enabled = true;
-
 
                 txtTelefoneRecado.Font = new Font(txtTelefoneRecado.Font, FontStyle.Italic);
                 txtTelefoneRecado.Text = "Telefone de Recados do Cliente";
@@ -556,7 +530,6 @@ namespace PFC___StandBy_CSharp.Forms
                     txtTelefoneRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
                 }
             }
-
         }
 
         private void txtTelefoneRecado_KeyDown(object sender, KeyEventArgs e)

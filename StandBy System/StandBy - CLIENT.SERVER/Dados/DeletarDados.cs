@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Data.SqlClient;
-using StandBy___CLIENT.SERVER.SqlDbConnect;
 using StandBy___CLIENT.SERVER.MsgBox;
 using System.Data;
 using Bunifu.Framework.UI;
+using PFC___StandBy_CSharp.SqlDbConnect;
 
 namespace StandBy___CLIENT.SERVER.Dados
 {
-    class DeletarDados : conexao
+    internal class DeletarDados : conexao
     {
-        MensagensErro mErro = new MensagensErro();
-        MensagensSucesso mSucesso = new MensagensSucesso();
-        VerificarExistencia ve = new VerificarExistencia();
+        private MensagensErro mErro = new MensagensErro();
+        private MensagensSucesso mSucesso = new MensagensSucesso();
+        private VerificarExistencia ve = new VerificarExistencia();
+
         public void DeletarServico(int _idServico)
         {
             try
@@ -34,7 +35,6 @@ namespace StandBy___CLIENT.SERVER.Dados
                 mErro.ErroDeletarServico(ex);
                 //MessageBox.Show("ERRO: " + ex);
             }
-
         }
 
         public void DeletarCliente(int _idcliente)
@@ -71,10 +71,8 @@ namespace StandBy___CLIENT.SERVER.Dados
 
         public void DeletarGastos(int _id, BunifuCustomDataGrid tabelaGastos)
         {
-
             using (SqlConnection conexao = OpenConnection())
             {
-
                 string procedure = "GastosDeletar";
 
                 SqlCommand cmd = new SqlCommand(procedure, conexao);
@@ -107,7 +105,6 @@ namespace StandBy___CLIENT.SERVER.Dados
             {
                 mErro.ErroAoDeletarGarantia(ex);
             }
-
         }
     }
 }

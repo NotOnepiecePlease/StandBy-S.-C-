@@ -56,25 +56,25 @@ namespace PFC___StandBy_CSharp.Forms
                         if (DiasParaEntrega.TotalHours < 0)
                         //if (Convert.ToInt32(row.Cells[2].Value) == 3)
                         {
-                            row.Cells[2].Style.BackColor = Color.Red;
-                            row.Cells[2].Style.ForeColor = Color.Black;
+                            row.Cells[1].Style.BackColor = Color.Red;
+                            row.Cells[1].Style.ForeColor = Color.Black;
                         }
                         else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
                         //else if (Convert.ToInt32(row.Cells[2].Value) == 2)
                         {
-                            row.Cells[2].Style.BackColor = Color.Orange;
-                            row.Cells[2].Style.ForeColor = Color.Black;
+                            row.Cells[1].Style.BackColor = Color.Orange;
+                            row.Cells[1].Style.ForeColor = Color.Black;
                         }
                         else if (DiasParaEntrega.TotalHours > 12)
                         //else if (Convert.ToInt32(row.Cells[2].Value) == 1)
                         {
-                            row.Cells[2].Style.BackColor = Color.Lime;
-                            row.Cells[2].Style.ForeColor = Color.Black;
+                            row.Cells[1].Style.BackColor = Color.Lime;
+                            row.Cells[1].Style.ForeColor = Color.Black;
                         }
                         else
                         {
-                            row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
-                            row.Cells[2].Style.ForeColor = Color.Gray;
+                            row.Cells[1].Style.BackColor = Color.FromArgb(30, 30, 46);
+                            row.Cells[1].Style.ForeColor = Color.Gray;
                         }
                     }
                 }
@@ -136,14 +136,14 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnPesquisarCliente_Click(object sender, EventArgs e)
         {
-            try
-            {
-                preencherTableServ.PreencherServicosPorNomeCliente(table_OrdensServicos, txtPesquisarCliente.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERRO: " + ex + "");
-            }
+            //try
+            //{
+            preencherTableServ.PreencherServicosPorNomeCliente(table_OrdensServicos, txtPesquisarCliente.Text);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("ERRO: " + ex + "");
+            //}
         }
 
         private void btnCadastrarOrdem_Click(object sender, EventArgs e)
@@ -295,16 +295,16 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
-                try
-                {
-                    preencherTableServ.PreencherServicosPorNomeCliente(table_OrdensServicos, txtPesquisarCliente.Text);
-                    //table_OrdensServicos.Refresh();
-                    table_OrdensServicos.ClearSelection();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(@"ERRO: " + ex + "");
-                }
+                //try
+                //{
+                preencherTableServ.PreencherServicosPorNomeCliente(table_OrdensServicos, txtPesquisarCliente.Text);
+                //table_OrdensServicos.Refresh();
+                table_OrdensServicos.ClearSelection();
+                //}
+                //catch (Exception ex)
+                //{
+                //MessageBox.Show(@"ERRO: " + ex + "");
+                //}
             }
         }
 
@@ -315,13 +315,13 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void EditarUmServico()
         {
-            string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
-            string _TEL_RECCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
+            string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
+            string _TEL_RECCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
             float lucro = float.Parse(table_OrdensServicos.SelectedCells[10].Value.ToString());
             form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
             try
             {
-                string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[1].Value.ToString()));
+                string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
                 editarServicos.txtCPFCliente.Text = _CPFCliente;
                 editarServicos.txtAcessoriosEdit.Text = table_OrdensServicos.SelectedCells[14].Value.ToString();
             }
@@ -329,8 +329,8 @@ namespace PFC___StandBy_CSharp.Forms
             {
             }
             editarServicos.lblIDservico.Text = table_OrdensServicos.SelectedCells[0].Value.ToString();
-            editarServicos.lblIDcliente.Text = table_OrdensServicos.SelectedCells[1].Value.ToString();
-            editarServicos.dtpDataEdit.Value = Convert.ToDateTime(table_OrdensServicos.SelectedCells[2].Value.ToString());
+            editarServicos.lblIDcliente.Text = table_OrdensServicos.SelectedCells[16].Value.ToString();
+            editarServicos.dtpDataEdit.Value = Convert.ToDateTime(table_OrdensServicos.SelectedCells[1].Value.ToString());
             editarServicos.lblClienteNome.Text = table_OrdensServicos.SelectedCells[3].Value.ToString();
             editarServicos.txtClienteNome.Text = table_OrdensServicos.SelectedCells[3].Value.ToString();
 

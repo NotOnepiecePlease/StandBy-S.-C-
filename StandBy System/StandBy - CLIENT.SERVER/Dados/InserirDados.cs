@@ -1,17 +1,18 @@
-﻿using StandBy___CLIENT.SERVER.SqlDbConnect;
-using StandBy___CLIENT.SERVER.MsgBox;
+﻿using StandBy___CLIENT.SERVER.MsgBox;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.SqlDbConnect;
 
 namespace StandBy___CLIENT.SERVER.Dados
 {
-    class InserirDados : conexao
+    internal class InserirDados : conexao
     {
-        MensagensErro mErro = new MensagensErro();
-        MensagensSucesso mSucesso = new MensagensSucesso();
-        VerificarExistencia verificarExistencia = new VerificarExistencia();
+        private MensagensErro mErro = new MensagensErro();
+        private MensagensSucesso mSucesso = new MensagensSucesso();
+        private VerificarExistencia verificarExistencia = new VerificarExistencia();
+
         public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo)
         {
             {
@@ -83,10 +84,8 @@ namespace StandBy___CLIENT.SERVER.Dados
 
         public void InserirGasto(DateTime _data, string _produto, decimal _valor, int _temporario)
         {
-
             using (SqlConnection conexao = OpenConnection())
             {
-
                 string procedure = "GastosInserir";
                 SqlCommand cmd = new SqlCommand(procedure, conexao);
                 cmd.Parameters.AddWithValue("@_Data", _data);
@@ -147,7 +146,7 @@ namespace StandBy___CLIENT.SERVER.Dados
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: \n\n"+ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro: \n\n" + ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

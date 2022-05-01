@@ -1,22 +1,45 @@
 ﻿using PFC___StandBy_CSharp.Forms;
 using StandBy___CLIENT.SERVER.Forms;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.SqlDbConnect;
 
 namespace StandBy___CLIENT.SERVER
 {
     public partial class form_PrincipalClientServer : Form
     {
         private Form currentChildForm;
+        private conexao con = new conexao();
 
         public form_PrincipalClientServer()
         {
             InitializeComponent();
+            //backVerificarConexao.RunWorkerAsync();
             PegarIp();
+        }
+
+        private void VerificarSeConectado()
+        {
+            if (con.OpenConnection().State == ConnectionState.Open)
+            {
+                lblEstadoConexao.Text = @"Conectado ao Servidor!";
+                lblEstadoConexao.ForeColor = Color.LimeGreen;
+            }
+            else if (con.OpenConnection().State == ConnectionState.Connecting)
+            {
+                lblEstadoConexao.Text = @"Conectando...";
+                lblEstadoConexao.ForeColor = Color.Yellow;
+            }
+            else
+            {
+                lblEstadoConexao.Text = @"Servidor Desconectado!";
+                lblEstadoConexao.ForeColor = Color.Red;
+            }
         }
 
         public void PegarIp()
@@ -125,6 +148,11 @@ namespace StandBy___CLIENT.SERVER
                 btnServicosAndamento.Normalcolor = Color.Transparent;
                 btnLucros.Normalcolor = Color.Transparent;
             }
+        }
+
+        private void backVerificarConexao_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            VerificarSeConectado();
         }
     }
 }

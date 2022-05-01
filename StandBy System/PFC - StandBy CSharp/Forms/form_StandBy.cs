@@ -8,21 +8,23 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.SqlDbConnect;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_StandBy : Form
     {
-        GraficoServicosSemanais GraficoSemanal = new GraficoServicosSemanais();
-        GraficoServicosMensais GraficoMensal = new GraficoServicosMensais();
-        Verificar verificarUpd = new Verificar();
-        AlterarDados ad = new AlterarDados();
-        BackupDados bckpData = new BackupDados();
+        private GraficoServicosSemanais GraficoSemanal = new GraficoServicosSemanais();
+        private GraficoServicosMensais GraficoMensal = new GraficoServicosMensais();
+        private Verificar verificarUpd = new Verificar();
+        private AlterarDados ad = new AlterarDados();
+        private BackupDados bckpData = new BackupDados();
         private Form currentChildForm;
-        int anoAtual = DateTime.Now.Year;
-        int mesAtual = DateTime.Now.Month;
-        int[] corGeral = new int[3] { 0, 0, 0 };
+        private int anoAtual = DateTime.Now.Year;
+        private int mesAtual = DateTime.Now.Month;
+        private int[] corGeral = new int[3] { 0, 0, 0 };
         private static string pastaRaiz = @"./PasswordPattern";
+
         public form_StandBy()
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace PFC___StandBy_CSharp.Forms
             IniciarPainelCor();
             CarregarGraficos();
             criarPastaDasSenhas();
+            lblIpLocal.Text = PegarIp();
             //bckpData.criarPasta();
 
             btnMenuSuperior.DisabledColor = Color.Transparent;
@@ -43,7 +46,18 @@ namespace PFC___StandBy_CSharp.Forms
             backgroundWorker1.RunWorkerAsync();
         }
 
-        public void criarPastaDasSenhas()
+        private string PegarIp()
+        {
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            {
+                socket.Connect("8.8.8.8", 65530);
+                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                string localIP = endPoint.Address.ToString();
+                return localIP;
+            }
+        }
+
+        private void criarPastaDasSenhas()
         {
             if (Directory.Exists(pastaRaiz))
             {
@@ -67,6 +81,7 @@ namespace PFC___StandBy_CSharp.Forms
                 MessageBox.Show("Nao foi possivel carregar os graficos pois nao existem dados", "Sem dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
         private void IniciarPainelCor()
         {
             corGeral[0] = track_RED.Value;
@@ -155,7 +170,7 @@ namespace PFC___StandBy_CSharp.Forms
             servMes1.Show();
         }
 
-        private void bunifuTileButton3_Click(object sender, EventArgs e)
+        private void btnDesligarPc_Click(object sender, EventArgs e)
         {
             DialogResult dialogo = MessageBox.Show("Deseja desligar o computador?", "DESLIGAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -180,8 +195,6 @@ namespace PFC___StandBy_CSharp.Forms
             lblBLUE.Text = track_BLUE.Value.ToString();
             //lblBLUE.ForeColor = Color.FromArgb(0, 0, track_BLUE.Value);
 
-
-
             btnServicosPorMes.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnDesligarPc.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             buniCardSemanais.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -196,7 +209,6 @@ namespace PFC___StandBy_CSharp.Forms
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             panel_CorGeral.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
         }
 
         private void randomizarCores(int _corInicial)
@@ -236,6 +248,7 @@ namespace PFC___StandBy_CSharp.Forms
             btnReset.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
+
         private void btnMudarCor_Click(object sender, EventArgs e)
         {
             randomizarCores(0);
@@ -256,7 +269,7 @@ namespace PFC___StandBy_CSharp.Forms
             btnNotepad.colorActive = cor;
             btnReset.colorActive = cor;
             iconClose.IconColor = cor;
-            corGeral = new int[] { 255,0,103};
+            corGeral = new int[] { 255, 0, 103 };
 
             track_RED.Value = 255;
             track_GREEN.Value = 0;
@@ -310,7 +323,6 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void panelMenu_MouseEnter(object sender, EventArgs e)
         {
-
         }
 
         private void btnServicos_Click(object sender, EventArgs e)
@@ -324,7 +336,6 @@ namespace PFC___StandBy_CSharp.Forms
                 OpenChildForm(new form_OrdensServ(corGeral));
                 //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO ORDENS DE SERVICO.png");
             }
-
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -338,7 +349,6 @@ namespace PFC___StandBy_CSharp.Forms
                 OpenChildForm(new form_CadastroClientes(corGeral));
                 //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO CADASTRO CLIENTES.png");
             }
-
         }
 
         private void btnConcluidos_Click(object sender, EventArgs e)
@@ -369,7 +379,6 @@ namespace PFC___StandBy_CSharp.Forms
             }
             //
         }
-
 
         private void btnOrcamentos_Click(object sender, EventArgs e)
         {
@@ -410,7 +419,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcao desativada pois o sistema efetua o reset automaticamente.","!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Funcao desativada pois o sistema efetua o reset automaticamente.", "!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //DialogResult dialog1 = MessageBox.Show("Voce esta prestes a resetar o mês, fazendo isso voce armazena todos os dados" +
             //    "com segurança no banco de dados e reinicia todas as tabelas dos dados do mês em questão, essa ação é irreversivel," +
             //    " você tem certeza disso?", "----- PERIGO -----", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
@@ -428,7 +437,6 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_StandBy_FormClosing(object sender, FormClosingEventArgs e)
         {
-
         }
 
         private void form_StandBy_Resize(object sender, EventArgs e)
@@ -455,17 +463,25 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void notifyIcon1_Click(object sender, EventArgs e)
         {
-           // notifyIcon1.ShowBalloonTip(1000);
+            // notifyIcon1.ShowBalloonTip(1000);
         }
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            //verificarUpd.ChecarVersao(this);
             verificarUpd.ChecarVersao(this);
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
-            lblUpdate.Visible = false;
+            //lblUpdate.Visible = false;
+            lblUpdate.Visible = true;
+            lblUpdate.Text = @"Sistema Atualizado!";
+        }
+
+        private void lblIpLocal_Click(object sender, EventArgs e)
+        {
+            lblIpLocal.Text = PegarIp();
         }
     }
 }

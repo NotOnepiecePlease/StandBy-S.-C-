@@ -1,26 +1,22 @@
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.exe.config
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.pdb
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuCheckBox.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuDatePicker.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuPictureBox.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuTextbox.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu_UI_v1.5.3.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\FontAwesome.Sharp.dll
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Guna.UI.dll
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\StandBy System.exe.config
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuCheckBox.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuDatePicker.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuPictureBox.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuTextbox.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\Bunifu_UI_v1.5.3.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.exe.config
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\bin\Release\System.Diagnostics.DiagnosticSource.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.AssemblyReference.cache
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.form_PrincipalClientServer.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_ServicosAndamento.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_TodosServicos.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_TodosServicos_Edit.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_ServicosEdit.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Properties.Resources.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.GenerateResource.cache
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.CoreCompileInputs.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.Fody.CopyLocal.cache
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.CopyComplete
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.pdb

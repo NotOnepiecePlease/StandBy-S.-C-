@@ -1,0 +1,8 @@
+#SQL Data Config
+IP= localhost\SQLEXPRESS
+PORT= 1433
+USER= sa
+PASS= 123adr
+TYPE= 0
+
+#

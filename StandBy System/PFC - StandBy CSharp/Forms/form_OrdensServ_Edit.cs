@@ -16,18 +16,19 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_OrdensServ_Edit : Form
     {
-        form_OrdensServ formServ1;
-        form_Concluidos formConcl1;
-        form_Lucros formLucros1;
-        form_DiaEntrega formDiaEntrega1;
-        AlterarDados ad = new AlterarDados();
-        BuscarDados bd = new BuscarDados();
-        MensagensErro mErro = new MensagensErro();
+        private form_OrdensServ formServ1;
+        private form_Concluidos formConcl1;
+        private form_Lucros formLucros1;
+        private form_DiaEntrega formDiaEntrega1;
+        private AlterarDados ad = new AlterarDados();
+        private BuscarDados bd = new BuscarDados();
+        private MensagensErro mErro = new MensagensErro();
+
         //form_OrdensServ form = new form_OrdensServ();
-        int[] corGeral = new int[] { 0, 0, 0 };
+        private int[] corGeral = new int[] { 0, 0, 0 };
+
         public int ImprimiuAlgumaNota = 0;
         public bool atualizarOuNaoATabelaDeServicos = false;
-
 
         public form_OrdensServ_Edit(form_OrdensServ formServ, int[] _cor)
         {
@@ -39,6 +40,7 @@ namespace PFC___StandBy_CSharp.Forms
             CalcularLucro();
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
         }
+
         public form_OrdensServ_Edit(form_Lucros formLucros, int[] _cor)
         {
             InitializeComponent();
@@ -50,6 +52,7 @@ namespace PFC___StandBy_CSharp.Forms
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
             btnConcluirServico.Visible = false;
         }
+
         public form_OrdensServ_Edit(form_Concluidos formConcluidos, int[] _cor)
         {
             InitializeComponent();
@@ -60,6 +63,7 @@ namespace PFC___StandBy_CSharp.Forms
             CalcularLucro();
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
         }
+
         public form_OrdensServ_Edit(form_DiaEntrega formDiaEntrega, int[] _cor)
         {
             InitializeComponent();
@@ -71,6 +75,7 @@ namespace PFC___StandBy_CSharp.Forms
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
             atualizarOuNaoATabelaDeServicos = true;
         }
+
         public form_OrdensServ_Edit(form_Concluidos form_Concluidos)
         {
             InitializeComponent();
@@ -93,6 +98,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             panel2.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
+
         public void CalcularLucro()
         {
             float valorServico = 0.0f;
@@ -167,7 +173,6 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     if (atualizarOuNaoATabelaDeServicos == false)
                     {
-
                         formServ1.refreshTable();
                         formServ1.refreshTable();
                     }
@@ -177,6 +182,7 @@ namespace PFC___StandBy_CSharp.Forms
                 }
             }
         }
+
         private void chkSemData_Click(object sender, EventArgs e)
         {
             if (chkSemData.Checked == true)
@@ -194,17 +200,19 @@ namespace PFC___StandBy_CSharp.Forms
                 dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
             }
         }
-        private void SalvarEdicoesServico(DateTime DataPrevisao)
+
+        private void SalvarEdicoesServico(DateTime _dataPrevisao)
         {
             float valorServico = float.Parse(txtServicoValorEdit.Text);
             float valorPeca = float.Parse(txtPecaValorEdit.Text);
             float lucro = valorServico - valorPeca;
 
             ad.AlterarServico(Int32.Parse(lblIDservico.Text), dtpDataEdit.Value, txtAparelhoEdit.Text, txtDefeitoEdit.Text, txtSenhaEdit.Text, txtSituacaoEdit.Text,
-                float.Parse(txtServicoValorEdit.Text), float.Parse(txtPecaValorEdit.Text), lucro, txtServicoEdit.Text, DataPrevisao, txtAcessoriosEdit.Text);
+                float.Parse(txtServicoValorEdit.Text), float.Parse(txtPecaValorEdit.Text), lucro, txtServicoEdit.Text, _dataPrevisao, txtAcessoriosEdit.Text);
             //formServ1.refreshTable();
             this.Close();
         }
+
         private void txtServicoValorEdit_KeyUp(object sender, KeyEventArgs e)
         {
             CalcularLucro();
@@ -251,6 +259,7 @@ namespace PFC___StandBy_CSharp.Forms
             formServ1.refreshTable();
             this.Close();
         }
+
         private void form_OrdensServ_Edit_FormClosing(object sender, FormClosingEventArgs e)
         {
             //DeletarArquivoWordCliente();
@@ -267,6 +276,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
             }
         }
+
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
         {
             string cpfCliente = bd.BuscarCPFCliente(Convert.ToInt32(lblIDcliente.Text));
@@ -290,7 +300,6 @@ namespace PFC___StandBy_CSharp.Forms
             StringFormat sfcenter = new StringFormat();
             sfcenter.LineAlignment = StringAlignment.Center;
             sfcenter.Alignment = StringAlignment.Center;
-
 
             int x = 220, y = 10; //start position
             x += 0; //left align texts with logo image
@@ -354,8 +363,6 @@ namespace PFC___StandBy_CSharp.Forms
             y += dy;
             y += dy;
             e.Graphics.DrawString("NÃO É VÁLIDO COMO DOCUMENTO FISCAL", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
-
-
         }
 
         public void imprimirNota()
@@ -427,6 +434,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             return null;
         }
+
         private void btn_ExibirPadraoSenha_Click(object sender, EventArgs e)
         {
             using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(corGeral))
@@ -465,7 +473,6 @@ namespace PFC___StandBy_CSharp.Forms
                 passShow.btnSim.Visible = true;
                 passShow.btnNao.Visible = true;
                 passShow.lblIDServico.Text = lblIDservico.Text;
-
 
                 passShow.ShowDialog();
             }

@@ -33,7 +33,6 @@ namespace StandBy___CLIENT.SERVER
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_PrincipalClientServer));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblUpdate = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIp = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnExit = new FontAwesome.Sharp.IconPictureBox();
             this.panelCentral = new System.Windows.Forms.Panel();
@@ -43,6 +42,10 @@ namespace StandBy___CLIENT.SERVER
             this.btnTodosServicos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnServicosAndamento = new Bunifu.Framework.UI.BunifuFlatButton();
             this.arrastarForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.lblEstadoConexao = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.backVerificarConexao = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgbuttonTitulo)).BeginInit();
@@ -52,8 +55,10 @@ namespace StandBy___CLIENT.SERVER
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.lblEstadoConexao);
+            this.panel1.Controls.Add(this.bunifuSeparator2);
+            this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.lblUpdate);
-            this.panel1.Controls.Add(this.bunifuCustomLabel1);
             this.panel1.Controls.Add(this.lblIp);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.panelCentral);
@@ -69,27 +74,17 @@ namespace StandBy___CLIENT.SERVER
             // 
             this.lblUpdate.AutoSize = true;
             this.lblUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUpdate.Location = new System.Drawing.Point(120, 9);
+            this.lblUpdate.Location = new System.Drawing.Point(12, 9);
             this.lblUpdate.Name = "lblUpdate";
             this.lblUpdate.Size = new System.Drawing.Size(31, 13);
             this.lblUpdate.TabIndex = 14;
             this.lblUpdate.Text = "1.0.0";
             // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(111, 9);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(9, 13);
-            this.bunifuCustomLabel1.TabIndex = 13;
-            this.bunifuCustomLabel1.Text = "|";
-            // 
             // lblIp
             // 
             this.lblIp.AutoSize = true;
             this.lblIp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblIp.Location = new System.Drawing.Point(6, 9);
+            this.lblIp.Location = new System.Drawing.Point(69, 9);
             this.lblIp.Name = "lblIp";
             this.lblIp.Size = new System.Drawing.Size(103, 13);
             this.lblIp.TabIndex = 12;
@@ -264,6 +259,50 @@ namespace StandBy___CLIENT.SERVER
             this.arrastarForm.TargetControl = this.panel1;
             this.arrastarForm.Vertical = true;
             // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator1.BackgroundImage")));
+            this.bunifuSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator1.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(49, 0);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator1.Size = new System.Drawing.Size(14, 34);
+            this.bunifuSeparator1.TabIndex = 15;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
+            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(178, 0);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator2.Size = new System.Drawing.Size(14, 34);
+            this.bunifuSeparator2.TabIndex = 16;
+            // 
+            // lblEstadoConexao
+            // 
+            this.lblEstadoConexao.AutoSize = true;
+            this.lblEstadoConexao.ForeColor = System.Drawing.Color.Aquamarine;
+            this.lblEstadoConexao.Location = new System.Drawing.Point(198, 9);
+            this.lblEstadoConexao.Name = "lblEstadoConexao";
+            this.lblEstadoConexao.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoConexao.TabIndex = 17;
+            this.lblEstadoConexao.Text = "-----------";
+            // 
+            // backVerificarConexao
+            // 
+            this.backVerificarConexao.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backVerificarConexao_DoWork);
+            // 
             // form_PrincipalClientServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,8 +337,11 @@ namespace StandBy___CLIENT.SERVER
         public Bunifu.Framework.UI.BunifuCustomLabel lblIp;
         private Bunifu.Framework.UI.BunifuDragControl arrastarForm;
         public Bunifu.Framework.UI.BunifuCustomLabel lblUpdate;
-        public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton btnLucros;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblEstadoConexao;
+        private System.ComponentModel.BackgroundWorker backVerificarConexao;
     }
 }
 

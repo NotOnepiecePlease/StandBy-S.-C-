@@ -1,19 +1,20 @@
-﻿using StandBy___CLIENT.SERVER.SqlDbConnect;
-using StandBy___CLIENT.SERVER.MsgBox;
+﻿using StandBy___CLIENT.SERVER.MsgBox;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using Guna.UI.WinForms;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using PFC___StandBy_CSharp.SqlDbConnect;
 
 namespace StandBy___CLIENT.SERVER.Dados
 {
-    class BuscarDados : conexao
+    internal class BuscarDados : conexao
     {
-        MensagensErro me = new MensagensErro();
+        private MensagensErro me = new MensagensErro();
 
         #region Buscar a ID do Cliente
+
         public int BuscarIdCliente(string _nome)
         {
             int idCliente = 0;
@@ -34,7 +35,6 @@ namespace StandBy___CLIENT.SERVER.Dados
                     reader.Close();
                     //con.Close();
                 }
-
             }
             catch (Exception e)
             {
@@ -42,9 +42,11 @@ namespace StandBy___CLIENT.SERVER.Dados
             }
             return idCliente;
         }
-        #endregion
+
+        #endregion Buscar a ID do Cliente
 
         #region Buscar imagem do banco (Senha de padrao)
+
         public byte[] BuscarImagem(string _idServico)
         {
             byte[] bytes;
@@ -69,9 +71,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 }
             }
         }
-        #endregion
+
+        #endregion Buscar imagem do banco (Senha de padrao)
 
         #region Buscar servicos do cliente
+
         public void BuscarServicosDoCliente(string _nomeCliente)
         {
             using (SqlConnection con = OpenConnection())
@@ -85,9 +89,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 //con.Close();
             }
         }
-        #endregion
+
+        #endregion Buscar servicos do cliente
 
         #region Buscar servicos concluidos (pesquisa por nome)
+
         public void BuscarServicosConcluidosPorNome(string _nomeCliente)
         {
             using (SqlConnection con = OpenConnection())
@@ -100,9 +106,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 cmd.ExecuteNonQuery();
             }
         }
-        #endregion
+
+        #endregion Buscar servicos concluidos (pesquisa por nome)
 
         #region Buscar dias totais de garantia
+
         public void BuscarDiasGarantia(GunaLabel _Emissao, GunaLabel _DataFinal, GunaLabel _DiasRestantes, int _idServico)
         {
             using (SqlConnection conexao = OpenConnection())
@@ -125,9 +133,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 dr.Close();
             }
         }
-        #endregion
+
+        #endregion Buscar dias totais de garantia
 
         #region Buscar dias faltantes da garantia
+
         public void BuscarDiasFaltantesGarantia(GunaLabel _LabelDiasFaltantes, GunaLabel _DataFinal, GunaLabel _DiasRestantes, int _idServico)
         {
             using (SqlConnection conexao = OpenConnection())
@@ -157,9 +167,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 dr.Close();
             }
         }
-        #endregion
+
+        #endregion Buscar dias faltantes da garantia
 
         #region Buscar CPF do cliente
+
         public string BuscarCPFCliente(int _idCliente)
         {
             using (SqlConnection conexao = OpenConnection())
@@ -176,9 +188,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 return dr.GetString(0);
             }
         }
-        #endregion
+
+        #endregion Buscar CPF do cliente
 
         #region Buscar Telefone do Cliente
+
         public string BuscarTelefoneCliente(int _idCliente)
         {
             using (SqlConnection conexao = OpenConnection())
@@ -195,9 +209,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 return dr.GetString(0);
             }
         }
-        #endregion
+
+        #endregion Buscar Telefone do Cliente
 
         #region Buscar telefone secundario do cliente
+
         public string BuscarTelefoneRecadoCliente(int _idCliente)
         {
             using (SqlConnection conexao = OpenConnection())
@@ -214,9 +230,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 return dr.GetString(0);
             }
         }
-        #endregion
+
+        #endregion Buscar telefone secundario do cliente
 
         #region Buscar total de servicos concluidos
+
         public int BuscarTotalServicosConcluidos()
         {
             try
@@ -239,9 +257,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 return 0;
             }
         }
-        #endregion
+
+        #endregion Buscar total de servicos concluidos
 
         #region Buscar ID do ultimo servico adicionado
+
         public int BuscarIdUltimoServicoAdicionado()
         {
             try
@@ -265,9 +285,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 return 0;
             }
         }
-        #endregion
+
+        #endregion Buscar ID do ultimo servico adicionado
 
         #region Buscar servico por ID
+
         public List<object> BuscarServicoPorID(int _idServico)
         {
             try
@@ -310,12 +332,12 @@ namespace StandBy___CLIENT.SERVER.Dados
             }
             catch (Exception)
             {
-
                 throw;
             }
 
             return null;
         }
-        #endregion
+
+        #endregion Buscar servico por ID
     }
 }

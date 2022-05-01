@@ -1,12 +1,13 @@
-﻿using StandBy___CLIENT.SERVER.SqlDbConnect;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.SqlDbConnect;
 
 namespace StandBy___CLIENT.SERVER.MsgBox
 {
-    class MensagensErro : conexao
+    internal class MensagensErro : conexao
     {
         #region ORDENS DE SERVICO
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -58,6 +59,7 @@ namespace StandBy___CLIENT.SERVER.MsgBox
             //form_ALERT message = new form_ALERT("(OR-SV07)Erro ao deletar o serviço do cliente!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+
         public void ErroAoConcluirServico(Exception e)
         {
             MessageBox.Show("(OR-SV08)Erro ao concluir serviço!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -88,10 +90,11 @@ namespace StandBy___CLIENT.SERVER.MsgBox
         {
             MessageBox.Show("(OR-SV12)Erro buscar o ultimo serviço!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        #endregion
 
+        #endregion ORDENS DE SERVICO
 
         #region SERVICOS CONCLUIDOS
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -102,10 +105,11 @@ namespace StandBy___CLIENT.SERVER.MsgBox
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
-        #endregion
 
+        #endregion SERVICOS CONCLUIDOS
 
         #region GARANTIAS
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -116,10 +120,11 @@ namespace StandBy___CLIENT.SERVER.MsgBox
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
-        #endregion
 
+        #endregion GARANTIAS
 
         #region CADASTRO DE CLIENTE
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -134,7 +139,7 @@ namespace StandBy___CLIENT.SERVER.MsgBox
         {
             MessageBox.Show("(CAD-CL02)Erro ao tentar inserir o cliente!\n\n" + e, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //form_ALERT message = new form_ALERT("(CAD-CL02)Erro ao tentar inserir o cliente!", form_ALERT.AlertType.Erro);
-            //message.Show(); 
+            //message.Show();
         }
 
         public void ErroDeletarCliente(Exception e)
@@ -143,12 +148,14 @@ namespace StandBy___CLIENT.SERVER.MsgBox
             //form_ALERT message = new form_ALERT("(CAD-CL03)Erro ao deletar o cliente!", form_ALERT.AlertType.Erro);
             //message.Show();
         }
+
         public void ErroClientePossuiServicos()
         {
             MessageBox.Show(@"(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //form_ALERT message = new form_ALERT("(CAD-CL04)Cliente possui servicos ativos, nao pode ser deletado.", form_ALERT.AlertType.Erro);
             //message.Show();
         }
-        #endregion
+
+        #endregion CADASTRO DE CLIENTE
     }
 }

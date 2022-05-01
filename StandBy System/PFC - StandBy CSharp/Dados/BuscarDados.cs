@@ -4,17 +4,41 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Guna.UI.WinForms;
-using System.Windows;
+using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Dados
 {
     public class BuscarDados : conexao
     {
-        private MensagensErro me = new MensagensErro();
+        private readonly MensagensErro me = new MensagensErro();
+
+        #region Buscar quantidade de clientes existentes
+
+        public int buscarQuantidadeClientes()
+        {
+            try
+            {
+                using (SqlConnection con = OpenConnection())
+                {
+                    string query = "select count(cl_id) from tb_clientes";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    dr.Read();
+
+                    return dr.GetInt32(0);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Erro: {e}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+        }
+
+        #endregion Buscar quantidade de clientes existentes
 
         #region Buscar a ID do Cliente
 

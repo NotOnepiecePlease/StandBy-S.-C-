@@ -5,20 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using StandBy___CLIENT.SERVER.SqlDbConnect;
 using StandBy___CLIENT.SERVER.MsgBox;
 using StandBy___CLIENT.SERVER.Forms;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.SqlDbConnect;
 
 namespace StandBy___CLIENT.SERVER.Dados
 {
-    class AlterarDados : conexao
+    internal class AlterarDados : conexao
     {
-        MensagensErro mErro = new MensagensErro();
-        MensagensSucesso mSucesso = new MensagensSucesso();
-        VerificarExistencia verificarExistencia = new VerificarExistencia();
+        private MensagensErro mErro = new MensagensErro();
+        private MensagensSucesso mSucesso = new MensagensSucesso();
+        private VerificarExistencia verificarExistencia = new VerificarExistencia();
 
         #region Servico em Andamento
+
         public void ServicoAndamento(int _idServico)
         {
             try
@@ -40,12 +41,14 @@ namespace StandBy___CLIENT.SERVER.Dados
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERRO:  \n\n"+ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERRO:  \n\n" + ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        #endregion
+        #endregion Servico em Andamento
+
         #region Alterar Servico
+
         public void AlterarServico(int _idServico, DateTime _data, string _aparelho, string _defeito, string _senha,
             string _situacao, float _valorServico, float _valorPeca, float _lucro, string _servico, DateTime _dataPrevisao)
         {
@@ -97,9 +100,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 mErro.ErroAlterarServico(ex);
             }
         } //Procedure
-        #endregion
+
+        #endregion Alterar Servico
 
         #region Alterar Clientes
+
         public void AlterarClientes(int _idcliente, string _nome, string _telefone, string _cpf)
         {
             bool cpfExistente = verificarExistencia.VerificarExistenciaCPF(_cpf);
@@ -131,13 +136,14 @@ namespace StandBy___CLIENT.SERVER.Dados
             catch (Exception ex)
             {
                 mErro.ErroAlterarCliente(ex);
-
             }
             //}
         }
-        #endregion
+
+        #endregion Alterar Clientes
 
         #region Concluir Servicos
+
         public void ConcluirServicos(int _idServico)
         {
             try
@@ -159,13 +165,14 @@ namespace StandBy___CLIENT.SERVER.Dados
             }
             catch (Exception ex)
             {
-
                 mErro.ErroAoConcluirServico(ex);
             }
         }
-        #endregion
+
+        #endregion Concluir Servicos
 
         #region Devolver Servicos Concluidos
+
         public void CancelarConclusaoServicos(int _idServico)
         {
             try
@@ -185,13 +192,14 @@ namespace StandBy___CLIENT.SERVER.Dados
             }
             catch (Exception ex)
             {
-
                 mErro.ErroAoCancelarConclusao(ex);
             }
         }
-        #endregion
+
+        #endregion Devolver Servicos Concluidos
 
         #region Alterar Gastos
+
         public void AlterarGastos(int _idGasto, int _realORtemp)
         {
             //Alterar para gasto fixo ou temporario
@@ -206,9 +214,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 cmd.ExecuteNonQuery();
             }
         }
-        #endregion
+
+        #endregion Alterar Gastos
 
         #region Atualizar Gastos
+
         public void AtualizarGastos(DateTime _data, string _produto, decimal _valor, int _id)
         {
             //Atualizar dados dos gastos, como data ou nome do produto.
@@ -225,9 +235,11 @@ namespace StandBy___CLIENT.SERVER.Dados
                 cmd.ExecuteNonQuery();
             }
         }
-        #endregion
+
+        #endregion Atualizar Gastos
 
         #region Resetar Dados Mensais
+
         public void ResetarDadosMensais()
         {
             try
@@ -247,8 +259,8 @@ namespace StandBy___CLIENT.SERVER.Dados
             {
                 MessageBox.Show("Erro ao resetar o mes!\n\n" + ex, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-        #endregion
+
+        #endregion Resetar Dados Mensais
     }
 }

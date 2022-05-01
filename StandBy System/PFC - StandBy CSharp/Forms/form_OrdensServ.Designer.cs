@@ -70,8 +70,8 @@
             this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
             this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sv_tempo_para_entregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Aparelho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Defeito = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,7 +85,7 @@
             this.existe_um_prazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_cor_tempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sv_tempo_para_entregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -611,8 +611,8 @@
             this.table_OrdensServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.table_OrdensServicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idServico,
-            this.idCliente,
             this.Data,
+            this.sv_tempo_para_entregar,
             this.Nome,
             this.Aparelho,
             this.Defeito,
@@ -626,7 +626,7 @@
             this.existe_um_prazo,
             this.sv_acessorios,
             this.sv_cor_tempo,
-            this.sv_tempo_para_entregar});
+            this.idCliente});
             this.table_OrdensServicos.ContextMenuStrip = this.contextMenuStrip1;
             this.table_OrdensServicos.DoubleBuffered = true;
             this.table_OrdensServicos.EnableHeadersVisualStyles = false;
@@ -771,20 +771,19 @@
             this.idServico.ReadOnly = true;
             this.idServico.Visible = false;
             // 
-            // idCliente
-            // 
-            this.idCliente.DataPropertyName = "sv_cl_idcliente";
-            this.idCliente.HeaderText = "idCliente";
-            this.idCliente.Name = "idCliente";
-            this.idCliente.ReadOnly = true;
-            this.idCliente.Visible = false;
-            // 
             // Data
             // 
             this.Data.DataPropertyName = "sv_data";
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             this.Data.ReadOnly = true;
+            // 
+            // sv_tempo_para_entregar
+            // 
+            this.sv_tempo_para_entregar.DataPropertyName = "sv_tempo_para_entregar";
+            this.sv_tempo_para_entregar.HeaderText = "Tempo";
+            this.sv_tempo_para_entregar.Name = "sv_tempo_para_entregar";
+            this.sv_tempo_para_entregar.ReadOnly = true;
             // 
             // Nome
             // 
@@ -891,12 +890,13 @@
             this.sv_cor_tempo.ReadOnly = true;
             this.sv_cor_tempo.Visible = false;
             // 
-            // sv_tempo_para_entregar
+            // idCliente
             // 
-            this.sv_tempo_para_entregar.DataPropertyName = "sv_tempo_para_entregar";
-            this.sv_tempo_para_entregar.HeaderText = "Tempo";
-            this.sv_tempo_para_entregar.Name = "sv_tempo_para_entregar";
-            this.sv_tempo_para_entregar.ReadOnly = true;
+            this.idCliente.DataPropertyName = "sv_cl_idcliente";
+            this.idCliente.HeaderText = "idCliente";
+            this.idCliente.Name = "idCliente";
+            this.idCliente.ReadOnly = true;
+            this.idCliente.Visible = false;
             // 
             // form_OrdensServ
             // 
@@ -954,8 +954,8 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtSituacaoOrdens;
         private Bunifu.Framework.UI.BunifuFlatButton btnPatternIcon;
         private System.Windows.Forms.DataGridViewTextBoxColumn idServico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sv_tempo_para_entregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Aparelho;
         private System.Windows.Forms.DataGridViewTextBoxColumn Defeito;
@@ -969,6 +969,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn existe_um_prazo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sv_tempo_para_entregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
     }
 }
