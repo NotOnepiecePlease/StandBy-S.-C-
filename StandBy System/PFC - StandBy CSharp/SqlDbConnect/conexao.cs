@@ -3,6 +3,7 @@ using PFC___StandBy_CSharp.MsgBox;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
@@ -17,26 +18,14 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
     public class conexao
     {
         private readonly BackupDados bckData = new BackupDados();
-
-        //private string dataSQL = "a";
-        //string ConnectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=standby_org;Integrated Security=True"; //de Cleison para iPhone
-        //                          "Server=localhost\\SQLEXPRESS;Database=SEU_BANCO;User Id=SEU_LOGIN;Password=SUA_SENHA;
-        //string ConnectionString = "Data Source=localhost\\SQEXPRESS;Initial Catalog=standby_org;Integrated Security=True"; //de Cleison
         private string connectionString = "";
-
-        //string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
-
-        //static string ConnectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
-        //SqlConnection con = new SqlConnection(ConnectionString);
-        //
         private SqlConnection con;
 
         public void LerDataSourceSql()
         {
-            string txtPath = bckData.CaminhoTxt;
+            string txtPath = bckData.CaminhoTxt; //@"./data/dts.ini";
 
             //Removo as letras e os espacos e deixo so as informações uteis
-
             List<string> dadosSqlConexao = File.ReadAllLines(txtPath).Where(x => !x.Contains("#")).ToList();
             string ip = dadosSqlConexao[0].TrimStart('I', 'P', '=').Trim();
             string porta = dadosSqlConexao[1].TrimStart('P', 'O', 'R', 'T', '=').Trim();
@@ -71,9 +60,25 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
             catch (Exception)
             {
                 MessageBox.Show($"Nao foi possivel se conectar com o banco de dados!\n\nIP Local: {PegarIp()}", "SEM CONEXAO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Application.Exit();
+                //Application.Exit();
             }
             return con;
+        }
+
+        public string StatusConexao()
+        {
+            con = new SqlConnection(connectionString);
+            using (con = OpenConnection())
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    return "Aberta";
+                }
+                else
+                {
+                    return "Fechada";
+                }
+            }
         }
 
         public string PegarIp()

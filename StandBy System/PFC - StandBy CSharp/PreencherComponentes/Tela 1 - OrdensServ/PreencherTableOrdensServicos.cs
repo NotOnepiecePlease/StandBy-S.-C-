@@ -113,8 +113,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                                 ad.AtualizarColunaTempoEntrega((""), Convert.ToInt32(linha[0]));
                             }
                         }
-
-                        int teste = 0;
                         // linha["T.Rest"] = "A";
                         //if (linha[12] != DBNull.Value)
                         //{

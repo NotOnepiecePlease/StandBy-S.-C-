@@ -8,22 +8,24 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Word;
 using PFC___StandBy_CSharp.SqlDbConnect;
+using Application = System.Windows.Forms.Application;
+using System.Collections.Generic;
+using Utilities.BunifuCheckBox.Transitions;
+using Point = System.Drawing.Point;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_StandBy : Form
     {
-        private GraficoServicosSemanais GraficoSemanal = new GraficoServicosSemanais();
-        private GraficoServicosMensais GraficoMensal = new GraficoServicosMensais();
-        private Verificar verificarUpd = new Verificar();
-        private AlterarDados ad = new AlterarDados();
-        private BackupDados bckpData = new BackupDados();
+        private readonly GraficoServicosSemanais graficoSemanal = new GraficoServicosSemanais();
+        private readonly GraficoServicosMensais graficoMensal = new GraficoServicosMensais();
+        private readonly Verificar verificarUpd = new Verificar();
         private Form currentChildForm;
-        private int anoAtual = DateTime.Now.Year;
-        private int mesAtual = DateTime.Now.Month;
+        private readonly int mesAtual = DateTime.Now.Month;
         private int[] corGeral = new int[3] { 0, 0, 0 };
-        private static string pastaRaiz = @"./PasswordPattern";
+        private const string PASTA_RAIZ = @"./PasswordPattern";
 
         public form_StandBy()
         {
@@ -33,17 +35,16 @@ namespace PFC___StandBy_CSharp.Forms
             CarregarGraficos();
             criarPastaDasSenhas();
             lblIpLocal.Text = PegarIp();
-            //bckpData.criarPasta();
 
             btnMenuSuperior.DisabledColor = Color.Transparent;
             if (btnMenuSuperior.Enabled == false)
             {
                 btnMenuSuperior.Cursor = Cursors.Default;
             }
-            //verificarUpd.ChecarVersao();
+            // verificarUpd.ChecarVersaoStandBy();
 
             //Aqui verifica a versao
-            backgroundWorker1.RunWorkerAsync();
+            backVerificarVersao.RunWorkerAsync();
         }
 
         private string PegarIp()
@@ -59,13 +60,13 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void criarPastaDasSenhas()
         {
-            if (Directory.Exists(pastaRaiz))
+            if (Directory.Exists(PASTA_RAIZ))
             {
                 //Caso exista a pasta, nao faz nada.
             }
             else
             {
-                Directory.CreateDirectory(pastaRaiz);
+                Directory.CreateDirectory(PASTA_RAIZ);
             }
         }
 
@@ -73,12 +74,12 @@ namespace PFC___StandBy_CSharp.Forms
         {
             try
             {
-                GraficoSemanal.PreencherUltimos7Dias(bunifuDataViz1, lblQntServicosSemanais);
-                GraficoMensal.Preencher(bunifuDataViz2, mesAtual, lblQntServicosMensais);
+                graficoSemanal.PreencherUltimos7Dias(bunifuDataViz1, lblQntServicosSemanais);
+                graficoMensal.Preencher(bunifuDataViz2, mesAtual, lblQntServicosMensais);
             }
             catch (Exception)
             {
-                MessageBox.Show("Nao foi possivel carregar os graficos pois nao existem dados", "Sem dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Nao foi possivel carregar os graficos pois nao existem dados", "Sem dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -466,22 +467,61 @@ namespace PFC___StandBy_CSharp.Forms
             // notifyIcon1.ShowBalloonTip(1000);
         }
 
-        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        private void backVerificarVersao_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            //verificarUpd.ChecarVersao(this);
-            verificarUpd.ChecarVersao(this);
+            lblUpdate.Text = @"Verificando atualizações...";
+            lblUpdate.ForeColor = Color.DarkOrange;
+            lblUpdate.Location = new Point(150, 9);
+
+            //verificarUpd.ChecarVersaoStandBy(this);
+            string atualizacao = verificarUpd.ChecarVersaoStandBy();
+
+            if (atualizacao == "Atualização Pendente!")
+            {
+                lblUpdate.Text = @"Atualização Pendente!";
+                lblUpdate.ForeColor = Color.Yellow;
+                lblUpdate.Location = new Point(157, 9);
+            }
+            else if (atualizacao == "Sistema Atualizado!")
+            {
+                lblUpdate.Text = @"Sistema Atualizado!";
+                lblUpdate.ForeColor = Color.LawnGreen;
+                lblUpdate.Location = new Point(164, 9);
+            }
+            else if (atualizacao == "Erro ao atualizar!")
+            {
+                lblUpdate.Text = @"Erro ao atualizar";
+                lblUpdate.ForeColor = Color.Crimson;
+                lblUpdate.Location = new Point(164, 9);
+            }
+            else
+            {
+                lblUpdate.Text = @"Erro Desconhecido!";
+                lblUpdate.ForeColor = Color.AntiqueWhite;
+                lblUpdate.Location = new Point(165, 9);
+            }
         }
 
-        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        private void backVerificarVersao_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             //lblUpdate.Visible = false;
             lblUpdate.Visible = true;
-            lblUpdate.Text = @"Sistema Atualizado!";
+            // lblUpdate.Text = @"Sistema Atualizado!";
         }
 
         private void lblIpLocal_Click(object sender, EventArgs e)
         {
             lblIpLocal.Text = PegarIp();
+        }
+
+        private void form_StandBy_Load(object sender, EventArgs e)
+        {
+            CheckForIllegalCrossThreadCalls = false;
+        }
+
+        private void lblUpdate_Click(object sender, EventArgs e)
+        {
+            backVerificarVersao.RunWorkerAsync();
         }
     }
 }

@@ -2,51 +2,37 @@
 using StandBy___CLIENT.SERVER.Forms;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.SqlDbConnect;
+using PFC___StandBy_CSharp.ChecarUpdates;
 
 namespace StandBy___CLIENT.SERVER
 {
     public partial class form_PrincipalClientServer : Form
     {
         private Form currentChildForm;
-        private conexao con = new conexao();
+        private readonly Verificar verificarUpd = new Verificar();
+        private readonly conexao con = new conexao();
 
         public form_PrincipalClientServer()
         {
             InitializeComponent();
-            //backVerificarConexao.RunWorkerAsync();
             PegarIp();
-        }
-
-        private void VerificarSeConectado()
-        {
-            if (con.OpenConnection().State == ConnectionState.Open)
-            {
-                lblEstadoConexao.Text = @"Conectado ao Servidor!";
-                lblEstadoConexao.ForeColor = Color.LimeGreen;
-            }
-            else if (con.OpenConnection().State == ConnectionState.Connecting)
-            {
-                lblEstadoConexao.Text = @"Conectando...";
-                lblEstadoConexao.ForeColor = Color.Yellow;
-            }
-            else
-            {
-                lblEstadoConexao.Text = @"Servidor Desconectado!";
-                lblEstadoConexao.ForeColor = Color.Red;
-            }
+            CheckForIllegalCrossThreadCalls = false;
+            backVerificarConexao.RunWorkerAsync();
+            backVerificarVersao.RunWorkerAsync();
         }
 
         public void PegarIp()
         {
-            string localIP;
             using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
             {
+                string localIP;
                 socket.Connect("8.8.8.8", 65530);
                 IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
                 localIP = endPoint.Address.ToString();
@@ -62,6 +48,7 @@ namespace StandBy___CLIENT.SERVER
                 currentChildForm.Close();
                 currentChildForm.Dispose();
             }
+
             currentChildForm = formFilho;
             //End
             formFilho.TopLevel = false;
@@ -71,7 +58,6 @@ namespace StandBy___CLIENT.SERVER
             panelCentral.Tag = formFilho;
             formFilho.BringToFront();
             formFilho.Show();
-            //lblAbaAtual.Text = formFilho.Text;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -152,7 +138,70 @@ namespace StandBy___CLIENT.SERVER
 
         private void backVerificarConexao_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            VerificarSeConectado();
+            lblEstadoConexao.Text = @"Conectando...";
+            lblEstadoConexao.ForeColor = Color.DarkOrange;
+
+            string status = con.StatusConexao();
+            if (status == "Aberta")
+            {
+                lblEstadoConexao.Text = @"Conectado ao Servidor!";
+                lblEstadoConexao.ForeColor = Color.LawnGreen;
+            }
+            else if (status == "Fechada")
+            {
+                lblEstadoConexao.Text = @"Servidor Desconectado!";
+                lblEstadoConexao.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblEstadoConexao.Text = @"Erro, clique aqui e tente novamente!";
+                lblEstadoConexao.ForeColor = Color.AntiqueWhite;
+            }
+        }
+
+        private void lblEstadoConexao_Click(object sender, EventArgs e)
+        {
+            backVerificarConexao.RunWorkerAsync();
+        }
+
+        private void backVerificarVersao_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            lblUpdate.Text = @"Verificando atualizações...";
+            lblUpdate.ForeColor = Color.DarkOrange;
+            lblUpdate.Location = new Point(187, 9);
+
+            //verificarUpd.ChecarVersaoStandBy(this);
+            string atualizacao = verificarUpd.ChecarVersaoClientServer();
+
+            if (atualizacao == "Atualização Pendente!")
+            {
+                lblUpdate.Text = @"Atualização Pendente!";
+                lblUpdate.ForeColor = Color.Yellow;
+                lblUpdate.Location = new Point(196, 9);
+            }
+            else if (atualizacao == "Sistema Atualizado!")
+            {
+                lblUpdate.Text = @"Sistema Atualizado!";
+                lblUpdate.ForeColor = Color.LawnGreen;
+                lblUpdate.Location = new Point(200, 9);
+            }
+            else if (atualizacao == "Erro ao atualizar!")
+            {
+                lblUpdate.Text = @"Erro ao atualizar!";
+                lblUpdate.ForeColor = Color.Crimson;
+                lblUpdate.Location = new Point(207, 9);
+            }
+            else
+            {
+                lblUpdate.Text = @"Erro Desconhecido!";
+                lblUpdate.ForeColor = Color.AntiqueWhite;
+                lblUpdate.Location = new Point(201, 9);
+            }
+        }
+
+        private void lblUpdate_Click(object sender, EventArgs e)
+        {
+            backVerificarVersao.RunWorkerAsync();
         }
     }
 }
