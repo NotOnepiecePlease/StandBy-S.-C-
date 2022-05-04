@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -15,13 +11,6 @@ namespace PFC___StandBy_CSharp.Dados
 
         //public string caminhoTXT = @"./data/dts.txt";
         public string CaminhoTxt = @"./data/dts.ini";
-
-        //Adriano
-        //private static string dataSource = "localhost\\SQLEXPRESS";
-
-        //private static string dataSource = "localhost\\SQEXPRESS";
-        //private static string login = "sa";
-        //private static string pass = "123adr";
 
         private List<string> DadosParaEscrever { get; } = new List<string>()
         {

@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using PFC___StandBy_CSharp.MsgBox;
 using System.Data;
-using System.Windows.Forms;
 using Bunifu.Framework.UI;
 
 namespace PFC___StandBy_CSharp.Dados
 {
-    class DeletarDados : conexao
+    internal class DeletarDados : conexao
     {
-        MensagensErro mErro = new MensagensErro();
-        MensagensSucesso mSucesso = new MensagensSucesso();
-        VerificarExistencia ve = new VerificarExistencia();
+        private MensagensErro mErro = new MensagensErro();
+        private MensagensSucesso mSucesso = new MensagensSucesso();
+        private VerificarExistencia ve = new VerificarExistencia();
+
         public void DeletarServico(int _idServico)
         {
             try
@@ -37,9 +33,7 @@ namespace PFC___StandBy_CSharp.Dados
             catch (Exception ex)
             {
                 mErro.ErroDeletarServico(ex);
-                //MessageBox.Show("ERRO: " + ex);
             }
-
         }
 
         public void DeletarCliente(int _idcliente)
@@ -64,22 +58,18 @@ namespace PFC___StandBy_CSharp.Dados
                 catch (Exception ex)
                 {
                     mErro.ErroDeletarCliente(ex);
-                    //MessageBox.Show("ERRO: " + ex);
                 }
             }
             else
             {
                 mErro.ErroClientePossuiServicos();
-                //MessageBox.Show("Cliente possui servicos");
             }
         }
 
         public void DeletarGastos(int _id, BunifuCustomDataGrid tabelaGastos)
         {
-
             using (SqlConnection conexao = OpenConnection())
             {
-
                 string procedure = "GastosDeletar";
 
                 SqlCommand cmd = new SqlCommand(procedure, conexao);
@@ -112,7 +102,6 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 mErro.ErroAoDeletarGarantia(ex);
             }
-
         }
     }
 }

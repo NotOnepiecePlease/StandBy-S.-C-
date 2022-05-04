@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using PFC___StandBy_CSharp.MsgBox;
-using PFC___StandBy_CSharp.Forms;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Dados

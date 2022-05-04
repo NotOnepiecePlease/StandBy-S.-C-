@@ -18,7 +18,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
     public class PreencherTableOrdensServicos : conexao
     {
         private readonly MensagensErro mErro = new MensagensErro();
-        private readonly MensagensSucesso mSucesso = new MensagensSucesso();
         private readonly AlterarDados ad = new AlterarDados();
 
         [DllImport("user32.dll")]
@@ -32,27 +31,17 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    //Query antiga:
-                    //"select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
-                    //"sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo " +
-                    //"FROM tb_servicos " +
-                    //"INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
-                    //"WHERE sv_status = 1 and sv_ativo = 1 order by sv_id desc"
-
-                    SqlDataAdapter adapter = new SqlDataAdapter("select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
-                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo, sv_tempo_para_entregar " +
-                    "FROM tb_servicos " +
-                    "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
-                    "WHERE sv_status = 1 and sv_ativo = 1 order by sv_cor_tempo asc, sv_data desc, sv_id desc", con);
+                    string query = "select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
+                                   "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo, sv_tempo_para_entregar " +
+                                   "FROM tb_servicos " +
+                                   "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
+                                   "WHERE sv_status = 1 and sv_ativo = 1 order by sv_cor_tempo asc, sv_data desc, sv_id desc";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, con);
 
                     //16
 
                     DataTable datatable = new DataTable();
                     adapter.Fill(datatable);
-                    //datatable.Columns.Add("T.Rest");
-                    //_tabelaServicos.Columns[15].Visible = true;
-                    //datatable.Columns[16].ColumnMapping =
-
                     foreach (DataRow linha in datatable.Rows)
                     {
                         //Atualizar a coluna das cores

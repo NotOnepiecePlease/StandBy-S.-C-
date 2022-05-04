@@ -12,12 +12,8 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_OrdensServ : Form
     {
         private BuscarDados bd = new BuscarDados();
-        private InserirDados id = new InserirDados();
-        private AlterarDados ad = new AlterarDados();
         private DeletarDados dd = new DeletarDados();
         private PreencherComboBoxCliente pc = new PreencherComboBoxCliente();
-        private MensagensErro me = new MensagensErro();
-        private MensagensSucesso ms = new MensagensSucesso();
         private PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
         private int[] corGeral = new int[3] { 0, 0, 0 };
 
@@ -28,7 +24,6 @@ namespace PFC___StandBy_CSharp.Forms
             pc.Preencher(cmbClientes);
             corGeral = corRGB;
             MudarTodasCores();
-            //cmbClientes.SelectedIndex = 0;
             cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
             table_OrdensServicos.ClearSelection();
             //VerificarAtraso();
@@ -84,24 +79,6 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        //private void VerificarAtraso()
-        //{
-        //    foreach (DataGridViewRow row in table_OrdensServicos.Rows)
-        //    {
-        //        if (Convert.ToString(row.Cells[7].Value) == "teemo")
-        //        {
-        //            // Se for negativo, fica vermelho
-        //            //row.Cells[12].Value = "DONE";
-        //            MessageBox.Show(Convert.ToString(row.Cells[3].Value));
-        //            //row.Cells[3].Style.BackColor = Color.Red;
-        //            row.Cells[7].Style.BackColor = Color.Red;
-
-        //            //table_OrdensServicos.RowsDefaultCellStyle.SelectionBackColor = Color.Red;
-        //        }
-        //    }
-        //    //table_OrdensServicos.BackgroundColor = Color.Red;
-        //}
-
         public void MudarTodasCores()
         {
             btnSenhaPadrao.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -124,8 +101,6 @@ namespace PFC___StandBy_CSharp.Forms
             txtSituacaoOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtPesquisarCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtAcessoriosOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //table_OrdensServicos.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //cmbClientes.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             contextMenuStrip1.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
@@ -136,14 +111,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnPesquisarCliente_Click(object sender, EventArgs e)
         {
-            //try
-            //{
             preencherTableServ.PreencherServicosPorNomeCliente(table_OrdensServicos, txtPesquisarCliente.Text);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("ERRO: " + ex + "");
-            //}
         }
 
         private void btnCadastrarOrdem_Click(object sender, EventArgs e)
@@ -295,16 +263,8 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
-                //try
-                //{
                 preencherTableServ.PreencherServicosPorNomeCliente(table_OrdensServicos, txtPesquisarCliente.Text);
-                //table_OrdensServicos.Refresh();
                 table_OrdensServicos.ClearSelection();
-                //}
-                //catch (Exception ex)
-                //{
-                //MessageBox.Show(@"ERRO: " + ex + "");
-                //}
             }
         }
 
