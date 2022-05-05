@@ -1,5 +1,4 @@
 ﻿using PFC___StandBy_CSharp.ChecarUpdates;
-using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.Graficos;
 using System;
 using System.Drawing;
@@ -7,12 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Word;
-using PFC___StandBy_CSharp.SqlDbConnect;
 using Application = System.Windows.Forms.Application;
-using System.Collections.Generic;
-using Utilities.BunifuCheckBox.Transitions;
 using Point = System.Drawing.Point;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -23,6 +19,8 @@ namespace PFC___StandBy_CSharp.Forms
         private readonly GraficoServicosMensais graficoMensal = new GraficoServicosMensais();
         private readonly Verificar verificarUpd = new Verificar();
         private Form currentChildForm;
+
+        private string statusAtualizacao = "";
         private readonly int mesAtual = DateTime.Now.Month;
         private int[] corGeral = new int[3] { 0, 0, 0 };
         private const string PASTA_RAIZ = @"./PasswordPattern";
@@ -41,7 +39,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 btnMenuSuperior.Cursor = Cursors.Default;
             }
-            // verificarUpd.ChecarVersaoStandBy();
+            //verificarUpd.ChecarVersaoStandBy();
 
             //Aqui verifica a versao
             backVerificarVersao.RunWorkerAsync();
@@ -473,22 +471,20 @@ namespace PFC___StandBy_CSharp.Forms
             lblUpdate.ForeColor = Color.DarkOrange;
             lblUpdate.Location = new Point(150, 9);
 
-            //verificarUpd.ChecarVersaoStandBy(this);
-            string atualizacao = verificarUpd.ChecarVersaoStandBy();
-
-            if (atualizacao == "Atualização Pendente!")
+            statusAtualizacao = verificarUpd.ChecarVersaoStandBy();
+            if (statusAtualizacao == "Atualização Pendente!")
             {
                 lblUpdate.Text = @"Atualização Pendente!";
                 lblUpdate.ForeColor = Color.Yellow;
                 lblUpdate.Location = new Point(157, 9);
             }
-            else if (atualizacao == "Sistema Atualizado!")
+            else if (statusAtualizacao == "Sistema Atualizado!")
             {
                 lblUpdate.Text = @"Sistema Atualizado!";
                 lblUpdate.ForeColor = Color.LawnGreen;
                 lblUpdate.Location = new Point(164, 9);
             }
-            else if (atualizacao == "Erro ao atualizar!")
+            else if (statusAtualizacao == "Erro ao atualizar!")
             {
                 lblUpdate.Text = @"Erro ao atualizar";
                 lblUpdate.ForeColor = Color.Crimson;
@@ -506,7 +502,19 @@ namespace PFC___StandBy_CSharp.Forms
         {
             //lblUpdate.Visible = false;
             lblUpdate.Visible = true;
-            // lblUpdate.Text = @"Sistema Atualizado!";
+
+            if (statusAtualizacao == "Atualização Pendente!")
+            {
+                lblDesejaAtualizar.Visible = true;
+                btnSimAtualizar.Visible = true;
+                btnNaoAtualizar.Visible = true;
+            }
+            else
+            {
+                lblDesejaAtualizar.Visible = false;
+                btnSimAtualizar.Visible = false;
+                btnNaoAtualizar.Visible = false;
+            }
         }
 
         private void lblIpLocal_Click(object sender, EventArgs e)
@@ -522,6 +530,11 @@ namespace PFC___StandBy_CSharp.Forms
         private void lblUpdate_Click(object sender, EventArgs e)
         {
             backVerificarVersao.RunWorkerAsync();
+        }
+
+        private void btnSimAtualizar_Click(object sender, EventArgs e)
+        {
+            verificarUpd.Atualizar();
         }
     }
 }

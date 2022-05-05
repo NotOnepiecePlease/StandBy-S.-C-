@@ -11,9 +11,9 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_OrdensServ : Form
     {
-        private BuscarDados bd = new BuscarDados();
-        private DeletarDados dd = new DeletarDados();
-        private PreencherComboBoxCliente pc = new PreencherComboBoxCliente();
+        private BuscarDados buscarDados = new BuscarDados();
+        private DeletarDados deletarDados = new DeletarDados();
+        private PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
         private PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
         private int[] corGeral = new int[3] { 0, 0, 0 };
 
@@ -21,7 +21,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             InitializeComponent();
             preencherTableServ.Preencher(table_OrdensServicos);
-            pc.Preencher(cmbClientes);
+            preencherCombobox.Preencher(cmbClientes);
             corGeral = corRGB;
             MudarTodasCores();
             cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
@@ -275,13 +275,13 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void EditarUmServico()
         {
-            string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
-            string _TEL_RECCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
+            string _TELCliente = buscarDados.BuscarTelefoneCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
+            string _TEL_RECCliente = buscarDados.BuscarTelefoneRecadoCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
             float lucro = float.Parse(table_OrdensServicos.SelectedCells[10].Value.ToString());
             form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
             try
             {
-                string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
+                string _CPFCliente = buscarDados.BuscarCPFCliente(Convert.ToInt32(table_OrdensServicos.SelectedCells[16].Value.ToString()));
                 editarServicos.txtCPFCliente.Text = _CPFCliente;
                 editarServicos.txtAcessoriosEdit.Text = table_OrdensServicos.SelectedCells[14].Value.ToString();
             }
@@ -350,7 +350,7 @@ namespace PFC___StandBy_CSharp.Forms
             if (resultado == DialogResult.Yes)
             {
                 int _idServico = int.Parse(table_OrdensServicos.SelectedCells[0].Value.ToString());
-                dd.DeletarServico(_idServico);
+                deletarDados.DeletarServico(_idServico);
                 refreshTable();
             }
         }
@@ -493,7 +493,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(corGeral))
             {
-                passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(table_OrdensServicos.SelectedCells[0].Value.ToString()));
+                passShow.pictureBox1.Image = ConvertByteArrayToImage(buscarDados.BuscarImagem(table_OrdensServicos.SelectedCells[0].Value.ToString()));
                 if (passShow.pictureBox1.Image == null)
                 {
                     passShow.lblSemPadrao.Visible = true;

@@ -2,16 +2,23 @@
 using System;
 using System.Diagnostics;
 using System.Net;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.ChecarUpdates
 {
     public class Verificar
     {
-        private const string VERSAO_STANDBY = "5.13.1";
+        private const string VERSAO_STANDBY = "5.13.2";
         private const string LINK_STANDBY = "https://www.dropbox.com/s/revwuo9ry89po4t/UpdateVersionStandBY.txt?dl=1";
         private const string VERSAO_CLIENT_SERVER = "2.0.0";
         private const string LINK_CLIENT_SERVER = "https://www.dropbox.com/s/zb8ezcxnzk8fyz6/UpdateVersionClientServer.txt?dl=1";
+
+        public void Atualizar()
+        {
+            Process.Start("SBAutoUpdate.exe");
+            Application.Exit();
+        }
 
         public void ChecarVersaoStandBy(form_StandBy form)
         {
@@ -45,19 +52,6 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
             {
                 if (!webClient.DownloadString(LINK_STANDBY).Contains(VERSAO_STANDBY))
                 {
-                    if (MessageBox.Show(
-                            "Existe uma nova versão do sistema StandBy,\ndeseja atualizar o sistema agora?",
-                            @"Nova Atualização", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
-                        DialogResult.Yes)
-                    {
-                        using (var cliente = new WebClient())
-                        {
-                            Process.Start("SBAutoUpdate.exe");
-                            Application.Exit();
-                            return "Sistema sendo Atualizado...";
-                        }
-                    }
-
                     return @"Atualização Pendente!";
                 }
 

@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation12 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation11 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_StandBy));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panelTopStandBy = new System.Windows.Forms.Panel();
+            this.bunifuSeparator3 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.lblDesejaAtualizar = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIpLocal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.lblUpdate = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -97,8 +101,8 @@
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.backVerificarVersao = new System.ComponentModel.BackgroundWorker();
-            this.bunifuSeparator3 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.lblEstadoConexao = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnSimAtualizar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnNaoAtualizar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panelTopStandBy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
@@ -123,9 +127,11 @@
             // panelTopStandBy
             // 
             this.panelTopStandBy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panelTopStandBy.Controls.Add(this.btnNaoAtualizar);
+            this.panelTopStandBy.Controls.Add(this.btnSimAtualizar);
             this.panelTopStandBy.Controls.Add(this.bunifuSeparator3);
             this.panelTopStandBy.Controls.Add(this.bunifuSeparator2);
-            this.panelTopStandBy.Controls.Add(this.lblEstadoConexao);
+            this.panelTopStandBy.Controls.Add(this.lblDesejaAtualizar);
             this.panelTopStandBy.Controls.Add(this.lblIpLocal);
             this.panelTopStandBy.Controls.Add(this.bunifuSeparator1);
             this.panelTopStandBy.Controls.Add(this.lblUpdate);
@@ -144,6 +150,24 @@
             this.panelTopStandBy.Size = new System.Drawing.Size(1280, 34);
             this.panelTopStandBy.TabIndex = 0;
             // 
+            // bunifuSeparator3
+            // 
+            this.bunifuSeparator3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator3.BackgroundImage")));
+            this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.animationMenuHide1.SetDecoration(this.bunifuSeparator3, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.bunifuSeparator3, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuSeparator3.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator3.LineThickness = 1;
+            this.bunifuSeparator3.Location = new System.Drawing.Point(292, 0);
+            this.bunifuSeparator3.Name = "bunifuSeparator3";
+            this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator3.Size = new System.Drawing.Size(14, 34);
+            this.bunifuSeparator3.TabIndex = 21;
+            // 
             // bunifuSeparator2
             // 
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
@@ -160,6 +184,21 @@
             this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
             this.bunifuSeparator2.Size = new System.Drawing.Size(14, 34);
             this.bunifuSeparator2.TabIndex = 12;
+            // 
+            // lblDesejaAtualizar
+            // 
+            this.lblDesejaAtualizar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDesejaAtualizar.AutoSize = true;
+            this.animationMenuShow1.SetDecoration(this.lblDesejaAtualizar, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuHide1.SetDecoration(this.lblDesejaAtualizar, BunifuAnimatorNS.DecorationType.None);
+            this.lblDesejaAtualizar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblDesejaAtualizar.ForeColor = System.Drawing.Color.White;
+            this.lblDesejaAtualizar.Location = new System.Drawing.Point(308, 9);
+            this.lblDesejaAtualizar.Name = "lblDesejaAtualizar";
+            this.lblDesejaAtualizar.Size = new System.Drawing.Size(97, 15);
+            this.lblDesejaAtualizar.TabIndex = 20;
+            this.lblDesejaAtualizar.Text = "Deseja Atualizar?";
+            this.lblDesejaAtualizar.Visible = false;
             // 
             // lblIpLocal
             // 
@@ -217,7 +256,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(39, 15);
             this.lblVersion.TabIndex = 9;
-            this.lblVersion.Text = "5.13.0";
+            this.lblVersion.Text = "5.13.2";
             // 
             // iconMenu
             // 
@@ -1204,43 +1243,43 @@
             // 
             this.animationMenuShow1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuShow1.Cursor = null;
-            animation12.AnimateOnlyDifferences = true;
-            animation12.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.BlindCoeff")));
-            animation12.LeafCoeff = 0F;
-            animation12.MaxTime = 1F;
-            animation12.MinTime = 0F;
-            animation12.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicCoeff")));
-            animation12.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicShift")));
-            animation12.MosaicSize = 0;
-            animation12.Padding = new System.Windows.Forms.Padding(0);
-            animation12.RotateCoeff = 0F;
-            animation12.RotateLimit = 0F;
-            animation12.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.ScaleCoeff")));
-            animation12.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.SlideCoeff")));
-            animation12.TimeCoeff = 0F;
-            animation12.TransparencyCoeff = 0F;
-            this.animationMenuShow1.DefaultAnimation = animation12;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.animationMenuShow1.DefaultAnimation = animation4;
             // 
             // animationMenuHide1
             // 
             this.animationMenuHide1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuHide1.Cursor = null;
-            animation11.AnimateOnlyDifferences = true;
-            animation11.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.BlindCoeff")));
-            animation11.LeafCoeff = 0F;
-            animation11.MaxTime = 1F;
-            animation11.MinTime = 0F;
-            animation11.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicCoeff")));
-            animation11.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicShift")));
-            animation11.MosaicSize = 0;
-            animation11.Padding = new System.Windows.Forms.Padding(0);
-            animation11.RotateCoeff = 0F;
-            animation11.RotateLimit = 0F;
-            animation11.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.ScaleCoeff")));
-            animation11.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.SlideCoeff")));
-            animation11.TimeCoeff = 0F;
-            animation11.TransparencyCoeff = 0F;
-            this.animationMenuHide1.DefaultAnimation = animation11;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.animationMenuHide1.DefaultAnimation = animation3;
             // 
             // ArredondarBordaEsquerda
             // 
@@ -1283,37 +1322,190 @@
             this.backVerificarVersao.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backVerificarVersao_DoWork);
             this.backVerificarVersao.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backVerificarVersao_RunWorkerCompleted);
             // 
-            // bunifuSeparator3
+            // btnSimAtualizar
             // 
-            this.bunifuSeparator3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator3.BackgroundImage")));
-            this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.animationMenuHide1.SetDecoration(this.bunifuSeparator3, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuSeparator3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuSeparator3.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator3.LineThickness = 1;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(292, 0);
-            this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
-            this.bunifuSeparator3.Size = new System.Drawing.Size(14, 34);
-            this.bunifuSeparator3.TabIndex = 21;
+            this.btnSimAtualizar.AllowAnimations = true;
+            this.btnSimAtualizar.AllowMouseEffects = true;
+            this.btnSimAtualizar.AllowToggling = false;
+            this.btnSimAtualizar.AnimationSpeed = 200;
+            this.btnSimAtualizar.AutoGenerateColors = false;
+            this.btnSimAtualizar.AutoRoundBorders = false;
+            this.btnSimAtualizar.AutoSizeLeftIcon = true;
+            this.btnSimAtualizar.AutoSizeRightIcon = true;
+            this.btnSimAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSimAtualizar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnSimAtualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSimAtualizar.BackgroundImage")));
+            this.btnSimAtualizar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSimAtualizar.ButtonText = "SIM";
+            this.btnSimAtualizar.ButtonTextMarginLeft = 0;
+            this.btnSimAtualizar.ColorContrastOnClick = 45;
+            this.btnSimAtualizar.ColorContrastOnHover = 45;
+            this.btnSimAtualizar.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnSimAtualizar.CustomizableEdges = borderEdges4;
+            this.animationMenuHide1.SetDecoration(this.btnSimAtualizar, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnSimAtualizar, BunifuAnimatorNS.DecorationType.None);
+            this.btnSimAtualizar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSimAtualizar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSimAtualizar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSimAtualizar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSimAtualizar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSimAtualizar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSimAtualizar.ForeColor = System.Drawing.Color.White;
+            this.btnSimAtualizar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSimAtualizar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSimAtualizar.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnSimAtualizar.IconMarginLeft = 11;
+            this.btnSimAtualizar.IconPadding = 10;
+            this.btnSimAtualizar.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSimAtualizar.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnSimAtualizar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSimAtualizar.IconSize = 25;
+            this.btnSimAtualizar.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnSimAtualizar.IdleBorderRadius = 1;
+            this.btnSimAtualizar.IdleBorderThickness = 1;
+            this.btnSimAtualizar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnSimAtualizar.IdleIconLeftImage = null;
+            this.btnSimAtualizar.IdleIconRightImage = null;
+            this.btnSimAtualizar.IndicateFocus = false;
+            this.btnSimAtualizar.Location = new System.Drawing.Point(413, 8);
+            this.btnSimAtualizar.Name = "btnSimAtualizar";
+            this.btnSimAtualizar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSimAtualizar.OnDisabledState.BorderRadius = 1;
+            this.btnSimAtualizar.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSimAtualizar.OnDisabledState.BorderThickness = 1;
+            this.btnSimAtualizar.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSimAtualizar.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSimAtualizar.OnDisabledState.IconLeftImage = null;
+            this.btnSimAtualizar.OnDisabledState.IconRightImage = null;
+            this.btnSimAtualizar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnSimAtualizar.onHoverState.BorderRadius = 1;
+            this.btnSimAtualizar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSimAtualizar.onHoverState.BorderThickness = 1;
+            this.btnSimAtualizar.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnSimAtualizar.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSimAtualizar.onHoverState.IconLeftImage = null;
+            this.btnSimAtualizar.onHoverState.IconRightImage = null;
+            this.btnSimAtualizar.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnSimAtualizar.OnIdleState.BorderRadius = 1;
+            this.btnSimAtualizar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSimAtualizar.OnIdleState.BorderThickness = 1;
+            this.btnSimAtualizar.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnSimAtualizar.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnSimAtualizar.OnIdleState.IconLeftImage = null;
+            this.btnSimAtualizar.OnIdleState.IconRightImage = null;
+            this.btnSimAtualizar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSimAtualizar.OnPressedState.BorderRadius = 1;
+            this.btnSimAtualizar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSimAtualizar.OnPressedState.BorderThickness = 1;
+            this.btnSimAtualizar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSimAtualizar.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnSimAtualizar.OnPressedState.IconLeftImage = null;
+            this.btnSimAtualizar.OnPressedState.IconRightImage = null;
+            this.btnSimAtualizar.Size = new System.Drawing.Size(55, 18);
+            this.btnSimAtualizar.TabIndex = 22;
+            this.btnSimAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSimAtualizar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSimAtualizar.TextMarginLeft = 0;
+            this.btnSimAtualizar.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnSimAtualizar.UseDefaultRadiusAndThickness = true;
+            this.btnSimAtualizar.Visible = false;
+            this.btnSimAtualizar.Click += new System.EventHandler(this.btnSimAtualizar_Click);
             // 
-            // lblEstadoConexao
+            // btnNaoAtualizar
             // 
-            this.lblEstadoConexao.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblEstadoConexao.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.lblEstadoConexao, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuHide1.SetDecoration(this.lblEstadoConexao, BunifuAnimatorNS.DecorationType.None);
-            this.lblEstadoConexao.ForeColor = System.Drawing.Color.Aquamarine;
-            this.lblEstadoConexao.Location = new System.Drawing.Point(309, 11);
-            this.lblEstadoConexao.Name = "lblEstadoConexao";
-            this.lblEstadoConexao.Size = new System.Drawing.Size(119, 13);
-            this.lblEstadoConexao.TabIndex = 20;
-            this.lblEstadoConexao.Text = "Conectado ao Servidor!";
-            this.lblEstadoConexao.Visible = false;
+            this.btnNaoAtualizar.AllowAnimations = true;
+            this.btnNaoAtualizar.AllowMouseEffects = true;
+            this.btnNaoAtualizar.AllowToggling = false;
+            this.btnNaoAtualizar.AnimationSpeed = 200;
+            this.btnNaoAtualizar.AutoGenerateColors = false;
+            this.btnNaoAtualizar.AutoRoundBorders = false;
+            this.btnNaoAtualizar.AutoSizeLeftIcon = true;
+            this.btnNaoAtualizar.AutoSizeRightIcon = true;
+            this.btnNaoAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnNaoAtualizar.BackColor1 = System.Drawing.Color.Gray;
+            this.btnNaoAtualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNaoAtualizar.BackgroundImage")));
+            this.btnNaoAtualizar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnNaoAtualizar.ButtonText = "NAO";
+            this.btnNaoAtualizar.ButtonTextMarginLeft = 0;
+            this.btnNaoAtualizar.ColorContrastOnClick = 45;
+            this.btnNaoAtualizar.ColorContrastOnHover = 45;
+            this.btnNaoAtualizar.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnNaoAtualizar.CustomizableEdges = borderEdges3;
+            this.animationMenuHide1.SetDecoration(this.btnNaoAtualizar, BunifuAnimatorNS.DecorationType.None);
+            this.animationMenuShow1.SetDecoration(this.btnNaoAtualizar, BunifuAnimatorNS.DecorationType.None);
+            this.btnNaoAtualizar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnNaoAtualizar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnNaoAtualizar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnNaoAtualizar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnNaoAtualizar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnNaoAtualizar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNaoAtualizar.ForeColor = System.Drawing.Color.White;
+            this.btnNaoAtualizar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNaoAtualizar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnNaoAtualizar.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnNaoAtualizar.IconMarginLeft = 11;
+            this.btnNaoAtualizar.IconPadding = 10;
+            this.btnNaoAtualizar.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNaoAtualizar.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnNaoAtualizar.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnNaoAtualizar.IconSize = 25;
+            this.btnNaoAtualizar.IdleBorderColor = System.Drawing.Color.Gray;
+            this.btnNaoAtualizar.IdleBorderRadius = 1;
+            this.btnNaoAtualizar.IdleBorderThickness = 1;
+            this.btnNaoAtualizar.IdleFillColor = System.Drawing.Color.Gray;
+            this.btnNaoAtualizar.IdleIconLeftImage = null;
+            this.btnNaoAtualizar.IdleIconRightImage = null;
+            this.btnNaoAtualizar.IndicateFocus = false;
+            this.btnNaoAtualizar.Location = new System.Drawing.Point(477, 8);
+            this.btnNaoAtualizar.Name = "btnNaoAtualizar";
+            this.btnNaoAtualizar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnNaoAtualizar.OnDisabledState.BorderRadius = 1;
+            this.btnNaoAtualizar.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnNaoAtualizar.OnDisabledState.BorderThickness = 1;
+            this.btnNaoAtualizar.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnNaoAtualizar.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnNaoAtualizar.OnDisabledState.IconLeftImage = null;
+            this.btnNaoAtualizar.OnDisabledState.IconRightImage = null;
+            this.btnNaoAtualizar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnNaoAtualizar.onHoverState.BorderRadius = 1;
+            this.btnNaoAtualizar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnNaoAtualizar.onHoverState.BorderThickness = 1;
+            this.btnNaoAtualizar.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnNaoAtualizar.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnNaoAtualizar.onHoverState.IconLeftImage = null;
+            this.btnNaoAtualizar.onHoverState.IconRightImage = null;
+            this.btnNaoAtualizar.OnIdleState.BorderColor = System.Drawing.Color.Gray;
+            this.btnNaoAtualizar.OnIdleState.BorderRadius = 1;
+            this.btnNaoAtualizar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnNaoAtualizar.OnIdleState.BorderThickness = 1;
+            this.btnNaoAtualizar.OnIdleState.FillColor = System.Drawing.Color.Gray;
+            this.btnNaoAtualizar.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnNaoAtualizar.OnIdleState.IconLeftImage = null;
+            this.btnNaoAtualizar.OnIdleState.IconRightImage = null;
+            this.btnNaoAtualizar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnNaoAtualizar.OnPressedState.BorderRadius = 1;
+            this.btnNaoAtualizar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnNaoAtualizar.OnPressedState.BorderThickness = 1;
+            this.btnNaoAtualizar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnNaoAtualizar.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnNaoAtualizar.OnPressedState.IconLeftImage = null;
+            this.btnNaoAtualizar.OnPressedState.IconRightImage = null;
+            this.btnNaoAtualizar.Size = new System.Drawing.Size(55, 18);
+            this.btnNaoAtualizar.TabIndex = 23;
+            this.btnNaoAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNaoAtualizar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnNaoAtualizar.TextMarginLeft = 0;
+            this.btnNaoAtualizar.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnNaoAtualizar.UseDefaultRadiusAndThickness = true;
+            this.btnNaoAtualizar.Visible = false;
             // 
             // form_StandBy
             // 
@@ -1432,6 +1624,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblIpLocal;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
-        public Bunifu.Framework.UI.BunifuCustomLabel lblEstadoConexao;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblDesejaAtualizar;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnNaoAtualizar;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSimAtualizar;
     }
 }

@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.IO.Compression;
 using System.Diagnostics;
-using Bunifu.Framework.UI;
 using System.Threading;
 
 namespace SBAutoUpdate
@@ -56,44 +51,37 @@ namespace SBAutoUpdate
                     Thread.Sleep(3000);
                     try
                     {
-                        string myDir = @".\";
-                        List<string> keepFiles = new List<string>();
+                        string meuDiretorio = @".\";
+                        List<string> arquivosSeremMantidos = new List<string>
+                        {
+                            "Guna.UI.dll",
+                            "Bunifu_UI_v1.5.3.dll",
+                            "Bunifu_UI_v1.5.3.xml",
+                            "SBAutoUpdate.exe",
+                            "SBAutoUpdate.exe.config",
+                            "SBAutoUpdate.pdb"
+                        };
 
-                        keepFiles.Add("Guna.UI.dll");
-                        keepFiles.Add("Bunifu_UI_v1.5.3.dll");
-                        keepFiles.Add("Bunifu_UI_v1.5.3.xml");
-                        keepFiles.Add("SBAutoUpdate.exe");
-                        keepFiles.Add("SBAutoUpdate.exe.config");
-                        keepFiles.Add("SBAutoUpdate.pdb");
-
-                        DeleteAllExcept(myDir, keepFiles, true);
-
+                        DeleteTodosExceto(meuDiretorio, arquivosSeremMantidos, true);
 
                         var client = new WebClient();
-                        //Directory.CreateDirectory(@".\");
                         client.DownloadFile("https://www.dropbox.com/s/8a5oekhvwuujhqx/Update.zip?dl=1", "Update.zip");
-                        DirectoryInfo di2 = new DirectoryInfo("Update.zip");
+                        DirectoryInfo diretorioArquivoBaixado = new DirectoryInfo("Update.zip");
                         Thread.Sleep(10);
-                        //Thread.Sleep(5000);
-                        //string zipPath = @"..\Update.zip";
-                        string extractPath = @".\";
-                        //ZipFile.ExtractToDirectory(zipPath, extractPath);
-                        ZipFile.ExtractToDirectory(di2.FullName, extractPath);
+                        string diretorioParaExtrair = @".\";
+                        ZipFile.ExtractToDirectory(diretorioArquivoBaixado.FullName, diretorioParaExtrair);
                         File.Delete(@"..\Update.zip");
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show("ERRO: \n\n" + ex);
                         Application.Exit();
                     }
-
                 }
                 else if (progress.Value == 100)
                 {
-                    if (MessageBox.Show(@"Atualizado com Sucesso!
-O StandBy System vai abrir automaticamente em alguns segundos...",
-                        "APROVEITE!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                    if (MessageBox.Show(@"Atualizado com Sucesso! O StandBy System vai abrir automaticamente em alguns segundos...",
+                        @"APROVEITE!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                     {
                         Process.Start(@".\StandBy System.exe");
                         File.Delete(@"..\Update.zip");
@@ -102,22 +90,22 @@ O StandBy System vai abrir automaticamente em alguns segundos...",
             }
         }
 
-        public static void DeleteAllExcept(string folderPath, List<string> except, bool recursive = true)
+        public static void DeleteTodosExceto(string meuDiretorio, List<string> arquivosParaManter, bool recursive = true)
         {
-            var dir = new DirectoryInfo(folderPath);
+            var DiretorioDoExecutavel = new DirectoryInfo(meuDiretorio);
 
             //Delete files excluding the list of file names
-            foreach (var fi in dir.GetFiles().Where(n => !except.Contains(n.Name)))
+            foreach (var arquivo in DiretorioDoExecutavel.GetFiles().Where(n => !arquivosParaManter.Contains(n.Name)))
             {
-                fi.Delete();
+                arquivo.Delete();
             }
 
             //Loop sub directories if recursive == true
             if (recursive)
             {
-                foreach (var di in dir.GetDirectories())
+                foreach (var di in DiretorioDoExecutavel.GetDirectories())
                 {
-                    DeleteAllExcept(di.FullName, except, recursive);
+                    DeleteTodosExceto(di.FullName, arquivosParaManter, recursive);
                 }
             }
         }
