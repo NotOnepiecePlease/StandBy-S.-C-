@@ -5,12 +5,12 @@ using System.Net.Sockets;
 
 namespace PFC___StandBy_CSharp.Dados
 {
-    internal class BackupDados
+    public class BackupDados
     {
         private static string pastaRaiz = @"./data";
 
         //public string caminhoTXT = @"./data/dts.txt";
-        public string CaminhoTxt = @"./data/dts.ini";
+        public string CAMINHO_TXT = @"./data/dts.ini";
 
         private List<string> DadosParaEscrever { get; } = new List<string>()
         {
@@ -33,23 +33,14 @@ namespace PFC___StandBy_CSharp.Dados
         {
             if (Directory.Exists(pastaRaiz))
             {
-                if (File.Exists(CaminhoTxt))
+                if (File.Exists(CAMINHO_TXT))
                 {
-                    // This path is a file
-                    // Console.WriteLine("Existe");
+                    //Se ja existe, nao faz nada, poderia apenas negar a condicao mas acho mais legivel assim.
                 }
                 else
                 {
-                    using (StreamWriter sw = File.CreateText(CaminhoTxt))
+                    using (StreamWriter sw = File.CreateText(CAMINHO_TXT))
                     {
-                        //sw.WriteLine(Title);
-                        //sw.WriteLine(DataSource);
-                        //sw.WriteLine(Port);
-                        //sw.WriteLine(Login);
-                        //sw.WriteLine(Pass);
-                        //sw.WriteLine(Type);
-
-                        //
                         DadosParaEscrever.ForEach(x => sw.WriteLine(x));
                     }
                 }
@@ -57,7 +48,7 @@ namespace PFC___StandBy_CSharp.Dados
             else
             {
                 Directory.CreateDirectory(pastaRaiz);
-                using (StreamWriter sw = File.CreateText(CaminhoTxt))
+                using (StreamWriter sw = File.CreateText(CAMINHO_TXT))
                 {
                     // sw.WriteLine(DataSource);
                     DadosParaEscrever.ForEach(x => sw.WriteLine(x));

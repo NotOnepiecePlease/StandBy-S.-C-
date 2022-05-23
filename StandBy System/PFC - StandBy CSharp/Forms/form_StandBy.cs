@@ -207,6 +207,15 @@ namespace PFC___StandBy_CSharp.Forms
             btnReset.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
+            btnSimAtualizar.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnSimAtualizar.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            btnSimAtualizar.onHoverState.BorderColor = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
+            btnSimAtualizar.onHoverState.FillColor = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
+
+            btnSimAtualizar.OnPressedState.FillColor = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
+            btnSimAtualizar.OnPressedState.BorderColor = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
+
             panel_CorGeral.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 

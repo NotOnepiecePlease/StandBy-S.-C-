@@ -16,8 +16,8 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
 
         public void Atualizar()
         {
-            Process.Start("SBAutoUpdate.exe");
-            Application.Exit();
+            //Process.Start("SBAutoUpdate.exe");
+            //Application.Exit();
         }
 
         public void ChecarVersaoStandBy(form_StandBy form)
@@ -71,19 +71,6 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
             {
                 if (!webClient.DownloadString(LINK_CLIENT_SERVER).Contains(VERSAO_CLIENT_SERVER))
                 {
-                    if (MessageBox.Show(
-                            "Existe uma nova versão do sistema StandBy,\ndeseja atualizar o sistema agora?",
-                            @"Nova Atualização", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
-                        DialogResult.Yes)
-                    {
-                        using (var cliente = new WebClient())
-                        {
-                            Process.Start("SBAutoUpdate.exe");
-                            Application.Exit();
-                            return "Sistema sendo Atualizado...";
-                        }
-                    }
-
                     return @"Atualização Pendente!";
                 }
 

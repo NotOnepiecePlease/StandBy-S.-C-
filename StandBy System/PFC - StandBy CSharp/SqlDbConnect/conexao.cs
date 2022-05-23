@@ -23,7 +23,7 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
 
         public void LerDataSourceSql()
         {
-            string txtPath = bckData.CaminhoTxt; //@"./data/dts.ini";
+            string txtPath = bckData.CAMINHO_TXT; //@"./data/dts.ini";
 
             //Removo as letras e os espacos e deixo so as informações uteis
             List<string> dadosSqlConexao = File.ReadAllLines(txtPath).Where(x => !x.Contains("#")).ToList();

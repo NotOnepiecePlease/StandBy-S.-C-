@@ -1,15 +1,13 @@
 ﻿using PFC___StandBy_CSharp.Forms;
+using PFC___StandBy_CSharp.SqlDbConnect;
+using PFC___StandBy_CSharp.ChecarUpdates;
 using StandBy___CLIENT.SERVER.Forms;
 using System;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Windows.Forms;
-using PFC___StandBy_CSharp.SqlDbConnect;
-using PFC___StandBy_CSharp.ChecarUpdates;
 
 namespace StandBy___CLIENT.SERVER
 {
@@ -104,6 +102,12 @@ namespace StandBy___CLIENT.SERVER
             if (e.KeyCode == Keys.Escape)
             {
                 Application.Exit();
+            }
+
+            if (e.KeyCode == Keys.NumPad1 && e.Modifiers == Keys.Control)
+            {
+                form_SQLConfig formSql = new form_SQLConfig();
+                formSql.Show();
             }
         }
 

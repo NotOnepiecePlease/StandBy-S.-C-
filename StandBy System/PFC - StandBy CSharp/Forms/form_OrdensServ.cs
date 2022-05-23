@@ -307,7 +307,6 @@ namespace PFC___StandBy_CSharp.Forms
             editarServicos.txtServicoEdit.Text = table_OrdensServicos.SelectedCells[11].Value.ToString();
             if (table_OrdensServicos.SelectedCells[12].Value == DBNull.Value)
             {
-                //MessageBox.Show("Sem data");
                 editarServicos.dtpDataEditPrevisao.FormatCustom = " ";
                 editarServicos.dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
                 editarServicos.chkSemData.Checked = true;
@@ -424,20 +423,15 @@ namespace PFC___StandBy_CSharp.Forms
             lblAparelho.Visible = false;
             lblDefeito.Visible = false;
             lblSenha.Visible = false;
-            //lblSituacao.Visible = false;
             lblAcessoriosOrdens.Visible = false;
             cmbClientes.Visible = false;
             txtAparelhoOrdens.Visible = false;
             txtDefeitoOrdens.Visible = false;
             txtSenhaOrdens.Visible = false;
-            // txtSituacaoOrdens.Visible = false;
-            // txtSituacaoOrdens.Visible = false;
             txtAcessoriosOrdens.Visible = false;
             txtPesquisarCliente.Visible = false;
             btnCadastrarOrdem.Visible = false;
             btnPesquisarCliente.Visible = false;
-            //btnSenhaPadrao.Visible = false;
-
             table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 611);
             table_OrdensServicos.Location = new Point(3, 35);
             table_OrdensServicos.Anchor = AnchorStyles.Top;
@@ -460,21 +454,17 @@ namespace PFC___StandBy_CSharp.Forms
             lblAparelho.Visible = true;
             lblDefeito.Visible = true;
             lblSenha.Visible = true;
-            //lblSituacao.Visible = true;
             lblAcessoriosOrdens.Visible = true;
             cmbClientes.Visible = true;
             txtAparelhoOrdens.Visible = true;
             txtDefeitoOrdens.Visible = true;
             txtSenhaOrdens.Visible = true;
-            //txtSituacaoOrdensOLD.Visible = true;
-            // txtSituacaoOrdens.Visible = true;
             txtAcessoriosOrdens.Visible = true;
             txtPesquisarCliente.Visible = true;
             btnCadastrarOrdem.Visible = true;
             btnPesquisarCliente.Visible = true;
             btnOcultarComponentes.Visible = true;
             btnVisivel.Visible = false;
-            //btnSenhaPadrao.Visible = true;
         }
 
         private Image ConvertByteArrayToImage(byte[] data)

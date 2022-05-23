@@ -13,10 +13,11 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_ServicosAnuais : Form
     {
-        int anoAtual = DateTime.Now.Year;
-        int[] corGeral = { 0, 0, 0 };
-        GraficoServicosAnuais graficoAno = new GraficoServicosAnuais();
-        GraficoTotalGanhoAnualmente totalGanhoAno = new GraficoTotalGanhoAnualmente();
+        private int anoAtual = DateTime.Now.Year;
+        private int[] corGeral = { 0, 0, 0 };
+        private GraficoServicosAnuais graficoAno = new GraficoServicosAnuais();
+        private GraficoTotalGanhoAnualmente totalGanhoAno = new GraficoTotalGanhoAnualmente();
+
         public form_ServicosAnuais(int[] corRgb)
         {
             InitializeComponent();
@@ -59,6 +60,7 @@ namespace PFC___StandBy_CSharp.Forms
             lblDez.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnfechar.BaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelLinhaTopo.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            cmbAno.OnHoverItemBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void form_ServicosAnuais_KeyDown(object sender, KeyEventArgs e)

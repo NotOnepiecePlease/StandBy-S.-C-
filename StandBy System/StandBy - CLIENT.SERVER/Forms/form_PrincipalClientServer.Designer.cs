@@ -32,6 +32,8 @@ namespace StandBy___CLIENT.SERVER
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_PrincipalClientServer));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuSeparator3 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.lblUpdate = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblEstadoConexao = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -46,8 +48,6 @@ namespace StandBy___CLIENT.SERVER
             this.btnServicosAndamento = new Bunifu.Framework.UI.BunifuFlatButton();
             this.arrastarForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.backVerificarConexao = new System.ComponentModel.BackgroundWorker();
-            this.lblUpdate = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuSeparator3 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.backVerificarVersao = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -74,6 +74,35 @@ namespace StandBy___CLIENT.SERVER
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 720);
             this.panel1.TabIndex = 0;
+            // 
+            // bunifuSeparator3
+            // 
+            this.bunifuSeparator3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator3.BackgroundImage")));
+            this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator3.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator3.LineThickness = 1;
+            this.bunifuSeparator3.Location = new System.Drawing.Point(333, 0);
+            this.bunifuSeparator3.Name = "bunifuSeparator3";
+            this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
+            this.bunifuSeparator3.Size = new System.Drawing.Size(14, 34);
+            this.bunifuSeparator3.TabIndex = 19;
+            // 
+            // lblUpdate
+            // 
+            this.lblUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUpdate.AutoSize = true;
+            this.lblUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdate.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblUpdate.Location = new System.Drawing.Point(187, 9);
+            this.lblUpdate.Name = "lblUpdate";
+            this.lblUpdate.Size = new System.Drawing.Size(144, 15);
+            this.lblUpdate.TabIndex = 18;
+            this.lblUpdate.Text = "Verificando atualizações...";
+            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
             // 
             // lblEstadoConexao
             // 
@@ -313,35 +342,6 @@ namespace StandBy___CLIENT.SERVER
             // backVerificarConexao
             // 
             this.backVerificarConexao.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backVerificarConexao_DoWork);
-            // 
-            // lblUpdate
-            // 
-            this.lblUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblUpdate.AutoSize = true;
-            this.lblUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdate.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblUpdate.Location = new System.Drawing.Point(187, 9);
-            this.lblUpdate.Name = "lblUpdate";
-            this.lblUpdate.Size = new System.Drawing.Size(144, 15);
-            this.lblUpdate.TabIndex = 18;
-            this.lblUpdate.Text = "Verificando atualizações...";
-            this.lblUpdate.Click += new System.EventHandler(this.lblUpdate_Click);
-            // 
-            // bunifuSeparator3
-            // 
-            this.bunifuSeparator3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator3.BackgroundImage")));
-            this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator3.LineColor = System.Drawing.Color.Silver;
-            this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator3.LineThickness = 1;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(333, 0);
-            this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Vertical;
-            this.bunifuSeparator3.Size = new System.Drawing.Size(14, 34);
-            this.bunifuSeparator3.TabIndex = 19;
             // 
             // backVerificarVersao
             // 

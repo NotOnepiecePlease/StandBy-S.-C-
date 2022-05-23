@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.Update = new System.ComponentModel.BackgroundWorker();
-            this.progress = new Guna.UI.WinForms.GunaProgressBar();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.lblStatus = new Guna.UI.WinForms.GunaLabel();
             this.lblPorcento = new Guna.UI.WinForms.GunaLabel();
+            this.lblStatus = new Guna.UI.WinForms.GunaLabel();
+            this.progress = new Guna.UI.WinForms.GunaProgressBar();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.Update = new System.ComponentModel.BackgroundWorker();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.gunaPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,33 +55,28 @@
             this.gunaPanel1.Size = new System.Drawing.Size(360, 181);
             this.gunaPanel1.TabIndex = 0;
             // 
-            // gunaLabel1
+            // lblPorcento
             // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.gunaLabel1.Location = new System.Drawing.Point(42, 24);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(276, 32);
-            this.gunaLabel1.TabIndex = 0;
-            this.gunaLabel1.Text = "Atualizando o Sistema...";
+            this.lblPorcento.AutoSize = true;
+            this.lblPorcento.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPorcento.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPorcento.Location = new System.Drawing.Point(286, 100);
+            this.lblPorcento.Name = "lblPorcento";
+            this.lblPorcento.Size = new System.Drawing.Size(71, 32);
+            this.lblPorcento.TabIndex = 4;
+            this.lblPorcento.Text = "100%";
+            this.lblPorcento.Visible = false;
             // 
-            // gunaLabel2
+            // lblStatus
             // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.ForeColor = System.Drawing.SystemColors.Control;
-            this.gunaLabel2.Location = new System.Drawing.Point(28, 56);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(304, 17);
-            this.gunaLabel2.TabIndex = 1;
-            this.gunaLabel2.Text = "Não deve levar mais que 1 minuto, fique tranquilo.";
-            // 
-            // Update
-            // 
-            this.Update.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Update_DoWork);
-            this.Update.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.Update_ProgressChanged);
-            this.Update.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.Update_RunWorkerCompleted);
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblStatus.Location = new System.Drawing.Point(117, 100);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(126, 32);
+            this.lblStatus.TabIndex = 3;
+            this.lblStatus.Text = "Aguarde...";
             // 
             // progress
             // 
@@ -96,34 +91,34 @@
             this.progress.TabIndex = 2;
             this.progress.Value = 100;
             // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.SystemColors.Control;
+            this.gunaLabel2.Location = new System.Drawing.Point(28, 56);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(304, 17);
+            this.gunaLabel2.TabIndex = 1;
+            this.gunaLabel2.Text = "Não deve levar mais que 1 minuto, fique tranquilo.";
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.ForeColor = System.Drawing.SystemColors.Control;
+            this.gunaLabel1.Location = new System.Drawing.Point(42, 24);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(276, 32);
+            this.gunaLabel1.TabIndex = 0;
+            this.gunaLabel1.Text = "Atualizando o Sistema...";
+            // 
             // bunifuDragControl1
             // 
             this.bunifuDragControl1.Fixed = true;
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.gunaPanel1;
             this.bunifuDragControl1.Vertical = true;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblStatus.Location = new System.Drawing.Point(117, 100);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(126, 32);
-            this.lblStatus.TabIndex = 3;
-            this.lblStatus.Text = "Aguarde...";
-            // 
-            // lblPorcento
-            // 
-            this.lblPorcento.AutoSize = true;
-            this.lblPorcento.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPorcento.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPorcento.Location = new System.Drawing.Point(286, 100);
-            this.lblPorcento.Name = "lblPorcento";
-            this.lblPorcento.Size = new System.Drawing.Size(71, 32);
-            this.lblPorcento.TabIndex = 4;
-            this.lblPorcento.Text = "100%";
             // 
             // Form1
             // 

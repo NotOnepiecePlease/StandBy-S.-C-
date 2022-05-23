@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_StandBy));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panelTopStandBy = new System.Windows.Forms.Panel();
             this.bunifuSeparator3 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -1243,43 +1243,43 @@
             // 
             this.animationMenuShow1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuShow1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.animationMenuShow1.DefaultAnimation = animation4;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.animationMenuShow1.DefaultAnimation = animation2;
             // 
             // animationMenuHide1
             // 
             this.animationMenuHide1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuHide1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.animationMenuHide1.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.animationMenuHide1.DefaultAnimation = animation1;
             // 
             // ArredondarBordaEsquerda
             // 
@@ -1341,11 +1341,11 @@
             this.btnSimAtualizar.ColorContrastOnClick = 45;
             this.btnSimAtualizar.ColorContrastOnHover = 45;
             this.btnSimAtualizar.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnSimAtualizar.CustomizableEdges = borderEdges4;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnSimAtualizar.CustomizableEdges = borderEdges2;
             this.animationMenuHide1.SetDecoration(this.btnSimAtualizar, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuShow1.SetDecoration(this.btnSimAtualizar, BunifuAnimatorNS.DecorationType.None);
             this.btnSimAtualizar.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -1381,11 +1381,11 @@
             this.btnSimAtualizar.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnSimAtualizar.OnDisabledState.IconLeftImage = null;
             this.btnSimAtualizar.OnDisabledState.IconRightImage = null;
-            this.btnSimAtualizar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnSimAtualizar.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnSimAtualizar.onHoverState.BorderRadius = 1;
             this.btnSimAtualizar.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSimAtualizar.onHoverState.BorderThickness = 1;
-            this.btnSimAtualizar.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnSimAtualizar.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnSimAtualizar.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnSimAtualizar.onHoverState.IconLeftImage = null;
             this.btnSimAtualizar.onHoverState.IconRightImage = null;
@@ -1397,11 +1397,11 @@
             this.btnSimAtualizar.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnSimAtualizar.OnIdleState.IconLeftImage = null;
             this.btnSimAtualizar.OnIdleState.IconRightImage = null;
-            this.btnSimAtualizar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSimAtualizar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnSimAtualizar.OnPressedState.BorderRadius = 1;
             this.btnSimAtualizar.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSimAtualizar.OnPressedState.BorderThickness = 1;
-            this.btnSimAtualizar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnSimAtualizar.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnSimAtualizar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSimAtualizar.OnPressedState.IconLeftImage = null;
             this.btnSimAtualizar.OnPressedState.IconRightImage = null;
@@ -1434,11 +1434,11 @@
             this.btnNaoAtualizar.ColorContrastOnClick = 45;
             this.btnNaoAtualizar.ColorContrastOnHover = 45;
             this.btnNaoAtualizar.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnNaoAtualizar.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnNaoAtualizar.CustomizableEdges = borderEdges1;
             this.animationMenuHide1.SetDecoration(this.btnNaoAtualizar, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuShow1.SetDecoration(this.btnNaoAtualizar, BunifuAnimatorNS.DecorationType.None);
             this.btnNaoAtualizar.DialogResult = System.Windows.Forms.DialogResult.None;

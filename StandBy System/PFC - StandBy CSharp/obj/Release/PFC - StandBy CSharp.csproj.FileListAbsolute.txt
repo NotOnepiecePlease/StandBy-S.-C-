@@ -47,3 +47,48 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Release\PFC - StandBy CSharp.csproj.CopyComplete
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Release\StandBy System.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\PFC - StandBy CSharp\obj\Release\StandBy System.pdb
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\StandBy System.exe.config
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\StandBy System.exe
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\StandBy System.pdb
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Bunifu.UI.WinForms.BunifuTextbox.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Bunifu.UI.WinForms.ToggleSwitch.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\BunifuDataViz.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Bunifu_UI_v1.5.3.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\System.Diagnostics.DiagnosticSource.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC - StandBy CSharp.csproj.AssemblyReference.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\StandBy System.exe.config
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.form_Loading.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_ALERT.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_AlertMessage.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_CadastroClientes.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_CadastroClientes_Edit.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Concluidos.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Concluido_Desfazer.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_DiaEntrega.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Gastos.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Lucros.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir_Alterar.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Notepad.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Notepad_Abrir.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Orcamento.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_Orcamento_Adicionar.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_OrdensServ.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_OrdensServ_Edit.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_PasswordPattern.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_PasswordPatternExibir.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_QntdGarantia.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_ServicosAnuais.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_StandBy.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_VerGarantia.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_WordNota.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.form_Principal.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Properties.Resources.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC - StandBy CSharp.csproj.GenerateResource.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\StandBy System.exe.licenses
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC - StandBy CSharp.csproj.CoreCompileInputs.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC - StandBy CSharp.csproj.Fody.CopyLocal.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC - StandBy CSharp.csproj.CopyComplete
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\StandBy System.exe
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\StandBy System.pdb
