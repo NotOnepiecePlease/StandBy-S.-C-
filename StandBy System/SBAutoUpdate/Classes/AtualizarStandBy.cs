@@ -33,6 +33,7 @@ namespace SBAutoUpdate.Classes
                         List<string> arquivosSeremMantidos = new List<string>
                         {
                             "SBAutoUpdate.exe",
+                            "dts.ini",
                         };
 
                         Uteis.DeleteTodosExceto(meuDiretorio, arquivosSeremMantidos, true);

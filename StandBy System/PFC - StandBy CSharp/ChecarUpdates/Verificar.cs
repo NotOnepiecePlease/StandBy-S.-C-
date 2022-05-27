@@ -9,15 +9,15 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
 {
     public class Verificar
     {
-        private const string VERSAO_STANDBY = "5.13.2";
+        private const string VERSAO_STANDBY = "5.14.2";
         private const string LINK_STANDBY = "https://www.dropbox.com/s/revwuo9ry89po4t/UpdateVersionStandBY.txt?dl=1";
-        private const string VERSAO_CLIENT_SERVER = "2.0.0";
+        private const string VERSAO_CLIENT_SERVER = "3.1.0";
         private const string LINK_CLIENT_SERVER = "https://www.dropbox.com/s/zb8ezcxnzk8fyz6/UpdateVersionClientServer.txt?dl=1";
 
-        public void Atualizar()
+        public void ForcarAtualizacao()
         {
-            //Process.Start("SBAutoUpdate.exe");
-            //Application.Exit();
+            Process.Start("SBAutoUpdate.exe");
+            Application.Exit();
         }
 
         public void ChecarVersaoStandBy(form_StandBy form)

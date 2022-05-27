@@ -35,8 +35,6 @@ namespace StandBy___CLIENT.SERVER.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBackground = new System.Windows.Forms.Panel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolsANALISAR = new System.Windows.Forms.ToolStripMenuItem();
             this.table_ServicosAndamento = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +53,12 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_cor_tempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_tempo_para_entregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolsANALISAR = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
             this.panelBackground.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosAndamento)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBackground
@@ -69,23 +70,6 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Size = new System.Drawing.Size(1280, 646);
             this.panelBackground.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolsANALISAR});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 26);
-            // 
-            // toolsANALISAR
-            // 
-            this.toolsANALISAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.toolsANALISAR.Name = "toolsANALISAR";
-            this.toolsANALISAR.Size = new System.Drawing.Size(106, 22);
-            this.toolsANALISAR.Text = "Ver Serviço";
-            this.toolsANALISAR.Click += new System.EventHandler(this.toolsANALISAR_Click);
             // 
             // table_ServicosAndamento
             // 
@@ -156,6 +140,9 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.table_ServicosAndamento.Size = new System.Drawing.Size(1265, 622);
             this.table_ServicosAndamento.TabIndex = 1;
             this.table_ServicosAndamento.TabStop = false;
+            this.table_ServicosAndamento.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.table_ServicosAndamento_CellFormatting);
+            this.table_ServicosAndamento.MouseEnter += new System.EventHandler(this.table_ServicosAndamento_MouseEnter);
+            this.table_ServicosAndamento.MouseLeave += new System.EventHandler(this.table_ServicosAndamento_MouseLeave);
             // 
             // idServico
             // 
@@ -292,6 +279,28 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.sv_tempo_para_entregar.Name = "sv_tempo_para_entregar";
             this.sv_tempo_para_entregar.ReadOnly = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsANALISAR});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 26);
+            // 
+            // toolsANALISAR
+            // 
+            this.toolsANALISAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.toolsANALISAR.Name = "toolsANALISAR";
+            this.toolsANALISAR.Size = new System.Drawing.Size(106, 22);
+            this.toolsANALISAR.Text = "Ver Serviço";
+            this.toolsANALISAR.Click += new System.EventHandler(this.toolsANALISAR_Click);
+            // 
+            // timerAtualizarTabela
+            // 
+            this.timerAtualizarTabela.Interval = 2000;
+            this.timerAtualizarTabela.Tick += new System.EventHandler(this.timerAtualizarTabela_Tick);
+            // 
             // form_ServicosAndamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,8 +312,8 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_ServicosAndamento";
             this.panelBackground.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table_ServicosAndamento)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -332,5 +341,6 @@ namespace StandBy___CLIENT.SERVER.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_tempo_para_entregar;
+        private System.Windows.Forms.Timer timerAtualizarTabela;
     }
 }

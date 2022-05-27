@@ -7,7 +7,7 @@ namespace SBAutoUpdate.Classes
 {
     internal static class Uteis
     {
-        public static void DeleteTodosExceto(string meuDiretorio, List<string> arquivosParaManter, bool recursive = true)
+        public static void DeleteTodosExceto(string meuDiretorio, List<string> arquivosParaManter, bool recursive = false)
         {
             var diretorioDoExecutavel = new DirectoryInfo(meuDiretorio);
 

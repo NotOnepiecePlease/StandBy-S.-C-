@@ -543,7 +543,14 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnSimAtualizar_Click(object sender, EventArgs e)
         {
-            verificarUpd.Atualizar();
+            verificarUpd.ForcarAtualizacao();
+        }
+
+        private void btnNaoAtualizar_Click(object sender, EventArgs e)
+        {
+            lblDesejaAtualizar.Visible = false;
+            btnSimAtualizar.Visible = false;
+            btnNaoAtualizar.Visible = false;
         }
     }
 }

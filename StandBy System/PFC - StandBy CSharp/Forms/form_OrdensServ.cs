@@ -30,7 +30,7 @@ namespace PFC___StandBy_CSharp.Forms
             timerAtualizarTabela.Start();
         }
 
-        public void AtualizarAtrasosCores()
+        public void AtualizarCoresCelulasTabela()
         {
             foreach (DataGridViewRow row in table_OrdensServicos.Rows)
             {
@@ -412,7 +412,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void table_OrdensServicos_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            AtualizarAtrasosCores();
+            AtualizarCoresCelulasTabela();
             //MessageBox.Show("Test");
         }
 
@@ -544,6 +544,31 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 CadastrarServicoNovo();
             }
+        }
+
+        private void txtAcessoriosOrdens_KeyUp(object sender, KeyEventArgs e)
+        {
+            //Apenas um codigo de estudos para entender a diferença entre as propriedades do evento de key
+            //System.Text.StringBuilder messageBoxCS = new System.Text.StringBuilder();
+            //messageBoxCS.AppendFormat("{0} = {1}", "Alt", e.Alt);
+            //messageBoxCS.AppendLine();
+            //messageBoxCS.AppendFormat("{0} = {1}", "Control", e.Control);
+            //messageBoxCS.AppendLine();
+            //messageBoxCS.AppendFormat("{0} = {1}", "Handled", e.Handled);
+            //messageBoxCS.AppendLine();
+            //messageBoxCS.AppendFormat("{0} = {1}", "KeyCode", e.KeyCode);
+            //messageBoxCS.AppendLine();
+            //messageBoxCS.AppendFormat("{0} = {1}", "KeyValue", e.KeyValue);
+            //messageBoxCS.AppendLine();
+            //messageBoxCS.AppendFormat("{0} = {1}", "KeyData", e.KeyData);
+            //messageBoxCS.AppendLine();
+            //messageBoxCS.AppendFormat("{0} = {1}", "Modifiers", e.Modifiers);
+            //messageBoxCS.AppendLine();
+            //messageBoxCS.AppendFormat("{0} = {1}", "Shift", e.Shift);
+            //messageBoxCS.AppendLine();
+            //messageBoxCS.AppendFormat("{0} = {1}", "SuppressKeyPress", e.SuppressKeyPress);
+            //messageBoxCS.AppendLine();
+            //MessageBox.Show(messageBoxCS.ToString(), "KeyDown Event");
         }
     }
 }

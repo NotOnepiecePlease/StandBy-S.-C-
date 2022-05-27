@@ -18,6 +18,7 @@ namespace StandBy___CLIENT.SERVER.Forms
         {
             InitializeComponent();
             preencherTableOrdensServ.Preencher(table_ServicosAndamento);
+            timerAtualizarTabela.Start();
         }
 
         private void toolsANALISAR_Click(object sender, EventArgs e)
@@ -102,6 +103,77 @@ namespace StandBy___CLIENT.SERVER.Forms
                 }
             }
             return null;
+        }
+
+        public void AtualizarCoresCelulasTabela()
+        {
+            foreach (DataGridViewRow row in table_ServicosAndamento.Rows)
+            {
+                try
+                {
+                    if (row.Cells[12].Value != DBNull.Value && Convert.ToInt32(row.Cells[13].Value) == 1)
+                    {
+                        //row.Cells[12] = é a coluna sv_previsao_entrega
+                        DateTime dataEntrega = Convert.ToDateTime(row.Cells[12].Value);
+                        DateTime dataAtual = DateTime.Now;
+
+                        TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
+
+                        //0 = sem cor
+                        //1 = verde
+                        //2 = amarelo/laranja
+                        //3 = vermelho
+                        if (DiasParaEntrega.TotalHours < 0)
+                        //if (Convert.ToInt32(row.Cells[2].Value) == 3)
+                        {
+                            row.Cells[2].Style.BackColor = Color.Red;
+                            row.Cells[2].Style.ForeColor = Color.Black;
+                        }
+                        else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
+                        //else if (Convert.ToInt32(row.Cells[2].Value) == 2)
+                        {
+                            row.Cells[2].Style.BackColor = Color.Orange;
+                            row.Cells[2].Style.ForeColor = Color.Black;
+                        }
+                        else if (DiasParaEntrega.TotalHours > 12)
+                        //else if (Convert.ToInt32(row.Cells[2].Value) == 1)
+                        {
+                            row.Cells[2].Style.BackColor = Color.Lime;
+                            row.Cells[2].Style.ForeColor = Color.Black;
+                        }
+                        else
+                        {
+                            row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
+                            row.Cells[2].Style.ForeColor = Color.Gray;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+
+        private void table_ServicosAndamento_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            AtualizarCoresCelulasTabela();
+        }
+
+        private void timerAtualizarTabela_Tick(object sender, EventArgs e)
+        {
+            preencherTableOrdensServ.Preencher(table_ServicosAndamento);
+            table_ServicosAndamento.ClearSelection();
+        }
+
+        private void table_ServicosAndamento_MouseLeave(object sender, EventArgs e)
+        {
+            table_ServicosAndamento.ClearSelection();
+            timerAtualizarTabela.Start();
+        }
+
+        private void table_ServicosAndamento_MouseEnter(object sender, EventArgs e)
+        {
+            timerAtualizarTabela.Stop();
         }
     }
 }

@@ -3,10 +3,16 @@ using PFC___StandBy_CSharp.SqlDbConnect;
 using PFC___StandBy_CSharp.ChecarUpdates;
 using StandBy___CLIENT.SERVER.Forms;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StandBy___CLIENT.SERVER
@@ -16,6 +22,7 @@ namespace StandBy___CLIENT.SERVER
         private Form currentChildForm;
         private readonly Verificar verificarUpd = new Verificar();
         private readonly conexao con = new conexao();
+        private string statusAtualizacao = "";
 
         public form_PrincipalClientServer()
         {
@@ -165,7 +172,94 @@ namespace StandBy___CLIENT.SERVER
 
         private void lblEstadoConexao_Click(object sender, EventArgs e)
         {
-            backVerificarConexao.RunWorkerAsync();
+            //backVerificarConexao.RunWorkerAsync();
+            //ListaIps();
+            getIps();
+        }
+
+        private void getIps()
+        {
+            var list = new List<string>();
+            var list2 = new List<string>();
+            string subnet = "192.168.1";
+
+            Task.Factory.StartNew(new Action(() =>
+            {
+                for (int i = 2; i < 255; i++)
+                {
+                    string ip = $"{subnet}.{i}";
+                    Ping ping = new Ping();
+                    PingReply reply = ping.Send(ip, 100);
+                    if (reply.Status == IPStatus.Success)
+                    {
+                        try
+                        {
+                            IPHostEntry host = Dns.GetHostEntry(IPAddress.Parse(ip));
+                            list.Add(ip + "- " + host.HostName + "- Up");
+                        }
+                        catch
+                        {
+                            MessageBox.Show($"Couldn't retrieve hostname from {ip}", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        list2.Add(ip + "" + "- Down");
+                    }
+                }
+            }));
+        }
+
+        public static Dictionary<string, string> ListaIps()
+        {
+            Dictionary<string, string> listaIpsComMac = new Dictionary<string, string>();
+            Process processo = new Process();
+
+            processo.StartInfo.FileName = Environment.GetEnvironmentVariable("comspec") ?? string.Empty; //comspec = é o processo do CMD
+
+            // Formata a string para passar como argumento para o cmd.exe
+            processo.StartInfo.Arguments = "/c arp -a";
+
+            processo.StartInfo.RedirectStandardOutput = true;
+            processo.StartInfo.UseShellExecute = false;
+            processo.StartInfo.CreateNoWindow = true;
+
+            processo.Start();
+            processo.WaitForExit();
+
+            string saida = processo.StandardOutput.ReadToEnd();
+            string padraoIP = @"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}";
+            string padraoMAC = @"\w{1,2}\-\w{1,2}\-\w{1,2}\-\w{1,2}\-\w{1,2}\-\w{1,2}";
+            //string pattern = @"";
+
+            MatchCollection matches;
+            Regex regexIP = new Regex(padraoIP);
+            matches = regexIP.Matches(saida);
+
+            int cont = 0;
+            foreach (Match ips in matches)
+            {
+                if (cont == 0)
+                {
+                }
+                else
+                {
+                    listaIpsComMac.Add(ips.ToString(), "-");
+                }
+
+                cont++;
+            }
+
+            Regex regexMAC = new Regex(padraoMAC);
+            matches = regexMAC.Matches(saida);
+
+            int indice = 0;
+            foreach (Match enderecoMAC in matches)
+            {
+                listaIpsComMac[listaIpsComMac.ElementAt(indice).Key] = enderecoMAC.ToString();
+                indice++;
+            }
+            return listaIpsComMac;
         }
 
         private void backVerificarVersao_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -175,21 +269,21 @@ namespace StandBy___CLIENT.SERVER
             lblUpdate.Location = new Point(187, 9);
 
             //verificarUpd.ChecarVersaoStandBy(this);
-            string atualizacao = verificarUpd.ChecarVersaoClientServer();
+            statusAtualizacao = verificarUpd.ChecarVersaoClientServer();
 
-            if (atualizacao == "Atualização Pendente!")
+            if (statusAtualizacao == "Atualização Pendente!")
             {
                 lblUpdate.Text = @"Atualização Pendente!";
                 lblUpdate.ForeColor = Color.Yellow;
                 lblUpdate.Location = new Point(196, 9);
             }
-            else if (atualizacao == "Sistema Atualizado!")
+            else if (statusAtualizacao == "Sistema Atualizado!")
             {
                 lblUpdate.Text = @"Sistema Atualizado!";
                 lblUpdate.ForeColor = Color.LawnGreen;
                 lblUpdate.Location = new Point(200, 9);
             }
-            else if (atualizacao == "Erro ao atualizar!")
+            else if (statusAtualizacao == "Erro ao atualizar!")
             {
                 lblUpdate.Text = @"Erro ao atualizar!";
                 lblUpdate.ForeColor = Color.Crimson;
@@ -206,6 +300,37 @@ namespace StandBy___CLIENT.SERVER
         private void lblUpdate_Click(object sender, EventArgs e)
         {
             backVerificarVersao.RunWorkerAsync();
+        }
+
+        private void backVerificarVersao_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            //lblUpdate.Visible = false;
+            lblUpdate.Visible = true;
+
+            if (statusAtualizacao == "Atualização Pendente!")
+            {
+                lblDesejaAtualizar.Visible = true;
+                btnSimAtualizar.Visible = true;
+                btnNaoAtualizar.Visible = true;
+            }
+            else
+            {
+                lblDesejaAtualizar.Visible = false;
+                btnSimAtualizar.Visible = false;
+                btnNaoAtualizar.Visible = false;
+            }
+        }
+
+        private void btnSimAtualizar_Click(object sender, EventArgs e)
+        {
+            verificarUpd.ForcarAtualizacao();
+        }
+
+        private void btnNaoAtualizar_Click(object sender, EventArgs e)
+        {
+            lblDesejaAtualizar.Visible = false;
+            btnSimAtualizar.Visible = false;
+            btnNaoAtualizar.Visible = false;
         }
     }
 }

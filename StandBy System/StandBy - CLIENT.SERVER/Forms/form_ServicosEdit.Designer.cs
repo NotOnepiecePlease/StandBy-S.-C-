@@ -30,7 +30,6 @@ namespace StandBy___CLIENT.SERVER.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_ServicosEdit));
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -79,10 +78,10 @@ namespace StandBy___CLIENT.SERVER.Forms
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties46 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties47 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties48 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_ServicosEdit));
             this.panelBackground = new System.Windows.Forms.Panel();
             this.chkSemData = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureSenhaPadrao = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtTelefonePrincipal = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.txtTelefoneRecado = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
@@ -115,20 +114,21 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.arrastarForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.pictureSenhaPadrao = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.panelBackground.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSenhaPadrao)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSenhaPadrao)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBackground
             // 
             this.panelBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.panelBackground.Controls.Add(this.chkSemData);
             this.panelBackground.Controls.Add(this.groupBox2);
+            this.panelBackground.Controls.Add(this.chkSemData);
             this.panelBackground.Controls.Add(this.groupBox5);
             this.panelBackground.Controls.Add(this.groupBox4);
             this.panelBackground.Controls.Add(this.bunifuCustomLabel11);
@@ -156,8 +156,8 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.chkSemData.BackColor = System.Drawing.Color.Transparent;
             this.chkSemData.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkSemData.BackgroundImage")));
             this.chkSemData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chkSemData.BindingControl = null;
             this.chkSemData.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.chkSemData.BorderRadius = 12;
             this.chkSemData.Checked = true;
             this.chkSemData.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
             this.chkSemData.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -207,21 +207,6 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Senha Padrão";
-            // 
-            // pictureSenhaPadrao
-            // 
-            this.pictureSenhaPadrao.AllowFocused = false;
-            this.pictureSenhaPadrao.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureSenhaPadrao.BorderRadius = 0;
-            this.pictureSenhaPadrao.Image = ((System.Drawing.Image)(resources.GetObject("pictureSenhaPadrao.Image")));
-            this.pictureSenhaPadrao.IsCircle = false;
-            this.pictureSenhaPadrao.Location = new System.Drawing.Point(6, 11);
-            this.pictureSenhaPadrao.Name = "pictureSenhaPadrao";
-            this.pictureSenhaPadrao.Size = new System.Drawing.Size(147, 147);
-            this.pictureSenhaPadrao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureSenhaPadrao.TabIndex = 52;
-            this.pictureSenhaPadrao.TabStop = false;
-            this.pictureSenhaPadrao.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
             // 
             // groupBox5
             // 
@@ -296,7 +281,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.txtTelefonePrincipal.OnIdleState = stateProperties4;
             this.txtTelefonePrincipal.PasswordChar = '\0';
             this.txtTelefonePrincipal.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtTelefonePrincipal.PlaceholderText = "Enter text";
+            this.txtTelefonePrincipal.PlaceholderText = "Sem dados";
             this.txtTelefonePrincipal.ReadOnly = true;
             this.txtTelefonePrincipal.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtTelefonePrincipal.SelectedText = "";
@@ -310,7 +295,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.txtTelefonePrincipal.TextMarginBottom = 0;
             this.txtTelefonePrincipal.TextMarginLeft = 5;
             this.txtTelefonePrincipal.TextMarginTop = 0;
-            this.txtTelefonePrincipal.TextPlaceholder = "Enter text";
+            this.txtTelefonePrincipal.TextPlaceholder = "Sem dados";
             this.txtTelefonePrincipal.UseSystemPasswordChar = false;
             this.txtTelefonePrincipal.WordWrap = true;
             // 
@@ -371,7 +356,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.txtTelefoneRecado.OnIdleState = stateProperties8;
             this.txtTelefoneRecado.PasswordChar = '\0';
             this.txtTelefoneRecado.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtTelefoneRecado.PlaceholderText = "Enter text";
+            this.txtTelefoneRecado.PlaceholderText = "Sem dados";
             this.txtTelefoneRecado.ReadOnly = true;
             this.txtTelefoneRecado.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtTelefoneRecado.SelectedText = "";
@@ -385,7 +370,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.txtTelefoneRecado.TextMarginBottom = 0;
             this.txtTelefoneRecado.TextMarginLeft = 5;
             this.txtTelefoneRecado.TextMarginTop = 0;
-            this.txtTelefoneRecado.TextPlaceholder = "Enter text";
+            this.txtTelefoneRecado.TextPlaceholder = "Sem dados";
             this.txtTelefoneRecado.UseSystemPasswordChar = false;
             this.txtTelefoneRecado.WordWrap = true;
             // 
@@ -446,7 +431,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.txtNomeCliente.OnIdleState = stateProperties12;
             this.txtNomeCliente.PasswordChar = '\0';
             this.txtNomeCliente.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtNomeCliente.PlaceholderText = "Enter text";
+            this.txtNomeCliente.PlaceholderText = "Sem dados";
             this.txtNomeCliente.ReadOnly = true;
             this.txtNomeCliente.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNomeCliente.SelectedText = "";
@@ -460,7 +445,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.txtNomeCliente.TextMarginBottom = 0;
             this.txtNomeCliente.TextMarginLeft = 5;
             this.txtNomeCliente.TextMarginTop = 0;
-            this.txtNomeCliente.TextPlaceholder = "Enter text";
+            this.txtNomeCliente.TextPlaceholder = "Sem dados";
             this.txtNomeCliente.UseSystemPasswordChar = false;
             this.txtNomeCliente.WordWrap = true;
             // 
@@ -521,7 +506,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.txtCpfCnpjCliente.OnIdleState = stateProperties16;
             this.txtCpfCnpjCliente.PasswordChar = '\0';
             this.txtCpfCnpjCliente.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtCpfCnpjCliente.PlaceholderText = "Enter text";
+            this.txtCpfCnpjCliente.PlaceholderText = "Sem dados";
             this.txtCpfCnpjCliente.ReadOnly = true;
             this.txtCpfCnpjCliente.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCpfCnpjCliente.SelectedText = "";
@@ -535,7 +520,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.txtCpfCnpjCliente.TextMarginBottom = 0;
             this.txtCpfCnpjCliente.TextMarginLeft = 5;
             this.txtCpfCnpjCliente.TextMarginTop = 0;
-            this.txtCpfCnpjCliente.TextPlaceholder = "Enter text";
+            this.txtCpfCnpjCliente.TextPlaceholder = "Sem dados";
             this.txtCpfCnpjCliente.UseSystemPasswordChar = false;
             this.txtCpfCnpjCliente.WordWrap = true;
             // 
@@ -1376,7 +1361,23 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.arrastarForm.TargetControl = this.panelBackground;
             this.arrastarForm.Vertical = true;
             // 
-            // form_TodosServicos_Edit
+            // pictureSenhaPadrao
+            // 
+            this.pictureSenhaPadrao.AllowFocused = false;
+            this.pictureSenhaPadrao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureSenhaPadrao.AutoSizeHeight = true;
+            this.pictureSenhaPadrao.BorderRadius = 0;
+            this.pictureSenhaPadrao.Image = ((System.Drawing.Image)(resources.GetObject("pictureSenhaPadrao.Image")));
+            this.pictureSenhaPadrao.IsCircle = true;
+            this.pictureSenhaPadrao.Location = new System.Drawing.Point(6, 11);
+            this.pictureSenhaPadrao.Name = "pictureSenhaPadrao";
+            this.pictureSenhaPadrao.Size = new System.Drawing.Size(147, 147);
+            this.pictureSenhaPadrao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureSenhaPadrao.TabIndex = 44;
+            this.pictureSenhaPadrao.TabStop = false;
+            this.pictureSenhaPadrao.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Square;
+            // 
+            // form_ServicosEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1384,7 +1385,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.Controls.Add(this.panelBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Name = "form_TodosServicos_Edit";
+            this.Name = "form_ServicosEdit";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_TodosServicos_Edit";
@@ -1392,12 +1393,12 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.panelBackground.ResumeLayout(false);
             this.panelBackground.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureSenhaPadrao)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSenhaPadrao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1437,8 +1438,8 @@ namespace StandBy___CLIENT.SERVER.Forms
         public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtSenhaServico;
         public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtDefeitoServico;
         public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtDataServico;
-        public Bunifu.UI.WinForms.BunifuPictureBox pictureSenhaPadrao;
         private System.Windows.Forms.GroupBox groupBox2;
         public Bunifu.UI.WinForms.BunifuCheckBox chkSemData;
+        public Bunifu.UI.WinForms.BunifuPictureBox pictureSenhaPadrao;
     }
 }

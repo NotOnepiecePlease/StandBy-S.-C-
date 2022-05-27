@@ -25,3 +25,18 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUp
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.csproj.CopyComplete
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.pdb
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\SBAutoUpdate.exe.config
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\SBAutoUpdate.exe
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\SBAutoUpdate.pdb
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\StandBy System.exe.config
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\Bunifu_UI_v1.5.3.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\System.Diagnostics.DiagnosticSource.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.csproj.AssemblyReference.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.Form1.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.Properties.Resources.resources
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.csproj.GenerateResource.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.csproj.CoreCompileInputs.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.csproj.Fody.CopyLocal.cache
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.csproj.CopyComplete
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.exe
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Release\SBAutoUpdate.pdb

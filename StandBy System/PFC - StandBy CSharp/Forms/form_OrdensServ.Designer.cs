@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdensServ));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,18 +55,6 @@
             this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtAparelhoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.table_OrdensServicos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verSenhaPadrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVisivel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.arredondarTabelaServ = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarComboboxCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarBotaoCadastrar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.arredondarBotaoPesquisarCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
-            this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
-            this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idServico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_tempo_para_entregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +72,18 @@
             this.sv_acessorios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sv_cor_tempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verSenhaPadrãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVisivel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.arredondarTabelaServ = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarComboboxCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarBotaoCadastrar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.arredondarBotaoPesquisarCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
+            this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
+            this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -177,11 +175,11 @@
             this.txtSituacaoOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtSituacaoOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtSituacaoOrdens.LineThickness = 2;
-            this.txtSituacaoOrdens.Location = new System.Drawing.Point(181, 7);
+            this.txtSituacaoOrdens.Location = new System.Drawing.Point(216, 4);
             this.txtSituacaoOrdens.Margin = new System.Windows.Forms.Padding(4);
             this.txtSituacaoOrdens.MaxLength = 500;
             this.txtSituacaoOrdens.Name = "txtSituacaoOrdens";
-            this.txtSituacaoOrdens.Size = new System.Drawing.Size(63, 25);
+            this.txtSituacaoOrdens.Size = new System.Drawing.Size(28, 25);
             this.txtSituacaoOrdens.TabIndex = 43;
             this.txtSituacaoOrdens.Text = "Situação do aparelho";
             this.txtSituacaoOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -218,6 +216,7 @@
             this.txtAcessoriosOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAcessoriosOrdens.Enter += new System.EventHandler(this.txtAcessoriosOrdens_Enter);
             this.txtAcessoriosOrdens.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAcessoriosOrdens_KeyDown);
+            this.txtAcessoriosOrdens.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAcessoriosOrdens_KeyUp);
             this.txtAcessoriosOrdens.Leave += new System.EventHandler(this.txtAcessoriosOrdens_Leave);
             // 
             // lblAcessoriosOrdens
@@ -272,10 +271,15 @@
             // 
             // btnSenhaPadrao
             // 
+            this.btnSenhaPadrao.AllowAnimations = true;
+            this.btnSenhaPadrao.AllowMouseEffects = true;
             this.btnSenhaPadrao.AllowToggling = false;
             this.btnSenhaPadrao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSenhaPadrao.AnimationSpeed = 200;
             this.btnSenhaPadrao.AutoGenerateColors = false;
+            this.btnSenhaPadrao.AutoRoundBorders = false;
+            this.btnSenhaPadrao.AutoSizeLeftIcon = true;
+            this.btnSenhaPadrao.AutoSizeRightIcon = true;
             this.btnSenhaPadrao.BackColor = System.Drawing.Color.Transparent;
             this.btnSenhaPadrao.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.btnSenhaPadrao.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSenhaPadrao.BackgroundImage")));
@@ -297,10 +301,15 @@
             this.btnSenhaPadrao.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
             this.btnSenhaPadrao.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.btnSenhaPadrao.ForeColor = System.Drawing.Color.White;
+            this.btnSenhaPadrao.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSenhaPadrao.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSenhaPadrao.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
             this.btnSenhaPadrao.IconMarginLeft = 11;
             this.btnSenhaPadrao.IconPadding = 10;
+            this.btnSenhaPadrao.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSenhaPadrao.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSenhaPadrao.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnSenhaPadrao.IconSize = 25;
             this.btnSenhaPadrao.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.btnSenhaPadrao.IdleBorderRadius = 3;
             this.btnSenhaPadrao.IdleBorderThickness = 1;
@@ -308,30 +317,46 @@
             this.btnSenhaPadrao.IdleIconLeftImage = null;
             this.btnSenhaPadrao.IdleIconRightImage = null;
             this.btnSenhaPadrao.IndicateFocus = false;
-            this.btnSenhaPadrao.Location = new System.Drawing.Point(486, 7);
+            this.btnSenhaPadrao.Location = new System.Drawing.Point(284, 7);
             this.btnSenhaPadrao.Name = "btnSenhaPadrao";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            stateProperties1.BorderRadius = 3;
-            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties1.BorderThickness = 1;
-            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            stateProperties1.ForeColor = System.Drawing.Color.White;
-            stateProperties1.IconLeftImage = null;
-            stateProperties1.IconRightImage = null;
-            this.btnSenhaPadrao.onHoverState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            stateProperties2.BorderRadius = 3;
-            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties2.BorderThickness = 1;
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            stateProperties2.ForeColor = System.Drawing.Color.White;
-            stateProperties2.IconLeftImage = null;
-            stateProperties2.IconRightImage = null;
-            this.btnSenhaPadrao.OnPressedState = stateProperties2;
+            this.btnSenhaPadrao.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSenhaPadrao.OnDisabledState.BorderRadius = 3;
+            this.btnSenhaPadrao.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSenhaPadrao.OnDisabledState.BorderThickness = 1;
+            this.btnSenhaPadrao.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSenhaPadrao.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSenhaPadrao.OnDisabledState.IconLeftImage = null;
+            this.btnSenhaPadrao.OnDisabledState.IconRightImage = null;
+            this.btnSenhaPadrao.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.btnSenhaPadrao.onHoverState.BorderRadius = 3;
+            this.btnSenhaPadrao.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSenhaPadrao.onHoverState.BorderThickness = 1;
+            this.btnSenhaPadrao.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.btnSenhaPadrao.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnSenhaPadrao.onHoverState.IconLeftImage = null;
+            this.btnSenhaPadrao.onHoverState.IconRightImage = null;
+            this.btnSenhaPadrao.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.btnSenhaPadrao.OnIdleState.BorderRadius = 3;
+            this.btnSenhaPadrao.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSenhaPadrao.OnIdleState.BorderThickness = 1;
+            this.btnSenhaPadrao.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.btnSenhaPadrao.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnSenhaPadrao.OnIdleState.IconLeftImage = null;
+            this.btnSenhaPadrao.OnIdleState.IconRightImage = null;
+            this.btnSenhaPadrao.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.btnSenhaPadrao.OnPressedState.BorderRadius = 3;
+            this.btnSenhaPadrao.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSenhaPadrao.OnPressedState.BorderThickness = 1;
+            this.btnSenhaPadrao.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.btnSenhaPadrao.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnSenhaPadrao.OnPressedState.IconLeftImage = null;
+            this.btnSenhaPadrao.OnPressedState.IconRightImage = null;
             this.btnSenhaPadrao.Size = new System.Drawing.Size(13, 22);
             this.btnSenhaPadrao.TabIndex = 35;
             this.btnSenhaPadrao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSenhaPadrao.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSenhaPadrao.TextMarginLeft = 0;
+            this.btnSenhaPadrao.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSenhaPadrao.UseDefaultRadiusAndThickness = true;
             this.btnSenhaPadrao.Visible = false;
             this.btnSenhaPadrao.Click += new System.EventHandler(this.btnSenhaPadrao_Click);
@@ -489,9 +514,9 @@
             this.lblSituacao.ForeColor = System.Drawing.Color.Lavender;
             this.lblSituacao.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_comments_20px;
             this.lblSituacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSituacao.Location = new System.Drawing.Point(251, 10);
+            this.lblSituacao.Location = new System.Drawing.Point(251, 12);
             this.lblSituacao.Name = "lblSituacao";
-            this.lblSituacao.Size = new System.Drawing.Size(42, 21);
+            this.lblSituacao.Size = new System.Drawing.Size(27, 17);
             this.lblSituacao.TabIndex = 34;
             this.lblSituacao.Text = "Situação";
             this.lblSituacao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -660,109 +685,6 @@
             this.table_OrdensServicos.MouseEnter += new System.EventHandler(this.table_OrdensServicos_MouseEnter);
             this.table_OrdensServicos.MouseLeave += new System.EventHandler(this.table_OrdensServicos_MouseLeave);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem,
-            this.deletarToolStripMenuItem,
-            this.verSenhaPadrãoToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(141, 70);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
-            // deletarToolStripMenuItem
-            // 
-            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
-            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.deletarToolStripMenuItem.Text = "Deletar";
-            this.deletarToolStripMenuItem.Click += new System.EventHandler(this.deletarToolStripMenuItem_Click);
-            // 
-            // verSenhaPadrãoToolStripMenuItem
-            // 
-            this.verSenhaPadrãoToolStripMenuItem.Name = "verSenhaPadrãoToolStripMenuItem";
-            this.verSenhaPadrãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.verSenhaPadrãoToolStripMenuItem.Text = "Ver Senha Padrão";
-            this.verSenhaPadrãoToolStripMenuItem.Click += new System.EventHandler(this.verSenhaPadrãoToolStripMenuItem_Click);
-            // 
-            // btnVisivel
-            // 
-            this.btnVisivel.Active = false;
-            this.btnVisivel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.btnVisivel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnVisivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVisivel.BorderRadius = 0;
-            this.btnVisivel.ButtonText = "";
-            this.btnVisivel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVisivel.DisabledColor = System.Drawing.Color.Gray;
-            this.btnVisivel.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnVisivel.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnVisivel.Iconimage")));
-            this.btnVisivel.Iconimage_right = null;
-            this.btnVisivel.Iconimage_right_Selected = null;
-            this.btnVisivel.Iconimage_Selected = null;
-            this.btnVisivel.IconMarginLeft = 0;
-            this.btnVisivel.IconMarginRight = 0;
-            this.btnVisivel.IconRightVisible = true;
-            this.btnVisivel.IconRightZoom = 0D;
-            this.btnVisivel.IconVisible = true;
-            this.btnVisivel.IconZoom = 50D;
-            this.btnVisivel.IsTab = false;
-            this.btnVisivel.Location = new System.Drawing.Point(0, 0);
-            this.btnVisivel.Name = "btnVisivel";
-            this.btnVisivel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.btnVisivel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
-            this.btnVisivel.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnVisivel.selected = false;
-            this.btnVisivel.Size = new System.Drawing.Size(34, 35);
-            this.btnVisivel.TabIndex = 37;
-            this.btnVisivel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnVisivel.Textcolor = System.Drawing.Color.White;
-            this.btnVisivel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisivel.Visible = false;
-            this.btnVisivel.Click += new System.EventHandler(this.btnVisivel_Click);
-            // 
-            // arredondarTabelaServ
-            // 
-            this.arredondarTabelaServ.ElipseRadius = 1;
-            this.arredondarTabelaServ.TargetControl = this.table_OrdensServicos;
-            // 
-            // arredondarComboboxCliente
-            // 
-            this.arredondarComboboxCliente.ElipseRadius = 10;
-            this.arredondarComboboxCliente.TargetControl = this.cmbClientes;
-            // 
-            // arredondarBotaoCadastrar
-            // 
-            this.arredondarBotaoCadastrar.ElipseRadius = 20;
-            this.arredondarBotaoCadastrar.TargetControl = this.btnCadastrarOrdem;
-            // 
-            // arredondarBotaoPesquisarCliente
-            // 
-            this.arredondarBotaoPesquisarCliente.ElipseRadius = 20;
-            this.arredondarBotaoPesquisarCliente.TargetControl = this.btnPesquisarCliente;
-            // 
-            // timerAtualizarTabela
-            // 
-            this.timerAtualizarTabela.Interval = 2000;
-            this.timerAtualizarTabela.Tick += new System.EventHandler(this.timerAtualizarTabela_Tick);
-            // 
-            // standbyDataSet
-            // 
-            this.standbyDataSet.DataSetName = "standbyDataSet";
-            this.standbyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // standbyDataSetBindingSource
-            // 
-            this.standbyDataSetBindingSource.DataSource = this.standbyDataSet;
-            this.standbyDataSetBindingSource.Position = 0;
-            // 
             // idServico
             // 
             this.idServico.DataPropertyName = "sv_id";
@@ -897,6 +819,109 @@
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
             this.idCliente.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.deletarToolStripMenuItem,
+            this.verSenhaPadrãoToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowImageMargin = false;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(141, 70);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // deletarToolStripMenuItem
+            // 
+            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
+            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.deletarToolStripMenuItem.Text = "Deletar";
+            this.deletarToolStripMenuItem.Click += new System.EventHandler(this.deletarToolStripMenuItem_Click);
+            // 
+            // verSenhaPadrãoToolStripMenuItem
+            // 
+            this.verSenhaPadrãoToolStripMenuItem.Name = "verSenhaPadrãoToolStripMenuItem";
+            this.verSenhaPadrãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.verSenhaPadrãoToolStripMenuItem.Text = "Ver Senha Padrão";
+            this.verSenhaPadrãoToolStripMenuItem.Click += new System.EventHandler(this.verSenhaPadrãoToolStripMenuItem_Click);
+            // 
+            // btnVisivel
+            // 
+            this.btnVisivel.Active = false;
+            this.btnVisivel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.btnVisivel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnVisivel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVisivel.BorderRadius = 0;
+            this.btnVisivel.ButtonText = "";
+            this.btnVisivel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVisivel.DisabledColor = System.Drawing.Color.Gray;
+            this.btnVisivel.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnVisivel.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnVisivel.Iconimage")));
+            this.btnVisivel.Iconimage_right = null;
+            this.btnVisivel.Iconimage_right_Selected = null;
+            this.btnVisivel.Iconimage_Selected = null;
+            this.btnVisivel.IconMarginLeft = 0;
+            this.btnVisivel.IconMarginRight = 0;
+            this.btnVisivel.IconRightVisible = true;
+            this.btnVisivel.IconRightZoom = 0D;
+            this.btnVisivel.IconVisible = true;
+            this.btnVisivel.IconZoom = 50D;
+            this.btnVisivel.IsTab = false;
+            this.btnVisivel.Location = new System.Drawing.Point(0, 0);
+            this.btnVisivel.Name = "btnVisivel";
+            this.btnVisivel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnVisivel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
+            this.btnVisivel.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnVisivel.selected = false;
+            this.btnVisivel.Size = new System.Drawing.Size(34, 35);
+            this.btnVisivel.TabIndex = 37;
+            this.btnVisivel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnVisivel.Textcolor = System.Drawing.Color.White;
+            this.btnVisivel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisivel.Visible = false;
+            this.btnVisivel.Click += new System.EventHandler(this.btnVisivel_Click);
+            // 
+            // arredondarTabelaServ
+            // 
+            this.arredondarTabelaServ.ElipseRadius = 1;
+            this.arredondarTabelaServ.TargetControl = this.table_OrdensServicos;
+            // 
+            // arredondarComboboxCliente
+            // 
+            this.arredondarComboboxCliente.ElipseRadius = 10;
+            this.arredondarComboboxCliente.TargetControl = this.cmbClientes;
+            // 
+            // arredondarBotaoCadastrar
+            // 
+            this.arredondarBotaoCadastrar.ElipseRadius = 20;
+            this.arredondarBotaoCadastrar.TargetControl = this.btnCadastrarOrdem;
+            // 
+            // arredondarBotaoPesquisarCliente
+            // 
+            this.arredondarBotaoPesquisarCliente.ElipseRadius = 20;
+            this.arredondarBotaoPesquisarCliente.TargetControl = this.btnPesquisarCliente;
+            // 
+            // timerAtualizarTabela
+            // 
+            this.timerAtualizarTabela.Interval = 2000;
+            this.timerAtualizarTabela.Tick += new System.EventHandler(this.timerAtualizarTabela_Tick);
+            // 
+            // standbyDataSet
+            // 
+            this.standbyDataSet.DataSetName = "standbyDataSet";
+            this.standbyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // standbyDataSetBindingSource
+            // 
+            this.standbyDataSetBindingSource.DataSource = this.standbyDataSet;
+            this.standbyDataSetBindingSource.Position = 0;
             // 
             // form_OrdensServ
             // 

@@ -33,9 +33,11 @@ namespace SBAutoUpdate.Classes
                         List<string> arquivosSeremMantidos = new List<string>
                         {
                             "SBAutoUpdate.exe",
+                            "dts.ini",
+                            "*.txt",
                         };
 
-                        Uteis.DeleteTodosExceto(meuDiretorio, arquivosSeremMantidos, true);
+                        Uteis.DeleteTodosExceto(meuDiretorio, arquivosSeremMantidos, false);
 
                         var client = new WebClient();
                         client.DownloadFile("https://www.dropbox.com/s/thwsdq62rnf93tu/UpdateClientServer.zip?dl=1", "UpdateClientServer.zip");
