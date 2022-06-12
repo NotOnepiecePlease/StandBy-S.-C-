@@ -360,7 +360,7 @@ namespace StandBy___CLIENT.SERVER
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(31, 13);
             this.lblVersion.TabIndex = 14;
-            this.lblVersion.Text = "3.1.0";
+            this.lblVersion.Text = "3.1.1";
             // 
             // lblIp
             // 

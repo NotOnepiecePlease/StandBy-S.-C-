@@ -23,6 +23,11 @@ namespace StandBy___CLIENT.SERVER.Forms
 
         private void toolsANALISAR_Click(object sender, EventArgs e)
         {
+            VerInformacoesServico();
+        }
+
+        private void VerInformacoesServico()
+        {
             string telCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(table_ServicosAndamento.SelectedCells[1].Value.ToString()));
             string telRecCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(table_ServicosAndamento.SelectedCells[1].Value.ToString()));
             float lucro = float.Parse(table_ServicosAndamento.SelectedCells[10].Value.ToString());
@@ -174,6 +179,11 @@ namespace StandBy___CLIENT.SERVER.Forms
         private void table_ServicosAndamento_MouseEnter(object sender, EventArgs e)
         {
             timerAtualizarTabela.Stop();
+        }
+
+        private void table_ServicosAndamento_DoubleClick(object sender, EventArgs e)
+        {
+            VerInformacoesServico();
         }
     }
 }

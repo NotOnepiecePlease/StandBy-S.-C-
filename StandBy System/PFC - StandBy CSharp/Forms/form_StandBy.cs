@@ -184,15 +184,12 @@ namespace PFC___StandBy_CSharp.Forms
         {
             corGeral[0] = track_RED.Value;
             lblRED.Text = track_RED.Value.ToString();
-            //lblRED.ForeColor = Color.FromArgb(track_RED.Value, 0, 0);
 
             corGeral[1] = track_GREEN.Value;
             lblGREEN.Text = track_GREEN.Value.ToString();
-            //lblGREEN.ForeColor = Color.FromArgb(0, track_GREEN.Value, 0);
 
             corGeral[2] = track_BLUE.Value;
             lblBLUE.Text = track_BLUE.Value.ToString();
-            //lblBLUE.ForeColor = Color.FromArgb(0, 0, track_BLUE.Value);
 
             btnServicosPorMes.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnDesligarPc.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -210,11 +207,20 @@ namespace PFC___StandBy_CSharp.Forms
             btnSimAtualizar.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnSimAtualizar.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnSimAtualizar.onHoverState.BorderColor = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
-            btnSimAtualizar.onHoverState.FillColor = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
-
-            btnSimAtualizar.OnPressedState.FillColor = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
-            btnSimAtualizar.OnPressedState.BorderColor = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
+            if ((corGeral[0] - 70) < 0)
+            {
+                btnSimAtualizar.onHoverState.BorderColor = Color.FromArgb(0, corGeral[1], corGeral[2]);
+                btnSimAtualizar.onHoverState.FillColor = Color.FromArgb(0, corGeral[1], corGeral[2]);
+                btnSimAtualizar.OnPressedState.FillColor = Color.FromArgb(0, corGeral[1], corGeral[2]);
+                btnSimAtualizar.OnPressedState.BorderColor = Color.FromArgb(0, corGeral[1], corGeral[2]);
+            }
+            else
+            {
+                btnSimAtualizar.onHoverState.BorderColor = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
+                btnSimAtualizar.onHoverState.FillColor = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
+                btnSimAtualizar.OnPressedState.FillColor = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
+                btnSimAtualizar.OnPressedState.BorderColor = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
+            }
 
             panel_CorGeral.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }

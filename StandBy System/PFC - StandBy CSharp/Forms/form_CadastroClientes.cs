@@ -9,8 +9,10 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Framework.UI;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -22,6 +24,8 @@ namespace PFC___StandBy_CSharp.Forms
         private InserirDados id = new InserirDados();
         private BuscarDados bd = new BuscarDados();
         private int[] corGeral = new int[3] { 0, 0, 0 };
+        private int contadorCNPJ = 0;
+        private int contadorCPF = 0;
 
         public form_CadastroClientes(int[] corRGB)
         {
@@ -46,7 +50,7 @@ namespace PFC___StandBy_CSharp.Forms
         public void MudarTodasCores()
         {
             txtNomeCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtCPFCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtTelefoneCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtTelefoneRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtPesquisarCADCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -56,8 +60,8 @@ namespace PFC___StandBy_CSharp.Forms
             chkSemCPF.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             chkSemCPF.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            chkCnpj.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            chkCnpj.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //chkCnpj.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //chkCnpj.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             chkTelRecados.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             chkTelRecados.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -84,49 +88,6 @@ namespace PFC___StandBy_CSharp.Forms
                 txtNomeCliente.Font = new Font(txtNomeCliente.Font, FontStyle.Italic);
                 txtNomeCliente.ForeColor = Color.Silver;
                 txtNomeCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            }
-        }
-
-        private void txtCPFCliente_Enter(object sender, EventArgs e)
-        {
-            if (txtCPFCliente.Text == "CPF do Cliente")
-            {
-                txtCPFCliente.Text = "";
-                txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Regular);
-                txtCPFCliente.LineIdleColor = Color.White;
-                txtCPFCliente.ForeColor = Color.White;
-            }
-
-            if (txtCPFCliente.Text == "CNPJ do Cliente")
-            {
-                txtCPFCliente.Text = "";
-                txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Regular);
-                txtCPFCliente.LineIdleColor = Color.White;
-                txtCPFCliente.ForeColor = Color.White;
-            }
-        }
-
-        private void txtCPFCliente_Leave(object sender, EventArgs e)
-        {
-            if (chkCnpj.Checked == true)
-            {
-                if (txtCPFCliente.Text == "")
-                {
-                    txtCPFCliente.Text = "CNPJ do Cliente";
-                    txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
-                    txtCPFCliente.ForeColor = Color.Silver;
-                    txtCPFCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-                }
-            }
-            else
-            {
-                if (txtCPFCliente.Text == "")
-                {
-                    txtCPFCliente.Text = "CPF do Cliente";
-                    txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
-                    txtCPFCliente.ForeColor = Color.Silver;
-                    txtCPFCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-                }
             }
         }
 
@@ -230,28 +191,11 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        public void CadastrarTestes()
-        {
-            long cpf = Convert.ToInt64(txtCPFCliente.Text);
-
-            string CpfOuCnpjFORMATADO;
-            if (chkCnpj.Checked == true)
-            {
-                CpfOuCnpjFORMATADO = String.Format(@"{0:00\.000\.000\/0000-00}", cpf);
-            }
-            else
-            {
-                CpfOuCnpjFORMATADO = String.Format(@"{0:000\.000\.000\-00}", cpf);
-            }
-
-            MessageBox.Show(CpfOuCnpjFORMATADO);
-        }
-
         public void CadastrarNovoCliente()
         {
             //Verificando se o usuario nao deixou nada em branco
             //if (string.IsNullOrWhiteSpace(txtNomeCliente.Text) || string.IsNullOrWhiteSpace(txtCPFCliente.Text)
-            //    || txtNomeCliente.Text == "Nome do Cliente" || txtCPFCliente.Text == "CPF do Cliente")
+            //    || txtNomeCliente.Text == "Nome do Cliente" || txtCPFCliente.Text == "CPF ou CNPJ do Cliente")
             //if (chkTelRecados.Checked == true && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")
             //    || chkTelRecados.Checked == true && txtTratarCom.Text.Equals("Quem recebe o recado")
             //    || chkTelRecados.Checked == true && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente") && txtTratarCom.Text.Equals("Quem recebe o recado"))
@@ -268,7 +212,7 @@ namespace PFC___StandBy_CSharp.Forms
             //    MessageBox.Show("Você preencheu o numero mas esqueceu de especificar com quem deixar o recado.", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
             //else if (chkSemCPF.Checked == true)
-            else if (txtCPFCliente.Text.Equals("CPF do Cliente"))
+            else if (txtCPFCliente.Text.Equals("CPF ou CNPJ do Cliente"))
             {
                 //Pegar os dados dos campos
                 string nome = txtNomeCliente.Text.ToString();
@@ -303,38 +247,40 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 //Pegar os dados dos campos
                 string nome = txtNomeCliente.Text.ToString();
-                long cpf = Convert.ToInt64(txtCPFCliente.Text);
+                //long cpf = Convert.ToInt64(txtCPFCliente.Text);
+                string cpf = txtCPFCliente.Text;
                 string telPrincipal = txtTelefoneCliente.Text.ToString();
                 string telRecados = txtTelefoneRecado.Text.ToString();
-                string tratarCom = " | " + txtTratarCom.Text.ToString();
 
-                string CpfOuCnpjFORMATADO;
-                if (chkCnpj.Checked == true)
-                {
-                    CpfOuCnpjFORMATADO = String.Format(@"{0:00\.000\.000\/0000-00}", cpf);
-                }
-                else
-                {
-                    CpfOuCnpjFORMATADO = String.Format(@"{0:000\.000\.000\-00}", cpf);
-                }
+                //string CpfOuCnpjFORMATADO;
+                //if (chkCnpj.Checked == true)
+                //{
+                //    CpfOuCnpjFORMATADO = String.Format(@"{0:00\.000\.000\/0000-00}", cpf);
+                //}
+                //else
+                //{
+                //    CpfOuCnpjFORMATADO = String.Format(@"{0:000\.000\.000\-00}", cpf);
+                //}
                 //txt.Text = CpfOuCnpjFORMATADO;
                 if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
-                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", "");
+                    //id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", "");
+                    id.InserirCliente(nome, cpf, "", "");
                 }
                 else if (string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) || txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && !(txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente")))
                 {
-                    //id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", telRecados + tratarCom);
-                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", telRecados);
+                    //id.InserirCliente(nome, CpfOuCnpjFORMATADO, "", telRecados);
+                    id.InserirCliente(nome, cpf, "", telRecados);
                 }
                 else if (!string.IsNullOrWhiteSpace(txtTelefoneCliente.Text) && !txtTelefoneCliente.Text.Equals("Telefone Principal do Cliente") && txtTelefoneRecado.Text.Equals("Telefone de Recados do Cliente"))
                 {
-                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, "");
+                    //id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, "");
+                    id.InserirCliente(nome, cpf, telPrincipal, "");
                 }
                 else
                 {
                     //id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, telRecados + tratarCom);
-                    id.InserirCliente(nome, CpfOuCnpjFORMATADO, telPrincipal, telRecados);
+                    id.InserirCliente(nome, cpf, telPrincipal, telRecados);
                 }
             }
 
@@ -364,13 +310,13 @@ namespace PFC___StandBy_CSharp.Forms
             txtTratarCom.ForeColor = Color.Silver;
             txtTratarCom.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            txtCPFCliente.Text = "CPF do Cliente";
+            txtCPFCliente.Text = "CPF ou CNPJ do Cliente";
             txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
             txtCPFCliente.ForeColor = Color.Silver;
-            txtCPFCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            chkCnpj.Checked = false;
-            chkSemCPF.Checked = false;
+            //chkCnpj.Checked = false;
+            //chkSemCPF.Checked = false;
 
             //txtTelefoneRecado.Font = new Font(txtTelefoneRecado.Font, FontStyle.Italic);
             //txtTelefoneRecado.ForeColor = Color.Silver;
@@ -397,7 +343,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void txtCPFCliente_KeyDown(object sender, KeyEventArgs e)
+        private void txtCPFCliente1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -431,30 +377,14 @@ namespace PFC___StandBy_CSharp.Forms
             if (chkSemCPF.Checked == true)
             {
                 txtCPFCliente.Enabled = false;
-                txtCPFCliente.LineIdleColor = Color.Gray;
-                txtCPFCliente.LineMouseHoverColor = Color.Gray;
+                separatorCPF.LineColor = Color.Gray;
+                //txtCPFCliente.LineMouseHoverColor = Color.Gray;
             }
             else
             {
                 txtCPFCliente.Enabled = true;
-                txtCPFCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-                txtCPFCliente.LineMouseHoverColor = Color.Lavender;
-            }
-        }
-
-        private void chkCnpj_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
-        {
-            if (chkCnpj.Checked == true)
-            {
-                lblCpf.Text = "CNPJ";
-                txtCPFCliente.Text = "CNPJ do Cliente";
-                txtCPFCliente.MaxLength = 14;
-            }
-            else
-            {
-                lblCpf.Text = "CPF";
-                txtCPFCliente.Text = "CPF do Cliente";
-                txtCPFCliente.MaxLength = 11;
+                separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                //txtCPFCliente.LineMouseHoverColor = Color.Lavender;
             }
         }
 
@@ -574,6 +504,209 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 CadastrarNovoCliente();
             }
+        }
+
+        private void txtCPFCliente1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //TextBox CPF = sender as TextBox;
+            BunifuMaterialTextbox CPF = sender as BunifuMaterialTextbox;
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                if (CPF.Text.Length == 3 || CPF.Text.Length == 7)
+                    CPF.Text += ".";
+                else if (CPF.Text.Length == 11)
+                    CPF.Text += "-";
+            }
+        }
+
+        private void txtCPFCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Regex pattern = new Regex("[./-]");
+            string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
+            if (cpfApenasDigitos.Length <= 12)
+            {
+                contadorCNPJ = 0;
+                if (contadorCPF == 0)
+                {
+                    FormatarTodaStringParaCpf(sender);
+                    contadorCPF++;
+                }
+                else
+                {
+                    TextBox CPF = sender as TextBox;
+                    if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                    {
+                        CPF.SelectionStart = CPF.Text.Length + 1;
+
+                        if (CPF.Text.Length == 3 || CPF.Text.Length == 7)
+                        {
+                            CPF.Text += ".";
+                        }
+                        else if (CPF.Text.Length == 11)
+                        {
+                            CPF.Text += "-";
+                        }
+                        CPF.SelectionStart = CPF.Text.Length + 1;
+                    }
+                }
+            }
+            else
+            {
+                contadorCPF = 0;
+                if (contadorCNPJ == 0)
+                {
+                    FormatarTodaStringParaCnpj(sender);
+                    contadorCNPJ++;
+                }
+                else
+                {
+                    TextBox CPF = sender as TextBox;
+                    if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                    {
+                        CPF.SelectionStart = CPF.Text.Length + 1;
+
+                        if (CPF.Text.Length == 2 || CPF.Text.Length == 6)
+                        {
+                            CPF.Text += ".";
+                        }
+                        else if (CPF.Text.Length == 10)
+                        {
+                            CPF.Text += "/";
+                        }
+                        else if (CPF.Text.Length == 15)
+                        {
+                            CPF.Text += "-";
+                        }
+                        CPF.SelectionStart = CPF.Text.Length + 1;
+                    }
+                }
+            }
+        }
+
+        private void FormatarTodaStringParaCpf(object sender)
+        {
+            Regex pattern = new Regex("[./-]");
+            //string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
+            TextBox CPF = sender as TextBox;
+
+            string cpfTexto = pattern.Replace(txtCPFCliente.Text, "");
+            char[] cpfCaracteres = cpfTexto.ToCharArray();
+            txtCPFCliente.Text = "";
+            foreach (char caractere in cpfCaracteres)
+            {
+                CPF.SelectionStart = CPF.Text.Length + 1;
+                txtCPFCliente.Text += caractere;
+                if (CPF.Text.Length == 3 || CPF.Text.Length == 7)
+                {
+                    CPF.Text += ".";
+                }
+                else if (CPF.Text.Length == 11)
+                {
+                    CPF.Text += "-";
+                }
+                CPF.SelectionStart = CPF.Text.Length + 1;
+            }
+        }
+
+        private void FormatarTodaStringParaCnpj(object sender)
+        {
+            Regex pattern = new Regex(@"[./-]");
+            //string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
+            TextBox CPF = sender as TextBox;
+
+            string cpfTexto = pattern.Replace(txtCPFCliente.Text, "");
+            char[] cpfCaracteres = cpfTexto.ToCharArray();
+            txtCPFCliente.Text = "";
+            foreach (char caractere in cpfCaracteres)
+            {
+                CPF.SelectionStart = CPF.Text.Length + 1;
+                txtCPFCliente.Text += caractere;
+                if (CPF.Text.Length == 2 || CPF.Text.Length == 6)
+                {
+                    CPF.Text += ".";
+                }
+                else if (CPF.Text.Length == 10)
+                {
+                    CPF.Text += "/";
+                }
+                else if (CPF.Text.Length == 15)
+                {
+                    CPF.Text += "-";
+                }
+                CPF.SelectionStart = CPF.Text.Length + 1;
+            }
+        }
+
+        private void txtCPFCliente_Enter(object sender, EventArgs e)
+        {
+            if (txtCPFCliente.Text == "CPF ou CNPJ do Cliente")
+            {
+                txtCPFCliente.Text = "";
+                txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Regular);
+                separatorCPF.LineColor = Color.White;
+                txtCPFCliente.ForeColor = Color.White;
+            }
+
+            if (txtCPFCliente.Text == "CNPJ do Cliente")
+            {
+                txtCPFCliente.Text = "";
+                txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Regular);
+                separatorCPF.LineColor = Color.White;
+                txtCPFCliente.ForeColor = Color.White;
+            }
+        }
+
+        private void txtCPFCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CadastrarNovoCliente();
+            }
+        }
+
+        private void txtCPFCliente_Leave(object sender, EventArgs e)
+        {
+            //if (chkCnpj.Checked == true)
+            //{
+            //    if (txtCPFCliente.Text == "")
+            //    {
+            //        txtCPFCliente.Text = "CNPJ do Cliente";
+            //        txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
+            //        txtCPFCliente.ForeColor = Color.Silver;
+            //        separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //    }
+            //}
+            //else
+            //{
+            if (txtCPFCliente.Text == "")
+            {
+                txtCPFCliente.Text = "CPF ou CNPJ do Cliente";
+                txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
+                txtCPFCliente.ForeColor = Color.Silver;
+                separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            }
+            //}
+        }
+
+        private void separatorCPF_MouseEnter(object sender, EventArgs e)
+        {
+            separatorCPF.LineColor = Color.Lavender;
+        }
+
+        private void separatorCPF_MouseLeave(object sender, EventArgs e)
+        {
+            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+        }
+
+        private void txtCPFCliente_MouseEnter(object sender, EventArgs e)
+        {
+            separatorCPF.LineColor = Color.Lavender;
+        }
+
+        private void txtCPFCliente_MouseLeave(object sender, EventArgs e)
+        {
+            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
     }
 }

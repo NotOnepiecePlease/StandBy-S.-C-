@@ -118,16 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="chkTelRecados.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="separatorCPF.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVDhP7ZQhDsMwEAQPBgbmGX5GYWCfEBgYmJ8V5hl9
-        QmCZnd27U5Gltte0yCud9rzRjo0iP1Uppcs5T/A1MujO8MFxCuwR7vCvBMYDlhTqL2R4h1Vf8mrQ3eDU
-        olAs/ECtGgTEriGcwcXODRoUu4Zo0GoQELuGaNBqEBC7hvgHFL+vm+8fj3epJzTZ+RSNCqVw0wVB9RXv
-        DhhXEZEDadnZprHsA04AAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAa8AAAAOCAYAAACYXJP+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABESURBVHhe7dexCQAwDANBkWGz/wAGp0kZ0hvu4GcQCgAA
+        AAAAAAAAAMBfrd2SJE3KeEmSxnX/FwAAAAAAAAAAAMBTcgD2KwnTWNKg0QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="chkCnpj.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="chkTelRecados.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVDhP7ZQhDsMwEAQPBgbmGX5GYWCfEBgYmJ8V5hl9

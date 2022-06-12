@@ -141,6 +141,7 @@ namespace StandBy___CLIENT.SERVER.Forms
             this.table_ServicosAndamento.TabIndex = 1;
             this.table_ServicosAndamento.TabStop = false;
             this.table_ServicosAndamento.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.table_ServicosAndamento_CellFormatting);
+            this.table_ServicosAndamento.DoubleClick += new System.EventHandler(this.table_ServicosAndamento_DoubleClick);
             this.table_ServicosAndamento.MouseEnter += new System.EventHandler(this.table_ServicosAndamento_MouseEnter);
             this.table_ServicosAndamento.MouseLeave += new System.EventHandler(this.table_ServicosAndamento_MouseLeave);
             // 

@@ -30,24 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.separatorCPF = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.txtCPFCliente = new System.Windows.Forms.TextBox();
             this.lblQuantidadeClientes = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtTratarCom = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chkTelRecados = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.txtTelefoneRecado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.lblTelefoneRecados = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.chkCnpj = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chkSemCPF = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.txtTelefoneCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtNomeCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtCPFCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtPesquisarCADCliente = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btnCadastrarCliente = new FontAwesome.Sharp.IconButton();
             this.lblCpf = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -71,19 +70,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.separatorCPF);
+            this.panel1.Controls.Add(this.txtCPFCliente);
             this.panel1.Controls.Add(this.lblQuantidadeClientes);
             this.panel1.Controls.Add(this.txtTratarCom);
             this.panel1.Controls.Add(this.bunifuCustomLabel2);
             this.panel1.Controls.Add(this.chkTelRecados);
             this.panel1.Controls.Add(this.txtTelefoneRecado);
             this.panel1.Controls.Add(this.lblTelefoneRecados);
-            this.panel1.Controls.Add(this.bunifuCustomLabel5);
-            this.panel1.Controls.Add(this.chkCnpj);
             this.panel1.Controls.Add(this.bunifuCustomLabel4);
             this.panel1.Controls.Add(this.chkSemCPF);
             this.panel1.Controls.Add(this.txtTelefoneCliente);
             this.panel1.Controls.Add(this.txtNomeCliente);
-            this.panel1.Controls.Add(this.txtCPFCliente);
             this.panel1.Controls.Add(this.txtPesquisarCADCliente);
             this.panel1.Controls.Add(this.btnCadastrarCliente);
             this.panel1.Controls.Add(this.lblCpf);
@@ -95,6 +93,45 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1081, 665);
             this.panel1.TabIndex = 1;
+            // 
+            // separatorCPF
+            // 
+            this.separatorCPF.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.separatorCPF.BackColor = System.Drawing.Color.Transparent;
+            this.separatorCPF.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("separatorCPF.BackgroundImage")));
+            this.separatorCPF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.separatorCPF.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.separatorCPF.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.separatorCPF.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.separatorCPF.LineThickness = 2;
+            this.separatorCPF.Location = new System.Drawing.Point(372, 134);
+            this.separatorCPF.Name = "separatorCPF";
+            this.separatorCPF.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.separatorCPF.Size = new System.Drawing.Size(431, 14);
+            this.separatorCPF.TabIndex = 63;
+            this.separatorCPF.MouseEnter += new System.EventHandler(this.separatorCPF_MouseEnter);
+            this.separatorCPF.MouseLeave += new System.EventHandler(this.separatorCPF_MouseLeave);
+            // 
+            // txtCPFCliente
+            // 
+            this.txtCPFCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCPFCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtCPFCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCPFCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtCPFCliente.ForeColor = System.Drawing.Color.Silver;
+            this.txtCPFCliente.Location = new System.Drawing.Point(372, 117);
+            this.txtCPFCliente.MaxLength = 18;
+            this.txtCPFCliente.Name = "txtCPFCliente";
+            this.txtCPFCliente.Size = new System.Drawing.Size(431, 16);
+            this.txtCPFCliente.TabIndex = 3;
+            this.txtCPFCliente.Text = "CPF ou CNPJ do Cliente";
+            this.txtCPFCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCPFCliente.Enter += new System.EventHandler(this.txtCPFCliente_Enter);
+            this.txtCPFCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPFCliente_KeyDown);
+            this.txtCPFCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPFCliente_KeyPress);
+            this.txtCPFCliente.Leave += new System.EventHandler(this.txtCPFCliente_Leave);
+            this.txtCPFCliente.MouseEnter += new System.EventHandler(this.txtCPFCliente_MouseEnter);
+            this.txtCPFCliente.MouseLeave += new System.EventHandler(this.txtCPFCliente_MouseLeave);
             // 
             // lblQuantidadeClientes
             // 
@@ -168,8 +205,8 @@
             this.chkTelRecados.BackColor = System.Drawing.Color.Transparent;
             this.chkTelRecados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkTelRecados.BackgroundImage")));
             this.chkTelRecados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chkTelRecados.BindingControl = null;
             this.chkTelRecados.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.chkTelRecados.BorderRadius = 12;
             this.chkTelRecados.Checked = false;
             this.chkTelRecados.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chkTelRecados.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -256,75 +293,6 @@
             this.lblTelefoneRecados.Text = "Recado";
             this.lblTelefoneRecados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuCustomLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.Lavender;
-            this.bunifuCustomLabel5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(846, 121);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(55, 21);
-            this.bunifuCustomLabel5.TabIndex = 36;
-            this.bunifuCustomLabel5.Text = "CNPJ";
-            this.bunifuCustomLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // chkCnpj
-            // 
-            this.chkCnpj.AllowBindingControlAnimation = true;
-            this.chkCnpj.AllowBindingControlColorChanges = false;
-            this.chkCnpj.AllowBindingControlLocation = true;
-            this.chkCnpj.AllowCheckBoxAnimation = false;
-            this.chkCnpj.AllowCheckmarkAnimation = true;
-            this.chkCnpj.AllowOnHoverStates = true;
-            this.chkCnpj.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.chkCnpj.AutoCheck = true;
-            this.chkCnpj.BackColor = System.Drawing.Color.Transparent;
-            this.chkCnpj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkCnpj.BackgroundImage")));
-            this.chkCnpj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chkCnpj.BindingControl = null;
-            this.chkCnpj.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.chkCnpj.Checked = false;
-            this.chkCnpj.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
-            this.chkCnpj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkCnpj.CustomCheckmarkImage = null;
-            this.chkCnpj.Location = new System.Drawing.Point(822, 121);
-            this.chkCnpj.MinimumSize = new System.Drawing.Size(17, 17);
-            this.chkCnpj.Name = "chkCnpj";
-            this.chkCnpj.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.chkCnpj.OnCheck.BorderRadius = 2;
-            this.chkCnpj.OnCheck.BorderThickness = 2;
-            this.chkCnpj.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.chkCnpj.OnCheck.CheckmarkColor = System.Drawing.Color.White;
-            this.chkCnpj.OnCheck.CheckmarkThickness = 2;
-            this.chkCnpj.OnDisable.BorderColor = System.Drawing.Color.LightGray;
-            this.chkCnpj.OnDisable.BorderRadius = 2;
-            this.chkCnpj.OnDisable.BorderThickness = 2;
-            this.chkCnpj.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.chkCnpj.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
-            this.chkCnpj.OnDisable.CheckmarkThickness = 2;
-            this.chkCnpj.OnHoverChecked.BorderColor = System.Drawing.Color.Silver;
-            this.chkCnpj.OnHoverChecked.BorderRadius = 2;
-            this.chkCnpj.OnHoverChecked.BorderThickness = 2;
-            this.chkCnpj.OnHoverChecked.CheckBoxColor = System.Drawing.Color.Silver;
-            this.chkCnpj.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
-            this.chkCnpj.OnHoverChecked.CheckmarkThickness = 2;
-            this.chkCnpj.OnHoverUnchecked.BorderColor = System.Drawing.Color.Silver;
-            this.chkCnpj.OnHoverUnchecked.BorderRadius = 2;
-            this.chkCnpj.OnHoverUnchecked.BorderThickness = 2;
-            this.chkCnpj.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.chkCnpj.OnUncheck.BorderColor = System.Drawing.Color.White;
-            this.chkCnpj.OnUncheck.BorderRadius = 2;
-            this.chkCnpj.OnUncheck.BorderThickness = 2;
-            this.chkCnpj.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
-            this.chkCnpj.Size = new System.Drawing.Size(21, 21);
-            this.chkCnpj.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
-            this.chkCnpj.TabIndex = 3;
-            this.chkCnpj.ThreeState = false;
-            this.chkCnpj.ToolTipText = null;
-            this.chkCnpj.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkCnpj_CheckedChanged);
-            // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -353,8 +321,8 @@
             this.chkSemCPF.BackColor = System.Drawing.Color.Transparent;
             this.chkSemCPF.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chkSemCPF.BackgroundImage")));
             this.chkSemCPF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chkSemCPF.BindingControl = null;
             this.chkSemCPF.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.chkSemCPF.BorderRadius = 12;
             this.chkSemCPF.Checked = false;
             this.chkSemCPF.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chkSemCPF.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -456,36 +424,6 @@
             this.txtNomeCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeCliente_KeyDown);
             this.txtNomeCliente.Leave += new System.EventHandler(this.txtNomeCliente_Leave);
             // 
-            // txtCPFCliente
-            // 
-            this.txtCPFCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCPFCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtCPFCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtCPFCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtCPFCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtCPFCliente.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtCPFCliente.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCPFCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtCPFCliente.ForeColor = System.Drawing.Color.Silver;
-            this.txtCPFCliente.HintForeColor = System.Drawing.Color.Transparent;
-            this.txtCPFCliente.HintText = "";
-            this.txtCPFCliente.isPassword = false;
-            this.txtCPFCliente.LineFocusedColor = System.Drawing.Color.White;
-            this.txtCPFCliente.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.txtCPFCliente.LineMouseHoverColor = System.Drawing.Color.Lavender;
-            this.txtCPFCliente.LineThickness = 2;
-            this.txtCPFCliente.Location = new System.Drawing.Point(372, 107);
-            this.txtCPFCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCPFCliente.MaxLength = 11;
-            this.txtCPFCliente.Name = "txtCPFCliente";
-            this.txtCPFCliente.Size = new System.Drawing.Size(431, 32);
-            this.txtCPFCliente.TabIndex = 2;
-            this.txtCPFCliente.Text = "CPF do Cliente";
-            this.txtCPFCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCPFCliente.Enter += new System.EventHandler(this.txtCPFCliente_Enter);
-            this.txtCPFCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPFCliente_KeyDown);
-            this.txtCPFCliente.Leave += new System.EventHandler(this.txtCPFCliente_Leave);
-            // 
             // txtPesquisarCADCliente
             // 
             this.txtPesquisarCADCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -507,7 +445,6 @@
             this.txtPesquisarCADCliente.Text = "Digite o nome do cliente que deseja buscar os serviços";
             this.txtPesquisarCADCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPesquisarCADCliente.Enter += new System.EventHandler(this.txtPesquisarCADCliente_Enter);
-            //this.txtPesquisarCADCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisarCADCliente_KeyDown);
             this.txtPesquisarCADCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesquisarCADCliente_KeyUp);
             this.txtPesquisarCADCliente.Leave += new System.EventHandler(this.txtPesquisarCADCliente_Leave);
             // 
@@ -537,15 +474,15 @@
             // 
             this.lblCpf.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCpf.BackColor = System.Drawing.Color.Transparent;
-            this.lblCpf.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.lblCpf.Font = new System.Drawing.Font("Segoe UI", 12.25F);
             this.lblCpf.ForeColor = System.Drawing.Color.Lavender;
             this.lblCpf.Image = global::PFC___StandBy_CSharp.Properties.Resources.identification_documents_20px;
             this.lblCpf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblCpf.Location = new System.Drawing.Point(256, 117);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(72, 22);
+            this.lblCpf.Size = new System.Drawing.Size(108, 22);
             this.lblCpf.TabIndex = 32;
-            this.lblCpf.Text = "CPF";
+            this.lblCpf.Text = "CPF/CNPJ";
             this.lblCpf.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTelefonePrincipal
@@ -581,8 +518,8 @@
             // table_Clientes
             // 
             this.table_Clientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.table_Clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.table_Clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.table_Clientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -590,14 +527,14 @@
             this.table_Clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.table_Clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.table_Clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.table_Clientes.ColumnHeadersHeight = 35;
             this.table_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.table_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -615,21 +552,21 @@
             this.table_Clientes.Name = "table_Clientes";
             this.table_Clientes.ReadOnly = true;
             this.table_Clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table_Clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table_Clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.table_Clientes.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Snow;
-            this.table_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
+            this.table_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.table_Clientes.Size = new System.Drawing.Size(542, 331);
             this.table_Clientes.TabIndex = 0;
@@ -718,6 +655,7 @@
             this.Name = "form_CadastroClientes";
             this.Text = "form_CadastroClientes";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_Clientes)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -728,7 +666,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtNomeCliente;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtCPFCliente;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtPesquisarCADCliente;
         private FontAwesome.Sharp.IconButton btnCadastrarCliente;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCpf;
@@ -742,8 +679,6 @@
         private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.UI.WinForms.BunifuCheckBox chkSemCPF;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.UI.WinForms.BunifuCheckBox chkCnpj;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtTelefoneRecado;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTelefoneRecados;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
@@ -755,5 +690,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Situacao;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtTratarCom;
         private Bunifu.Framework.UI.BunifuCustomLabel lblQuantidadeClientes;
+        private System.Windows.Forms.TextBox txtCPFCliente;
+        private Bunifu.UI.WinForms.BunifuSeparator separatorCPF;
     }
 }

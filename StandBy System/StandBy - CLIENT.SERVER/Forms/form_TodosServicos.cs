@@ -27,12 +27,12 @@ namespace StandBy___CLIENT.SERVER.Forms
 
         private void toolsVerServico_Click(object sender, EventArgs e)
         {
-            verServico();
+            VerInformacoesServico();
 
             //MessageBox.Show(table_TodosServicos.SelectedCells[1].Value.ToString());
         }
 
-        private void verServico()
+        private void VerInformacoesServico()
         {
             // 0 - idServico
             // 1 - idCliente
@@ -150,8 +150,9 @@ namespace StandBy___CLIENT.SERVER.Forms
             timerAtualizarTabela.Start();
         }
 
-        private void txtPesquisarConcluidos_KeyUp(object sender, KeyEventArgs e)
+        private void table_TodosServicos_DoubleClick(object sender, EventArgs e)
         {
+            VerInformacoesServico();
         }
     }
 }
