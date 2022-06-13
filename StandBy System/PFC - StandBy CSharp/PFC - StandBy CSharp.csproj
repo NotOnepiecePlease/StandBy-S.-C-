@@ -75,6 +75,12 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
+      <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
@@ -103,6 +109,9 @@
     <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Correios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Correios-Api.1.1.1\lib\portable-net45+win\Correios.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.5.4.0\lib\netstandard1.0\Costura.dll</HintPath>
@@ -252,6 +261,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
       <Private>True</Private>
@@ -660,6 +670,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="5ee7aec0f2f1d_wmY_icon.ico" />
+    <None Include="Resources\toilet_20px.png" />
     <None Include="Resources\warning.png" />
     <None Include="Resources\TITULO ORDENS DE SERVICO.png" />
     <None Include="Resources\xiaomi1.png" />
@@ -675,8 +686,11 @@
     <None Include="Resources\acessoriosl_52px.png" />
     <None Include="Resources\894798-200.png" />
     <None Include="Resources\894798-2001.png" />
+    <None Include="Resources\address_20px.png" />
     <Content Include="Resources\Aviso.png" />
     <None Include="Resources\electrical_20px.png" />
+    <None Include="Resources\birthday_cake_20px.png" />
+    <None Include="Resources\city_20px.png" />
     <Content Include="Resources\Erro.png" />
     <None Include="Resources\TITULO CADASTRO CLIENTES.png" />
     <None Include="Resources\TITULO STANDBY SYSTEM.png" />
@@ -692,6 +706,7 @@
     <None Include="Resources\icons8_cancel_25px_1.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\icon.png" />
+    <None Include="Resources\family_20px.png" />
     <Content Include="Resources\icons8_edit_property_480px.png" />
     <None Include="Resources\icons8_tick_box_480px.png" />
     <None Include="Resources\icons8_edit_property_480px_1.png" />
@@ -723,6 +738,10 @@
     <None Include="Resources\SERVICOS COMPLETOS.png" />
     <None Include="Resources\phone_20px.png" />
     <None Include="Resources\sms_20px.png" />
+    <None Include="Resources\road_20px.png" />
+    <None Include="Resources\map_pin_20px.png" />
+    <None Include="Resources\skyscrapers_20px.png" />
+    <None Include="Resources\residence_20px.png" />
     <Content Include="Resources\Sucesso.png" />
   </ItemGroup>
   <ItemGroup>

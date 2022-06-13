@@ -18,20 +18,20 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_DiaEntrega : Form
     {
-        form_OrdensServ formServ1;
-        int[] corGeral = new int[] { 0, 0, 0 };
-        InserirDados id = new InserirDados();
-        BuscarDados bd = new BuscarDados();
-        MensagensErro me = new MensagensErro();
-        MensagensSucesso ms = new MensagensSucesso();
-        PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
-        Image image1 = null;
+        private form_OrdensServ formServ1;
+        private int[] corGeral = new int[] { 0, 0, 0 };
+        private InserirDados id = new InserirDados();
+        private BuscarDados bd = new BuscarDados();
+        private MensagensErro me = new MensagensErro();
+        private MensagensSucesso ms = new MensagensSucesso();
+        private PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
+        private Image image1 = null;
+
         public form_DiaEntrega(form_OrdensServ _formServ, int[] _cor)
         {
             InitializeComponent();
             corGeral = _cor;
             formServ1 = _formServ;
-
         }
 
         public void MudarCores()
@@ -125,9 +125,9 @@ namespace PFC___StandBy_CSharp.Forms
                 return new byte[] { 0 };
             }
         }
+
         public void InserirServico(int PrevisaoEntrega, int SeExistePrazo)
         {
-
             if (formServ1.txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(formServ1.txtAparelhoOrdens.Text))
             {
                 MessageBox.Show(@"Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
@@ -155,7 +155,6 @@ namespace PFC___StandBy_CSharp.Forms
 
                     //inserirImage(ConvertImageToByte(image1));
 
-
                     //Insiro o servico com os dados.
                     string senha;
                     string acessorios;
@@ -177,8 +176,8 @@ namespace PFC___StandBy_CSharp.Forms
                         acessorios = formServ1.txtAcessoriosOrdens.Text;
                     }
 
-                    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1), acessorios);
-
+                    string situacaoAparelho = (formServ1.txtSituacaoOrdens.Text == "Situação do aparelho") ? "" : formServ1.txtSituacaoOrdens.Text;
+                    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, situacaoAparelho, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1), acessorios);
 
                     //Abrir tela de edição após o cadastro
                     int idUltimoServicoAdicionado = bd.BuscarIdUltimoServicoAdicionado();
@@ -195,7 +194,6 @@ namespace PFC___StandBy_CSharp.Forms
                     //{
                     //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, formServ1.txtSenhaOrdens.Text, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
                     //}
-
 
                     //Reseto os campos.
                     ResetarCamposDeCadastro();
@@ -239,6 +237,7 @@ namespace PFC___StandBy_CSharp.Forms
             formServ1.txtAcessoriosOrdens.ForeColor = Color.Silver;
             formServ1.txtAcessoriosOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
+
         public void EditarUmServicoPelaID(List<object> dados)
         {
             try
@@ -320,6 +319,7 @@ namespace PFC___StandBy_CSharp.Forms
                 return bm;
             }
         }
+
         private void form_DiaEntrega_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

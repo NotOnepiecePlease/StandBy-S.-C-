@@ -72,9 +72,10 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Inserir Cliente
 
-        public void InserirCliente(string _nome, string _cpf, string _telPrincipal, string _telRecados)
+        public void InserirCliente(string _nome, string _cpf, string _telPrincipal, string _telRecados, string _nomeRecado, string _parentescoRecado,
+            string _sexo, DateTime _dataNascimento, string _cep, string _endereco, string _complemento, string _bairro, string _cidade, string _estado)
         {
-            bool CpfExistente = false;
+            bool CpfExistente;
             if (_cpf.Equals("SEM CPF/CNPJ"))
             {
                 CpfExistente = false;
@@ -96,18 +97,31 @@ namespace PFC___StandBy_CSharp.Dados
                     using (SqlConnection con = OpenConnection())
                     {
                         //Inserção
-                        String qry = "insert into dbo.tb_clientes (cl_nome, cl_telefone, cl_cpf, cl_telefone_recado) " +
-                            "VALUES (@Nome, @TelefonePrincipal, @CpfOuCnpj, @TelefoneRecados)";
+                        string query = "insert into dbo.tb_clientes " +
+                                       "(cl_nome, cl_telefone, cl_cpf, cl_telefone_recado, cl_nome_recado, cl_parentesco_recado," +
+                                       "cl_sexo, cl_data_nascimento, cl_cep, cl_endereco, cl_complemento, cl_bairro, cl_cidade, cl_estado)" +
+                                       "VALUES(@Nome, @TelefonePrincipal, @CpfOuCnpj, @TelefoneRecados, @NomeRecado, @ParentescoRecado," +
+                                       "@Sexo, @DataNascimento, @Cep, @Endereco, @Complemento, @Bairro, @Cidade, @Estado)";
 
                         //String qry = "insert into dbo.tb_clientes (cl_nome, cl_telefone, cl_cpf) " +
                         //    "VALUES ('" + nome + "','" + tel + "','" + cpf + "')";
 
-                        SqlCommand cmd = new SqlCommand(qry, con);
+                        SqlCommand cmd = new SqlCommand(query, con);
 
                         cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = _nome;
                         cmd.Parameters.Add("@TelefonePrincipal", SqlDbType.VarChar).Value = _telPrincipal;
                         cmd.Parameters.Add("@CpfOuCnpj", SqlDbType.VarChar).Value = _cpf;
                         cmd.Parameters.Add("@TelefoneRecados", SqlDbType.VarChar).Value = _telRecados;
+                        cmd.Parameters.Add("@NomeRecado", SqlDbType.VarChar).Value = _nomeRecado;
+                        cmd.Parameters.Add("@ParentescoRecado", SqlDbType.VarChar).Value = _parentescoRecado;
+                        cmd.Parameters.Add("@Sexo", SqlDbType.Char).Value = _sexo;
+                        cmd.Parameters.Add("@DataNascimento", SqlDbType.DateTime).Value = _dataNascimento.Date;
+                        cmd.Parameters.Add("@Cep", SqlDbType.VarChar).Value = _cep;
+                        cmd.Parameters.Add("@Endereco", SqlDbType.VarChar).Value = _endereco;
+                        cmd.Parameters.Add("@Complemento", SqlDbType.VarChar).Value = _complemento;
+                        cmd.Parameters.Add("@Bairro", SqlDbType.VarChar).Value = _bairro;
+                        cmd.Parameters.Add("@Cidade", SqlDbType.VarChar).Value = _cidade;
+                        cmd.Parameters.Add("@Estado", SqlDbType.VarChar).Value = _estado;
                         cmd.ExecuteNonQuery();
 
                         //Checagem
