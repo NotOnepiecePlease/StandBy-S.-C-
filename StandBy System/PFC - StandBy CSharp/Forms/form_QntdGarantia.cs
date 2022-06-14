@@ -14,10 +14,11 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_QntdGarantia : Form
     {
-        Formatar formatar = new Formatar();
-        InserirDados ins_Dados = new InserirDados();
-        AlterarDados ad = new AlterarDados();
-        int[] CorGeral = { 0, 0, 0 };
+        private Formatar formatar = new Formatar();
+        private InserirDados ins_Dados = new InserirDados();
+        private AlterarDados ad = new AlterarDados();
+        private int[] CorGeral = { 0, 0, 0 };
+
         public form_QntdGarantia(int[] _corRgb)
         {
             InitializeComponent();
@@ -60,6 +61,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             ins_Dados.InserirGarantia(Convert.ToInt32(lblIDServico.Text), Convert.ToInt32(lblIDCliente.Text), Convert.ToInt32(txtGarantiaDias.Text));
         }
+
         private void btnConcluirServico_Click(object sender, EventArgs e)
         {
             if (txtGarantiaDias.Text.Length < 1)

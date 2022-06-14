@@ -1,0 +1,29 @@
+USE [standby_org]
+GO
+/****** Object:  StoredProcedure [dbo].[SelecionarServicos_Done_Table]    Script Date: 14/06/2022 16:40:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SelecionarServicos_Done_Table]
+	-- Add the parameters for the stored procedure here
+	@_nomeCliente varchar(100)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, 
+	sv_situacao, sv_senha, sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, 
+	sv_status, sv_data_conclusao, sv_acessorios, sv_previsao_entrega
+	from tb_servicos INNER JOIN tb_clientes 
+	on tb_servicos.sv_cl_idcliente = tb_clientes.cl_id 
+	where cl_nome like '%'+@_nomeCliente+'%' COLLATE SQL_Latin1_General_CP1_CI_AI and tb_servicos.sv_status = 0
+END

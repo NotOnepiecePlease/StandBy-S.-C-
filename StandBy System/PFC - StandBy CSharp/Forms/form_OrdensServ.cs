@@ -394,8 +394,11 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void table_OrdensServicos_MouseLeave(object sender, EventArgs e)
         {
-            table_OrdensServicos.ClearSelection();
-            timerAtualizarTabela.Start();
+            if (txtPesquisarCliente.Text == "Digite o nome do cliente que deseja buscar os serviços")
+            {
+                table_OrdensServicos.ClearSelection();
+                timerAtualizarTabela.Start();
+            }
         }
 
         private void timerAtualizarTabela_Tick(object sender, EventArgs e)

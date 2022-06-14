@@ -124,9 +124,25 @@ namespace PFC___StandBy_CSharp.Forms
                 linhasExibidas = 24;
                 paginaAtual = 1;
                 lblResultadosExibidos.Text = Convert.ToString(24);
+                btnArrowLeft.Visible = true;
+                btnArrowRight.Visible = true;
+                lblExibindo.Visible = true;
+                lblResultadosExibidos.Visible = true;
+                lblTotalDe.Visible = true;
+                lblResultadosTotais.Visible = true;
+                lblBuscandoPorNome.Visible = false;
             }
             else
             {
+                btnArrowLeft.Visible = false;
+                btnArrowRight.Visible = false;
+                lblExibindo.Visible = false;
+                lblResultadosExibidos.Visible = false;
+                lblTotalDe.Visible = false;
+                lblResultadosTotais.Visible = false;
+
+                lblBuscandoPorNome.Location = new Point(525, 41);
+                lblBuscandoPorNome.Visible = true;
                 try
                 {
                     preencherTableConcluidos.PreencherPorNomeCliente(table_ServicosConcluidos, txtPesquisarConcluidos.Text);

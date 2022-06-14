@@ -36,7 +36,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_3___ServicosConcluidos
                 table_ServicosConcluidos.AllowUserToAddRows = false;
                 table_ServicosConcluidos.AllowUserToResizeColumns = true;
                 table_ServicosConcluidos.AllowUserToDeleteRows = false;
-                table_ServicosConcluidos.Sort(table_ServicosConcluidos.Columns["DataConclusao"], ListSortDirection.Descending);
+                //table_ServicosConcluidos.Sort(table_ServicosConcluidos.Columns["DataConclusao"], ListSortDirection.Descending);
 
                 //foreach (DataGridViewRow row in table_ServicosConcluidos.Rows)
                 //{

@@ -53,11 +53,6 @@
             this.lblQuantidadeClientes = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtPesquisarCADCliente = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.table_Clientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelRecado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,6 +79,21 @@
             this.lblNascimento = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dtpDataNascimento = new Bunifu.UI.WinForms.BunifuDatePicker();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.cl_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelRecado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome_Recado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parentesco_Recado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Nascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_Clientes)).BeginInit();
@@ -408,7 +418,7 @@
             this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Lavender;
             this.bunifuCustomLabel8.Image = global::PFC___StandBy_CSharp.Properties.Resources.skyscrapers_20px;
             this.bunifuCustomLabel8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(610, 70);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(615, 70);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(97, 25);
             this.bunifuCustomLabel8.TabIndex = 86;
@@ -423,7 +433,7 @@
             this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Lavender;
             this.bunifuCustomLabel9.Image = global::PFC___StandBy_CSharp.Properties.Resources.city_20px;
             this.bunifuCustomLabel9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(268, 70);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(268, 71);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(99, 25);
             this.bunifuCustomLabel9.TabIndex = 84;
@@ -468,7 +478,7 @@
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Lavender;
             this.bunifuCustomLabel4.Image = global::PFC___StandBy_CSharp.Properties.Resources.road_20px;
             this.bunifuCustomLabel4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(268, 28);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(268, 27);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(78, 25);
             this.bunifuCustomLabel4.TabIndex = 78;
@@ -530,6 +540,8 @@
             // 
             // table_Clientes
             // 
+            this.table_Clientes.AllowUserToAddRows = false;
+            this.table_Clientes.AllowUserToDeleteRows = false;
             this.table_Clientes.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.table_Clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -555,7 +567,17 @@
             this.Nome,
             this.Telefone,
             this.TelRecado,
-            this.Situacao});
+            this.CPF,
+            this.Nome_Recado,
+            this.Parentesco_Recado,
+            this.Sexo,
+            this.Data_Nascimento,
+            this.CEP,
+            this.Endereco,
+            this.Complemento,
+            this.Bairro,
+            this.Cidade,
+            this.Estado});
             this.table_Clientes.ContextMenuStrip = this.contextMenuStrip1;
             this.table_Clientes.DoubleBuffered = true;
             this.table_Clientes.EnableHeadersVisualStyles = false;
@@ -585,48 +607,6 @@
             this.table_Clientes.TabIndex = 0;
             this.table_Clientes.TabStop = false;
             this.table_Clientes.DoubleClick += new System.EventHandler(this.table_Clientes_DoubleClick);
-            // 
-            // cl_id
-            // 
-            this.cl_id.DataPropertyName = "cl_id";
-            this.cl_id.HeaderText = "cl_id";
-            this.cl_id.Name = "cl_id";
-            this.cl_id.ReadOnly = true;
-            this.cl_id.Visible = false;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.DataPropertyName = "cl_nome";
-            this.Nome.FillWeight = 141.1765F;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Telefone
-            // 
-            this.Telefone.DataPropertyName = "cl_telefone";
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            this.Telefone.ReadOnly = true;
-            this.Telefone.Width = 130;
-            // 
-            // TelRecado
-            // 
-            this.TelRecado.DataPropertyName = "cl_telefone_recado";
-            this.TelRecado.HeaderText = "TelRecado";
-            this.TelRecado.Name = "TelRecado";
-            this.TelRecado.ReadOnly = true;
-            this.TelRecado.Width = 150;
-            // 
-            // Situacao
-            // 
-            this.Situacao.DataPropertyName = "cl_cpf";
-            this.Situacao.FillWeight = 58.82353F;
-            this.Situacao.HeaderText = "CPF";
-            this.Situacao.Name = "Situacao";
-            this.Situacao.ReadOnly = true;
-            this.Situacao.Width = 150;
             // 
             // contextMenuStrip1
             // 
@@ -709,7 +689,7 @@
             this.txtNomeRecado.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtNomeRecado.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtNomeRecado.LineThickness = 2;
-            this.txtNomeRecado.Location = new System.Drawing.Point(619, 114);
+            this.txtNomeRecado.Location = new System.Drawing.Point(619, 115);
             this.txtNomeRecado.Margin = new System.Windows.Forms.Padding(5);
             this.txtNomeRecado.MaxLength = 100;
             this.txtNomeRecado.Name = "txtNomeRecado";
@@ -833,7 +813,7 @@
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Lavender;
             this.bunifuCustomLabel6.Image = global::PFC___StandBy_CSharp.Properties.Resources.family_20px;
             this.bunifuCustomLabel6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(495, 94);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(495, 95);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(127, 22);
             this.bunifuCustomLabel6.TabIndex = 75;
@@ -909,7 +889,7 @@
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.bunifuLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuLabel2.Location = new System.Drawing.Point(356, 130);
+            this.bunifuLabel2.Location = new System.Drawing.Point(356, 133);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(55, 16);
@@ -952,7 +932,7 @@
             this.chkFeminino.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chkFeminino.Cursor = System.Windows.Forms.Cursors.Default;
             this.chkFeminino.CustomCheckmarkImage = null;
-            this.chkFeminino.Location = new System.Drawing.Point(329, 125);
+            this.chkFeminino.Location = new System.Drawing.Point(329, 128);
             this.chkFeminino.MinimumSize = new System.Drawing.Size(17, 17);
             this.chkFeminino.Name = "chkFeminino";
             this.chkFeminino.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
@@ -1006,7 +986,7 @@
             this.txtTelefoneRecado.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtTelefoneRecado.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtTelefoneRecado.LineThickness = 2;
-            this.txtTelefoneRecado.Location = new System.Drawing.Point(619, 47);
+            this.txtTelefoneRecado.Location = new System.Drawing.Point(619, 48);
             this.txtTelefoneRecado.Margin = new System.Windows.Forms.Padding(5);
             this.txtTelefoneRecado.MaxLength = 100;
             this.txtTelefoneRecado.Name = "txtTelefoneRecado";
@@ -1044,7 +1024,7 @@
             this.txtCPFCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCPFCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtCPFCliente.ForeColor = System.Drawing.Color.Silver;
-            this.txtCPFCliente.Location = new System.Drawing.Point(153, 55);
+            this.txtCPFCliente.Location = new System.Drawing.Point(153, 57);
             this.txtCPFCliente.MaxLength = 18;
             this.txtCPFCliente.Name = "txtCPFCliente";
             this.txtCPFCliente.Size = new System.Drawing.Size(264, 16);
@@ -1123,7 +1103,7 @@
             this.separatorCPF.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.separatorCPF.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.separatorCPF.LineThickness = 2;
-            this.separatorCPF.Location = new System.Drawing.Point(153, 72);
+            this.separatorCPF.Location = new System.Drawing.Point(153, 73);
             this.separatorCPF.Margin = new System.Windows.Forms.Padding(2);
             this.separatorCPF.Name = "separatorCPF";
             this.separatorCPF.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
@@ -1140,7 +1120,7 @@
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Lavender;
             this.bunifuCustomLabel3.Image = global::PFC___StandBy_CSharp.Properties.Resources.toilet_20px;
             this.bunifuCustomLabel3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(29, 127);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(30, 127);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(87, 22);
             this.bunifuCustomLabel3.TabIndex = 67;
@@ -1155,7 +1135,7 @@
             this.lblNascimento.ForeColor = System.Drawing.Color.Lavender;
             this.lblNascimento.Image = global::PFC___StandBy_CSharp.Properties.Resources.birthday_cake_20px;
             this.lblNascimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblNascimento.Location = new System.Drawing.Point(29, 94);
+            this.lblNascimento.Location = new System.Drawing.Point(27, 94);
             this.lblNascimento.Name = "lblNascimento";
             this.lblNascimento.Size = new System.Drawing.Size(134, 22);
             this.lblNascimento.TabIndex = 65;
@@ -1194,6 +1174,126 @@
             this.bunifuElipse1.ElipseRadius = 10;
             this.bunifuElipse1.TargetControl = this.table_Clientes;
             // 
+            // cl_id
+            // 
+            this.cl_id.DataPropertyName = "cl_id";
+            this.cl_id.HeaderText = "cl_id";
+            this.cl_id.Name = "cl_id";
+            this.cl_id.ReadOnly = true;
+            this.cl_id.Visible = false;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.DataPropertyName = "cl_nome";
+            this.Nome.FillWeight = 141.1765F;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Telefone
+            // 
+            this.Telefone.DataPropertyName = "cl_telefone";
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            this.Telefone.Width = 110;
+            // 
+            // TelRecado
+            // 
+            this.TelRecado.DataPropertyName = "cl_telefone_recado";
+            this.TelRecado.HeaderText = "Tel. Recado";
+            this.TelRecado.Name = "TelRecado";
+            this.TelRecado.ReadOnly = true;
+            this.TelRecado.Width = 110;
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "cl_cpf";
+            this.CPF.FillWeight = 58.82353F;
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
+            this.CPF.Width = 130;
+            // 
+            // Nome_Recado
+            // 
+            this.Nome_Recado.DataPropertyName = "cl_nome_recado";
+            this.Nome_Recado.HeaderText = "Nome R.";
+            this.Nome_Recado.Name = "Nome_Recado";
+            this.Nome_Recado.ReadOnly = true;
+            this.Nome_Recado.Visible = false;
+            // 
+            // Parentesco_Recado
+            // 
+            this.Parentesco_Recado.DataPropertyName = "cl_parentesco_recado";
+            this.Parentesco_Recado.HeaderText = "Parentesco";
+            this.Parentesco_Recado.Name = "Parentesco_Recado";
+            this.Parentesco_Recado.ReadOnly = true;
+            this.Parentesco_Recado.Visible = false;
+            // 
+            // Sexo
+            // 
+            this.Sexo.DataPropertyName = "cl_sexo";
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            this.Sexo.Width = 50;
+            // 
+            // Data_Nascimento
+            // 
+            this.Data_Nascimento.DataPropertyName = "cl_data_nascimento";
+            this.Data_Nascimento.HeaderText = "Data Nasc.";
+            this.Data_Nascimento.Name = "Data_Nascimento";
+            this.Data_Nascimento.ReadOnly = true;
+            this.Data_Nascimento.Visible = false;
+            // 
+            // CEP
+            // 
+            this.CEP.DataPropertyName = "cl_cep";
+            this.CEP.HeaderText = "CEP";
+            this.CEP.Name = "CEP";
+            this.CEP.ReadOnly = true;
+            this.CEP.Width = 80;
+            // 
+            // Endereco
+            // 
+            this.Endereco.DataPropertyName = "cl_endereco";
+            this.Endereco.HeaderText = "Endereco";
+            this.Endereco.Name = "Endereco";
+            this.Endereco.ReadOnly = true;
+            this.Endereco.Width = 170;
+            // 
+            // Complemento
+            // 
+            this.Complemento.DataPropertyName = "cl_complemento";
+            this.Complemento.HeaderText = "Complemento";
+            this.Complemento.Name = "Complemento";
+            this.Complemento.ReadOnly = true;
+            this.Complemento.Visible = false;
+            // 
+            // Bairro
+            // 
+            this.Bairro.DataPropertyName = "cl_bairro";
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
+            // 
+            // Cidade
+            // 
+            this.Cidade.DataPropertyName = "cl_cidade";
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            this.Cidade.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "cl_estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            // 
             // form_CadastroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1230,11 +1330,6 @@
         private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtTelefoneRecado;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTelefoneRecados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TelRecado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Situacao;
         private Bunifu.Framework.UI.BunifuCustomLabel lblQuantidadeClientes;
         private System.Windows.Forms.TextBox txtCPFCliente;
         private Bunifu.UI.WinForms.BunifuSeparator separatorCPF;
@@ -1265,5 +1360,20 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCadastrarCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cl_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelRecado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Recado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Parentesco_Recado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Nascimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Endereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

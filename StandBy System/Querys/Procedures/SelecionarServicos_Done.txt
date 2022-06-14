@@ -1,0 +1,37 @@
+USE [standby_org]
+GO
+/****** Object:  StoredProcedure [dbo].[SelecionarServicos_Done]    Script Date: 14/06/2022 16:09:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[SelecionarServicos_Done]
+
+    -- Add the parameters for the stored procedure here
+    @PageNumber int,
+    @RowsOfPage int
+
+AS
+
+BEGIN
+    -- SET NOCOUNT ON added to prevent extra result sets from
+    -- interfering with SELECT statements.
+
+    SET NOCOUNT ON;
+
+    SELECT sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, 
+	sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_status, sv_data_conclusao, sv_acessorios, sv_previsao_entrega
+    FROM tb_servicos 
+    INNER JOIN tb_clientes
+    ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id
+    WHERE sv_status = 0 and sv_ativo = 1
+    ORDER BY sv_data_conclusao desc
+    OFFSET (@PageNumber-1)*@RowsOfPage ROWS
+    FETCH NEXT @RowsOfPage ROWS ONLY
+
+END
