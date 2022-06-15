@@ -613,6 +613,8 @@
             // 
             // table_OrdensServicos
             // 
+            this.table_OrdensServicos.AllowUserToAddRows = false;
+            this.table_OrdensServicos.AllowUserToDeleteRows = false;
             this.table_OrdensServicos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
@@ -628,7 +630,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.table_OrdensServicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;

@@ -454,6 +454,7 @@
     </Compile>
     <Compile Include="LockScreenAndroid\LockScreenRenderer.cs" />
     <Compile Include="LockScreenAndroid\YASSCOMLockScreenRenderer.cs" />
+    <Compile Include="Models\ClienteDados.cs" />
     <Compile Include="MsgBox\MensagensErro.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

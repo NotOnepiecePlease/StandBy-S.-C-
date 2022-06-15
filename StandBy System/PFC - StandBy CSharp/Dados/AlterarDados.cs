@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using PFC___StandBy_CSharp.MsgBox;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Models;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -183,35 +184,55 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Alterar Clientes
 
-        public void AlterarClientes(int _idcliente, string _nome, string _telefone, string _cpfOuCnpj, string _telefoneRecados)
+        public void AlterarClientes(ClienteDados _dadosDoCliente)
         {
-            bool cpfExistente = verificarExistencia.VerificarExistenciaCPF(_cpfOuCnpj);
-            //if(cpfExistente == true)
-            //{
-            //    MessageBox.Show("CPF Já existe, verifique se o cliente já esta cadastrado.", "CPF Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else
-            //{
             try
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    string query = "UPDATE [dbo].[tb_clientes] " +
-                        "SET[cl_nome] = @_nome " +
-                        ",[cl_telefone] = @_telefone " +
-                        ",[cl_telefone_recado] = @_telefoneRecados " +
-                        ",[cl_cpf] = @_cpf " +
-                        " WHERE cl_id = @_idcliente";
+                    string query = "UPDATE [dbo].[tb_clientes]" +
+                                    "SET[cl_nome] = @_nome" +
+                                    ",[cl_telefone] = @_telefone" +
+                                    ",[cl_cpf] = @_cpf" +
+                                    ",[cl_telefone_recado] = @_telefoneRecados" +
+                                    ",[cl_nome_recado] = @_nomeRecado" +
+                                    ",[cl_parentesco_recado] = @_parentescoRecado" +
+                                    ",[cl_sexo] = @_sexo" +
+                                    ",[cl_data_nascimento] = @_dataNascimento" +
+                                    ",[cl_cep] = @_cep" +
+                                    ",[cl_endereco] = @_endereco" +
+                                    ",[cl_complemento] = @_complemento" +
+                                    ",[cl_bairro] = @_bairro" +
+                                    ",[cl_cidade] = @_cidade" +
+                                    ",[cl_estado] = @_estado" +
+                                    "WHERE[cl_id] = @_idcliente" +
+                                    "GO";
+
+                    //string query = "UPDATE [dbo].[tb_clientes] " +
+                    //    "SET[cl_nome] = @_nome " +
+                    //    ",[cl_telefone] = @_telefone " +
+                    //    ",[cl_telefone_recado] = @_telefoneRecados " +
+                    //    ",[cl_cpf] = @_cpf " +
+                    //    " WHERE cl_id = @_idcliente";
                     //SqlCommand cmd = new SqlCommand("AlterarClientes", con);
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     //cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@_nome", SqlDbType.VarChar).Value = _nome;
-                    cmd.Parameters.AddWithValue("@_telefone", SqlDbType.VarChar).Value = _telefone;
-                    cmd.Parameters.AddWithValue("@_telefoneRecados", SqlDbType.VarChar).Value = _telefoneRecados;
-                    cmd.Parameters.AddWithValue("@_cpf", SqlDbType.VarChar).Value = _cpfOuCnpj;
-                    cmd.Parameters.AddWithValue("@_idcliente", SqlDbType.VarChar).Value = _idcliente;
+                    cmd.Parameters.AddWithValue("@_nome", SqlDbType.VarChar).Value = _dadosDoCliente.Nome;
+                    cmd.Parameters.AddWithValue("@_telefone", SqlDbType.VarChar).Value = _dadosDoCliente.Telefone;
+                    cmd.Parameters.AddWithValue("@_telefoneRecados", SqlDbType.VarChar).Value = _dadosDoCliente.TelefoneRecado;
+                    cmd.Parameters.AddWithValue("@_cpf", SqlDbType.VarChar).Value = _dadosDoCliente.Cpf;
+                    cmd.Parameters.AddWithValue("@_idcliente", SqlDbType.VarChar).Value = _dadosDoCliente.ID;
+                    cmd.Parameters.AddWithValue("@_nomeRecado", SqlDbType.VarChar).Value = _dadosDoCliente.NomeRecado;
+                    cmd.Parameters.AddWithValue("@_parentescoRecado", SqlDbType.VarChar).Value = _dadosDoCliente.ParentescoRecado;
+                    cmd.Parameters.AddWithValue("@_sexo", SqlDbType.Char).Value = _dadosDoCliente.Sexo;
+                    cmd.Parameters.AddWithValue("@_dataNascimento", SqlDbType.DateTime).Value = _dadosDoCliente.DataNascimento;
+                    cmd.Parameters.AddWithValue("@_cep", SqlDbType.VarChar).Value = _dadosDoCliente.Cep;
+                    cmd.Parameters.AddWithValue("@_endereco", SqlDbType.VarChar).Value = _dadosDoCliente.Endereco;
+                    cmd.Parameters.AddWithValue("@_complemento", SqlDbType.VarChar).Value = _dadosDoCliente.Complemento;
+                    cmd.Parameters.AddWithValue("@_bairro", SqlDbType.VarChar).Value = _dadosDoCliente.Bairro;
+                    cmd.Parameters.AddWithValue("@_cidade", SqlDbType.VarChar).Value = _dadosDoCliente.Cidade;
 
                     cmd.ExecuteNonQuery();
 

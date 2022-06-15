@@ -1,21 +1,18 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Models;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_CadastroClientes_Edit : Form
     {
-        form_CadastroClientes cadCliente;
-        AlterarDados ad = new AlterarDados();
-        int[] corGeral = new int[3];
+        private form_CadastroClientes cadCliente;
+        private AlterarDados ad = new AlterarDados();
+        private int[] corGeral = new int[3];
+
         public form_CadastroClientes_Edit(form_CadastroClientes cadCliente, int[] corRGB)
         {
             InitializeComponent();
@@ -23,6 +20,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cadCliente = cadCliente;
             MudarCores();
         }
+
         public form_CadastroClientes_Edit()
         {
             InitializeComponent();
@@ -36,16 +34,49 @@ namespace PFC___StandBy_CSharp.Forms
                 return false;
         }
 
+        private ClienteDados PegarDadosDoCliente()
+        {
+            int id = int.Parse(lblID.Text);
+            char sexo = '-';
+            if (chkMasculino.Checked == true && chkFeminino.Checked == false)
+            {
+                sexo = 'M';
+            }
+            else if (chkFeminino.Checked == true && chkMasculino.Checked == false)
+            {
+                sexo = 'F';
+            }
+
+            ClienteDados dadosCliente = new ClienteDados
+            {
+                ID = id,
+                Nome = txtNomeCliente.Text,
+                Telefone = txtTelefone.Text,
+                Cpf = txtCpf.Text,
+                TelefoneRecado = txtTelefoneRecados.Text,
+                NomeRecado = txtNomeRecado.Text,
+                ParentescoRecado = txtParentescoRecado.Text,
+                Sexo = sexo,
+                //DataNascimento = dtpDataNascimento.Value,
+                DataNascimento = Convert.ToDateTime(txtDataNascimento.Text),
+                Cep = txtCEP.Text,
+                Endereco = txtRua.Text,
+                Complemento = txtComplemento.Text,
+                Bairro = txtBairro.Text,
+                Cidade = txtCidade.Text,
+                Estado = txtEstado.Text
+            };
+
+            return dadosCliente;
+        }
+
         private void EditarCliente()
         {
             if (contemLetras(txtCpf.Text))
             {
-                //string CpfSemPontos = txtCpf.Text.ToString().Replace(".", "").Replace("-", "");
-               // long cpf = Convert.ToInt64(CpfSemPontos);
-                
-                //string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
-                int id = int.Parse(lblID.Text);
-                ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, txtCpf.Text, txtTelefoneRecados.Text);
+                ClienteDados dadosCliente = PegarDadosDoCliente();
+
+                ad.AlterarClientes(dadosCliente);
                 cadCliente.refreshTable();
                 this.Close();
             }
@@ -57,8 +88,9 @@ namespace PFC___StandBy_CSharp.Forms
                     long cnpj = Convert.ToInt64(numeroSemPontosTracos);
                     // long cpf = Convert.ToInt64(txtCpf.Text);
                     string CNPJformatado = String.Format(@"{0:00\.000\.000\/0000-00}", cnpj);
-                    int id = int.Parse(lblID.Text);
-                    ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CNPJformatado, txtTelefoneRecados.Text);
+                    ClienteDados dadosCliente = PegarDadosDoCliente();
+                    dadosCliente.Cpf = CNPJformatado;
+                    ad.AlterarClientes(dadosCliente);
                     cadCliente.refreshTable();
                     this.Close();
                 }
@@ -67,13 +99,15 @@ namespace PFC___StandBy_CSharp.Forms
                     long cpf = Convert.ToInt64(numeroSemPontosTracos);
                     // long cpf = Convert.ToInt64(txtCpf.Text);
                     string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
-                    int id = int.Parse(lblID.Text);
-                    ad.AlterarClientes(id, txtNomeCliente.Text, txtTelefone.Text, CPFformatado, txtTelefoneRecados.Text);
+                    ClienteDados dadosCliente = PegarDadosDoCliente();
+                    dadosCliente.Cpf = CPFformatado;
+                    ad.AlterarClientes(dadosCliente);
                     cadCliente.refreshTable();
                     this.Close();
                 }
             }
         }
+
         public void MudarCores()
         {
             cardFundo.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -82,17 +116,6 @@ namespace PFC___StandBy_CSharp.Forms
 
             btnEditar.OnHoverBaseColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnEditar.OnHoverBaseColor2 = Color.White;
-
-            sep1.GradientColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            sep2.GradientColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            sep3.GradientColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            gunaGradient2Panel1.GradientColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            sep1.GradientColor2 = Color.FromArgb(200, 200, 200);
-            sep2.GradientColor2 = Color.FromArgb(200, 200, 200);
-            sep3.GradientColor2 = Color.FromArgb(200, 200, 200);
-            gunaGradient2Panel1.GradientColor2 = Color.FromArgb(200, 200, 200);
-
         }
 
         private void form_CadastroClientes_Edit_KeyDown(object sender, KeyEventArgs e)
@@ -105,8 +128,22 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(txtCpf.TextLength.ToString());
-            EditarCliente();
+            if (txtDataNascimento.Text == "SEM DATA")
+            {
+                EditarCliente();
+            }
+            else
+            {
+                try
+                {
+                    Convert.ToDateTime(txtDataNascimento.Text);
+                    EditarCliente();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show($"Digite uma data valida Ex: 26/08/1995\nou clique em 'Zerar Data' caso nao tenha uma. ", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void txtCpf_KeyDown(object sender, KeyEventArgs e)
@@ -133,9 +170,53 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void cardFundo_Paint(object sender, PaintEventArgs e)
+        private void btnZerarData_Click(object sender, EventArgs e)
         {
+            ZerarData();
+        }
 
+        private void btnZerarDataBotao_Click(object sender, EventArgs e)
+        {
+            ZerarData();
+        }
+
+        private void ZerarData()
+        {
+            txtDataNascimento.Text = "SEM DATA";
+            dtpDataNascimento.Value = dtpDataNascimento.MinDate;
+            dtpDataNascimento.ForeColor = Color.Transparent;
+        }
+
+        private void chkMasculino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkMasculino.Checked)
+            {
+                chkFeminino.Checked = false;
+            }
+        }
+
+        private void chkFeminino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkFeminino.Checked)
+            {
+                chkMasculino.Checked = false;
+            }
+        }
+
+        private void dtpDataNascimento_MouseLeave(object sender, EventArgs e)
+        {
+            if (dtpDataNascimento.Value.Year == dtpDataNascimento.MinDate.Year)
+            {
+                ZerarData();
+            }
+        }
+
+        private void dtpDataNascimento_MouseEnter(object sender, EventArgs e)
+        {
+            if (dtpDataNascimento.Value.Year == dtpDataNascimento.MinDate.Year)
+            {
+                dtpDataNascimento.ForeColor = Color.White;
+            }
         }
     }
 }

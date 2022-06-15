@@ -203,8 +203,8 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void SalvarEdicoesServico(DateTime _dataPrevisao)
         {
-            float valorServico = float.Parse(txtServicoValorEdit.Text);
-            float valorPeca = float.Parse(txtPecaValorEdit.Text);
+            float valorServico = float.Parse(txtServicoValorEdit.Text == "" ? "0" : txtServicoValorEdit.Text);
+            float valorPeca = float.Parse(txtPecaValorEdit.Text == "" ? "0" : txtPecaValorEdit.Text);
             float lucro = valorServico - valorPeca;
 
             ad.AlterarServico(Int32.Parse(lblIDservico.Text), dtpDataEdit.Value, txtAparelhoEdit.Text, txtDefeitoEdit.Text, txtSenhaEdit.Text, txtSituacaoEdit.Text,
@@ -291,7 +291,7 @@ namespace PFC___StandBy_CSharp.Forms
             //MessageBox.Show(""+cpfCliente.Length);
         }
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             //Iae adriano, to ligado que voce ta nesse metodo aqui pra adicionar o padrao na etiqueta
             //aqui o video pra lhe ajudar a por imagem no docword:
@@ -388,12 +388,12 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtServicoValorEdit_Enter(object sender, EventArgs e)
         {
-            txtServicoValorEdit.Text = "0";
+            //txtServicoValorEdit.Text = "0";
         }
 
         private void txtPecaValorEdit_Enter(object sender, EventArgs e)
         {
-            txtPecaValorEdit.Text = "0";
+            //txtPecaValorEdit.Text = "0";
         }
 
         private void txtLucroValorEdit_Enter(object sender, EventArgs e)

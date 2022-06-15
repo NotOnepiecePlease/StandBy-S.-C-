@@ -1,16 +1,8 @@
 ﻿using PFC___StandBy_CSharp.Dados;
-using PFC___StandBy_CSharp.SqlDbConnect;
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
 using Correios;
@@ -27,6 +19,7 @@ namespace PFC___StandBy_CSharp.Forms
         private int[] corGeral = new int[3] { 0, 0, 0 };
         private int contadorCNPJ = 0;
         private int contadorCPF = 0;
+        private const string VALOR_PADRAO_DADOS_CLIENTE = "";
 
         public form_CadastroClientes(int[] _corRGB)
         {
@@ -60,7 +53,6 @@ namespace PFC___StandBy_CSharp.Forms
 
             //chkTelRecados.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             //chkTelRecados.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            ///chkTelRecados
         }
 
         private void btnCadastrarCliente_Click(object sender, EventArgs e)
@@ -72,12 +64,36 @@ namespace PFC___StandBy_CSharp.Forms
         public void chamarEdicaoCliente()
         {
             form_CadastroClientes_Edit editarCliente = new form_CadastroClientes_Edit(this, corGeral);
+
             string cpfSemformatar = table_Clientes.SelectedCells[2].Value.ToString().Replace(".", "").Replace("-", "").Replace("/", "");
             editarCliente.lblID.Text = table_Clientes.SelectedCells[0].Value.ToString();
             editarCliente.txtNomeCliente.Text = table_Clientes.SelectedCells[1].Value.ToString();
             editarCliente.txtCpf.Text = cpfSemformatar;
             editarCliente.txtTelefone.Text = table_Clientes.SelectedCells[3].Value.ToString();
             editarCliente.txtTelefoneRecados.Text = table_Clientes.SelectedCells[4].Value.ToString();
+            editarCliente.txtNomeRecado.Text = table_Clientes.SelectedCells[5].Value.ToString();
+            editarCliente.txtParentescoRecado.Text = table_Clientes.SelectedCells[6].Value.ToString();
+            editarCliente.chkMasculino.Checked = table_Clientes.SelectedCells[7].Value.ToString() == "M";
+            editarCliente.chkFeminino.Checked = table_Clientes.SelectedCells[7].Value.ToString() == "F";
+
+            if (table_Clientes.SelectedCells[8].Value.ToString() == "")
+            {
+                editarCliente.dtpDataNascimento.Value = Convert.ToDateTime("01/01/1753");
+                editarCliente.dtpDataNascimento.ForeColor = Color.Transparent;
+                editarCliente.txtDataNascimento.Text = "SEM DATA";
+            }
+            else
+            {
+                editarCliente.dtpDataNascimento.Value = Convert.ToDateTime(table_Clientes.SelectedCells[8].Value.ToString());
+                editarCliente.txtDataNascimento.Text = Convert.ToDateTime(table_Clientes.SelectedCells[8].Value.ToString()).ToShortDateString();
+            }
+
+            editarCliente.txtCEP.Text = table_Clientes.SelectedCells[9].Value.ToString();
+            editarCliente.txtRua.Text = table_Clientes.SelectedCells[10].Value.ToString();
+            editarCliente.txtComplemento.Text = table_Clientes.SelectedCells[11].Value.ToString();
+            editarCliente.txtBairro.Text = table_Clientes.SelectedCells[12].Value.ToString();
+            editarCliente.txtCidade.Text = table_Clientes.SelectedCells[13].Value.ToString();
+            editarCliente.txtEstado.Text = table_Clientes.SelectedCells[14].Value.ToString();
             editarCliente.ShowDialog();
         }
 
@@ -129,16 +145,16 @@ namespace PFC___StandBy_CSharp.Forms
                 //Pegar os dados dos campos
                 string nome = txtNomeCliente.Text;
                 string cpf = (txtCPFCliente.Text == "CPF ou CNPJ do Cliente") ? "SEM CPF/CNPJ" : txtCPFCliente.Text;
-                string telPrincipal = (txtTelefoneCliente.Text == "Telefone Principal do Cliente") ? "-----" : txtTelefoneCliente.Text;
-                string telRecados = (txtTelefoneRecado.Text == "Telefone de Recados do Cliente") ? "-----" : txtTelefoneRecado.Text;
-                string nomeRecados = (txtNomeRecado.Text == "Nome de quem vai receber o recado") ? "-----" : txtNomeRecado.Text;
-                string parentescoRecados = (txtParentescoRecado.Text == "Parentesco de quem vai receber o recado") ? "-----" : txtParentescoRecado.Text;
-                string cep = (txtCEP.Text == "Ex: 42803317") ? "-----" : txtCEP.Text;
-                string endereco = (txtRua.Text == "Ex: Rua Segundo Cendes, 197B") ? "-----" : txtRua.Text;
-                string complemento = (txtComplemento.Text == "Ex: Casa") ? "-----" : txtComplemento.Text;
-                string bairro = (txtBairro.Text == "Ex: Gleba B") ? "-----" : txtBairro.Text;
-                string cidade = (txtCidade.Text == "Ex: Camaçari") ? "-----" : txtCidade.Text;
-                string estado = (txtEstado.Text == "Ex: Bahia") ? "-----" : txtEstado.Text;
+                string telPrincipal = (txtTelefoneCliente.Text == "Telefone Principal do Cliente") ? VALOR_PADRAO_DADOS_CLIENTE : txtTelefoneCliente.Text;
+                string telRecados = (txtTelefoneRecado.Text == "Telefone de Recados do Cliente") ? VALOR_PADRAO_DADOS_CLIENTE : txtTelefoneRecado.Text;
+                string nomeRecados = (txtNomeRecado.Text == "Nome de quem vai receber o recado") ? VALOR_PADRAO_DADOS_CLIENTE : txtNomeRecado.Text;
+                string parentescoRecados = (txtParentescoRecado.Text == "Parentesco de quem vai receber o recado") ? VALOR_PADRAO_DADOS_CLIENTE : txtParentescoRecado.Text;
+                string cep = (txtCEP.Text == "Ex: 42803317") ? VALOR_PADRAO_DADOS_CLIENTE : txtCEP.Text;
+                string endereco = (txtRua.Text == "Ex: Rua Segundo Cendes, 197B") ? VALOR_PADRAO_DADOS_CLIENTE : txtRua.Text;
+                string complemento = (txtComplemento.Text == "Ex: Casa") ? VALOR_PADRAO_DADOS_CLIENTE : txtComplemento.Text;
+                string bairro = (txtBairro.Text == "Ex: Gleba B") ? VALOR_PADRAO_DADOS_CLIENTE : txtBairro.Text;
+                string cidade = (txtCidade.Text == "Ex: Camaçari") ? VALOR_PADRAO_DADOS_CLIENTE : txtCidade.Text;
+                string estado = (txtEstado.Text == "Ex: Bahia") ? VALOR_PADRAO_DADOS_CLIENTE : txtEstado.Text;
                 string sexo = (chkMasculino.Checked == true) ? "M" : "F";
 
                 id.InserirCliente(nome, cpf, telPrincipal, telRecados, nomeRecados, parentescoRecados,
@@ -530,7 +546,7 @@ namespace PFC___StandBy_CSharp.Forms
                     txtEstado.Text = endereco.uf ?? "------";
                 }
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 //Console.WriteLine(exception);
                 //throw;
@@ -608,6 +624,22 @@ namespace PFC___StandBy_CSharp.Forms
             else
             {
                 chkMasculino.Checked = true;
+            }
+        }
+
+        private void chkMasculino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkMasculino.Checked)
+            {
+                chkFeminino.Checked = false;
+            }
+        }
+
+        private void chkFeminino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkFeminino.Checked)
+            {
+                chkMasculino.Checked = false;
             }
         }
     }

@@ -442,7 +442,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(34, 15);
             this.lblVersion.TabIndex = 9;
-            this.lblVersion.Text = "6.3.2";
+            this.lblVersion.Text = "6.4.0";
             // 
             // iconMenu
             // 
