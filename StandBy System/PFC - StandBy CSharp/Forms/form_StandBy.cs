@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Dados;
 using Application = System.Windows.Forms.Application;
 using Point = System.Drawing.Point;
 
@@ -15,6 +16,7 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_StandBy : Form
     {
+        private BackupDados bd = new BackupDados();
         private readonly GraficoServicosSemanais graficoSemanal = new GraficoServicosSemanais();
         private readonly GraficoServicosMensais graficoMensal = new GraficoServicosMensais();
         private readonly Verificar verificarUpd = new Verificar();
@@ -30,6 +32,7 @@ namespace PFC___StandBy_CSharp.Forms
             InitializeComponent();
             //randomizarCores(100);
             IniciarPainelCor();
+            bd.CriarDiretorioEscreverConfigs();
             CarregarGraficos();
             criarPastaDasSenhas();
             lblIpLocal.Text = PegarIp();

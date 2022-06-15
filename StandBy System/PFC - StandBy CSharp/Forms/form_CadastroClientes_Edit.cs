@@ -36,6 +36,12 @@ namespace PFC___StandBy_CSharp.Forms
 
         private ClienteDados PegarDadosDoCliente()
         {
+            string dataNascimento = "";
+            if (txtDataNascimento.Text != "SEM DATA")
+            {
+                dataNascimento = txtDataNascimento.Text;
+            }
+
             int id = int.Parse(lblID.Text);
             char sexo = '-';
             if (chkMasculino.Checked == true && chkFeminino.Checked == false)
@@ -58,7 +64,7 @@ namespace PFC___StandBy_CSharp.Forms
                 ParentescoRecado = txtParentescoRecado.Text,
                 Sexo = sexo,
                 //DataNascimento = dtpDataNascimento.Value,
-                DataNascimento = Convert.ToDateTime(txtDataNascimento.Text),
+                DataNascimento = dataNascimento,
                 Cep = txtCEP.Text,
                 Endereco = txtRua.Text,
                 Complemento = txtComplemento.Text,
@@ -72,39 +78,58 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void EditarCliente()
         {
-            if (contemLetras(txtCpf.Text))
+            try
             {
-                ClienteDados dadosCliente = PegarDadosDoCliente();
-
-                ad.AlterarClientes(dadosCliente);
-                cadCliente.refreshTable();
-                this.Close();
-            }
-            else
-            {
-                string numeroSemPontosTracos = txtCpf.Text.ToString().Replace(".", "").Replace("-", "");
-                if (numeroSemPontosTracos.Length > 13)
+                //Validacoes (armengadas mas funciona perfeitamente hehe)
+                if (txtDataNascimento.Text != "SEM DATA")
                 {
-                    long cnpj = Convert.ToInt64(numeroSemPontosTracos);
-                    // long cpf = Convert.ToInt64(txtCpf.Text);
-                    string CNPJformatado = String.Format(@"{0:00\.000\.000\/0000-00}", cnpj);
+                    Convert.ToDateTime(txtDataNascimento.Text);
+                }
+
+                if (chkMasculino.Checked == false && chkFeminino.Checked == false)
+                {
+                    MessageBox.Show(@"Favor preencher o genero do cliente!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (contemLetras(txtCpf.Text))
+                {
                     ClienteDados dadosCliente = PegarDadosDoCliente();
-                    dadosCliente.Cpf = CNPJformatado;
+
                     ad.AlterarClientes(dadosCliente);
                     cadCliente.refreshTable();
                     this.Close();
                 }
                 else
                 {
-                    long cpf = Convert.ToInt64(numeroSemPontosTracos);
-                    // long cpf = Convert.ToInt64(txtCpf.Text);
-                    string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
-                    ClienteDados dadosCliente = PegarDadosDoCliente();
-                    dadosCliente.Cpf = CPFformatado;
-                    ad.AlterarClientes(dadosCliente);
-                    cadCliente.refreshTable();
-                    this.Close();
+                    string numeroSemPontosTracos = txtCpf.Text.ToString().Replace(".", "").Replace("-", "");
+                    if (numeroSemPontosTracos.Length > 13)
+                    {
+                        long cnpj = Convert.ToInt64(numeroSemPontosTracos);
+                        // long cpf = Convert.ToInt64(txtCpf.Text);
+                        string CNPJformatado = String.Format(@"{0:00\.000\.000\/0000-00}", cnpj);
+                        ClienteDados dadosCliente = PegarDadosDoCliente();
+                        dadosCliente.Cpf = CNPJformatado;
+                        ad.AlterarClientes(dadosCliente);
+                        cadCliente.refreshTable();
+                        this.Close();
+                    }
+                    else
+                    {
+                        long cpf = Convert.ToInt64(numeroSemPontosTracos);
+                        // long cpf = Convert.ToInt64(txtCpf.Text);
+                        string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
+                        ClienteDados dadosCliente = PegarDadosDoCliente();
+                        dadosCliente.Cpf = CPFformatado;
+                        ad.AlterarClientes(dadosCliente);
+                        cadCliente.refreshTable();
+                        this.Close();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Digite uma data valida Ex: 26/08/1995\nou clique em 'Zerar Data' caso nao tenha uma. ", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -128,22 +153,23 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (txtDataNascimento.Text == "SEM DATA")
-            {
-                EditarCliente();
-            }
-            else
-            {
-                try
-                {
-                    Convert.ToDateTime(txtDataNascimento.Text);
-                    EditarCliente();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show($"Digite uma data valida Ex: 26/08/1995\nou clique em 'Zerar Data' caso nao tenha uma. ", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
+            EditarCliente();
+            //if (txtDataNascimento.Text == "SEM DATA")
+            //{
+            //    EditarCliente();
+            //}
+            //else
+            //{
+            //    try
+            //    {
+            //        Convert.ToDateTime(txtDataNascimento.Text);
+            //        EditarCliente();
+            //    }
+            //    catch (Exception)
+            //    {
+            //        MessageBox.Show($"Digite uma data valida Ex: 26/08/1995\nou clique em 'Zerar Data' caso nao tenha uma. ", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //}
         }
 
         private void txtCpf_KeyDown(object sender, KeyEventArgs e)
@@ -216,6 +242,30 @@ namespace PFC___StandBy_CSharp.Forms
             if (dtpDataNascimento.Value.Year == dtpDataNascimento.MinDate.Year)
             {
                 dtpDataNascimento.ForeColor = Color.White;
+            }
+        }
+
+        private void txtDataNascimento_Enter(object sender, EventArgs e)
+        {
+            if (txtDataNascimento.Text == "SEM DATA")
+            {
+                txtDataNascimento.Text = "";
+            }
+        }
+
+        private void txtDataNascimento_Leave(object sender, EventArgs e)
+        {
+            if (txtDataNascimento.Text.Length < 2)
+            {
+                txtDataNascimento.Text = "SEM DATA";
+            }
+        }
+
+        private void txtDataNascimento_MouseLeave(object sender, EventArgs e)
+        {
+            if (txtDataNascimento.Text.Length < 2)
+            {
+                txtDataNascimento.Text = "SEM DATA";
             }
         }
     }

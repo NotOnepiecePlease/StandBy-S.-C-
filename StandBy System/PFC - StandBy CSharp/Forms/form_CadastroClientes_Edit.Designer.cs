@@ -470,6 +470,9 @@
             this.txtDataNascimento.Size = new System.Drawing.Size(292, 34);
             this.txtDataNascimento.TabIndex = 78;
             this.txtDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDataNascimento.Enter += new System.EventHandler(this.txtDataNascimento_Enter);
+            this.txtDataNascimento.Leave += new System.EventHandler(this.txtDataNascimento_Leave);
+            this.txtDataNascimento.MouseLeave += new System.EventHandler(this.txtDataNascimento_MouseLeave);
             // 
             // btnZerarDataBotao
             // 

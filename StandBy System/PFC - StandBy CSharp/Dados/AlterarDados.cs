@@ -190,24 +190,70 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    string query = "UPDATE [dbo].[tb_clientes]" +
-                                    "SET[cl_nome] = @_nome" +
-                                    ",[cl_telefone] = @_telefone" +
-                                    ",[cl_cpf] = @_cpf" +
-                                    ",[cl_telefone_recado] = @_telefoneRecados" +
-                                    ",[cl_nome_recado] = @_nomeRecado" +
-                                    ",[cl_parentesco_recado] = @_parentescoRecado" +
-                                    ",[cl_sexo] = @_sexo" +
-                                    ",[cl_data_nascimento] = @_dataNascimento" +
-                                    ",[cl_cep] = @_cep" +
-                                    ",[cl_endereco] = @_endereco" +
-                                    ",[cl_complemento] = @_complemento" +
-                                    ",[cl_bairro] = @_bairro" +
-                                    ",[cl_cidade] = @_cidade" +
-                                    ",[cl_estado] = @_estado" +
-                                    "WHERE[cl_id] = @_idcliente" +
-                                    "GO";
+                    string query = "";
 
+                    //if (_dadosDoCliente.DataNascimento != "")
+                    //{
+                    //    #region Query com data de nascimento
+
+                    //    query = "UPDATE [dbo].[tb_clientes]" +
+                    //            "SET[cl_nome] = @_nome" +
+                    //            ",[cl_telefone] = @_telefone" +
+                    //            ",[cl_cpf] = @_cpf" +
+                    //            ",[cl_telefone_recado] = @_telefoneRecados" +
+                    //            ",[cl_nome_recado] = @_nomeRecado" +
+                    //            ",[cl_parentesco_recado] = @_parentescoRecado" +
+                    //            ",[cl_sexo] = @_sexo" +
+                    //            ",[cl_data_nascimento] = @_dataNascimento" +
+                    //            ",[cl_cep] = @_cep" +
+                    //            ",[cl_endereco] = @_endereco" +
+                    //            ",[cl_complemento] = @_complemento" +
+                    //            ",[cl_bairro] = @_bairro" +
+                    //            ",[cl_cidade] = @_cidade" +
+                    //            ",[cl_estado] = @_estado" +
+                    //            " WHERE [cl_id] = @_idcliente";
+
+                    //    #endregion Query com data de nascimento
+                    //}
+                    //else
+                    //{
+                    //    #region Query com data de nascimento null
+
+                    //    query = "UPDATE [dbo].[tb_clientes]" +
+                    //            "SET[cl_nome] = @_nome" +
+                    //            ",[cl_telefone] = @_telefone" +
+                    //            ",[cl_cpf] = @_cpf" +
+                    //            ",[cl_telefone_recado] = @_telefoneRecados" +
+                    //            ",[cl_nome_recado] = @_nomeRecado" +
+                    //            ",[cl_parentesco_recado] = @_parentescoRecado" +
+                    //            ",[cl_sexo] = @_sexo" +
+                    //            ",[cl_cep] = @_cep" +
+                    //            ",[cl_endereco] = @_endereco" +
+                    //            ",[cl_complemento] = @_complemento" +
+                    //            ",[cl_bairro] = @_bairro" +
+                    //            ",[cl_cidade] = @_cidade" +
+                    //            ",[cl_estado] = @_estado" +
+                    //            " WHERE [cl_id] = @_idcliente";
+
+                    //    #endregion Query com data de nascimento null
+                    //}
+
+                    query = "UPDATE [dbo].[tb_clientes]" +
+                            "SET[cl_nome] = @_nome" +
+                            ",[cl_telefone] = @_telefone" +
+                            ",[cl_cpf] = @_cpf" +
+                            ",[cl_telefone_recado] = @_telefoneRecados" +
+                            ",[cl_nome_recado] = @_nomeRecado" +
+                            ",[cl_parentesco_recado] = @_parentescoRecado" +
+                            ",[cl_sexo] = @_sexo" +
+                            ",[cl_data_nascimento] = @_dataNascimento" +
+                            ",[cl_cep] = @_cep" +
+                            ",[cl_endereco] = @_endereco" +
+                            ",[cl_complemento] = @_complemento" +
+                            ",[cl_bairro] = @_bairro" +
+                            ",[cl_cidade] = @_cidade" +
+                            ",[cl_estado] = @_estado" +
+                            " WHERE [cl_id] = @_idcliente";
                     //string query = "UPDATE [dbo].[tb_clientes] " +
                     //    "SET[cl_nome] = @_nome " +
                     //    ",[cl_telefone] = @_telefone " +
@@ -227,11 +273,20 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.AddWithValue("@_nomeRecado", SqlDbType.VarChar).Value = _dadosDoCliente.NomeRecado;
                     cmd.Parameters.AddWithValue("@_parentescoRecado", SqlDbType.VarChar).Value = _dadosDoCliente.ParentescoRecado;
                     cmd.Parameters.AddWithValue("@_sexo", SqlDbType.Char).Value = _dadosDoCliente.Sexo;
-                    cmd.Parameters.AddWithValue("@_dataNascimento", SqlDbType.DateTime).Value = _dadosDoCliente.DataNascimento;
+                    if (_dadosDoCliente.DataNascimento != "")
+                    {
+                        cmd.Parameters.AddWithValue("@_dataNascimento", SqlDbType.DateTime).Value = _dadosDoCliente.DataNascimento;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@_dataNascimento", SqlDbType.DateTime).Value = DBNull.Value;
+                    }
+
                     cmd.Parameters.AddWithValue("@_cep", SqlDbType.VarChar).Value = _dadosDoCliente.Cep;
                     cmd.Parameters.AddWithValue("@_endereco", SqlDbType.VarChar).Value = _dadosDoCliente.Endereco;
                     cmd.Parameters.AddWithValue("@_complemento", SqlDbType.VarChar).Value = _dadosDoCliente.Complemento;
                     cmd.Parameters.AddWithValue("@_bairro", SqlDbType.VarChar).Value = _dadosDoCliente.Bairro;
+                    cmd.Parameters.AddWithValue("@_estado", SqlDbType.VarChar).Value = _dadosDoCliente.Estado;
                     cmd.Parameters.AddWithValue("@_cidade", SqlDbType.VarChar).Value = _dadosDoCliente.Cidade;
 
                     cmd.ExecuteNonQuery();

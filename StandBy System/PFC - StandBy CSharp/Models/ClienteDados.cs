@@ -16,7 +16,7 @@ namespace PFC___StandBy_CSharp.Models
         public string NomeRecado { get; set; }
         public string ParentescoRecado { get; set; }
         public char Sexo { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public string DataNascimento { get; set; }
         public string Cep { get; set; }
         public string Endereco { get; set; }
         public string Complemento { get; set; }

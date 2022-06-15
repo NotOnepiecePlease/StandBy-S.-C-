@@ -47,12 +47,17 @@ namespace PFC___StandBy_CSharp.Dados
             }
             else
             {
-                Directory.CreateDirectory(pastaRaiz);
-                using (StreamWriter sw = File.CreateText(CAMINHO_TXT))
-                {
-                    // sw.WriteLine(DataSource);
-                    DadosParaEscrever.ForEach(x => sw.WriteLine(x));
-                }
+                CriarDiretorioEscreverConfigs();
+            }
+        }
+
+        public void CriarDiretorioEscreverConfigs()
+        {
+            Directory.CreateDirectory(pastaRaiz);
+            using (StreamWriter sw = File.CreateText(CAMINHO_TXT))
+            {
+                // sw.WriteLine(DataSource);
+                DadosParaEscrever.ForEach(x => sw.WriteLine(x));
             }
         }
 

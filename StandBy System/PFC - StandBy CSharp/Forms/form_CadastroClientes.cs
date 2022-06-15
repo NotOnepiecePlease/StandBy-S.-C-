@@ -140,6 +140,22 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 MessageBox.Show(@"Campos de nome está vazio, favor preencha-o", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if (chkMasculino.Checked == false && chkFeminino.Checked == false)
+            {
+                MessageBox.Show(@"Favor preencher o genero do cliente!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (!string.IsNullOrWhiteSpace(txtDataNascimento.Text) && txtDataNascimento.Text != "Data de Nascimento")
+            {
+                try
+                {
+                    Convert.ToDateTime(txtDataNascimento.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show($"Digite uma data valida Ex: 26/08/1995\nou deixe a data em branco. ", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
             else
             {
                 //Pegar os dados dos campos
@@ -150,15 +166,15 @@ namespace PFC___StandBy_CSharp.Forms
                 string nomeRecados = (txtNomeRecado.Text == "Nome de quem vai receber o recado") ? VALOR_PADRAO_DADOS_CLIENTE : txtNomeRecado.Text;
                 string parentescoRecados = (txtParentescoRecado.Text == "Parentesco de quem vai receber o recado") ? VALOR_PADRAO_DADOS_CLIENTE : txtParentescoRecado.Text;
                 string cep = (txtCEP.Text == "Ex: 42803317") ? VALOR_PADRAO_DADOS_CLIENTE : txtCEP.Text;
-                string endereco = (txtRua.Text == "Ex: Rua Segundo Cendes, 197B") ? VALOR_PADRAO_DADOS_CLIENTE : txtRua.Text;
+                string endereco = (txtEndereco.Text == "Ex: Rua Segundo Cendes, 197B") ? VALOR_PADRAO_DADOS_CLIENTE : txtEndereco.Text;
                 string complemento = (txtComplemento.Text == "Ex: Casa") ? VALOR_PADRAO_DADOS_CLIENTE : txtComplemento.Text;
                 string bairro = (txtBairro.Text == "Ex: Gleba B") ? VALOR_PADRAO_DADOS_CLIENTE : txtBairro.Text;
                 string cidade = (txtCidade.Text == "Ex: Camaçari") ? VALOR_PADRAO_DADOS_CLIENTE : txtCidade.Text;
                 string estado = (txtEstado.Text == "Ex: Bahia") ? VALOR_PADRAO_DADOS_CLIENTE : txtEstado.Text;
                 string sexo = (chkMasculino.Checked == true) ? "M" : "F";
-
+                string dataNascimento = (txtDataNascimento.Text == "Data de Nascimento") ? VALOR_PADRAO_DADOS_CLIENTE : txtDataNascimento.Text;
                 id.InserirCliente(nome, cpf, telPrincipal, telRecados, nomeRecados, parentescoRecados,
-                    sexo, dtpDataNascimento.Value, cep, endereco, complemento, bairro, cidade, estado);
+                    sexo, dataNascimento, cep, endereco, complemento, bairro, cidade, estado);
             }
 
             ResetarCampos();
@@ -192,6 +208,64 @@ namespace PFC___StandBy_CSharp.Forms
             txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
             txtCPFCliente.ForeColor = Color.Silver;
             separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtDataNascimento.Text = "Data de Nascimento";
+            txtDataNascimento.Font = new Font(txtDataNascimento.Font, FontStyle.Italic);
+            txtDataNascimento.ForeColor = Color.Silver;
+            txtDataNascimento.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtTelefoneCliente.Text = "Telefone Principal do Cliente";
+            txtTelefoneCliente.Font = new Font(txtTelefoneCliente.Font, FontStyle.Italic);
+            txtTelefoneCliente.ForeColor = Color.Silver;
+            txtTelefoneCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtTelefoneRecado.Text = "Telefone de Recados do Cliente";
+            txtTelefoneRecado.Font = new Font(txtTelefoneRecado.Font, FontStyle.Italic);
+            txtTelefoneRecado.ForeColor = Color.Silver;
+            txtTelefoneRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtParentescoRecado.Text = "Parentesco de quem vai receber o recado";
+            txtParentescoRecado.Font = new Font(txtParentescoRecado.Font, FontStyle.Italic);
+            txtParentescoRecado.ForeColor = Color.Silver;
+            txtParentescoRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtNomeRecado.Text = "Nome de quem vai receber o recado";
+            txtNomeRecado.Font = new Font(txtNomeRecado.Font, FontStyle.Italic);
+            txtNomeRecado.ForeColor = Color.Silver;
+            txtNomeRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtCEP.Text = "Ex: 42803317";
+            txtCEP.Font = new Font(txtCEP.Font, FontStyle.Italic);
+            txtCEP.ForeColor = Color.Silver;
+            txtCEP.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtEndereco.Text = "Ex: Rua Segundo Cendes, 197B";
+            txtEndereco.Font = new Font(txtEndereco.Font, FontStyle.Italic);
+            txtEndereco.ForeColor = Color.Silver;
+            txtEndereco.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtCidade.Text = "Ex: Camaçari";
+            txtCidade.Font = new Font(txtCidade.Font, FontStyle.Italic);
+            txtCidade.ForeColor = Color.Silver;
+            txtCidade.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtComplemento.Text = "Ex: Casa";
+            txtComplemento.Font = new Font(txtComplemento.Font, FontStyle.Italic);
+            txtComplemento.ForeColor = Color.Silver;
+            txtComplemento.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtBairro.Text = "Ex: Gleba B";
+            txtBairro.Font = new Font(txtBairro.Font, FontStyle.Italic);
+            txtBairro.ForeColor = Color.Silver;
+            txtBairro.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            txtEstado.Text = "Ex: Bahia";
+            txtEstado.Font = new Font(txtEstado.Font, FontStyle.Italic);
+            txtEstado.ForeColor = Color.Silver;
+            txtEstado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            chkMasculino.Checked = false;
+            chkFeminino.Checked = false;
         }
 
         private void txtNomeCliente_KeyDown(object sender, KeyEventArgs e)
@@ -539,7 +613,7 @@ namespace PFC___StandBy_CSharp.Forms
                     CorreiosApi correiosApi = new CorreiosApi();
                     var endereco = correiosApi.consultaCEP(txtCEP.Text);
 
-                    txtRua.Text = endereco.end ?? "------";
+                    txtEndereco.Text = endereco.end ?? "------";
                     txtBairro.Text = endereco.bairro ?? "------";
                     txtCidade.Text = endereco.cidade ?? "------";
                     txtComplemento.Text = endereco.complemento ?? "------";
@@ -555,12 +629,12 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtRua_Enter(object sender, EventArgs e)
         {
-            SetarCorDaLinhaETexto_ENTER(txtRua, "Ex: Rua Segundo Cendes, 197B");
+            SetarCorDaLinhaETexto_ENTER(txtEndereco, "Ex: Rua Segundo Cendes, 197B");
         }
 
         private void txtRua_Leave(object sender, EventArgs e)
         {
-            SetarCorDaLinhaETexto_LEAVE(txtRua, "Ex: Rua Segundo Cendes, 197B");
+            SetarCorDaLinhaETexto_LEAVE(txtEndereco, "Ex: Rua Segundo Cendes, 197B");
         }
 
         private void txtComplemento_Enter(object sender, EventArgs e)
@@ -641,6 +715,16 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 chkMasculino.Checked = false;
             }
+        }
+
+        private void txtDataNascimento_Enter(object sender, EventArgs e)
+        {
+            SetarCorDaLinhaETexto_ENTER(txtDataNascimento, "Data de Nascimento");
+        }
+
+        private void txtDataNascimento_Leave(object sender, EventArgs e)
+        {
+            SetarCorDaLinhaETexto_LEAVE(txtDataNascimento, "Data de Nascimento");
         }
     }
 }

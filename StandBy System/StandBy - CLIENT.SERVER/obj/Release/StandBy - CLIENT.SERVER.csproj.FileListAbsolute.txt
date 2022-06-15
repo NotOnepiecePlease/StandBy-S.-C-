@@ -41,27 +41,3 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\StandBy 
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.CopyComplete
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.exe
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.pdb
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.exe.config
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.exe
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\StandBy - CLIENT.SERVER.pdb
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\StandBy System.exe.config
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.BunifuTextbox.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\Bunifu.UI.WinForms.ToggleSwitch.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\BunifuDataViz.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\Bunifu_UI_v1.5.3.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Release\System.Diagnostics.DiagnosticSource.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.AssemblyReference.cache
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.exe.config
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.form_PrincipalClientServer.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_ServicosAndamento.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_SQLConfig.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_TodosServicos.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Forms.form_ServicosEdit.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy___CLIENT.SERVER.Properties.Resources.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.GenerateResource.cache
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.exe.licenses
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.CoreCompileInputs.cache
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.Fody.CopyLocal.cache
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.csproj.CopyComplete
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.exe
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Release\StandBy - CLIENT.SERVER.pdb
