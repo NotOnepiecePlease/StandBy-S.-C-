@@ -5,7 +5,10 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
+using Bunifu.UI.WinForms;
 using Correios;
+using PFC___StandBy_CSharp.Utils;
+using BunifuSeparator = Bunifu.UI.WinForms.BunifuSeparator;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -42,17 +45,7 @@ namespace PFC___StandBy_CSharp.Forms
             txtTelefoneCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtTelefoneRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtPesquisarCADCliente.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //btnCadastrarCliente.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //table_Clientes.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             contextMenuStrip1.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chkSemCPF.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chkSemCPF.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            //chkCnpj.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chkCnpj.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            //chkTelRecados.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chkTelRecados.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void btnCadastrarCliente_Click(object sender, EventArgs e)
@@ -181,6 +174,151 @@ namespace PFC___StandBy_CSharp.Forms
             refreshTable();
         }
 
+        private void txtNomeCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CadastrarNovoCliente();
+            }
+        }
+
+        private void txtTelefoneCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CadastrarNovoCliente();
+            }
+        }
+
+        private void table_Clientes_DoubleClick(object sender, EventArgs e)
+        {
+            chamarEdicaoCliente();
+        }
+
+        private void txtTelefoneRecado_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CadastrarNovoCliente();
+            }
+        }
+
+        private void txtCPFCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Regex pattern = new Regex("[./-]");
+            string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
+            if (cpfApenasDigitos.Length <= 12)
+            {
+                contadorCNPJ = 0;
+                if (contadorCPF == 0)
+                {
+                    FormatarCampos.FormatarTodaStringParaCpf(sender, txtCPFCliente);
+                    contadorCPF++;
+                }
+                else
+                {
+                    FormatarCampos.FormatandoEmTempoRealParaCPF(sender, e);
+                }
+            }
+            else
+            {
+                contadorCPF = 0;
+                if (contadorCNPJ == 0)
+                {
+                    FormatarCampos.FormatarTodaStringParaCnpj(sender, txtCPFCliente);
+                    contadorCNPJ++;
+                }
+                else
+                {
+                    FormatarCampos.FormatandoEmTempoRealParaCNPJ(sender, e);
+                }
+            }
+        }
+
+        private void txtCPFCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CadastrarNovoCliente();
+            }
+        }
+
+        private void separatorCPF_MouseEnter(object sender, EventArgs e)
+        {
+            separatorCPF.LineColor = Color.Lavender;
+        }
+
+        private void separatorCPF_MouseLeave(object sender, EventArgs e)
+        {
+            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+        }
+
+        private void txtCPFCliente_MouseEnter(object sender, EventArgs e)
+        {
+            separatorCPF.LineColor = Color.Lavender;
+        }
+
+        private void txtCPFCliente_MouseLeave(object sender, EventArgs e)
+        {
+            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+        }
+
+        private void txtTelefoneRecado_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtTelefoneRecado.Text == "Telefone de Recados do Cliente" || txtTelefoneRecado.Text == "")
+            {
+                txtNomeRecado.Enabled = false;
+                txtParentescoRecado.Enabled = false;
+            }
+            else
+            {
+                txtNomeRecado.Enabled = true;
+                txtParentescoRecado.Enabled = true;
+            }
+        }
+
+        private void chkMasculino_Click(object sender, EventArgs e)
+        {
+            if (chkMasculino.Checked == true)
+            {
+                chkFeminino.Checked = false;
+            }
+            else
+            {
+                chkFeminino.Checked = true;
+            }
+        }
+
+        private void chkFeminino_Click(object sender, EventArgs e)
+        {
+            if (chkFeminino.Checked == true)
+            {
+                chkMasculino.Checked = false;
+            }
+            else
+            {
+                chkMasculino.Checked = true;
+            }
+        }
+
+        private void chkMasculino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkMasculino.Checked)
+            {
+                chkFeminino.Checked = false;
+            }
+        }
+
+        private void chkFeminino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (chkFeminino.Checked)
+            {
+                chkMasculino.Checked = false;
+            }
+        }
+
+        #region Resetar todos os campos textboxes
+
         private void ResetarCampos()
         {
             //Limpar os campos
@@ -212,7 +350,8 @@ namespace PFC___StandBy_CSharp.Forms
             txtDataNascimento.Text = "Data de Nascimento";
             txtDataNascimento.Font = new Font(txtDataNascimento.Font, FontStyle.Italic);
             txtDataNascimento.ForeColor = Color.Silver;
-            txtDataNascimento.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //txtDataNascimento.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            separatorDATA.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             txtTelefoneCliente.Text = "Telefone Principal do Cliente";
             txtTelefoneCliente.Font = new Font(txtTelefoneCliente.Font, FontStyle.Italic);
@@ -268,195 +407,11 @@ namespace PFC___StandBy_CSharp.Forms
             chkFeminino.Checked = false;
         }
 
-        private void txtNomeCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CadastrarNovoCliente();
-            }
-        }
+        #endregion Resetar todos os campos textboxes
 
-        private void txtTelefoneCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CadastrarNovoCliente();
-            }
-        }
+        #region ENTER e LEAVE eventos das textboxes
 
-        private void table_Clientes_DoubleClick(object sender, EventArgs e)
-        {
-            chamarEdicaoCliente();
-        }
-
-        private void txtTelefoneRecado_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CadastrarNovoCliente();
-            }
-        }
-
-        private void txtCPFCliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Regex pattern = new Regex("[./-]");
-            string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
-            if (cpfApenasDigitos.Length <= 12)
-            {
-                contadorCNPJ = 0;
-                if (contadorCPF == 0)
-                {
-                    FormatarTodaStringParaCpf(sender);
-                    contadorCPF++;
-                }
-                else
-                {
-                    TextBox CPF = sender as TextBox;
-                    if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                    {
-                        CPF.SelectionStart = CPF.Text.Length + 1;
-
-                        if (CPF.Text.Length == 3 || CPF.Text.Length == 7)
-                        {
-                            CPF.Text += ".";
-                        }
-                        else if (CPF.Text.Length == 11)
-                        {
-                            CPF.Text += "-";
-                        }
-                        CPF.SelectionStart = CPF.Text.Length + 1;
-                    }
-                }
-            }
-            else
-            {
-                contadorCPF = 0;
-                if (contadorCNPJ == 0)
-                {
-                    FormatarTodaStringParaCnpj(sender);
-                    contadorCNPJ++;
-                }
-                else
-                {
-                    TextBox CPF = sender as TextBox;
-                    if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                    {
-                        CPF.SelectionStart = CPF.Text.Length + 1;
-
-                        if (CPF.Text.Length == 2 || CPF.Text.Length == 6)
-                        {
-                            CPF.Text += ".";
-                        }
-                        else if (CPF.Text.Length == 10)
-                        {
-                            CPF.Text += "/";
-                        }
-                        else if (CPF.Text.Length == 15)
-                        {
-                            CPF.Text += "-";
-                        }
-                        CPF.SelectionStart = CPF.Text.Length + 1;
-                    }
-                }
-            }
-        }
-
-        private void FormatarTodaStringParaCpf(object sender)
-        {
-            Regex pattern = new Regex("[./-]");
-            //string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
-            TextBox CPF = sender as TextBox;
-
-            string cpfTexto = pattern.Replace(txtCPFCliente.Text, "");
-            char[] cpfCaracteres = cpfTexto.ToCharArray();
-            txtCPFCliente.Text = "";
-            foreach (char caractere in cpfCaracteres)
-            {
-                CPF.SelectionStart = CPF.Text.Length + 1;
-                txtCPFCliente.Text += caractere;
-                if (CPF.Text.Length == 3 || CPF.Text.Length == 7)
-                {
-                    CPF.Text += ".";
-                }
-                else if (CPF.Text.Length == 11)
-                {
-                    CPF.Text += "-";
-                }
-                CPF.SelectionStart = CPF.Text.Length + 1;
-            }
-        }
-
-        private void FormatarTodaStringParaCnpj(object sender)
-        {
-            Regex pattern = new Regex(@"[./-]");
-            //string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
-            TextBox CPF = sender as TextBox;
-
-            string cpfTexto = pattern.Replace(txtCPFCliente.Text, "");
-            char[] cpfCaracteres = cpfTexto.ToCharArray();
-            txtCPFCliente.Text = "";
-            foreach (char caractere in cpfCaracteres)
-            {
-                CPF.SelectionStart = CPF.Text.Length + 1;
-                txtCPFCliente.Text += caractere;
-                if (CPF.Text.Length == 2 || CPF.Text.Length == 6)
-                {
-                    CPF.Text += ".";
-                }
-                else if (CPF.Text.Length == 10)
-                {
-                    CPF.Text += "/";
-                }
-                else if (CPF.Text.Length == 15)
-                {
-                    CPF.Text += "-";
-                }
-                CPF.SelectionStart = CPF.Text.Length + 1;
-            }
-        }
-
-        private void txtCPFCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CadastrarNovoCliente();
-            }
-        }
-
-        private void separatorCPF_MouseEnter(object sender, EventArgs e)
-        {
-            separatorCPF.LineColor = Color.Lavender;
-        }
-
-        private void separatorCPF_MouseLeave(object sender, EventArgs e)
-        {
-            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-        }
-
-        private void txtCPFCliente_MouseEnter(object sender, EventArgs e)
-        {
-            separatorCPF.LineColor = Color.Lavender;
-        }
-
-        private void txtCPFCliente_MouseLeave(object sender, EventArgs e)
-        {
-            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-        }
-
-        private void txtTelefoneRecado_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (txtTelefoneRecado.Text == "Telefone de Recados do Cliente" || txtTelefoneRecado.Text == "")
-            {
-                txtNomeRecado.Enabled = false;
-                txtParentescoRecado.Enabled = false;
-            }
-            else
-            {
-                txtNomeRecado.Enabled = true;
-                txtParentescoRecado.Enabled = true;
-            }
-        }
-
+        //BunifuMaterialTextbox ENTER
         private void SetarCorDaLinhaETexto_ENTER(BunifuMaterialTextbox _textbox, string _texto)
         {
             if (_textbox.Text == _texto)
@@ -468,6 +423,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
+        //BunifuMetroTextbox ENTER
         private void SetarCorDaLinhaETexto_ENTER(BunifuMetroTextbox _textbox, string _texto)
         {
             if (_textbox.Text == _texto)
@@ -479,6 +435,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
+        //BunifuMaterialTextbox LEAVE
         private void SetarCorDaLinhaETexto_LEAVE(BunifuMaterialTextbox _textbox, string _texto)
         {
             if (_textbox.Text == "")
@@ -490,6 +447,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
+        //BunifuMetroTextbox LEAVE
         private void SetarCorDaLinhaETexto_LEAVE(BunifuMetroTextbox _textbox, string _texto)
         {
             if (_textbox.Text == "")
@@ -498,6 +456,30 @@ namespace PFC___StandBy_CSharp.Forms
                 _textbox.Font = new Font(txtPesquisarCADCliente.Font, FontStyle.Italic);
                 _textbox.ForeColor = Color.Silver;
                 _textbox.BorderColorIdle = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            }
+        }
+
+        //TextBox ENTER
+        private void SetarCorDaLinhaETexto_ENTER(TextBox _textbox, string _texto, BunifuSeparator _separator)
+        {
+            if (_textbox.Text == _texto)
+            {
+                _textbox.Text = "";
+                _textbox.Font = new Font(_textbox.Font, FontStyle.Regular);
+                _separator.LineColor = Color.White;
+                _textbox.ForeColor = Color.White;
+            }
+        }
+
+        //TextBox LEAVE
+        private void SetarCorDaLinhaETexto_LEAVE(TextBox _textbox, string _texto, BunifuSeparator _separator)
+        {
+            if (_textbox.Text == "")
+            {
+                _textbox.Text = _texto;
+                _textbox.Font = new Font(_textbox.Font, FontStyle.Italic);
+                _textbox.ForeColor = Color.Silver;
+                _separator.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             }
         }
 
@@ -547,28 +529,12 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtCPFCliente_Enter(object sender, EventArgs e)
         {
-            //Na textbox de CPF eu nao utilizei o metodo SetarCorDaLinhaETexto porque ele usa o textbox comum
-            //preferi nao criar um metodo apenas para 1 textbox.
-            if (txtCPFCliente.Text == "CPF ou CNPJ do Cliente")
-            {
-                txtCPFCliente.Text = "";
-                txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Regular);
-                separatorCPF.LineColor = Color.White;
-                txtCPFCliente.ForeColor = Color.White;
-            }
+            SetarCorDaLinhaETexto_ENTER(txtCPFCliente, "CPF ou CNPJ do Cliente", separatorCPF);
         }
 
         private void txtCPFCliente_Leave(object sender, EventArgs e)
         {
-            //Na textbox de CPF eu nao utilizei o metodo SetarCorDaLinhaETexto porque ele usa o textbox comum
-            //preferi nao criar um metodo apenas para 1 textbox.
-            if (txtCPFCliente.Text == "")
-            {
-                txtCPFCliente.Text = "CPF ou CNPJ do Cliente";
-                txtCPFCliente.Font = new Font(txtCPFCliente.Font, FontStyle.Italic);
-                txtCPFCliente.ForeColor = Color.Silver;
-                separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            }
+            SetarCorDaLinhaETexto_LEAVE(txtCPFCliente, "Telefone de Recados do Cliente", separatorCPF);
         }
 
         private void txtParentescoRecado_Enter(object sender, EventArgs e)
@@ -677,54 +643,21 @@ namespace PFC___StandBy_CSharp.Forms
             SetarCorDaLinhaETexto_LEAVE(txtEstado, "Ex: Bahia");
         }
 
-        private void chkMasculino_Click(object sender, EventArgs e)
-        {
-            if (chkMasculino.Checked == true)
-            {
-                chkFeminino.Checked = false;
-            }
-            else
-            {
-                chkFeminino.Checked = true;
-            }
-        }
-
-        private void chkFeminino_Click(object sender, EventArgs e)
-        {
-            if (chkFeminino.Checked == true)
-            {
-                chkMasculino.Checked = false;
-            }
-            else
-            {
-                chkMasculino.Checked = true;
-            }
-        }
-
-        private void chkMasculino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
-        {
-            if (chkMasculino.Checked)
-            {
-                chkFeminino.Checked = false;
-            }
-        }
-
-        private void chkFeminino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
-        {
-            if (chkFeminino.Checked)
-            {
-                chkMasculino.Checked = false;
-            }
-        }
-
         private void txtDataNascimento_Enter(object sender, EventArgs e)
         {
-            SetarCorDaLinhaETexto_ENTER(txtDataNascimento, "Data de Nascimento");
+            SetarCorDaLinhaETexto_ENTER(txtDataNascimento, "Data de Nascimento", separatorDATA);
         }
 
         private void txtDataNascimento_Leave(object sender, EventArgs e)
         {
-            SetarCorDaLinhaETexto_LEAVE(txtDataNascimento, "Data de Nascimento");
+            SetarCorDaLinhaETexto_LEAVE(txtDataNascimento, "Data de Nascimento", separatorCPF);
+        }
+
+        #endregion ENTER e LEAVE eventos das textboxes
+
+        private void txtDataNascimento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormatarCampos.FormatarEmTempoRealData(sender, e);
         }
     }
 }

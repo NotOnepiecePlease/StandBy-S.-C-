@@ -3,7 +3,9 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Formatar_Campos;
 using PFC___StandBy_CSharp.Models;
+using PFC___StandBy_CSharp.Utils;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -267,6 +269,11 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 txtDataNascimento.Text = "SEM DATA";
             }
+        }
+
+        private void txtDataNascimento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormatarCampos.FormatarEmTempoRealData(sender, e);
         }
     }
 }

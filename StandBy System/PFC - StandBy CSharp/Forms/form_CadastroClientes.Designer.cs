@@ -72,7 +72,8 @@
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
-            this.txtDataNascimento = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtDataNascimento = new System.Windows.Forms.TextBox();
+            this.separatorDATA = new Bunifu.UI.WinForms.BunifuSeparator();
             this.txtNomeRecado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtNomeCliente = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -761,6 +762,7 @@
             this.bunifuGroupBox1.BorderRadius = 1;
             this.bunifuGroupBox1.BorderThickness = 1;
             this.bunifuGroupBox1.Controls.Add(this.txtDataNascimento);
+            this.bunifuGroupBox1.Controls.Add(this.separatorDATA);
             this.bunifuGroupBox1.Controls.Add(this.txtNomeRecado);
             this.bunifuGroupBox1.Controls.Add(this.txtNomeCliente);
             this.bunifuGroupBox1.Controls.Add(this.bunifuCustomLabel5);
@@ -795,31 +797,37 @@
             // txtDataNascimento
             // 
             this.txtDataNascimento.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDataNascimento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtDataNascimento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtDataNascimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtDataNascimento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtDataNascimento.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtDataNascimento.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDataNascimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtDataNascimento.ForeColor = System.Drawing.Color.Silver;
-            this.txtDataNascimento.HintForeColor = System.Drawing.Color.Transparent;
-            this.txtDataNascimento.HintText = "";
-            this.txtDataNascimento.isPassword = false;
-            this.txtDataNascimento.LineFocusedColor = System.Drawing.Color.Lavender;
-            this.txtDataNascimento.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.txtDataNascimento.LineMouseHoverColor = System.Drawing.Color.Lavender;
-            this.txtDataNascimento.LineThickness = 2;
-            this.txtDataNascimento.Location = new System.Drawing.Point(153, 82);
-            this.txtDataNascimento.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDataNascimento.MaxLength = 100;
+            this.txtDataNascimento.Location = new System.Drawing.Point(153, 88);
+            this.txtDataNascimento.MaxLength = 10;
             this.txtDataNascimento.Name = "txtDataNascimento";
-            this.txtDataNascimento.Size = new System.Drawing.Size(264, 34);
+            this.txtDataNascimento.Size = new System.Drawing.Size(264, 16);
             this.txtDataNascimento.TabIndex = 77;
             this.txtDataNascimento.Text = "Data de Nascimento";
             this.txtDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDataNascimento.Enter += new System.EventHandler(this.txtDataNascimento_Enter);
+            this.txtDataNascimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataNascimento_KeyPress);
             this.txtDataNascimento.Leave += new System.EventHandler(this.txtDataNascimento_Leave);
+            // 
+            // separatorDATA
+            // 
+            this.separatorDATA.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.separatorDATA.BackColor = System.Drawing.Color.Transparent;
+            this.separatorDATA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("separatorDATA.BackgroundImage")));
+            this.separatorDATA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.separatorDATA.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.separatorDATA.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.separatorDATA.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.separatorDATA.LineThickness = 2;
+            this.separatorDATA.Location = new System.Drawing.Point(153, 102);
+            this.separatorDATA.Margin = new System.Windows.Forms.Padding(2);
+            this.separatorDATA.Name = "separatorDATA";
+            this.separatorDATA.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.separatorDATA.Size = new System.Drawing.Size(264, 12);
+            this.separatorDATA.TabIndex = 78;
             // 
             // txtNomeRecado
             // 
@@ -1411,6 +1419,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtDataNascimento;
+        private System.Windows.Forms.TextBox txtDataNascimento;
+        private Bunifu.UI.WinForms.BunifuSeparator separatorDATA;
     }
 }
