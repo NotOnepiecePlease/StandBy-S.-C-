@@ -10,7 +10,7 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_CadastroClientes_Edit : Form
     {
-        private form_CadastroClientes cadCliente;
+        private form_CadastroClientes formCadCliente;
         private AlterarDados ad = new AlterarDados();
         private int[] corGeral = new int[3];
 
@@ -18,13 +18,41 @@ namespace PFC___StandBy_CSharp.Forms
         {
             InitializeComponent();
             corGeral = corRGB;
-            this.cadCliente = cadCliente;
+            this.formCadCliente = cadCliente;
             MudarCores();
         }
 
-        public form_CadastroClientes_Edit()
+        public void MudarCores()
         {
-            InitializeComponent();
+            txtParentescoRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtNomeCliente.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtNomeRecado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtCEP.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtRua.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtComplemento.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtBairro.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtCidade.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtEstado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            btnEditar.BaseColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnEditar.BaseColor2 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnEditar.OnHoverBaseColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnEditar.OnHoverBaseColor2 = Color.White;
+            btnZerarDataBotao.OnIdleState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnZerarDataBotao.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnZerarDataBotao.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            cardFundo.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            separatorCPF.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            separatorDATA.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            separatorTEL_RECADO.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            separatorTEL_CLIENTE.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            chkMasculino.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkMasculino.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkFeminino.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkFeminino.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         public bool contemLetras(string texto)
@@ -98,7 +126,7 @@ namespace PFC___StandBy_CSharp.Forms
                     ClienteDados dadosCliente = PegarDadosDoCliente();
 
                     ad.AlterarClientes(dadosCliente);
-                    cadCliente.refreshTable();
+                    formCadCliente.refreshTable();
                     this.Close();
                 }
                 else
@@ -112,7 +140,7 @@ namespace PFC___StandBy_CSharp.Forms
                         ClienteDados dadosCliente = PegarDadosDoCliente();
                         dadosCliente.Cpf = CNPJformatado;
                         ad.AlterarClientes(dadosCliente);
-                        cadCliente.refreshTable();
+                        formCadCliente.refreshTable();
                         this.Close();
                     }
                     else
@@ -123,7 +151,7 @@ namespace PFC___StandBy_CSharp.Forms
                         ClienteDados dadosCliente = PegarDadosDoCliente();
                         dadosCliente.Cpf = CPFformatado;
                         ad.AlterarClientes(dadosCliente);
-                        cadCliente.refreshTable();
+                        formCadCliente.refreshTable();
                         this.Close();
                     }
                 }
@@ -132,16 +160,6 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 MessageBox.Show($"Digite uma data valida Ex: 26/08/1995\nou clique em 'Zerar Data' caso nao tenha uma. ", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        public void MudarCores()
-        {
-            cardFundo.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnEditar.BaseColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnEditar.BaseColor2 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            btnEditar.OnHoverBaseColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnEditar.OnHoverBaseColor2 = Color.White;
         }
 
         private void form_CadastroClientes_Edit_KeyDown(object sender, KeyEventArgs e)
@@ -174,14 +192,6 @@ namespace PFC___StandBy_CSharp.Forms
         }
 
         private void txtCpf_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                EditarCliente();
-            }
-        }
-
-        private void txtTelefone_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {

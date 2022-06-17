@@ -149,9 +149,12 @@ namespace PFC___StandBy_CSharp.Utils
                     txtData.SelectionStart = txtData.Text.Length + 1;
                 }
             }
-            else
+            else if (e.KeyChar != 8)
             {
                 e.Handled = true;
+            }
+            else
+            {
             }
         }
 

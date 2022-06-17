@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes_Edit));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cardFundo = new Bunifu.Framework.UI.BunifuCards();
             this.groupEndereco = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.txtBairro = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox3 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtCidade = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtComplemento = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -114,7 +113,6 @@
             this.groupEndereco.BorderRadius = 1;
             this.groupEndereco.BorderThickness = 1;
             this.groupEndereco.Controls.Add(this.txtBairro);
-            this.groupEndereco.Controls.Add(this.bunifuMaterialTextbox3);
             this.groupEndereco.Controls.Add(this.txtEstado);
             this.groupEndereco.Controls.Add(this.txtCidade);
             this.groupEndereco.Controls.Add(this.txtComplemento);
@@ -163,32 +161,6 @@
             this.txtBairro.Size = new System.Drawing.Size(150, 34);
             this.txtBairro.TabIndex = 83;
             this.txtBairro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bunifuMaterialTextbox3
-            // 
-            this.bunifuMaterialTextbox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuMaterialTextbox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.bunifuMaterialTextbox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.bunifuMaterialTextbox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
-            this.bunifuMaterialTextbox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuMaterialTextbox3.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMaterialTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.bunifuMaterialTextbox3.ForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox3.HintForeColor = System.Drawing.Color.Transparent;
-            this.bunifuMaterialTextbox3.HintText = "";
-            this.bunifuMaterialTextbox3.isPassword = false;
-            this.bunifuMaterialTextbox3.LineFocusedColor = System.Drawing.Color.Lavender;
-            this.bunifuMaterialTextbox3.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.bunifuMaterialTextbox3.LineMouseHoverColor = System.Drawing.Color.Lavender;
-            this.bunifuMaterialTextbox3.LineThickness = 2;
-            this.bunifuMaterialTextbox3.Location = new System.Drawing.Point(752, 54);
-            this.bunifuMaterialTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox3.MaxLength = 100;
-            this.bunifuMaterialTextbox3.Name = "bunifuMaterialTextbox3";
-            this.bunifuMaterialTextbox3.Size = new System.Drawing.Size(149, 34);
-            this.bunifuMaterialTextbox3.TabIndex = 87;
-            this.bunifuMaterialTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtEstado
             // 
@@ -535,11 +507,11 @@
             this.btnZerarDataBotao.ColorContrastOnClick = 45;
             this.btnZerarDataBotao.ColorContrastOnHover = 45;
             this.btnZerarDataBotao.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnZerarDataBotao.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnZerarDataBotao.CustomizableEdges = borderEdges1;
             this.btnZerarDataBotao.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnZerarDataBotao.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnZerarDataBotao.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1210,7 +1182,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnZerarDataBotao;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnZerarData;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
         private Bunifu.UI.WinForms.BunifuSeparator separatorDATA;
         public System.Windows.Forms.TextBox txtDataNascimento;
         private Bunifu.UI.WinForms.BunifuSeparator separatorTEL_RECADO;

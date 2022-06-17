@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listboxCidades = new System.Windows.Forms.ListBox();
             this.btnCadastrarCliente = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -71,7 +71,7 @@
             this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuBotaoDireitoTabela = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bunifuGroupBox1 = new Bunifu.UI.WinForms.BunifuGroupBox();
@@ -106,7 +106,7 @@
             this.bunifuGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_Clientes)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            this.menuBotaoDireitoTabela.SuspendLayout();
             this.bunifuGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoCompleteCidades)).BeginInit();
             this.SuspendLayout();
@@ -159,11 +159,11 @@
             this.btnCadastrarCliente.ColorContrastOnClick = 45;
             this.btnCadastrarCliente.ColorContrastOnHover = 45;
             this.btnCadastrarCliente.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnCadastrarCliente.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnCadastrarCliente.CustomizableEdges = borderEdges1;
             this.btnCadastrarCliente.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCadastrarCliente.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCadastrarCliente.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -361,7 +361,7 @@
             this.cmbCidades.MetroBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.cmbCidades.Name = "cmbCidades";
             this.cmbCidades.Size = new System.Drawing.Size(234, 24);
-            this.cmbCidades.TabIndex = 1001;
+            this.cmbCidades.TabIndex = 14;
             this.cmbCidades.Text = "Ex: Camaçari";
             this.cmbCidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cmbCidades.Enter += new System.EventHandler(this.cmbCidades_Enter);
@@ -589,8 +589,8 @@
             this.table_Clientes.AllowUserToAddRows = false;
             this.table_Clientes.AllowUserToDeleteRows = false;
             this.table_Clientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.table_Clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.table_Clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.table_Clientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -598,14 +598,14 @@
             this.table_Clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.table_Clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.table_Clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.table_Clientes.ColumnHeadersHeight = 35;
             this.table_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.table_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -624,7 +624,7 @@
             this.Bairro,
             this.Cidade,
             this.Estado});
-            this.table_Clientes.ContextMenuStrip = this.contextMenuStrip1;
+            this.table_Clientes.ContextMenuStrip = this.menuBotaoDireitoTabela;
             this.table_Clientes.DoubleBuffered = true;
             this.table_Clientes.EnableHeadersVisualStyles = false;
             this.table_Clientes.HeaderBgColor = System.Drawing.SystemColors.Control;
@@ -633,21 +633,21 @@
             this.table_Clientes.Name = "table_Clientes";
             this.table_Clientes.ReadOnly = true;
             this.table_Clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table_Clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table_Clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.table_Clientes.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Snow;
-            this.table_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
+            this.table_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.table_Clientes.Size = new System.Drawing.Size(1173, 293);
             this.table_Clientes.TabIndex = 0;
@@ -774,15 +774,15 @@
             this.Estado.ReadOnly = true;
             this.Estado.Visible = false;
             // 
-            // contextMenuStrip1
+            // menuBotaoDireitoTabela
             // 
-            this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuBotaoDireitoTabela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.menuBotaoDireitoTabela.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarToolStripMenuItem,
             this.excluirToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(85, 48);
+            this.menuBotaoDireitoTabela.Name = "contextMenuStrip1";
+            this.menuBotaoDireitoTabela.ShowImageMargin = false;
+            this.menuBotaoDireitoTabela.Size = new System.Drawing.Size(85, 48);
             // 
             // editarToolStripMenuItem
             // 
@@ -849,7 +849,7 @@
             this.txtTelefoneRecado.MaxLength = 18;
             this.txtTelefoneRecado.Name = "txtTelefoneRecado";
             this.txtTelefoneRecado.Size = new System.Drawing.Size(264, 16);
-            this.txtTelefoneRecado.TabIndex = 81;
+            this.txtTelefoneRecado.TabIndex = 7;
             this.txtTelefoneRecado.Text = "Telefone de Recados do Cliente";
             this.txtTelefoneRecado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTelefoneRecado.Enter += new System.EventHandler(this.txtTelefoneRecado_Enter);
@@ -888,7 +888,7 @@
             this.txtTelefoneCliente.MaxLength = 18;
             this.txtTelefoneCliente.Name = "txtTelefoneCliente";
             this.txtTelefoneCliente.Size = new System.Drawing.Size(264, 16);
-            this.txtTelefoneCliente.TabIndex = 79;
+            this.txtTelefoneCliente.TabIndex = 6;
             this.txtTelefoneCliente.Text = "Telefone Principal do Cliente";
             this.txtTelefoneCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTelefoneCliente.Enter += new System.EventHandler(this.txtTelefoneCliente_Enter);
@@ -926,7 +926,7 @@
             this.txtDataNascimento.MaxLength = 10;
             this.txtDataNascimento.Name = "txtDataNascimento";
             this.txtDataNascimento.Size = new System.Drawing.Size(264, 16);
-            this.txtDataNascimento.TabIndex = 77;
+            this.txtDataNascimento.TabIndex = 3;
             this.txtDataNascimento.Text = "Data de Nascimento";
             this.txtDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDataNascimento.Enter += new System.EventHandler(this.txtDataNascimento_Enter);
@@ -1373,7 +1373,7 @@
             this.dtpDataNascimento.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(37, 32);
-            this.dtpDataNascimento.TabIndex = 3;
+            this.dtpDataNascimento.TabIndex = 9999;
             this.dtpDataNascimento.Value = new System.DateTime(2022, 6, 12, 17, 51, 0, 0);
             this.dtpDataNascimento.Visible = false;
             // 
@@ -1426,7 +1426,7 @@
             this.bunifuGroupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_Clientes)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.menuBotaoDireitoTabela.ResumeLayout(false);
             this.bunifuGroupBox1.ResumeLayout(false);
             this.bunifuGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoCompleteCidades)).EndInit();
@@ -1444,7 +1444,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid table_Clientes;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip menuBotaoDireitoTabela;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTelefoneRecados;

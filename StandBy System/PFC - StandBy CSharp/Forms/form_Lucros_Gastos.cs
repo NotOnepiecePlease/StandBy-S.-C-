@@ -59,7 +59,8 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     FormatarCampos.TirarMascara(txtValor);
                     ins_Dados.InserirGasto(dataAtual, txtProduto.Text, Convert.ToDecimal(txtValor.Text), 1);
-                    MessageBox.Show(@"Sucesso!, Pressione ESC para sair!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show(@"Sucesso!, Pressione ESC para sair!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     formLucros.PreencherTableConformCheck();
                 }
             }
@@ -67,6 +68,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 MessageBox.Show("Erro: " + ex);
             }
+            this.Close();
         }
 
         private void txtValor_Enter(object sender, EventArgs e)
