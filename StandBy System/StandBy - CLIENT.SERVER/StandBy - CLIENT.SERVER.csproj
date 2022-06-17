@@ -283,12 +283,6 @@
     <Compile Include="Forms\form_ServicosEdit.Designer.cs">
       <DependentUpon>form_ServicosEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="LockScreenAndroid\GestureSubmittedEventArgs.cs" />
-    <Compile Include="LockScreenAndroid\LockScreenControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LockScreenAndroid\LockScreenRenderer.cs" />
-    <Compile Include="LockScreenAndroid\YASSCOMLockScreenRenderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\form_PrincipalClientServer.resx">

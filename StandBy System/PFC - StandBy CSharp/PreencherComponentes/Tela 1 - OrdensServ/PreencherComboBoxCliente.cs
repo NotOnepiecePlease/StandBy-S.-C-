@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PFC___StandBy_CSharp.Forms;
-using PFC___StandBy_CSharp.SqlDbConnect;
 using PFC___StandBy_CSharp.MsgBox;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Bunifu.Framework.UI;
 
 namespace PFC___StandBy_CSharp.PreencherComponentes
 {
-    class PreencherComboBoxCliente : MensagensErro 
+    internal class PreencherComboBoxCliente : MensagensErro
     {
         public void Preencher(ComboBox cmbClientes)
         {

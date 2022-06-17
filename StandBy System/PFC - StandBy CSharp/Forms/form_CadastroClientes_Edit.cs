@@ -3,7 +3,6 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using PFC___StandBy_CSharp.Formatar_Campos;
 using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.Utils;
 
@@ -274,6 +273,16 @@ namespace PFC___StandBy_CSharp.Forms
         private void txtDataNascimento_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormatarCampos.FormatarEmTempoRealData(sender, e);
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormatarCampos.FormatandoEmTempoRealParaTelefone(sender, e);
+        }
+
+        private void txtTelefoneRecados_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormatarCampos.FormatandoEmTempoRealParaTelefone(sender, e);
         }
     }
 }

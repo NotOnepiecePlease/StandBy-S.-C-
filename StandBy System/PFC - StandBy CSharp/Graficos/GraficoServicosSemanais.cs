@@ -2,18 +2,14 @@
 using System.Data;
 using System.Data.SqlClient;
 using System;
-using System.Globalization;
 using Bunifu.DataViz.WinForms;
 using DataPoint = Bunifu.DataViz.WinForms.DataPoint;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Collections;
-using Microsoft.SqlServer.Server;
 
 namespace PFC___StandBy_CSharp.Graficos
 {
-    class GraficoServicosSemanais : conexao
+    internal class GraficoServicosSemanais : conexao
     {
         public void PreencherUltimos7Dias(BunifuDataViz bunifuDataViz1, Label lblservico)
         {

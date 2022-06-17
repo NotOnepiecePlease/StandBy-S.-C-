@@ -1,19 +1,14 @@
 ﻿using PFC___StandBy_CSharp.SqlDbConnect;
 using System.Data;
 using System.Data.SqlClient;
-using System;
-using System.Globalization;
 using Bunifu.DataViz.WinForms;
 using DataPoint = Bunifu.DataViz.WinForms.DataPoint;
-using System.Windows.Forms;
 using System.Drawing;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Collections;
 using Guna.UI.WinForms;
 
 namespace PFC___StandBy_CSharp.Graficos
 {
-    class GraficoServicosAnuais : conexao
+    internal class GraficoServicosAnuais : conexao
     {
         public void Preencher(BunifuDataViz bunifuDataViz1, int lblAno, GunaLabel lblJan, GunaLabel lblFev, GunaLabel lblMar,
             GunaLabel lblAbr, GunaLabel lblMai, GunaLabel lblJun, GunaLabel lblJul, GunaLabel lblAgo, GunaLabel lblSet, GunaLabel lblOut,
@@ -136,7 +131,7 @@ namespace PFC___StandBy_CSharp.Graficos
                     lblNov.Visible = false;
                     lblDez.Visible = false;
                 }
-                
+
                 //Se liga na desgraca que voce aqui pvt
                 //to ligado que voce ta vendo isso em dubai
                 //mas voce era macacao pra porra pqp.
@@ -152,7 +147,6 @@ namespace PFC___StandBy_CSharp.Graficos
                 graficoArea.addLabely("OUT".ToUpper(), qntServicosPorMes[9]);
                 graficoArea.addLabely("NOV".ToUpper(), qntServicosPorMes[10]);
                 graficoArea.addLabely("DEZ".ToUpper(), qntServicosPorMes[11]);
-                
 
                 //bunifuDataViz1.colorSet.Add(Color.FromArgb(0, 168, 235));
                 bunifuDataViz1.colorSet.Add(Color.FromArgb(corRgb[0], corRgb[1], corRgb[2]));
@@ -175,7 +169,7 @@ namespace PFC___StandBy_CSharp.Graficos
                 //canvas.addData(graficoLinha);
 
                 bunifuDataViz1.Render(canvas);
-                
+
                 //bunifuDataViz1.Update();
             }
         }

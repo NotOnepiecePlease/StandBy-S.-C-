@@ -1,23 +1,18 @@
 ﻿using PFC___StandBy_CSharp.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Notepad_Abrir : Form
     {
-        string diretorioSave;
-        int[] corGeral = { 0, 0, 0 };
-        form_Notepad f_Notepad;
+        private string diretorioSave;
+        private int[] corGeral = { 0, 0, 0 };
+        private form_Notepad f_Notepad;
+
         public form_Notepad_Abrir(form_Notepad _notepadF, int[] _corRgb)
         {
             InitializeComponent();
@@ -37,6 +32,7 @@ namespace PFC___StandBy_CSharp.Forms
             btnBuscarPasta.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnPastaPadrao.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
+
         public void PreencherListBox(string diretorio)
         {
             var pasta = new DirectoryInfo(diretorio).Parent + @"\" + new DirectoryInfo(diretorio).Name;
@@ -60,7 +56,6 @@ namespace PFC___StandBy_CSharp.Forms
                     listBox1.Items.Add(fill.Name);
                 }
             }
-            
         }
 
         private void btnBuscarPasta_Click(object sender, EventArgs e)
@@ -90,14 +85,13 @@ namespace PFC___StandBy_CSharp.Forms
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
         private void form_Notepad_Abrir_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
             }

@@ -1,12 +1,6 @@
 ﻿using PFC___StandBy_CSharp.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -32,6 +26,7 @@ namespace PFC___StandBy_CSharp.Forms
             Error,
             Info
         }
+
         private form_AlertMessage.enmAction action;
 
         private int x, y;
@@ -44,6 +39,7 @@ namespace PFC___StandBy_CSharp.Forms
                     timer1.Interval = 5000;
                     action = enmAction.close;
                     break;
+
                 case form_AlertMessage.enmAction.start:
                     this.timer1.Interval = 1;
                     this.Opacity += 0.1;
@@ -59,6 +55,7 @@ namespace PFC___StandBy_CSharp.Forms
                         }
                     }
                     break;
+
                 case enmAction.close:
                     timer1.Interval = 1;
                     this.Opacity -= 0.1;
@@ -90,9 +87,7 @@ namespace PFC___StandBy_CSharp.Forms
                     this.y = Screen.PrimaryScreen.WorkingArea.Height - this.Height * i - 5 * i;
                     this.Location = new Point(this.x, this.y);
                     break;
-
                 }
-
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
@@ -102,20 +97,22 @@ namespace PFC___StandBy_CSharp.Forms
                     this.pictureBox1.Image = Resources.icons8_ok_45px;
                     this.BackColor = Color.SeaGreen;
                     break;
+
                 case enmType.Error:
                     this.pictureBox1.Image = Resources.error;
                     this.BackColor = Color.DarkRed;
                     break;
+
                 case enmType.Info:
                     this.pictureBox1.Image = Resources.info;
                     this.BackColor = Color.RoyalBlue;
                     break;
+
                 case enmType.Warning:
                     this.pictureBox1.Image = Resources.warning;
                     this.BackColor = Color.DarkOrange;
                     break;
             }
-
 
             this.lblMsg.Text = msg;
 

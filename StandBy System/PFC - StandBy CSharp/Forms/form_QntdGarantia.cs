@@ -1,20 +1,13 @@
 ﻿using PFC___StandBy_CSharp.Dados;
-using PFC___StandBy_CSharp.Formatar_Campos;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Utils;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_QntdGarantia : Form
     {
-        private Formatar formatar = new Formatar();
         private InserirDados ins_Dados = new InserirDados();
         private AlterarDados ad = new AlterarDados();
         private int[] CorGeral = { 0, 0, 0 };
@@ -33,7 +26,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void gunaTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            formatar.AplicarApenasNumerosSemVirgula(txtGarantiaDias);
+            FormatarCampos.AplicarApenasNumerosSemVirgula(txtGarantiaDias);
         }
 
         private void form_QntdGarantia_KeyDown(object sender, KeyEventArgs e)

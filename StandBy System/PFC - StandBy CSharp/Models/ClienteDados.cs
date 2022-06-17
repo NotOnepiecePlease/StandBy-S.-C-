@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PFC___StandBy_CSharp.Models
+﻿namespace PFC___StandBy_CSharp.Models
 {
     public class ClienteDados
     {

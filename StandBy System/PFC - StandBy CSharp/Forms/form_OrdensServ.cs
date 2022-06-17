@@ -1,10 +1,8 @@
 ﻿using PFC___StandBy_CSharp.Dados;
-using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.PreencherComponentes;
 using System;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using PFC___StandBy_CSharp.Forms;
+﻿using PFC___StandBy_CSharp.Forms;
 
 namespace PFC___StandBy_CSharp.MsgBox
 {
-    class MensagensSucesso
+    internal class MensagensSucesso
     {
         public void Alert(string msg, form_AlertMessage.enmType type)
         {
@@ -17,6 +11,7 @@ namespace PFC___StandBy_CSharp.MsgBox
         }
 
         #region ORDENS DE SERVICO
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -52,10 +47,11 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("Serviço deletado com sucesso!", form_ALERT.AlertType.Sucesso);
             //message.Show();
         }
-        #endregion
 
+        #endregion ORDENS DE SERVICO
 
         #region SERVICOS CONCLUIDOS
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -75,10 +71,11 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("Serviço concluido com sucesso!", form_ALERT.AlertType.Sucesso);
             //message.Show();
         }
-        #endregion
 
+        #endregion SERVICOS CONCLUIDOS
 
         #region CADASTRO DE CLIENTE
+
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
@@ -106,6 +103,7 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("Cliente deletado com sucesso!", form_ALERT.AlertType.Sucesso);
             //message.Show();
         }
-        #endregion
+
+        #endregion CADASTRO DE CLIENTE
     }
 }

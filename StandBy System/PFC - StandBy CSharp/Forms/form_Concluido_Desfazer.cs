@@ -1,22 +1,17 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Concluido_Desfazer : Form
     {
-        int[] corGeral = { 0, 0, 0 };
-        AlterarDados ad = new AlterarDados();
-        DeletarDados dd = new DeletarDados();
-        form_Concluidos formConcluidos;
+        private int[] corGeral = { 0, 0, 0 };
+        private AlterarDados ad = new AlterarDados();
+        private DeletarDados dd = new DeletarDados();
+        private form_Concluidos formConcluidos;
+
         public form_Concluido_Desfazer(form_Concluidos _formConcluidos, int[] _corRgb)
         {
             InitializeComponent();
@@ -40,6 +35,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelRight.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelBottom.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
+
         public void CentralizarLabels()
         {
             lblData.Left = (panel1.Width / 2) - (lblData.Width / 2);

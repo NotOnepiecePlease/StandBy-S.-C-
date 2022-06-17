@@ -1,16 +1,12 @@
 ﻿using Guna.UI.WinForms;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PFC___StandBy_CSharp.Graficos
 {
-    class GraficoTotalGanhoAnualmente : conexao
+    internal class GraficoTotalGanhoAnualmente : conexao
     {
         public void TotalGanho(GunaLabel label, int _AnoAtual)
         {
@@ -24,7 +20,7 @@ namespace PFC___StandBy_CSharp.Graficos
 
                 dr = cmd.ExecuteReader();
                 dr.Read();
-                label.Text = "R$ "+Convert.ToString(dr.GetDecimal(0));
+                label.Text = "R$ " + Convert.ToString(dr.GetDecimal(0));
                 //con.Close();
             }
         }

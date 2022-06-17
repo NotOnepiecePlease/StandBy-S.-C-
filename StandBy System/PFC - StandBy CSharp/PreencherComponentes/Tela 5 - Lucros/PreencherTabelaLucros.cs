@@ -1,19 +1,13 @@
-﻿using Bunifu.DataViz.WinForms;
-using Bunifu.Framework.UI;
-using PFC___StandBy_CSharp.SqlDbConnect;
+﻿using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
 {
-    class PreencherTabelaLucros : conexao
+    internal class PreencherTabelaLucros : conexao
     {
         private decimal totalServicos;
         private decimal totalPecas;
@@ -23,10 +17,12 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
         {
             return totalLucros;
         }
+
         public decimal getServicos()
         {
             return totalServicos;
         }
+
         public decimal getPecas()
         {
             return totalPecas;
@@ -92,7 +88,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
 
         public void PreencherLucroMesAtual(DataGridView tabelaLucros, Label lbllucro)
         {
-
             try
             {
                 DataTable datatable = new DataTable();

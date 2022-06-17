@@ -1,11 +1,5 @@
 ﻿using PFC___StandBy_CSharp.SqlDbConnect;
-using PFC___StandBy_CSharp.Forms;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.MsgBox

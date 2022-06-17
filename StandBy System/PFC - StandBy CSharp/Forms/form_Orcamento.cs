@@ -1,20 +1,15 @@
 ﻿using PFC___StandBy_CSharp.PreencherComponentes.Tela_4___Orcamentos;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Orcamento : Form
     {
-        int[] corGeral = { 0, 0, 0 };
-        PreencherTableOrcamento preencherTable = new PreencherTableOrcamento();
+        private int[] corGeral = { 0, 0, 0 };
+        private PreencherTableOrcamento preencherTable = new PreencherTableOrcamento();
+
         public form_Orcamento(int[] _corRgb)
         {
             InitializeComponent();

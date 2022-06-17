@@ -1,35 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 //Word
 //using System.Reflection;
 //using Word = Microsoft.Office.Interop.Word;
 using System.IO;
+
 //using System.Diagnostics;
 using PFC___StandBy_CSharp.Properties;
+
 //using Microsoft.Office.Interop.Word;
 using System.Drawing.Printing;
-using PFC___StandBy_CSharp.Formatar_Campos;
 using PFC___StandBy_CSharp.Dados;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_WordNota : Form
     {
-
-        int qntDiasGarantia = 0;
-        string diretorioArquivoPadrao = Settings.Default.diretorio_default_word;
-        int[] corGeral = { 0, 0, 0 };
-        form_OrdensServ_Edit ordensServ;
-        Formatar apenasNumeros = new Formatar();
-        InserirDados ins_Dados = new InserirDados();
+        private int qntDiasGarantia = 0;
+        private string diretorioArquivoPadrao = Settings.Default.diretorio_default_word;
+        private int[] corGeral = { 0, 0, 0 };
+        private form_OrdensServ_Edit ordensServ;
+        private InserirDados ins_Dados = new InserirDados();
 
         public form_WordNota(form_OrdensServ_Edit _ordensServ, int[] _corRgb)
         {
@@ -42,6 +36,7 @@ namespace PFC___StandBy_CSharp.Forms
             CentralizarLabels();
             MudarCores();
         }
+
         public form_WordNota()
         {
             InitializeComponent();
@@ -90,8 +85,8 @@ namespace PFC___StandBy_CSharp.Forms
             gunaPanel1.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             switchGarantia.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
         }
+
         private void CentralizarLabels()
         {
             var configImpressora = new PrinterSettings();
@@ -219,7 +214,6 @@ namespace PFC___StandBy_CSharp.Forms
             y += dy;
             y += dy;
             e.Graphics.DrawString("NÃO É VÁLIDO COMO DOCUMENTO FISCAL", fntbold, Brushes.Black, new PointF(x, y), sfcenter);
-
         }
 
         public void ImprimirNota()
@@ -255,7 +249,6 @@ namespace PFC___StandBy_CSharp.Forms
                 //MessageBox.Show("30");
                 qntDiasGarantia = 30;
                 return "Garantia de 30 dias sob o serviço executado";
-
             }
             //se checkbox 2 meses tiver marcada e o resto nao, garantia = 60 dias
             else if (checkboxDoisMeses.Checked == true && checkboxUmMes.Checked == false && checkboxTresMeses.Checked == false && txtGarantia.Enabled == false)
@@ -325,7 +318,6 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_WordNota_Load(object sender, EventArgs e)
         {
-
         }
 
         public void DeletarArquivoNoInicio()

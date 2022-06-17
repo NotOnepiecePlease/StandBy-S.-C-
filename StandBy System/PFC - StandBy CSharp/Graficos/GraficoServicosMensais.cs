@@ -7,14 +7,11 @@ using Bunifu.DataViz.WinForms;
 using DataPoint = Bunifu.DataViz.WinForms.DataPoint;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Windows.Forms.DataVisualization.Charting;
-using System.Collections;
 
 namespace PFC___StandBy_CSharp.Graficos
 {
-    class GraficoServicosMensais : conexao
+    internal class GraficoServicosMensais : conexao
     {
-
         public void Preencher(BunifuDataViz bunifuDataViz2, int _mes, Label lblQntServicosMensais)
         {
             int contadorServicosMes = 0;
@@ -106,7 +103,6 @@ namespace PFC___StandBy_CSharp.Graficos
                         graficoArea.addLabely(vetNomeMes[i].ToUpper(), vetServicosMes[i]);
                     }
 
-
                     //bunifuDataViz2.colorSet.Add(Color.FromArgb(0, 168, 235));
                     bunifuDataViz2.colorSet.Add(Color.FromArgb(0, 168, 235));
                     bunifuDataViz2.colorSet.Add(Color.White);
@@ -129,7 +125,7 @@ namespace PFC___StandBy_CSharp.Graficos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERRO: Nao foi possivel carregar graficos pois nao existem dados! \n\n\n" + ex,"Sem Dados!",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ERRO: Nao foi possivel carregar graficos pois nao existem dados! \n\n\n" + ex, "Sem Dados!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         } //procedure
     }

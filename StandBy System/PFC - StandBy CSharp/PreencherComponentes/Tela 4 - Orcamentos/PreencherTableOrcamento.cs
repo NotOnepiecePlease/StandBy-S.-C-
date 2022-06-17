@@ -1,22 +1,15 @@
 ﻿using Bunifu.Framework.UI;
-using Guna.UI.WinForms;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_4___Orcamentos
 {
-    class PreencherTableOrcamento : conexao
+    internal class PreencherTableOrcamento : conexao
     {
-
         public void Preencher(BunifuCustomDataGrid tableOrcamento, string _marca, Label _lblSemDados)
         {
             try
@@ -24,7 +17,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_4___Orcamentos
                 DataTable dataTable = new DataTable();
                 using (SqlConnection conexao = OpenConnection())
                 {
-
                     string query = "select * from tb_orcamento where orc_aparelho = @marca";
 
                     SqlCommand cmd = new SqlCommand(query, conexao);
@@ -47,9 +39,8 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_4___Orcamentos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao preencher a tabela.\n\n\nErro: "+ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao preencher a tabela.\n\n\nErro: " + ex, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

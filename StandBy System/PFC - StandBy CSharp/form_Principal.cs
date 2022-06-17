@@ -1,14 +1,7 @@
 ﻿using FontAwesome.Sharp;
-using PFC___StandBy_CSharp.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp
@@ -17,8 +10,10 @@ namespace PFC___StandBy_CSharp
     {
         //Fields
         private IconButton currentBtn;
+
         private Panel leftBorderBtn;
         private Form currentChildForm;
+
         public form_Principal()
         {
             InitializeComponent();
@@ -68,6 +63,7 @@ namespace PFC___StandBy_CSharp
                 iconAbaAtual.IconColor = color;
             }
         }
+
         private void DisableButton()
         {
             if (currentBtn != null)
@@ -81,6 +77,7 @@ namespace PFC___StandBy_CSharp
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+
         private void OpenChildForm(Form formFilho)
         {
             //open only form
@@ -99,6 +96,7 @@ namespace PFC___StandBy_CSharp
             formFilho.Show();
             lblAbaAtual.Text = formFilho.Text;
         }
+
         private void Reset()
         {
             DisableButton();
@@ -107,6 +105,7 @@ namespace PFC___StandBy_CSharp
             iconAbaAtual.IconColor = Color.White;
             lblAbaAtual.Text = "Inicio";
         }
+
         //Events
         //Reset
         private void iconVoltar_Click(object sender, EventArgs e)
@@ -124,26 +123,31 @@ namespace PFC___StandBy_CSharp
             ActivateButton(sender, RGBColors.color1);
             //OpenChildForm(new form_OrdensServico());
         }
+
         private void btn_CadCliente_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
             //OpenChildForm(new form_CadastrarCliente());
         }
+
         private void btn_ServicosConcluidos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
             //OpenChildForm(new FormProducts());
         }
+
         private void btn_Orcamentos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
             //OpenChildForm(new FormCustomers());
         }
+
         private void btn_Extrato_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
             //OpenChildForm(new FormMarketing());
         }
+
         //private void btnSetting_Click(object sender, EventArgs e)
         //{
         //    ActivateButton(sender, RGBColors.color6);
@@ -152,9 +156,11 @@ namespace PFC___StandBy_CSharp
 
         //Arrastar Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
+        private static extern void ReleaseCapture();
+
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private static extern void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         //Evento de Arrastar o Form
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
@@ -166,7 +172,5 @@ namespace PFC___StandBy_CSharp
         {
             Application.Exit();
         }
-
-        
     }
 }

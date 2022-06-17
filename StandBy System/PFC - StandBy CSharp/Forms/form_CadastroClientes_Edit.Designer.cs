@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes_Edit));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cardFundo = new Bunifu.Framework.UI.BunifuCards();
             this.groupEndereco = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.txtBairro = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -47,6 +47,10 @@
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupInfoPessoal = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.txtTelefoneRecados = new System.Windows.Forms.TextBox();
+            this.separatorTEL_RECADO = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.separatorTEL_CLIENTE = new Bunifu.UI.WinForms.BunifuSeparator();
             this.btnZerarDataBotao = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtDataNascimento = new System.Windows.Forms.TextBox();
             this.separatorDATA = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -58,11 +62,9 @@
             this.lblTelefonePrincipal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCpf = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtTelefone = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblTelefoneRecados = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chkFeminino = new Bunifu.UI.WinForms.BunifuCheckBox();
-            this.txtTelefoneRecados = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.chkMasculino = new Bunifu.UI.WinForms.BunifuCheckBox();
@@ -413,6 +415,10 @@
             this.groupInfoPessoal.BorderColor = System.Drawing.SystemColors.Control;
             this.groupInfoPessoal.BorderRadius = 1;
             this.groupInfoPessoal.BorderThickness = 1;
+            this.groupInfoPessoal.Controls.Add(this.txtTelefoneRecados);
+            this.groupInfoPessoal.Controls.Add(this.separatorTEL_RECADO);
+            this.groupInfoPessoal.Controls.Add(this.txtTelefone);
+            this.groupInfoPessoal.Controls.Add(this.separatorTEL_CLIENTE);
             this.groupInfoPessoal.Controls.Add(this.btnZerarDataBotao);
             this.groupInfoPessoal.Controls.Add(this.txtDataNascimento);
             this.groupInfoPessoal.Controls.Add(this.separatorDATA);
@@ -424,11 +430,9 @@
             this.groupInfoPessoal.Controls.Add(this.lblTelefonePrincipal);
             this.groupInfoPessoal.Controls.Add(this.bunifuCustomLabel6);
             this.groupInfoPessoal.Controls.Add(this.lblCpf);
-            this.groupInfoPessoal.Controls.Add(this.txtTelefone);
             this.groupInfoPessoal.Controls.Add(this.bunifuLabel2);
             this.groupInfoPessoal.Controls.Add(this.lblTelefoneRecados);
             this.groupInfoPessoal.Controls.Add(this.chkFeminino);
-            this.groupInfoPessoal.Controls.Add(this.txtTelefoneRecados);
             this.groupInfoPessoal.Controls.Add(this.bunifuLabel1);
             this.groupInfoPessoal.Controls.Add(this.txtCpf);
             this.groupInfoPessoal.Controls.Add(this.chkMasculino);
@@ -446,6 +450,71 @@
             this.groupInfoPessoal.TabIndex = 81;
             this.groupInfoPessoal.TabStop = false;
             this.groupInfoPessoal.Text = "Informações Pessoais";
+            // 
+            // txtTelefoneRecados
+            // 
+            this.txtTelefoneRecados.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTelefoneRecados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
+            this.txtTelefoneRecados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefoneRecados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtTelefoneRecados.ForeColor = System.Drawing.Color.Silver;
+            this.txtTelefoneRecados.Location = new System.Drawing.Point(621, 55);
+            this.txtTelefoneRecados.MaxLength = 18;
+            this.txtTelefoneRecados.Multiline = true;
+            this.txtTelefoneRecados.Name = "txtTelefoneRecados";
+            this.txtTelefoneRecados.Size = new System.Drawing.Size(292, 20);
+            this.txtTelefoneRecados.TabIndex = 85;
+            this.txtTelefoneRecados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTelefoneRecados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefoneRecados_KeyPress);
+            // 
+            // separatorTEL_RECADO
+            // 
+            this.separatorTEL_RECADO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.separatorTEL_RECADO.BackColor = System.Drawing.Color.Transparent;
+            this.separatorTEL_RECADO.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("separatorTEL_RECADO.BackgroundImage")));
+            this.separatorTEL_RECADO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.separatorTEL_RECADO.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.separatorTEL_RECADO.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.separatorTEL_RECADO.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.separatorTEL_RECADO.LineThickness = 2;
+            this.separatorTEL_RECADO.Location = new System.Drawing.Point(621, 70);
+            this.separatorTEL_RECADO.Margin = new System.Windows.Forms.Padding(2);
+            this.separatorTEL_RECADO.Name = "separatorTEL_RECADO";
+            this.separatorTEL_RECADO.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.separatorTEL_RECADO.Size = new System.Drawing.Size(292, 16);
+            this.separatorTEL_RECADO.TabIndex = 86;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtTelefone.ForeColor = System.Drawing.Color.Silver;
+            this.txtTelefone.Location = new System.Drawing.Point(621, 26);
+            this.txtTelefone.MaxLength = 18;
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(292, 16);
+            this.txtTelefone.TabIndex = 83;
+            this.txtTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
+            // 
+            // separatorTEL_CLIENTE
+            // 
+            this.separatorTEL_CLIENTE.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.separatorTEL_CLIENTE.BackColor = System.Drawing.Color.Transparent;
+            this.separatorTEL_CLIENTE.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("separatorTEL_CLIENTE.BackgroundImage")));
+            this.separatorTEL_CLIENTE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.separatorTEL_CLIENTE.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.separatorTEL_CLIENTE.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.separatorTEL_CLIENTE.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.separatorTEL_CLIENTE.LineThickness = 2;
+            this.separatorTEL_CLIENTE.Location = new System.Drawing.Point(621, 39);
+            this.separatorTEL_CLIENTE.Margin = new System.Windows.Forms.Padding(2);
+            this.separatorTEL_CLIENTE.Name = "separatorTEL_CLIENTE";
+            this.separatorTEL_CLIENTE.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.separatorTEL_CLIENTE.Size = new System.Drawing.Size(292, 14);
+            this.separatorTEL_CLIENTE.TabIndex = 84;
             // 
             // btnZerarDataBotao
             // 
@@ -466,11 +535,11 @@
             this.btnZerarDataBotao.ColorContrastOnClick = 45;
             this.btnZerarDataBotao.ColorContrastOnHover = 45;
             this.btnZerarDataBotao.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnZerarDataBotao.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnZerarDataBotao.CustomizableEdges = borderEdges3;
             this.btnZerarDataBotao.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnZerarDataBotao.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnZerarDataBotao.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -544,12 +613,11 @@
             this.txtDataNascimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtDataNascimento.ForeColor = System.Drawing.Color.Silver;
-            this.txtDataNascimento.Location = new System.Drawing.Point(163, 88);
+            this.txtDataNascimento.Location = new System.Drawing.Point(163, 89);
             this.txtDataNascimento.MaxLength = 10;
             this.txtDataNascimento.Name = "txtDataNascimento";
             this.txtDataNascimento.Size = new System.Drawing.Size(292, 16);
             this.txtDataNascimento.TabIndex = 79;
-            this.txtDataNascimento.Text = "Data de Nascimento";
             this.txtDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDataNascimento.Enter += new System.EventHandler(this.txtDataNascimento_Enter);
             this.txtDataNascimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataNascimento_KeyPress);
@@ -727,32 +795,6 @@
             this.lblCpf.Text = "CPF/CNPJ";
             this.lblCpf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTelefone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtTelefone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
-            this.txtTelefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtTelefone.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtTelefone.ForeColor = System.Drawing.Color.White;
-            this.txtTelefone.HintForeColor = System.Drawing.Color.Transparent;
-            this.txtTelefone.HintText = "";
-            this.txtTelefone.isPassword = false;
-            this.txtTelefone.LineFocusedColor = System.Drawing.Color.Lavender;
-            this.txtTelefone.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.txtTelefone.LineMouseHoverColor = System.Drawing.Color.Lavender;
-            this.txtTelefone.LineThickness = 2;
-            this.txtTelefone.Location = new System.Drawing.Point(621, 15);
-            this.txtTelefone.Margin = new System.Windows.Forms.Padding(5);
-            this.txtTelefone.MaxLength = 15;
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(292, 32);
-            this.txtTelefone.TabIndex = 4;
-            this.txtTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // bunifuLabel2
             // 
             this.bunifuLabel2.AllowParentOverrides = false;
@@ -840,33 +882,6 @@
             this.chkFeminino.ToolTipText = null;
             this.chkFeminino.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkFeminino_CheckedChanged);
             // 
-            // txtTelefoneRecados
-            // 
-            this.txtTelefoneRecados.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTelefoneRecados.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtTelefoneRecados.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtTelefoneRecados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
-            this.txtTelefoneRecados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtTelefoneRecados.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTelefoneRecados.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefoneRecados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtTelefoneRecados.ForeColor = System.Drawing.Color.White;
-            this.txtTelefoneRecados.HintForeColor = System.Drawing.Color.Transparent;
-            this.txtTelefoneRecados.HintText = "";
-            this.txtTelefoneRecados.isPassword = false;
-            this.txtTelefoneRecados.LineFocusedColor = System.Drawing.Color.Lavender;
-            this.txtTelefoneRecados.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.txtTelefoneRecados.LineMouseHoverColor = System.Drawing.Color.Lavender;
-            this.txtTelefoneRecados.LineThickness = 2;
-            this.txtTelefoneRecados.Location = new System.Drawing.Point(621, 48);
-            this.txtTelefoneRecados.Margin = new System.Windows.Forms.Padding(5);
-            this.txtTelefoneRecados.MaxLength = 100;
-            this.txtTelefoneRecados.Name = "txtTelefoneRecados";
-            this.txtTelefoneRecados.Size = new System.Drawing.Size(292, 32);
-            this.txtTelefoneRecados.TabIndex = 7;
-            this.txtTelefoneRecados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTelefoneRecados.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefone_KeyDown);
-            // 
             // bunifuLabel1
             // 
             this.bunifuLabel1.AllowParentOverrides = false;
@@ -892,7 +907,7 @@
             this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtCpf.ForeColor = System.Drawing.Color.White;
-            this.txtCpf.Location = new System.Drawing.Point(163, 57);
+            this.txtCpf.Location = new System.Drawing.Point(163, 58);
             this.txtCpf.MaxLength = 18;
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(292, 16);
@@ -1178,8 +1193,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel lblNascimento;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtNomeCliente;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtTelefone;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtTelefoneRecados;
         public System.Windows.Forms.TextBox txtCpf;
         private Guna.UI.WinForms.GunaDragControl dragGroupBoxInfoPessoais;
         private Guna.UI.WinForms.GunaDragControl dragEndereco;
@@ -1200,5 +1213,9 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox3;
         private Bunifu.UI.WinForms.BunifuSeparator separatorDATA;
         public System.Windows.Forms.TextBox txtDataNascimento;
+        private Bunifu.UI.WinForms.BunifuSeparator separatorTEL_RECADO;
+        private Bunifu.UI.WinForms.BunifuSeparator separatorTEL_CLIENTE;
+        public System.Windows.Forms.TextBox txtTelefoneRecados;
+        public System.Windows.Forms.TextBox txtTelefone;
     }
 }

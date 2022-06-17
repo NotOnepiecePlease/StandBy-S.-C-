@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -26,20 +19,22 @@ namespace PFC___StandBy_CSharp.Forms
                     //pictureBox1.Image = imageList1.Images[0];
                     iconPictureBox1.ImageLocation = "../../Resources/Sucesso.png";
                     break;
+
                 case AlertType.Aviso:
                     iconPictureBox1.ImageLocation = "../../Resources/Aviso.png";
                     break;
+
                 case AlertType.Erro:
                     iconPictureBox1.ImageLocation = "../../Resources/Erro.png";
                     break;
             }
-
         }
 
         public enum AlertType
         {
             Sucesso, Aviso, Erro
         }
+
         private void LabelResize()
         {
             int x = (panelMensagem.Size.Width - lblMensagem.Width) / 2;
@@ -84,7 +79,6 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
-
                 //Thread.Sleep(200);
                 show.Stop();
                 //closeform.Start();

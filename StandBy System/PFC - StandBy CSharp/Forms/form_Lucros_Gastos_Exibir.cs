@@ -1,24 +1,19 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Lucros_Gastos_Exibir : Form
     {
-        form_Lucros formLucros;
-        PreencherTabelaGastos tab_Gastos = new PreencherTabelaGastos();
-        AlterarDados ad = new AlterarDados();
-        DeletarDados dd = new DeletarDados();
-        int[] corGeral = { 0, 0, 0 };
+        private form_Lucros formLucros;
+        private PreencherTabelaGastos tab_Gastos = new PreencherTabelaGastos();
+        private AlterarDados ad = new AlterarDados();
+        private DeletarDados dd = new DeletarDados();
+        private int[] corGeral = { 0, 0, 0 };
+
         public form_Lucros_Gastos_Exibir(form_Lucros _formLucros, int[] corRgb, bool _checkBox)
         {
             InitializeComponent();
@@ -38,6 +33,7 @@ namespace PFC___StandBy_CSharp.Forms
             menu.Items[1].BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             menu.Items[2].BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
+
         private void form_Lucros_Gastos_Exibir_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

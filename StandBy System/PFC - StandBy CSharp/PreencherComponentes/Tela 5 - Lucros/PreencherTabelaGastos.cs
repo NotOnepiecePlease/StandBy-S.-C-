@@ -1,16 +1,12 @@
 ﻿using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
 {
-    class PreencherTabelaGastos : conexao
+    internal class PreencherTabelaGastos : conexao
     {
         private decimal totalGastos;
 
@@ -23,9 +19,8 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
         {
             //Esse metodo so vai trazer servicos ativos no mes
             DataTable datatable = new DataTable();
-            using(SqlConnection conexao = OpenConnection())
+            using (SqlConnection conexao = OpenConnection())
             {
-
                 string procedure = "GastosBuscar";
 
                 SqlCommand cmd = new SqlCommand(procedure, conexao);
@@ -53,7 +48,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
 
         public void BuscarGastosPorNome(DataGridView tabelaGastos, string _Gasto)
         {
-
             using (SqlConnection con = OpenConnection())
             {
                 DataTable datatable = new DataTable();
@@ -70,7 +64,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
 
                 tabelaGastos.DataSource = datatable;
             }
-
 
             //DataTable datatable = new DataTable();
             //using (SqlConnection conexao = OpenConnection())
@@ -111,7 +104,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
             DataTable datatable = new DataTable();
             using (SqlConnection conexao = OpenConnection())
             {
-
                 string query = "select gst_id, gst_data, gst_produto, gst_valor, gst_temporario " +
                     "from tb_gastos where gst_temporario = @_Temp " +
                     "and gst_data BETWEEN @_Date1 and @_Date2 " +
@@ -160,7 +152,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
             DataTable datatable = new DataTable();
             using (SqlConnection conexao = OpenConnection())
             {
-
                 string query = "select gst_id, gst_data, gst_produto, gst_valor, gst_temporario " +
                         "from tb_gastos " +
                         "where gst_temporario = 0 " +
@@ -205,14 +196,13 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
                 }
             }
         }
+
         public void PreencherGastosTotais(DataGridView tabelaGastos, DateTime _date1, DateTime _date2, int _Temp)
         {
             DataTable datatable = new DataTable();
             using (SqlConnection conexao = OpenConnection())
             {
-
                 string procedure = "GastosBuscarEntreDatas";
-
 
                 SqlCommand cmd = new SqlCommand(procedure, conexao);
                 cmd.Parameters.AddWithValue("@_Temp", _Temp);

@@ -1,16 +1,12 @@
 ﻿using PFC___StandBy_CSharp.Dados;
-using PFC___StandBy_CSharp.MsgBox;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.SqlDbConnect

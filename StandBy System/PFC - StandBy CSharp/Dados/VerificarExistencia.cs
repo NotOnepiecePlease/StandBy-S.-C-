@@ -1,15 +1,10 @@
 ﻿using PFC___StandBy_CSharp.SqlDbConnect;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PFC___StandBy_CSharp.Dados
 {
-    class VerificarExistencia : conexao
+    internal class VerificarExistencia : conexao
     {
         public bool VerificarExistenciaServicoCliente(int _idcliente)
         {
@@ -38,7 +33,6 @@ namespace PFC___StandBy_CSharp.Dados
 
         public bool VerificarExistenciaGarantia(int _fkServico)
         {
-
             using (SqlConnection conexao = OpenConnection())
             {
                 SqlDataReader dr;
@@ -60,7 +54,6 @@ namespace PFC___StandBy_CSharp.Dados
 
         public bool VerificarExistenciaCPF(string _cpfCliente)
         {
-
             using (SqlConnection conexao = OpenConnection())
             {
                 SqlDataReader dr;

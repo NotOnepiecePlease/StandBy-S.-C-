@@ -1,29 +1,23 @@
 ﻿using PFC___StandBy_CSharp.Dados;
-using PFC___StandBy_CSharp.Formatar_Campos;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Utils;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Lucros_Gastos_Exibir_Alterar : Form
     {
-        form_Lucros formLucros;
-        AlterarDados ad = new AlterarDados();
-        Formatar formatar = new Formatar();
-        int[] corGeral = { 0, 0, 0 };
+        private form_Lucros formLucros;
+        private AlterarDados ad = new AlterarDados();
+        private int[] corGeral = { 0, 0, 0 };
+
         public form_Lucros_Gastos_Exibir_Alterar(form_Lucros _formLucros, int[] corRgb)
         {
             InitializeComponent();
             formLucros = _formLucros;
             corGeral = corRgb;
-            formatar.AplicarApenasNumeroVirgulaEMoeda(txtValorGastosEditar);
+            FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtValorGastosEditar);
             MudarCores();
         }
 
@@ -40,7 +34,7 @@ namespace PFC___StandBy_CSharp.Forms
             try
             {
                 //Tirar o R$ do inicio do valor
-                formatar.TirarMascara(txtValorGastosEditar);
+                FormatarCampos.TirarMascara(txtValorGastosEditar);
                 ad.AtualizarGastos(datePicker1.Value, txtProdutoGastosEditar.Text,
                 Convert.ToDecimal(txtValorGastosEditar.Text), Convert.ToInt32(lblID.Text));
                 formLucros.PreencherTableConformCheck();

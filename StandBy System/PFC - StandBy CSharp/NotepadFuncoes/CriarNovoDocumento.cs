@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.NotepadFuncoes
 {
-    class CriarNovoDocumento
+    internal class CriarNovoDocumento
     {
         public void Novo(RichTextBox richText)
         {
@@ -21,7 +16,7 @@ namespace PFC___StandBy_CSharp.NotepadFuncoes
                 DialogResult dialogResult = MessageBox.Show(@"Deseja realmente criar um novo documento?
 Os dados serão apagados!",
                     "ALERTA!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if(dialogResult == DialogResult.Yes)
+                if (dialogResult == DialogResult.Yes)
                 {
                     richText.Clear();
                     richText.Focus();

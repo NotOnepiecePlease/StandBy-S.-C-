@@ -2,16 +2,11 @@
 using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -20,12 +15,13 @@ namespace PFC___StandBy_CSharp.Forms
     {
         private static string pastaRaiz = @"./PasswordPattern";
 
-        conexao con = new conexao();
-        AlterarDados ad = new AlterarDados();
-        Image image1 = null;
+        private conexao con = new conexao();
+        private AlterarDados ad = new AlterarDados();
+        private Image image1 = null;
 
-        int[] corGeral = new int[3] { 0, 0, 0 };
-        bool isUpdate = false;
+        private int[] corGeral = new int[3] { 0, 0, 0 };
+        private bool isUpdate = false;
+
         public form_PasswordPattern(int[] _corRgb)
         {
             InitializeComponent();
@@ -61,7 +57,6 @@ namespace PFC___StandBy_CSharp.Forms
             btnSenhaCorreta.OnPressedState.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnSenhaCorreta.OnPressedState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-
             //Senha errada
             btnSenhaIncorreta.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnSenhaIncorreta.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -74,13 +69,12 @@ namespace PFC___StandBy_CSharp.Forms
 
             btnSenhaIncorreta.OnPressedState.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnSenhaIncorreta.OnPressedState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
         }
+
         public void criarPastaDasSenhas()
         {
             if (Directory.Exists(pastaRaiz))
             {
-
             }
             else
             {
@@ -90,18 +84,18 @@ namespace PFC___StandBy_CSharp.Forms
 
         private static void SaveScreenshot(Form frm)
         {
-
-
             string ImagePath = string.Format(@"./PasswordPattern/Screen.png", DateTime.Now.Ticks);
             //Bitmap Image = new Bitmap(frm.Width, frm.Height);
             Bitmap Image = new Bitmap(261, 264);
             frm.DrawToBitmap(Image, new Rectangle(0, 0, frm.Width, frm.Height));
             Image.Save(ImagePath, ImageFormat.Png);
         }
+
         public void CentralizarLabels(BunifuCustomLabel label)
         {
             label.Left = (this.Width / 2) - (label.Width / 2);
         }
+
         private void lockScreenControl1_PassCodeSubmitted(object sender, GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs e)
         {
             lblPasswordInNumbers.Text = "";
@@ -141,8 +135,8 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Label q pergunta se a senha esta correta
             lblPasswordIsCorrect.Visible = true;
-
         }
+
         private Image GetCopyImage(string path)
         {
             using (Image im = Image.FromFile(path))
@@ -164,7 +158,6 @@ namespace PFC___StandBy_CSharp.Forms
 
                     cmd.Parameters.AddWithValue("@image", image);
                     cmd.ExecuteNonQuery();
-
                 }
             }
             catch (Exception ex)
@@ -190,7 +183,6 @@ namespace PFC___StandBy_CSharp.Forms
                 bytes = (byte[])reader[0];
 
                 return bytes;
-
             }
         }
 

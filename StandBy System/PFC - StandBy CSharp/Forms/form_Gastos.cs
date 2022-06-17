@@ -1,20 +1,15 @@
 ﻿using PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Gastos : Form
     {
-        PreencherTabelaGastos preencherGastos = new PreencherTabelaGastos();
-        int[] corGeral = { 0, 0, 0 };
+        private PreencherTabelaGastos preencherGastos = new PreencherTabelaGastos();
+        private int[] corGeral = { 0, 0, 0 };
+
         public form_Gastos(int[] _corRgb)
         {
             InitializeComponent();
@@ -28,6 +23,7 @@ namespace PFC___StandBy_CSharp.Forms
             iconClose.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
+
         private void form_Gastos_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

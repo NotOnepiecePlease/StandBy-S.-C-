@@ -1,15 +1,11 @@
 ﻿using PFC___StandBy_CSharp.Forms;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.NotepadFuncoes
 {
-    class SalvarDocumento
+    internal class SalvarDocumento
     {
         public void Salvar(SaveFileDialog saveFileDialog, RichTextBox richText, form_Notepad f_note)
         {
@@ -29,7 +25,7 @@ namespace PFC___StandBy_CSharp.NotepadFuncoes
                         streamWriter.Write(richText.Text);
                         streamWriter.Flush();
                         streamWriter.Close();
-                        
+
                         var nomeArquivo = new DirectoryInfo(saveFileDialog.FileName).Name;
                         f_note.Text = nomeArquivo;
 

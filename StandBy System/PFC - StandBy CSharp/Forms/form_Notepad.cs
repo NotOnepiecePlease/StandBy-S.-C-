@@ -1,24 +1,17 @@
 ﻿using PFC___StandBy_CSharp.NotepadFuncoes;
 using PFC___StandBy_CSharp.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Notepad : Form
     {
-        int richTextFoiAlterado;
-        int[] corGeral = { 0, 0, 0 };
-        CriarNovoDocumento newNote = new CriarNovoDocumento();
-        SalvarDocumento saveNote = new SalvarDocumento();
+        private int richTextFoiAlterado;
+        private int[] corGeral = { 0, 0, 0 };
+        private CriarNovoDocumento newNote = new CriarNovoDocumento();
+        private SalvarDocumento saveNote = new SalvarDocumento();
+
         public form_Notepad(int[] _corRgb)
         {
             InitializeComponent();
@@ -32,11 +25,12 @@ namespace PFC___StandBy_CSharp.Forms
         {
             richTextFoiAlterado = richTextBox1.Text.Length;
         }
-        
+
         public int getRichTextTamanho()
         {
             return richTextFoiAlterado;
         }
+
         private void coresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ColorDialog cores = new ColorDialog();
@@ -107,17 +101,17 @@ namespace PFC___StandBy_CSharp.Forms
                 return false;
             }
         }
+
         private void form_Notepad_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (RichTextContemTexto() == false)
             {
                 //this.Close();
             }
-            else if(RichTextContemTexto() == true)
+            else if (RichTextContemTexto() == true)
             {
                 DialogResult dialogResult = MessageBox.Show(@"Deseja salvar suas anotações antes de sair?", "SAIR",
                     MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
 
                 if (dialogResult == DialogResult.Yes)
                 {

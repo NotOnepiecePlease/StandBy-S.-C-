@@ -1,20 +1,15 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_VerGarantia : Form
     {
-        BuscarDados bd = new BuscarDados();
-        int[] corGeral = { 0, 0, 0 };
+        private BuscarDados bd = new BuscarDados();
+        private int[] corGeral = { 0, 0, 0 };
+
         public form_VerGarantia(int[] _corRgb)
         {
             InitializeComponent();
@@ -36,8 +31,8 @@ namespace PFC___StandBy_CSharp.Forms
             panelGarantia.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             btnConfirmar.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
         }
+
         public void CentralizarLabels()
         {
             lblAparelho.Left = (this.Width / 2) - (lblAparelho.Width / 2);
@@ -47,6 +42,7 @@ namespace PFC___StandBy_CSharp.Forms
             lblServico.Left = (this.Width / 2) - (lblServico.Width / 2);
             lblDiasDeGarantia.Left = (this.Width / 2) - (lblDiasDeGarantia.Width / 2);
         }
+
         public void EsconderComponentes()
         {
             lblAparelho.Visible = false;
@@ -65,7 +61,6 @@ namespace PFC___StandBy_CSharp.Forms
             gunaLabel6.Visible = false;
         }
 
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -73,7 +68,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_VerGarantia_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
             }

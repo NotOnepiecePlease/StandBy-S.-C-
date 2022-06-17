@@ -1,30 +1,24 @@
 ﻿using PFC___StandBy_CSharp.Dados;
-using PFC___StandBy_CSharp.Formatar_Campos;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Utils;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Orcamento_Adicionar : Form
     {
-        Formatar formatar = new Formatar();
-        int[] corGeral = { 0, 0, 0 };
-        InserirDados inserirDados = new InserirDados();
-        form_Orcamento formOrcamento;
+        private int[] corGeral = { 0, 0, 0 };
+        private InserirDados inserirDados = new InserirDados();
+        private form_Orcamento formOrcamento;
+
         public form_Orcamento_Adicionar(form_Orcamento _formOrcamento, int[] _corRgb)
         {
             InitializeComponent();
             formOrcamento = _formOrcamento;
-            formatar.AplicarApenasNumeroVirgulaEMoeda(txtValor);
-            formatar.AplicarApenasNumeroVirgulaEMoeda(txtPeca);
-            formatar.AplicarApenasNumeroVirgulaEMoeda(txtTotal);
+            FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtValor);
+            FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtPeca);
+            FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtTotal);
             corGeral = _corRgb;
             MudarCores();
         }
@@ -55,9 +49,9 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
-                formatar.TirarMascara(txtPeca);
-                formatar.TirarMascara(txtValor);
-                formatar.TirarMascara(txtTotal);
+                FormatarCampos.TirarMascara(txtPeca);
+                FormatarCampos.TirarMascara(txtValor);
+                FormatarCampos.TirarMascara(txtTotal);
                 inserirDados.InserirOrcamento(cmbMarca.SelectedItem.ToString(), txtModelo.Text, Convert.ToDecimal(txtPeca.Text), Convert.ToDecimal(txtValor.Text), Convert.ToDecimal(txtTotal.Text));
                 formOrcamento.PreencherTabela(cmbMarca.SelectedItem.ToString());
                 this.Close();

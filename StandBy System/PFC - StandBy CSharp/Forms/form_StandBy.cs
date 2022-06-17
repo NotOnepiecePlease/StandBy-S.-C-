@@ -1,14 +1,18 @@
 ﻿using PFC___StandBy_CSharp.ChecarUpdates;
 using PFC___StandBy_CSharp.Graficos;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Sockets;
-using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu.Json;
 using PFC___StandBy_CSharp.Dados;
+using PFC___StandBy_CSharp.Models;
 using Application = System.Windows.Forms.Application;
 using Point = System.Drawing.Point;
 
@@ -31,6 +35,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             InitializeComponent();
             //randomizarCores(100);
+            //APIMunicipio();
             IniciarPainelCor();
             bd.CriarDiretorioEscreverConfigs();
             CarregarGraficos();
@@ -46,6 +51,32 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Aqui verifica a versao
             backVerificarVersao.RunWorkerAsync();
+        }
+
+        private async Task APIMunicipio()
+        {
+            string path = @"./Municipios.txt";
+            try
+            {
+                HttpClient client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync("https://servicodados.ibge.gov.br/api/v1/localidades/distritos");
+                string content = await response.Content.ReadAsStringAsync();
+
+                var JsonDeserialized1 = JsonConvert.DeserializeObject<List<MunicipioModel.Municipio>>(content);
+
+                //JsonDeserialized1.ForEach(x => Console.WriteLine(x.Nome));
+                //JsonDeserialized1.OrderBy(x => x.Nome).ToList().ForEach(m => File.AppendAllText(path, m.Nome + "\n"));
+
+                JsonDeserialized1.OrderBy(x => x.Nome)
+                    .ToList()
+                    .GroupBy(x => x.Nome)
+                    .Select(x => x.First())
+                    .ToList().ForEach(m => File.AppendAllText(path, m.Nome + "\n"));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"{e.Message}");
+            }
         }
 
         private string PegarIp()
