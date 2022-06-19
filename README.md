@@ -53,7 +53,7 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 		- Tempo de entrega finalizado = **VERMELHO**
 
 <b>== Modulo de Clientes</b>
-- [x] Cadastro de Clientes (Nome, Telefone Principal, Telefone Alternativo, CPF e CNPJ) ***[OK]***
+- [x] Cadastro de Clientes (Nome, Telefone Principal, Telefone Alternativo, CPF/CNPJ, Nome Recado, Parentesco Recado, Sexo, Data Nascimento, CEP, Endereço, Complemento, Bairro, Cidade e Estado) ***[OK]***
 - [x] Edição de Clientes ***[OK]***
 - [x] Remoção de Clientes ***[OK]***
 - [x] Exibição de Clientes ***[OK]***
@@ -63,6 +63,7 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 <b>== Modulo de Conclusões</b>
 - [x] Cancelamento da conclusão de um serviço ***[OK]***
 - [x] Busca por serviços concluídos ***[OK]***
+- [x] Ver garantia do serviço ***[OK]***
 
 <b>== Modulo de Lucros/Gastos</b>
 - [x] Busca dos lucros entre datas determinadas ***[OK]***
@@ -104,22 +105,22 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 
 </center>
 
-# **TELA PRINCIPAL**![alt text](https://i.imgur.com/AddK8aa.png)
+# **TELA PRINCIPAL**![alt text](https://i.imgur.com/B1CszX3.png)
 &nbsp;
 &nbsp;
-# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/9goum0w.png)
+# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/fnqyG1e.png)
 &nbsp;
 &nbsp;
-# EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/c98xztQ.png)
+# EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/PFAHkj1.png)
 &nbsp;
 &nbsp;
-# CADASTRO DE CLIENTE![alt text](https://i.imgur.com/NYYGh4O.png)
+# CADASTRO DE CLIENTE![alt text](https://i.imgur.com/mG8e6jn.png)
 &nbsp;
 &nbsp;
-# EDIÇÃO DE CLIENTES![alt text](https://i.imgur.com/xBluBRJ.png)
+# EDIÇÃO DE CLIENTES![alt text](https://i.imgur.com/RRgZRdj.png)
 &nbsp;
 &nbsp;
-# SERVIÇOS CONCLUÍDOS![alt text](https://i.imgur.com/jsVylBD.png)
+# SERVIÇOS CONCLUÍDOS![alt text](https://i.imgur.com/cnmjHBx.png)
 &nbsp;
 &nbsp;
 # GRÁFICO SERVIÇOS POR MÊS ![](https://i.imgur.com/X6qoSjI.png)  
@@ -149,8 +150,6 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 
 
 # MODULO DE GARANTIAS CUSTOM/30/60/90 dias.
-![enter image description here](https://i.imgur.com/H3EaqIm.gif)
-=======
 ![enter image description here](https://i.imgur.com/H3EaqIm.gif)
 &nbsp;
 &nbsp;
