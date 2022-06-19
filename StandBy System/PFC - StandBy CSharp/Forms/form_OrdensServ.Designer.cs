@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdensServ));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -84,6 +84,7 @@
             this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
             this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
             this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblIdCliente = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -94,6 +95,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.lblIdCliente);
             this.panel1.Controls.Add(this.btnPatternIcon);
             this.panel1.Controls.Add(this.txtSituacaoOrdens);
             this.panel1.Controls.Add(this.txtAcessoriosOrdens);
@@ -289,11 +291,11 @@
             this.btnSenhaPadrao.ColorContrastOnClick = 45;
             this.btnSenhaPadrao.ColorContrastOnHover = 45;
             this.btnSenhaPadrao.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnSenhaPadrao.CustomizableEdges = borderEdges1;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnSenhaPadrao.CustomizableEdges = borderEdges3;
             this.btnSenhaPadrao.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSenhaPadrao.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSenhaPadrao.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -426,6 +428,7 @@
             this.cmbClientes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbClientes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbClientes.BackColor = System.Drawing.SystemColors.Control;
+            this.cmbClientes.DropDownWidth = 500;
             this.cmbClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.cmbClientes.ForeColor = System.Drawing.Color.Black;
             this.cmbClientes.FormattingEnabled = true;
@@ -433,7 +436,7 @@
             this.cmbClientes.Name = "cmbClientes";
             this.cmbClientes.Size = new System.Drawing.Size(275, 32);
             this.cmbClientes.TabIndex = 1;
-            this.cmbClientes.Text = "Adriano Fraga de Andrade";
+            this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
             // 
             // btnPesquisarCliente
             // 
@@ -925,6 +928,17 @@
             this.standbyDataSetBindingSource.DataSource = this.standbyDataSet;
             this.standbyDataSetBindingSource.Position = 0;
             // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIdCliente.Location = new System.Drawing.Point(35, 71);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(13, 13);
+            this.lblIdCliente.TabIndex = 45;
+            this.lblIdCliente.Text = "0";
+            this.lblIdCliente.Visible = false;
+            // 
             // form_OrdensServ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -938,6 +952,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_OrdensServ";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.standbyDataSet)).EndInit();
@@ -997,5 +1012,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_acessorios;
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+        public System.Windows.Forms.Label lblIdCliente;
     }
 }

@@ -134,7 +134,8 @@ namespace PFC___StandBy_CSharp.Forms
                 try
                 {
                     //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
-                    int _idCliente = bd.BuscarIdCliente(formServ1.cmbClientes.SelectedItem.ToString());
+                    //int _idCliente = bd.BuscarIdCliente(formServ1.cmbClientes.SelectedItem.ToString());
+                    int _idCliente = Convert.ToInt32(formServ1.lblIdCliente.Text);
                     //Pego a data de hoje.
                     DateTime data = DateTime.Now;
 

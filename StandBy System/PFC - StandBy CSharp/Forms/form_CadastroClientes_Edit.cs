@@ -1,9 +1,13 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Models;
+using PFC___StandBy_CSharp.Properties;
 using PFC___StandBy_CSharp.Utils;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -11,8 +15,11 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_CadastroClientes_Edit : Form
     {
         private form_CadastroClientes formCadCliente;
-        private AlterarDados ad = new AlterarDados();
+        private readonly AlterarDados ad = new AlterarDados();
+        private readonly VerificarExistencia verificarExistencia = new VerificarExistencia();
         private int[] corGeral = new int[3];
+        private int contadorCNPJ = 0;
+        private int contadorCPF = 0;
 
         public form_CadastroClientes_Edit(form_CadastroClientes cadCliente, int[] corRGB)
         {
@@ -48,6 +55,7 @@ namespace PFC___StandBy_CSharp.Forms
             separatorDATA.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             separatorTEL_RECADO.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             separatorTEL_CLIENTE.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            separatorCIDADES.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             chkMasculino.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             chkMasculino.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -87,7 +95,7 @@ namespace PFC___StandBy_CSharp.Forms
                 ID = id,
                 Nome = txtNomeCliente.Text,
                 Telefone = txtTelefone.Text,
-                Cpf = txtCpf.Text,
+                Cpf = txtCPFCliente.Text,
                 TelefoneRecado = txtTelefoneRecados.Text,
                 NomeRecado = txtNomeRecado.Text,
                 ParentescoRecado = txtParentescoRecado.Text,
@@ -109,52 +117,37 @@ namespace PFC___StandBy_CSharp.Forms
         {
             try
             {
-                //Validacoes (armengadas mas funciona perfeitamente hehe)
+                ClienteDados dadosCliente = PegarDadosDoCliente();
+
+                //Validar a data (armengadas mas funciona perfeitamente hehe)
                 if (txtDataNascimento.Text != "SEM DATA")
                 {
                     Convert.ToDateTime(txtDataNascimento.Text);
                 }
 
+                //Validar o genero
                 if (chkMasculino.Checked == false && chkFeminino.Checked == false)
                 {
                     MessageBox.Show(@"Favor preencher o genero do cliente!", "ATENÇÃO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                if (contemLetras(txtCpf.Text))
+                //Validar o CPF/CNPJ
+                bool isCpfCnpjExistente = false;
+                if (!dadosCliente.Cpf.Equals("SEM CPF/CNPJ"))
                 {
-                    ClienteDados dadosCliente = PegarDadosDoCliente();
+                    isCpfCnpjExistente = verificarExistencia.VerificarExistenciaCPF(dadosCliente.Cpf);
+                }
 
-                    ad.AlterarClientes(dadosCliente);
-                    formCadCliente.refreshTable();
-                    this.Close();
-                }
-                else
+                if (isCpfCnpjExistente == true)
                 {
-                    string numeroSemPontosTracos = txtCpf.Text.ToString().Replace(".", "").Replace("-", "");
-                    if (numeroSemPontosTracos.Length > 13)
-                    {
-                        long cnpj = Convert.ToInt64(numeroSemPontosTracos);
-                        // long cpf = Convert.ToInt64(txtCpf.Text);
-                        string CNPJformatado = String.Format(@"{0:00\.000\.000\/0000-00}", cnpj);
-                        ClienteDados dadosCliente = PegarDadosDoCliente();
-                        dadosCliente.Cpf = CNPJformatado;
-                        ad.AlterarClientes(dadosCliente);
-                        formCadCliente.refreshTable();
-                        this.Close();
-                    }
-                    else
-                    {
-                        long cpf = Convert.ToInt64(numeroSemPontosTracos);
-                        // long cpf = Convert.ToInt64(txtCpf.Text);
-                        string CPFformatado = String.Format(@"{0:000\.000\.000\-00}", cpf);
-                        ClienteDados dadosCliente = PegarDadosDoCliente();
-                        dadosCliente.Cpf = CPFformatado;
-                        ad.AlterarClientes(dadosCliente);
-                        formCadCliente.refreshTable();
-                        this.Close();
-                    }
+                    MessageBox.Show(@"CPF/CNPJ Já existe, verifique se o cliente já esta cadastrado.", "CPF/CNPJ Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+
+                ad.AlterarClientes(dadosCliente);
+                formCadCliente.refreshTable();
+                this.Close();
             }
             catch (Exception)
             {
@@ -173,22 +166,6 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnEditar_Click(object sender, EventArgs e)
         {
             EditarCliente();
-            //if (txtDataNascimento.Text == "SEM DATA")
-            //{
-            //    EditarCliente();
-            //}
-            //else
-            //{
-            //    try
-            //    {
-            //        Convert.ToDateTime(txtDataNascimento.Text);
-            //        EditarCliente();
-            //    }
-            //    catch (Exception)
-            //    {
-            //        MessageBox.Show($"Digite uma data valida Ex: 26/08/1995\nou clique em 'Zerar Data' caso nao tenha uma. ", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //}
         }
 
         private void txtCpf_KeyDown(object sender, KeyEventArgs e)
@@ -280,6 +257,14 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
+        private void txtDataNascimento_MouseEnter(object sender, EventArgs e)
+        {
+            if (txtDataNascimento.Text == "SEM DATA")
+            {
+                txtDataNascimento.Text = "";
+            }
+        }
+
         private void txtDataNascimento_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormatarCampos.FormatarEmTempoRealData(sender, e);
@@ -293,6 +278,87 @@ namespace PFC___StandBy_CSharp.Forms
         private void txtTelefoneRecados_KeyPress(object sender, KeyPressEventArgs e)
         {
             FormatarCampos.FormatandoEmTempoRealParaTelefone(sender, e);
+        }
+
+        private void form_CadastroClientes_Edit_Load(object sender, EventArgs e)
+        {
+            this.cmbCidades.ListControl = this.listboxCidades;
+            Task.Run(() =>
+            {
+                PreencherAutoComplete("");
+            });
+        }
+
+        private void PreencherAutoComplete(string _texto)
+        {
+            try
+            {
+                lblCidades_Carregando.Visible = true;
+                lblCidades_Carregando.Text = "Carregando cidades...";
+
+                List<string> cidades = new List<string>();
+
+                string[] cidadesSeparadas = Resources.Cidades.Split('\n');
+
+                cidades = cidadesSeparadas.ToList();
+                listboxCidades.DataSource = cidades.FindAll(x => x.StartsWith(_texto));
+                lblCidades_Carregando.Text = "FIM";
+                lblCidades_Carregando.Visible = false;
+                cmbCidades.Text = "Ex: Camaçari";
+            }
+            catch (Exception)
+            {
+                //Console.WriteLine(e);
+                //throw;
+            }
+        }
+
+        private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Regex pattern = new Regex("[./-]");
+            string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
+            if (cpfApenasDigitos.Length <= 12)
+            {
+                contadorCNPJ = 0;
+                if (contadorCPF == 0)
+                {
+                    FormatarCampos.FormatarTodaStringParaCpf(sender, txtCPFCliente);
+                    contadorCPF++;
+                }
+                else
+                {
+                    FormatarCampos.FormatandoEmTempoRealParaCpf(sender, e);
+                }
+            }
+            else
+            {
+                contadorCPF = 0;
+                if (contadorCNPJ == 0)
+                {
+                    FormatarCampos.FormatarTodaStringParaCnpj(sender, txtCPFCliente);
+                    contadorCNPJ++;
+                }
+                else
+                {
+                    FormatarCampos.FormatandoEmTempoRealParaCnpj(sender, e);
+                }
+            }
+        }
+
+        private void txtCPFCliente_MouseEnter(object sender, EventArgs e)
+        {
+            if (txtCPFCliente.Text == "SEM CPF/CNPJ" || txtCPFCliente.Text == "SEM CPF")
+            {
+                txtCPFCliente.Text = "";
+            }
+        }
+
+        private void txtCPFCliente_MouseLeave(object sender, EventArgs e)
+        {
+            if (txtCPFCliente.Text == "")
+            {
+                txtCPFCliente.Text = "SEM CPF/CNPJ";
+            }
         }
     }
 }

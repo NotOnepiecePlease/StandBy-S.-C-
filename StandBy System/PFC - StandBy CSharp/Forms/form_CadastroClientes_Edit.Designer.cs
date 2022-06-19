@@ -32,13 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes_Edit));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cardFundo = new Bunifu.Framework.UI.BunifuCards();
+            this.txtCidade = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.groupEndereco = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.separatorCIDADES = new Bunifu.UI.WinForms.BunifuSeparator();
             this.txtBairro = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtCidade = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.lblCidades_Carregando = new System.Windows.Forms.Label();
             this.txtComplemento = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtRua = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtCEP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.cmbCidades = new Syncfusion.Windows.Forms.Tools.ComboBoxBase();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -65,7 +68,7 @@
             this.lblTelefoneRecados = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chkFeminino = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.txtCPFCliente = new System.Windows.Forms.TextBox();
             this.chkMasculino = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.separatorCPF = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -76,12 +79,14 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnZerarData = new System.Windows.Forms.ToolStripMenuItem();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.listboxCidades = new System.Windows.Forms.ListBox();
             this.dragPanelFundo = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.dragGroupBoxInfoPessoais = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.dragEndereco = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.cardFundo.SuspendLayout();
             this.groupEndereco.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCidades)).BeginInit();
             this.groupInfoPessoal.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -92,12 +97,14 @@
             this.cardFundo.BorderRadius = 5;
             this.cardFundo.BottomSahddow = true;
             this.cardFundo.color = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.cardFundo.Controls.Add(this.txtCidade);
             this.cardFundo.Controls.Add(this.groupEndereco);
             this.cardFundo.Controls.Add(this.groupInfoPessoal);
             this.cardFundo.Controls.Add(this.lblID);
             this.cardFundo.Controls.Add(this.btnEditar);
             this.cardFundo.Controls.Add(this.dtpDataNascimento);
             this.cardFundo.Controls.Add(this.bunifuSeparator1);
+            this.cardFundo.Controls.Add(this.listboxCidades);
             this.cardFundo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cardFundo.LeftSahddow = false;
             this.cardFundo.Location = new System.Drawing.Point(0, 0);
@@ -107,17 +114,46 @@
             this.cardFundo.Size = new System.Drawing.Size(965, 364);
             this.cardFundo.TabIndex = 0;
             // 
+            // txtCidade
+            // 
+            this.txtCidade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtCidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
+            this.txtCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtCidade.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtCidade.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtCidade.ForeColor = System.Drawing.Color.White;
+            this.txtCidade.HintForeColor = System.Drawing.Color.Transparent;
+            this.txtCidade.HintText = "";
+            this.txtCidade.isPassword = false;
+            this.txtCidade.LineFocusedColor = System.Drawing.Color.Lavender;
+            this.txtCidade.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.txtCidade.LineMouseHoverColor = System.Drawing.Color.Lavender;
+            this.txtCidade.LineThickness = 2;
+            this.txtCidade.Location = new System.Drawing.Point(646, 318);
+            this.txtCidade.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCidade.MaxLength = 100;
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(129, 34);
+            this.txtCidade.TabIndex = 85;
+            this.txtCidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCidade.Visible = false;
+            // 
             // groupEndereco
             // 
             this.groupEndereco.BorderColor = System.Drawing.SystemColors.Control;
             this.groupEndereco.BorderRadius = 1;
             this.groupEndereco.BorderThickness = 1;
+            this.groupEndereco.Controls.Add(this.separatorCIDADES);
             this.groupEndereco.Controls.Add(this.txtBairro);
             this.groupEndereco.Controls.Add(this.txtEstado);
-            this.groupEndereco.Controls.Add(this.txtCidade);
+            this.groupEndereco.Controls.Add(this.lblCidades_Carregando);
             this.groupEndereco.Controls.Add(this.txtComplemento);
             this.groupEndereco.Controls.Add(this.txtRua);
             this.groupEndereco.Controls.Add(this.txtCEP);
+            this.groupEndereco.Controls.Add(this.cmbCidades);
             this.groupEndereco.Controls.Add(this.bunifuCustomLabel8);
             this.groupEndereco.Controls.Add(this.bunifuCustomLabel9);
             this.groupEndereco.Controls.Add(this.bunifuCustomLabel10);
@@ -135,6 +171,23 @@
             this.groupEndereco.TabIndex = 82;
             this.groupEndereco.TabStop = false;
             this.groupEndereco.Text = "Endereço";
+            // 
+            // separatorCIDADES
+            // 
+            this.separatorCIDADES.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.separatorCIDADES.BackColor = System.Drawing.Color.Transparent;
+            this.separatorCIDADES.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("separatorCIDADES.BackgroundImage")));
+            this.separatorCIDADES.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.separatorCIDADES.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.separatorCIDADES.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.separatorCIDADES.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.separatorCIDADES.LineThickness = 2;
+            this.separatorCIDADES.Location = new System.Drawing.Point(371, 80);
+            this.separatorCIDADES.Margin = new System.Windows.Forms.Padding(2);
+            this.separatorCIDADES.Name = "separatorCIDADES";
+            this.separatorCIDADES.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.separatorCIDADES.Size = new System.Drawing.Size(234, 14);
+            this.separatorCIDADES.TabIndex = 1005;
             // 
             // txtBairro
             // 
@@ -188,31 +241,17 @@
             this.txtEstado.TabIndex = 87;
             this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtCidade
+            // lblCidades_Carregando
             // 
-            this.txtCidade.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtCidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
-            this.txtCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtCidade.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtCidade.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtCidade.ForeColor = System.Drawing.Color.White;
-            this.txtCidade.HintForeColor = System.Drawing.Color.Transparent;
-            this.txtCidade.HintText = "";
-            this.txtCidade.isPassword = false;
-            this.txtCidade.LineFocusedColor = System.Drawing.Color.Lavender;
-            this.txtCidade.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.txtCidade.LineMouseHoverColor = System.Drawing.Color.Lavender;
-            this.txtCidade.LineThickness = 2;
-            this.txtCidade.Location = new System.Drawing.Point(371, 54);
-            this.txtCidade.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCidade.MaxLength = 100;
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(234, 34);
-            this.txtCidade.TabIndex = 85;
-            this.txtCidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblCidades_Carregando.AutoSize = true;
+            this.lblCidades_Carregando.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
+            this.lblCidades_Carregando.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblCidades_Carregando.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lblCidades_Carregando.Location = new System.Drawing.Point(413, 61);
+            this.lblCidades_Carregando.Name = "lblCidades_Carregando";
+            this.lblCidades_Carregando.Size = new System.Drawing.Size(151, 20);
+            this.lblCidades_Carregando.TabIndex = 1006;
+            this.lblCidades_Carregando.Text = "Carregando cidades...";
             // 
             // txtComplemento
             // 
@@ -291,6 +330,22 @@
             this.txtCEP.Size = new System.Drawing.Size(150, 34);
             this.txtCEP.TabIndex = 77;
             this.txtCEP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cmbCidades
+            // 
+            this.cmbCidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
+            this.cmbCidades.BeforeTouchSize = new System.Drawing.Size(234, 24);
+            this.cmbCidades.FlatBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbCidades.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.Flat;
+            this.cmbCidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.cmbCidades.ForeColor = System.Drawing.Color.Silver;
+            this.cmbCidades.Location = new System.Drawing.Point(371, 60);
+            this.cmbCidades.MetroBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbCidades.Name = "cmbCidades";
+            this.cmbCidades.Size = new System.Drawing.Size(234, 24);
+            this.cmbCidades.TabIndex = 1004;
+            this.cmbCidades.Text = "Ex: Camaçari";
+            this.cmbCidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuCustomLabel8
             // 
@@ -406,7 +461,7 @@
             this.groupInfoPessoal.Controls.Add(this.lblTelefoneRecados);
             this.groupInfoPessoal.Controls.Add(this.chkFeminino);
             this.groupInfoPessoal.Controls.Add(this.bunifuLabel1);
-            this.groupInfoPessoal.Controls.Add(this.txtCpf);
+            this.groupInfoPessoal.Controls.Add(this.txtCPFCliente);
             this.groupInfoPessoal.Controls.Add(this.chkMasculino);
             this.groupInfoPessoal.Controls.Add(this.separatorCPF);
             this.groupInfoPessoal.Controls.Add(this.bunifuCustomLabel3);
@@ -594,6 +649,7 @@
             this.txtDataNascimento.Enter += new System.EventHandler(this.txtDataNascimento_Enter);
             this.txtDataNascimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataNascimento_KeyPress);
             this.txtDataNascimento.Leave += new System.EventHandler(this.txtDataNascimento_Leave);
+            this.txtDataNascimento.MouseEnter += new System.EventHandler(this.txtDataNascimento_MouseEnter);
             this.txtDataNascimento.MouseLeave += new System.EventHandler(this.txtDataNascimento_MouseLeave);
             // 
             // separatorDATA
@@ -872,20 +928,23 @@
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // txtCpf
+            // txtCPFCliente
             // 
-            this.txtCpf.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
-            this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtCpf.ForeColor = System.Drawing.Color.White;
-            this.txtCpf.Location = new System.Drawing.Point(163, 58);
-            this.txtCpf.MaxLength = 18;
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(292, 16);
-            this.txtCpf.TabIndex = 3;
-            this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCpf.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCpf_KeyDown);
+            this.txtCPFCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCPFCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
+            this.txtCPFCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCPFCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.txtCPFCliente.ForeColor = System.Drawing.Color.White;
+            this.txtCPFCliente.Location = new System.Drawing.Point(163, 58);
+            this.txtCPFCliente.MaxLength = 18;
+            this.txtCPFCliente.Name = "txtCPFCliente";
+            this.txtCPFCliente.Size = new System.Drawing.Size(292, 16);
+            this.txtCPFCliente.TabIndex = 3;
+            this.txtCPFCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCPFCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCpf_KeyDown);
+            this.txtCPFCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
+            this.txtCPFCliente.MouseEnter += new System.EventHandler(this.txtCPFCliente_MouseEnter);
+            this.txtCPFCliente.MouseLeave += new System.EventHandler(this.txtCPFCliente_MouseLeave);
             // 
             // chkMasculino
             // 
@@ -1094,6 +1153,15 @@
             this.bunifuSeparator1.TabIndex = 66;
             this.bunifuSeparator1.Visible = false;
             // 
+            // listboxCidades
+            // 
+            this.listboxCidades.ForeColor = System.Drawing.Color.Silver;
+            this.listboxCidades.FormattingEnabled = true;
+            this.listboxCidades.Location = new System.Drawing.Point(422, 262);
+            this.listboxCidades.Name = "listboxCidades";
+            this.listboxCidades.Size = new System.Drawing.Size(120, 95);
+            this.listboxCidades.TabIndex = 1007;
+            // 
             // dragPanelFundo
             // 
             this.dragPanelFundo.TargetControl = this.cardFundo;
@@ -1126,10 +1194,13 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_CadastroClientes_Edit";
+            this.Load += new System.EventHandler(this.form_CadastroClientes_Edit_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_CadastroClientes_Edit_KeyDown);
             this.cardFundo.ResumeLayout(false);
             this.cardFundo.PerformLayout();
             this.groupEndereco.ResumeLayout(false);
+            this.groupEndereco.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCidades)).EndInit();
             this.groupInfoPessoal.ResumeLayout(false);
             this.groupInfoPessoal.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -1165,7 +1236,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel lblNascimento;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtNomeCliente;
-        public System.Windows.Forms.TextBox txtCpf;
+        public System.Windows.Forms.TextBox txtCPFCliente;
         private Guna.UI.WinForms.GunaDragControl dragGroupBoxInfoPessoais;
         private Guna.UI.WinForms.GunaDragControl dragEndereco;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBairro;
@@ -1188,5 +1259,9 @@
         private Bunifu.UI.WinForms.BunifuSeparator separatorTEL_CLIENTE;
         public System.Windows.Forms.TextBox txtTelefoneRecados;
         public System.Windows.Forms.TextBox txtTelefone;
+        private Bunifu.UI.WinForms.BunifuSeparator separatorCIDADES;
+        private System.Windows.Forms.Label lblCidades_Carregando;
+        private Syncfusion.Windows.Forms.Tools.ComboBoxBase cmbCidades;
+        private System.Windows.Forms.ListBox listboxCidades;
     }
 }

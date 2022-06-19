@@ -91,7 +91,8 @@ namespace PFC___StandBy_CSharp.Forms
             string cpfSemformatar = cpf.Replace(".", "").Replace("-", "").Replace("/", "");
             editarCliente.lblID.Text = table_Clientes.SelectedCells[0].Value.ToString();
             editarCliente.txtNomeCliente.Text = table_Clientes.SelectedCells[1].Value.ToString();
-            editarCliente.txtCpf.Text = cpf == "SEM CPF/CNPJ" ? cpf : cpfSemformatar;
+            //editarCliente.txtCPFCliente.Text = cpf == "SEM CPF/CNPJ" ? cpf : cpfSemformatar;
+            editarCliente.txtCPFCliente.Text = cpf;
             editarCliente.txtTelefone.Text = table_Clientes.SelectedCells[3].Value.ToString();
             editarCliente.txtTelefoneRecados.Text = table_Clientes.SelectedCells[4].Value.ToString();
             editarCliente.txtNomeRecado.Text = table_Clientes.SelectedCells[5].Value.ToString();

@@ -192,52 +192,6 @@ namespace PFC___StandBy_CSharp.Dados
                 {
                     string query = "";
 
-                    //if (_dadosDoCliente.DataNascimento != "")
-                    //{
-                    //    #region Query com data de nascimento
-
-                    //    query = "UPDATE [dbo].[tb_clientes]" +
-                    //            "SET[cl_nome] = @_nome" +
-                    //            ",[cl_telefone] = @_telefone" +
-                    //            ",[cl_cpf] = @_cpf" +
-                    //            ",[cl_telefone_recado] = @_telefoneRecados" +
-                    //            ",[cl_nome_recado] = @_nomeRecado" +
-                    //            ",[cl_parentesco_recado] = @_parentescoRecado" +
-                    //            ",[cl_sexo] = @_sexo" +
-                    //            ",[cl_data_nascimento] = @_dataNascimento" +
-                    //            ",[cl_cep] = @_cep" +
-                    //            ",[cl_endereco] = @_endereco" +
-                    //            ",[cl_complemento] = @_complemento" +
-                    //            ",[cl_bairro] = @_bairro" +
-                    //            ",[cl_cidade] = @_cidade" +
-                    //            ",[cl_estado] = @_estado" +
-                    //            " WHERE [cl_id] = @_idcliente";
-
-                    //    #endregion Query com data de nascimento
-                    //}
-                    //else
-                    //{
-                    //    #region Query com data de nascimento null
-
-                    //    query = "UPDATE [dbo].[tb_clientes]" +
-                    //            "SET[cl_nome] = @_nome" +
-                    //            ",[cl_telefone] = @_telefone" +
-                    //            ",[cl_cpf] = @_cpf" +
-                    //            ",[cl_telefone_recado] = @_telefoneRecados" +
-                    //            ",[cl_nome_recado] = @_nomeRecado" +
-                    //            ",[cl_parentesco_recado] = @_parentescoRecado" +
-                    //            ",[cl_sexo] = @_sexo" +
-                    //            ",[cl_cep] = @_cep" +
-                    //            ",[cl_endereco] = @_endereco" +
-                    //            ",[cl_complemento] = @_complemento" +
-                    //            ",[cl_bairro] = @_bairro" +
-                    //            ",[cl_cidade] = @_cidade" +
-                    //            ",[cl_estado] = @_estado" +
-                    //            " WHERE [cl_id] = @_idcliente";
-
-                    //    #endregion Query com data de nascimento null
-                    //}
-
                     query = "UPDATE [dbo].[tb_clientes]" +
                             "SET[cl_nome] = @_nome" +
                             ",[cl_telefone] = @_telefone" +
@@ -254,16 +208,8 @@ namespace PFC___StandBy_CSharp.Dados
                             ",[cl_cidade] = @_cidade" +
                             ",[cl_estado] = @_estado" +
                             " WHERE [cl_id] = @_idcliente";
-                    //string query = "UPDATE [dbo].[tb_clientes] " +
-                    //    "SET[cl_nome] = @_nome " +
-                    //    ",[cl_telefone] = @_telefone " +
-                    //    ",[cl_telefone_recado] = @_telefoneRecados " +
-                    //    ",[cl_cpf] = @_cpf " +
-                    //    " WHERE cl_id = @_idcliente";
-                    //SqlCommand cmd = new SqlCommand("AlterarClientes", con);
-                    SqlCommand cmd = new SqlCommand(query, con);
 
-                    //cmd.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand(query, con);
 
                     cmd.Parameters.AddWithValue("@_nome", SqlDbType.VarChar).Value = _dadosDoCliente.Nome;
                     cmd.Parameters.AddWithValue("@_telefone", SqlDbType.VarChar).Value = _dadosDoCliente.Telefone;
@@ -298,7 +244,6 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 mErro.ErroAlterarCliente(ex);
             }
-            //}
         }
 
         #endregion Alterar Clientes

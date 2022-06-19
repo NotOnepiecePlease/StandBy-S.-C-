@@ -1,31 +1,41 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.PreencherComponentes;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Models;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_OrdensServ : Form
     {
-        private BuscarDados buscarDados = new BuscarDados();
-        private DeletarDados deletarDados = new DeletarDados();
-        private PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
-        private PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
+        private readonly BuscarDados buscarDados = new BuscarDados();
+        private readonly DeletarDados deletarDados = new DeletarDados();
+        private readonly PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
+        private readonly PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
+        private List<ClienteDados> listClientesComId = new List<ClienteDados>();
         private int[] corGeral = new int[3] { 0, 0, 0 };
 
         public form_OrdensServ(int[] corRGB)
         {
             InitializeComponent();
             preencherTableServ.Preencher(table_OrdensServicos);
-            preencherCombobox.Preencher(cmbClientes);
+            CarregarComboxClientes();
             corGeral = corRGB;
             MudarTodasCores();
             cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
             table_OrdensServicos.ClearSelection();
             //VerificarAtraso();
             timerAtualizarTabela.Start();
+        }
+
+        private void CarregarComboxClientes()
+        {
+            listClientesComId = preencherCombobox.Preencher();
+            listClientesComId.ForEach(cliente => cmbClientes.Items.Add($"{cliente.Nome}  |  {cliente.Cpf} (ID: {cliente.ID})"));
         }
 
         public void AtualizarCoresCelulasTabela()
@@ -40,25 +50,25 @@ namespace PFC___StandBy_CSharp.Forms
                         DateTime dataEntrega = Convert.ToDateTime(row.Cells[12].Value);
                         DateTime dataAtual = DateTime.Now;
 
-                        TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
+                        TimeSpan diasParaEntrega = dataEntrega.Subtract(dataAtual);
 
                         //0 = sem cor
                         //1 = verde
                         //2 = amarelo/laranja
                         //3 = vermelho
-                        if (DiasParaEntrega.TotalHours < 0)
+                        if (diasParaEntrega.TotalHours < 0)
                         //if (Convert.ToInt32(row.Cells[2].Value) == 3)
                         {
                             row.Cells[1].Style.BackColor = Color.Red;
                             row.Cells[1].Style.ForeColor = Color.Black;
                         }
-                        else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
+                        else if (diasParaEntrega.TotalHours >= 0 && diasParaEntrega.TotalHours <= 12)
                         //else if (Convert.ToInt32(row.Cells[2].Value) == 2)
                         {
                             row.Cells[1].Style.BackColor = Color.Orange;
                             row.Cells[1].Style.ForeColor = Color.Black;
                         }
-                        else if (DiasParaEntrega.TotalHours > 12)
+                        else if (diasParaEntrega.TotalHours > 12)
                         //else if (Convert.ToInt32(row.Cells[2].Value) == 1)
                         {
                             row.Cells[1].Style.BackColor = Color.Lime;
@@ -221,7 +231,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (txtSituacaoOrdens.Text == "" || string.IsNullOrWhiteSpace(txtSituacaoOrdens.Text))
             {
-                txtSituacaoOrdens.Text = "Situação do aparelho";
+                txtSituacaoOrdens.Text = @"Situação do aparelho";
                 txtSituacaoOrdens.Font = new Font(txtSituacaoOrdens.Font, FontStyle.Italic);
                 txtSituacaoOrdens.ForeColor = Color.Silver;
                 txtSituacaoOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -570,6 +580,12 @@ namespace PFC___StandBy_CSharp.Forms
             //messageBoxCS.AppendFormat("{0} = {1}", "SuppressKeyPress", e.SuppressKeyPress);
             //messageBoxCS.AppendLine();
             //MessageBox.Show(messageBoxCS.ToString(), "KeyDown Event");
+        }
+
+        private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Pegando a ID do cliente selecionado
+            lblIdCliente.Text = listClientesComId.ElementAt(cmbClientes.SelectedIndex).ID.ToString();
         }
     }
 }
