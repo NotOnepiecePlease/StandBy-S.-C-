@@ -19,12 +19,12 @@ namespace PFC___StandBy_CSharp.Forms
         private List<ClienteDados> listClientesComId = new List<ClienteDados>();
         private int[] corGeral = new int[3] { 0, 0, 0 };
 
-        public form_OrdensServ(int[] corRGB)
+        public form_OrdensServ(int[] _corRgb)
         {
             InitializeComponent();
             preencherTableServ.Preencher(table_OrdensServicos);
             CarregarComboxClientes();
-            corGeral = corRGB;
+            corGeral = _corRgb;
             MudarTodasCores();
             cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
             table_OrdensServicos.ClearSelection();

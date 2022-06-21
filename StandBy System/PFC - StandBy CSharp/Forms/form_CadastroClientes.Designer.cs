@@ -128,7 +128,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 651);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 99999;
             // 
             // listboxCidades
             // 
@@ -139,6 +139,7 @@
             this.listboxCidades.Name = "listboxCidades";
             this.listboxCidades.Size = new System.Drawing.Size(120, 104);
             this.listboxCidades.TabIndex = 1003;
+            this.listboxCidades.TabStop = false;
             // 
             // btnCadastrarCliente
             // 
@@ -223,6 +224,7 @@
             this.btnCadastrarCliente.OnPressedState.IconRightImage = null;
             this.btnCadastrarCliente.Size = new System.Drawing.Size(181, 32);
             this.btnCadastrarCliente.TabIndex = 16;
+            this.btnCadastrarCliente.TabStop = false;
             this.btnCadastrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCadastrarCliente.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCadastrarCliente.TextMarginLeft = 0;
@@ -257,7 +259,7 @@
             this.bunifuGroupBox2.Location = new System.Drawing.Point(183, 186);
             this.bunifuGroupBox2.Name = "bunifuGroupBox2";
             this.bunifuGroupBox2.Size = new System.Drawing.Size(915, 105);
-            this.bunifuGroupBox2.TabIndex = 78;
+            this.bunifuGroupBox2.TabIndex = 99999;
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Endereço";
             // 
@@ -277,6 +279,7 @@
             this.separatorCIDADES.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.separatorCIDADES.Size = new System.Drawing.Size(234, 12);
             this.separatorCIDADES.TabIndex = 83;
+            this.separatorCIDADES.TabStop = false;
             this.separatorCIDADES.MouseEnter += new System.EventHandler(this.separatorCIDADES_MouseEnter);
             this.separatorCIDADES.MouseLeave += new System.EventHandler(this.separatorCIDADES_MouseLeave);
             // 
@@ -318,6 +321,7 @@
             this.txtBairro.Text = "Ex: Gleba B";
             this.txtBairro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
+            this.txtBairro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtBairro.Leave += new System.EventHandler(this.txtBairro_Leave);
             // 
             // txtEstado
@@ -347,6 +351,7 @@
             this.txtEstado.Text = "Ex: Bahia";
             this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEstado.Enter += new System.EventHandler(this.txtEstado_Enter);
+            this.txtEstado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtEstado.Leave += new System.EventHandler(this.txtEstado_Leave);
             // 
             // cmbCidades
@@ -396,6 +401,7 @@
             this.txtComplemento.Text = "Ex: Casa";
             this.txtComplemento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Enter);
+            this.txtComplemento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtComplemento.Leave += new System.EventHandler(this.txtComplemento_Leave);
             // 
             // txtEndereco
@@ -425,6 +431,7 @@
             this.txtEndereco.Text = "Ex: Rua Segundo Cendes, 197B";
             this.txtEndereco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEndereco.Enter += new System.EventHandler(this.txtRua_Enter);
+            this.txtEndereco.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtEndereco.Leave += new System.EventHandler(this.txtRua_Leave);
             // 
             // txtCEP
@@ -454,6 +461,7 @@
             this.txtCEP.Text = "Ex: 42803317";
             this.txtCEP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCEP.Enter += new System.EventHandler(this.txtCEP_Enter);
+            this.txtCEP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtCEP.Leave += new System.EventHandler(this.txtCEP_Leave);
             // 
             // bunifuCustomLabel8
@@ -467,7 +475,7 @@
             this.bunifuCustomLabel8.Location = new System.Drawing.Point(615, 70);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(97, 25);
-            this.bunifuCustomLabel8.TabIndex = 86;
+            this.bunifuCustomLabel8.TabIndex = 99999;
             this.bunifuCustomLabel8.Text = "Estado";
             this.bunifuCustomLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -482,7 +490,7 @@
             this.bunifuCustomLabel9.Location = new System.Drawing.Point(268, 71);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(99, 25);
-            this.bunifuCustomLabel9.TabIndex = 84;
+            this.bunifuCustomLabel9.TabIndex = 99999;
             this.bunifuCustomLabel9.Text = "Cidade";
             this.bunifuCustomLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -497,7 +505,7 @@
             this.bunifuCustomLabel10.Location = new System.Drawing.Point(19, 70);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(87, 25);
-            this.bunifuCustomLabel10.TabIndex = 82;
+            this.bunifuCustomLabel10.TabIndex = 99999;
             this.bunifuCustomLabel10.Text = "Bairro";
             this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -512,7 +520,7 @@
             this.bunifuCustomLabel7.Location = new System.Drawing.Point(610, 28);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(142, 25);
-            this.bunifuCustomLabel7.TabIndex = 80;
+            this.bunifuCustomLabel7.TabIndex = 99999;
             this.bunifuCustomLabel7.Text = "Complemento";
             this.bunifuCustomLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -527,7 +535,7 @@
             this.bunifuCustomLabel4.Location = new System.Drawing.Point(268, 27);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(78, 25);
-            this.bunifuCustomLabel4.TabIndex = 78;
+            this.bunifuCustomLabel4.TabIndex = 99999;
             this.bunifuCustomLabel4.Text = "Rua";
             this.bunifuCustomLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -542,7 +550,7 @@
             this.bunifuCustomLabel2.Location = new System.Drawing.Point(19, 28);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(74, 25);
-            this.bunifuCustomLabel2.TabIndex = 77;
+            this.bunifuCustomLabel2.TabIndex = 0;
             this.bunifuCustomLabel2.Text = "CEP";
             this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -578,6 +586,7 @@
             this.txtPesquisarCADCliente.Name = "txtPesquisarCADCliente";
             this.txtPesquisarCADCliente.Size = new System.Drawing.Size(722, 32);
             this.txtPesquisarCADCliente.TabIndex = 999;
+            this.txtPesquisarCADCliente.TabStop = false;
             this.txtPesquisarCADCliente.Text = "Digite o nome do cliente que deseja buscar os serviços";
             this.txtPesquisarCADCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPesquisarCADCliente.Enter += new System.EventHandler(this.txtPesquisarCADCliente_Enter);
@@ -834,7 +843,7 @@
             this.bunifuGroupBox1.Location = new System.Drawing.Point(183, 3);
             this.bunifuGroupBox1.Name = "bunifuGroupBox1";
             this.bunifuGroupBox1.Size = new System.Drawing.Size(915, 177);
-            this.bunifuGroupBox1.TabIndex = 77;
+            this.bunifuGroupBox1.TabIndex = 99999;
             this.bunifuGroupBox1.TabStop = false;
             this.bunifuGroupBox1.Text = "Informações Pessoais";
             // 
@@ -845,15 +854,15 @@
             this.txtTelefoneRecado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefoneRecado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtTelefoneRecado.ForeColor = System.Drawing.Color.Silver;
-            this.txtTelefoneRecado.Location = new System.Drawing.Point(614, 57);
-            this.txtTelefoneRecado.MaxLength = 18;
+            this.txtTelefoneRecado.Location = new System.Drawing.Point(614, 56);
+            this.txtTelefoneRecado.MaxLength = 15;
             this.txtTelefoneRecado.Name = "txtTelefoneRecado";
             this.txtTelefoneRecado.Size = new System.Drawing.Size(264, 16);
             this.txtTelefoneRecado.TabIndex = 7;
             this.txtTelefoneRecado.Text = "Telefone de Recados do Cliente";
             this.txtTelefoneRecado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTelefoneRecado.Enter += new System.EventHandler(this.txtTelefoneRecado_Enter);
-            this.txtTelefoneRecado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefoneRecado_KeyDown);
+            this.txtTelefoneRecado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtTelefoneRecado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefoneRecado_KeyPress);
             this.txtTelefoneRecado.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTelefoneRecado_KeyUp);
             this.txtTelefoneRecado.Leave += new System.EventHandler(this.txtTelefoneRecado_Leave);
@@ -874,6 +883,7 @@
             this.separatorTEL_RECADO.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.separatorTEL_RECADO.Size = new System.Drawing.Size(264, 14);
             this.separatorTEL_RECADO.TabIndex = 82;
+            this.separatorTEL_RECADO.TabStop = false;
             this.separatorTEL_RECADO.MouseEnter += new System.EventHandler(this.separatorTEL_RECADO_MouseEnter);
             this.separatorTEL_RECADO.MouseLeave += new System.EventHandler(this.separatorTEL_RECADO_MouseLeave);
             // 
@@ -884,15 +894,15 @@
             this.txtTelefoneCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefoneCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtTelefoneCliente.ForeColor = System.Drawing.Color.Silver;
-            this.txtTelefoneCliente.Location = new System.Drawing.Point(619, 25);
-            this.txtTelefoneCliente.MaxLength = 18;
+            this.txtTelefoneCliente.Location = new System.Drawing.Point(619, 22);
+            this.txtTelefoneCliente.MaxLength = 15;
             this.txtTelefoneCliente.Name = "txtTelefoneCliente";
             this.txtTelefoneCliente.Size = new System.Drawing.Size(264, 16);
             this.txtTelefoneCliente.TabIndex = 6;
             this.txtTelefoneCliente.Text = "Telefone Principal do Cliente";
             this.txtTelefoneCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTelefoneCliente.Enter += new System.EventHandler(this.txtTelefoneCliente_Enter);
-            this.txtTelefoneCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefoneCliente_KeyDown);
+            this.txtTelefoneCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtTelefoneCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefoneCliente_KeyPress);
             this.txtTelefoneCliente.Leave += new System.EventHandler(this.txtTelefoneCliente_Leave);
             // 
@@ -912,6 +922,7 @@
             this.separatorTEL_CLIENTE.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.separatorTEL_CLIENTE.Size = new System.Drawing.Size(264, 12);
             this.separatorTEL_CLIENTE.TabIndex = 80;
+            this.separatorTEL_CLIENTE.TabStop = false;
             this.separatorTEL_CLIENTE.MouseEnter += new System.EventHandler(this.separatorTEL_CLIENTE_MouseEnter);
             this.separatorTEL_CLIENTE.MouseLeave += new System.EventHandler(this.separatorTEL_CLIENTE_MouseLeave);
             // 
@@ -930,6 +941,7 @@
             this.txtDataNascimento.Text = "Data de Nascimento";
             this.txtDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDataNascimento.Enter += new System.EventHandler(this.txtDataNascimento_Enter);
+            this.txtDataNascimento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtDataNascimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDataNascimento_KeyPress);
             this.txtDataNascimento.Leave += new System.EventHandler(this.txtDataNascimento_Leave);
             // 
@@ -949,6 +961,7 @@
             this.separatorDATA.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.separatorDATA.Size = new System.Drawing.Size(264, 12);
             this.separatorDATA.TabIndex = 78;
+            this.separatorDATA.TabStop = false;
             this.separatorDATA.MouseEnter += new System.EventHandler(this.separatorDATA_MouseEnter);
             this.separatorDATA.MouseLeave += new System.EventHandler(this.separatorDATA_MouseLeave);
             // 
@@ -980,6 +993,7 @@
             this.txtNomeRecado.Text = "Nome de quem vai receber o recado";
             this.txtNomeRecado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNomeRecado.Enter += new System.EventHandler(this.txtNomeRecado_Enter);
+            this.txtNomeRecado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtNomeRecado.Leave += new System.EventHandler(this.txtNomeRecado_Leave);
             // 
             // txtNomeCliente
@@ -1000,16 +1014,16 @@
             this.txtNomeCliente.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtNomeCliente.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtNomeCliente.LineThickness = 2;
-            this.txtNomeCliente.Location = new System.Drawing.Point(153, 13);
+            this.txtNomeCliente.Location = new System.Drawing.Point(153, 18);
             this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeCliente.MaxLength = 100;
             this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(264, 34);
-            this.txtNomeCliente.TabIndex = 1;
+            this.txtNomeCliente.Size = new System.Drawing.Size(264, 32);
+            this.txtNomeCliente.TabIndex = 0;
             this.txtNomeCliente.Text = "Nome do Cliente";
             this.txtNomeCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNomeCliente.Enter += new System.EventHandler(this.txtNomeCliente_Enter);
-            this.txtNomeCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomeCliente_KeyDown);
+            this.txtNomeCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtNomeCliente.Leave += new System.EventHandler(this.txtNomeCliente_Leave);
             // 
             // bunifuCustomLabel5
@@ -1023,7 +1037,7 @@
             this.bunifuCustomLabel5.Location = new System.Drawing.Point(495, 127);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(72, 22);
-            this.bunifuCustomLabel5.TabIndex = 76;
+            this.bunifuCustomLabel5.TabIndex = 99999;
             this.bunifuCustomLabel5.Text = "Nome";
             this.bunifuCustomLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -1038,7 +1052,7 @@
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(29, 30);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(102, 25);
-            this.bunifuCustomLabel1.TabIndex = 30;
+            this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Cliente";
             this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1070,6 +1084,7 @@
             this.txtParentescoRecado.Text = "Parentesco de quem vai receber o recado";
             this.txtParentescoRecado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtParentescoRecado.Enter += new System.EventHandler(this.txtParentescoRecado_Enter);
+            this.txtParentescoRecado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtParentescoRecado.Leave += new System.EventHandler(this.txtParentescoRecado_Leave);
             // 
             // lblTelefonePrincipal
@@ -1083,7 +1098,7 @@
             this.lblTelefonePrincipal.Location = new System.Drawing.Point(495, 33);
             this.lblTelefonePrincipal.Name = "lblTelefonePrincipal";
             this.lblTelefonePrincipal.Size = new System.Drawing.Size(106, 22);
-            this.lblTelefonePrincipal.TabIndex = 31;
+            this.lblTelefonePrincipal.TabIndex = 99999;
             this.lblTelefonePrincipal.Text = "Número";
             this.lblTelefonePrincipal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1098,7 +1113,7 @@
             this.bunifuCustomLabel6.Location = new System.Drawing.Point(495, 95);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(127, 22);
-            this.bunifuCustomLabel6.TabIndex = 75;
+            this.bunifuCustomLabel6.TabIndex = 99999;
             this.bunifuCustomLabel6.Text = "Parentesco";
             this.bunifuCustomLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1113,7 +1128,7 @@
             this.lblCpf.Location = new System.Drawing.Point(29, 63);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(118, 22);
-            this.lblCpf.TabIndex = 32;
+            this.lblCpf.TabIndex = 99999;
             this.lblCpf.Text = "CPF/CNPJ";
             this.lblCpf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1130,6 +1145,7 @@
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(55, 16);
             this.bunifuLabel2.TabIndex = 72;
+            this.bunifuLabel2.TabStop = false;
             this.bunifuLabel2.Text = "Feminino";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -1145,7 +1161,7 @@
             this.lblTelefoneRecados.Location = new System.Drawing.Point(495, 63);
             this.lblTelefoneRecados.Name = "lblTelefoneRecados";
             this.lblTelefoneRecados.Size = new System.Drawing.Size(82, 22);
-            this.lblTelefoneRecados.TabIndex = 38;
+            this.lblTelefoneRecados.TabIndex = 99999;
             this.lblTelefoneRecados.Text = "Recado";
             this.lblTelefoneRecados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -1204,6 +1220,9 @@
             this.chkFeminino.ToolTipText = null;
             this.chkFeminino.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkFeminino_CheckedChanged);
             this.chkFeminino.Click += new System.EventHandler(this.chkFeminino_Click);
+            this.chkFeminino.Enter += new System.EventHandler(this.chkFeminino_Enter);
+            this.chkFeminino.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
+            this.chkFeminino.Leave += new System.EventHandler(this.chkFeminino_Leave);
             // 
             // bunifuLabel1
             // 
@@ -1219,6 +1238,7 @@
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(61, 16);
             this.bunifuLabel1.TabIndex = 70;
+            this.bunifuLabel1.TabStop = false;
             this.bunifuLabel1.Text = "Masculino";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
@@ -1238,7 +1258,7 @@
             this.txtCPFCliente.Text = "CPF ou CNPJ do Cliente";
             this.txtCPFCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCPFCliente.Enter += new System.EventHandler(this.txtCPFCliente_Enter);
-            this.txtCPFCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCPFCliente_KeyDown);
+            this.txtCPFCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtCPFCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPFCliente_KeyPress);
             this.txtCPFCliente.Leave += new System.EventHandler(this.txtCPFCliente_Leave);
             this.txtCPFCliente.MouseEnter += new System.EventHandler(this.txtCPFCliente_MouseEnter);
@@ -1272,7 +1292,7 @@
             this.chkMasculino.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chkMasculino.OnCheck.CheckmarkColor = System.Drawing.Color.White;
             this.chkMasculino.OnCheck.CheckmarkThickness = 2;
-            this.chkMasculino.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.chkMasculino.OnDisable.BorderColor = System.Drawing.Color.Silver;
             this.chkMasculino.OnDisable.BorderRadius = 12;
             this.chkMasculino.OnDisable.BorderThickness = 2;
             this.chkMasculino.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
@@ -1282,7 +1302,7 @@
             this.chkMasculino.OnHoverChecked.BorderRadius = 12;
             this.chkMasculino.OnHoverChecked.BorderThickness = 2;
             this.chkMasculino.OnHoverChecked.CheckBoxColor = System.Drawing.Color.Silver;
-            this.chkMasculino.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.chkMasculino.OnHoverChecked.CheckmarkColor = System.Drawing.Color.Silver;
             this.chkMasculino.OnHoverChecked.CheckmarkThickness = 2;
             this.chkMasculino.OnHoverUnchecked.BorderColor = System.Drawing.Color.Silver;
             this.chkMasculino.OnHoverUnchecked.BorderRadius = 12;
@@ -1299,6 +1319,9 @@
             this.chkMasculino.ToolTipText = null;
             this.chkMasculino.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.chkMasculino_CheckedChanged);
             this.chkMasculino.Click += new System.EventHandler(this.chkMasculino_Click);
+            this.chkMasculino.Enter += new System.EventHandler(this.chkMasculino_Enter);
+            this.chkMasculino.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
+            this.chkMasculino.Leave += new System.EventHandler(this.chkMasculino_Leave);
             // 
             // separatorCPF
             // 
@@ -1316,6 +1339,7 @@
             this.separatorCPF.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.separatorCPF.Size = new System.Drawing.Size(264, 10);
             this.separatorCPF.TabIndex = 63;
+            this.separatorCPF.TabStop = false;
             this.separatorCPF.MouseEnter += new System.EventHandler(this.separatorCPF_MouseEnter);
             this.separatorCPF.MouseLeave += new System.EventHandler(this.separatorCPF_MouseLeave);
             // 
@@ -1330,7 +1354,7 @@
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(30, 127);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(87, 22);
-            this.bunifuCustomLabel3.TabIndex = 67;
+            this.bunifuCustomLabel3.TabIndex = 99999;
             this.bunifuCustomLabel3.Text = "Sexo";
             this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1345,7 +1369,7 @@
             this.lblNascimento.Location = new System.Drawing.Point(27, 94);
             this.lblNascimento.Name = "lblNascimento";
             this.lblNascimento.Size = new System.Drawing.Size(134, 22);
-            this.lblNascimento.TabIndex = 65;
+            this.lblNascimento.TabIndex = 99999;
             this.lblNascimento.Text = "Nascimento";
             this.lblNascimento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -1418,6 +1442,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "form_CadastroClientes";
             this.Text = "form_CadastroClientes";
             this.Load += new System.EventHandler(this.form_CadastroClientes_Load);

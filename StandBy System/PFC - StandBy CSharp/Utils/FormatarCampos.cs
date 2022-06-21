@@ -21,7 +21,7 @@ namespace PFC___StandBy_CSharp.Utils
                 }
                 else if (CPF.Text.Length == 3)
                 {
-                    CPF.Text += ")";
+                    CPF.Text += ") ";
                 }
                 else if (CPF.Text.Length == 9)
                 {

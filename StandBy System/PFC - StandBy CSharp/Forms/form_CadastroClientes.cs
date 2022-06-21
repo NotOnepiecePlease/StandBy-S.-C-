@@ -2,11 +2,8 @@
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +11,7 @@ using Bunifu.Framework.UI;
 using Correios;
 using PFC___StandBy_CSharp.Properties;
 using PFC___StandBy_CSharp.Utils;
-using Syncfusion.Windows.Forms.Tools;
+using Bunifu.UI.WinForms;
 using BunifuSeparator = Bunifu.UI.WinForms.BunifuSeparator;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -23,7 +20,6 @@ namespace PFC___StandBy_CSharp.Forms
     {
         private PreencherTableClientes preencherClientes = new PreencherTableClientes();
         private DeletarDados dd = new DeletarDados();
-        private VerificarExistencia ve = new VerificarExistencia();
         private InserirDados id = new InserirDados();
         private BuscarDados bd = new BuscarDados();
 
@@ -40,6 +36,19 @@ namespace PFC___StandBy_CSharp.Forms
             MudarTodasCores();
             lblQuantidadeClientes.Text = bd.buscarQuantidadeClientes().ToString();
             CheckForIllegalCrossThreadCalls = false;
+        }
+
+        public Control FindFocusedComponent()
+        {
+            foreach (Control child in bunifuGroupBox2.Controls)
+            {
+                if (child.Focused)
+                {
+                    MessageBox.Show($"{child.Name}");
+                }
+            }
+
+            return null;
         }
 
         public void refreshTable()
@@ -206,33 +215,9 @@ namespace PFC___StandBy_CSharp.Forms
             refreshTable();
         }
 
-        private void txtNomeCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CadastrarNovoCliente();
-            }
-        }
-
-        private void txtTelefoneCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CadastrarNovoCliente();
-            }
-        }
-
         private void table_Clientes_DoubleClick(object sender, EventArgs e)
         {
             chamarEdicaoCliente();
-        }
-
-        private void txtTelefoneRecado_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CadastrarNovoCliente();
-            }
         }
 
         private void txtCPFCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -264,14 +249,6 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     FormatarCampos.FormatandoEmTempoRealParaCnpj(sender, e);
                 }
-            }
-        }
-
-        private void txtCPFCliente_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                CadastrarNovoCliente();
             }
         }
 
@@ -331,6 +308,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 txtNomeRecado.Enabled = false;
                 txtParentescoRecado.Enabled = false;
+                //txtCEP.Focus();
             }
             else
             {
@@ -363,7 +341,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void chkMasculino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        private void chkMasculino_CheckedChanged(object sender, BunifuCheckBox.CheckedChangedEventArgs e)
         {
             if (chkMasculino.Checked)
             {
@@ -371,7 +349,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void chkFeminino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        private void chkFeminino_CheckedChanged(object sender, BunifuCheckBox.CheckedChangedEventArgs e)
         {
             if (chkFeminino.Checked)
             {
@@ -391,6 +369,10 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtTelefoneRecado_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //if (txtTelefoneRecado.Text == "Telefone de Recados do Cliente" || txtTelefoneRecado.Text == "")
+            //{
+            //    txtCEP.Focus();
+            //}
             FormatarCampos.FormatandoEmTempoRealParaTelefone(sender, e);
         }
 
@@ -731,29 +713,36 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_CadastroClientes_Load(object sender, EventArgs e)
         {
+            //txtNomeCliente.GetFocus();
+            txtNomeCliente.Focus();
             this.cmbCidades.ListControl = this.listboxCidades;
+
             Task.Run(() =>
             {
                 PreencherAutoComplete("");
             });
+
+            //await PreencherAutoComplete("");
         }
 
-        private void PreencherAutoComplete(string _texto)
+        private async Task PreencherAutoComplete(string _texto)
         {
             try
             {
                 lblCidades_Carregando.Visible = true;
-                lblCidades_Carregando.Text = "Carregando cidades...";
+                lblCidades_Carregando.Text = @"Carregando cidades...";
 
-                List<string> cidades = new List<string>();
+                List<string> listCidades = new List<string>();
 
-                string[] cidadesSeparadas = Resources.Cidades.Split('\n');
-
-                cidades = cidadesSeparadas.ToList();
-                listboxCidades.DataSource = cidades.FindAll(x => x.StartsWith(_texto));
-                lblCidades_Carregando.Text = "FIM";
-                lblCidades_Carregando.Visible = false;
-                cmbCidades.Text = "Ex: Camaçari";
+                await Task.Run(() =>
+                {
+                    string[] cidadesSeparadas = Resources.Cidades.Split('\n');
+                    listCidades = cidadesSeparadas.ToList();
+                    listboxCidades.DataSource = listCidades.FindAll(x => x.StartsWith(_texto));
+                    lblCidades_Carregando.Text = @"FIM";
+                    lblCidades_Carregando.Visible = false;
+                    cmbCidades.Text = @"Ex: Camaçari";
+                });
             }
             catch (Exception)
             {
@@ -790,6 +779,47 @@ namespace PFC___StandBy_CSharp.Forms
         private void cmbCidades_MouseLeave(object sender, EventArgs e)
         {
             separatorCIDADES.LineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+        }
+
+        private void chkMasculino_Enter(object sender, EventArgs e)
+        {
+            chkMasculino.OnUncheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkMasculino.OnHoverUnchecked.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkMasculino.OnHoverChecked.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkMasculino.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+        }
+
+        private void chkMasculino_Leave(object sender, EventArgs e)
+        {
+            chkMasculino.OnUncheck.BorderColor = Color.Silver;
+            chkMasculino.OnHoverUnchecked.BorderColor = Color.Silver;
+            chkMasculino.OnHoverChecked.BorderColor = Color.Silver;
+            chkMasculino.OnCheck.BorderColor = Color.Silver;
+        }
+
+        private void chkFeminino_Enter(object sender, EventArgs e)
+        {
+            chkFeminino.OnUncheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkFeminino.OnHoverUnchecked.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkFeminino.OnHoverChecked.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            chkFeminino.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+        }
+
+        private void chkFeminino_Leave(object sender, EventArgs e)
+        {
+            chkFeminino.OnUncheck.BorderColor = Color.Silver;
+            chkFeminino.OnHoverUnchecked.BorderColor = Color.Silver;
+            chkFeminino.OnHoverChecked.BorderColor = Color.Silver;
+            chkFeminino.OnCheck.BorderColor = Color.Silver;
+        }
+
+        private void eventoCadastrarClienteApertarEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CadastrarNovoCliente();
+                //MessageBox.Show("Test");
+            }
         }
     }
 }

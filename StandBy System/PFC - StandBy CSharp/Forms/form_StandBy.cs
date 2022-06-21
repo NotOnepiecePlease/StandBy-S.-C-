@@ -65,10 +65,10 @@ namespace PFC___StandBy_CSharp.Forms
                 var JsonDeserialized1 = JsonConvert.DeserializeObject<List<MunicipioModel.Municipio>>(content);
 
                 JsonDeserialized1.OrderBy(x => x.Nome)
-                    .ToList()
-                    .GroupBy(x => x.Nome)
-                    .Select(x => x.First())
-                    .ToList().ForEach(m => File.AppendAllText(path, m.Nome + "\n"));
+                     .ToList()
+                     .GroupBy(x => x.Nome)
+                     .Select(x => x.First())
+                     .ToList().ForEach(m => File.AppendAllText(path, m.Nome + "\n"));
             }
             catch (Exception e)
             {
