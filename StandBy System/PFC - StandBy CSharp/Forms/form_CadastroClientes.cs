@@ -12,6 +12,7 @@ using Correios;
 using PFC___StandBy_CSharp.Properties;
 using PFC___StandBy_CSharp.Utils;
 using Bunifu.UI.WinForms;
+using Syncfusion.Windows.Forms.Tools;
 using BunifuSeparator = Bunifu.UI.WinForms.BunifuSeparator;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -22,6 +23,7 @@ namespace PFC___StandBy_CSharp.Forms
         private DeletarDados dd = new DeletarDados();
         private InserirDados id = new InserirDados();
         private BuscarDados bd = new BuscarDados();
+        private static List<string> listCidades = new List<string>();
 
         private int[] corGeral = new int[3] { 0, 0, 0 };
         private int contadorCNPJ = 0;
@@ -717,37 +719,35 @@ namespace PFC___StandBy_CSharp.Forms
             txtNomeCliente.Focus();
             this.cmbCidades.ListControl = this.listboxCidades;
 
+            lblCidades_Carregando.Visible = true;
+            lblCidades_Carregando.Text = @"Carregando cidades...";
+
+            CarregarListaDeCidadesAsync();
+
+            //Coloquei isso na task porque classes estaticas nao aceitam componentes.
             Task.Run(() =>
             {
-                PreencherAutoComplete("");
+                listboxCidades.DataSource = listCidades;
+                lblCidades_Carregando.Text = @"FIM";
+                lblCidades_Carregando.Visible = false;
+                cmbCidades.Text = @"Ex: Camaçari";
             });
-
-            //await PreencherAutoComplete("");
         }
 
-        private async Task PreencherAutoComplete(string _texto)
+        private static async void CarregarListaDeCidadesAsync() => await PreencherAutoComplete();
+
+        private static async Task PreencherAutoComplete()
         {
             try
             {
-                lblCidades_Carregando.Visible = true;
-                lblCidades_Carregando.Text = @"Carregando cidades...";
-
-                List<string> listCidades = new List<string>();
-
                 await Task.Run(() =>
                 {
                     string[] cidadesSeparadas = Resources.Cidades.Split('\n');
                     listCidades = cidadesSeparadas.ToList();
-                    listboxCidades.DataSource = listCidades.FindAll(x => x.StartsWith(_texto));
-                    lblCidades_Carregando.Text = @"FIM";
-                    lblCidades_Carregando.Visible = false;
-                    cmbCidades.Text = @"Ex: Camaçari";
                 });
             }
             catch (Exception)
             {
-                //Console.WriteLine(e);
-                //throw;
             }
         }
 

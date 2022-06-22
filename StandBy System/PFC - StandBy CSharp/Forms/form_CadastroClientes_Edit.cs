@@ -133,17 +133,17 @@ namespace PFC___StandBy_CSharp.Forms
                 }
 
                 //Validar o CPF/CNPJ
-                bool isCpfCnpjExistente = false;
-                if (!dadosCliente.Cpf.Equals("SEM CPF/CNPJ"))
-                {
-                    isCpfCnpjExistente = verificarExistencia.VerificarExistenciaCPF(dadosCliente.Cpf);
-                }
+                //bool isCpfCnpjExistente = false;
+                //if (!dadosCliente.Cpf.Equals("SEM CPF/CNPJ"))
+                //{
+                //    isCpfCnpjExistente = verificarExistencia.VerificarExistenciaCPF(dadosCliente.Cpf);
+                //}
 
-                if (isCpfCnpjExistente == true)
-                {
-                    MessageBox.Show(@"CPF/CNPJ Já existe, verifique se o cliente já esta cadastrado.", "CPF/CNPJ Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //if (isCpfCnpjExistente == true)
+                //{
+                //    MessageBox.Show(@"CPF/CNPJ Já existe, verifique se o cliente já esta cadastrado.", "CPF/CNPJ Existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
 
                 ad.AlterarClientes(dadosCliente);
                 formCadCliente.refreshTable();

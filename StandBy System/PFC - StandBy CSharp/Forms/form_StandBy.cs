@@ -1,5 +1,7 @@
 ﻿using PFC___StandBy_CSharp.ChecarUpdates;
 using PFC___StandBy_CSharp.Graficos;
+using PFC___StandBy_CSharp.Dados;
+using PFC___StandBy_CSharp.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,11 +12,9 @@ using System.Net.Http;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu.Json;
-using PFC___StandBy_CSharp.Dados;
-using PFC___StandBy_CSharp.Models;
 using Application = System.Windows.Forms.Application;
 using Point = System.Drawing.Point;
+using Newtonsoft.Json;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -34,7 +34,6 @@ namespace PFC___StandBy_CSharp.Forms
         public form_StandBy()
         {
             InitializeComponent();
-            //randomizarCores(100);
             //APIMunicipio();
             IniciarPainelCor();
             bd.CriarDiretorioEscreverConfigs();
@@ -62,17 +61,17 @@ namespace PFC___StandBy_CSharp.Forms
                 HttpResponseMessage response = await client.GetAsync("https://servicodados.ibge.gov.br/api/v1/localidades/distritos");
                 string content = await response.Content.ReadAsStringAsync();
 
-                var JsonDeserialized1 = JsonConvert.DeserializeObject<List<MunicipioModel.Municipio>>(content);
+                var jsonDeserializado = JsonConvert.DeserializeObject<List<MunicipioModel.Municipio>>(content);
 
-                JsonDeserialized1.OrderBy(x => x.Nome)
-                     .ToList()
-                     .GroupBy(x => x.Nome)
-                     .Select(x => x.First())
-                     .ToList().ForEach(m => File.AppendAllText(path, m.Nome + "\n"));
+                jsonDeserializado?.OrderBy(x => x.Nome)
+                    .ToList()
+                    .GroupBy(x => x.Nome)
+                    .Select(x => x.First())
+                    .ToList().ForEach(m => File.AppendAllText(path, m.Nome + "\n"));
             }
             catch (Exception e)
             {
-                MessageBox.Show($"{e.Message}");
+                MessageBox.Show($@"{e.Message}");
             }
         }
 

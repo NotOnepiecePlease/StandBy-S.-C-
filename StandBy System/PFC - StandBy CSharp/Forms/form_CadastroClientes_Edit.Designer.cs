@@ -220,7 +220,7 @@
             this.txtEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtEstado.BackColor = System.Drawing.Color.Black;
+            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(16)))));
             this.txtEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtEstado.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtEstado.Cursor = System.Windows.Forms.Cursors.IBeam;
