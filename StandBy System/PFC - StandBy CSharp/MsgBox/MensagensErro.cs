@@ -1,11 +1,21 @@
 ﻿using PFC___StandBy_CSharp.SqlDbConnect;
 using System;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Forms;
 
 namespace PFC___StandBy_CSharp.MsgBox
 {
     internal class MensagensErro : conexao
     {
+        public void Alert(string msg, form_AlertMessage.enmType type)
+        {
+            using (form_AlertMessage frm = new form_AlertMessage())
+            {
+                frm.showAlert(msg, type);
+                // frm.Close();
+            }
+        }
+
         #region ORDENS DE SERVICO
 
         //--------------------------------------------------------------------------------------------------------
@@ -29,6 +39,7 @@ namespace PFC___StandBy_CSharp.MsgBox
         public void ErroInserirServico(Exception e)
         {
             MessageBox.Show("(OR-SV03)Erro ao tentar inserir serviço!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //Alert("Erro ao Inserir \ncom falha!", form_AlertMessage.enmType.Info);
             //form_ALERT message = new form_ALERT("(OR-SV03)Erro ao tentar inserir serviço!", form_ALERT.AlertType.Erro);
             //message.Show();
         }

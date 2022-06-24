@@ -30,6 +30,7 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy S
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\SBAutoUpdate.pdb
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\StandBy System.exe.config
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\Bunifu_UI_v1.5.3.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\Newtonsoft.Json.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\System.Diagnostics.DiagnosticSource.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\Syncfusion.Tools.Windows.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Release\Syncfusion.Shared.Base.xml

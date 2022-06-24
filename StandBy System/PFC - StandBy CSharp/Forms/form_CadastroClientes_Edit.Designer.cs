@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes_Edit));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cardFundo = new Bunifu.Framework.UI.BunifuCards();
             this.txtCidade = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.groupEndereco = new Bunifu.UI.WinForms.BunifuGroupBox();
@@ -53,7 +52,6 @@
             this.separatorTEL_RECADO = new Bunifu.UI.WinForms.BunifuSeparator();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.separatorTEL_CLIENTE = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.btnZerarDataBotao = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtDataNascimento = new System.Windows.Forms.TextBox();
             this.separatorDATA = new Bunifu.UI.WinForms.BunifuSeparator();
             this.txtNomeRecado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -446,7 +444,6 @@
             this.groupInfoPessoal.Controls.Add(this.separatorTEL_RECADO);
             this.groupInfoPessoal.Controls.Add(this.txtTelefone);
             this.groupInfoPessoal.Controls.Add(this.separatorTEL_CLIENTE);
-            this.groupInfoPessoal.Controls.Add(this.btnZerarDataBotao);
             this.groupInfoPessoal.Controls.Add(this.txtDataNascimento);
             this.groupInfoPessoal.Controls.Add(this.separatorDATA);
             this.groupInfoPessoal.Controls.Add(this.txtNomeRecado);
@@ -542,96 +539,6 @@
             this.separatorTEL_CLIENTE.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.separatorTEL_CLIENTE.Size = new System.Drawing.Size(292, 14);
             this.separatorTEL_CLIENTE.TabIndex = 84;
-            // 
-            // btnZerarDataBotao
-            // 
-            this.btnZerarDataBotao.AllowAnimations = true;
-            this.btnZerarDataBotao.AllowMouseEffects = true;
-            this.btnZerarDataBotao.AllowToggling = false;
-            this.btnZerarDataBotao.AnimationSpeed = 200;
-            this.btnZerarDataBotao.AutoGenerateColors = false;
-            this.btnZerarDataBotao.AutoRoundBorders = false;
-            this.btnZerarDataBotao.AutoSizeLeftIcon = true;
-            this.btnZerarDataBotao.AutoSizeRightIcon = true;
-            this.btnZerarDataBotao.BackColor = System.Drawing.Color.Transparent;
-            this.btnZerarDataBotao.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.btnZerarDataBotao.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnZerarDataBotao.BackgroundImage")));
-            this.btnZerarDataBotao.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnZerarDataBotao.ButtonText = "zerar data";
-            this.btnZerarDataBotao.ButtonTextMarginLeft = 0;
-            this.btnZerarDataBotao.ColorContrastOnClick = 45;
-            this.btnZerarDataBotao.ColorContrastOnHover = 45;
-            this.btnZerarDataBotao.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnZerarDataBotao.CustomizableEdges = borderEdges1;
-            this.btnZerarDataBotao.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnZerarDataBotao.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnZerarDataBotao.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnZerarDataBotao.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnZerarDataBotao.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnZerarDataBotao.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnZerarDataBotao.ForeColor = System.Drawing.Color.White;
-            this.btnZerarDataBotao.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnZerarDataBotao.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnZerarDataBotao.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnZerarDataBotao.IconMarginLeft = 11;
-            this.btnZerarDataBotao.IconPadding = 10;
-            this.btnZerarDataBotao.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnZerarDataBotao.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnZerarDataBotao.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnZerarDataBotao.IconSize = 25;
-            this.btnZerarDataBotao.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.btnZerarDataBotao.IdleBorderRadius = 1;
-            this.btnZerarDataBotao.IdleBorderThickness = 1;
-            this.btnZerarDataBotao.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.btnZerarDataBotao.IdleIconLeftImage = null;
-            this.btnZerarDataBotao.IdleIconRightImage = null;
-            this.btnZerarDataBotao.IndicateFocus = false;
-            this.btnZerarDataBotao.Location = new System.Drawing.Point(386, 111);
-            this.btnZerarDataBotao.Name = "btnZerarDataBotao";
-            this.btnZerarDataBotao.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnZerarDataBotao.OnDisabledState.BorderRadius = 1;
-            this.btnZerarDataBotao.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnZerarDataBotao.OnDisabledState.BorderThickness = 1;
-            this.btnZerarDataBotao.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnZerarDataBotao.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnZerarDataBotao.OnDisabledState.IconLeftImage = null;
-            this.btnZerarDataBotao.OnDisabledState.IconRightImage = null;
-            this.btnZerarDataBotao.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnZerarDataBotao.onHoverState.BorderRadius = 1;
-            this.btnZerarDataBotao.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnZerarDataBotao.onHoverState.BorderThickness = 1;
-            this.btnZerarDataBotao.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnZerarDataBotao.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnZerarDataBotao.onHoverState.IconLeftImage = null;
-            this.btnZerarDataBotao.onHoverState.IconRightImage = null;
-            this.btnZerarDataBotao.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.btnZerarDataBotao.OnIdleState.BorderRadius = 1;
-            this.btnZerarDataBotao.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnZerarDataBotao.OnIdleState.BorderThickness = 1;
-            this.btnZerarDataBotao.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.btnZerarDataBotao.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnZerarDataBotao.OnIdleState.IconLeftImage = null;
-            this.btnZerarDataBotao.OnIdleState.IconRightImage = null;
-            this.btnZerarDataBotao.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnZerarDataBotao.OnPressedState.BorderRadius = 1;
-            this.btnZerarDataBotao.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnZerarDataBotao.OnPressedState.BorderThickness = 1;
-            this.btnZerarDataBotao.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnZerarDataBotao.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnZerarDataBotao.OnPressedState.IconLeftImage = null;
-            this.btnZerarDataBotao.OnPressedState.IconRightImage = null;
-            this.btnZerarDataBotao.Size = new System.Drawing.Size(69, 16);
-            this.btnZerarDataBotao.TabIndex = 77;
-            this.btnZerarDataBotao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnZerarDataBotao.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnZerarDataBotao.TextMarginLeft = 0;
-            this.btnZerarDataBotao.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnZerarDataBotao.UseDefaultRadiusAndThickness = true;
-            this.btnZerarDataBotao.Click += new System.EventHandler(this.btnZerarDataBotao_Click);
             // 
             // txtDataNascimento
             // 
@@ -1250,7 +1157,6 @@
         public Bunifu.UI.WinForms.BunifuCheckBox chkFeminino;
         public Bunifu.UI.WinForms.BunifuCheckBox chkMasculino;
         public Bunifu.UI.WinForms.BunifuDatePicker dtpDataNascimento;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnZerarDataBotao;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnZerarData;
         private Bunifu.UI.WinForms.BunifuSeparator separatorDATA;

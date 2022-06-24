@@ -2,11 +2,14 @@
 using PFC___StandBy_CSharp.PreencherComponentes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Models;
+using Syncfusion.DataSource.Extensions;
+using Syncfusion.Windows.Forms.Tools;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -18,6 +21,7 @@ namespace PFC___StandBy_CSharp.Forms
         private readonly PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
         private List<ClienteDados> listClientesComId = new List<ClienteDados>();
         private int[] corGeral = new int[3] { 0, 0, 0 };
+        private int ultimoClienteAdicionadoID = 0;
 
         public form_OrdensServ(int[] _corRgb)
         {
@@ -26,16 +30,70 @@ namespace PFC___StandBy_CSharp.Forms
             CarregarComboxClientes();
             corGeral = _corRgb;
             MudarTodasCores();
-            cmbClientes.SelectedIndex = cmbClientes.Items.Count - 1;
+            //multiColumnComboBox1.SelectedIndex = multiColumnComboBox1.Items.Count - 1;
             table_OrdensServicos.ClearSelection();
-            //VerificarAtraso();
             timerAtualizarTabela.Start();
         }
 
         private void CarregarComboxClientes()
         {
+            this.multiColumnComboBox1.Style = Syncfusion.Windows.Forms.VisualStyle.Office2007;
+            this.multiColumnComboBox1.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Black;
+
             listClientesComId = preencherCombobox.Preencher();
-            listClientesComId.ForEach(cliente => cmbClientes.Items.Add($"{cliente.Nome}  |  {cliente.Cpf} (ID: {cliente.ID})"));
+
+            DataTable dt = new DataTable("Table1");
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Nome");
+            dt.Columns.Add("Cpf");
+            dt.Columns.Add("⠀⠀⠀Telefone⠀⠀");
+            //dt.Columns.Add("Recado");
+            dt.Columns.Add("Nascimento");
+            dt.Columns.Add("⠀⠀⠀⠀⠀⠀⠀⠀Endereco⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+            dt.Columns.Add("⠀⠀⠀Bairro⠀⠀⠀");
+            dt.Columns.Add("Estado");
+            dt.Columns[0].ColumnMapping = MappingType.Hidden;
+
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
+
+            listClientesComId
+                .OrderBy(x => x.Nome)
+                .ToList()
+                .ForEach(cliente =>
+                {
+                    //Pegando a id do ultimo cliente adicionado (ou o que tem MAIOR ID q da na mesma)
+                    ultimoClienteAdicionadoID = cliente.ID > ultimoClienteAdicionadoID ? cliente.ID : ultimoClienteAdicionadoID;
+
+                    dt.Rows.Add(new string[]
+                    {
+                        $"{cliente.ID}",
+                        $"{cliente.Nome}",
+                        $"{cliente.Cpf}",
+                        $"{cliente.Telefone}",
+                       // $"{cliente.TelefoneRecado}",
+                        $"{cliente.DataNascimento}",
+                        $"{cliente.Endereco}",
+                        $"{cliente.Bairro}",
+                        $"{cliente.Estado}"
+                    });
+                });
+
+            DataView view = new DataView(dt);
+
+            this.multiColumnComboBox1.DataSource = view;
+            this.multiColumnComboBox1.DisplayMember = "Nome";
+            this.multiColumnComboBox1.ValueMember = "ID";
+
+            SetarComboboxComUltimoClienteAdicionado(dt);
+        }
+
+        private void SetarComboboxComUltimoClienteAdicionado(DataTable _dt)
+        {
+            //Pego a linha que tem o ultimo ID cadastrado
+            DataRow[] rows = _dt.Select($"ID ='{ultimoClienteAdicionadoID}'");
+            //Seto a index da combobox para a index dessa linha que peguei acima.
+            multiColumnComboBox1.SelectedIndex = _dt.Rows.IndexOf(rows[0]);
         }
 
         public void AtualizarCoresCelulasTabela()
@@ -123,6 +181,22 @@ namespace PFC___StandBy_CSharp.Forms
         }
 
         private void btnCadastrarOrdem_Click(object sender, EventArgs e)
+        {
+            //ComboBoxBaseDataBound combobox = multiColumnComboBox1 as ComboBoxBaseDataBound;
+            //if (combobox.SelectedIndex != -1)
+            //{
+            //    //Sets the text of MultiColumnComboBox to the text in the first column of selected row.
+            //    DataRowView drv = combobox.Items[combobox.SelectedIndex] as DataRowView;
+            //    //combobox.Text = drv.Row[0].ToString();
+
+            //    MessageBox.Show($"{drv.Row[0]}");
+            //}
+            //MessageBox.Show($"{ultimoClienteAdicionadoID}");
+            CadastrarServico();
+            CarregarComboxClientes();
+        }
+
+        private void CadastrarServico()
         {
             if (txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(txtAparelhoOrdens.Text))
             {
@@ -435,7 +509,8 @@ namespace PFC___StandBy_CSharp.Forms
             lblDefeito.Visible = false;
             lblSenha.Visible = false;
             lblAcessoriosOrdens.Visible = false;
-            cmbClientes.Visible = false;
+            //cmbClientes.Visible = false;
+            multiColumnComboBox1.Visible = false;
             txtAparelhoOrdens.Visible = false;
             txtDefeitoOrdens.Visible = false;
             txtSenhaOrdens.Visible = false;
@@ -466,7 +541,8 @@ namespace PFC___StandBy_CSharp.Forms
             lblDefeito.Visible = true;
             lblSenha.Visible = true;
             lblAcessoriosOrdens.Visible = true;
-            cmbClientes.Visible = true;
+            //cmbClientes.Visible = true;
+            multiColumnComboBox1.Visible = true;
             txtAparelhoOrdens.Visible = true;
             txtDefeitoOrdens.Visible = true;
             txtSenhaOrdens.Visible = true;
@@ -582,10 +658,20 @@ namespace PFC___StandBy_CSharp.Forms
             //MessageBox.Show(messageBoxCS.ToString(), "KeyDown Event");
         }
 
-        private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        private void multiColumnComboBox1_Click(object sender, EventArgs e)
         {
-            //Pegando a ID do cliente selecionado
-            lblIdCliente.Text = listClientesComId.ElementAt(cmbClientes.SelectedIndex).ID.ToString();
+            multiColumnComboBox1.DroppedDown = true;
+        }
+
+        private void multiColumnComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBoxBaseDataBound combobox = multiColumnComboBox1 as ComboBoxBaseDataBound;
+            if (combobox.SelectedIndex != -1)
+            {
+                DataRowView drv = combobox.Items[combobox.SelectedIndex] as DataRowView;
+                //lblIdCliente.Text = listClientesComId.ElementAt(multiColumnComboBox1.SelectedIndex).ID.ToString();
+                lblIdCliente.Text = drv.Row[0].ToString();
+            }
         }
     }
 }

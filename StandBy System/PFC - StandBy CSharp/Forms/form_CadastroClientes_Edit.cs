@@ -45,9 +45,9 @@ namespace PFC___StandBy_CSharp.Forms
             btnEditar.BaseColor2 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnEditar.OnHoverBaseColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnEditar.OnHoverBaseColor2 = Color.White;
-            btnZerarDataBotao.OnIdleState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnZerarDataBotao.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnZerarDataBotao.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //btnZerarDataBotao.OnIdleState.FillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //btnZerarDataBotao.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //btnZerarDataBotao.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             cardFundo.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
@@ -185,11 +185,6 @@ namespace PFC___StandBy_CSharp.Forms
         }
 
         private void btnZerarData_Click(object sender, EventArgs e)
-        {
-            ZerarData();
-        }
-
-        private void btnZerarDataBotao_Click(object sender, EventArgs e)
         {
             ZerarData();
         }

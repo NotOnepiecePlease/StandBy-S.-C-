@@ -99,6 +99,7 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy S
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Bunifu.UI.WinForms.ToggleSwitch.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\BunifuDataViz.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Bunifu_UI_v1.5.3.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Newtonsoft.Json.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Syncfusion.Core.WinForms.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Syncfusion.DataSource.WinForms.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Syncfusion.Grid.Base.xml
@@ -111,6 +112,7 @@ E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy S
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Syncfusion.Tools.Base.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\Syncfusion.Tools.Windows.xml
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Release\System.Diagnostics.DiagnosticSource.xml
+E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC - StandBy CSharp.csproj.AssemblyReference.cache
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\StandBy System.exe.config
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.form_Loading.resources
 E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Release\PFC___StandBy_CSharp.Forms.form_ALERT.resources

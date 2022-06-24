@@ -1,13 +1,27 @@
-﻿using PFC___StandBy_CSharp.Forms;
+﻿using System.Linq;
+using System.Windows.Forms;
+using PFC___StandBy_CSharp.Forms;
 
 namespace PFC___StandBy_CSharp.MsgBox
 {
     internal class MensagensSucesso
     {
+        private static form_AlertMessage frm;
+
         public void Alert(string msg, form_AlertMessage.enmType type)
         {
-            form_AlertMessage frm = new form_AlertMessage();
-            frm.showAlert(msg, type);
+            //form_AlertMessage frm = new form_AlertMessage();
+            //frm.showAlert(msg, type);
+            if (Application.OpenForms.OfType<form_AlertMessage>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+                frm.showAlert(msg, type);
+            }
+            else
+            {
+                frm = new form_AlertMessage();
+                frm.showAlert(msg, type);
+            }
         }
 
         #region ORDENS DE SERVICO

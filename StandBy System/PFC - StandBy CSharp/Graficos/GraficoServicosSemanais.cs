@@ -6,12 +6,13 @@ using Bunifu.DataViz.WinForms;
 using DataPoint = Bunifu.DataViz.WinForms.DataPoint;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace PFC___StandBy_CSharp.Graficos
 {
     internal class GraficoServicosSemanais : conexao
     {
-        public void PreencherUltimos7Dias(BunifuDataViz bunifuDataViz1, Label lblservico)
+        public async Task PreencherUltimos7Dias(BunifuDataViz bunifuDataViz1, Label lblservico)
         {
             DataPoint graficoArea, graficoLinha;
             graficoArea = new DataPoint(BunifuDataViz._type.Bunifu_area);
@@ -23,44 +24,45 @@ namespace PFC___StandBy_CSharp.Graficos
             using (SqlConnection con = OpenConnection())
             {
                 string procedure = "ServicosUltimos7Dias";
-                SqlDataReader dr;
+                //SqlDataReader dr;
                 SqlCommand cmd = new SqlCommand(procedure, con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                dr = cmd.ExecuteReader();
-
-                while (dr.Read())
+                using (var dr = await cmd.ExecuteReaderAsync())
                 {
-                    qntServicosSemanais += 1;
-                    switch (dr.GetString(2))
+                    while (await dr.ReadAsync())
                     {
-                        case "Segunda-Feira":
-                            qntServicos[0] = qntServicos[0] + 1;
-                            break;
+                        qntServicosSemanais += 1;
+                        switch (dr.GetString(2))
+                        {
+                            case "Segunda-Feira":
+                                qntServicos[0] = qntServicos[0] + 1;
+                                break;
 
-                        case "Terça-Feira":
-                            qntServicos[1] = qntServicos[1] + 1;
-                            break;
+                            case "Terça-Feira":
+                                qntServicos[1] = qntServicos[1] + 1;
+                                break;
 
-                        case "Quarta-Feira":
-                            qntServicos[2] = qntServicos[2] + 1;
-                            break;
+                            case "Quarta-Feira":
+                                qntServicos[2] = qntServicos[2] + 1;
+                                break;
 
-                        case "Quinta-Feira":
-                            qntServicos[3] = qntServicos[3] + 1;
-                            break;
+                            case "Quinta-Feira":
+                                qntServicos[3] = qntServicos[3] + 1;
+                                break;
 
-                        case "Sexta-Feira":
-                            qntServicos[4] = qntServicos[4] + 1;
-                            break;
+                            case "Sexta-Feira":
+                                qntServicos[4] = qntServicos[4] + 1;
+                                break;
 
-                        case "Sábado":
-                            qntServicos[5] = qntServicos[5] + 1;
-                            break;
+                            case "Sábado":
+                                qntServicos[5] = qntServicos[5] + 1;
+                                break;
 
-                        case "Domingo":
-                            qntServicos[6] = qntServicos[6] + 1;
-                            break;
+                            case "Domingo":
+                                qntServicos[6] = qntServicos[6] + 1;
+                                break;
+                        }
                     }
                 }
 
@@ -90,6 +92,7 @@ namespace PFC___StandBy_CSharp.Graficos
                 canvas.addData(graficoLinha);
 
                 bunifuDataViz1.Render(canvas);
+                bunifuDataViz1.Visible = true;
                 //lblQntServicosSemanais.Text = qntServicos.ToString();
             }
         }

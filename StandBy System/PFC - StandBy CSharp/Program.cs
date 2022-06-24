@@ -1,5 +1,6 @@
 ﻿using PFC___StandBy_CSharp.Forms;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace PFC___StandBy_CSharp

@@ -49,20 +49,6 @@ namespace PFC___StandBy_CSharp.Forms
             btnConfirmarPrevisaoEntrega.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnConfirmarPrevisaoEntrega.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            //chk0d.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chk0d.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chk0d.OnUncheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-
-            //chk1d.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chk1d.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chk1d.OnUncheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chk1d.Checked = false;
-
-            //chk2d.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chk2d.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chk2d.OnUncheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            //chk2d.Checked = false;
         }
 
         private void btnConfirmarPrevisaoEntrega_Click(object sender, EventArgs e)

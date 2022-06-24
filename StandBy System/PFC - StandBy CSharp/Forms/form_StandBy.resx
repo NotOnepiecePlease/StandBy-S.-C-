@@ -4958,7 +4958,10 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="backVerificarVersao.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="workerVerificarVersao.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>141, 58</value>
+  </metadata>
+  <metadata name="workerInicializarJuntoComForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>300, 58</value>
   </metadata>
 </root>

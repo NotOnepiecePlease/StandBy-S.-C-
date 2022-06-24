@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdensServ));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.multiColumnComboBox1 = new Syncfusion.Windows.Forms.Tools.MultiColumnComboBox();
+            this.lblIdCliente = new System.Windows.Forms.Label();
             this.btnPatternIcon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtSituacaoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtAcessoriosOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -44,7 +47,6 @@
             this.btnSenhaPadrao = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtSenhaOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtDefeitoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.cmbClientes = new System.Windows.Forms.ComboBox();
             this.btnPesquisarCliente = new FontAwesome.Sharp.IconButton();
             this.txtPesquisarCliente = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.btnCadastrarOrdem = new FontAwesome.Sharp.IconButton();
@@ -84,8 +86,8 @@
             this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
             this.standbyDataSet = new PFC___StandBy_CSharp.standbyDataSet();
             this.standbyDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblIdCliente = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.multiColumnComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.standbyDataSet)).BeginInit();
@@ -95,6 +97,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.multiColumnComboBox1);
             this.panel1.Controls.Add(this.lblIdCliente);
             this.panel1.Controls.Add(this.btnPatternIcon);
             this.panel1.Controls.Add(this.txtSituacaoOrdens);
@@ -104,7 +107,6 @@
             this.panel1.Controls.Add(this.btnSenhaPadrao);
             this.panel1.Controls.Add(this.txtSenhaOrdens);
             this.panel1.Controls.Add(this.txtDefeitoOrdens);
-            this.panel1.Controls.Add(this.cmbClientes);
             this.panel1.Controls.Add(this.btnPesquisarCliente);
             this.panel1.Controls.Add(this.txtPesquisarCliente);
             this.panel1.Controls.Add(this.btnCadastrarOrdem);
@@ -122,6 +124,37 @@
             this.panel1.Size = new System.Drawing.Size(1280, 665);
             this.panel1.TabIndex = 0;
             this.panel1.TabStop = true;
+            // 
+            // multiColumnComboBox1
+            // 
+            this.multiColumnComboBox1.AllowFiltering = false;
+            this.multiColumnComboBox1.BeforeTouchSize = new System.Drawing.Size(1169, 31);
+            this.multiColumnComboBox1.Filter = null;
+            this.multiColumnComboBox1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.multiColumnComboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.multiColumnComboBox1.Location = new System.Drawing.Point(56, 27);
+            this.multiColumnComboBox1.MaxDropDownItems = 10;
+            this.multiColumnComboBox1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.multiColumnComboBox1.Name = "multiColumnComboBox1";
+            this.multiColumnComboBox1.ScrollMetroColorTable = metroColorTable1;
+            this.multiColumnComboBox1.Size = new System.Drawing.Size(1169, 31);
+            this.multiColumnComboBox1.TabIndex = 48;
+            this.multiColumnComboBox1.Text = "Adriano Fraga de Andrade";
+            this.multiColumnComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.multiColumnComboBox1.ThemeName = "Default";
+            this.multiColumnComboBox1.SelectedIndexChanged += new System.EventHandler(this.multiColumnComboBox1_SelectedIndexChanged);
+            this.multiColumnComboBox1.Click += new System.EventHandler(this.multiColumnComboBox1_Click);
+            // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIdCliente.Location = new System.Drawing.Point(35, 71);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(13, 13);
+            this.lblIdCliente.TabIndex = 45;
+            this.lblIdCliente.Text = "0";
+            this.lblIdCliente.Visible = false;
             // 
             // btnPatternIcon
             // 
@@ -145,7 +178,7 @@
             this.btnPatternIcon.IconVisible = true;
             this.btnPatternIcon.IconZoom = 55D;
             this.btnPatternIcon.IsTab = false;
-            this.btnPatternIcon.Location = new System.Drawing.Point(903, 6);
+            this.btnPatternIcon.Location = new System.Drawing.Point(763, 69);
             this.btnPatternIcon.Name = "btnPatternIcon";
             this.btnPatternIcon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.btnPatternIcon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(60)))));
@@ -177,7 +210,7 @@
             this.txtSituacaoOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtSituacaoOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtSituacaoOrdens.LineThickness = 2;
-            this.txtSituacaoOrdens.Location = new System.Drawing.Point(216, 4);
+            this.txtSituacaoOrdens.Location = new System.Drawing.Point(45, 108);
             this.txtSituacaoOrdens.Margin = new System.Windows.Forms.Padding(4);
             this.txtSituacaoOrdens.MaxLength = 500;
             this.txtSituacaoOrdens.Name = "txtSituacaoOrdens";
@@ -208,11 +241,11 @@
             this.txtAcessoriosOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtAcessoriosOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtAcessoriosOrdens.LineThickness = 2;
-            this.txtAcessoriosOrdens.Location = new System.Drawing.Point(983, 34);
+            this.txtAcessoriosOrdens.Location = new System.Drawing.Point(833, 94);
             this.txtAcessoriosOrdens.Margin = new System.Windows.Forms.Padding(4);
             this.txtAcessoriosOrdens.MaxLength = 500;
             this.txtAcessoriosOrdens.Name = "txtAcessoriosOrdens";
-            this.txtAcessoriosOrdens.Size = new System.Drawing.Size(233, 34);
+            this.txtAcessoriosOrdens.Size = new System.Drawing.Size(188, 34);
             this.txtAcessoriosOrdens.TabIndex = 5;
             this.txtAcessoriosOrdens.Text = "Vieram junto c/ aparelho";
             this.txtAcessoriosOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -229,7 +262,7 @@
             this.lblAcessoriosOrdens.ForeColor = System.Drawing.Color.Lavender;
             this.lblAcessoriosOrdens.Image = global::PFC___StandBy_CSharp.Properties.Resources.electrical_20px;
             this.lblAcessoriosOrdens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAcessoriosOrdens.Location = new System.Drawing.Point(1028, 5);
+            this.lblAcessoriosOrdens.Location = new System.Drawing.Point(852, 68);
             this.lblAcessoriosOrdens.Name = "lblAcessoriosOrdens";
             this.lblAcessoriosOrdens.Size = new System.Drawing.Size(143, 33);
             this.lblAcessoriosOrdens.TabIndex = 40;
@@ -291,11 +324,11 @@
             this.btnSenhaPadrao.ColorContrastOnClick = 45;
             this.btnSenhaPadrao.ColorContrastOnHover = 45;
             this.btnSenhaPadrao.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnSenhaPadrao.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnSenhaPadrao.CustomizableEdges = borderEdges1;
             this.btnSenhaPadrao.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSenhaPadrao.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSenhaPadrao.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -319,7 +352,7 @@
             this.btnSenhaPadrao.IdleIconLeftImage = null;
             this.btnSenhaPadrao.IdleIconRightImage = null;
             this.btnSenhaPadrao.IndicateFocus = false;
-            this.btnSenhaPadrao.Location = new System.Drawing.Point(284, 7);
+            this.btnSenhaPadrao.Location = new System.Drawing.Point(113, 111);
             this.btnSenhaPadrao.Name = "btnSenhaPadrao";
             this.btnSenhaPadrao.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSenhaPadrao.OnDisabledState.BorderRadius = 3;
@@ -381,11 +414,11 @@
             this.txtSenhaOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtSenhaOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtSenhaOrdens.LineThickness = 2;
-            this.txtSenhaOrdens.Location = new System.Drawing.Point(794, 36);
+            this.txtSenhaOrdens.Location = new System.Drawing.Point(648, 96);
             this.txtSenhaOrdens.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenhaOrdens.MaxLength = 100;
             this.txtSenhaOrdens.Name = "txtSenhaOrdens";
-            this.txtSenhaOrdens.Size = new System.Drawing.Size(181, 32);
+            this.txtSenhaOrdens.Size = new System.Drawing.Size(171, 32);
             this.txtSenhaOrdens.TabIndex = 4;
             this.txtSenhaOrdens.Text = "Digite a senha do celular";
             this.txtSenhaOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -411,32 +444,17 @@
             this.txtDefeitoOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtDefeitoOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtDefeitoOrdens.LineThickness = 2;
-            this.txtDefeitoOrdens.Location = new System.Drawing.Point(496, 36);
+            this.txtDefeitoOrdens.Location = new System.Drawing.Point(417, 96);
             this.txtDefeitoOrdens.Margin = new System.Windows.Forms.Padding(4);
             this.txtDefeitoOrdens.MaxLength = 100;
             this.txtDefeitoOrdens.Name = "txtDefeitoOrdens";
-            this.txtDefeitoOrdens.Size = new System.Drawing.Size(290, 32);
+            this.txtDefeitoOrdens.Size = new System.Drawing.Size(217, 32);
             this.txtDefeitoOrdens.TabIndex = 3;
             this.txtDefeitoOrdens.Text = "Digite o defeito";
             this.txtDefeitoOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDefeitoOrdens.Enter += new System.EventHandler(this.txtDefeitoOrdens_Enter);
             this.txtDefeitoOrdens.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDefeitoOrdens_KeyDown);
             this.txtDefeitoOrdens.Leave += new System.EventHandler(this.txtDefeitoOrdens_Leave);
-            // 
-            // cmbClientes
-            // 
-            this.cmbClientes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbClientes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbClientes.BackColor = System.Drawing.SystemColors.Control;
-            this.cmbClientes.DropDownWidth = 500;
-            this.cmbClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.cmbClientes.ForeColor = System.Drawing.Color.Black;
-            this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(3, 36);
-            this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(275, 32);
-            this.cmbClientes.TabIndex = 1;
-            this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
             // 
             // btnPesquisarCliente
             // 
@@ -451,7 +469,7 @@
             this.btnPesquisarCliente.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btnPesquisarCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.btnPesquisarCliente.IconSize = 50;
-            this.btnPesquisarCliente.Location = new System.Drawing.Point(1228, 87);
+            this.btnPesquisarCliente.Location = new System.Drawing.Point(1224, 141);
             this.btnPesquisarCliente.Name = "btnPesquisarCliente";
             this.btnPesquisarCliente.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnPesquisarCliente.Rotation = 0D;
@@ -474,7 +492,7 @@
             this.txtPesquisarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.txtPesquisarCliente.ForeColor = System.Drawing.Color.Silver;
             this.txtPesquisarCliente.isPassword = false;
-            this.txtPesquisarCliente.Location = new System.Drawing.Point(5, 87);
+            this.txtPesquisarCliente.Location = new System.Drawing.Point(5, 141);
             this.txtPesquisarCliente.Margin = new System.Windows.Forms.Padding(5);
             this.txtPesquisarCliente.MaxLength = 32767;
             this.txtPesquisarCliente.Name = "txtPesquisarCliente";
@@ -499,7 +517,7 @@
             this.btnCadastrarOrdem.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             this.btnCadastrarOrdem.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.btnCadastrarOrdem.IconSize = 50;
-            this.btnCadastrarOrdem.Location = new System.Drawing.Point(1228, 23);
+            this.btnCadastrarOrdem.Location = new System.Drawing.Point(1224, 77);
             this.btnCadastrarOrdem.Name = "btnCadastrarOrdem";
             this.btnCadastrarOrdem.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnCadastrarOrdem.Rotation = 0D;
@@ -517,7 +535,7 @@
             this.lblSituacao.ForeColor = System.Drawing.Color.Lavender;
             this.lblSituacao.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_comments_20px;
             this.lblSituacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSituacao.Location = new System.Drawing.Point(251, 12);
+            this.lblSituacao.Location = new System.Drawing.Point(80, 116);
             this.lblSituacao.Name = "lblSituacao";
             this.lblSituacao.Size = new System.Drawing.Size(27, 17);
             this.lblSituacao.TabIndex = 34;
@@ -533,7 +551,7 @@
             this.lblSenha.ForeColor = System.Drawing.Color.Lavender;
             this.lblSenha.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_password_20px;
             this.lblSenha.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSenha.Location = new System.Drawing.Point(818, 4);
+            this.lblSenha.Location = new System.Drawing.Point(678, 67);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(114, 33);
             this.lblSenha.TabIndex = 33;
@@ -548,7 +566,7 @@
             this.lblDefeito.ForeColor = System.Drawing.Color.Lavender;
             this.lblDefeito.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_error_20px;
             this.lblDefeito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDefeito.Location = new System.Drawing.Point(578, 5);
+            this.lblDefeito.Location = new System.Drawing.Point(461, 68);
             this.lblDefeito.Name = "lblDefeito";
             this.lblDefeito.Size = new System.Drawing.Size(127, 33);
             this.lblDefeito.TabIndex = 32;
@@ -563,7 +581,7 @@
             this.lblAparelho.ForeColor = System.Drawing.Color.Lavender;
             this.lblAparelho.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_android_20px_3;
             this.lblAparelho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAparelho.Location = new System.Drawing.Point(320, 5);
+            this.lblAparelho.Location = new System.Drawing.Point(247, 68);
             this.lblAparelho.Name = "lblAparelho";
             this.lblAparelho.Size = new System.Drawing.Size(133, 33);
             this.lblAparelho.TabIndex = 31;
@@ -577,7 +595,7 @@
             this.lblCliente.ForeColor = System.Drawing.Color.Lavender;
             this.lblCliente.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_user_20px;
             this.lblCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCliente.Location = new System.Drawing.Point(83, 10);
+            this.lblCliente.Location = new System.Drawing.Point(574, 2);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(112, 22);
             this.lblCliente.TabIndex = 30;
@@ -602,11 +620,11 @@
             this.txtAparelhoOrdens.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.txtAparelhoOrdens.LineMouseHoverColor = System.Drawing.Color.Lavender;
             this.txtAparelhoOrdens.LineThickness = 2;
-            this.txtAparelhoOrdens.Location = new System.Drawing.Point(286, 36);
+            this.txtAparelhoOrdens.Location = new System.Drawing.Point(236, 96);
             this.txtAparelhoOrdens.Margin = new System.Windows.Forms.Padding(5);
             this.txtAparelhoOrdens.MaxLength = 50;
             this.txtAparelhoOrdens.Name = "txtAparelhoOrdens";
-            this.txtAparelhoOrdens.Size = new System.Drawing.Size(201, 32);
+            this.txtAparelhoOrdens.Size = new System.Drawing.Size(167, 32);
             this.txtAparelhoOrdens.TabIndex = 2;
             this.txtAparelhoOrdens.Text = "Modelo do aparelho";
             this.txtAparelhoOrdens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -662,7 +680,7 @@
             this.table_OrdensServicos.EnableHeadersVisualStyles = false;
             this.table_OrdensServicos.HeaderBgColor = System.Drawing.SystemColors.Control;
             this.table_OrdensServicos.HeaderForeColor = System.Drawing.Color.Black;
-            this.table_OrdensServicos.Location = new System.Drawing.Point(3, 150);
+            this.table_OrdensServicos.Location = new System.Drawing.Point(3, 195);
             this.table_OrdensServicos.Name = "table_OrdensServicos";
             this.table_OrdensServicos.ReadOnly = true;
             this.table_OrdensServicos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -682,7 +700,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_OrdensServicos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_OrdensServicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_OrdensServicos.Size = new System.Drawing.Size(1265, 492);
+            this.table_OrdensServicos.Size = new System.Drawing.Size(1265, 447);
             this.table_OrdensServicos.TabIndex = 0;
             this.table_OrdensServicos.TabStop = false;
             this.table_OrdensServicos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.table_OrdensServicos_CellFormatting_1);
@@ -901,7 +919,7 @@
             // arredondarComboboxCliente
             // 
             this.arredondarComboboxCliente.ElipseRadius = 10;
-            this.arredondarComboboxCliente.TargetControl = this.cmbClientes;
+            this.arredondarComboboxCliente.TargetControl = this;
             // 
             // arredondarBotaoCadastrar
             // 
@@ -928,17 +946,6 @@
             this.standbyDataSetBindingSource.DataSource = this.standbyDataSet;
             this.standbyDataSetBindingSource.Position = 0;
             // 
-            // lblIdCliente
-            // 
-            this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblIdCliente.Location = new System.Drawing.Point(35, 71);
-            this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(13, 13);
-            this.lblIdCliente.TabIndex = 45;
-            this.lblIdCliente.Text = "0";
-            this.lblIdCliente.Visible = false;
-            // 
             // form_OrdensServ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -953,6 +960,7 @@
             this.Text = "form_OrdensServ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.multiColumnComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.standbyDataSet)).EndInit();
@@ -983,7 +991,6 @@
         private standbyDataSet standbyDataSet;
         private System.Windows.Forms.BindingSource standbyDataSetBindingSource;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtAparelhoOrdens;
-        public System.Windows.Forms.ComboBox cmbClientes;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtDefeitoOrdens;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtSenhaOrdens;
         private System.Windows.Forms.Timer timerAtualizarTabela;
@@ -1013,5 +1020,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         public System.Windows.Forms.Label lblIdCliente;
+        private Syncfusion.Windows.Forms.Tools.MultiColumnComboBox multiColumnComboBox1;
     }
 }
