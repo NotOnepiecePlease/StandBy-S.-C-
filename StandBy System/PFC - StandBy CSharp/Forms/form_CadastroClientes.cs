@@ -1,5 +1,6 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes;
+using PFC___StandBy_CSharp.APIs;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,7 +20,8 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_CadastroClientes : Form
     {
-        private PreencherTableClientes preencherClientes = new PreencherTableClientes();
+        private PreencherTableClientes preencherTableClientes = new PreencherTableClientes();
+        private PreencherComboboxCliente preencherComboboxCliente = new PreencherComboboxCliente();
         private DeletarDados dd = new DeletarDados();
         private InserirDados id = new InserirDados();
         private BuscarDados bd = new BuscarDados();
@@ -33,11 +35,13 @@ namespace PFC___StandBy_CSharp.Forms
         public form_CadastroClientes(int[] _corRGB)
         {
             InitializeComponent();
-            preencherClientes.Preencher(table_Clientes);
+            //CarregarComboboxCidades();
+            preencherTableClientes.Preencher(table_Clientes);
             corGeral = _corRGB;
             MudarTodasCores();
             lblQuantidadeClientes.Text = bd.buscarQuantidadeClientes().ToString();
             CheckForIllegalCrossThreadCalls = false;
+            preencherComboboxCliente.Preencher(txtNomeCliente, cmbCidades, lblCidades_Carregando, listboxCidades);
         }
 
         public Control FindFocusedComponent()
@@ -55,7 +59,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void refreshTable()
         {
-            preencherClientes.Preencher(table_Clientes);
+            preencherTableClientes.Preencher(table_Clientes);
         }
 
         public void MudarTodasCores()
@@ -154,13 +158,13 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (txtPesquisarCADCliente.Text == "")
             {
-                preencherClientes.Preencher(table_Clientes);
+                preencherTableClientes.Preencher(table_Clientes);
             }
             else
             {
                 try
                 {
-                    preencherClientes.PesquisarClienteNome(txtPesquisarCADCliente.Text, table_Clientes);
+                    preencherTableClientes.PesquisarClienteNome(txtPesquisarCADCliente.Text, table_Clientes);
                 }
                 catch (Exception ex)
                 {
@@ -196,19 +200,19 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 //Pegar os dados dos campos
                 string nome = txtNomeCliente.Text;
-                string cpf = (txtCPFCliente.Text == "CPF ou CNPJ do Cliente") ? "SEM CPF/CNPJ" : txtCPFCliente.Text;
-                string telPrincipal = (txtTelefoneCliente.Text == "Telefone Principal do Cliente") ? VALOR_PADRAO_DADOS_CLIENTE : txtTelefoneCliente.Text;
-                string telRecados = (txtTelefoneRecado.Text == "Telefone de Recados do Cliente") ? VALOR_PADRAO_DADOS_CLIENTE : txtTelefoneRecado.Text;
-                string nomeRecados = (txtNomeRecado.Text == "Nome de quem vai receber o recado") ? VALOR_PADRAO_DADOS_CLIENTE : txtNomeRecado.Text;
-                string parentescoRecados = (txtParentescoRecado.Text == "Parentesco de quem vai receber o recado") ? VALOR_PADRAO_DADOS_CLIENTE : txtParentescoRecado.Text;
-                string cep = (txtCEP.Text == "Ex: 42803317") ? VALOR_PADRAO_DADOS_CLIENTE : txtCEP.Text;
-                string endereco = (txtEndereco.Text == "Ex: Rua Segundo Cendes, 197B") ? VALOR_PADRAO_DADOS_CLIENTE : txtEndereco.Text;
-                string complemento = (txtComplemento.Text == "Ex: Casa") ? VALOR_PADRAO_DADOS_CLIENTE : txtComplemento.Text;
-                string bairro = (txtBairro.Text == "Ex: Gleba B") ? VALOR_PADRAO_DADOS_CLIENTE : txtBairro.Text;
-                string cidade = (cmbCidades.Text == "Ex: Camaçari") ? VALOR_PADRAO_DADOS_CLIENTE : cmbCidades.Text;
-                string estado = (txtEstado.Text == "Ex: Bahia") ? VALOR_PADRAO_DADOS_CLIENTE : txtEstado.Text;
+                string cpf = (txtCPFCliente.Text == "CPF ou CNPJ do Cliente") || (txtCPFCliente.Text == "") ? "SEM CPF/CNPJ" : txtCPFCliente.Text;
+                string telPrincipal = (txtTelefoneCliente.Text == "Telefone Principal do Cliente") || (txtTelefoneCliente.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtTelefoneCliente.Text;
+                string telRecados = (txtTelefoneRecado.Text == "Telefone de Recados do Cliente") || (txtTelefoneRecado.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtTelefoneRecado.Text;
+                string nomeRecados = (txtNomeRecado.Text == "Nome de quem vai receber o recado") || (txtNomeRecado.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtNomeRecado.Text;
+                string parentescoRecados = (txtParentescoRecado.Text == "Parentesco de quem vai receber o recado") || (txtParentescoRecado.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtParentescoRecado.Text;
+                string cep = (txtCEP.Text == "Ex: 42803317") || (txtCEP.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtCEP.Text;
+                string endereco = (txtEndereco.Text == "Ex: Rua Segundo Cendes, 197B") || (txtEndereco.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtEndereco.Text;
+                string complemento = (txtComplemento.Text == "Ex: Casa") || (txtComplemento.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtComplemento.Text;
+                string bairro = (txtBairro.Text == "Ex: Gleba B") || (txtBairro.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtBairro.Text;
+                string cidade = (cmbCidades.Text == "Ex: Camaçari") || (cmbCidades.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : cmbCidades.Text;
+                string estado = (txtEstado.Text == "Ex: Bahia") || (txtEstado.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtEstado.Text;
                 string sexo = (chkMasculino.Checked == true) ? "M" : "F";
-                string dataNascimento = (txtDataNascimento.Text == "Data de Nascimento") ? VALOR_PADRAO_DADOS_CLIENTE : txtDataNascimento.Text;
+                string dataNascimento = (txtDataNascimento.Text == "Data de Nascimento") || (txtDataNascimento.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtDataNascimento.Text;
                 id.InserirCliente(nome, cpf, telPrincipal, telRecados, nomeRecados, parentescoRecados,
                     sexo, dataNascimento, cep, endereco, complemento, bairro, cidade, estado);
             }
@@ -575,7 +579,7 @@ namespace PFC___StandBy_CSharp.Forms
             SetarCorDaLinhaETexto_LEAVE(txtPesquisarCADCliente, "Digite o nome do cliente que deseja buscar os serviços");
             if (txtPesquisarCADCliente.Text == "")
             {
-                preencherClientes.Preencher(table_Clientes);
+                preencherTableClientes.Preencher(table_Clientes);
             }
         }
 
@@ -626,6 +630,11 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void txtCEP_Leave(object sender, EventArgs e)
         {
+            BuscarCepAPI();
+        }
+
+        private void BuscarCepAPI()
+        {
             try
             {
                 if (txtCEP.Text == "")
@@ -638,14 +647,13 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 else
                 {
-                    CorreiosApi correiosApi = new CorreiosApi();
-                    var endereco = correiosApi.consultaCEP(txtCEP.Text);
+                    var enderecoRetornado = CepApi.Buscar(txtCEP.Text);
 
-                    txtEndereco.Text = endereco.end ?? "------";
-                    txtBairro.Text = endereco.bairro ?? "------";
-                    cmbCidades.Text = endereco.cidade ?? "------";
-                    txtComplemento.Text = endereco.complemento ?? "------";
-                    txtEstado.Text = endereco.uf ?? "------";
+                    txtEndereco.Text = enderecoRetornado[0].Endereco;
+                    txtBairro.Text = enderecoRetornado[0].Bairro;
+                    cmbCidades.Text = enderecoRetornado[0].Cidade;
+                    txtComplemento.Text = enderecoRetornado[0].Complemento;
+                    txtEstado.Text = enderecoRetornado[0].UF;
 
                     // txtCEP.Text = _texto;
                     txtCEP.Font = new Font(txtCEP.Font, FontStyle.Italic);
@@ -715,7 +723,10 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_CadastroClientes_Load(object sender, EventArgs e)
         {
-            //txtNomeCliente.GetFocus();
+        }
+
+        private void CarregarComboboxCidades()
+        {
             txtNomeCliente.Focus();
             this.cmbCidades.ListControl = this.listboxCidades;
 
@@ -820,6 +831,45 @@ namespace PFC___StandBy_CSharp.Forms
                 CadastrarNovoCliente();
                 //MessageBox.Show("Test");
             }
+        }
+
+        private void btnLimparCampos_Click(object sender, EventArgs e)
+        {
+            txtNomeCliente.Text = "";
+            txtNomeCliente.Focus();
+            txtCPFCliente.Text = "";
+            txtCPFCliente.Focus();
+            txtDataNascimento.Text = "";
+            txtDataNascimento.Focus();
+            txtTelefoneCliente.Text = "";
+            txtTelefoneCliente.Focus();
+            txtTelefoneRecado.Text = "";
+            txtTelefoneRecado.Focus();
+            txtParentescoRecado.Text = "";
+            txtParentescoRecado.Focus();
+            txtNomeRecado.Text = "";
+            txtNomeRecado.Focus();
+            txtCEP.Text = "";
+            txtCEP.Focus();
+            txtEndereco.Text = "";
+            txtEndereco.Focus();
+            txtComplemento.Text = "";
+            txtComplemento.Focus();
+            txtBairro.Text = "";
+            txtBairro.Focus();
+            txtEstado.Text = "";
+            txtEstado.Focus();
+            cmbCidades.Text = "";
+            cmbCidades.Focus();
+            btnLimparCampos.Focus();
+        }
+
+        private void cmbCidades_Click(object sender, EventArgs e)
+        {
+            //if (cmbCidades.Text == "Ex: Camaçari")
+            //{
+            //    CarregarComboboxCidades();
+            //}
         }
     }
 }

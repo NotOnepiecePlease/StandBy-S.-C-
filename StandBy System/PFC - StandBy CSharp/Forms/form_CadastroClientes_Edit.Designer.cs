@@ -328,6 +328,7 @@
             this.txtCEP.Size = new System.Drawing.Size(150, 34);
             this.txtCEP.TabIndex = 77;
             this.txtCEP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCEP.Leave += new System.EventHandler(this.txtCEP_Leave);
             // 
             // cmbCidades
             // 

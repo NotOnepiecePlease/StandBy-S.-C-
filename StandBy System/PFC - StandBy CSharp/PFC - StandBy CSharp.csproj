@@ -308,6 +308,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIs\CepApi.cs" />
     <Compile Include="ChecarUpdates\Verificar.cs" />
     <Compile Include="Dados\AlterarDados.cs" />
     <Compile Include="Dados\BackupDados.cs" />
@@ -496,6 +497,7 @@
     <Compile Include="NotepadFuncoes\SalvarDocumento.cs" />
     <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherComboBoxCliente.cs" />
     <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherTableOrdensServicos.cs" />
+    <Compile Include="PreencherComponentes\Tela 2 - Cadastro Clientes\PreencherComboboxCliente.cs" />
     <Compile Include="PreencherComponentes\Tela 2 - Cadastro Clientes\PreencherTableClientes.cs" />
     <Compile Include="PreencherComponentes\Tela 3 - ServicosConcluidos\PreencherTableConcluidos.cs" />
     <Compile Include="PreencherComponentes\Tela 4 - Orcamentos\PreencherComboboxMarca.cs" />

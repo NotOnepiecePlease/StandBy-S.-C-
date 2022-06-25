@@ -26,7 +26,7 @@ namespace PFC___StandBy_CSharp.Forms
         private readonly BackupDados bd = new BackupDados();
         private static readonly GraficoServicosSemanais graficoSemanal = new GraficoServicosSemanais();
         private static readonly GraficoServicosMensais graficoMensal = new GraficoServicosMensais();
-        private readonly Verificar verificarUpd = new Verificar();
+        private Verificar verificarUpd = new Verificar();
         private Form currentChildForm;
 
         private string statusAtualizacao = "";
@@ -38,9 +38,11 @@ namespace PFC___StandBy_CSharp.Forms
         {
             InitializeComponent();
             CarregarGraficos(bunifuDataViz1, lblQntServicosSemanais, bunifuDataViz2, lblQntServicosMensais);
+            //Pega a versão do sistema e seta na label.
+            lblVersion.Text = verificarUpd.VERSAO_STANDBY;
             //Aqui sao todos os itens que inicializa junto com o form.
             workerInicializarJuntoComForm.RunWorkerAsync();
-            //Aqui verifica a versao
+            //Aqui verifica a versao.
             workerVerificarVersao.RunWorkerAsync();
         }
 

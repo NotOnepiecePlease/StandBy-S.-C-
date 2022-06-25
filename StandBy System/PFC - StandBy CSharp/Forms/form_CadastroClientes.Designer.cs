@@ -31,11 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimparCampos = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.listboxCidades = new System.Windows.Forms.ListBox();
             this.btnCadastrarCliente = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
@@ -114,6 +116,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.btnLimparCampos);
             this.panel1.Controls.Add(this.listboxCidades);
             this.panel1.Controls.Add(this.btnCadastrarCliente);
             this.panel1.Controls.Add(this.bunifuGroupBox2);
@@ -130,8 +133,100 @@
             this.panel1.Size = new System.Drawing.Size(1280, 651);
             this.panel1.TabIndex = 99999;
             // 
+            // btnLimparCampos
+            // 
+            this.btnLimparCampos.AllowAnimations = true;
+            this.btnLimparCampos.AllowMouseEffects = true;
+            this.btnLimparCampos.AllowToggling = false;
+            this.btnLimparCampos.AnimationSpeed = 200;
+            this.btnLimparCampos.AutoGenerateColors = false;
+            this.btnLimparCampos.AutoRoundBorders = false;
+            this.btnLimparCampos.AutoSizeLeftIcon = true;
+            this.btnLimparCampos.AutoSizeRightIcon = true;
+            this.btnLimparCampos.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimparCampos.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
+            this.btnLimparCampos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimparCampos.BackgroundImage")));
+            this.btnLimparCampos.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLimparCampos.ButtonText = "Limpar";
+            this.btnLimparCampos.ButtonTextMarginLeft = 0;
+            this.btnLimparCampos.ColorContrastOnClick = 45;
+            this.btnLimparCampos.ColorContrastOnHover = 45;
+            this.btnLimparCampos.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnLimparCampos.CustomizableEdges = borderEdges1;
+            this.btnLimparCampos.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLimparCampos.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnLimparCampos.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnLimparCampos.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnLimparCampos.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnLimparCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparCampos.ForeColor = System.Drawing.Color.White;
+            this.btnLimparCampos.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimparCampos.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnLimparCampos.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnLimparCampos.IconMarginLeft = 11;
+            this.btnLimparCampos.IconPadding = 10;
+            this.btnLimparCampos.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimparCampos.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnLimparCampos.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnLimparCampos.IconSize = 25;
+            this.btnLimparCampos.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
+            this.btnLimparCampos.IdleBorderRadius = 1;
+            this.btnLimparCampos.IdleBorderThickness = 1;
+            this.btnLimparCampos.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
+            this.btnLimparCampos.IdleIconLeftImage = null;
+            this.btnLimparCampos.IdleIconRightImage = null;
+            this.btnLimparCampos.IndicateFocus = false;
+            this.btnLimparCampos.Location = new System.Drawing.Point(1008, 302);
+            this.btnLimparCampos.Name = "btnLimparCampos";
+            this.btnLimparCampos.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnLimparCampos.OnDisabledState.BorderRadius = 1;
+            this.btnLimparCampos.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLimparCampos.OnDisabledState.BorderThickness = 1;
+            this.btnLimparCampos.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnLimparCampos.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnLimparCampos.OnDisabledState.IconLeftImage = null;
+            this.btnLimparCampos.OnDisabledState.IconRightImage = null;
+            this.btnLimparCampos.onHoverState.BorderColor = System.Drawing.Color.Silver;
+            this.btnLimparCampos.onHoverState.BorderRadius = 1;
+            this.btnLimparCampos.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLimparCampos.onHoverState.BorderThickness = 1;
+            this.btnLimparCampos.onHoverState.FillColor = System.Drawing.Color.Silver;
+            this.btnLimparCampos.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnLimparCampos.onHoverState.IconLeftImage = null;
+            this.btnLimparCampos.onHoverState.IconRightImage = null;
+            this.btnLimparCampos.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
+            this.btnLimparCampos.OnIdleState.BorderRadius = 1;
+            this.btnLimparCampos.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLimparCampos.OnIdleState.BorderThickness = 1;
+            this.btnLimparCampos.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
+            this.btnLimparCampos.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnLimparCampos.OnIdleState.IconLeftImage = null;
+            this.btnLimparCampos.OnIdleState.IconRightImage = null;
+            this.btnLimparCampos.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
+            this.btnLimparCampos.OnPressedState.BorderRadius = 1;
+            this.btnLimparCampos.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLimparCampos.OnPressedState.BorderThickness = 1;
+            this.btnLimparCampos.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
+            this.btnLimparCampos.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnLimparCampos.OnPressedState.IconLeftImage = null;
+            this.btnLimparCampos.OnPressedState.IconRightImage = null;
+            this.btnLimparCampos.Size = new System.Drawing.Size(90, 32);
+            this.btnLimparCampos.TabIndex = 100000;
+            this.btnLimparCampos.TabStop = false;
+            this.btnLimparCampos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLimparCampos.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnLimparCampos.TextMarginLeft = 0;
+            this.btnLimparCampos.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnLimparCampos.UseDefaultRadiusAndThickness = true;
+            this.btnLimparCampos.Click += new System.EventHandler(this.btnLimparCampos_Click);
+            // 
             // listboxCidades
             // 
+            this.listboxCidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.listboxCidades.ForeColor = System.Drawing.Color.Silver;
             this.listboxCidades.FormattingEnabled = true;
             this.listboxCidades.ItemHeight = 20;
@@ -160,11 +255,11 @@
             this.btnCadastrarCliente.ColorContrastOnClick = 45;
             this.btnCadastrarCliente.ColorContrastOnHover = 45;
             this.btnCadastrarCliente.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnCadastrarCliente.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnCadastrarCliente.CustomizableEdges = borderEdges2;
             this.btnCadastrarCliente.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCadastrarCliente.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCadastrarCliente.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -188,7 +283,7 @@
             this.btnCadastrarCliente.IdleIconLeftImage = null;
             this.btnCadastrarCliente.IdleIconRightImage = null;
             this.btnCadastrarCliente.IndicateFocus = false;
-            this.btnCadastrarCliente.Location = new System.Drawing.Point(917, 302);
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(912, 302);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
             this.btnCadastrarCliente.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCadastrarCliente.OnDisabledState.BorderRadius = 1;
@@ -214,15 +309,15 @@
             this.btnCadastrarCliente.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnCadastrarCliente.OnIdleState.IconLeftImage = null;
             this.btnCadastrarCliente.OnIdleState.IconRightImage = null;
-            this.btnCadastrarCliente.OnPressedState.BorderColor = System.Drawing.Color.Black;
+            this.btnCadastrarCliente.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
             this.btnCadastrarCliente.OnPressedState.BorderRadius = 1;
             this.btnCadastrarCliente.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnCadastrarCliente.OnPressedState.BorderThickness = 1;
-            this.btnCadastrarCliente.OnPressedState.FillColor = System.Drawing.Color.Black;
+            this.btnCadastrarCliente.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(103)))));
             this.btnCadastrarCliente.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnCadastrarCliente.OnPressedState.IconLeftImage = null;
             this.btnCadastrarCliente.OnPressedState.IconRightImage = null;
-            this.btnCadastrarCliente.Size = new System.Drawing.Size(181, 32);
+            this.btnCadastrarCliente.Size = new System.Drawing.Size(90, 32);
             this.btnCadastrarCliente.TabIndex = 16;
             this.btnCadastrarCliente.TabStop = false;
             this.btnCadastrarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,6 +388,7 @@
             this.lblCidades_Carregando.Size = new System.Drawing.Size(151, 20);
             this.lblCidades_Carregando.TabIndex = 1002;
             this.lblCidades_Carregando.Text = "Carregando cidades...";
+            this.lblCidades_Carregando.Visible = false;
             // 
             // txtBairro
             // 
@@ -362,6 +458,7 @@
             this.cmbCidades.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.Flat;
             this.cmbCidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.cmbCidades.ForeColor = System.Drawing.Color.Silver;
+            this.cmbCidades.ListControl = this.listboxCidades;
             this.cmbCidades.Location = new System.Drawing.Point(353, 62);
             this.cmbCidades.MetroBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.cmbCidades.Name = "cmbCidades";
@@ -369,6 +466,7 @@
             this.cmbCidades.TabIndex = 14;
             this.cmbCidades.Text = "Ex: Camaçari";
             this.cmbCidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbCidades.Click += new System.EventHandler(this.cmbCidades_Click);
             this.cmbCidades.Enter += new System.EventHandler(this.cmbCidades_Enter);
             this.cmbCidades.Leave += new System.EventHandler(this.cmbCidades_Leave);
             this.cmbCidades.MouseEnter += new System.EventHandler(this.cmbCidades_MouseEnter);
@@ -1528,5 +1626,6 @@
         private System.Windows.Forms.Label lblCidades_Carregando;
         private System.Windows.Forms.ListBox listboxCidades;
         private Bunifu.UI.WinForms.BunifuSeparator separatorCIDADES;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnLimparCampos;
     }
 }

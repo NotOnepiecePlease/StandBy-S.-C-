@@ -118,12 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLimparCampos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAAAgCAYAAACSEW+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB0SURBVGhD7dCpEYBAAMBA5pq9oikDCTM8HglRK1bFZTnG
+        XG8nv1qf0W+BjxkdMTpidMToiNERoyNGR4yOGB0xOmJ0xOiI0RGjI0ZHjI4YHTE6YnTE6IjREaMjRkeM
+        jhgdMTpidMToiNGRZR9zewt8Zx9zuwCRqeYlbwRV/QAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnCadastrarCliente.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAALUAAAAgCAYAAABU+DlZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACDSURBVHhe7dK5DYAwAMBAlGUzdMagBImnZwGsK65y6+0c
-        cz0uiFjv1F8BfsvU5JiaHFOTY2pyTE2OqckxNTmmJsfU5JiaHFOTY2pyTE2OqckxNTmmJsfU5JiaHFOT
-        Y2pyTE2OqckxNTmmJsfU5JiaHFOTY2pyTE3Odoy5fwX4o2PM/QZscxlJVLPH3AAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAAAgCAYAAACSEW+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB0SURBVGhD7dCpEYBAAMBA5pq9oikDCTM8HglRK1bFZTnG
+        XG8nv1qf0W+BjxkdMTpidMToiNERoyNGR4yOGB0xOmJ0xOiI0RGjI0ZHjI4YHTE6YnTE6IjREaMjRkeM
+        jhgdMTpidMToiNGRZR9zewt8Zx9zuwCRqeYlbwRV/QAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="separatorCIDADES.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

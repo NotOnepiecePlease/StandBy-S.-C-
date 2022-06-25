@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Correios;
+using PFC___StandBy_CSharp.APIs;
 using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.Properties;
 using PFC___StandBy_CSharp.Utils;
@@ -106,7 +108,7 @@ namespace PFC___StandBy_CSharp.Forms
                 Endereco = txtRua.Text,
                 Complemento = txtComplemento.Text,
                 Bairro = txtBairro.Text,
-                Cidade = txtCidade.Text,
+                Cidade = cmbCidades.Text,
                 Estado = txtEstado.Text
             };
 
@@ -353,6 +355,50 @@ namespace PFC___StandBy_CSharp.Forms
             if (txtCPFCliente.Text == "")
             {
                 txtCPFCliente.Text = "SEM CPF/CNPJ";
+            }
+        }
+
+        private void txtCEP_Leave(object sender, EventArgs e)
+        {
+            BuscarCepAPI();
+        }
+
+        private void BuscarCepAPI()
+        {
+            try
+            {
+                if (txtCEP.Text == "")
+                {
+                    txtCEP.Text = "Ex: 42803317";
+                    txtCEP.Font = new Font(txtCEP.Font, FontStyle.Italic);
+                    txtCEP.ForeColor = Color.Silver;
+                    txtCEP.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                }
+                else if (txtCEP.Text.Length < 8 || txtCEP.Text.Length > 8)
+                {
+                    MessageBox.Show("Digite um CEP valido!\nEx: 42803317", "Erro CEP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    var enderecoRetornado = CepApi.Buscar(txtCEP.Text);
+
+                    txtRua.Text = enderecoRetornado[0].Endereco;
+                    txtBairro.Text = enderecoRetornado[0].Bairro;
+                    cmbCidades.Text = enderecoRetornado[0].Cidade;
+                    txtComplemento.Text = enderecoRetornado[0].Complemento;
+                    txtEstado.Text = enderecoRetornado[0].UF;
+
+                    // txtCEP.Text = _texto;
+                    txtCEP.Font = new Font(txtCEP.Font, FontStyle.Italic);
+                    txtCEP.ForeColor = Color.Silver;
+                    txtCEP.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                    //SetarCorDaLinhaETexto_LEAVE(txtCEP, "Ex: 42803317");
+                }
+            }
+            catch (Exception)
+            {
+                //Console.WriteLine(exception);
+                //throw;
             }
         }
     }
