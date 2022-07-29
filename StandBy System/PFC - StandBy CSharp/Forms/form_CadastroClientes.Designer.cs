@@ -466,7 +466,6 @@
             this.cmbCidades.TabIndex = 14;
             this.cmbCidades.Text = "Ex: Camaçari";
             this.cmbCidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cmbCidades.Click += new System.EventHandler(this.cmbCidades_Click);
             this.cmbCidades.Enter += new System.EventHandler(this.cmbCidades_Enter);
             this.cmbCidades.Leave += new System.EventHandler(this.cmbCidades_Leave);
             this.cmbCidades.MouseEnter += new System.EventHandler(this.cmbCidades_MouseEnter);

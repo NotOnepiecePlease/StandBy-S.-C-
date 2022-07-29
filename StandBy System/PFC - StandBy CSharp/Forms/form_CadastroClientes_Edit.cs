@@ -22,6 +22,7 @@ namespace PFC___StandBy_CSharp.Forms
         private int[] corGeral = new int[3];
         private int contadorCNPJ = 0;
         private int contadorCPF = 0;
+        public bool isTemCidadeCadastrada = false;
 
         public form_CadastroClientes_Edit(form_CadastroClientes cadCliente, int[] corRGB)
         {
@@ -40,8 +41,8 @@ namespace PFC___StandBy_CSharp.Forms
             txtRua.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtComplemento.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtBairro.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtCidade.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtEstado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //txtCidade.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            //txtEstado.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             btnEditar.BaseColor1 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnEditar.BaseColor2 = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -63,14 +64,6 @@ namespace PFC___StandBy_CSharp.Forms
             chkMasculino.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             chkFeminino.OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             chkFeminino.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-        }
-
-        public bool contemLetras(string texto)
-        {
-            if (texto.Where(c => char.IsLetter(c)).Count() > 0)
-                return true;
-            else
-                return false;
         }
 
         private ClienteDados PegarDadosDoCliente()
@@ -109,7 +102,8 @@ namespace PFC___StandBy_CSharp.Forms
                 Complemento = txtComplemento.Text,
                 Bairro = txtBairro.Text,
                 Cidade = cmbCidades.Text,
-                Estado = txtEstado.Text
+                Estado = cmbEstados.Text
+                //Estado = txtEstado.Text
             };
 
             return dadosCliente;
@@ -194,8 +188,8 @@ namespace PFC___StandBy_CSharp.Forms
         private void ZerarData()
         {
             txtDataNascimento.Text = "SEM DATA";
-            dtpDataNascimento.Value = dtpDataNascimento.MinDate;
-            dtpDataNascimento.ForeColor = Color.Transparent;
+            //dtpDataNascimento.Value = dtpDataNascimento.MinDate;
+            //dtpDataNascimento.ForeColor = Color.Transparent;
         }
 
         private void chkMasculino_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
@@ -211,22 +205,6 @@ namespace PFC___StandBy_CSharp.Forms
             if (chkFeminino.Checked)
             {
                 chkMasculino.Checked = false;
-            }
-        }
-
-        private void dtpDataNascimento_MouseLeave(object sender, EventArgs e)
-        {
-            if (dtpDataNascimento.Value.Year == dtpDataNascimento.MinDate.Year)
-            {
-                ZerarData();
-            }
-        }
-
-        private void dtpDataNascimento_MouseEnter(object sender, EventArgs e)
-        {
-            if (dtpDataNascimento.Value.Year == dtpDataNascimento.MinDate.Year)
-            {
-                dtpDataNascimento.ForeColor = Color.White;
             }
         }
 
@@ -279,10 +257,34 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_CadastroClientes_Edit_Load(object sender, EventArgs e)
         {
+            //if (isTemCidadeCadastrada == false)
+            //{
+            CarregarCidadesANDEstados();
+            isTemCidadeCadastrada = true;
+
+            //}
+        }
+
+        private void CarregarCidadesANDEstados()
+        {
             this.cmbCidades.ListControl = this.listboxCidades;
+            this.cmbEstados.ListControl = this.listboxEstados;
             Task.Run(() =>
             {
+                string cidadeCliente = "Ex: Camaçari";
+                string estadoCliente = "Ex: BA";
+                if (cmbCidades.Text != "" && cmbCidades.Text != "Ex: Camaçari")
+                {
+                    cidadeCliente = cmbCidades.Text;
+                }
+
+                if (cmbEstados.Text != "" && cmbEstados.Text != "Ex: BA")
+                {
+                    estadoCliente = cmbEstados.Text;
+                }
                 PreencherAutoComplete("");
+                cmbCidades.Text = cidadeCliente;
+                cmbEstados.Text = estadoCliente;
             });
         }
 
@@ -293,15 +295,30 @@ namespace PFC___StandBy_CSharp.Forms
                 lblCidades_Carregando.Visible = true;
                 lblCidades_Carregando.Text = "Carregando cidades...";
 
+                lblEstados_Carregando.Visible = true;
+                lblEstados_Carregando.Text = "Carregando estados...";
+
                 List<string> cidades = new List<string>();
+                List<string> estados = new List<string>
+                {
+                    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG",
+                    "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE",
+                    "TO"
+                };
 
                 string[] cidadesSeparadas = Resources.Cidades.Split('\n');
 
                 cidades = cidadesSeparadas.ToList();
                 listboxCidades.DataSource = cidades.FindAll(x => x.StartsWith(_texto));
+                listboxEstados.DataSource = estados.FindAll(x => x.StartsWith(_texto));
                 lblCidades_Carregando.Text = "FIM";
                 lblCidades_Carregando.Visible = false;
-                cmbCidades.Text = "Ex: Camaçari";
+
+                lblEstados_Carregando.Text = "FIM";
+                lblEstados_Carregando.Visible = false;
+
+                if (cmbCidades.Text == "" || cmbCidades.Text == "Ex: Camaçari")
+                    cmbCidades.Text = "Ex: Camaçari";
             }
             catch (Exception)
             {
@@ -386,7 +403,8 @@ namespace PFC___StandBy_CSharp.Forms
                     txtBairro.Text = enderecoRetornado[0].Bairro;
                     cmbCidades.Text = enderecoRetornado[0].Cidade;
                     txtComplemento.Text = enderecoRetornado[0].Complemento;
-                    txtEstado.Text = enderecoRetornado[0].UF;
+                    cmbEstados.Text = enderecoRetornado[0].UF;
+                    //txtEstado.Text = enderecoRetornado[0].UF;
 
                     // txtCEP.Text = _texto;
                     txtCEP.Font = new Font(txtCEP.Font, FontStyle.Italic);
@@ -399,6 +417,15 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 //Console.WriteLine(exception);
                 //throw;
+            }
+        }
+
+        private void cmbCidades_Click(object sender, EventArgs e)
+        {
+            if (isTemCidadeCadastrada == false)
+            {
+                CarregarCidadesANDEstados();
+                isTemCidadeCadastrada = true;
             }
         }
     }

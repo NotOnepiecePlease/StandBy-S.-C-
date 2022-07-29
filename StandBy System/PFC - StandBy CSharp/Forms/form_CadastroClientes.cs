@@ -41,6 +41,7 @@ namespace PFC___StandBy_CSharp.Forms
             MudarTodasCores();
             lblQuantidadeClientes.Text = bd.buscarQuantidadeClientes().ToString();
             CheckForIllegalCrossThreadCalls = false;
+            //Preencher Combobox de Cidades
             preencherComboboxCliente.Preencher(txtNomeCliente, cmbCidades, lblCidades_Carregando, listboxCidades);
         }
 
@@ -117,13 +118,13 @@ namespace PFC___StandBy_CSharp.Forms
 
             if (table_Clientes.SelectedCells[8].Value.ToString() == "")
             {
-                editarCliente.dtpDataNascimento.Value = Convert.ToDateTime("01/01/1753");
-                editarCliente.dtpDataNascimento.ForeColor = Color.Transparent;
+                //editarCliente.dtpDataNascimento.Value = Convert.ToDateTime("01/01/1753");
+                //editarCliente.dtpDataNascimento.ForeColor = Color.Transparent;
                 editarCliente.txtDataNascimento.Text = "SEM DATA";
             }
             else
             {
-                editarCliente.dtpDataNascimento.Value = Convert.ToDateTime(table_Clientes.SelectedCells[8].Value.ToString());
+                //editarCliente.dtpDataNascimento.Value = Convert.ToDateTime(table_Clientes.SelectedCells[8].Value.ToString());
                 editarCliente.txtDataNascimento.Text = Convert.ToDateTime(table_Clientes.SelectedCells[8].Value.ToString()).ToShortDateString();
             }
 
@@ -131,8 +132,13 @@ namespace PFC___StandBy_CSharp.Forms
             editarCliente.txtRua.Text = table_Clientes.SelectedCells[10].Value.ToString();
             editarCliente.txtComplemento.Text = table_Clientes.SelectedCells[11].Value.ToString();
             editarCliente.txtBairro.Text = table_Clientes.SelectedCells[12].Value.ToString();
-            editarCliente.txtCidade.Text = table_Clientes.SelectedCells[13].Value.ToString();
-            editarCliente.txtEstado.Text = table_Clientes.SelectedCells[14].Value.ToString();
+            editarCliente.cmbCidades.Text = table_Clientes.SelectedCells[13].Value.ToString();
+            editarCliente.cmbEstados.Text = table_Clientes.SelectedCells[14].Value.ToString();
+            if (editarCliente.cmbCidades.Text != "" && editarCliente.cmbCidades.Text != "Ex: Camaçari")
+            {
+                editarCliente.isTemCidadeCadastrada = true;
+            }
+            //editarCliente.txtEstado.Text = table_Clientes.SelectedCells[14].Value.ToString();
             editarCliente.ShowDialog();
         }
 
@@ -862,14 +868,6 @@ namespace PFC___StandBy_CSharp.Forms
             cmbCidades.Text = "";
             cmbCidades.Focus();
             btnLimparCampos.Focus();
-        }
-
-        private void cmbCidades_Click(object sender, EventArgs e)
-        {
-            //if (cmbCidades.Text == "Ex: Camaçari")
-            //{
-            //    CarregarComboboxCidades();
-            //}
         }
     }
 }
