@@ -700,7 +700,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_OrdensServicos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_OrdensServicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_OrdensServicos.Size = new System.Drawing.Size(1265, 447);
+            this.table_OrdensServicos.Size = new System.Drawing.Size(1274, 447);
             this.table_OrdensServicos.TabIndex = 0;
             this.table_OrdensServicos.TabStop = false;
             this.table_OrdensServicos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.table_OrdensServicos_CellFormatting_1);

@@ -118,6 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="sepESTADOS.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKEAAAASCAYAAAAzD75tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA0SURBVGhD7dTBCQAwDAMxk2G7/wCB9NMd8qgEt4FxAAAA
+        AAC6zkibGaHWe38IAAAAAHwrucSlALQ2Tbx8AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="separatorCIDADES.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOoAAAAOCAYAAAAhQYDaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -199,9 +206,9 @@
   </data>
   <data name="bunifuSeparator1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAPoAAAAOCAYAAAAG7wEyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA5SURBVGhD7dXBCQAgEAPBYLH2X8CBfuxAX+cMbAkhAQAA
-        AAAAXqkxl6TeGbr0QefXAQAAAACAS8kG07KpmSgAHrsAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAADcAAAAOCAYAAACLroQjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVEhLYxgFo2AUjIJRQAz4w5T2f7ji4e25UTAKRsEo
+        GAUEAQMDANWHBprYNBNwAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="dragPanelFundo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

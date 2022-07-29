@@ -477,6 +477,7 @@
     </Compile>
     <Compile Include="LockScreenAndroid\LockScreenRenderer.cs" />
     <Compile Include="LockScreenAndroid\YASSCOMLockScreenRenderer.cs" />
+    <Compile Include="LogSystem\Logs.cs" />
     <Compile Include="Models\ClienteDados.cs" />
     <Compile Include="Models\MunicipioModel.cs" />
     <Compile Include="MsgBox\MensagensErro.cs" />

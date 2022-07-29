@@ -23,17 +23,16 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
         {
             try
             {
-                using (SqlConnection con = OpenConnection())
+                using (SqlConnection conexao = OpenConnection())
                 {
                     string query = "select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
                                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo, sv_tempo_para_entregar " +
                                    "FROM tb_servicos " +
                                    "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
                                    "WHERE sv_status = 1 and sv_ativo = 1 order by sv_cor_tempo asc, sv_data desc, sv_id desc";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conexao);
 
                     //16
-
                     DataTable datatable = new DataTable();
                     adapter.Fill(datatable);
                     foreach (DataRow linha in datatable.Rows)
@@ -43,72 +42,62 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                         {
                             //linha[0] = sv_id
                             //linha[12] = sv_previsao_entrega
-                            ad.atualizarColunaTempoCores(Convert.ToInt32(linha[0].ToString()), Convert.ToDateTime(linha[12]));
+                            int idServico = Convert.ToInt32(linha[0].ToString());
+                            DateTime previsaoEntrega = Convert.ToDateTime(linha[12]);
+
+                            ad.atualizarColunaTempoCores(conexao, idServico, previsaoEntrega);
 
                             //Atualizar tempo resta de entrega (em minutos)
                             DateTime dataEntrega = Convert.ToDateTime(linha[12]);
                             DateTime dataAtual = DateTime.Now;
-                            TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
+                            TimeSpan diasParaEntrega = dataEntrega.Subtract(dataAtual);
 
-                            if (DiasParaEntrega.Days > 0 || DiasParaEntrega.Days < 0)
+                            if (diasParaEntrega.Days > 0 || diasParaEntrega.Days < 0)
                             {
                                 string dias = " ";
-                                if (DiasParaEntrega.Days > 0)
+                                if (diasParaEntrega.Days > 0)
                                 {
-                                    dias += DiasParaEntrega.Days + "dias";
+                                    dias += diasParaEntrega.Days + "dias";
                                 }
                                 else
                                 {
-                                    dias = DiasParaEntrega.Days + "dias";
+                                    dias = diasParaEntrega.Days + "dias";
                                 }
                                 //Atualiza a coluna sv_tempo_para_entregar com a quantidade de dias restantes para entregar o servico
-                                ad.AtualizarColunaTempoEntrega(dias, Convert.ToInt32(linha[0]));
+                                ad.AtualizarColunaTempoEntrega(conexao, dias, idServico);
                             }
-                            else if (DiasParaEntrega.Hours > 0 || DiasParaEntrega.Hours < 0)
+                            else if (diasParaEntrega.Hours > 0 || diasParaEntrega.Hours < 0)
                             {
                                 string horas = " ";
-                                if (DiasParaEntrega.Hours > 0)
+                                if (diasParaEntrega.Hours > 0)
                                 {
-                                    horas += DiasParaEntrega.Hours + "hrs";
+                                    horas += diasParaEntrega.Hours + "hrs";
                                 }
                                 else
                                 {
-                                    horas = DiasParaEntrega.Hours + "hrs";
+                                    horas = diasParaEntrega.Hours + "hrs";
                                 }
-                                ad.AtualizarColunaTempoEntrega(horas, Convert.ToInt32(linha[0]));
+                                ad.AtualizarColunaTempoEntrega(conexao, horas, idServico);
                             }
-                            else if (DiasParaEntrega.Minutes > 0 || DiasParaEntrega.Minutes < 0)
+                            else if (diasParaEntrega.Minutes > 0 || diasParaEntrega.Minutes < 0)
                             {
                                 string minutos = " ";
-                                if (DiasParaEntrega.Hours > 0)
+                                if (diasParaEntrega.Hours > 0)
                                 {
-                                    minutos += DiasParaEntrega.Minutes + "min";
+                                    minutos += diasParaEntrega.Minutes + "min";
                                 }
                                 else
                                 {
-                                    minutos = DiasParaEntrega.Minutes + "hrs";
+                                    minutos = diasParaEntrega.Minutes + "hrs";
                                 }
                                 //Atualiza a coluna sv_tempo_para_entregar com a quantidade de dias restantes para entregar o servico
-                                ad.AtualizarColunaTempoEntrega(minutos, Convert.ToInt32(linha[0]));
+                                ad.AtualizarColunaTempoEntrega(conexao, minutos, idServico);
                             }
                             else
                             {
-                                ad.AtualizarColunaTempoEntrega((""), Convert.ToInt32(linha[0]));
+                                ad.AtualizarColunaTempoEntrega(conexao, "", idServico);
                             }
                         }
-                        // linha["T.Rest"] = "A";
-                        //if (linha[12] != DBNull.Value)
-                        //{
-                        //    DateTime dataEntrega = Convert.ToDateTime(linha[12]);
-                        //    DateTime dataAtual = DateTime.Now;
-                        //    TimeSpan TempoParaEntregar = dataEntrega.Subtract(dataAtual);
-
-                        //    linha[16] = 0;
-                        //}
-                        //else
-                        //{
-                        //    linha[16] = "---";
-                        //}
                     }
                     //Sendmessage é um macete bem de corno pra melhorar performance da lista.
                     //SendMessage(_tabelaServicos.Handle, WM_SETREDRAW, false, 0); //Estava dando erro ao trocar de form, portanto foi removido.

@@ -2,16 +2,16 @@
 using PFC___StandBy_CSharp.Graficos;
 using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.Models;
+
+//using PFC___StandBy_CSharp.LogSystem;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Sockets;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.DataViz.WinForms;
@@ -42,8 +42,10 @@ namespace PFC___StandBy_CSharp.Forms
             lblVersion.Text = verificarUpd.VERSAO_STANDBY;
             //Aqui sao todos os itens que inicializa junto com o form.
             workerInicializarJuntoComForm.RunWorkerAsync();
-            //Aqui verifica a versao.
+            //Aqui ele verifica a versao do sistema.
             workerVerificarVersao.RunWorkerAsync();
+
+            //Logs.GerarLogErro();
         }
 
         private void workerInicializarJuntoComForm_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)

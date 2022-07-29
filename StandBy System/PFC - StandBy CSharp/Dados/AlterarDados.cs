@@ -14,21 +14,21 @@ namespace PFC___StandBy_CSharp.Dados
         private MensagensSucesso mSucesso = new MensagensSucesso();
         private VerificarExistencia verificarExistencia = new VerificarExistencia();
 
-        public void AtualizarColunaTempoEntrega(string _tempo, int _id)
+        public void AtualizarColunaTempoEntrega(SqlConnection _con, string _tempo, int _id)
         {
             try
             {
-                using (SqlConnection con = OpenConnection())
-                {
-                    string query = "update tb_servicos set sv_tempo_para_entregar = @tempo where sv_id = @id";
+                //using (SqlConnection con = OpenConnection())
+                //{
+                string query = "update tb_servicos set sv_tempo_para_entregar = @tempo where sv_id = @id";
 
-                    SqlCommand cmd = new SqlCommand(query, con);
+                SqlCommand cmd = new SqlCommand(query, _con);
 
-                    cmd.Parameters.Add("@tempo", SqlDbType.VarChar).Value = _tempo;
-                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = _id;
+                cmd.Parameters.Add("@tempo", SqlDbType.VarChar).Value = _tempo;
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = _id;
 
-                    cmd.ExecuteNonQuery();
-                }
+                cmd.ExecuteNonQuery();
+                //}
             }
             catch (Exception e)
             {
@@ -38,56 +38,44 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Atualizar coluna das cores
 
-        public void atualizarColunaTempoCores(int _id, DateTime _previsaoEntrega)
+        public void atualizarColunaTempoCores(SqlConnection _con, int _id, DateTime _previsaoEntrega)
         {
             try
             {
-                using (SqlConnection con = OpenConnection())
+                //4 = sem cor
+                //1 = verde
+                //2 = amarelo/laranja
+                //3 = vermelho
+                string query = "";
+
+                DateTime dataEntrega = _previsaoEntrega;
+                DateTime dataAtual = DateTime.Now;
+
+                TimeSpan diasParaEntrega = dataEntrega.Subtract(dataAtual);
+
+                if (diasParaEntrega.TotalHours < 0)
                 {
-                    //4 = sem cor
-                    //1 = verde
-                    //2 = amarelo/laranja
-                    //3 = vermelho
-                    string Query = "";
-
-                    DateTime dataEntrega = _previsaoEntrega;
-                    DateTime dataAtual = DateTime.Now;
-
-                    TimeSpan DiasParaEntrega = dataEntrega.Subtract(dataAtual);
-
-                    if (DiasParaEntrega.TotalHours < 0)
-                    {
-                        //row.Cells[2].Style.BackColor = Color.Red;
-                        //row.Cells[2].Style.ForeColor = Color.Black;
-                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 3 WHERE sv_id = @_IdServico";
-                    }
-                    else if (DiasParaEntrega.TotalHours >= 0 && DiasParaEntrega.TotalHours <= 12)
-                    {
-                        //row.Cells[2].Style.BackColor = Color.Orange;
-                        //row.Cells[2].Style.ForeColor = Color.Black;
-                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 2 WHERE sv_id = @_IdServico";
-                    }
-                    else if (DiasParaEntrega.TotalHours > 12)
-                    {
-                        //row.Cells[2].Style.BackColor = Color.Lime;
-                        //row.Cells[2].Style.ForeColor = Color.Black;
-                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 1 WHERE sv_id = @_IdServico";
-                    }
-                    else
-                    {
-                        //row.Cells[2].Style.BackColor = Color.FromArgb(30, 30, 46);
-                        //row.Cells[2].Style.ForeColor = Color.Gray;
-                        Query = "UPDATE tb_servicos SET sv_cor_tempo = 4 WHERE sv_id = @_IdServico";
-                    }
-
-                    SqlCommand cmd = new SqlCommand(Query, con);
-
-                    cmd.Parameters.AddWithValue("@_IdServico", SqlDbType.Int).Value = _id;
-
-                    cmd.ExecuteNonQuery();
-
-                    //Msg Sucesso
+                    query = "UPDATE tb_servicos SET sv_cor_tempo = 3 WHERE sv_id = @_IdServico";
                 }
+                else if (diasParaEntrega.TotalHours >= 0 && diasParaEntrega.TotalHours <= 12)
+                {
+                    query = "UPDATE tb_servicos SET sv_cor_tempo = 2 WHERE sv_id = @_IdServico";
+                }
+                else if (diasParaEntrega.TotalHours > 12)
+                {
+                    query = "UPDATE tb_servicos SET sv_cor_tempo = 1 WHERE sv_id = @_IdServico";
+                }
+                else
+                {
+                    query = "UPDATE tb_servicos SET sv_cor_tempo = 4 WHERE sv_id = @_IdServico";
+                }
+
+                //using (SqlConnection con = OpenConnection())
+                //{
+                SqlCommand cmd = new SqlCommand(query, _con);
+                cmd.Parameters.AddWithValue("@_IdServico", SqlDbType.Int).Value = _id;
+                cmd.ExecuteNonQuery();
+                //}
             }
             catch (Exception e)
             {

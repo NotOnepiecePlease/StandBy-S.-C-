@@ -532,8 +532,9 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnVisivel_Click(object sender, EventArgs e)
         {
-            table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 492);
-            table_OrdensServicos.Location = new Point(3, 150);
+            //table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 492);
+            table_OrdensServicos.Size = new Size(form_StandBy.ActiveForm.Width - 2, 447);
+            table_OrdensServicos.Location = new Point(3, 195);
 
             btnPatternIcon.Visible = true;
             lblCliente.Visible = true;
