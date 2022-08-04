@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Correios;
-using PFC___StandBy_CSharp.APIs;
+using PFC___StandBy_CSharp.APIs.CEP;
 using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.Properties;
 using PFC___StandBy_CSharp.Utils;

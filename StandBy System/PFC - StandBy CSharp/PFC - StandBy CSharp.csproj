@@ -90,17 +90,26 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox2">
+      <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuTextbox2.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
@@ -263,6 +272,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
@@ -308,7 +318,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIs\CepApi.cs" />
+    <Compile Include="APIs\CEP\CepApi.cs" />
+    <Compile Include="APIs\License\APIClass\Api.cs" />
+    <Compile Include="APIs\License\AppClasses\AppDataClass.cs" />
+    <Compile Include="APIs\License\AppClasses\AppDataStructure.cs" />
+    <Compile Include="APIs\License\Encryption\Encryption.cs" />
+    <Compile Include="APIs\License\Json\JsonWrapper.cs" />
+    <Compile Include="APIs\License\Message\Message.cs" />
+    <Compile Include="APIs\License\Response\ResponseClass.cs" />
+    <Compile Include="APIs\License\Response\ResponseStructure.cs" />
+    <Compile Include="APIs\License\UserClasses\UserDataClass.cs" />
+    <Compile Include="APIs\License\UserClasses\UserDataStructure.cs" />
+    <Compile Include="APIs\License\UserClasses\UserSubscriptionData.cs" />
     <Compile Include="ChecarUpdates\Verificar.cs" />
     <Compile Include="Dados\AlterarDados.cs" />
     <Compile Include="Dados\BackupDados.cs" />
@@ -363,6 +384,12 @@
     </Compile>
     <Compile Include="Forms\form_Gastos.Designer.cs">
       <DependentUpon>form_Gastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\form_License.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\form_License.Designer.cs">
+      <DependentUpon>form_License.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\form_Lucros.cs">
       <SubType>Form</SubType>
@@ -547,6 +574,9 @@
     <EmbeddedResource Include="Forms\form_Gastos.resx">
       <DependentUpon>form_Gastos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\form_License.resx">
+      <DependentUpon>form_License.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_Lucros.resx">
       <DependentUpon>form_Lucros.cs</DependentUpon>
     </EmbeddedResource>
@@ -699,6 +729,7 @@
   <ItemGroup>
     <Content Include="5ee7aec0f2f1d_wmY_icon.ico" />
     <None Include="bin\Debug\Cidades.txt" />
+    <None Include="Resources\logo.png" />
     <Content Include="Utils\Atalhos.txt" />
     <None Include="Resources\toilet_20px.png" />
     <None Include="Resources\warning.png" />

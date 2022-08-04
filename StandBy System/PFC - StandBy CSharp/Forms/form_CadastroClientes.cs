@@ -1,6 +1,6 @@
 ﻿using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes;
-using PFC___StandBy_CSharp.APIs;
+using PFC___StandBy_CSharp.APIs.CEP;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
