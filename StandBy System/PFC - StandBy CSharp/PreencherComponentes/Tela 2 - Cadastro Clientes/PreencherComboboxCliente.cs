@@ -17,22 +17,29 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes
 
         public void Preencher(BunifuMaterialTextbox _txtNomeCliente, ComboBoxBase _cmbCidades, Label _lblCidades_Carregando, ListBox _listBoxCidades)
         {
-            CarregarListaDeCidadesAsync();
+            //CarregarListaDeCidadesAsync();
+
+            //var cidades = PreencherAutoComplete();
+            // var cidades = Cidades.BuscarListaCidades();
+            //var awaiter = cidades.GetAwaiter();
+
+            // awaiter.OnCompleted(() =>
+            // {
             _txtNomeCliente.Focus();
             _cmbCidades.ListControl = _listBoxCidades;
 
             _lblCidades_Carregando.Visible = true;
             _lblCidades_Carregando.Text = @"Carregando cidades...";
-
             //Coloquei isso na task porque classes estaticas nao aceitam componentes.
             Task.Run(() =>
             {
                 Thread.Sleep(500);
-                _listBoxCidades.DataSource = listCidades;
+                _listBoxCidades.DataSource = Cidades.listCidades;
                 _lblCidades_Carregando.Text = @"FIM";
                 _lblCidades_Carregando.Visible = false;
                 _cmbCidades.Text = @"Ex: Camaçari";
             });
+            //  });
         }
 
         private static async void CarregarListaDeCidadesAsync() => await PreencherAutoComplete();

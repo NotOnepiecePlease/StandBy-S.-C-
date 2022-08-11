@@ -3,6 +3,7 @@ using PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes;
 using PFC___StandBy_CSharp.APIs.CEP;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -42,8 +43,63 @@ namespace PFC___StandBy_CSharp.Forms
             lblQuantidadeClientes.Text = bd.buscarQuantidadeClientes().ToString();
             CheckForIllegalCrossThreadCalls = false;
             //Preencher Combobox de Cidades
+            Cidades.BuscarListaCidades();
             preencherComboboxCliente.Preencher(txtNomeCliente, cmbCidades, lblCidades_Carregando, listboxCidades);
+            //CarregarComboxClientes();
         }
+
+        //private void CarregarComboxClientes()
+        //{
+        //    multiColumnComboBox1.Enabled = false;
+        //    //PreencherAutoComplete();
+        //    var task = PreencherAutoComplete();
+
+        //    var awaiter = task.GetAwaiter();
+
+        //    awaiter.OnCompleted(() =>
+        //    {
+        //        multiColumnComboBox1.Enabled = true;
+        //        //MessageBox.Show("AE");
+        //    });
+
+        //    CarregarListaDeCidadesAsync();
+        //    this.multiColumnComboBox1.Style = Syncfusion.Windows.Forms.VisualStyle.OfficeXP;
+        //    this.multiColumnComboBox1.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Black;
+        //    this.multiColumnComboBox1.ForeColor = Color.AliceBlue;
+        //    this.multiColumnComboBox1.ThemeStyle.EditorStyle.TextColor = Color.AliceBlue;
+
+        //    List<string> teste = new List<string>();
+        //    //teste = preencherCombobox.Preencher();
+
+        //    DataTable dt = new DataTable("Table1");
+        //    dt.Columns.Add("Cidade");
+        //    //dt.Columns[0].ColumnMapping = MappingType.Hidden;
+
+        //    DataSet ds = new DataSet();
+        //    ds.Tables.Add(dt);
+
+        //    listCidades
+        //        .ToList()
+        //        .ForEach(cidade =>
+        //        {
+        //            //Pegando a id do ultimo cliente adicionado (ou o que tem MAIOR ID q da na mesma)
+        //            // ultimoClienteAdicionadoID = cidade.ID > ultimoClienteAdicionadoID ? cidade.ID : ultimoClienteAdicionadoID;
+
+        //            dt.Rows.Add(new string[]
+        //            {
+        //                $"{cidade}",
+        //            });
+        //        });
+
+        //    DataView view = new DataView(dt);
+
+        //    this.multiColumnComboBox1.DataSource = view;
+        //    this.multiColumnComboBox1.DisplayMember = "Cidade";
+        //    //this.multiColumnComboBox1.ValueMember = "ID";
+
+        //    //SetarComboboxComUltimoClienteAdicionado(dt);
+        //    multiColumnComboBox1.Text = @"Ex: Camaçari";
+        //}
 
         public Control FindFocusedComponent()
         {
@@ -181,6 +237,14 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void CadastrarNovoCliente()
         {
+            bool teste = Cidades.listCidades.Exists(x => x.Equals(cmbCidades.Text));
+            if (teste != true)
+            {
+                MessageBox.Show($"A Cidade que você digitou não existe, certifique-se de que digitou corretamente" +
+                                $" utilizando o recurso de 'Auto-Complete' do campo onde é preenchida a cidade, desta" +
+                                $" forma, você garante que o nome da cidade será preenchido sem erros.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (!string.IsNullOrWhiteSpace(txtDataNascimento.Text) && txtDataNascimento.Text != "Data de Nascimento")
             {
                 try
@@ -216,6 +280,7 @@ namespace PFC___StandBy_CSharp.Forms
                 string complemento = (txtComplemento.Text == "Ex: Casa") || (txtComplemento.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtComplemento.Text;
                 string bairro = (txtBairro.Text == "Ex: Gleba B") || (txtBairro.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtBairro.Text;
                 string cidade = (cmbCidades.Text == "Ex: Camaçari") || (cmbCidades.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : cmbCidades.Text;
+                //string cidade = (cmbCidades.Text == "Ex: Camaçari") || (cmbCidades.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : cmbCidades.Text;
                 string estado = (txtEstado.Text == "Ex: Bahia") || (txtEstado.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtEstado.Text;
                 string sexo = (chkMasculino.Checked == true) ? "M" : "F";
                 string dataNascimento = (txtDataNascimento.Text == "Data de Nascimento") || (txtDataNascimento.Text == "") ? VALOR_PADRAO_DADOS_CLIENTE : txtDataNascimento.Text;

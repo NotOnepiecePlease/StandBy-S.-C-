@@ -17,7 +17,7 @@ namespace PFC___StandBy_CSharp
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new form_ALERT("Inserido com Sucesso", form_ALERT.AlertType.Sucesso));
             //Application.Run(new form_WordNota());
-            Application.Run(new form_License());
+            Application.Run(new form_StandBy());
             //Application.Run(new form_Principal());
         }
     }

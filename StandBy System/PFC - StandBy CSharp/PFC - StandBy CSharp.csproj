@@ -525,6 +525,7 @@
     <Compile Include="NotepadFuncoes\SalvarDocumento.cs" />
     <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherComboBoxCliente.cs" />
     <Compile Include="PreencherComponentes\Tela 1 - OrdensServ\PreencherTableOrdensServicos.cs" />
+    <Compile Include="PreencherComponentes\Tela 2 - Cadastro Clientes\Cidades.cs" />
     <Compile Include="PreencherComponentes\Tela 2 - Cadastro Clientes\PreencherComboboxCliente.cs" />
     <Compile Include="PreencherComponentes\Tela 2 - Cadastro Clientes\PreencherTableClientes.cs" />
     <Compile Include="PreencherComponentes\Tela 3 - ServicosConcluidos\PreencherTableConcluidos.cs" />

@@ -37,15 +37,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblCidades_Carregando = new System.Windows.Forms.Label();
             this.btnLimparCampos = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.listboxCidades = new System.Windows.Forms.ListBox();
             this.btnCadastrarCliente = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
             this.separatorCIDADES = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.lblCidades_Carregando = new System.Windows.Forms.Label();
             this.txtBairro = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cmbCidades = new Syncfusion.Windows.Forms.Tools.ComboBoxBase();
+            this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtComplemento = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtEndereco = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtCEP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -132,6 +132,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 651);
             this.panel1.TabIndex = 99999;
+            // 
+            // lblCidades_Carregando
+            // 
+            this.lblCidades_Carregando.AutoSize = true;
+            this.lblCidades_Carregando.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.lblCidades_Carregando.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lblCidades_Carregando.Location = new System.Drawing.Point(396, 66);
+            this.lblCidades_Carregando.Name = "lblCidades_Carregando";
+            this.lblCidades_Carregando.Size = new System.Drawing.Size(151, 20);
+            this.lblCidades_Carregando.TabIndex = 1002;
+            this.lblCidades_Carregando.Text = "Carregando cidades...";
             // 
             // btnLimparCampos
             // 
@@ -332,11 +343,11 @@
             this.bunifuGroupBox2.BorderColor = System.Drawing.SystemColors.Control;
             this.bunifuGroupBox2.BorderRadius = 1;
             this.bunifuGroupBox2.BorderThickness = 1;
-            this.bunifuGroupBox2.Controls.Add(this.separatorCIDADES);
             this.bunifuGroupBox2.Controls.Add(this.lblCidades_Carregando);
+            this.bunifuGroupBox2.Controls.Add(this.separatorCIDADES);
             this.bunifuGroupBox2.Controls.Add(this.txtBairro);
-            this.bunifuGroupBox2.Controls.Add(this.txtEstado);
             this.bunifuGroupBox2.Controls.Add(this.cmbCidades);
+            this.bunifuGroupBox2.Controls.Add(this.txtEstado);
             this.bunifuGroupBox2.Controls.Add(this.txtComplemento);
             this.bunifuGroupBox2.Controls.Add(this.txtEndereco);
             this.bunifuGroupBox2.Controls.Add(this.txtCEP);
@@ -378,18 +389,6 @@
             this.separatorCIDADES.MouseEnter += new System.EventHandler(this.separatorCIDADES_MouseEnter);
             this.separatorCIDADES.MouseLeave += new System.EventHandler(this.separatorCIDADES_MouseLeave);
             // 
-            // lblCidades_Carregando
-            // 
-            this.lblCidades_Carregando.AutoSize = true;
-            this.lblCidades_Carregando.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.lblCidades_Carregando.ForeColor = System.Drawing.Color.Chartreuse;
-            this.lblCidades_Carregando.Location = new System.Drawing.Point(395, 63);
-            this.lblCidades_Carregando.Name = "lblCidades_Carregando";
-            this.lblCidades_Carregando.Size = new System.Drawing.Size(151, 20);
-            this.lblCidades_Carregando.TabIndex = 1002;
-            this.lblCidades_Carregando.Text = "Carregando cidades...";
-            this.lblCidades_Carregando.Visible = false;
-            // 
             // txtBairro
             // 
             this.txtBairro.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -420,6 +419,27 @@
             this.txtBairro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtBairro.Leave += new System.EventHandler(this.txtBairro_Leave);
             // 
+            // cmbCidades
+            // 
+            this.cmbCidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbCidades.BeforeTouchSize = new System.Drawing.Size(231, 24);
+            this.cmbCidades.FlatBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbCidades.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.Flat;
+            this.cmbCidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.cmbCidades.ForeColor = System.Drawing.Color.Silver;
+            this.cmbCidades.ListControl = this.listboxCidades;
+            this.cmbCidades.Location = new System.Drawing.Point(356, 62);
+            this.cmbCidades.MetroBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbCidades.Name = "cmbCidades";
+            this.cmbCidades.Size = new System.Drawing.Size(231, 24);
+            this.cmbCidades.TabIndex = 14;
+            this.cmbCidades.Text = "Ex: Camaçari";
+            this.cmbCidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbCidades.Enter += new System.EventHandler(this.cmbCidades_Enter);
+            this.cmbCidades.Leave += new System.EventHandler(this.cmbCidades_Leave);
+            this.cmbCidades.MouseEnter += new System.EventHandler(this.cmbCidades_MouseEnter);
+            this.cmbCidades.MouseLeave += new System.EventHandler(this.cmbCidades_MouseLeave);
+            // 
             // txtEstado
             // 
             this.txtEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -449,27 +469,6 @@
             this.txtEstado.Enter += new System.EventHandler(this.txtEstado_Enter);
             this.txtEstado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
             this.txtEstado.Leave += new System.EventHandler(this.txtEstado_Leave);
-            // 
-            // cmbCidades
-            // 
-            this.cmbCidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.cmbCidades.BeforeTouchSize = new System.Drawing.Size(234, 24);
-            this.cmbCidades.FlatBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.cmbCidades.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.Flat;
-            this.cmbCidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.cmbCidades.ForeColor = System.Drawing.Color.Silver;
-            this.cmbCidades.ListControl = this.listboxCidades;
-            this.cmbCidades.Location = new System.Drawing.Point(353, 62);
-            this.cmbCidades.MetroBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.cmbCidades.Name = "cmbCidades";
-            this.cmbCidades.Size = new System.Drawing.Size(234, 24);
-            this.cmbCidades.TabIndex = 14;
-            this.cmbCidades.Text = "Ex: Camaçari";
-            this.cmbCidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cmbCidades.Enter += new System.EventHandler(this.cmbCidades_Enter);
-            this.cmbCidades.Leave += new System.EventHandler(this.cmbCidades_Leave);
-            this.cmbCidades.MouseEnter += new System.EventHandler(this.cmbCidades_MouseEnter);
-            this.cmbCidades.MouseLeave += new System.EventHandler(this.cmbCidades_MouseLeave);
             // 
             // txtComplemento
             // 
@@ -735,7 +734,7 @@
             this.table_Clientes.EnableHeadersVisualStyles = false;
             this.table_Clientes.HeaderBgColor = System.Drawing.SystemColors.Control;
             this.table_Clientes.HeaderForeColor = System.Drawing.Color.Black;
-            this.table_Clientes.Location = new System.Drawing.Point(53, 346);
+            this.table_Clientes.Location = new System.Drawing.Point(53, 395);
             this.table_Clientes.Name = "table_Clientes";
             this.table_Clientes.ReadOnly = true;
             this.table_Clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -755,7 +754,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_Clientes.Size = new System.Drawing.Size(1173, 293);
+            this.table_Clientes.Size = new System.Drawing.Size(1173, 244);
             this.table_Clientes.TabIndex = 0;
             this.table_Clientes.TabStop = false;
             this.table_Clientes.DoubleClick += new System.EventHandler(this.table_Clientes_DoubleClick);
