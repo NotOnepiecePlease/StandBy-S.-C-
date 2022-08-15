@@ -13,10 +13,10 @@ using System.Drawing.Drawing2D;
 #                       DEVOUJDA.COM                          *
 #  https://www.youtube.com/channel/UChiPl4zBq6pNbZHT0rwTT9g   *
 *                                                             *
-***************************************************************    
+***************************************************************
 */
 
-namespace GestureLockApp.GestureLockControl
+namespace PFC___StandBy_CSharp.LockScreenAndroid
 {
     public class YASSCOMLockScreenRenderer : LockScreenRenderer, IDisposable
     {
@@ -43,7 +43,7 @@ namespace GestureLockApp.GestureLockControl
         {
             //graphics.Clear(Color.FromArgb(50, 50, 50));
             graphics.Clear(Color.FromArgb(23, 23, 36));
-           // graphics.Clear(Color.Transparent);
+            // graphics.Clear(Color.Transparent);
         }
 
         public override void RenderGesture(Graphics graphics, PointF[] polygon)
@@ -57,7 +57,7 @@ namespace GestureLockApp.GestureLockControl
             graphics.DrawEllipse(padPen, bounds);
             if (state.HasFlag(GesturePadState.Inputted))
             {
-                float inflationAmount = bounds.Width*0.3f;
+                float inflationAmount = bounds.Width * 0.3f;
                 var innerRect = bounds;
                 innerRect.Inflate(-inflationAmount, -inflationAmount);
                 graphics.FillEllipse(activeBrush, innerRect);

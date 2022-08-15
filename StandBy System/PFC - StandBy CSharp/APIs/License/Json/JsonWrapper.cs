@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace PFC___StandBy_CSharp.APIs.License
+namespace PFC___StandBy_CSharp.APIs.License.Json
 {
     public class JsonWrapper
     {

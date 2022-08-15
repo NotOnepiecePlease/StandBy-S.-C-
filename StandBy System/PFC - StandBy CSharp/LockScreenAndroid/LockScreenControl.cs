@@ -6,6 +6,8 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 
+// ReSharper disable ArrangeAccessorOwnerBody
+
 /******************** CREATED BY YASSCOM **********************
 *                                                             *
 #         __   __ _    ____ ____   ____ ___  __  __           *
@@ -17,10 +19,10 @@ using System.Windows.Forms;
 #                       DEVOUJDA.COM                          *
 #  https://www.youtube.com/channel/UChiPl4zBq6pNbZHT0rwTT9g   *
 *                                                             *
-***************************************************************    
+***************************************************************
 */
 
-namespace GestureLockApp.GestureLockControl
+namespace PFC___StandBy_CSharp.LockScreenAndroid
 {
     [DefaultEvent("PassCodeSubmitted")]
     [DesignTimeVisible(true)]
@@ -28,6 +30,7 @@ namespace GestureLockApp.GestureLockControl
     {
         // Used for circular hit-testing.
         private readonly GraphicsPath hitTestPath = new GraphicsPath();
+
         private readonly List<RectangleF> padRects = new List<RectangleF>();
         public readonly List<int> inputtedPassCode = new List<int>();
         private int lastHoveredCellIndex = -1;
@@ -38,6 +41,7 @@ namespace GestureLockApp.GestureLockControl
         public bool AllowClosedGesture { get; set; }
 
         private LockScreenRenderer renderer = new YASSCOMLockScreenRenderer();
+
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public LockScreenRenderer Renderer
@@ -142,7 +146,7 @@ namespace GestureLockApp.GestureLockControl
                         }
                         if (inputtedPassCode.Contains(i) == false ||
                             (AllowClosedGesture
-                             && inputtedPassCode.Count > 2 // can possible be closed 
+                             && inputtedPassCode.Count > 2 // can possible be closed
                              && inputtedPassCode[0] == i // and is actually closed
                              && inputtedPassCode[0] != inputtedPassCode.Last())) // add not already closed
                         {

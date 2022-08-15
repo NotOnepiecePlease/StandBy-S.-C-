@@ -12,10 +12,10 @@ using System.Drawing;
 #                       DEVOUJDA.COM                          *
 #  https://www.youtube.com/channel/UChiPl4zBq6pNbZHT0rwTT9g   *
 *                                                             *
-***************************************************************    
+***************************************************************
 */
 
-namespace GestureLockApp.GestureLockControl
+namespace PFC___StandBy_CSharp.LockScreenAndroid
 {
     [Flags]
     public enum GesturePadState

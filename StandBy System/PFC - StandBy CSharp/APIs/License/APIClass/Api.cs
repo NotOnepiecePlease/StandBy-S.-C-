@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
+using PFC___StandBy_CSharp.APIs.License.Json;
 
 namespace PFC___StandBy_CSharp.APIs.License
 {
@@ -20,7 +21,7 @@ namespace PFC___StandBy_CSharp.APIs.License
         public ResponseClass response = new ResponseClass();
         public AppDataClass app_data = new AppDataClass();
         public UserDataClass user_data = new UserDataClass();
-        private JsonWrapper response_decoder = new JsonWrapper(new ResponseStructure());
+        private readonly JsonWrapper response_decoder = new JsonWrapper(new ResponseStructure());
 
         // Set up your application credentials in order to use keyauth
         /// <param name="name">Application Name</param>
@@ -50,23 +51,23 @@ namespace PFC___StandBy_CSharp.APIs.License
             {
                 ["type"] = Encryption.byte_arr_to_str(Encoding.Default.GetBytes("init")),
                 ["ver"] = Encryption.Encrypt(version, secret, init_iv),
-                ["hash"] = GenerateChecksum(Process.GetCurrentProcess().MainModule.FileName),
+                ["hash"] = GenerateChecksum(Process.GetCurrentProcess().MainModule?.FileName),
                 ["enckey"] = Encryption.Encrypt(enckey, secret, init_iv),
                 ["name"] = Encryption.byte_arr_to_str(Encoding.Default.GetBytes(name)),
                 ["ownerid"] = Encryption.byte_arr_to_str(Encoding.Default.GetBytes(ownerid)),
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            if (response == "KeyAuth_Invalid")
+            if (responseRequest == "KeyAuth_Invalid")
             {
                 GenerateError("Application not found");
                 Environment.Exit(0);
             }
 
-            response = Encryption.Decrypt(response, secret, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, secret, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
             {
@@ -98,14 +99,9 @@ namespace PFC___StandBy_CSharp.APIs.License
         {
             if (!initzalized)
             {
-                if (IsDebugRelease)
-                {
-                    GenerateError("Not initialized Check if KeyAuthApp.init() does exist");
-                }
-                else
-                {
-                    GenerateError("Please initialize first");
-                }
+                GenerateError(IsDebugRelease
+                    ? "Not initialized Check if KeyAuthApp.init() does exist"
+                    : "Please initialize first");
             }
         }
 
@@ -119,7 +115,7 @@ namespace PFC___StandBy_CSharp.APIs.License
         {
             Checkinit();
 
-            string hwid = WindowsIdentity.GetCurrent().User.Value;
+            string hwid = WindowsIdentity.GetCurrent().User?.Value;
 
             var init_iv = Encryption.sha256(Encryption.iv_key());
 
@@ -136,10 +132,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 LoadUserData(json.info);
@@ -152,7 +148,7 @@ namespace PFC___StandBy_CSharp.APIs.License
         {
             Checkinit();
 
-            string hwid = WindowsIdentity.GetCurrent().User.Value;
+            string hwid = WindowsIdentity.GetCurrent().User?.Value;
 
             var init_iv = Encryption.sha256(Encryption.iv_key());
 
@@ -168,10 +164,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 LoadUserData(json.info);
@@ -184,7 +180,7 @@ namespace PFC___StandBy_CSharp.APIs.License
         {
             Checkinit();
 
-            string hwid = WindowsIdentity.GetCurrent().User.Value;
+            string hwid = WindowsIdentity.GetCurrent().User?.Value;
 
             var init_iv = Encryption.sha256(Encryption.iv_key());
 
@@ -199,10 +195,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             json.success = false;
             LoadResponseStruct(json);
         }
@@ -228,11 +224,11 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
 
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 LoadUserData(json.info);
@@ -253,10 +249,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
         }
 
@@ -280,10 +276,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
         }
 
@@ -306,10 +302,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 return json.response;
@@ -332,10 +328,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
         }
 
@@ -360,10 +356,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 return json.message;
@@ -389,10 +385,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 return json.messages;
@@ -420,23 +416,24 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 return true;
             return false;
         }
 
-        // Checks if the current ip address/hwid is blacklisted
+        /// <summary>
+        /// Checks if the current ip address/hwid is blacklisted
         /// </summary>
-        /// <returns>If found blacklisted returns true if not false</returns>
+        /// <returns></returns>
         public bool CheckIfBlacklisted()
         {
             Checkinit();
-            string hwid = WindowsIdentity.GetCurrent().User.Value;
+            string hwid = WindowsIdentity.GetCurrent().User?.Value;
 
             var init_iv = Encryption.sha256(Encryption.iv_key());
 
@@ -450,10 +447,10 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 return true;
@@ -485,11 +482,11 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
 
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 return json.response;
@@ -515,11 +512,11 @@ namespace PFC___StandBy_CSharp.APIs.License
                 ["init_iv"] = init_iv
             };
 
-            var response = SendRequest(values_to_upload);
+            var responseRequest = SendRequest(values_to_upload);
 
-            response = Encryption.Decrypt(response, enckey, init_iv);
+            responseRequest = Encryption.Decrypt(responseRequest, enckey, init_iv);
 
-            var json = response_decoder.string_to_generic<ResponseStructure>(response);
+            var json = response_decoder.string_to_generic<ResponseStructure>(responseRequest);
             LoadResponseStruct(json);
             if (json.success)
                 return Encryption.str_to_byte_arr(json.contents);

@@ -7,6 +7,8 @@ using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+// ReSharper disable UseStringInterpolation
+
 namespace PFC___StandBy_CSharp.PreencherComponentes
 {
     public class PreencherTableOrdensServicos : conexao
@@ -138,7 +140,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                     SqlDataAdapter adapter = new SqlDataAdapter(Query, con);
 
                     //Defino os parametros
-                    adapter.SelectCommand.Parameters.AddWithValue("@NomeCliente", String.Format("%{0}%", _nomeCliente));
+                    adapter.SelectCommand.Parameters.AddWithValue("@NomeCliente", string.Format("%{0}%", _nomeCliente));
 
                     DataTable datatable = new DataTable();
 

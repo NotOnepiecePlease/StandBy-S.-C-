@@ -10,8 +10,8 @@ namespace PFC___StandBy_CSharp.Dados
 {
     public class AlterarDados : conexao
     {
-        private MensagensErro mErro = new MensagensErro();
-        private MensagensSucesso mSucesso = new MensagensSucesso();
+        private readonly MensagensErro mErro = new MensagensErro();
+        private readonly MensagensSucesso mSucesso = new MensagensSucesso();
         private VerificarExistencia verificarExistencia = new VerificarExistencia();
 
         public void AtualizarColunaTempoEntrega(SqlConnection _con, string _tempo, int _id)

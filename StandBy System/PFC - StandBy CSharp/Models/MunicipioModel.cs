@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using System.Globalization;
-using Bunifu.Json;
-
-namespace PFC___StandBy_CSharp.Models
+﻿namespace PFC___StandBy_CSharp.Models
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class MunicipioModel

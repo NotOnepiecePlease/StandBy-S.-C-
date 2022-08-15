@@ -15,7 +15,7 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_DiaEntrega : Form
     {
         private form_OrdensServ formServ1;
-        private int[] corGeral = new int[] { 0, 0, 0 };
+        private int[] corGeral;
         private InserirDados id = new InserirDados();
         private BuscarDados bd = new BuscarDados();
         private MensagensErro me = new MensagensErro();
@@ -96,10 +96,10 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (image1 != null)
             {
-                using (MemoryStream ms = new MemoryStream())
+                using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    img.Save(ms, ImageFormat.Png);
-                    return ms.ToArray();
+                    img.Save(memoryStream, ImageFormat.Png);
+                    return memoryStream.ToArray();
                 }
             }
             else
@@ -130,10 +130,11 @@ namespace PFC___StandBy_CSharp.Forms
                         image1 = GetCopyImage(@"./PasswordPattern/Screen.png");
                         var dir = new DirectoryInfo(@"./PasswordPattern/");
                         var files = dir.GetFiles().FirstOrDefault();
-                        files.Delete();
+                        files?.Delete();
                     }
                     catch (Exception)
                     {
+                        // ignored
                     }
 
                     //inserirImage(ConvertImageToByte(image1));
@@ -236,9 +237,11 @@ namespace PFC___StandBy_CSharp.Forms
                     editarServicos.txtCPFCliente.Text = _CPFCliente;
                     editarServicos.txtAcessoriosEdit.Text = dados[14].ToString();
                 }
-                catch (Exception)
+                catch
                 {
+                    // ignored
                 }
+
                 editarServicos.lblIDservico.Text = dados[0].ToString();
                 editarServicos.lblIDcliente.Text = dados[1].ToString();
                 editarServicos.dtpDataEdit.Value = Convert.ToDateTime(dados[2].ToString());

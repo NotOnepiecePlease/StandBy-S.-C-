@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Correios;
 using PFC___StandBy_CSharp.APIs.CEP;
 using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.Properties;
@@ -19,7 +18,7 @@ namespace PFC___StandBy_CSharp.Forms
         private form_CadastroClientes formCadCliente;
         private readonly AlterarDados ad = new AlterarDados();
         private readonly VerificarExistencia verificarExistencia = new VerificarExistencia();
-        private int[] corGeral = new int[3];
+        private int[] corGeral;
         private int contadorCNPJ = 0;
         private int contadorCPF = 0;
         public bool isTemCidadeCadastrada = false;
@@ -118,7 +117,7 @@ namespace PFC___StandBy_CSharp.Forms
                 //Validar a data (armengadas mas funciona perfeitamente hehe)
                 if (txtDataNascimento.Text != "SEM DATA")
                 {
-                    Convert.ToDateTime(txtDataNascimento.Text);
+                    var gambi = Convert.ToDateTime(txtDataNascimento.Text);
                 }
 
                 //Validar o genero

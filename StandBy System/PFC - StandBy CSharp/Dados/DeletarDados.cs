@@ -9,9 +9,9 @@ namespace PFC___StandBy_CSharp.Dados
 {
     internal class DeletarDados : conexao
     {
-        private MensagensErro mErro = new MensagensErro();
-        private MensagensSucesso mSucesso = new MensagensSucesso();
-        private VerificarExistencia ve = new VerificarExistencia();
+        private readonly MensagensErro mErro = new MensagensErro();
+        private readonly MensagensSucesso mSucesso = new MensagensSucesso();
+        private readonly VerificarExistencia ve = new VerificarExistencia();
 
         public void DeletarServico(int _idServico)
         {

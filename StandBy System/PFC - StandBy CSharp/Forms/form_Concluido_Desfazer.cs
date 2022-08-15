@@ -7,7 +7,7 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Concluido_Desfazer : Form
     {
-        private int[] corGeral = { 0, 0, 0 };
+        private int[] corGeral;
         private AlterarDados ad = new AlterarDados();
         private DeletarDados dd = new DeletarDados();
         private form_Concluidos formConcluidos;

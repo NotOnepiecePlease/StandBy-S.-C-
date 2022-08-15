@@ -3,18 +3,15 @@ using PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes;
 using PFC___StandBy_CSharp.APIs.CEP;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
-using Correios;
 using PFC___StandBy_CSharp.Properties;
 using PFC___StandBy_CSharp.Utils;
 using Bunifu.UI.WinForms;
-using Syncfusion.Windows.Forms.Tools;
 using BunifuSeparator = Bunifu.UI.WinForms.BunifuSeparator;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -28,7 +25,7 @@ namespace PFC___StandBy_CSharp.Forms
         private BuscarDados bd = new BuscarDados();
         private static List<string> listCidades = new List<string>();
 
-        private int[] corGeral = new int[3] { 0, 0, 0 };
+        private int[] corGeral;
         private int contadorCNPJ = 0;
         private int contadorCPF = 0;
         private const string VALOR_PADRAO_DADOS_CLIENTE = "";
@@ -249,7 +246,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 try
                 {
-                    Convert.ToDateTime(txtDataNascimento.Text);
+                    var gambi = Convert.ToDateTime(txtDataNascimento.Text);
                 }
                 catch (Exception)
                 {
@@ -830,6 +827,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             catch (Exception)
             {
+                // ignored
             }
         }
 

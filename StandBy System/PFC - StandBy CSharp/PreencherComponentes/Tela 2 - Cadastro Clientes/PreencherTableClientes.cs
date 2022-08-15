@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using Bunifu.Framework.UI;
 
+// ReSharper disable UseStringInterpolation
+
 namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes
 {
     internal class PreencherTableClientes : conexao
@@ -42,7 +44,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes
                                "cl_parentesco_recado, cl_sexo, cl_data_nascimento, cl_cep, cl_endereco, " +
                                "cl_complemento, cl_bairro, cl_cidade, cl_estado from tb_clientes where cl_nome like @nomeCliente";
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@nomeCliente", String.Format("%{0}%", _nomeCliente));
+                cmd.Parameters.AddWithValue("@nomeCliente", string.Format("%{0}%", _nomeCliente));
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.SelectCommand.ExecuteNonQuery();
                 adapter.Fill(datatable);

@@ -8,7 +8,7 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_ServicosAnuais : Form
     {
         private int anoAtual = DateTime.Now.Year;
-        private int[] corGeral = { 0, 0, 0 };
+        private int[] corGeral;
         private GraficoServicosAnuais graficoAno = new GraficoServicosAnuais();
         private GraficoTotalGanhoAnualmente totalGanhoAno = new GraficoTotalGanhoAnualmente();
 
@@ -29,7 +29,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 if (data.Equals(DateTime.Now.Year.ToString()))
                 {
-                    string txt = string.Format("Ano {0} Index {1}", data, cmbAno.Items.IndexOf(data));
+                    string txt = $"Ano {data} Index {cmbAno.Items.IndexOf(data)}";
                     cmbAno.SelectedIndex = cmbAno.Items.IndexOf(data);
                     //MessageBox.Show(txt);
                 }

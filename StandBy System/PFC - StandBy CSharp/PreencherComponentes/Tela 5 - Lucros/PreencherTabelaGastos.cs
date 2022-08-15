@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+// ReSharper disable UseStringInterpolation
+
 namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
 {
     internal class PreencherTabelaGastos : conexao
@@ -57,7 +59,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_5___Lucros
                         "and gst_produto like @_Gasto " +
                         "order by gst_data desc";
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@_Gasto", String.Format("%{0}%", _Gasto));
+                cmd.Parameters.AddWithValue("@_Gasto", string.Format("%{0}%", _Gasto));
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.SelectCommand.ExecuteNonQuery();
                 adapter.Fill(datatable);

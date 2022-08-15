@@ -1,5 +1,4 @@
-﻿using PFC___StandBy_CSharp.Forms;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Net;
 using System.Windows.Forms;
@@ -8,7 +7,7 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
 {
     public class Verificar
     {
-        public string VERSAO_STANDBY { get; set; } = "7.2.1";
+        public string VERSAO_STANDBY { get; set; } = "7.2.2";
         private const string LINK_STANDBY = "https://www.dropbox.com/s/revwuo9ry89po4t/UpdateVersionStandBY.txt?dl=1";
         private const string VERSAO_CLIENT_SERVER = "3.1.1";
         private const string LINK_CLIENT_SERVER = "https://www.dropbox.com/s/zb8ezcxnzk8fyz6/UpdateVersionClientServer.txt?dl=1";

@@ -1,4 +1,6 @@
 ﻿
+using PFC___StandBy_CSharp.LockScreenAndroid;
+
 namespace PFC___StandBy_CSharp.Forms
 {
     partial class form_PasswordPattern
@@ -41,7 +43,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPasswordIsCorrect = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblPasswordInNumbers = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lockScreenControl1 = new GestureLockApp.GestureLockControl.LockScreenControl();
+            this.lockScreenControl1 = new LockScreenControl();
             this.lblIDServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -216,7 +218,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lockScreenControl1.Size = new System.Drawing.Size(261, 239);
             this.lockScreenControl1.TabIndex = 0;
             this.lockScreenControl1.Text = "lockScreenControl1";
-            this.lockScreenControl1.PassCodeSubmitted += new System.EventHandler<GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs>(this.lockScreenControl1_PassCodeSubmitted);
+            this.lockScreenControl1.PassCodeSubmitted += new System.EventHandler<PassCodeSubmittedEventArgs>(this.lockScreenControl1_PassCodeSubmitted);
             // 
             // lblIDServico
             // 
@@ -257,7 +259,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         #endregion
 
-        private GestureLockApp.GestureLockControl.LockScreenControl lockScreenControl1;
+        private LockScreenControl lockScreenControl1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSenhaCorreta;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSenhaIncorreta;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -234,7 +234,7 @@ namespace PFC___StandBy_CSharp.Utils
                 }
             }
             valor = txt.Text;
-            txt.Text = string.Format("{0:C}", Convert.ToDouble(valor));
+            txt.Text = $"{Convert.ToDouble(valor):C}";
             txt.Select(txt.Text.Length, 0);
         }
 

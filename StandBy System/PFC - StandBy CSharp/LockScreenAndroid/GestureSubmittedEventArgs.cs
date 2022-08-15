@@ -12,10 +12,10 @@ using System.Linq;
 #                       DEVOUJDA.COM                          *
 #  https://www.youtube.com/channel/UChiPl4zBq6pNbZHT0rwTT9g   *
 *                                                             *
-***************************************************************    
+***************************************************************
 */
 
-namespace GestureLockApp.GestureLockControl
+namespace PFC___StandBy_CSharp.LockScreenAndroid
 {
     public class PassCodeSubmittedEventArgs : EventArgs
     {
@@ -33,7 +33,7 @@ namespace GestureLockApp.GestureLockControl
         {
             string strCode = Code.Aggregate("{", (current, num) => current + (num + ", "));
             strCode = strCode.TrimEnd(',', ' ') + "}";
-            return string.Format("Valid: {0}, Code: {1}", Valid, strCode);
+            return $"Valid: {Valid}, Code: {strCode}";
         }
     }
 }

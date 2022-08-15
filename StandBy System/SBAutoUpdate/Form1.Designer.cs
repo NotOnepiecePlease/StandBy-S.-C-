@@ -142,7 +142,9 @@
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
+#pragma warning disable CS0108 // O membro oculta o membro herdado; nova palavra-chave ausente
         private System.ComponentModel.BackgroundWorker Update;
+#pragma warning restore CS0108 // O membro oculta o membro herdado; nova palavra-chave ausente
         private Guna.UI.WinForms.GunaProgressBar progress;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Guna.UI.WinForms.GunaLabel lblStatus;

@@ -18,7 +18,6 @@ using Bunifu.DataViz.WinForms;
 using Application = System.Windows.Forms.Application;
 using Point = System.Drawing.Point;
 using Newtonsoft.Json;
-using PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes;
 
 namespace PFC___StandBy_CSharp.Forms
 {

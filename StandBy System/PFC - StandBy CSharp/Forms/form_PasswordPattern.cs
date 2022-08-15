@@ -8,6 +8,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.LockScreenAndroid;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -96,7 +97,7 @@ namespace PFC___StandBy_CSharp.Forms
             label.Left = (this.Width / 2) - (label.Width / 2);
         }
 
-        private void lockScreenControl1_PassCodeSubmitted(object sender, GestureLockApp.GestureLockControl.PassCodeSubmittedEventArgs e)
+        private void lockScreenControl1_PassCodeSubmitted(object sender, PassCodeSubmittedEventArgs e)
         {
             lblPasswordInNumbers.Text = "";
             lblPasswordInNumbers.Visible = true;

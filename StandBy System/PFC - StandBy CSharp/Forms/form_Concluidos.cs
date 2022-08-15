@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_3___ServicosConcluidos;
 
+// ReSharper disable LocalVariableHidesMember
+
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Concluidos : Form
@@ -16,7 +18,7 @@ namespace PFC___StandBy_CSharp.Forms
         //MessageErro mErro = new MessageErro();
         private VerificarExistencia ve = new VerificarExistencia();
 
-        private int[] corGeral = new int[3] { 0, 0, 0 };
+        private int[] corGeral;
         private int linhasExibidas = 24;
         private int paginaAtual = 1;
 
@@ -102,7 +104,7 @@ namespace PFC___StandBy_CSharp.Forms
             string Defeito = table_ServicosConcluidos.SelectedCells[5].Value.ToString();
 
             form_Concluido_Desfazer desfazer = new form_Concluido_Desfazer(this, corGeral);
-            desfazer.lblData.Text = String.Format("{0:d}", Data);
+            desfazer.lblData.Text = $"{Data:d}";
             desfazer.lblNomeCliente.Text = NomeCliente;
             desfazer.lblAparelho.Text = Aparelho;
             desfazer.lblDefeito.Text = Defeito;
@@ -219,7 +221,9 @@ namespace PFC___StandBy_CSharp.Forms
             }
             catch (Exception)
             {
+                // ignored
             }
+
             editarServicos.lblIDservico.Text = dados[0].ToString();
             editarServicos.lblIDcliente.Text = dados[1].ToString();
             editarServicos.dtpDataEdit.Value = Convert.ToDateTime(dados[2].ToString());
