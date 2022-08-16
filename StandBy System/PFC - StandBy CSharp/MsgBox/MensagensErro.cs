@@ -173,5 +173,18 @@ namespace PFC___StandBy_CSharp.MsgBox
         }
 
         #endregion CADASTRO DE CLIENTE
+
+        #region LICENÇA
+
+        //--------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------
+        //ERROS DA TELA DE LICENÇA
+        public void ErroAoLerDadosLicencaRegedit(Exception e)
+        {
+            MessageBox.Show("(SYS-LC01)Erro ao ler dados regedit!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        #endregion LICENÇA
     }
 }

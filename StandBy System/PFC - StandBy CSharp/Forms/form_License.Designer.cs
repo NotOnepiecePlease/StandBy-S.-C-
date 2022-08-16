@@ -108,11 +108,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblCarregamento.AutoSize = true;
             this.lblCarregamento.Font = new System.Drawing.Font("Tw Cen MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCarregamento.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCarregamento.Location = new System.Drawing.Point(336, 205);
+            this.lblCarregamento.Location = new System.Drawing.Point(272, 205);
             this.lblCarregamento.Name = "lblCarregamento";
-            this.lblCarregamento.Size = new System.Drawing.Size(195, 24);
+            this.lblCarregamento.Size = new System.Drawing.Size(323, 24);
             this.lblCarregamento.TabIndex = 3;
-            this.lblCarregamento.Text = "Carregando licença...";
+            this.lblCarregamento.Text = "Licença expirada dia: 26/08/2022";
             // 
             // txtLicense
             // 

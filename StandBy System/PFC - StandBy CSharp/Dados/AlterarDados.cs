@@ -12,7 +12,6 @@ namespace PFC___StandBy_CSharp.Dados
     {
         private readonly MensagensErro mErro = new MensagensErro();
         private readonly MensagensSucesso mSucesso = new MensagensSucesso();
-        private VerificarExistencia verificarExistencia = new VerificarExistencia();
 
         public void AtualizarColunaTempoEntrega(SqlConnection _con, string _tempo, int _id)
         {
