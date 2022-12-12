@@ -2,8 +2,6 @@
 using System.Drawing;
 using System.Globalization;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using PFC___StandBy_CSharp.APIs.License;
@@ -103,7 +101,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             catch (Exception e)
             {
-                MessageBox.Show($"Erro ao detectar alterações maliciosas!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao detectar alterações maliciosas!\n\nErro: {e.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

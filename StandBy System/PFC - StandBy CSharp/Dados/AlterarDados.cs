@@ -215,7 +215,7 @@ namespace PFC___StandBy_CSharp.Dados
                         cmd.Parameters.AddWithValue("@_dataNascimento", SqlDbType.DateTime).Value = DBNull.Value;
                     }
 
-                    cmd.Parameters.AddWithValue("@_cep", SqlDbType.VarChar).Value = _dadosDoCliente.Cep;
+                    cmd.Parameters.AddWithValue("@_cep", SqlDbType.VarChar).Value = _dadosDoCliente.Cep.Equals("Ex: 42803317") ? string.Empty : _dadosDoCliente.Cep;
                     cmd.Parameters.AddWithValue("@_endereco", SqlDbType.VarChar).Value = _dadosDoCliente.Endereco;
                     cmd.Parameters.AddWithValue("@_complemento", SqlDbType.VarChar).Value = _dadosDoCliente.Complemento;
                     cmd.Parameters.AddWithValue("@_bairro", SqlDbType.VarChar).Value = _dadosDoCliente.Bairro;
