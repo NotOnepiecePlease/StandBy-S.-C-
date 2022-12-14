@@ -17,7 +17,8 @@ namespace PFC___StandBy_CSharp
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Nzc3MDU4QDMyMzAyZTMzMmUzMEhpVEkwRGI5V21BSk5KbFd6ckYwUUNLNkRXcm55T2tGRFAwTHV6VFNqcFU9");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_StandBy());
+            //Application.Run(new form_StandBy());
+            Application.Run(new form_OrdemServico());
         }
     }
 }
