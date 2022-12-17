@@ -214,6 +214,9 @@
   <data name="icons8_print_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_print_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="google banner sem fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\google banner sem fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_reset_480px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_reset_480px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -274,11 +277,11 @@
   <data name="separador" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\separador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_android_20px_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_android_20px_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iPhone-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iPhone-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_phone_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_phone_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="address_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,8 +325,8 @@
   <data name="icons8_cancel_25px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_cancel_25px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_android_20px_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_android_20px_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_phone_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_phone_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="skyscrapers_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skyscrapers_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -346,7 +349,7 @@
   <data name="icons8_add_512px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_add_512px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="google banner sem fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\google banner sem fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="google-minimal-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\google-minimal-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

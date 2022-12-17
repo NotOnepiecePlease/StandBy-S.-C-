@@ -107,6 +107,11 @@ namespace PFC___StandBy_CSharp.MsgBox
             MessageBox.Show("(OR-SV13)Erro ao atualizar tempo entrega!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        public void ErroAoBuscarIDUltimaOrdemServico(Exception e)
+        {
+            MessageBox.Show("(OR-SV14)Erro ao buscar ID ultima O.S!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         #endregion ORDENS DE SERVICO
 
         #region SERVICOS CONCLUIDOS

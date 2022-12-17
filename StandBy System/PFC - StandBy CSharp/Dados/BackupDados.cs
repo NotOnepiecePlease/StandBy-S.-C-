@@ -3,6 +3,8 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 
+// ReSharper disable All
+
 namespace PFC___StandBy_CSharp.Dados
 {
     public class BackupDados
@@ -35,7 +37,14 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 if (File.Exists(CAMINHO_TXT))
                 {
-                    //Se ja existe, nao faz nada, poderia apenas negar a condicao mas acho mais legivel assim.
+                    string[] sr = File.ReadAllLines(CAMINHO_TXT);
+                    string ipDoArquivoTexto = sr[1].Substring(4);
+                    string ipAtualDoPC = PegarIp();
+
+                    if (ipDoArquivoTexto != ipAtualDoPC)
+                    {
+                        CriarDiretorioEscreverConfigs();
+                    }
                 }
                 else
                 {
@@ -56,7 +65,6 @@ namespace PFC___StandBy_CSharp.Dados
             Directory.CreateDirectory(pastaRaiz);
             using (StreamWriter sw = File.CreateText(CAMINHO_TXT))
             {
-                // sw.WriteLine(DataSource);
                 DadosParaEscrever.ForEach(x => sw.WriteLine(x));
             }
         }

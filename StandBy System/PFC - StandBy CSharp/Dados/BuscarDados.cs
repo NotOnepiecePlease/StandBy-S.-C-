@@ -4,11 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.CodeAnalysis;
 using Guna.UI.WinForms;
 using System.Windows.Forms;
 
+// ReSharper disable All
+
 namespace PFC___StandBy_CSharp.Dados
 {
+    [SuppressMessage("ReSharper", "IdentifierTypo")]
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
     public class BuscarDados : conexao
     {
         private readonly MensagensErro me = new MensagensErro();
@@ -245,12 +250,11 @@ namespace PFC___StandBy_CSharp.Dados
         {
             using (SqlConnection conexao = OpenConnection())
             {
-                SqlDataReader dr;
                 string query = "select cl_telefone_recado from tb_clientes where cl_id = @IdCliente";
 
                 SqlCommand cmd = new SqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@IdCliente", _idCliente);
-                dr = cmd.ExecuteReader();
+                SqlDataReader dr = cmd.ExecuteReader();
 
                 dr.Read();
 
@@ -366,5 +370,34 @@ namespace PFC___StandBy_CSharp.Dados
         }
 
         #endregion Buscar servico por ID
+
+        #region Buscar ID ultima Ordem de Servico
+
+        public int? BuscarUltimaIdOrdemServico()
+        {
+            try
+            {
+                using (SqlConnection con = OpenConnection())
+                {
+                    string query = "SELECT TOP 1 sv_ordem_serv FROM tb_servicos ORDER BY sv_id DESC";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        return dr.GetInt32(0);
+                    }
+                    return null; //Retornando null porque 0 é um valor valido no banco.
+                }
+            }
+            catch (Exception ex)
+            {
+                me.ErroAoBuscarIDUltimaOrdemServico(ex);
+                return null;
+            }
+        }
+
+        #endregion Buscar ID ultima Ordem de Servico
     }
 }
