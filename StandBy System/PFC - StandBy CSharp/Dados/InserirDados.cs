@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Models;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -15,56 +16,93 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Inserir Servico
 
-        public void InserirServico(DateTime data, int fk_cliente, string aparelho, string defeito, string senha, string situacao, int DiasParaEntregar, int SeExisteUmPrazo, byte[] image, string acessorios)
+        //public void InserirServico(ServicoDados _servicoDados, ClienteDados _clienteDados, ChecklistDados _checklistDados, CondicoesFisicasDados _condicoesFisicasDados)
+        //{
+        //    {
+        //        //Abro a conexao.
+        //        using (SqlConnection conexaoSQL = OpenConnection())
+        //        {
+        //            //Defino a query que preciso com os parametros que vao ser criados logo apos.
+        //            string query = "";
+        //            if (DiasParaEntregar == 0)
+        //            {
+        //                query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_existe_um_prazo, sv_senha_pattern, sv_acessorios, sv_cor_tempo) " +
+        //                "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @SeExisteUmPrazo, @ImagePattern, @Acessorios, @CorTempo)";
+        //            }
+        //            else
+        //            {
+        //                query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_previsao_entrega, sv_existe_um_prazo, sv_senha_pattern, sv_acessorios, sv_cor_tempo) " +
+        //                "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @PrevisaoEntrega, @SeExisteUmPrazo, @ImagePattern, @Acessorios, @CorTempo)";
+        //            }
+
+        //            //Crio um novo objeto do tipo "Comando em SQL" passando como argumento
+        //            //a minha query e uma conexao pra ele saber em que banco inserir.
+        //            SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+
+        //            DateTime previsaoEntrega = DateTime.Now;
+        //            previsaoEntrega = previsaoEntrega.AddDays(DiasParaEntregar);
+
+        //            //Defino os parametros e quais dados eles vao receber
+        //            cmd.Parameters.Add("@Data", SqlDbType.DateTime).Value = data;
+        //            cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = fk_cliente;
+        //            cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = aparelho;
+        //            cmd.Parameters.Add("@Defeito", SqlDbType.VarChar).Value = defeito;
+        //            cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = senha;
+        //            cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = situacao;
+        //            if (DiasParaEntregar == 0)
+        //            {
+        //            }
+        //            else
+        //            {
+        //                cmd.Parameters.Add("@PrevisaoEntrega", SqlDbType.DateTime).Value = previsaoEntrega;
+        //            }
+        //            cmd.Parameters.Add("@SeExisteUmPrazo", SqlDbType.Int).Value = SeExisteUmPrazo;
+        //            cmd.Parameters.Add("@ImagePattern", SqlDbType.Image).Value = image;
+        //            cmd.Parameters.Add("@Acessorios", SqlDbType.VarChar).Value = acessorios;
+        //            cmd.Parameters.Add("@CorTempo", SqlDbType.Int).Value = 4;
+
+        //            //Executo ta query completa
+        //            cmd.ExecuteNonQuery();
+        //        }
+        //        //Fecho a conexao, nunca deixar aberta pois ocasiona lag e erros de acesso.
+        //        //conexaoSQL.Close();
+        //    }
+        //}
+
+        public int InserirServico(ClienteDados _clienteDados, ServicoDados _servicoDados, ChecklistDados _checklistDados, CondicoesFisicasDados _condicoesFisicasDados)
         {
+            try
             {
-                //Abro a conexao.
                 using (SqlConnection conexaoSQL = OpenConnection())
                 {
-                    //Defino a query que preciso com os parametros que vao ser criados logo apos.
-                    string query = "";
-                    if (DiasParaEntregar == 0)
-                    {
-                        query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_existe_um_prazo, sv_senha_pattern, sv_acessorios, sv_cor_tempo) " +
-                        "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @SeExisteUmPrazo, @ImagePattern, @Acessorios, @CorTempo)";
-                    }
-                    else
-                    {
-                        query = "INSERT INTO tb_servicos (sv_data, sv_cl_idcliente, sv_aparelho, sv_defeito, sv_senha, sv_situacao, sv_previsao_entrega, sv_existe_um_prazo, sv_senha_pattern, sv_acessorios, sv_cor_tempo) " +
-                        "VALUES (@Data,  @FkCliente, @Aparelho, @Defeito, @Senha, @Situacao, @PrevisaoEntrega, @SeExisteUmPrazo, @ImagePattern, @Acessorios, @CorTempo)";
-                    }
+                    string query = "INSERT INTO tb_servicos (sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho, sv_aparelho, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_observacoes, sv_avaliacao_servico) " +
+                    "output INSERTED.sv_id, INSERTED.sv_ordem_serv VALUES (@OrdemServico, @DataServico, @FkCliente, @TipoAparelho,@Aparelho, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @Observacoes, @AvaliacaoServico)";
 
-                    //Crio um novo objeto do tipo "Comando em SQL" passando como argumento
-                    //a minha query e uma conexao pra ele saber em que banco inserir.
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
 
-                    DateTime previsaoEntrega = DateTime.Now;
-                    previsaoEntrega = previsaoEntrega.AddDays(DiasParaEntregar);
+                    cmd.Parameters.Add("@OrdemServico", SqlDbType.Int).Value = _servicoDados.OrdemServico;
+                    cmd.Parameters.Add("@DataServico", SqlDbType.Date).Value = _servicoDados.DataServico;
+                    cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = _clienteDados.ID;
+                    cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho;
+                    cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = _servicoDados.Aparelho;
+                    cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = _servicoDados.Senha;
+                    cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = _servicoDados.Situacao;
+                    cmd.Parameters.Add("@Status0_1", SqlDbType.Int).Value = _servicoDados.Status;
+                    cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid;
+                    cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente;
+                    cmd.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = _servicoDados.Observacoes;
+                    cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
 
-                    //Defino os parametros e quais dados eles vao receber
-                    cmd.Parameters.Add("@Data", SqlDbType.DateTime).Value = data;
-                    cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = fk_cliente;
-                    cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = aparelho;
-                    cmd.Parameters.Add("@Defeito", SqlDbType.VarChar).Value = defeito;
-                    cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = senha;
-                    cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = situacao;
-                    if (DiasParaEntregar == 0)
-                    {
-                    }
-                    else
-                    {
-                        cmd.Parameters.Add("@PrevisaoEntrega", SqlDbType.DateTime).Value = previsaoEntrega;
-                    }
-                    cmd.Parameters.Add("@SeExisteUmPrazo", SqlDbType.Int).Value = SeExisteUmPrazo;
-                    cmd.Parameters.Add("@ImagePattern", SqlDbType.Image).Value = image;
-                    cmd.Parameters.Add("@Acessorios", SqlDbType.VarChar).Value = acessorios;
-                    cmd.Parameters.Add("@CorTempo", SqlDbType.Int).Value = 4;
+                    int idRegistrada = (int)cmd.ExecuteScalar();
 
-                    //Executo ta query completa
-                    cmd.ExecuteNonQuery();
+                    return idRegistrada;
                 }
-                //Fecho a conexao, nunca deixar aberta pois ocasiona lag e erros de acesso.
-                //conexaoSQL.Close();
+            }
+            catch (Exception ex)
+            {
+                //Mensagem de Erro
+                mErro.ErroInserirServico(ex);
+                return -1;
             }
         }
 
@@ -227,5 +265,29 @@ namespace PFC___StandBy_CSharp.Dados
         }
 
         #endregion Inserir Orcamento
+
+        public void InserirCheckList(int ordemServico)
+        {
+            //try
+            //{
+            //    using (SqlConnection conexao = OpenConnection())
+            //    {
+            //        string query = "GarantiaInserir";
+            //        SqlCommand cmd = new SqlCommand(procedure, conexao);
+            //        cmd.Parameters.AddWithValue("@_fkServico", _idServico);
+            //        cmd.Parameters.AddWithValue("@_fkCliente", _idCliente);
+            //        cmd.Parameters.AddWithValue("@_DataAtual", Convert.ToDateTime(DateTime.Now.ToShortDateString()));
+            //        cmd.Parameters.AddWithValue("@_QntsDiasGarantia", _qntDiasGarantia);
+
+            //        cmd.CommandType = CommandType.StoredProcedure;
+
+            //        cmd.ExecuteNonQuery();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Nao foi possivel inserir a garantia no banco de dados.\n\n\nErro: " + ex);
+            //}
+        }
     }
 }

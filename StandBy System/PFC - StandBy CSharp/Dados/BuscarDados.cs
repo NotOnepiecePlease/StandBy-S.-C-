@@ -18,6 +18,39 @@ namespace PFC___StandBy_CSharp.Dados
     {
         private readonly MensagensErro me = new MensagensErro();
 
+        public int BuscarOrdemServicoPelaId(int _idServico)
+        {
+            if (_idServico == -1)
+            {
+                MessageBox.Show("Nao foi possivel buscar ordem de servico pois a ID é -1", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+
+            try
+            {
+                using (SqlConnection con = OpenConnection())
+                {
+                    string query = "select sv_ordem_serv from tb_servicos where sv_id = @IdServico";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.Add(_idServico);
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    dr.Read();
+
+                    int ordemServico = dr.GetInt32(0);
+
+                    return ordemServico;
+                }
+            }
+            catch (Exception e)
+            {
+                me.ErroAoBuscarOrdemServico(e);
+                return -1;
+            }
+        }
+
         #region Buscar quantidade de clientes existentes
 
         public int buscarQuantidadeClientes()

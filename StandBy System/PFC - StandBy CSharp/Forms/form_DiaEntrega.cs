@@ -9,25 +9,42 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Models;
 
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_DiaEntrega : Form
     {
         private form_OrdensServ formServ1;
+        private form_OrdemServico formOrdemServico;
         private int[] corGeral;
         private InserirDados id = new InserirDados();
         private BuscarDados bd = new BuscarDados();
         private MensagensErro me = new MensagensErro();
         private MensagensSucesso ms = new MensagensSucesso();
         private PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
-        private Image image1 = null;
+        private Image imagemSenhaPatternDoCliente = null;
+        private ClienteDados clienteDados;
+        private ServicoDados servicoDados;
+        private ChecklistDados checklistDados;
+        private CondicoesFisicasDados condicoesFisicasDados;
 
         public form_DiaEntrega(form_OrdensServ _formServ, int[] _cor)
         {
             InitializeComponent();
             corGeral = _cor;
             formServ1 = _formServ;
+        }
+
+        public form_DiaEntrega(form_OrdemServico _formServ, int[] _cor, ClienteDados _clienteDados, ServicoDados _servicoDados, ChecklistDados _checklistDados, CondicoesFisicasDados _condicoesFisicasDados)
+        {
+            InitializeComponent();
+            corGeral = _cor;
+            formOrdemServico = _formServ;
+            clienteDados = _clienteDados;
+            servicoDados = _servicoDados;
+            checklistDados = _checklistDados;
+            condicoesFisicasDados = _condicoesFisicasDados;
         }
 
         public void MudarCores()
@@ -94,7 +111,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private byte[] ConvertImageToByte(Image img)
         {
-            if (image1 != null)
+            if (imagemSenhaPatternDoCliente != null)
             {
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
@@ -108,94 +125,143 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        public void InserirServico(int PrevisaoEntrega, int SeExistePrazo)
+        public void InserirServico(int _diasParaEntrega, int _seExistePrazo)
         {
-            if (formServ1.txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(formServ1.txtAparelhoOrdens.Text))
+            if (string.IsNullOrWhiteSpace(formOrdemServico.cmbMarca.Text))
             {
-                MessageBox.Show(@"Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
+                MessageBox.Show(@"Voce esqueceu de selecionar a marca do aparelho", "ALERTA!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (string.IsNullOrWhiteSpace(formOrdemServico.txtModelo.Text))
+            {
+                MessageBox.Show(@"Voce esqueceu de digitar o modelo do aparelho", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 try
                 {
-                    //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
-                    //int _idCliente = bd.BuscarIdCliente(formServ1.cmbClientes.SelectedItem.ToString());
-                    int _idCliente = Convert.ToInt32(formServ1.lblIdCliente.Text);
-                    //Pego a data de hoje.
-                    DateTime data = DateTime.Now;
-
-                    try
-                    {
-                        image1 = GetCopyImage(@"./PasswordPattern/Screen.png");
-                        var dir = new DirectoryInfo(@"./PasswordPattern/");
-                        var files = dir.GetFiles().FirstOrDefault();
-                        files?.Delete();
-                    }
-                    catch (Exception)
-                    {
-                        // ignored
-                    }
-
-                    //inserirImage(ConvertImageToByte(image1));
-
-                    //Insiro o servico com os dados.
-                    string senha;
-                    string acessorios;
-                    if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
-                    {
-                        senha = "------------";
-                    }
-                    else
-                    {
-                        senha = formServ1.txtSenhaOrdens.Text;
-                    }
-
-                    if (formServ1.txtAcessoriosOrdens.Text.Equals("Acessorios que vieram junto c/ aparelho"))
-                    {
-                        acessorios = "------------";
-                    }
-                    else
-                    {
-                        acessorios = formServ1.txtAcessoriosOrdens.Text;
-                    }
-
-                    string situacaoAparelho = (formServ1.txtSituacaoOrdens.Text == "Situação do aparelho") ? "" : formServ1.txtSituacaoOrdens.Text;
-                    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, situacaoAparelho, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1), acessorios);
-
-                    //Abrir tela de edição após o cadastro
-                    int idUltimoServicoAdicionado = bd.BuscarIdUltimoServicoAdicionado();
-                    List<object> dados = new List<object>();
-
-                    dados = bd.BuscarServicoPorID(idUltimoServicoAdicionado);
-                    EditarUmServicoPelaID(dados);
-
-                    //if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
-                    //{
-                    //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
-                    //}
-                    //else
-                    //{
-                    //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, formServ1.txtSenhaOrdens.Text, formServ1.txtSituacaoOrdens.Text, PrevisaoEntrega, SeExistePrazo, ConvertImageToByte(image1));
-                    //}
-
-                    //Reseto os campos.
-                    ResetarCamposDeCadastro();
-
-                    //Mensagem de Conclusao
-                    ms.InserirServicoSucesso();
-
-                    //Atualizo a tabela
-                    preencherTableServ.Preencher(formServ1.table_OrdensServicos);
-                    preencherTableServ.Preencher(formServ1.table_OrdensServicos);
+                    imagemSenhaPatternDoCliente = GetCopyImage(@"./PasswordPattern/Screen.png");
+                    var dir = new DirectoryInfo(@"./PasswordPattern/");
+                    var files = dir.GetFiles().FirstOrDefault();
+                    files?.Delete();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    //Mensagem de Erro
-                    me.ErroInserirServico(ex);
+                    // ignored
                 }
+
+                DateTime previsaoEntrega = DateTime.Now;
+                previsaoEntrega = previsaoEntrega.AddDays(_diasParaEntrega);
+
+                servicoDados.PrevisaoEntrega = previsaoEntrega;
+                servicoDados.ExistePrazo = _seExistePrazo;
+                servicoDados.SenhaPatternAndroid = ConvertImageToByte(imagemSenhaPatternDoCliente);
+
+                //Inserir o servico e pegar a ID do serv que ele acabou de inserir
+                int idUltimoServico = id.InserirServico(clienteDados, servicoDados, checklistDados, condicoesFisicasDados);
+
+                //Inserir o checklist
+                int ordemServico = bd.BuscarOrdemServicoPelaId(idUltimoServico);
+                id.InserirCheckList(ordemServico);
+
+                //inserir as Condicoes fisicas
+
+                ////Mensagem de Conclusao
+                ms.InserirServicoSucesso();
             }
             this.Close();
+
+            #region Metodo antigo de insercao (tela antiga)
+
+            //if (formServ1.txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(formServ1.txtAparelhoOrdens.Text))
+            //{
+            //    MessageBox.Show(@"Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //else
+            //{
+            //    try
+            //    {
+            //        //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
+            //        //int _idCliente = bd.BuscarIdCliente(formServ1.cmbClientes.SelectedItem.ToString());
+            //        int _idCliente = Convert.ToInt32(formServ1.lblIdCliente.Text);
+            //        //Pego a data de hoje.
+            //        DateTime data = DateTime.Now;
+
+            //        try
+            //        {
+            //            imagemSenhaPatternDoCliente = GetCopyImage(@"./PasswordPattern/Screen.png");
+            //            var dir = new DirectoryInfo(@"./PasswordPattern/");
+            //            var files = dir.GetFiles().FirstOrDefault();
+            //            files?.Delete();
+            //        }
+            //        catch (Exception)
+            //        {
+            //            // ignored
+            //        }
+
+            //inserirImage(ConvertImageToByte(imagemSenhaPatternDoCliente));
+
+            //        //Insiro o servico com os dados.
+            //        string senha;
+            //        string acessorios;
+            //        if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
+            //        {
+            //            senha = "------------";
+            //        }
+            //        else
+            //        {
+            //            senha = formServ1.txtSenhaOrdens.Text;
+            //        }
+
+            //        if (formServ1.txtAcessoriosOrdens.Text.Equals("Acessorios que vieram junto c/ aparelho"))
+            //        {
+            //            acessorios = "------------";
+            //        }
+            //        else
+            //        {
+            //            acessorios = formServ1.txtAcessoriosOrdens.Text;
+            //        }
+
+            //        string situacaoAparelho = (formServ1.txtSituacaoOrdens.Text == "Situação do aparelho") ? "" : formServ1.txtSituacaoOrdens.Text;
+            //        id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, situacaoAparelho, _diasParaEntrega, _seExistePrazo, ConvertImageToByte(imagemSenhaPatternDoCliente), acessorios);
+
+            //        //Abrir tela de edição após o cadastro
+            //        int idUltimoServicoAdicionado = bd.BuscarIdUltimoServicoAdicionado();
+            //        List<object> dados = new List<object>();
+
+            //        dados = bd.BuscarServicoPorID(idUltimoServicoAdicionado);
+            //        EditarUmServicoPelaID(dados);
+
+            //        //if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
+            //        //{
+            //        //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, formServ1.txtSituacaoOrdens.Text, _diasParaEntrega, _seExistePrazo, ConvertImageToByte(imagemSenhaPatternDoCliente));
+            //        //}
+            //        //else
+            //        //{
+            //        //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, formServ1.txtSenhaOrdens.Text, formServ1.txtSituacaoOrdens.Text, _diasParaEntrega, _seExistePrazo, ConvertImageToByte(imagemSenhaPatternDoCliente));
+            //        //}
+
+            //        //Reseto os campos.
+            //        ResetarCamposDeCadastro();
+
+            //        //Mensagem de Conclusao
+            //        ms.InserirServicoSucesso();
+
+            //        //Atualizo a tabela
+            //        preencherTableServ.Preencher(formServ1.table_OrdensServicos);
+            //        preencherTableServ.Preencher(formServ1.table_OrdensServicos);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        //Mensagem de Erro
+            //        me.ErroInserirServico(ex);
+            //    }
+            //}
+            //this.Close();
+
+            #endregion Metodo antigo de insercao (tela antiga)
         }
 
         public void ResetarCamposDeCadastro()

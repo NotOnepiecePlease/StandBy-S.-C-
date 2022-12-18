@@ -36,8 +36,8 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void CarregarComboxClientes()
         {
-            this.multiColumnComboBox1.Style = Syncfusion.Windows.Forms.VisualStyle.Office2007;
-            this.multiColumnComboBox1.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Black;
+            this.cmbCliente.Style = Syncfusion.Windows.Forms.VisualStyle.Office2007;
+            this.cmbCliente.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Black;
 
             listClientesComId = preencherCombobox.Preencher();
 
@@ -80,9 +80,9 @@ namespace PFC___StandBy_CSharp.Forms
 
             DataView view = new DataView(dt);
 
-            this.multiColumnComboBox1.DataSource = view;
-            this.multiColumnComboBox1.DisplayMember = "Nome";
-            this.multiColumnComboBox1.ValueMember = "ID";
+            this.cmbCliente.DataSource = view;
+            this.cmbCliente.DisplayMember = "Nome";
+            this.cmbCliente.ValueMember = "ID";
 
             SetarComboboxComUltimoClienteAdicionado(dt);
         }
@@ -92,7 +92,7 @@ namespace PFC___StandBy_CSharp.Forms
             //Pego a linha que tem o ultimo ID cadastrado
             DataRow[] rows = _dt.Select($"ID ='{ultimoClienteAdicionadoID}'");
             //Seto a index da combobox para a index dessa linha que peguei acima.
-            multiColumnComboBox1.SelectedIndex = _dt.Rows.IndexOf(rows[0]);
+            cmbCliente.SelectedIndex = _dt.Rows.IndexOf(rows[0]);
         }
 
         public void AtualizarCoresCelulasTabela()
@@ -509,7 +509,7 @@ namespace PFC___StandBy_CSharp.Forms
             lblSenha.Visible = false;
             lblAcessoriosOrdens.Visible = false;
             //cmbClientes.Visible = false;
-            multiColumnComboBox1.Visible = false;
+            cmbCliente.Visible = false;
             txtAparelhoOrdens.Visible = false;
             txtDefeitoOrdens.Visible = false;
             txtSenhaOrdens.Visible = false;
@@ -542,7 +542,7 @@ namespace PFC___StandBy_CSharp.Forms
             lblSenha.Visible = true;
             lblAcessoriosOrdens.Visible = true;
             //cmbClientes.Visible = true;
-            multiColumnComboBox1.Visible = true;
+            cmbCliente.Visible = true;
             txtAparelhoOrdens.Visible = true;
             txtDefeitoOrdens.Visible = true;
             txtSenhaOrdens.Visible = true;
@@ -660,12 +660,12 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void multiColumnComboBox1_Click(object sender, EventArgs e)
         {
-            multiColumnComboBox1.DroppedDown = true;
+            cmbCliente.DroppedDown = true;
         }
 
         private void multiColumnComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ComboBoxBaseDataBound combobox = multiColumnComboBox1 as ComboBoxBaseDataBound;
+            ComboBoxBaseDataBound combobox = cmbCliente as ComboBoxBaseDataBound;
             if (combobox.SelectedIndex != -1)
             {
                 DataRowView drv = combobox.Items[combobox.SelectedIndex] as DataRowView;

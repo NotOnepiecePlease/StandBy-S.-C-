@@ -37,7 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.multiColumnComboBox1 = new Syncfusion.Windows.Forms.Tools.MultiColumnComboBox();
+            this.cmbCliente = new Syncfusion.Windows.Forms.Tools.MultiColumnComboBox();
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.btnPatternIcon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtSituacaoOrdens = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -85,7 +85,7 @@
             this.arredondarBotaoPesquisarCliente = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.timerAtualizarTabela = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.multiColumnComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +93,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.panel1.Controls.Add(this.multiColumnComboBox1);
+            this.panel1.Controls.Add(this.cmbCliente);
             this.panel1.Controls.Add(this.lblIdCliente);
             this.panel1.Controls.Add(this.btnPatternIcon);
             this.panel1.Controls.Add(this.txtSituacaoOrdens);
@@ -121,25 +121,25 @@
             this.panel1.TabIndex = 0;
             this.panel1.TabStop = true;
             // 
-            // multiColumnComboBox1
+            // cmbCliente
             // 
-            this.multiColumnComboBox1.AllowFiltering = false;
-            this.multiColumnComboBox1.BeforeTouchSize = new System.Drawing.Size(1169, 31);
-            this.multiColumnComboBox1.Filter = null;
-            this.multiColumnComboBox1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.multiColumnComboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.multiColumnComboBox1.Location = new System.Drawing.Point(56, 27);
-            this.multiColumnComboBox1.MaxDropDownItems = 10;
-            this.multiColumnComboBox1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.multiColumnComboBox1.Name = "multiColumnComboBox1";
-            this.multiColumnComboBox1.ScrollMetroColorTable = metroColorTable1;
-            this.multiColumnComboBox1.Size = new System.Drawing.Size(1169, 31);
-            this.multiColumnComboBox1.TabIndex = 48;
-            this.multiColumnComboBox1.Text = "Adriano Fraga de Andrade";
-            this.multiColumnComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.multiColumnComboBox1.ThemeName = "Default";
-            this.multiColumnComboBox1.SelectedIndexChanged += new System.EventHandler(this.multiColumnComboBox1_SelectedIndexChanged);
-            this.multiColumnComboBox1.Click += new System.EventHandler(this.multiColumnComboBox1_Click);
+            this.cmbCliente.AllowFiltering = false;
+            this.cmbCliente.BeforeTouchSize = new System.Drawing.Size(1169, 31);
+            this.cmbCliente.Filter = null;
+            this.cmbCliente.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCliente.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbCliente.Location = new System.Drawing.Point(56, 27);
+            this.cmbCliente.MaxDropDownItems = 10;
+            this.cmbCliente.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.ScrollMetroColorTable = metroColorTable1;
+            this.cmbCliente.Size = new System.Drawing.Size(1169, 31);
+            this.cmbCliente.TabIndex = 48;
+            this.cmbCliente.Text = "Adriano Fraga de Andrade";
+            this.cmbCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbCliente.ThemeName = "Default";
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.multiColumnComboBox1_SelectedIndexChanged);
+            this.cmbCliente.Click += new System.EventHandler(this.multiColumnComboBox1_Click);
             // 
             // lblIdCliente
             // 
@@ -946,7 +946,7 @@
             this.Text = "form_OrdensServ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.multiColumnComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_OrdensServicos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1002,6 +1002,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_cor_tempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         public System.Windows.Forms.Label lblIdCliente;
-        private Syncfusion.Windows.Forms.Tools.MultiColumnComboBox multiColumnComboBox1;
+        private Syncfusion.Windows.Forms.Tools.MultiColumnComboBox cmbCliente;
     }
 }

@@ -19,6 +19,7 @@ namespace PFC___StandBy_CSharp.Forms
         private conexao con = new conexao();
         private AlterarDados ad = new AlterarDados();
         private Image image1 = null;
+        private form_OrdemServico formOrdemServico;
 
         private int[] corGeral = new int[3] { 0, 0, 0 };
         private bool isUpdate = false;
@@ -27,6 +28,17 @@ namespace PFC___StandBy_CSharp.Forms
         {
             InitializeComponent();
             criarPastaDasSenhas();
+            corGeral = _corRgb;
+            MudarCores();
+            isUpdate = false;
+            this.Size = new Size(261, 239);
+        }
+
+        public form_PasswordPattern(form_OrdemServico _formOrdemServico, int[] _corRgb)
+        {
+            InitializeComponent();
+            criarPastaDasSenhas();
+            formOrdemServico = _formOrdemServico;
             corGeral = _corRgb;
             MudarCores();
             isUpdate = false;
@@ -209,6 +221,7 @@ namespace PFC___StandBy_CSharp.Forms
             if (isUpdate == false)
             {
                 this.Close();
+                formOrdemServico.picSenhaPattern.Image = GetCopyImage(@"./PasswordPattern/Screen.png");
             }
             else
             {

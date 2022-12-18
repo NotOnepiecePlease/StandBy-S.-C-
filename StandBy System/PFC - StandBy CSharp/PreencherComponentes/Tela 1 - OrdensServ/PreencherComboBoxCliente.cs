@@ -8,12 +8,6 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
 {
     internal class PreencherComboBoxCliente : MensagensErro
     {
-        public struct ClienteModel
-        {
-            public string Nome { get; set; }
-            public int Id { get; set; }
-        }
-
         public List<ClienteDados> Preencher()
         {
             List<ClienteDados> listClientes = new List<ClienteDados>();

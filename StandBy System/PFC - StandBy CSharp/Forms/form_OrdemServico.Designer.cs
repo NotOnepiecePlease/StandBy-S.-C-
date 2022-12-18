@@ -30,24 +30,24 @@ namespace PFC___StandBy_CSharp.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServico));
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             this.panel_FormOrdemServico = new System.Windows.Forms.Panel();
+            this.lblIdCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cmbCliente = new Syncfusion.Windows.Forms.Tools.MultiColumnComboBox();
             this.btnConcluirImprimir = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnConcluirServico = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnEditarServico = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnPesquisarCliente = new FontAwesome.Sharp.IconButton();
+            this.btnSalvarOrdemServico = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnTipoAparelho = new FontAwesome.Sharp.IconButton();
             this.cmbStatusServico = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cmbChecklistObservacoes = new System.Windows.Forms.RichTextBox();
+            this.txtChecklistObservacoes = new System.Windows.Forms.RichTextBox();
             this.txtBuscaGoogle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.switchChecklistAusente = new DevExpress.XtraEditors.ToggleSwitch();
-            this.cmbChecklistMotivoAusencia = new System.Windows.Forms.RichTextBox();
+            this.txtChecklistMotivoAusencia = new System.Windows.Forms.RichTextBox();
             this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel25 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel26 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -102,6 +102,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.group_InformacoesAparelho = new System.Windows.Forms.GroupBox();
+            this.bunifuSeparator8 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.separatorCPF = new Bunifu.UI.WinForms.BunifuSeparator();
             this.cmbCor = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -111,23 +112,22 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtMei_SerialNumber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtModelo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
-            this.dtpDataEdit = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.dtpDataServico = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtClienteNome = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.panel_OrdemServCodigo = new System.Windows.Forms.Panel();
             this.lblDataOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuSeparator8 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.panel_FormOrdemServico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditarServico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
@@ -145,13 +145,16 @@ namespace PFC___StandBy_CSharp.Forms
             // panel_FormOrdemServico
             // 
             this.panel_FormOrdemServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.panel_FormOrdemServico.Controls.Add(this.lblIdCliente);
+            this.panel_FormOrdemServico.Controls.Add(this.lblCliente);
+            this.panel_FormOrdemServico.Controls.Add(this.cmbCliente);
             this.panel_FormOrdemServico.Controls.Add(this.btnConcluirImprimir);
             this.panel_FormOrdemServico.Controls.Add(this.btnConcluirServico);
-            this.panel_FormOrdemServico.Controls.Add(this.btnEditarServico);
-            this.panel_FormOrdemServico.Controls.Add(this.btnPesquisarCliente);
+            this.panel_FormOrdemServico.Controls.Add(this.btnSalvarOrdemServico);
+            this.panel_FormOrdemServico.Controls.Add(this.btnTipoAparelho);
             this.panel_FormOrdemServico.Controls.Add(this.cmbStatusServico);
             this.panel_FormOrdemServico.Controls.Add(this.bunifuCustomLabel28);
-            this.panel_FormOrdemServico.Controls.Add(this.cmbChecklistObservacoes);
+            this.panel_FormOrdemServico.Controls.Add(this.txtChecklistObservacoes);
             this.panel_FormOrdemServico.Controls.Add(this.txtBuscaGoogle);
             this.panel_FormOrdemServico.Controls.Add(this.pictureBox2);
             this.panel_FormOrdemServico.Controls.Add(this.groupBox4);
@@ -160,7 +163,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel_FormOrdemServico.Controls.Add(this.groupBox3);
             this.panel_FormOrdemServico.Controls.Add(this.group_CondicoesFisicas);
             this.panel_FormOrdemServico.Controls.Add(this.group_InformacoesAparelho);
-            this.panel_FormOrdemServico.Controls.Add(this.txtClienteNome);
             this.panel_FormOrdemServico.Controls.Add(this.panel_OrdemServCodigo);
             this.panel_FormOrdemServico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_FormOrdemServico.Location = new System.Drawing.Point(0, 0);
@@ -168,6 +170,49 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel_FormOrdemServico.Size = new System.Drawing.Size(1230, 720);
             this.panel_FormOrdemServico.TabIndex = 1;
             this.panel_FormOrdemServico.TabStop = true;
+            // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblIdCliente.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIdCliente.Location = new System.Drawing.Point(1169, 38);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(58, 17);
+            this.lblIdCliente.TabIndex = 67;
+            this.lblIdCliente.Text = "IdCliente";
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.lblCliente.ForeColor = System.Drawing.Color.Lavender;
+            this.lblCliente.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_user_20px;
+            this.lblCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCliente.Location = new System.Drawing.Point(157, 18);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(28, 22);
+            this.lblCliente.TabIndex = 75;
+            this.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbCliente
+            // 
+            this.cmbCliente.AllowFiltering = false;
+            this.cmbCliente.BeforeTouchSize = new System.Drawing.Size(602, 31);
+            this.cmbCliente.Filter = null;
+            this.cmbCliente.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCliente.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbCliente.Location = new System.Drawing.Point(188, 14);
+            this.cmbCliente.MaxDropDownItems = 10;
+            this.cmbCliente.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.ScrollMetroColorTable = metroColorTable1;
+            this.cmbCliente.Size = new System.Drawing.Size(602, 31);
+            this.cmbCliente.TabIndex = 74;
+            this.cmbCliente.Text = "Adriano Fraga de Andrade";
+            this.cmbCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbCliente.ThemeName = "Default";
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // btnConcluirImprimir
             // 
@@ -193,39 +238,40 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnConcluirServico.TabStop = false;
             this.btnConcluirServico.Zoom = 15;
             // 
-            // btnEditarServico
+            // btnSalvarOrdemServico
             // 
-            this.btnEditarServico.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px;
-            this.btnEditarServico.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px_1;
-            this.btnEditarServico.Location = new System.Drawing.Point(1168, 264);
-            this.btnEditarServico.Name = "btnEditarServico";
-            this.btnEditarServico.Size = new System.Drawing.Size(53, 51);
-            this.btnEditarServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEditarServico.TabIndex = 71;
-            this.btnEditarServico.TabStop = false;
-            this.btnEditarServico.Zoom = 15;
+            this.btnSalvarOrdemServico.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px;
+            this.btnSalvarOrdemServico.ImageActive = global::PFC___StandBy_CSharp.Properties.Resources.icons8_edit_file_512px_1;
+            this.btnSalvarOrdemServico.Location = new System.Drawing.Point(1168, 264);
+            this.btnSalvarOrdemServico.Name = "btnSalvarOrdemServico";
+            this.btnSalvarOrdemServico.Size = new System.Drawing.Size(53, 51);
+            this.btnSalvarOrdemServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSalvarOrdemServico.TabIndex = 71;
+            this.btnSalvarOrdemServico.TabStop = false;
+            this.btnSalvarOrdemServico.Zoom = 15;
+            this.btnSalvarOrdemServico.Click += new System.EventHandler(this.btnSalvarOrdemServico_Click);
             // 
-            // btnPesquisarCliente
+            // btnTipoAparelho
             // 
-            this.btnPesquisarCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnPesquisarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisarCliente.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnPesquisarCliente.FlatAppearance.BorderSize = 0;
-            this.btnPesquisarCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarCliente.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnPesquisarCliente.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnPesquisarCliente.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.btnPesquisarCliente.IconSize = 35;
-            this.btnPesquisarCliente.Location = new System.Drawing.Point(1124, 72);
-            this.btnPesquisarCliente.Name = "btnPesquisarCliente";
-            this.btnPesquisarCliente.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.btnPesquisarCliente.Rotation = 0D;
-            this.btnPesquisarCliente.Size = new System.Drawing.Size(37, 31);
-            this.btnPesquisarCliente.TabIndex = 70;
-            this.btnPesquisarCliente.TabStop = false;
-            this.btnPesquisarCliente.UseVisualStyleBackColor = false;
+            this.btnTipoAparelho.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnTipoAparelho.BackColor = System.Drawing.Color.Transparent;
+            this.btnTipoAparelho.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTipoAparelho.FlatAppearance.BorderSize = 0;
+            this.btnTipoAparelho.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnTipoAparelho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnTipoAparelho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTipoAparelho.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnTipoAparelho.IconChar = FontAwesome.Sharp.IconChar.Deskpro;
+            this.btnTipoAparelho.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.btnTipoAparelho.IconSize = 35;
+            this.btnTipoAparelho.Location = new System.Drawing.Point(1190, 4);
+            this.btnTipoAparelho.Name = "btnTipoAparelho";
+            this.btnTipoAparelho.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.btnTipoAparelho.Rotation = 0D;
+            this.btnTipoAparelho.Size = new System.Drawing.Size(37, 31);
+            this.btnTipoAparelho.TabIndex = 70;
+            this.btnTipoAparelho.TabStop = false;
+            this.btnTipoAparelho.UseVisualStyleBackColor = false;
             // 
             // cmbStatusServico
             // 
@@ -265,41 +311,38 @@ namespace PFC___StandBy_CSharp.Forms
             "AVALIAÇÃO",
             "CONCLUÍDO"});
             this.cmbStatusServico.ItemTopMargin = 3;
-            this.cmbStatusServico.Location = new System.Drawing.Point(955, 3);
+            this.cmbStatusServico.Location = new System.Drawing.Point(805, 676);
             this.cmbStatusServico.Name = "cmbStatusServico";
-            this.cmbStatusServico.Size = new System.Drawing.Size(205, 32);
+            this.cmbStatusServico.Size = new System.Drawing.Size(354, 32);
             this.cmbStatusServico.TabIndex = 69;
             this.cmbStatusServico.Text = "AVALIAÇÃO";
             this.cmbStatusServico.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbStatusServico.TextLeftMargin = 5;
             this.cmbStatusServico.SelectedIndexChanged += new System.EventHandler(this.txtStatusServico_SelectedIndexChanged);
-            this.cmbStatusServico.ValueMemberChanged += new System.EventHandler(this.txtStatusServico_ValueMemberChanged);
-            this.cmbStatusServico.TextChanged += new System.EventHandler(this.txtStatusServico_TextChanged);
-            this.cmbStatusServico.Click += new System.EventHandler(this.txtStatusServico_Click);
             // 
             // bunifuCustomLabel28
             // 
             this.bunifuCustomLabel28.AutoSize = true;
             this.bunifuCustomLabel28.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel28.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel28.Location = new System.Drawing.Point(888, 9);
+            this.bunifuCustomLabel28.Location = new System.Drawing.Point(953, 655);
             this.bunifuCustomLabel28.Name = "bunifuCustomLabel28";
-            this.bunifuCustomLabel28.Size = new System.Drawing.Size(61, 19);
+            this.bunifuCustomLabel28.Size = new System.Drawing.Size(58, 19);
             this.bunifuCustomLabel28.TabIndex = 68;
-            this.bunifuCustomLabel28.Text = "STATUS:";
+            this.bunifuCustomLabel28.Text = "STATUS";
             // 
-            // cmbChecklistObservacoes
+            // txtChecklistObservacoes
             // 
-            this.cmbChecklistObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.cmbChecklistObservacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cmbChecklistObservacoes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbChecklistObservacoes.ForeColor = System.Drawing.Color.White;
-            this.cmbChecklistObservacoes.Location = new System.Drawing.Point(817, 490);
-            this.cmbChecklistObservacoes.MaxLength = 4000;
-            this.cmbChecklistObservacoes.Name = "cmbChecklistObservacoes";
-            this.cmbChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
-            this.cmbChecklistObservacoes.TabIndex = 6;
-            this.cmbChecklistObservacoes.Text = "O Microfone funciona bem, porem aparenta estar desgastado";
+            this.txtChecklistObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistObservacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtChecklistObservacoes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtChecklistObservacoes.ForeColor = System.Drawing.Color.White;
+            this.txtChecklistObservacoes.Location = new System.Drawing.Point(817, 490);
+            this.txtChecklistObservacoes.MaxLength = 4000;
+            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
+            this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
+            this.txtChecklistObservacoes.TabIndex = 6;
+            this.txtChecklistObservacoes.Text = "O Microfone funciona bem, porem aparenta estar desgastado";
             // 
             // txtBuscaGoogle
             // 
@@ -316,18 +359,18 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtBuscaGoogle.LineIdleColor = System.Drawing.Color.Gray;
             this.txtBuscaGoogle.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
             this.txtBuscaGoogle.LineThickness = 3;
-            this.txtBuscaGoogle.Location = new System.Drawing.Point(852, 66);
+            this.txtBuscaGoogle.Location = new System.Drawing.Point(850, 10);
             this.txtBuscaGoogle.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscaGoogle.MaxLength = 32767;
             this.txtBuscaGoogle.Name = "txtBuscaGoogle";
-            this.txtBuscaGoogle.Size = new System.Drawing.Size(273, 35);
+            this.txtBuscaGoogle.Size = new System.Drawing.Size(309, 35);
             this.txtBuscaGoogle.TabIndex = 66;
             this.txtBuscaGoogle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PFC___StandBy_CSharp.Properties.Resources.google_minimal_logo;
-            this.pictureBox2.Location = new System.Drawing.Point(807, 70);
+            this.pictureBox2.Location = new System.Drawing.Point(805, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(38, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -338,7 +381,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.groupBox4.Controls.Add(this.switchChecklistAusente);
-            this.groupBox4.Controls.Add(this.cmbChecklistMotivoAusencia);
+            this.groupBox4.Controls.Add(this.txtChecklistMotivoAusencia);
             this.groupBox4.Controls.Add(this.bunifuCustomLabel27);
             this.groupBox4.Controls.Add(this.bunifuCustomLabel25);
             this.groupBox4.Controls.Add(this.bunifuCustomLabel26);
@@ -368,7 +411,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.groupBox4.Controls.Add(this.bunifuCustomLabel13);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox4.Location = new System.Drawing.Point(806, 104);
+            this.groupBox4.Location = new System.Drawing.Point(805, 57);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(354, 595);
             this.groupBox4.TabIndex = 26;
@@ -393,18 +436,18 @@ namespace PFC___StandBy_CSharp.Forms
             this.switchChecklistAusente.Size = new System.Drawing.Size(66, 32);
             this.switchChecklistAusente.TabIndex = 6;
             // 
-            // cmbChecklistMotivoAusencia
+            // txtChecklistMotivoAusencia
             // 
-            this.cmbChecklistMotivoAusencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.cmbChecklistMotivoAusencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cmbChecklistMotivoAusencia.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbChecklistMotivoAusencia.ForeColor = System.Drawing.Color.White;
-            this.cmbChecklistMotivoAusencia.Location = new System.Drawing.Point(11, 520);
-            this.cmbChecklistMotivoAusencia.MaxLength = 4000;
-            this.cmbChecklistMotivoAusencia.Name = "cmbChecklistMotivoAusencia";
-            this.cmbChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 66);
-            this.cmbChecklistMotivoAusencia.TabIndex = 67;
-            this.cmbChecklistMotivoAusencia.Text = "O Aparelho chegou totalmente apagado";
+            this.txtChecklistMotivoAusencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistMotivoAusencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtChecklistMotivoAusencia.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtChecklistMotivoAusencia.ForeColor = System.Drawing.Color.White;
+            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(11, 520);
+            this.txtChecklistMotivoAusencia.MaxLength = 4000;
+            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
+            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 66);
+            this.txtChecklistMotivoAusencia.TabIndex = 67;
+            this.txtChecklistMotivoAusencia.Text = "O Aparelho chegou totalmente apagado";
             // 
             // bunifuCustomLabel27
             // 
@@ -1083,7 +1126,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
             this.groupBox2.Location = new System.Drawing.Point(12, 564);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(778, 135);
+            this.groupBox2.Size = new System.Drawing.Size(778, 143);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CONDIÇÕES DO APARELHO NO BALCÃO";
@@ -1097,7 +1140,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtCondicoesBalcao.Location = new System.Drawing.Point(16, 23);
             this.txtCondicoesBalcao.MaxLength = 4000;
             this.txtCondicoesBalcao.Name = "txtCondicoesBalcao";
-            this.txtCondicoesBalcao.Size = new System.Drawing.Size(745, 93);
+            this.txtCondicoesBalcao.Size = new System.Drawing.Size(745, 104);
             this.txtCondicoesBalcao.TabIndex = 5;
             this.txtCondicoesBalcao.Text = "Foi passado um orçamento para o cliente de 200 reais, o pagamento vai ser parcela" +
     "do em 12 vezes, o cliente ficou de trazer mais.";
@@ -1639,7 +1682,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_InformacoesAparelho.Controls.Add(this.txtMei_SerialNumber);
             this.group_InformacoesAparelho.Controls.Add(this.txtModelo);
             this.group_InformacoesAparelho.Controls.Add(this.separatorControl1);
-            this.group_InformacoesAparelho.Controls.Add(this.dtpDataEdit);
+            this.group_InformacoesAparelho.Controls.Add(this.dtpDataServico);
             this.group_InformacoesAparelho.Controls.Add(this.bunifuCustomLabel12);
             this.group_InformacoesAparelho.Controls.Add(this.bunifuCustomLabel4);
             this.group_InformacoesAparelho.Controls.Add(this.bunifuCustomLabel3);
@@ -1654,6 +1697,25 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_InformacoesAparelho.TabIndex = 3;
             this.group_InformacoesAparelho.TabStop = false;
             this.group_InformacoesAparelho.Text = "INFORMAÇÕES DO APARELHO";
+            // 
+            // bunifuSeparator8
+            // 
+            this.bunifuSeparator8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator8.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator8.BackgroundImage")));
+            this.bunifuSeparator8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator8.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator8.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator8.LineColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator8.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator8.LineThickness = 3;
+            this.bunifuSeparator8.Location = new System.Drawing.Point(107, 38);
+            this.bunifuSeparator8.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuSeparator8.Name = "bunifuSeparator8";
+            this.bunifuSeparator8.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator8.Size = new System.Drawing.Size(273, 10);
+            this.bunifuSeparator8.TabIndex = 66;
+            this.bunifuSeparator8.TabStop = false;
             // 
             // bunifuSeparator1
             // 
@@ -1779,12 +1841,14 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             // picSenhaPattern
             // 
-            this.picSenhaPattern.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.picSenhaPattern.Location = new System.Drawing.Point(293, 192);
+            this.picSenhaPattern.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.picSenhaPattern.Location = new System.Drawing.Point(318, 192);
             this.picSenhaPattern.Name = "picSenhaPattern";
-            this.picSenhaPattern.Size = new System.Drawing.Size(84, 50);
+            this.picSenhaPattern.Size = new System.Drawing.Size(59, 50);
+            this.picSenhaPattern.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSenhaPattern.TabIndex = 31;
             this.picSenhaPattern.TabStop = false;
+            this.picSenhaPattern.Click += new System.EventHandler(this.picSenhaPattern_Click);
             // 
             // txtSenhaDispositivo
             // 
@@ -1805,7 +1869,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtSenhaDispositivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenhaDispositivo.MaxLength = 32767;
             this.txtSenhaDispositivo.Name = "txtSenhaDispositivo";
-            this.txtSenhaDispositivo.Size = new System.Drawing.Size(186, 30);
+            this.txtSenhaDispositivo.Size = new System.Drawing.Size(211, 30);
             this.txtSenhaDispositivo.TabIndex = 30;
             this.txtSenhaDispositivo.Text = "12345";
             this.txtSenhaDispositivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1867,20 +1931,20 @@ namespace PFC___StandBy_CSharp.Forms
             this.separatorControl1.Size = new System.Drawing.Size(20, 217);
             this.separatorControl1.TabIndex = 25;
             // 
-            // dtpDataEdit
+            // dtpDataServico
             // 
-            this.dtpDataEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.dtpDataEdit.BorderRadius = 0;
-            this.dtpDataEdit.Font = new System.Drawing.Font("Segoe UI", 12.25F);
-            this.dtpDataEdit.ForeColor = System.Drawing.Color.White;
-            this.dtpDataEdit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataEdit.FormatCustom = "dd/MM/yyyy";
-            this.dtpDataEdit.Location = new System.Drawing.Point(108, 17);
-            this.dtpDataEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpDataEdit.Name = "dtpDataEdit";
-            this.dtpDataEdit.Size = new System.Drawing.Size(266, 28);
-            this.dtpDataEdit.TabIndex = 23;
-            this.dtpDataEdit.Value = new System.DateTime(2020, 3, 26, 0, 0, 0, 0);
+            this.dtpDataServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.dtpDataServico.BorderRadius = 0;
+            this.dtpDataServico.Font = new System.Drawing.Font("Segoe UI", 12.25F);
+            this.dtpDataServico.ForeColor = System.Drawing.Color.White;
+            this.dtpDataServico.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDataServico.FormatCustom = "                   dd/MM/yyyy";
+            this.dtpDataServico.Location = new System.Drawing.Point(108, 17);
+            this.dtpDataServico.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDataServico.Name = "dtpDataServico";
+            this.dtpDataServico.Size = new System.Drawing.Size(266, 28);
+            this.dtpDataServico.TabIndex = 23;
+            this.dtpDataServico.Value = new System.DateTime(2020, 3, 26, 0, 0, 0, 0);
             // 
             // bunifuCustomLabel12
             // 
@@ -1948,81 +2012,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel9.TabIndex = 18;
             this.bunifuCustomLabel9.Text = "Marca:";
             // 
-            // txtClienteNome
-            // 
-            this.txtClienteNome.AcceptsReturn = false;
-            this.txtClienteNome.AcceptsTab = false;
-            this.txtClienteNome.AnimationSpeed = 200;
-            this.txtClienteNome.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtClienteNome.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtClienteNome.BackColor = System.Drawing.Color.Transparent;
-            this.txtClienteNome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtClienteNome.BackgroundImage")));
-            this.txtClienteNome.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtClienteNome.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.txtClienteNome.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtClienteNome.BorderColorIdle = System.Drawing.Color.Transparent;
-            this.txtClienteNome.BorderRadius = 1;
-            this.txtClienteNome.BorderThickness = 1;
-            this.txtClienteNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtClienteNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtClienteNome.DefaultFont = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.txtClienteNome.DefaultText = "Adriano Fraga de Andrade";
-            this.txtClienteNome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtClienteNome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtClienteNome.HideSelection = true;
-            this.txtClienteNome.IconLeft = null;
-            this.txtClienteNome.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtClienteNome.IconPadding = 10;
-            this.txtClienteNome.IconRight = null;
-            this.txtClienteNome.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtClienteNome.Lines = new string[] {
-        "Adriano Fraga de Andrade"};
-            this.txtClienteNome.Location = new System.Drawing.Point(267, 9);
-            this.txtClienteNome.MaxLength = 32767;
-            this.txtClienteNome.MinimumSize = new System.Drawing.Size(100, 35);
-            this.txtClienteNome.Modified = false;
-            this.txtClienteNome.Multiline = false;
-            this.txtClienteNome.Name = "txtClienteNome";
-            stateProperties29.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties29.FillColor = System.Drawing.Color.Empty;
-            stateProperties29.ForeColor = System.Drawing.Color.Empty;
-            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtClienteNome.OnActiveState = stateProperties29;
-            stateProperties30.BorderColor = System.Drawing.Color.Empty;
-            stateProperties30.FillColor = System.Drawing.Color.White;
-            stateProperties30.ForeColor = System.Drawing.Color.Empty;
-            stateProperties30.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtClienteNome.OnDisabledState = stateProperties30;
-            stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties31.FillColor = System.Drawing.Color.Empty;
-            stateProperties31.ForeColor = System.Drawing.Color.Empty;
-            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtClienteNome.OnHoverState = stateProperties31;
-            stateProperties32.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties32.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            stateProperties32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtClienteNome.OnIdleState = stateProperties32;
-            this.txtClienteNome.PasswordChar = '\0';
-            this.txtClienteNome.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtClienteNome.PlaceholderText = "Enter text";
-            this.txtClienteNome.ReadOnly = true;
-            this.txtClienteNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtClienteNome.SelectedText = "";
-            this.txtClienteNome.SelectionLength = 0;
-            this.txtClienteNome.SelectionStart = 0;
-            this.txtClienteNome.ShortcutsEnabled = true;
-            this.txtClienteNome.Size = new System.Drawing.Size(378, 39);
-            this.txtClienteNome.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
-            this.txtClienteNome.TabIndex = 2;
-            this.txtClienteNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtClienteNome.TextMarginBottom = 0;
-            this.txtClienteNome.TextMarginLeft = 5;
-            this.txtClienteNome.TextMarginTop = 0;
-            this.txtClienteNome.TextPlaceholder = "Enter text";
-            this.txtClienteNome.UseSystemPasswordChar = false;
-            this.txtClienteNome.WordWrap = true;
-            // 
             // panel_OrdemServCodigo
             // 
             this.panel_OrdemServCodigo.BackColor = System.Drawing.Color.DimGray;
@@ -2063,25 +2052,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.moverForm.TargetControl = null;
             this.moverForm.Vertical = true;
             // 
-            // bunifuSeparator8
-            // 
-            this.bunifuSeparator8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuSeparator8.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator8.BackgroundImage")));
-            this.bunifuSeparator8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator8.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator8.ForeColor = System.Drawing.Color.Gray;
-            this.bunifuSeparator8.LineColor = System.Drawing.Color.Gray;
-            this.bunifuSeparator8.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator8.LineThickness = 3;
-            this.bunifuSeparator8.Location = new System.Drawing.Point(107, 38);
-            this.bunifuSeparator8.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuSeparator8.Name = "bunifuSeparator8";
-            this.bunifuSeparator8.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator8.Size = new System.Drawing.Size(273, 10);
-            this.bunifuSeparator8.TabIndex = 66;
-            this.bunifuSeparator8.TabStop = false;
-            // 
             // form_OrdemServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2095,9 +2065,10 @@ namespace PFC___StandBy_CSharp.Forms
             this.Text = "form_OrdemServico";
             this.panel_FormOrdemServico.ResumeLayout(false);
             this.panel_FormOrdemServico.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditarServico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -2123,7 +2094,6 @@ namespace PFC___StandBy_CSharp.Forms
         private System.Windows.Forms.Panel panel_FormOrdemServico;
         private System.Windows.Forms.Panel panel_OrdemServCodigo;
         private Bunifu.Framework.UI.BunifuDragControl moverForm;
-        public Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtClienteNome;
         private System.Windows.Forms.GroupBox group_InformacoesAparelho;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private System.Windows.Forms.GroupBox group_CondicoesFisicas;
@@ -2137,15 +2107,13 @@ namespace PFC___StandBy_CSharp.Forms
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
-        public Bunifu.Framework.UI.BunifuDatepicker dtpDataEdit;
+        public Bunifu.Framework.UI.BunifuDatepicker dtpDataServico;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtSenhaDispositivo;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtMei_SerialNumber;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtModelo;
         private DevExpress.XtraEditors.SeparatorControl separatorControl2;
-        private System.Windows.Forms.PictureBox picSenhaPattern;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbMarca;
         private Bunifu.UI.WinForms.BunifuDropdown cmbCor;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         private Bunifu.UI.WinForms.BunifuSeparator separatorCPF;
@@ -2196,18 +2164,23 @@ namespace PFC___StandBy_CSharp.Forms
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
         private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBiometria;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
-        public System.Windows.Forms.RichTextBox cmbChecklistObservacoes;
-        public System.Windows.Forms.RichTextBox cmbChecklistMotivoAusencia;
+        public System.Windows.Forms.RichTextBox txtChecklistObservacoes;
+        public System.Windows.Forms.RichTextBox txtChecklistMotivoAusencia;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel27;
         private Bunifu.UI.WinForms.BunifuDropdown cmbStatusServico;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel28;
         private Bunifu.Framework.UI.BunifuCustomLabel lblDataOrdemServico;
         private Bunifu.Framework.UI.BunifuCustomLabel lblOrdemServico;
-        private FontAwesome.Sharp.IconButton btnPesquisarCliente;
         private Bunifu.Framework.UI.BunifuImageButton btnConcluirImprimir;
         public Bunifu.Framework.UI.BunifuImageButton btnConcluirServico;
-        private Bunifu.Framework.UI.BunifuImageButton btnEditarServico;
+        private Bunifu.Framework.UI.BunifuImageButton btnSalvarOrdemServico;
         private DevExpress.XtraEditors.ToggleSwitch switchChecklistAusente;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator8;
+        private Syncfusion.Windows.Forms.Tools.MultiColumnComboBox cmbCliente;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblCliente;
+        public FontAwesome.Sharp.IconButton btnTipoAparelho;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbMarca;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblIdCliente;
+        public System.Windows.Forms.PictureBox picSenhaPattern;
     }
 }

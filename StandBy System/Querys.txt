@@ -1,0 +1,20 @@
+DECLARE @cont as int = 0
+DECLARE @ordem_serv as int = 0
+
+WHILE @cont <= 33986  
+BEGIN 
+	if (select count(sv_id) from tb_servicos where sv_id = @cont) > 0
+		begin
+			UPDATE tb_servicos  
+			SET sv_ordem_serv = @ordem_serv
+			WHERE sv_id = @cont
+
+			PRINT @cont
+			SET @cont = @cont + 1
+			SET @ordem_serv = @ordem_serv + 1
+		end
+	else
+		begin
+			SET @cont = @cont + 1
+		end
+END  
