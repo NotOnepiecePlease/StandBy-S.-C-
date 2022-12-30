@@ -17,17 +17,19 @@ namespace PFC___StandBy_CSharp.Forms
     {
         private form_OrdensServ formServ1;
         private form_OrdemServico formOrdemServico;
-        private int[] corGeral;
         private InserirDados id = new InserirDados();
         private BuscarDados bd = new BuscarDados();
+        private AlterarDados ad = new AlterarDados();
         private MensagensErro me = new MensagensErro();
         private MensagensSucesso ms = new MensagensSucesso();
         private PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
         private Image imagemSenhaPatternDoCliente = null;
-        private ClienteDados clienteDados;
-        private ServicoDados servicoDados;
-        private ChecklistDados checklistDados;
-        private CondicoesFisicasDados condicoesFisicasDados;
+        private ClienteModel clienteDados;
+        private ServicoModel servicoDados;
+        private ChecklistModel checklistDados;
+        private CondicoesFisicasModel condicoesFisicasDados;
+        private int[] corGeral;
+        private bool isAtualizacao;
 
         public form_DiaEntrega(form_OrdensServ _formServ, int[] _cor)
         {
@@ -36,9 +38,20 @@ namespace PFC___StandBy_CSharp.Forms
             formServ1 = _formServ;
         }
 
-        public form_DiaEntrega(form_OrdemServico _formServ, int[] _cor, ClienteDados _clienteDados, ServicoDados _servicoDados, ChecklistDados _checklistDados, CondicoesFisicasDados _condicoesFisicasDados)
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="_formServ">Instancia do form_OrdemServico</param>
+        /// <param name="_cor">Passagem de cores do form principal, em R - G - B  (255,255,255)</param>
+        /// <param name="_clienteDados">Dados do cliente</param>
+        /// <param name="_servicoDados">Dados do servico</param>
+        /// <param name="_checklistDados">Dados do checklist</param>
+        /// <param name="_condicoesFisicasDados">Dados das condicoes fisicas</param>
+        /// <param name="_isAtualizacao">true = se o form for pra atualizar dados que ja existem | false = se o form for pra inserir dados que ainda nao existem</param>
+        public form_DiaEntrega(form_OrdemServico _formServ, int[] _cor, ClienteModel _clienteDados, ServicoModel _servicoDados, ChecklistModel _checklistDados, CondicoesFisicasModel _condicoesFisicasDados, bool _isAtualizacao)
         {
             InitializeComponent();
+            isAtualizacao = _isAtualizacao;
             corGeral = _cor;
             formOrdemServico = _formServ;
             clienteDados = _clienteDados;
@@ -158,17 +171,35 @@ namespace PFC___StandBy_CSharp.Forms
                 servicoDados.ExistePrazo = _seExistePrazo;
                 servicoDados.SenhaPatternAndroid = ConvertImageToByte(imagemSenhaPatternDoCliente);
 
-                //Inserir o servico e pegar a ID do serv que ele acabou de inserir
-                int idUltimoServico = id.InserirServico(clienteDados, servicoDados, checklistDados, condicoesFisicasDados);
+                if (isAtualizacao == true)
+                {
+                    ad.AtualizarOS(clienteDados, servicoDados);
 
-                //Inserir o checklist
-                int ordemServico = bd.BuscarOrdemServicoPelaId(idUltimoServico);
-                id.InserirCheckList(ordemServico);
+                    //TEM Q TERMINAR AQUI
+                    //ad.AtualizarCheckList(servicoDados.ID, checklistDados);
 
-                //inserir as Condicoes fisicas
+                    //ad.AtualizarCondicoesFisicas(servicoDados.ID, condicoesFisicasDados);
 
-                ////Mensagem de Conclusao
-                ms.InserirServicoSucesso();
+                    //ms.InserirServicoSucesso();
+                }
+                else
+                {
+                    //Inserir a OS e pegar a ID do serv que ele acabou de inserir
+                    int idUltimoServico = id.InserirOS(clienteDados, servicoDados);
+
+                    //-1 = Servico nao foi inserido
+                    if (idUltimoServico != -1)
+                    {
+                        //Inserir o checklist
+                        id.InserirCheckList(idUltimoServico, checklistDados);
+
+                        //inserir as Condicoes fisicas
+                        id.InserirCondicoesFisicas(idUltimoServico, condicoesFisicasDados);
+
+                        ////Mensagem de Conclusao
+                        ms.InserirServicoSucesso();
+                    }
+                }
             }
             this.Close();
 

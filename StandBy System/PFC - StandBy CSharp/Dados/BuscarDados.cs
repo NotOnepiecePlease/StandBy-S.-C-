@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using Guna.UI.WinForms;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Models;
 
 // ReSharper disable All
 
@@ -18,19 +19,172 @@ namespace PFC___StandBy_CSharp.Dados
     {
         private readonly MensagensErro me = new MensagensErro();
 
-        public int BuscarOrdemServicoPelaId(int _idServico)
+        #region Buscar OS pela ID (servico)
+
+        public ServicoModel BuscarOS_ApenasServico(int _idServico)
+        {
+            ServicoModel servico = new ServicoModel();
+            CondicoesFisicasModel condicoesFisicas = new CondicoesFisicasModel();
+            ChecklistModel checklist = new ChecklistModel();
+            try
+            {
+                using (SqlConnection con = OpenConnection())
+                {
+                    string query = "SELECT sv_id, sv_ordem_serv, sv_data, sv_cl_idcliente, sv_marca, sv_aparelho, sv_cor , sv_mei_serialnumber, sv_senha, sv_observacoes, sv_relato_cliente, " +
+                                   "sv_tipo_aparelho, sv_situacao, sv_avaliacao_servico " +
+                                   "FROM tb_servicos " +
+                                   "WHERE sv_id = @idServico";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@idServico", _idServico);
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            dr.Read();
+                            if (dr.HasRows)
+                            {
+                                //Dados do servico
+                                servico.ID = Convert.ToInt32(dr["sv_id"]);
+                                servico.OrdemServico = Convert.ToInt32(dr["sv_ordem_serv"]);
+                                servico.DataServico = Convert.ToDateTime(dr["sv_data"]);
+                                servico.FK_IdCliente = Convert.ToInt32(dr["sv_cl_idcliente"]);
+                                servico.Marca = dr["sv_marca"].ToString();
+                                servico.Aparelho = dr["sv_aparelho"].ToString();
+                                servico.Cor = dr["sv_cor"].ToString();
+                                servico.MeiSerialNumber = dr["sv_mei_serialnumber"].ToString();
+                                servico.Senha = dr["sv_senha"].ToString();
+                                servico.Observacoes = dr["sv_observacoes"].ToString();
+                                servico.RelatoCliente = dr["sv_relato_cliente"].ToString();
+                                servico.TipoAparelho = dr["sv_tipo_aparelho"].ToString();
+                                servico.Situacao = dr["sv_situacao"].ToString();
+                                servico.AvaliacaoServico = dr["sv_avaliacao_servico"].ToString();
+
+                                return servico;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                me.ErroAoBuscarServico(e);
+            }
+
+            return null;
+        }
+
+        #endregion Buscar OS pela ID (servico)
+
+        #region Buscar OS pela ID (servico, condicao fisica, checklist)
+
+        public (ServicoModel, CondicoesFisicasModel, ChecklistModel) BuscarOS(int _idServico)
+        {
+            ServicoModel servico = new ServicoModel();
+            CondicoesFisicasModel condicoesFisicas = new CondicoesFisicasModel();
+            ChecklistModel checklist = new ChecklistModel();
+            try
+            {
+                using (SqlConnection con = OpenConnection())
+                {
+                    string query = "SELECT sv_id, sv_ordem_serv, sv_data, sv_cl_idcliente, sv_marca, sv_aparelho, sv_cor , sv_mei_serialnumber, sv_senha, sv_observacoes, sv_relato_cliente, sv_tipo_aparelho, " +
+                                   "sv_situacao, sv_avaliacao_servico,cf_id, cf_pelicula, cf_tela, cf_tampa, cf_aro, cf_botoes, cf_lente_camera,ch_id, ch_biometria_faceid, ch_microfone, " +
+                                   "ch_tela, ch_chip, ch_botoes, ch_sensor, ch_cameras, ch_auricular, ch_wifi, ch_altofalante, ch_bluetooth, ch_carregamento, " +
+                                   "ch_observacoes, ch_ausente, ch_motivo_ausencia " +
+                                   "FROM tb_servicos as servico " +
+                                   "INNER JOIN tb_checklist as checklist " +
+                                   "ON servico.sv_id = checklist.ch_sv_idservico " +
+                                   "INNER JOIN tb_condicoes_fisicas as condicoes " +
+                                   "ON servico.sv_id = condicoes.cf_sv_idservico " +
+                                   "WHERE sv_id = @idServico";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@idServico", _idServico);
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            dr.Read();
+                            if (dr.HasRows)
+                            {
+                                //Dados do servico
+                                servico.ID = Convert.ToInt32(dr["sv_id"]);
+                                servico.OrdemServico = Convert.ToInt32(dr["sv_ordem_serv"]);
+                                servico.DataServico = Convert.ToDateTime(dr["sv_data"]);
+                                servico.FK_IdCliente = Convert.ToInt32(dr["sv_cl_idcliente"]);
+                                servico.Marca = dr["sv_marca"].ToString();
+                                servico.Aparelho = dr["sv_aparelho"].ToString();
+                                servico.Cor = dr["sv_cor"].ToString();
+                                servico.MeiSerialNumber = dr["sv_mei_serialnumber"].ToString();
+                                servico.Senha = dr["sv_senha"].ToString();
+                                servico.Observacoes = dr["sv_observacoes"].ToString();
+                                servico.RelatoCliente = dr["sv_relato_cliente"].ToString();
+                                servico.TipoAparelho = dr["sv_tipo_aparelho"].ToString();
+                                servico.Situacao = dr["sv_situacao"].ToString();
+                                servico.AvaliacaoServico = dr["sv_avaliacao_servico"].ToString();
+
+                                //Dados das condicoes fisicas
+                                condicoesFisicas.ID = Convert.ToInt32(dr["cf_id"]);
+                                condicoesFisicas.Pelicula = dr["cf_pelicula"].ToString();
+                                condicoesFisicas.Tela = dr["cf_tela"].ToString();
+                                condicoesFisicas.Tampa = dr["cf_tampa"].ToString();
+                                condicoesFisicas.Aro = dr["cf_aro"].ToString();
+                                condicoesFisicas.Botoes = dr["cf_botoes"].ToString();
+                                condicoesFisicas.LenteCamera = dr["cf_lente_camera"].ToString();
+
+                                //Dados do checklist
+                                checklist.ID = Convert.ToInt32(dr["ch_id"]);
+                                checklist.BiometriaFaceID = dr["ch_biometria_faceid"].ToString();
+                                checklist.Microfone = dr["ch_microfone"].ToString();
+                                checklist.Tela = dr["ch_tela"].ToString();
+                                checklist.Chip = dr["ch_chip"].ToString();
+                                checklist.Botoes = dr["ch_botoes"].ToString();
+                                checklist.Sensor = dr["ch_sensor"].ToString();
+                                checklist.Cameras = dr["ch_cameras"].ToString();
+                                checklist.Auricular = dr["ch_auricular"].ToString();
+                                checklist.Wifi = dr["ch_wifi"].ToString();
+                                checklist.AltoFalante = dr["ch_altofalante"].ToString();
+                                checklist.Bluetooth = dr["ch_bluetooth"].ToString();
+                                checklist.Carregamento = dr["ch_carregamento"].ToString();
+                                checklist.Observacoes = dr["ch_observacoes"].ToString();
+                                checklist.Ausente = (bool)dr["ch_ausente"];
+                                checklist.MotivoAusencia = dr["ch_motivo_ausencia"].ToString();
+
+                                return (servico, condicoesFisicas, checklist);
+                            }
+                            else
+                            {
+                                servico = BuscarOS_ApenasServico(_idServico);
+                                return (servico, null, null);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                me.ErroAoBuscarServicoCondicoesFisicasChecklist(e);
+            }
+
+            return (null, null, null);
+        }
+
+        #endregion Buscar OS pela ID (servico, condicao fisica, checklist)
+
+        #region Buscar numero da ordem de servico e a data pela ID
+
+        public ServicoModel BuscarOrdemServicoEDataPelaId(int _idServico)
         {
             if (_idServico == -1)
             {
                 MessageBox.Show("Nao foi possivel buscar ordem de servico pois a ID é -1", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return -1;
+                return null;
             }
 
             try
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    string query = "select sv_ordem_serv from tb_servicos where sv_id = @IdServico";
+                    ServicoModel dadosDoServico = null;
+                    string query = "select sv_id from tb_servicos where sv_id = @IdServico";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(_idServico);
@@ -39,17 +193,19 @@ namespace PFC___StandBy_CSharp.Dados
 
                     dr.Read();
 
-                    int ordemServico = dr.GetInt32(0);
+                    dadosDoServico.ID = dr.GetInt32(0);
 
-                    return ordemServico;
+                    return dadosDoServico;
                 }
             }
             catch (Exception e)
             {
                 me.ErroAoBuscarOrdemServico(e);
-                return -1;
+                return null;
             }
         }
+
+        #endregion Buscar numero da ordem de servico e a data pela ID
 
         #region Buscar quantidade de clientes existentes
 

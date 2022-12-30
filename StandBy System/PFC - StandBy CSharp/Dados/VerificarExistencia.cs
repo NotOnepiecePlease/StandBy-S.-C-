@@ -6,6 +6,31 @@ namespace PFC___StandBy_CSharp.Dados
 {
     internal class VerificarExistencia : conexao
     {
+        public bool VerificarExistenciaCondFisicasChecklist(int _fkServico)
+        {
+            using (SqlConnection conexao = OpenConnection())
+            {
+                SqlDataReader dr;
+                string query = "select ch_id, ch_sv_idservico " +
+                               "from tb_checklist as chk " +
+                               "inner join tb_condicoes_fisicas as cond " +
+                               "on chk.ch_sv_idservico = cond.cf_sv_idservico " +
+                               "where ch_sv_idservico = @idServico";
+
+                SqlCommand cmd = new SqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@idServico", _fkServico);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    return true;
+                }
+                {
+                    return false;
+                }
+            }
+        }
+
         public bool VerificarExistenciaServicoCliente(int _idcliente)
         {
             using (SqlConnection con = OpenConnection())

@@ -14,6 +14,7 @@ using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.PreencherComponentes;
 using Syncfusion.DataSource.Extensions;
 using Syncfusion.Windows.Forms.Tools;
+using static PFC___StandBy_CSharp.Enum.Enum;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -22,25 +23,41 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_OrdemServico : Form
     {
         private BuscarDados buscarDados = new BuscarDados();
-        private List<ClienteDados> listClientesComId = new List<ClienteDados>();
+        private VerificarExistencia verifExistencia = new VerificarExistencia();
+        private List<ClienteModel> listClientesComId = new List<ClienteModel>();
         private readonly PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
         private int ultimoClienteAdicionadoID = 0;
         private int? ordemServicoID = 0;
         private DataTable dt;
+        private Aparelho tipoAparelhoGlobal;
         private int[] corGeral = new[] { 0, 0, 0 };
 
-        public form_OrdemServico()
+        public form_OrdemServico(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico)
         {
             InitializeComponent();
-            GerarNovaOrdemServico();
+            var a = lblIdCliente.Text;
             CarregarComboxClientes();
+            if (_isNovaOrdemServico == true)
+            {
+                //Se o form for chamado em modo de "Nova ordem de servico"
+                //entao vai ter q ser gerada uma nova OS e seto o ultimo cliente adicionado
+                GerarNovaOrdemServico();
+                SetarComboboxComUltimoClienteAdicionado(dt, ultimoClienteAdicionadoID);
+            }
+            else
+            {
+                //Caso seja o form em modo de atualizacao de uma OS q existe, entao seto o cliente
+                //responsavel pelo servico.
+                SetarComboboxComUltimoClienteAdicionado(dt, _idClientePreSetado);
+            }
             //ZerarTodosCampos();
             InicializarDatas();
+            tipoAparelhoGlobal = _tipoAparelhoGlobal;
         }
 
         private void ZerarTodosCampos()
         {
-            SetarComboboxComUltimoClienteAdicionado(dt);
+            SetarComboboxComUltimoClienteAdicionado(dt, ultimoClienteAdicionadoID);
             InicializarDatas();
 
             cmbStatusServico.SelectedItem = "AVALIAÇÃO";
@@ -87,8 +104,9 @@ namespace PFC___StandBy_CSharp.Forms
             dtpDataServico.Value = DateTime.Now;
         }
 
-        private void CarregarComboxClientes()
+        public void CarregarComboxClientes()
         {
+            cmbCliente.SelectedIndexChanged -= cmbCliente_SelectedIndexChanged;
             this.cmbCliente.Style = Syncfusion.Windows.Forms.VisualStyle.Office2007;
             this.cmbCliente.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Black;
 
@@ -137,13 +155,14 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbCliente.DisplayMember = "Nome";
             this.cmbCliente.ValueMember = "ID";
 
-            SetarComboboxComUltimoClienteAdicionado(dt);
+            //SetarComboboxComUltimoClienteAdicionado(dt);
+            cmbCliente.SelectedIndexChanged += cmbCliente_SelectedIndexChanged;
         }
 
-        private void SetarComboboxComUltimoClienteAdicionado(DataTable _dt)
+        private void SetarComboboxComUltimoClienteAdicionado(DataTable _dt, int _id)
         {
             //Pego a linha que tem o ultimo ID cadastrado
-            DataRow[] rows = _dt.Select($"ID ='{ultimoClienteAdicionadoID}'");
+            DataRow[] rows = _dt.Select($"ID ='{_id}'");
             //Seto a index da combobox para a index dessa linha que peguei acima.
             cmbCliente.SelectedIndex = _dt.Rows.IndexOf(rows[0]);
         }
@@ -187,31 +206,45 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnSalvarOrdemServico_Click(object sender, EventArgs e)
         {
             //ZerarTodosCampos();
-            SalvarOrdemServico();
+            bool isExisteCondFisicasCheclist = verifExistencia.VerificarExistenciaCondFisicasChecklist(Convert.ToInt32(lblIdServico.Text));
+            if (isExisteCondFisicasCheclist == true)
+            {
+                InserirOrdemServico(true);
+            }
+            else
+            {
+                InserirOrdemServico(false);
+            }
+            //this.Close();
         }
 
-        private void SalvarOrdemServico()
+        private void AtualizarOrdemServico()
         {
-            ClienteDados clienteDados = new ClienteDados();
-            ServicoDados servicoDados = new ServicoDados();
-            ChecklistDados checklistDados = new ChecklistDados();
-            CondicoesFisicasDados condicoesFisicasDados = new CondicoesFisicasDados();
+            throw new NotImplementedException();
+        }
+
+        private void InserirOrdemServico(bool _isAtualizacao)
+        {
+            ClienteModel clienteDados = new ClienteModel();
+            ServicoModel servicoDados = new ServicoModel();
+            ChecklistModel checklistDados = new ChecklistModel();
+            CondicoesFisicasModel condicoesFisicasDados = new CondicoesFisicasModel();
 
             //Dados do cliente
             clienteDados.ID = Convert.ToInt32(lblIdCliente.Text);
 
             #region If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
 
-            string tipoAparelho;
-            if (btnTipoAparelho.IconChar.ToString().Equals("MobileAlt"))
+            string tipoAparelho = "NAO SETADA";
+            if (tipoAparelhoGlobal == Aparelho.Celular)
             {
                 tipoAparelho = "Celular";
             }
-            else if (btnTipoAparelho.IconChar.ToString().Equals("Desktop"))
+            else if (tipoAparelhoGlobal == Aparelho.Computador)
             {
                 tipoAparelho = "Computador";
             }
-            else
+            else if (tipoAparelhoGlobal == Aparelho.Notebook)
             {
                 tipoAparelho = "Notebook";
             }
@@ -223,7 +256,10 @@ namespace PFC___StandBy_CSharp.Forms
             servicoDados.DataServico = DateTime.Now;
             servicoDados.FK_IdCliente = clienteDados.ID;
             servicoDados.TipoAparelho = tipoAparelho;
+            servicoDados.Marca = cmbMarca.Text;
             servicoDados.Aparelho = txtModelo.Text;
+            servicoDados.Cor = cmbCor.Text;
+            servicoDados.MeiSerialNumber = txtMei_SerialNumber.Text;
             servicoDados.Senha = string.IsNullOrWhiteSpace(txtSenhaDispositivo.Text) ? null : txtSenhaDispositivo.Text;
             servicoDados.Situacao = string.IsNullOrWhiteSpace(txtCondicoesBalcao.Text) ? null : txtCondicoesBalcao.Text;
             servicoDados.Status = 1;
@@ -253,7 +289,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Dados das condicoes fisicas
             condicoesFisicasDados.OrdemServico = servicoDados.OrdemServico;
-            condicoesFisicasDados.DataServico = servicoDados.DataServico;
+            condicoesFisicasDados.DataCondicoesFisicas = servicoDados.DataServico;
             condicoesFisicasDados.Pelicula = cmbPelicula.Text;
             condicoesFisicasDados.Tela = cmbTela.Text;
             condicoesFisicasDados.Tampa = cmbTampa.Text;
@@ -261,7 +297,7 @@ namespace PFC___StandBy_CSharp.Forms
             condicoesFisicasDados.Botoes = cmbBotoes.Text;
             condicoesFisicasDados.LenteCamera = cmbLenteCamera.Text;
 
-            form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral, clienteDados, servicoDados, checklistDados, condicoesFisicasDados);
+            form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral, clienteDados, servicoDados, checklistDados, condicoesFisicasDados, _isAtualizacao);
             formPrevisaoEntrega.ShowDialog();
         }
 
@@ -280,6 +316,14 @@ namespace PFC___StandBy_CSharp.Forms
         {
             form_PasswordPattern pp = new form_PasswordPattern(this, corGeral);
             pp.ShowDialog();
+        }
+
+        private void form_OrdemServico_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }

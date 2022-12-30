@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_VerGarantia));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblDiasQueFaltam = new Guna.UI.WinForms.GunaLabel();
             this.lblSemGarantia = new Guna.UI.WinForms.GunaLabel();
             this.lblDiasDeGarantia = new Guna.UI.WinForms.GunaLabel();
             this.lblIDServico = new Guna.UI.WinForms.GunaLabel();
@@ -45,7 +46,6 @@
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.lblDiasQueFaltam = new Guna.UI.WinForms.GunaLabel();
             this.panelGarantia = new Guna.UI.WinForms.GunaLinePanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(342, 516);
             this.panel1.TabIndex = 0;
+            // 
+            // lblDiasQueFaltam
+            // 
+            this.lblDiasQueFaltam.AutoSize = true;
+            this.lblDiasQueFaltam.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiasQueFaltam.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblDiasQueFaltam.Location = new System.Drawing.Point(111, 428);
+            this.lblDiasQueFaltam.Name = "lblDiasQueFaltam";
+            this.lblDiasQueFaltam.Size = new System.Drawing.Size(41, 20);
+            this.lblDiasQueFaltam.TabIndex = 15;
+            this.lblDiasQueFaltam.Text = "teste";
             // 
             // lblSemGarantia
             // 
@@ -262,17 +273,6 @@
             this.gunaLabel1.Size = new System.Drawing.Size(286, 47);
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "Garantia StandBy";
-            // 
-            // lblDiasQueFaltam
-            // 
-            this.lblDiasQueFaltam.AutoSize = true;
-            this.lblDiasQueFaltam.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiasQueFaltam.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lblDiasQueFaltam.Location = new System.Drawing.Point(111, 428);
-            this.lblDiasQueFaltam.Name = "lblDiasQueFaltam";
-            this.lblDiasQueFaltam.Size = new System.Drawing.Size(41, 20);
-            this.lblDiasQueFaltam.TabIndex = 15;
-            this.lblDiasQueFaltam.Text = "teste";
             // 
             // panelGarantia
             // 

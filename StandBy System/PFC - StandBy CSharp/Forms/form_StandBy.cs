@@ -15,6 +15,9 @@ using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.DataViz.WinForms;
+using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.Utils.Svg;
 using Application = System.Windows.Forms.Application;
 using Point = System.Drawing.Point;
 using Newtonsoft.Json;
@@ -37,6 +40,7 @@ namespace PFC___StandBy_CSharp.Forms
         public form_StandBy()
         {
             InitializeComponent();
+            InicializarSkinStandbyDevexpress();
             CarregarGraficos(bunifuDataViz1, lblQntServicosSemanais, bunifuDataViz2, lblQntServicosMensais);
             //Pega a versão do sistema e seta na label.
             lblVersion.Text = verificarUpd.VERSAO_STANDBY;
@@ -46,6 +50,17 @@ namespace PFC___StandBy_CSharp.Forms
             workerVerificarVersao.RunWorkerAsync();
 
             //Logs.GerarLogErro();
+        }
+
+        private void InicializarSkinStandbyDevexpress()
+        {
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.WXI);
+
+            var commonSkin = CommonSkins.GetSkin(UserLookAndFeel.Default);
+            SvgPalette svgPalette = commonSkin.SvgPalettes[Skin.DefaultSkinPaletteName] as SvgPalette;
+
+            commonSkin.CustomSvgPalettes.Add(new SvgPaletteKey(commonSkin.CustomSvgPalettes.Count, "StandBy THEME"), svgPalette);
+            UserLookAndFeel.Default.SetSkinStyle(commonSkin.Name, "StandBy THEME");
         }
 
         private void workerInicializarJuntoComForm_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -433,13 +448,14 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnServicos_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<form_OrdensServ>().Count() > 0)
+            //if (Application.OpenForms.OfType<form_OrdensServ>().Count() > 0)
+            if (Application.OpenForms.OfType<form_ServicoPrincipal>().Count() > 0)
             {
                 //MessageBox.Show("O Form2 já está aberto!");
             }
             else
             {
-                OpenChildForm(new form_OrdensServ(corGeral));
+                OpenChildForm(new form_ServicoPrincipal());
             }
         }
 

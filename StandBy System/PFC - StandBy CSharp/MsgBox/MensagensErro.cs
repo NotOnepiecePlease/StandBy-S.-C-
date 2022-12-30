@@ -117,7 +117,35 @@ namespace PFC___StandBy_CSharp.MsgBox
             MessageBox.Show("(OR-SV15)Erro ao buscar Ordem de Servico!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        internal void ErroAoBuscarServicoCondicoesFisicasChecklist(Exception e)
+        {
+            MessageBox.Show("(OR-SV16)Erro ao buscar dados O.S!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal void ErroAoBuscarServico(Exception e)
+        {
+            MessageBox.Show("(OR-SV17)Erro ao buscar serviço\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         #endregion ORDENS DE SERVICO
+
+        #region CHECKLIST
+
+        public void ErroAoInserirChecklist(Exception e)
+        {
+            MessageBox.Show("(CHK01)Erro ao inserir o checklist!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        #endregion CHECKLIST
+
+        #region CONDICOES FISICAS
+
+        public void ErroAoInserirCondicoesFisicas(Exception e)
+        {
+            MessageBox.Show("(CD-FI01)Erro ao inserir cond. fis.!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        #endregion CONDICOES FISICAS
 
         #region SERVICOS CONCLUIDOS
 
@@ -140,9 +168,14 @@ namespace PFC___StandBy_CSharp.MsgBox
         //--------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------
         //GARANTIAS
+        public void ErroAoInserirGarantia(Exception e)
+        {
+            MessageBox.Show("(GAR01)Erro ao inserir a garantia!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         public void ErroAoDeletarGarantia(Exception e)
         {
-            MessageBox.Show("(GAR01)Erro ao apagar a garantia!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("(GAR02)Erro ao apagar a garantia!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //form_ALERT message = new form_ALERT("(SV-CN01)Erro ao retornar serviço concluido!", form_ALERT.AlertType.Erro);
             //message.Show();
         }

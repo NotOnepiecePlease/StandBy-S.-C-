@@ -30,19 +30,18 @@ namespace PFC___StandBy_CSharp.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServico));
+            Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
             this.panel_FormOrdemServico = new System.Windows.Forms.Panel();
+            this.btnTipoAparelho = new DevExpress.XtraEditors.SimpleButton();
             this.lblIdCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbCliente = new Syncfusion.Windows.Forms.Tools.MultiColumnComboBox();
             this.btnConcluirImprimir = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnConcluirServico = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnSalvarOrdemServico = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnTipoAparelho = new FontAwesome.Sharp.IconButton();
             this.cmbStatusServico = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtChecklistObservacoes = new System.Windows.Forms.RichTextBox();
             this.txtBuscaGoogle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -55,6 +54,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistBluetooth = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel24 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtChecklistObservacoes = new System.Windows.Forms.RichTextBox();
             this.cmbChecklistAltoFaltante = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistWifi = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -123,6 +123,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblDataOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.lblIdServico = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblIdCondicoesFisicas = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblIdChecklist = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel_FormOrdemServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
@@ -145,16 +148,18 @@ namespace PFC___StandBy_CSharp.Forms
             // panel_FormOrdemServico
             // 
             this.panel_FormOrdemServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.panel_FormOrdemServico.Controls.Add(this.lblIdChecklist);
+            this.panel_FormOrdemServico.Controls.Add(this.lblIdCondicoesFisicas);
+            this.panel_FormOrdemServico.Controls.Add(this.lblIdServico);
+            this.panel_FormOrdemServico.Controls.Add(this.btnTipoAparelho);
             this.panel_FormOrdemServico.Controls.Add(this.lblIdCliente);
             this.panel_FormOrdemServico.Controls.Add(this.lblCliente);
             this.panel_FormOrdemServico.Controls.Add(this.cmbCliente);
             this.panel_FormOrdemServico.Controls.Add(this.btnConcluirImprimir);
             this.panel_FormOrdemServico.Controls.Add(this.btnConcluirServico);
             this.panel_FormOrdemServico.Controls.Add(this.btnSalvarOrdemServico);
-            this.panel_FormOrdemServico.Controls.Add(this.btnTipoAparelho);
             this.panel_FormOrdemServico.Controls.Add(this.cmbStatusServico);
             this.panel_FormOrdemServico.Controls.Add(this.bunifuCustomLabel28);
-            this.panel_FormOrdemServico.Controls.Add(this.txtChecklistObservacoes);
             this.panel_FormOrdemServico.Controls.Add(this.txtBuscaGoogle);
             this.panel_FormOrdemServico.Controls.Add(this.pictureBox2);
             this.panel_FormOrdemServico.Controls.Add(this.groupBox4);
@@ -170,6 +175,20 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel_FormOrdemServico.Size = new System.Drawing.Size(1230, 720);
             this.panel_FormOrdemServico.TabIndex = 1;
             this.panel_FormOrdemServico.TabStop = true;
+            // 
+            // btnTipoAparelho
+            // 
+            this.btnTipoAparelho.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.btnTipoAparelho.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoAparelho.Appearance.Options.UseBackColor = true;
+            this.btnTipoAparelho.Appearance.Options.UseFont = true;
+            this.btnTipoAparelho.Appearance.Options.UseTextOptions = true;
+            this.btnTipoAparelho.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.btnTipoAparelho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTipoAparelho.ImageOptions.SvgImage")));
+            this.btnTipoAparelho.Location = new System.Drawing.Point(1190, 2);
+            this.btnTipoAparelho.Name = "btnTipoAparelho";
+            this.btnTipoAparelho.Size = new System.Drawing.Size(38, 31);
+            this.btnTipoAparelho.TabIndex = 76;
             // 
             // lblIdCliente
             // 
@@ -251,28 +270,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnSalvarOrdemServico.Zoom = 15;
             this.btnSalvarOrdemServico.Click += new System.EventHandler(this.btnSalvarOrdemServico_Click);
             // 
-            // btnTipoAparelho
-            // 
-            this.btnTipoAparelho.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTipoAparelho.BackColor = System.Drawing.Color.Transparent;
-            this.btnTipoAparelho.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnTipoAparelho.FlatAppearance.BorderSize = 0;
-            this.btnTipoAparelho.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnTipoAparelho.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnTipoAparelho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoAparelho.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnTipoAparelho.IconChar = FontAwesome.Sharp.IconChar.Deskpro;
-            this.btnTipoAparelho.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.btnTipoAparelho.IconSize = 35;
-            this.btnTipoAparelho.Location = new System.Drawing.Point(1190, 4);
-            this.btnTipoAparelho.Name = "btnTipoAparelho";
-            this.btnTipoAparelho.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.btnTipoAparelho.Rotation = 0D;
-            this.btnTipoAparelho.Size = new System.Drawing.Size(37, 31);
-            this.btnTipoAparelho.TabIndex = 70;
-            this.btnTipoAparelho.TabStop = false;
-            this.btnTipoAparelho.UseVisualStyleBackColor = false;
-            // 
             // cmbStatusServico
             // 
             this.cmbStatusServico.BackColor = System.Drawing.Color.Transparent;
@@ -331,19 +328,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel28.TabIndex = 68;
             this.bunifuCustomLabel28.Text = "STATUS";
             // 
-            // txtChecklistObservacoes
-            // 
-            this.txtChecklistObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtChecklistObservacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtChecklistObservacoes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtChecklistObservacoes.ForeColor = System.Drawing.Color.White;
-            this.txtChecklistObservacoes.Location = new System.Drawing.Point(817, 490);
-            this.txtChecklistObservacoes.MaxLength = 4000;
-            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
-            this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
-            this.txtChecklistObservacoes.TabIndex = 6;
-            this.txtChecklistObservacoes.Text = "O Microfone funciona bem, porem aparenta estar desgastado";
-            // 
             // txtBuscaGoogle
             // 
             this.txtBuscaGoogle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -389,6 +373,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.groupBox4.Controls.Add(this.bunifuCustomLabel23);
             this.groupBox4.Controls.Add(this.cmbChecklistBluetooth);
             this.groupBox4.Controls.Add(this.bunifuCustomLabel24);
+            this.groupBox4.Controls.Add(this.txtChecklistObservacoes);
             this.groupBox4.Controls.Add(this.cmbChecklistAltoFaltante);
             this.groupBox4.Controls.Add(this.bunifuCustomLabel21);
             this.groupBox4.Controls.Add(this.cmbChecklistWifi);
@@ -420,7 +405,6 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             // switchChecklistAusente
             // 
-            this.switchChecklistAusente.EditValue = true;
             this.switchChecklistAusente.Location = new System.Drawing.Point(12, 463);
             this.switchChecklistAusente.Name = "switchChecklistAusente";
             this.switchChecklistAusente.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -587,6 +571,19 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel24.Size = new System.Drawing.Size(87, 19);
             this.bunifuCustomLabel24.TabIndex = 44;
             this.bunifuCustomLabel24.Text = "BLUETOOTH";
+            // 
+            // txtChecklistObservacoes
+            // 
+            this.txtChecklistObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistObservacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtChecklistObservacoes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtChecklistObservacoes.ForeColor = System.Drawing.Color.White;
+            this.txtChecklistObservacoes.Location = new System.Drawing.Point(11, 391);
+            this.txtChecklistObservacoes.MaxLength = 4000;
+            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
+            this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
+            this.txtChecklistObservacoes.TabIndex = 6;
+            this.txtChecklistObservacoes.Text = "O Microfone funciona bem, porem aparenta estar desgastado";
             // 
             // cmbChecklistAltoFaltante
             // 
@@ -2041,7 +2038,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblOrdemServico.ForeColor = System.Drawing.SystemColors.Control;
             this.lblOrdemServico.Location = new System.Drawing.Point(15, 0);
             this.lblOrdemServico.Name = "lblOrdemServico";
-            this.lblOrdemServico.Size = new System.Drawing.Size(109, 32);
+            this.lblOrdemServico.Size = new System.Drawing.Size(108, 32);
             this.lblOrdemServico.TabIndex = 66;
             this.lblOrdemServico.Text = "OS 1052";
             // 
@@ -2051,6 +2048,39 @@ namespace PFC___StandBy_CSharp.Forms
             this.moverForm.Horizontal = true;
             this.moverForm.TargetControl = null;
             this.moverForm.Vertical = true;
+            // 
+            // lblIdServico
+            // 
+            this.lblIdServico.AutoSize = true;
+            this.lblIdServico.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblIdServico.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIdServico.Location = new System.Drawing.Point(1169, 57);
+            this.lblIdServico.Name = "lblIdServico";
+            this.lblIdServico.Size = new System.Drawing.Size(61, 17);
+            this.lblIdServico.TabIndex = 77;
+            this.lblIdServico.Text = "IdServico";
+            // 
+            // lblIdCondicoesFisicas
+            // 
+            this.lblIdCondicoesFisicas.AutoSize = true;
+            this.lblIdCondicoesFisicas.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblIdCondicoesFisicas.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIdCondicoesFisicas.Location = new System.Drawing.Point(1169, 76);
+            this.lblIdCondicoesFisicas.Name = "lblIdCondicoesFisicas";
+            this.lblIdCondicoesFisicas.Size = new System.Drawing.Size(56, 17);
+            this.lblIdCondicoesFisicas.TabIndex = 78;
+            this.lblIdCondicoesFisicas.Text = "IdCondF";
+            // 
+            // lblIdChecklist
+            // 
+            this.lblIdChecklist.AutoSize = true;
+            this.lblIdChecklist.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblIdChecklist.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIdChecklist.Location = new System.Drawing.Point(1169, 96);
+            this.lblIdChecklist.Name = "lblIdChecklist";
+            this.lblIdChecklist.Size = new System.Drawing.Size(53, 17);
+            this.lblIdChecklist.TabIndex = 79;
+            this.lblIdChecklist.Text = "idCheck";
             // 
             // form_OrdemServico
             // 
@@ -2063,6 +2093,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.Name = "form_OrdemServico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_OrdemServico";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_OrdemServico_KeyDown);
             this.panel_FormOrdemServico.ResumeLayout(false);
             this.panel_FormOrdemServico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).EndInit();
@@ -2114,21 +2145,14 @@ namespace PFC___StandBy_CSharp.Forms
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtMei_SerialNumber;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtModelo;
         private DevExpress.XtraEditors.SeparatorControl separatorControl2;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbCor;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         private Bunifu.UI.WinForms.BunifuSeparator separatorCPF;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator7;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbLenteCamera;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator6;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbBotoes;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator5;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbAro;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator4;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbTampa;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbTela;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbPelicula;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.RichTextBox txtObservacoes;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -2140,47 +2164,57 @@ namespace PFC___StandBy_CSharp.Forms
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBuscaGoogle;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel25;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel26;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistCarregamento;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel23;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBluetooth;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel24;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistAltoFaltante;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistWifi;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistAuricular;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel19;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistCameras;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistSensor;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBotoes;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel18;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistChip;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistTela;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistMicrofone;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBiometria;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
         public System.Windows.Forms.RichTextBox txtChecklistObservacoes;
         public System.Windows.Forms.RichTextBox txtChecklistMotivoAusencia;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel27;
-        private Bunifu.UI.WinForms.BunifuDropdown cmbStatusServico;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel28;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblDataOrdemServico;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblOrdemServico;
         private Bunifu.Framework.UI.BunifuImageButton btnConcluirImprimir;
         public Bunifu.Framework.UI.BunifuImageButton btnConcluirServico;
         private Bunifu.Framework.UI.BunifuImageButton btnSalvarOrdemServico;
-        private DevExpress.XtraEditors.ToggleSwitch switchChecklistAusente;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator8;
-        private Syncfusion.Windows.Forms.Tools.MultiColumnComboBox cmbCliente;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCliente;
-        public FontAwesome.Sharp.IconButton btnTipoAparelho;
         public Bunifu.UI.WinForms.BunifuDropdown cmbMarca;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdCliente;
         public System.Windows.Forms.PictureBox picSenhaPattern;
+        private DevExpress.XtraEditors.SimpleButton btnTipoAparelho;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbCor;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbLenteCamera;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbBotoes;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbAro;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbTampa;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbTela;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbPelicula;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistCarregamento;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBluetooth;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistAltoFaltante;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistWifi;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistAuricular;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistCameras;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistSensor;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBotoes;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistChip;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistTela;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistMicrofone;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBiometria;
+        public Bunifu.UI.WinForms.BunifuDropdown cmbStatusServico;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblOrdemServico;
+        public DevExpress.XtraEditors.ToggleSwitch switchChecklistAusente;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblDataOrdemServico;
+        public Syncfusion.Windows.Forms.Tools.MultiColumnComboBox cmbCliente;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblIdServico;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblIdCondicoesFisicas;
+        public Bunifu.Framework.UI.BunifuCustomLabel lblIdChecklist;
     }
 }

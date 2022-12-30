@@ -16,7 +16,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Inserir Servico
 
-        //public void InserirServico(ServicoDados _servicoDados, ClienteDados _clienteDados, ChecklistDados _checklistDados, CondicoesFisicasDados _condicoesFisicasDados)
+        //public void InserirServico(ServicoDados _servicoDados, ClienteDados _clienteDados, ChecklistDados _condicoesFisicasDados, CondicoesFisicasDados _condicoesFisicasDados)
         //{
         //    {
         //        //Abro a conexao.
@@ -69,22 +69,25 @@ namespace PFC___StandBy_CSharp.Dados
         //    }
         //}
 
-        public int InserirServico(ClienteDados _clienteDados, ServicoDados _servicoDados, ChecklistDados _checklistDados, CondicoesFisicasDados _condicoesFisicasDados)
+        public int InserirOS(ClienteModel _clienteDados, ServicoModel _servicoDados)
         {
             try
             {
                 using (SqlConnection conexaoSQL = OpenConnection())
                 {
-                    string query = "INSERT INTO tb_servicos (sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho, sv_aparelho, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_observacoes, sv_avaliacao_servico) " +
-                    "output INSERTED.sv_id, INSERTED.sv_ordem_serv VALUES (@OrdemServico, @DataServico, @FkCliente, @TipoAparelho,@Aparelho, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @Observacoes, @AvaliacaoServico)";
+                    string query = "INSERT INTO tb_servicos (sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho,sv_marca, sv_aparelho,sv_cor, sv_mei_serialnumber, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_observacoes, sv_avaliacao_servico) " +
+                    "output INSERTED.sv_id VALUES (@OrdemServico, @Data, @FkCliente, @TipoAparelho,@Marca,@Aparelho,@Cor,@MeiSerialNumber, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @Observacoes, @AvaliacaoServico)";
 
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
 
                     cmd.Parameters.Add("@OrdemServico", SqlDbType.Int).Value = _servicoDados.OrdemServico;
-                    cmd.Parameters.Add("@DataServico", SqlDbType.Date).Value = _servicoDados.DataServico;
+                    cmd.Parameters.Add("@Data", SqlDbType.Date).Value = _servicoDados.DataServico;
                     cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = _clienteDados.ID;
                     cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho;
+                    cmd.Parameters.Add("@Marca", SqlDbType.VarChar).Value = _servicoDados.Marca;
                     cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = _servicoDados.Aparelho;
+                    cmd.Parameters.Add("@Cor", SqlDbType.VarChar).Value = _servicoDados.Cor;
+                    cmd.Parameters.Add("@MeiSerialNumber", SqlDbType.VarChar).Value = _servicoDados.MeiSerialNumber;
                     cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = _servicoDados.Senha;
                     cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = _servicoDados.Situacao;
                     cmd.Parameters.Add("@Status0_1", SqlDbType.Int).Value = _servicoDados.Status;
@@ -229,7 +232,7 @@ namespace PFC___StandBy_CSharp.Dados
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nao foi possivel inserir a garantia no banco de dados.\n\n\nErro: " + ex);
+                mErro.ErroAoInserirGarantia(ex);
             }
         }
 
@@ -266,28 +269,80 @@ namespace PFC___StandBy_CSharp.Dados
 
         #endregion Inserir Orcamento
 
-        public void InserirCheckList(int ordemServico)
+        #region Inserir Checklist
+
+        public void InserirCheckList(int _idServico, ChecklistModel _checklistDados)
         {
-            //try
-            //{
-            //    using (SqlConnection conexao = OpenConnection())
-            //    {
-            //        string query = "GarantiaInserir";
-            //        SqlCommand cmd = new SqlCommand(procedure, conexao);
-            //        cmd.Parameters.AddWithValue("@_fkServico", _idServico);
-            //        cmd.Parameters.AddWithValue("@_fkCliente", _idCliente);
-            //        cmd.Parameters.AddWithValue("@_DataAtual", Convert.ToDateTime(DateTime.Now.ToShortDateString()));
-            //        cmd.Parameters.AddWithValue("@_QntsDiasGarantia", _qntDiasGarantia);
+            try
+            {
+                using (SqlConnection conexao = OpenConnection())
+                {
+                    string query = "INSERT INTO tb_checklist (ch_ordem_serv, ch_data, ch_sv_idservico, ch_biometria_faceid, " +
+                                   "ch_microfone, ch_tela, ch_chip, ch_botoes, ch_sensor, ch_cameras, ch_auricular, ch_wifi, " +
+                                   "ch_altofalante, ch_bluetooth, ch_carregamento, ch_observacoes, ch_ausente, ch_motivo_ausencia)" +
+                                   " VALUES (@OrdemServico, @DataChecklist, @FK_IdServico, @Biometria," +
+                                   "@Microfone, @Tela, @Chip, @Botoes, @Sensor, @Cameras, @Auricular, @Wifi," +
+                                   "@AltoFalante, @Bluetooth, @Carregamento, @Observacoes, @Ausente, @MotivoAusencia)";
 
-            //        cmd.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand(query, conexao);
+                    cmd.Parameters.AddWithValue("@OrdemServico", _checklistDados.OrdemServico);
+                    cmd.Parameters.AddWithValue("@DataChecklist", _checklistDados.DataChecklist);
+                    cmd.Parameters.AddWithValue("@FK_IdServico", _idServico);
+                    cmd.Parameters.AddWithValue("@Biometria", _checklistDados.BiometriaFaceID ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Microfone", _checklistDados.Microfone ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Tela", _checklistDados.Tela ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Chip", _checklistDados.Chip ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Botoes", _checklistDados.Botoes ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Sensor", _checklistDados.Sensor ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Cameras", _checklistDados.Cameras ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Auricular", _checklistDados.Auricular ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Wifi", _checklistDados.Wifi ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@AltoFalante", _checklistDados.AltoFalante ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Bluetooth", _checklistDados.Bluetooth ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Carregamento", _checklistDados.Carregamento ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Observacoes", _checklistDados.Observacoes ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Ausente", _checklistDados.Ausente);
+                    cmd.Parameters.AddWithValue("@MotivoAusencia", _checklistDados.MotivoAusencia ?? Convert.DBNull);
 
-            //        cmd.ExecuteNonQuery();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Nao foi possivel inserir a garantia no banco de dados.\n\n\nErro: " + ex);
-            //}
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                mErro.ErroAoInserirChecklist(ex);
+            }
+        }
+
+        #endregion Inserir Checklist
+
+        public void InserirCondicoesFisicas(int _idServico, CondicoesFisicasModel _condicoesFisicasDados)
+        {
+            try
+            {
+                using (SqlConnection conexao = OpenConnection())
+                {
+                    string query = "INSERT INTO tb_condicoes_fisicas (cf_ordem_serv, cf_data, cf_sv_idservico, cf_pelicula, cf_tela, " +
+                                   "cf_tampa, cf_aro, cf_botoes, cf_lente_camera)" +
+                                   " VALUES (@OrdemServico, @DataCondicoesFisicas, @FK_IdServico, @Pelicula, @Tela, @Tampa, @Aro, @Botoes, @LenteCamera)";
+
+                    SqlCommand cmd = new SqlCommand(query, conexao);
+                    cmd.Parameters.AddWithValue("@OrdemServico", _condicoesFisicasDados.OrdemServico);
+                    cmd.Parameters.AddWithValue("@DataCondicoesFisicas", _condicoesFisicasDados.DataCondicoesFisicas);
+                    cmd.Parameters.AddWithValue("@FK_IdServico", _idServico);
+                    cmd.Parameters.AddWithValue("@Pelicula", _condicoesFisicasDados.Pelicula);
+                    cmd.Parameters.AddWithValue("@Tela", _condicoesFisicasDados.Tela);
+                    cmd.Parameters.AddWithValue("@Tampa", _condicoesFisicasDados.Tampa);
+                    cmd.Parameters.AddWithValue("@Aro", _condicoesFisicasDados.Aro);
+                    cmd.Parameters.AddWithValue("@Botoes", _condicoesFisicasDados.Botoes);
+                    cmd.Parameters.AddWithValue("@LenteCamera", _condicoesFisicasDados.LenteCamera);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                mErro.ErroAoInserirCondicoesFisicas(ex);
+            }
         }
     }
 }

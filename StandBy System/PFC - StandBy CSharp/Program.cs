@@ -1,7 +1,9 @@
 ﻿using PFC___StandBy_CSharp.Forms;
 using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
-using Syncfusion;
+using Syncfusion.Licensing;
 
 namespace PFC___StandBy_CSharp
 {
@@ -14,11 +16,12 @@ namespace PFC___StandBy_CSharp
         private static void Main()
         {
             //https://www.syncfusion.com/account/downloads
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Nzc3MDU4QDMyMzAyZTMzMmUzMEhpVEkwRGI5V21BSk5KbFd6ckYwUUNLNkRXcm55T2tGRFAwTHV6VFNqcFU9");
+            SyncfusionLicenseProvider.RegisterLicense("Nzc3MDU4QDMyMzAyZTMzMmUzMEhpVEkwRGI5V21BSk5KbFd6ckYwUUNLNkRXcm55T2tGRFAwTHV6VFNqcFU9");
+            //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new form_StandBy());
-            Application.Run(new form_OrdemServico());
+            Application.Run(new form_StandBy());
         }
     }
 }

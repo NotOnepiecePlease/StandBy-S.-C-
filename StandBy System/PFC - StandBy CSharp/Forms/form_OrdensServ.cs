@@ -18,7 +18,7 @@ namespace PFC___StandBy_CSharp.Forms
         private readonly DeletarDados deletarDados = new DeletarDados();
         private readonly PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
         private readonly PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
-        private List<ClienteDados> listClientesComId = new List<ClienteDados>();
+        private List<ClienteModel> listClientesComId = new List<ClienteModel>();
         private int[] corGeral = new int[3] { 0, 0, 0 };
         private int ultimoClienteAdicionadoID = 0;
 

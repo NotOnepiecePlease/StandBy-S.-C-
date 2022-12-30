@@ -171,7 +171,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Alterar Clientes
 
-        public void AlterarClientes(ClienteDados _dadosDoCliente)
+        public void AlterarClientes(ClienteModel _dadosDoCliente)
         {
             try
             {
@@ -354,6 +354,70 @@ namespace PFC___StandBy_CSharp.Dados
             }
         }
 
+        internal int AtualizarOS(ClienteModel _clienteDados, ServicoModel _servicoDados)
+        {
+            try
+            {
+                using (SqlConnection conexaoSQL = OpenConnection())
+                {
+                    string query = "UPDATE tb_servicos " +
+                                   "SET sv_data = @Data, " +
+                                   "sv_cl_idcliente = @FkCliente, " +
+                                   "sv_tipo_aparelho = @TipoAparelho, " +
+                                   "sv_marca = @Marca, " +
+                                   "sv_aparelho = @Aparelho, " +
+                                   "sv_cor = @Cor, " +
+                                   "sv_mei_serialnumber = @MeiSerialNumber, " +
+                                   "sv_senha = @Senha, " +
+                                   "sv_situacao = @Situacao, " +
+                                   "sv_status = @Status0_1, " +
+                                   "sv_senha_pattern = @SenhaPattern, " +
+                                   "sv_relato_cliente = @RelatoCliente, " +
+                                   "sv_observacoes = @Observacoes, " +
+                                   "sv_avaliacao_servico = @AvaliacaoServico " +
+                                   "WHERE sv_id = @idServico";
+
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+
+                    cmd.Parameters.Add("@idServico", SqlDbType.Int).Value = _servicoDados.ID;
+                    cmd.Parameters.Add("@Data", SqlDbType.Date).Value = _servicoDados.DataServico;
+                    cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = _clienteDados.ID;
+                    cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho;
+                    cmd.Parameters.Add("@Marca", SqlDbType.VarChar).Value = _servicoDados.Marca;
+                    cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = _servicoDados.Aparelho;
+                    cmd.Parameters.Add("@Cor", SqlDbType.VarChar).Value = _servicoDados.Cor;
+                    cmd.Parameters.Add("@MeiSerialNumber", SqlDbType.VarChar).Value = _servicoDados.MeiSerialNumber;
+                    cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = _servicoDados.Senha;
+                    cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = _servicoDados.Situacao;
+                    cmd.Parameters.Add("@Status0_1", SqlDbType.Int).Value = _servicoDados.Status;
+                    cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid;
+                    cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente;
+                    cmd.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = _servicoDados.Observacoes;
+                    cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
+
+                    int idRegistrada = (int)cmd.ExecuteScalar();
+
+                    return idRegistrada;
+                }
+            }
+            catch (Exception ex)
+            {
+                //Mensagem de Erro
+                mErro.ErroInserirServico(ex);
+                return -1;
+            }
+        }
+
+        internal void AtualizarCheckList(int? idUltimoServico, ChecklistModel checklistDados)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion Resetar Dados Mensais
+
+        public void AtualizarCondicoesFisicas(int? _idUltimoServico, CondicoesFisicasModel _condicoesFisicasDados)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

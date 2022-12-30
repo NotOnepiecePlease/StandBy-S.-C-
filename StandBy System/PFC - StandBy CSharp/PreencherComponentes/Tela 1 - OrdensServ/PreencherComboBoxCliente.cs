@@ -8,9 +8,9 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
 {
     internal class PreencherComboBoxCliente : MensagensErro
     {
-        public List<ClienteDados> Preencher()
+        public List<ClienteModel> Preencher()
         {
-            List<ClienteDados> listClientes = new List<ClienteDados>();
+            List<ClienteModel> listClientes = new List<ClienteModel>();
             SqlConnection con = OpenConnection();
             string query = "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado, cl_data_nascimento, cl_endereco, cl_bairro, cl_estado from tb_clientes order by cl_id";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -31,7 +31,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                     string bairro = (dataReader.IsDBNull(7)) || (dataReader.GetString(7) == "") ? "---" : dataReader.GetString(7);
                     string estado = dataReader.IsDBNull(8) ? "---" : dataReader.GetString(8);
 
-                    listClientes.Add(new ClienteDados
+                    listClientes.Add(new ClienteModel
                     {
                         ID = id,
                         Nome = nome,

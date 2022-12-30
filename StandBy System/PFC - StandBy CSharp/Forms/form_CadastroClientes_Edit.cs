@@ -65,7 +65,7 @@ namespace PFC___StandBy_CSharp.Forms
             chkFeminino.OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
-        private ClienteDados PegarDadosDoCliente()
+        private ClienteModel PegarDadosDoCliente()
         {
             string dataNascimento = "";
             if (txtDataNascimento.Text != "SEM DATA")
@@ -84,7 +84,7 @@ namespace PFC___StandBy_CSharp.Forms
                 sexo = 'F';
             }
 
-            ClienteDados dadosCliente = new ClienteDados
+            ClienteModel dadosCliente = new ClienteModel
             {
                 ID = id,
                 Nome = txtNomeCliente.Text,
@@ -112,7 +112,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             try
             {
-                ClienteDados dadosCliente = PegarDadosDoCliente();
+                ClienteModel dadosCliente = PegarDadosDoCliente();
 
                 //Validar a data (armengadas mas funciona perfeitamente hehe)
                 if (txtDataNascimento.Text != "SEM DATA")
