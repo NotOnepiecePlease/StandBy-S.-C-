@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Concluidos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblBuscandoPorNome = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnArrowLeft = new FontAwesome.Sharp.IconPictureBox();
             this.btnArrowRight = new FontAwesome.Sharp.IconPictureBox();
             this.lblResultadosExibidos = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -66,7 +67,6 @@
             this.editarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblBuscandoPorNome = new Bunifu.UI.WinForms.BunifuLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnArrowRight)).BeginInit();
@@ -93,6 +93,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 651);
             this.panel1.TabIndex = 0;
+            // 
+            // lblBuscandoPorNome
+            // 
+            this.lblBuscandoPorNome.AllowParentOverrides = false;
+            this.lblBuscandoPorNome.AutoEllipsis = false;
+            this.lblBuscandoPorNome.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblBuscandoPorNome.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblBuscandoPorNome.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscandoPorNome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblBuscandoPorNome.Location = new System.Drawing.Point(525, 41);
+            this.lblBuscandoPorNome.Name = "lblBuscandoPorNome";
+            this.lblBuscandoPorNome.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblBuscandoPorNome.Size = new System.Drawing.Size(230, 32);
+            this.lblBuscandoPorNome.TabIndex = 15;
+            this.lblBuscandoPorNome.Text = "Buscando por nome...";
+            this.lblBuscandoPorNome.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblBuscandoPorNome.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblBuscandoPorNome.Visible = false;
             // 
             // btnArrowLeft
             // 
@@ -228,8 +246,8 @@
             // table_ServicosConcluidos
             // 
             this.table_ServicosConcluidos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.table_ServicosConcluidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.table_ServicosConcluidos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.table_ServicosConcluidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -237,14 +255,14 @@
             this.table_ServicosConcluidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.table_ServicosConcluidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.table_ServicosConcluidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table_ServicosConcluidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table_ServicosConcluidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.table_ServicosConcluidos.ColumnHeadersHeight = 35;
             this.table_ServicosConcluidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.table_ServicosConcluidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -273,21 +291,21 @@
             this.table_ServicosConcluidos.Name = "table_ServicosConcluidos";
             this.table_ServicosConcluidos.ReadOnly = true;
             this.table_ServicosConcluidos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table_ServicosConcluidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table_ServicosConcluidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.table_ServicosConcluidos.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
-            this.table_ServicosConcluidos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Snow;
+            this.table_ServicosConcluidos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.table_ServicosConcluidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.table_ServicosConcluidos.Size = new System.Drawing.Size(1274, 568);
             this.table_ServicosConcluidos.TabIndex = 1;
@@ -470,23 +488,6 @@
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(79, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
-            // lblBuscandoPorNome
-            // 
-            this.lblBuscandoPorNome.AllowParentOverrides = false;
-            this.lblBuscandoPorNome.AutoEllipsis = false;
-            this.lblBuscandoPorNome.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblBuscandoPorNome.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscandoPorNome.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBuscandoPorNome.Location = new System.Drawing.Point(525, 41);
-            this.lblBuscandoPorNome.Name = "lblBuscandoPorNome";
-            this.lblBuscandoPorNome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblBuscandoPorNome.Size = new System.Drawing.Size(230, 32);
-            this.lblBuscandoPorNome.TabIndex = 15;
-            this.lblBuscandoPorNome.Text = "Buscando por nome...";
-            this.lblBuscandoPorNome.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblBuscandoPorNome.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.lblBuscandoPorNome.Visible = false;
             // 
             // form_Concluidos
             // 

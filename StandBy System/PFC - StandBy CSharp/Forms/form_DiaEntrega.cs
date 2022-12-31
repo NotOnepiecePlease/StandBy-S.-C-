@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Models;
+using static PFC___StandBy_CSharp.Enum.Enum;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -30,6 +31,7 @@ namespace PFC___StandBy_CSharp.Forms
         private CondicoesFisicasModel condicoesFisicasDados;
         private int[] corGeral;
         private bool isAtualizacao;
+        private OrdemServico ordemServico;
 
         public form_DiaEntrega(form_OrdensServ _formServ, int[] _cor)
         {
@@ -48,10 +50,10 @@ namespace PFC___StandBy_CSharp.Forms
         /// <param name="_checklistDados">Dados do checklist</param>
         /// <param name="_condicoesFisicasDados">Dados das condicoes fisicas</param>
         /// <param name="_isAtualizacao">true = se o form for pra atualizar dados que ja existem | false = se o form for pra inserir dados que ainda nao existem</param>
-        public form_DiaEntrega(form_OrdemServico _formServ, int[] _cor, ClienteModel _clienteDados, ServicoModel _servicoDados, ChecklistModel _checklistDados, CondicoesFisicasModel _condicoesFisicasDados, bool _isAtualizacao)
+        public form_DiaEntrega(form_OrdemServico _formServ, int[] _cor, ClienteModel _clienteDados, ServicoModel _servicoDados, ChecklistModel _checklistDados, CondicoesFisicasModel _condicoesFisicasDados, OrdemServico _tipo)
         {
             InitializeComponent();
-            isAtualizacao = _isAtualizacao;
+            ordemServico = _tipo;
             corGeral = _cor;
             formOrdemServico = _formServ;
             clienteDados = _clienteDados;
@@ -140,67 +142,68 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void InserirServico(int _diasParaEntrega, int _seExistePrazo)
         {
-            if (string.IsNullOrWhiteSpace(formOrdemServico.cmbMarca.Text))
+
+            try
             {
-                MessageBox.Show(@"Voce esqueceu de selecionar a marca do aparelho", "ALERTA!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                imagemSenhaPatternDoCliente = GetCopyImage(@"./PasswordPattern/Screen.png");
+                var dir = new DirectoryInfo(@"./PasswordPattern/");
+                var files = dir.GetFiles().FirstOrDefault();
+                files?.Delete();
             }
-            else if (string.IsNullOrWhiteSpace(formOrdemServico.txtModelo.Text))
+            catch (Exception)
             {
-                MessageBox.Show(@"Voce esqueceu de digitar o modelo do aparelho", "ALERTA!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // ignored
             }
-            else
+
+            DateTime previsaoEntrega = DateTime.Now;
+            previsaoEntrega = previsaoEntrega.AddDays(_diasParaEntrega);
+
+            servicoDados.PrevisaoEntrega = previsaoEntrega;
+            servicoDados.ExistePrazo = _seExistePrazo;
+            servicoDados.SenhaPatternAndroid = ConvertImageToByte(imagemSenhaPatternDoCliente);
+
+            if (ordemServico == OrdemServico.AtualizarTudo)
             {
-                try
-                {
-                    imagemSenhaPatternDoCliente = GetCopyImage(@"./PasswordPattern/Screen.png");
-                    var dir = new DirectoryInfo(@"./PasswordPattern/");
-                    var files = dir.GetFiles().FirstOrDefault();
-                    files?.Delete();
-                }
-                catch (Exception)
-                {
-                    // ignored
-                }
+                ad.AtualizarOS(clienteDados, servicoDados);
 
-                DateTime previsaoEntrega = DateTime.Now;
-                previsaoEntrega = previsaoEntrega.AddDays(_diasParaEntrega);
+                //TEM Q TERMINAR AQUI
+                ad.AtualizarCheckList(servicoDados.ID, checklistDados);
 
-                servicoDados.PrevisaoEntrega = previsaoEntrega;
-                servicoDados.ExistePrazo = _seExistePrazo;
-                servicoDados.SenhaPatternAndroid = ConvertImageToByte(imagemSenhaPatternDoCliente);
+                ad.AtualizarCondicoesFisicas(servicoDados.ID, condicoesFisicasDados);
 
-                if (isAtualizacao == true)
-                {
-                    ad.AtualizarOS(clienteDados, servicoDados);
-
-                    //TEM Q TERMINAR AQUI
-                    //ad.AtualizarCheckList(servicoDados.ID, checklistDados);
-
-                    //ad.AtualizarCondicoesFisicas(servicoDados.ID, condicoesFisicasDados);
-
-                    //ms.InserirServicoSucesso();
-                }
-                else
-                {
-                    //Inserir a OS e pegar a ID do serv que ele acabou de inserir
-                    int idUltimoServico = id.InserirOS(clienteDados, servicoDados);
-
-                    //-1 = Servico nao foi inserido
-                    if (idUltimoServico != -1)
-                    {
-                        //Inserir o checklist
-                        id.InserirCheckList(idUltimoServico, checklistDados);
-
-                        //inserir as Condicoes fisicas
-                        id.InserirCondicoesFisicas(idUltimoServico, condicoesFisicasDados);
-
-                        ////Mensagem de Conclusao
-                        ms.InserirServicoSucesso();
-                    }
-                }
+                ms.AlterarServicoSucesso();
             }
+            else if (ordemServico == OrdemServico.NovaInsercao)
+            {
+                //Inserir a OS e pegar a ID do serv que ele acabou de inserir
+                int idUltimoServico = id.InserirOS(clienteDados, servicoDados);
+
+                //-1 = Servico nao foi inserido
+                if (idUltimoServico != -1)
+                {
+                    //Inserir o checklist
+                    id.InserirCheckList(idUltimoServico, checklistDados);
+
+                    //inserir as Condicoes fisicas
+                    id.InserirCondicoesFisicas(idUltimoServico, condicoesFisicasDados);
+
+                    ////Mensagem de Conclusao
+                    ms.InserirServicoSucesso();
+                }
+            }else if (ordemServico == OrdemServico.ExisteApenasServico)
+            {
+
+                ad.AtualizarOS(clienteDados, servicoDados);
+                //Inserir o checklist
+                id.InserirCheckList(servicoDados.ID ?? 0, checklistDados);
+
+                //inserir as Condicoes fisicas
+                id.InserirCondicoesFisicas(servicoDados.ID ?? 0, condicoesFisicasDados);
+
+                ////Mensagem de Conclusao
+                ms.InserirServicoSucesso();
+            }
+            
             this.Close();
 
             #region Metodo antigo de insercao (tela antiga)

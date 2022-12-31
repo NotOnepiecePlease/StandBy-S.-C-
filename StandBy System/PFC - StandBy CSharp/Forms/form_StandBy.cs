@@ -31,7 +31,7 @@ namespace PFC___StandBy_CSharp.Forms
         private static readonly GraficoServicosMensais graficoMensal = new GraficoServicosMensais();
         private Verificar verificarUpd = new Verificar();
         private Form currentChildForm;
-
+        private form_ServicoPrincipal formPrincipal;
         private string statusAtualizacao = "";
         private static readonly int mesAtual = DateTime.Now.Month;
         private int[] corGeral = new int[3] { 0, 0, 0 };
@@ -49,6 +49,9 @@ namespace PFC___StandBy_CSharp.Forms
             //Aqui ele verifica a versao do sistema.
             workerVerificarVersao.RunWorkerAsync();
 
+            formPrincipal = new form_ServicoPrincipal();
+            formPrincipal.Show();
+            formPrincipal.Hide();
             //Logs.GerarLogErro();
         }
 
@@ -191,8 +194,10 @@ namespace PFC___StandBy_CSharp.Forms
             //open only form
             if (currentChildForm != null)
             {
+
                 currentChildForm.Close();
                 currentChildForm.Dispose();
+                
             }
             currentChildForm = formFilho;
             //End
@@ -202,8 +207,20 @@ namespace PFC___StandBy_CSharp.Forms
             panelCentral.Controls.Add(formFilho);
             panelCentral.Tag = formFilho;
             formFilho.BringToFront();
+            formPrincipal.Hide(); //Form principal é carregado diferente dos outros
             formFilho.Show();
             //lblAbaAtual.Text = formFilho.Text;
+        }
+
+        private void OpenChildForm(form_ServicoPrincipal formFilho)
+        {
+            formFilho.TopLevel = false;
+            formFilho.FormBorderStyle = FormBorderStyle.None;
+            formFilho.Dock = DockStyle.Fill;
+            panelCentral.Controls.Add(formFilho);
+            panelCentral.Tag = formFilho;
+            formFilho.BringToFront();
+            formFilho.Show();
         }
 
         private void btnServicosPorMes_Click(object sender, EventArgs e)
@@ -452,10 +469,15 @@ namespace PFC___StandBy_CSharp.Forms
             if (Application.OpenForms.OfType<form_ServicoPrincipal>().Count() > 0)
             {
                 //MessageBox.Show("O Form2 já está aberto!");
+                OpenChildForm(formPrincipal);
             }
             else
             {
-                OpenChildForm(new form_ServicoPrincipal());
+                if (formPrincipal == null)
+                {
+                    formPrincipal = new form_ServicoPrincipal();
+                    OpenChildForm(formPrincipal);
+                }
             }
         }
 

@@ -354,7 +354,11 @@ namespace PFC___StandBy_CSharp.Dados
             }
         }
 
-        internal int AtualizarOS(ClienteModel _clienteDados, ServicoModel _servicoDados)
+
+
+        #endregion Resetar Dados Mensais
+
+        internal void AtualizarOS(ClienteModel _clienteDados, ServicoModel _servicoDados)
         {
             try
             {
@@ -382,42 +386,115 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@idServico", SqlDbType.Int).Value = _servicoDados.ID;
                     cmd.Parameters.Add("@Data", SqlDbType.Date).Value = _servicoDados.DataServico;
                     cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = _clienteDados.ID;
-                    cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho;
+                    cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho ;
                     cmd.Parameters.Add("@Marca", SqlDbType.VarChar).Value = _servicoDados.Marca;
                     cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = _servicoDados.Aparelho;
-                    cmd.Parameters.Add("@Cor", SqlDbType.VarChar).Value = _servicoDados.Cor;
-                    cmd.Parameters.Add("@MeiSerialNumber", SqlDbType.VarChar).Value = _servicoDados.MeiSerialNumber;
-                    cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = _servicoDados.Senha;
-                    cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = _servicoDados.Situacao;
+                    cmd.Parameters.Add("@Cor", SqlDbType.VarChar).Value = _servicoDados.Cor ?? Convert.DBNull;
+                    cmd.Parameters.Add("@MeiSerialNumber", SqlDbType.VarChar).Value = _servicoDados.MeiSerialNumber ?? Convert.DBNull;
+                    cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = _servicoDados.Senha ?? Convert.DBNull;
+                    cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = _servicoDados.Situacao ?? Convert.DBNull;
                     cmd.Parameters.Add("@Status0_1", SqlDbType.Int).Value = _servicoDados.Status;
-                    cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid;
-                    cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente;
-                    cmd.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = _servicoDados.Observacoes;
+                    cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid ?? Convert.DBNull;
+                    cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente ?? Convert.DBNull;
+                    cmd.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = _servicoDados.Observacoes ?? Convert.DBNull;
                     cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
 
-                    int idRegistrada = (int)cmd.ExecuteScalar();
+                    cmd.ExecuteNonQuery();
 
-                    return idRegistrada;
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 //Mensagem de Erro
-                mErro.ErroInserirServico(ex);
-                return -1;
+                mErro.ErroAoAtualizarOrdemServico(e);
+
             }
         }
 
-        internal void AtualizarCheckList(int? idUltimoServico, ChecklistModel checklistDados)
+        internal void AtualizarCheckList(int? _idServico, ChecklistModel checklistDados)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (SqlConnection conexaoSQL = OpenConnection())
+                {
+                    string query = "UPDATE tb_checklist " +
+                                   "SET ch_biometria_faceid = @Biometria, " +
+                                   "ch_microfone = @Microfone, " +
+                                   "ch_tela = @Tela, " +
+                                   "ch_chip = @Chip, " +
+                                   "ch_botoes = @Botoes, " +
+                                   "ch_sensor = @Sensor, " +
+                                   "ch_cameras = @Cameras, " +
+                                   "ch_auricular = @Auricular, " +
+                                   "ch_wifi = @Wifi, " +
+                                   "ch_altofalante = @AltoFalante, " +
+                                   "ch_bluetooth = @Bluetooth, " +
+                                   "ch_carregamento = @Carregamento, " +
+                                   "ch_observacoes = @Observacoes, " +
+                                   "ch_ausente = @Ausente, " +
+                                   "ch_motivo_ausencia = @MotivoAusencia " +
+                                   "WHERE ch_sv_idservico = @idServico";
+
+                    SqlCommand cmd = new SqlCommand(query, conexaoSQL);
+
+                    cmd.Parameters.AddWithValue("@Biometria", checklistDados.BiometriaFaceID ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Microfone", checklistDados.Microfone ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Tela", checklistDados.Tela ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Chip", checklistDados.Chip ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Botoes", checklistDados.Botoes ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Sensor", checklistDados.Sensor ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Cameras", checklistDados.Cameras ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Auricular", checklistDados.Auricular ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Wifi", checklistDados.Wifi ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@AltoFalante", checklistDados.AltoFalante ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Bluetooth", checklistDados.Bluetooth ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Carregamento", checklistDados.Carregamento ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Observacoes", checklistDados.Observacoes ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Ausente", checklistDados.Ausente);
+                    cmd.Parameters.AddWithValue("@MotivoAusencia", checklistDados.MotivoAusencia ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@idServico", _idServico);
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (Exception e)
+            {
+                //Mensagem de Erro
+                mErro.ErroAoAtualizarCheckList(e);
+            }
         }
-
-        #endregion Resetar Dados Mensais
-
-        public void AtualizarCondicoesFisicas(int? _idUltimoServico, CondicoesFisicasModel _condicoesFisicasDados)
+        public void AtualizarCondicoesFisicas(int? _idServico, CondicoesFisicasModel _condicoesFisicasDados)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (SqlConnection conexao = OpenConnection())
+                {
+                    string query = "UPDATE tb_condicoes_fisicas " +
+                                   "SET cf_pelicula = @Pelicula, " +
+                                   "cf_tela = @Tela, " +
+                                   "cf_tampa = @Tampa, " +
+                                   "cf_aro = @Aro, " +
+                                   "cf_botoes = @Botoes, " +
+                                   "cf_lente_camera = @LenteCamera " +
+                                   "WHERE cf_sv_idservico = @idServico";
+
+                    SqlCommand cmd = new SqlCommand(query, conexao);
+                    cmd.Parameters.AddWithValue("@Pelicula", _condicoesFisicasDados.Pelicula ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Tela", _condicoesFisicasDados.Tela ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Tampa", _condicoesFisicasDados.Tampa ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Aro", _condicoesFisicasDados.Aro ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Botoes", _condicoesFisicasDados.Botoes ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@LenteCamera", _condicoesFisicasDados.LenteCamera ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@idServico", _idServico);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                mErro.ErroAoAtualizarCondicoesFisicas(e);
+            }
         }
     }
 }

@@ -76,10 +76,18 @@ namespace PFC___StandBy_CSharp.Forms
                     {
                         if (servico != null)
                         {
+                            //if (servico[0].ToString() == "34002")
+                            //{
+
+                            //}
                             dataCad = Convert.ToDateTime(servico[1]);
                             dataPrev = Convert.ToDateTime(servico[6]);
-                            TimeSpan r = dataPrev.Subtract(dataCad);
-                            e.DisplayText = $"{r.TotalDays}";
+
+                            if (dataPrev != DateTime.MinValue)
+                            {
+                                TimeSpan r = dataPrev.Subtract(dataCad);
+                                e.DisplayText = $"{r.TotalDays}";
+                            }
 
                             //Linha que demorei dias pra encontrar, aqui voce seta a aparencia da celula como prioridade maxima, nenhum evento pode modificar
                             //veja o ranking aqui: https://docs.devexpress.com/WindowsForms/114444/Common-Features/Application-Appearance-and-Skin-Colors

@@ -98,5 +98,28 @@ namespace PFC___StandBy_CSharp.Dados
                 }
             }
         }
+
+        public bool VerificarExistenciaOrdemServico(int _ordemServico)
+        {
+            using (SqlConnection conexao = OpenConnection())
+            {
+                SqlDataReader dr;
+                string query = "SELECT sv_id " +
+                               "FROM tb_servicos " +
+                               "WHERE sv_ordem_serv = @idOrdemServico";
+
+                SqlCommand cmd = new SqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@idOrdemServico", _ordemServico);
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    return true;
+                }
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

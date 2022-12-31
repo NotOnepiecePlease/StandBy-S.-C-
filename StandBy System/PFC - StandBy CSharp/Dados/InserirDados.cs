@@ -86,14 +86,14 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho;
                     cmd.Parameters.Add("@Marca", SqlDbType.VarChar).Value = _servicoDados.Marca;
                     cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = _servicoDados.Aparelho;
-                    cmd.Parameters.Add("@Cor", SqlDbType.VarChar).Value = _servicoDados.Cor;
-                    cmd.Parameters.Add("@MeiSerialNumber", SqlDbType.VarChar).Value = _servicoDados.MeiSerialNumber;
-                    cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = _servicoDados.Senha;
-                    cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = _servicoDados.Situacao;
+                    cmd.Parameters.Add("@Cor", SqlDbType.VarChar).Value = _servicoDados.Cor ?? Convert.DBNull;
+                    cmd.Parameters.Add("@MeiSerialNumber", SqlDbType.VarChar).Value = _servicoDados.MeiSerialNumber ?? Convert.DBNull;
+                    cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = _servicoDados.Senha ?? Convert.DBNull;
+                    cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = _servicoDados.Situacao ?? Convert.DBNull;
                     cmd.Parameters.Add("@Status0_1", SqlDbType.Int).Value = _servicoDados.Status;
-                    cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid;
-                    cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente;
-                    cmd.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = _servicoDados.Observacoes;
+                    cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid ?? Convert.DBNull;
+                    cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente ?? Convert.DBNull;
+                    cmd.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = _servicoDados.Observacoes ?? Convert.DBNull;
                     cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
 
                     int idRegistrada = (int)cmd.ExecuteScalar();
@@ -329,12 +329,12 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.AddWithValue("@OrdemServico", _condicoesFisicasDados.OrdemServico);
                     cmd.Parameters.AddWithValue("@DataCondicoesFisicas", _condicoesFisicasDados.DataCondicoesFisicas);
                     cmd.Parameters.AddWithValue("@FK_IdServico", _idServico);
-                    cmd.Parameters.AddWithValue("@Pelicula", _condicoesFisicasDados.Pelicula);
-                    cmd.Parameters.AddWithValue("@Tela", _condicoesFisicasDados.Tela);
-                    cmd.Parameters.AddWithValue("@Tampa", _condicoesFisicasDados.Tampa);
-                    cmd.Parameters.AddWithValue("@Aro", _condicoesFisicasDados.Aro);
-                    cmd.Parameters.AddWithValue("@Botoes", _condicoesFisicasDados.Botoes);
-                    cmd.Parameters.AddWithValue("@LenteCamera", _condicoesFisicasDados.LenteCamera);
+                    cmd.Parameters.AddWithValue("@Pelicula", _condicoesFisicasDados.Pelicula ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Tela", _condicoesFisicasDados.Tela ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Tampa", _condicoesFisicasDados.Tampa ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Aro", _condicoesFisicasDados.Aro ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@Botoes", _condicoesFisicasDados.Botoes ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@LenteCamera", _condicoesFisicasDados.LenteCamera ?? Convert.DBNull);
 
                     cmd.ExecuteNonQuery();
                 }

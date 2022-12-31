@@ -19,5 +19,12 @@ namespace PFC___StandBy_CSharp.Enum
             Notebook,
             Computador
         }
+
+        public enum OrdemServico
+        {
+            AtualizarTudo,
+            ExisteApenasServico,
+            NovaInsercao
+        }
     }
 }

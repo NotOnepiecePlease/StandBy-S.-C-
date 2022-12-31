@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
+using DevExpress.CodeParser;
 using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.PreencherComponentes;
@@ -35,7 +36,6 @@ namespace PFC___StandBy_CSharp.Forms
         public form_OrdemServico(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico)
         {
             InitializeComponent();
-            var a = lblIdCliente.Text;
             CarregarComboxClientes();
             if (_isNovaOrdemServico == true)
             {
@@ -206,24 +206,41 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnSalvarOrdemServico_Click(object sender, EventArgs e)
         {
             //ZerarTodosCampos();
-            bool isExisteCondFisicasCheclist = verifExistencia.VerificarExistenciaCondFisicasChecklist(Convert.ToInt32(lblIdServico.Text));
-            if (isExisteCondFisicasCheclist == true)
+
+            if (string.IsNullOrWhiteSpace(cmbMarca.Text))
             {
-                InserirOrdemServico(true);
+                MessageBox.Show(@"Voce esqueceu de selecionar a marca do aparelho", "ALERTA!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (string.IsNullOrWhiteSpace(txtModelo.Text))
+            {
+                MessageBox.Show(@"Voce esqueceu de selecionar o modelo do aparelho", "ALERTA!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                InserirOrdemServico(false);
+
+                bool isExisteOrdemServico = verifExistencia.VerificarExistenciaOrdemServico(Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ')));
+                if (isExisteOrdemServico == true)
+                {
+                    bool isExisteCondFisicasChecklist = verifExistencia.VerificarExistenciaCondFisicasChecklist(Convert.ToInt32(lblIdServico.Text));
+                    if (isExisteCondFisicasChecklist == true)
+                    {
+                        InserirOrdemServico(OrdemServico.AtualizarTudo);
+                    }
+                    else
+                    {
+                        InserirOrdemServico(OrdemServico.ExisteApenasServico);
+                    }
+                }
+                else
+                {
+                    InserirOrdemServico(OrdemServico.NovaInsercao);
+                }
             }
-            //this.Close();
         }
 
-        private void AtualizarOrdemServico()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void InserirOrdemServico(bool _isAtualizacao)
+        private void InserirOrdemServico(OrdemServico _tipo)
         {
             ClienteModel clienteDados = new ClienteModel();
             ServicoModel servicoDados = new ServicoModel();
@@ -252,6 +269,10 @@ namespace PFC___StandBy_CSharp.Forms
             #endregion If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
 
             //Dados do servico
+            if (lblIdServico.Text != "IdServico")
+            {
+                servicoDados.ID = Convert.ToInt32(lblIdServico.Text);
+            }
             servicoDados.OrdemServico = ordemServicoID;
             servicoDados.DataServico = DateTime.Now;
             servicoDados.FK_IdCliente = clienteDados.ID;
@@ -297,7 +318,7 @@ namespace PFC___StandBy_CSharp.Forms
             condicoesFisicasDados.Botoes = cmbBotoes.Text;
             condicoesFisicasDados.LenteCamera = cmbLenteCamera.Text;
 
-            form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral, clienteDados, servicoDados, checklistDados, condicoesFisicasDados, _isAtualizacao);
+            form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral, clienteDados, servicoDados, checklistDados, condicoesFisicasDados, _tipo);
             formPrevisaoEntrega.ShowDialog();
         }
 

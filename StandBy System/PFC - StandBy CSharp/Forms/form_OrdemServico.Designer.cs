@@ -33,6 +33,9 @@ namespace PFC___StandBy_CSharp.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServico));
             Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
             this.panel_FormOrdemServico = new System.Windows.Forms.Panel();
+            this.lblIdChecklist = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblIdCondicoesFisicas = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblIdServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnTipoAparelho = new DevExpress.XtraEditors.SimpleButton();
             this.lblIdCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -123,9 +126,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblDataOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.lblIdServico = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblIdCondicoesFisicas = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblIdChecklist = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel_FormOrdemServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
@@ -175,6 +175,39 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel_FormOrdemServico.Size = new System.Drawing.Size(1230, 720);
             this.panel_FormOrdemServico.TabIndex = 1;
             this.panel_FormOrdemServico.TabStop = true;
+            // 
+            // lblIdChecklist
+            // 
+            this.lblIdChecklist.AutoSize = true;
+            this.lblIdChecklist.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblIdChecklist.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIdChecklist.Location = new System.Drawing.Point(1169, 96);
+            this.lblIdChecklist.Name = "lblIdChecklist";
+            this.lblIdChecklist.Size = new System.Drawing.Size(53, 17);
+            this.lblIdChecklist.TabIndex = 79;
+            this.lblIdChecklist.Text = "idCheck";
+            // 
+            // lblIdCondicoesFisicas
+            // 
+            this.lblIdCondicoesFisicas.AutoSize = true;
+            this.lblIdCondicoesFisicas.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblIdCondicoesFisicas.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIdCondicoesFisicas.Location = new System.Drawing.Point(1169, 76);
+            this.lblIdCondicoesFisicas.Name = "lblIdCondicoesFisicas";
+            this.lblIdCondicoesFisicas.Size = new System.Drawing.Size(56, 17);
+            this.lblIdCondicoesFisicas.TabIndex = 78;
+            this.lblIdCondicoesFisicas.Text = "IdCondF";
+            // 
+            // lblIdServico
+            // 
+            this.lblIdServico.AutoSize = true;
+            this.lblIdServico.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblIdServico.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIdServico.Location = new System.Drawing.Point(1169, 57);
+            this.lblIdServico.Name = "lblIdServico";
+            this.lblIdServico.Size = new System.Drawing.Size(61, 17);
+            this.lblIdServico.TabIndex = 77;
+            this.lblIdServico.Text = "IdServico";
             // 
             // btnTipoAparelho
             // 
@@ -1827,6 +1860,10 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbMarca.ItemHeight = 26;
             this.cmbMarca.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbMarca.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.cmbMarca.Items.AddRange(new object[] {
+            "SAMSUNG",
+            "LG",
+            "MOTOROLA"});
             this.cmbMarca.ItemTopMargin = 3;
             this.cmbMarca.Location = new System.Drawing.Point(107, 49);
             this.cmbMarca.Name = "cmbMarca";
@@ -2048,39 +2085,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.moverForm.Horizontal = true;
             this.moverForm.TargetControl = null;
             this.moverForm.Vertical = true;
-            // 
-            // lblIdServico
-            // 
-            this.lblIdServico.AutoSize = true;
-            this.lblIdServico.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblIdServico.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblIdServico.Location = new System.Drawing.Point(1169, 57);
-            this.lblIdServico.Name = "lblIdServico";
-            this.lblIdServico.Size = new System.Drawing.Size(61, 17);
-            this.lblIdServico.TabIndex = 77;
-            this.lblIdServico.Text = "IdServico";
-            // 
-            // lblIdCondicoesFisicas
-            // 
-            this.lblIdCondicoesFisicas.AutoSize = true;
-            this.lblIdCondicoesFisicas.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblIdCondicoesFisicas.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblIdCondicoesFisicas.Location = new System.Drawing.Point(1169, 76);
-            this.lblIdCondicoesFisicas.Name = "lblIdCondicoesFisicas";
-            this.lblIdCondicoesFisicas.Size = new System.Drawing.Size(56, 17);
-            this.lblIdCondicoesFisicas.TabIndex = 78;
-            this.lblIdCondicoesFisicas.Text = "IdCondF";
-            // 
-            // lblIdChecklist
-            // 
-            this.lblIdChecklist.AutoSize = true;
-            this.lblIdChecklist.Font = new System.Drawing.Font("Segoe UI", 9.5F);
-            this.lblIdChecklist.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblIdChecklist.Location = new System.Drawing.Point(1169, 96);
-            this.lblIdChecklist.Name = "lblIdChecklist";
-            this.lblIdChecklist.Size = new System.Drawing.Size(53, 17);
-            this.lblIdChecklist.TabIndex = 79;
-            this.lblIdChecklist.Text = "idCheck";
             // 
             // form_OrdemServico
             // 

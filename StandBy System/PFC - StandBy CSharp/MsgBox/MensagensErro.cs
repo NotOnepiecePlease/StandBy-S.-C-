@@ -117,14 +117,19 @@ namespace PFC___StandBy_CSharp.MsgBox
             MessageBox.Show("(OR-SV15)Erro ao buscar Ordem de Servico!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        internal void ErroAoBuscarServicoCondicoesFisicasChecklist(Exception e)
+        public void ErroAoBuscarServicoCondicoesFisicasChecklist(Exception e)
         {
             MessageBox.Show("(OR-SV16)Erro ao buscar dados O.S!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        internal void ErroAoBuscarServico(Exception e)
+        public void ErroAoBuscarServico(Exception e)
         {
             MessageBox.Show("(OR-SV17)Erro ao buscar serviço\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void ErroAoAtualizarOrdemServico(Exception e)
+        {
+            MessageBox.Show("(OR-SV18)Erro ao atualizar O.S!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion ORDENS DE SERVICO
@@ -136,6 +141,11 @@ namespace PFC___StandBy_CSharp.MsgBox
             MessageBox.Show("(CHK01)Erro ao inserir o checklist!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        public void ErroAoAtualizarCheckList(Exception e)
+        {
+            MessageBox.Show("(CHK02)Erro ao atualizar o checklist!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         #endregion CHECKLIST
 
         #region CONDICOES FISICAS
@@ -143,6 +153,11 @@ namespace PFC___StandBy_CSharp.MsgBox
         public void ErroAoInserirCondicoesFisicas(Exception e)
         {
             MessageBox.Show("(CD-FI01)Erro ao inserir cond. fis.!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal void ErroAoAtualizarCondicoesFisicas(Exception e)
+        {
+            MessageBox.Show("(CD-FI02)Erro ao atualizar cond. fis.!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion CONDICOES FISICAS
@@ -228,6 +243,12 @@ namespace PFC___StandBy_CSharp.MsgBox
             MessageBox.Show("(SYS-LC01)Erro ao ler dados regedit!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        
+
+
+
         #endregion LICENÇA
+
+
     }
 }

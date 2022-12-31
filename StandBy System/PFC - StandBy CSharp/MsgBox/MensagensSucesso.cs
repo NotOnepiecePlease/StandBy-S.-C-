@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Forms;
 
@@ -117,6 +118,8 @@ namespace PFC___StandBy_CSharp.MsgBox
             //form_ALERT message = new form_ALERT("Cliente deletado com sucesso!", form_ALERT.AlertType.Sucesso);
             //message.Show();
         }
+
+        
 
         #endregion CADASTRO DE CLIENTE
     }
