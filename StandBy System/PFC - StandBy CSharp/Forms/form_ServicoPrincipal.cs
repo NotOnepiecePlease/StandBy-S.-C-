@@ -23,6 +23,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private GridColumn column;
         private BuscarDados buscarDados = new BuscarDados();
+        public int[] corGeral = new[] { 0, 0, 0 };
 
         public form_ServicoPrincipal()
         {
@@ -54,7 +55,7 @@ namespace PFC___StandBy_CSharp.Forms
         //    MessageBox.Show("2");
         //}
 
-        private async void PopularGridview()
+        public async void PopularGridview()
         {
             await dataSourceGridServicos.FillAsync();
             await SetarCorColunaOS();
@@ -78,7 +79,6 @@ namespace PFC___StandBy_CSharp.Forms
                         {
                             //if (servico[0].ToString() == "34002")
                             //{
-
                             //}
                             dataCad = Convert.ToDateTime(servico[1]);
                             dataPrev = Convert.ToDateTime(servico[6]);
@@ -114,7 +114,7 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnCelular_Click(object sender, EventArgs e)
         {
-            form_OrdemServico ordemServico = new form_OrdemServico(Aparelho.Celular, 0, true);
+            form_OrdemServico ordemServico = new form_OrdemServico(Aparelho.Celular, 0, true, corGeral);
             ordemServico.ShowDialog();
         }
 
@@ -172,13 +172,23 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void btnEditarOrdemServico_ItemClick(object sender, ItemClickEventArgs e)
+        private IRow BuscarDadosLinhaSelecionada()
         {
             var indexLinhaAtual = gridviewServicos.FocusedRowHandle;
             var dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
             var servico = dadosDaLinhaAtual as IRow;
 
-            (ServicoModel servico, CondicoesFisicasModel condF, ChecklistModel chkList) dadosServico = buscarDados.BuscarOS(Convert.ToInt32(servico[0]));
+            return servico;
+        }
+
+        private void btnEditarOrdemServico_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //Pegando os dados da linha que o usuario clicou
+            var servico = BuscarDadosLinhaSelecionada();
+
+            //Pegando todos os dados necessarios com base na ID
+            int idServico = Convert.ToInt32(servico[0]);
+            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico = buscarDados.BuscarOS(idServico);
 
             if (string.IsNullOrWhiteSpace(dadosServico.servico.TipoAparelho))
             {
@@ -202,9 +212,9 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void AbrirOrdemServico(Aparelho _tipoAparelho, ServicoModel _servico, CondicoesFisicasModel _condicoesFisicas, ChecklistModel _checklist)
+        private void AbrirOrdemServico(Aparelho _tipoAparelho, ServicoEstrutura _servico, CondicoesFisicasEstrutura _condicoesFisicas, ChecklistEstrutura _checklist)
         {
-            form_OrdemServico formOrdemServico = new form_OrdemServico(_tipoAparelho, _servico.FK_IdCliente, false);
+            form_OrdemServico formOrdemServico = new form_OrdemServico(_tipoAparelho, _servico.FK_IdCliente, false, corGeral);
             formOrdemServico.lblOrdemServico.Text = $@"OS {_servico.OrdemServico:0000}";
             formOrdemServico.lblDataOrdemServico.Text = $@"{_servico.DataServico:G}";
             formOrdemServico.lblIdCliente.Text = _servico.FK_IdCliente.ToString();
@@ -286,7 +296,82 @@ namespace PFC___StandBy_CSharp.Forms
                 formOrdemServico.txtChecklistMotivoAusencia.Text = ""; ;
             }
 
+            formOrdemServico.cmbCliente.Enabled = false;
             formOrdemServico.ShowDialog();
+        }
+
+        private void btnEditarServico_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            EditarUmServico();
+        }
+
+        public void EditarUmServico()
+        {
+            var dadosLinhaSelecionada = BuscarDadosLinhaSelecionada();
+            int idServico = Convert.ToInt32(dadosLinhaSelecionada[0]);
+            string nomeCliente = dadosLinhaSelecionada[2].ToString();
+            var servico = buscarDados.BuscarOS_ApenasServico(idServico);
+
+            string _TELCliente = buscarDados.BuscarTelefoneCliente(servico.FK_IdCliente);
+            string _TEL_RECCliente = buscarDados.BuscarTelefoneRecadoCliente(servico.FK_IdCliente);
+            float lucro = float.Parse(servico.Lucro.ToString());
+            form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(corGeral);
+            try
+            {
+                string _CPFCliente = buscarDados.BuscarCPFCliente(servico.FK_IdCliente);
+                editarServicos.txtCPFCliente.Text = _CPFCliente;
+                editarServicos.txtAcessoriosEdit.Text = servico.Acessorios;
+            }
+            catch (Exception)
+            {
+            }
+            editarServicos.lblIDservico.Text = servico.ID.ToString();
+            editarServicos.lblIDcliente.Text = servico.FK_IdCliente.ToString();
+            editarServicos.dtpDataEdit.Value = servico.DataServico;
+            editarServicos.lblClienteNome.Text = nomeCliente;
+            editarServicos.txtClienteNome.Text = nomeCliente;
+
+            editarServicos.txtTelefoneCliente.Text = _TELCliente;
+            editarServicos.txtTelefoneRecado.Text = _TEL_RECCliente;
+            editarServicos.txtAparelhoEdit.Text = servico.Aparelho;
+            editarServicos.txtDefeitoEdit.Text = servico.Defeito;
+            editarServicos.txtSenhaEdit.Text = servico.Senha;
+            editarServicos.txtSituacaoEdit.Text = servico.Situacao;
+
+            editarServicos.txtServicoValorEdit.Text = servico.ValorServico.ToString();
+            editarServicos.txtPecaValorEdit.Text = servico.ValorPeca.ToString();
+            editarServicos.txtLucroValorEdit.Text = servico.Lucro.ToString();
+            editarServicos.txtServicoEdit.Text = servico.Servico;
+            if (servico.PrevisaoEntrega == null)
+            {
+                editarServicos.dtpDataEditPrevisao.FormatCustom = " ";
+                editarServicos.dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+                editarServicos.chkSemData.Checked = true;
+            }
+            else
+            {
+                editarServicos.dtpDataEditPrevisao.Value = (DateTime)servico.PrevisaoEntrega;
+                editarServicos.chkSemData.Checked = false;
+            }
+
+            if (lucro > 0)
+            {
+                editarServicos.txtLucroValorEdit.LineIdleColor = Color.LimeGreen;
+            }
+            else if (lucro == 0)
+            {
+                editarServicos.txtLucroValorEdit.LineIdleColor = Color.White;
+            }
+            else
+            {
+                editarServicos.txtLucroValorEdit.LineIdleColor = Color.Red;
+            }
+
+            editarServicos.LabelResize();
+
+            editarServicos.ShowDialog();
+            //table_OrdensServicos.Refresh();
+            //refreshTable();
         }
     }
 }

@@ -171,7 +171,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Alterar Clientes
 
-        public void AlterarClientes(ClienteModel _dadosDoCliente)
+        public void AlterarClientes(ClienteEstrutura _dadosDoCliente)
         {
             try
             {
@@ -243,13 +243,10 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    //string procedure = "Servico_Concluir";
                     string query = "update tb_servicos set sv_status = 0, sv_data_conclusao = GETDATE() where sv_id = @sv_id";
 
-                    //SqlCommand cmd = new SqlCommand(procedure, con);
                     SqlCommand cmd = new SqlCommand(query, con);
 
-                    //cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@sv_id", _idServico);
                     cmd.ExecuteNonQuery();
 
@@ -354,11 +351,9 @@ namespace PFC___StandBy_CSharp.Dados
             }
         }
 
-
-
         #endregion Resetar Dados Mensais
 
-        internal void AtualizarOS(ClienteModel _clienteDados, ServicoModel _servicoDados)
+        internal void AtualizarOS(ClienteEstrutura _clienteDados, ServicoEstrutura _servicoDados)
         {
             try
             {
@@ -386,7 +381,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@idServico", SqlDbType.Int).Value = _servicoDados.ID;
                     cmd.Parameters.Add("@Data", SqlDbType.Date).Value = _servicoDados.DataServico;
                     cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = _clienteDados.ID;
-                    cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho ;
+                    cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho;
                     cmd.Parameters.Add("@Marca", SqlDbType.VarChar).Value = _servicoDados.Marca;
                     cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = _servicoDados.Aparelho;
                     cmd.Parameters.Add("@Cor", SqlDbType.VarChar).Value = _servicoDados.Cor ?? Convert.DBNull;
@@ -400,18 +395,16 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
 
                     cmd.ExecuteNonQuery();
-
                 }
             }
             catch (Exception e)
             {
                 //Mensagem de Erro
                 mErro.ErroAoAtualizarOrdemServico(e);
-
             }
         }
 
-        internal void AtualizarCheckList(int? _idServico, ChecklistModel checklistDados)
+        internal void AtualizarCheckList(int? _idServico, ChecklistEstrutura checklistDados)
         {
             try
             {
@@ -455,7 +448,6 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.AddWithValue("@idServico", _idServico);
 
                     cmd.ExecuteNonQuery();
-
                 }
             }
             catch (Exception e)
@@ -464,7 +456,8 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoAtualizarCheckList(e);
             }
         }
-        public void AtualizarCondicoesFisicas(int? _idServico, CondicoesFisicasModel _condicoesFisicasDados)
+
+        public void AtualizarCondicoesFisicas(int? _idServico, CondicoesFisicasEstrutura _condicoesFisicasDados)
         {
             try
             {

@@ -24,6 +24,16 @@ namespace PFC___StandBy_CSharp.Forms
         public int ImprimiuAlgumaNota = 0;
         public bool atualizarOuNaoATabelaDeServicos = false;
 
+        public form_OrdensServ_Edit(int[] _cor)
+        {
+            InitializeComponent();
+            this.ActiveControl = txtAparelhoEdit;
+            corGeral = _cor;
+            MudarCores();
+            CalcularLucro();
+            dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+        }
+
         public form_OrdensServ_Edit(form_OrdensServ formServ, int[] _cor)
         {
             InitializeComponent();
@@ -461,7 +471,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 //passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(lblIDservico.Text));
                 passShow.lblSemPadrao.Visible = true;
-                passShow.lblDesejaCadastrar.Text = "Deseja Alterar?";
+                passShow.lblDesejaCadastrar.Text = @"Deseja Alterar?";
                 passShow.CentralizarLabels(passShow.lblDesejaCadastrar);
                 passShow.lblDesejaCadastrar.Visible = true;
                 passShow.btnSim.Visible = true;

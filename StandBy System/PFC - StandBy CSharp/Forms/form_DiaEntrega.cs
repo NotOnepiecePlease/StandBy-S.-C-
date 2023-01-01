@@ -25,10 +25,10 @@ namespace PFC___StandBy_CSharp.Forms
         private MensagensSucesso ms = new MensagensSucesso();
         private PreencherTableOrdensServicos preencherTableServ = new PreencherTableOrdensServicos();
         private Image imagemSenhaPatternDoCliente = null;
-        private ClienteModel clienteDados;
-        private ServicoModel servicoDados;
-        private ChecklistModel checklistDados;
-        private CondicoesFisicasModel condicoesFisicasDados;
+        private ClienteEstrutura clienteDados;
+        private ServicoEstrutura servicoDados;
+        private ChecklistEstrutura checklistDados;
+        private CondicoesFisicasEstrutura condicoesFisicasDados;
         private int[] corGeral;
         private bool isAtualizacao;
         private OrdemServico ordemServico;
@@ -50,7 +50,7 @@ namespace PFC___StandBy_CSharp.Forms
         /// <param name="_checklistDados">Dados do checklist</param>
         /// <param name="_condicoesFisicasDados">Dados das condicoes fisicas</param>
         /// <param name="_isAtualizacao">true = se o form for pra atualizar dados que ja existem | false = se o form for pra inserir dados que ainda nao existem</param>
-        public form_DiaEntrega(form_OrdemServico _formServ, int[] _cor, ClienteModel _clienteDados, ServicoModel _servicoDados, ChecklistModel _checklistDados, CondicoesFisicasModel _condicoesFisicasDados, OrdemServico _tipo)
+        public form_DiaEntrega(form_OrdemServico _formServ, int[] _cor, ClienteEstrutura _clienteDados, ServicoEstrutura _servicoDados, ChecklistEstrutura _checklistDados, CondicoesFisicasEstrutura _condicoesFisicasDados, OrdemServico _tipo)
         {
             InitializeComponent();
             ordemServico = _tipo;
@@ -142,7 +142,6 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void InserirServico(int _diasParaEntrega, int _seExistePrazo)
         {
-
             try
             {
                 imagemSenhaPatternDoCliente = GetCopyImage(@"./PasswordPattern/Screen.png");
@@ -190,9 +189,9 @@ namespace PFC___StandBy_CSharp.Forms
                     ////Mensagem de Conclusao
                     ms.InserirServicoSucesso();
                 }
-            }else if (ordemServico == OrdemServico.ExisteApenasServico)
+            }
+            else if (ordemServico == OrdemServico.ExisteApenasServico)
             {
-
                 ad.AtualizarOS(clienteDados, servicoDados);
                 //Inserir o checklist
                 id.InserirCheckList(servicoDados.ID ?? 0, checklistDados);
@@ -203,7 +202,7 @@ namespace PFC___StandBy_CSharp.Forms
                 ////Mensagem de Conclusao
                 ms.InserirServicoSucesso();
             }
-            
+
             this.Close();
 
             #region Metodo antigo de insercao (tela antiga)

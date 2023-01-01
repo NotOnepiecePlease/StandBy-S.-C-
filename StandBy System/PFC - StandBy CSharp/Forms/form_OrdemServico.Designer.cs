@@ -78,11 +78,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistBiometria = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.group_CondicoesBalcao = new System.Windows.Forms.GroupBox();
             this.txtCondicoesBalcao = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.group_RelatoCliente = new System.Windows.Forms.GroupBox();
             this.txtRelatoCliente = new System.Windows.Forms.RichTextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.group_OutrasObservacoes = new System.Windows.Forms.GroupBox();
             this.txtObservacoes = new System.Windows.Forms.RichTextBox();
             this.group_CondicoesFisicas = new System.Windows.Forms.GroupBox();
             this.bunifuSeparator7 = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -134,9 +134,9 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.group_CondicoesBalcao.SuspendLayout();
+            this.group_RelatoCliente.SuspendLayout();
+            this.group_OutrasObservacoes.SuspendLayout();
             this.group_CondicoesFisicas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             this.group_InformacoesAparelho.SuspendLayout();
@@ -163,9 +163,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel_FormOrdemServico.Controls.Add(this.txtBuscaGoogle);
             this.panel_FormOrdemServico.Controls.Add(this.pictureBox2);
             this.panel_FormOrdemServico.Controls.Add(this.groupBox4);
-            this.panel_FormOrdemServico.Controls.Add(this.groupBox2);
-            this.panel_FormOrdemServico.Controls.Add(this.groupBox1);
-            this.panel_FormOrdemServico.Controls.Add(this.groupBox3);
+            this.panel_FormOrdemServico.Controls.Add(this.group_CondicoesBalcao);
+            this.panel_FormOrdemServico.Controls.Add(this.group_RelatoCliente);
+            this.panel_FormOrdemServico.Controls.Add(this.group_OutrasObservacoes);
             this.panel_FormOrdemServico.Controls.Add(this.group_CondicoesFisicas);
             this.panel_FormOrdemServico.Controls.Add(this.group_InformacoesAparelho);
             this.panel_FormOrdemServico.Controls.Add(this.panel_OrdemServCodigo);
@@ -277,6 +277,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnConcluirImprimir.TabIndex = 73;
             this.btnConcluirImprimir.TabStop = false;
             this.btnConcluirImprimir.Zoom = 15;
+            this.btnConcluirImprimir.Click += new System.EventHandler(this.btnConcluirImprimir_Click);
             // 
             // btnConcluirServico
             // 
@@ -289,6 +290,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnConcluirServico.TabIndex = 72;
             this.btnConcluirServico.TabStop = false;
             this.btnConcluirServico.Zoom = 15;
+            this.btnConcluirServico.Click += new System.EventHandler(this.btnConcluirServico_Click);
             // 
             // btnSalvarOrdemServico
             // 
@@ -1148,18 +1150,18 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel13.TabIndex = 19;
             this.bunifuCustomLabel13.Text = "BIOMETRIA / FACE-ID";
             // 
-            // groupBox2
+            // group_CondicoesBalcao
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.groupBox2.Controls.Add(this.txtCondicoesBalcao);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox2.Location = new System.Drawing.Point(12, 564);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(778, 143);
-            this.groupBox2.TabIndex = 25;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "CONDIÇÕES DO APARELHO NO BALCÃO";
+            this.group_CondicoesBalcao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.group_CondicoesBalcao.Controls.Add(this.txtCondicoesBalcao);
+            this.group_CondicoesBalcao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.group_CondicoesBalcao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.group_CondicoesBalcao.Location = new System.Drawing.Point(12, 564);
+            this.group_CondicoesBalcao.Name = "group_CondicoesBalcao";
+            this.group_CondicoesBalcao.Size = new System.Drawing.Size(778, 143);
+            this.group_CondicoesBalcao.TabIndex = 25;
+            this.group_CondicoesBalcao.TabStop = false;
+            this.group_CondicoesBalcao.Text = "CONDIÇÕES DO APARELHO NO BALCÃO";
             // 
             // txtCondicoesBalcao
             // 
@@ -1175,18 +1177,18 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtCondicoesBalcao.Text = "Foi passado um orçamento para o cliente de 200 reais, o pagamento vai ser parcela" +
     "do em 12 vezes, o cliente ficou de trazer mais.";
             // 
-            // groupBox1
+            // group_RelatoCliente
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.groupBox1.Controls.Add(this.txtRelatoCliente);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 423);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(778, 135);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "RELATO DO CLIENTE";
+            this.group_RelatoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.group_RelatoCliente.Controls.Add(this.txtRelatoCliente);
+            this.group_RelatoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.group_RelatoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.group_RelatoCliente.Location = new System.Drawing.Point(12, 423);
+            this.group_RelatoCliente.Name = "group_RelatoCliente";
+            this.group_RelatoCliente.Size = new System.Drawing.Size(778, 135);
+            this.group_RelatoCliente.TabIndex = 25;
+            this.group_RelatoCliente.TabStop = false;
+            this.group_RelatoCliente.Text = "RELATO DO CLIENTE";
             // 
             // txtRelatoCliente
             // 
@@ -1201,18 +1203,18 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtRelatoCliente.TabIndex = 5;
             this.txtRelatoCliente.Text = "Tava cagando e ai disse que caiu no vaso nao sei como";
             // 
-            // groupBox3
+            // group_OutrasObservacoes
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.groupBox3.Controls.Add(this.txtObservacoes);
-            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox3.Location = new System.Drawing.Point(12, 309);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(778, 108);
-            this.groupBox3.TabIndex = 24;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "OUTRAS OBSERVAÇÕES";
+            this.group_OutrasObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.group_OutrasObservacoes.Controls.Add(this.txtObservacoes);
+            this.group_OutrasObservacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.group_OutrasObservacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.group_OutrasObservacoes.Location = new System.Drawing.Point(12, 309);
+            this.group_OutrasObservacoes.Name = "group_OutrasObservacoes";
+            this.group_OutrasObservacoes.Size = new System.Drawing.Size(778, 108);
+            this.group_OutrasObservacoes.TabIndex = 24;
+            this.group_OutrasObservacoes.TabStop = false;
+            this.group_OutrasObservacoes.Text = "OUTRAS OBSERVAÇÕES";
             // 
             // txtObservacoes
             // 
@@ -2097,6 +2099,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.Name = "form_OrdemServico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_OrdemServico";
+            this.Load += new System.EventHandler(this.form_OrdemServico_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_OrdemServico_KeyDown);
             this.panel_FormOrdemServico.ResumeLayout(false);
             this.panel_FormOrdemServico.PerformLayout();
@@ -2108,9 +2111,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
+            this.group_CondicoesBalcao.ResumeLayout(false);
+            this.group_RelatoCliente.ResumeLayout(false);
+            this.group_OutrasObservacoes.ResumeLayout(false);
             this.group_CondicoesFisicas.ResumeLayout(false);
             this.group_CondicoesFisicas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
@@ -2157,11 +2160,11 @@ namespace PFC___StandBy_CSharp.Forms
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator4;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox group_OutrasObservacoes;
         public System.Windows.Forms.RichTextBox txtObservacoes;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox group_CondicoesBalcao;
         public System.Windows.Forms.RichTextBox txtCondicoesBalcao;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox group_RelatoCliente;
         public System.Windows.Forms.RichTextBox txtRelatoCliente;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.PictureBox pictureBox2;

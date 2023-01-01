@@ -21,11 +21,11 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Buscar OS pela ID (servico)
 
-        public ServicoModel BuscarOS_ApenasServico(int _idServico)
+        public ServicoEstrutura BuscarOS_ApenasServico(int _idServico)
         {
-            ServicoModel servico = new ServicoModel();
-            CondicoesFisicasModel condicoesFisicas = new CondicoesFisicasModel();
-            ChecklistModel checklist = new ChecklistModel();
+            ServicoEstrutura servico = new ServicoEstrutura();
+            CondicoesFisicasEstrutura condicoesFisicas = new CondicoesFisicasEstrutura();
+            ChecklistEstrutura checklist = new ChecklistEstrutura();
             try
             {
                 using (SqlConnection con = OpenConnection())
@@ -77,11 +77,11 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Buscar OS pela ID (servico, condicao fisica, checklist)
 
-        public (ServicoModel, CondicoesFisicasModel, ChecklistModel) BuscarOS(int _idServico)
+        public (ServicoEstrutura, CondicoesFisicasEstrutura, ChecklistEstrutura) BuscarOS(int _idServico)
         {
-            ServicoModel servico = new ServicoModel();
-            CondicoesFisicasModel condicoesFisicas = new CondicoesFisicasModel();
-            ChecklistModel checklist = new ChecklistModel();
+            ServicoEstrutura servico = new ServicoEstrutura();
+            CondicoesFisicasEstrutura condicoesFisicas = new CondicoesFisicasEstrutura();
+            ChecklistEstrutura checklist = new ChecklistEstrutura();
             try
             {
                 using (SqlConnection con = OpenConnection())
@@ -171,7 +171,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Buscar numero da ordem de servico e a data pela ID
 
-        public ServicoModel BuscarOrdemServicoEDataPelaId(int _idServico)
+        public ServicoEstrutura BuscarOrdemServicoEDataPelaId(int _idServico)
         {
             if (_idServico == -1)
             {
@@ -183,7 +183,7 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    ServicoModel dadosDoServico = null;
+                    ServicoEstrutura dadosDoServico = null;
                     string query = "select sv_id from tb_servicos where sv_id = @IdServico";
 
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -562,7 +562,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Buscar ID ultima Ordem de Servico
 
-        public int? BuscarUltimaIdOrdemServico()
+        public int BuscarUltimaIdOrdemServico()
         {
             try
             {
@@ -577,13 +577,13 @@ namespace PFC___StandBy_CSharp.Dados
                     {
                         return dr.GetInt32(0);
                     }
-                    return null; //Retornando null porque 0 é um valor valido no banco.
+                    return -1; //Retornando -1 porque 0 é um valor valido no banco.
                 }
             }
             catch (Exception ex)
             {
                 me.ErroAoBuscarIDUltimaOrdemServico(ex);
-                return null;
+                return -1;
             }
         }
 

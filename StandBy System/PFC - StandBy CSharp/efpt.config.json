@@ -8,17 +8,47 @@
    "ModelNamespace": null,
    "OutputContextPath": "Context",
    "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "PFC___StandBy_CSharp",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
+         "Name": "[dbo].[tb_checklist]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[tb_clientes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tb_comp_items]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tb_condicoes_fisicas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tb_garantias]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tb_gastos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tb_orcamento]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tb_servicos]",
          "ObjectType": 0
       }
    ],
-   "UiHint": "DESKTOP-7MQSE1Q\\SQLEXPRESS.standby_org",
+   "UiHint": "angelpc\\sqlexpress.standby_org.dbo",
+   "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,
    "UseDbContextSplitting": false,
@@ -28,12 +58,11 @@
    "UseInflector": false,
    "UseLegacyPluralizer": false,
    "UseManyToManyEntity": false,
-   "UseNoConstructor": false,
    "UseNoDefaultConstructor": false,
-   "UseNoNavigations": false,
    "UseNoObjectFilter": false,
    "UseNodaTime": false,
    "UseNullableReferences": false,
    "UseSchemaFolders": false,
-   "UseSpatial": false
+   "UseSpatial": false,
+   "UseT4": false
 }

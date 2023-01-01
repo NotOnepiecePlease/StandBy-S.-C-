@@ -88,7 +88,7 @@ namespace PFC___StandBy_CSharp.Forms
                 HttpResponseMessage response = await client.GetAsync("https://servicodados.ibge.gov.br/api/v1/localidades/distritos");
                 string content = await response.Content.ReadAsStringAsync();
 
-                var jsonDeserializado = JsonConvert.DeserializeObject<List<MunicipioModel.Municipio>>(content);
+                var jsonDeserializado = JsonConvert.DeserializeObject<List<MunicipioEstrutura.Municipio>>(content);
 
                 jsonDeserializado?.OrderBy(x => x.Nome)
                     .ToList()
@@ -194,10 +194,8 @@ namespace PFC___StandBy_CSharp.Forms
             //open only form
             if (currentChildForm != null)
             {
-
                 currentChildForm.Close();
                 currentChildForm.Dispose();
-                
             }
             currentChildForm = formFilho;
             //End
@@ -219,6 +217,7 @@ namespace PFC___StandBy_CSharp.Forms
             formFilho.Dock = DockStyle.Fill;
             panelCentral.Controls.Add(formFilho);
             panelCentral.Tag = formFilho;
+            formFilho.corGeral = corGeral;
             formFilho.BringToFront();
             formFilho.Show();
         }
@@ -486,6 +485,15 @@ namespace PFC___StandBy_CSharp.Forms
             if (Application.OpenForms.OfType<form_CadastroClientes>().Count() > 0)
             {
                 //MessageBox.Show("O Form2 já está aberto!");
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i].Name == "form_CadastroClientes")
+                    {
+                        Application.OpenForms[i].Close();
+                        OpenChildForm(new form_CadastroClientes(corGeral));
+                        break;
+                    }
+                }
             }
             else
             {
@@ -498,6 +506,15 @@ namespace PFC___StandBy_CSharp.Forms
             if (Application.OpenForms.OfType<form_Concluidos>().Count() > 0)
             {
                 //MessageBox.Show("O Form2 já está aberto!");
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i].Name == "form_Concluidos")
+                    {
+                        Application.OpenForms[i].Close();
+                        OpenChildForm(new form_Concluidos(corGeral));
+                        break;
+                    }
+                }
             }
             else
             {
@@ -510,6 +527,15 @@ namespace PFC___StandBy_CSharp.Forms
             if (Application.OpenForms.OfType<form_Lucros>().Count() > 0)
             {
                 //MessageBox.Show("O Form2 já está aberto!");
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i].Name == "form_Lucros")
+                    {
+                        Application.OpenForms[i].Close();
+                        OpenChildForm(new form_Lucros(corGeral));
+                        break;
+                    }
+                }
             }
             else
             {
@@ -525,7 +551,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
-                OpenChildForm(new form_Orcamento(corGeral));
+                //OpenChildForm(new form_Orcamento(corGeral));
             }
         }
 
@@ -537,8 +563,12 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void form_StandBy_KeyDown(object sender, KeyEventArgs e)
         {
-            //MessageBox.Show("Teste");
-            if (e.KeyCode == Keys.F2)
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.E)
+            {
+                form_DeveloperCommand formDeveloper = new form_DeveloperCommand();
+                formDeveloper.Show();
+            }
+            else if (e.KeyCode == Keys.F2)
             {
                 if (Application.OpenForms.OfType<form_OrdensServ>().Count() > 0)
                 {

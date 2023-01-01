@@ -69,7 +69,7 @@ namespace PFC___StandBy_CSharp.Dados
         //    }
         //}
 
-        public int InserirOS(ClienteModel _clienteDados, ServicoModel _servicoDados)
+        public int InserirOS(ClienteEstrutura _clienteDados, ServicoEstrutura _servicoDados)
         {
             try
             {
@@ -271,7 +271,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Inserir Checklist
 
-        public void InserirCheckList(int _idServico, ChecklistModel _checklistDados)
+        public void InserirCheckList(int _idServico, ChecklistEstrutura _checklistDados)
         {
             try
             {
@@ -315,7 +315,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #endregion Inserir Checklist
 
-        public void InserirCondicoesFisicas(int _idServico, CondicoesFisicasModel _condicoesFisicasDados)
+        public void InserirCondicoesFisicas(int _idServico, CondicoesFisicasEstrutura _condicoesFisicasDados)
         {
             try
             {

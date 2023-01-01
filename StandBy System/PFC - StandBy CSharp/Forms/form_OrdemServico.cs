@@ -15,7 +15,14 @@ using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.PreencherComponentes;
 using Syncfusion.DataSource.Extensions;
 using Syncfusion.Windows.Forms.Tools;
+using PFC___StandBy_CSharp.Utils;
 using static PFC___StandBy_CSharp.Enum.Enum;
+using ConvertImage = PFC___StandBy_CSharp.Utils.ConvertImage;
+using DevExpress.XtraEditors;
+using PFC___StandBy_CSharp.Context;
+using PFC___StandBy_CSharp.MsgBox;
+using PFC___StandBy_CSharp.Impressao;
+using DevExpress.XtraPrinting;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -23,19 +30,24 @@ namespace PFC___StandBy_CSharp.Forms
     [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Local")]
     public partial class form_OrdemServico : Form
     {
+        private standby_orgContext standbyDB = new standby_orgContext();
         private BuscarDados buscarDados = new BuscarDados();
         private VerificarExistencia verifExistencia = new VerificarExistencia();
-        private List<ClienteModel> listClientesComId = new List<ClienteModel>();
+        private List<ClienteEstrutura> listClientesComId = new List<ClienteEstrutura>();
+        private MensagensSucesso msgSucess = new MensagensSucesso();
         private readonly PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
         private int ultimoClienteAdicionadoID = 0;
-        private int? ordemServicoID = 0;
+        private int ordemServicoID = 0;
         private DataTable dt;
         private Aparelho tipoAparelhoGlobal;
         private int[] corGeral = new[] { 0, 0, 0 };
 
-        public form_OrdemServico(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico)
+        public form_OrdemServico(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico, int[] _corGeral)
         {
             InitializeComponent();
+            var a = lblIdServico.Text;
+            corGeral = _corGeral;
+            SetarCores();
             CarregarComboxClientes();
             if (_isNovaOrdemServico == true)
             {
@@ -53,6 +65,16 @@ namespace PFC___StandBy_CSharp.Forms
             //ZerarTodosCampos();
             InicializarDatas();
             tipoAparelhoGlobal = _tipoAparelhoGlobal;
+            cmbStatusServico.SelectedItem = "AVALIAÇÃO";
+        }
+
+        private void SetarCores()
+        {
+            group_InformacoesAparelho.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            group_CondicoesFisicas.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            group_OutrasObservacoes.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            group_RelatoCliente.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            group_CondicoesBalcao.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void ZerarTodosCampos()
@@ -96,6 +118,11 @@ namespace PFC___StandBy_CSharp.Forms
             txtChecklistMotivoAusencia.Text = "";
 
             switchChecklistAusente.IsOn = false;
+        }
+
+        private void BuscarSenhaPattern()
+        {
+            picSenhaPattern.Image = ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
         }
 
         private void InicializarDatas()
@@ -169,11 +196,11 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void GerarNovaOrdemServico()
         {
-            int? ultimaOrdemServicoAdicionada = buscarDados.BuscarUltimaIdOrdemServico();
+            int ultimaOrdemServicoAdicionada = buscarDados.BuscarUltimaIdOrdemServico();
 
-            if (ultimaOrdemServicoAdicionada != null)
+            if (ultimaOrdemServicoAdicionada != -1)
             {
-                int? novaOrdemServico = ultimaOrdemServicoAdicionada + 1;
+                int novaOrdemServico = ultimaOrdemServicoAdicionada + 1;
                 lblOrdemServico.Text = $@"OS {novaOrdemServico:0000}";
                 ordemServicoID = novaOrdemServico;
             }
@@ -219,7 +246,6 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else
             {
-
                 bool isExisteOrdemServico = verifExistencia.VerificarExistenciaOrdemServico(Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ')));
                 if (isExisteOrdemServico == true)
                 {
@@ -242,10 +268,10 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void InserirOrdemServico(OrdemServico _tipo)
         {
-            ClienteModel clienteDados = new ClienteModel();
-            ServicoModel servicoDados = new ServicoModel();
-            ChecklistModel checklistDados = new ChecklistModel();
-            CondicoesFisicasModel condicoesFisicasDados = new CondicoesFisicasModel();
+            ClienteEstrutura clienteDados = new ClienteEstrutura();
+            ServicoEstrutura servicoDados = new ServicoEstrutura();
+            ChecklistEstrutura checklistDados = new ChecklistEstrutura();
+            CondicoesFisicasEstrutura condicoesFisicasDados = new CondicoesFisicasEstrutura();
 
             //Dados do cliente
             clienteDados.ID = Convert.ToInt32(lblIdCliente.Text);
@@ -335,8 +361,33 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void picSenhaPattern_Click(object sender, EventArgs e)
         {
-            form_PasswordPattern pp = new form_PasswordPattern(this, corGeral);
-            pp.ShowDialog();
+            VerSenhaPattern();
+        }
+
+        private void VerSenhaPattern()
+        {
+            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(corGeral))
+            {
+                passShow.pictureBox1.Image = ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
+                if (passShow.pictureBox1.Image == null)
+                {
+                    passShow.lblSemPadrao.Visible = true;
+                    passShow.lblDesejaCadastrar.Visible = true;
+                    passShow.btnSim.Visible = true;
+                    passShow.btnNao.Visible = true;
+                    passShow.lblIDServico.Text = lblIdServico.Text;
+                }
+                else
+                {
+                    passShow.lblSemPadrao.Visible = false;
+                    passShow.lblDesejaCadastrar.Visible = false;
+                    passShow.btnSim.Visible = false;
+                    passShow.btnNao.Visible = false;
+                    passShow.lblIDServico.Text = lblIdServico.Text;
+                }
+
+                passShow.ShowDialog();
+            }
         }
 
         private void form_OrdemServico_KeyDown(object sender, KeyEventArgs e)
@@ -344,6 +395,53 @@ namespace PFC___StandBy_CSharp.Forms
             if (e.KeyData == Keys.Escape)
             {
                 this.Close();
+            }
+        }
+
+        private void form_OrdemServico_Load(object sender, EventArgs e)
+        {
+            BuscarSenhaPattern();
+        }
+
+        private void btnConcluirServico_Click(object sender, EventArgs e)
+        {
+            //if (XtraMessageBox.Show("Do you want to quit the application?", "Confirmation", MessageBoxButtons.YesNo) != DialogResult.No)
+            //{
+            //}
+            ////Completando servico com entity framework
+            if (MessageBox.Show(@"Deseja concluir esse serviço?", @"CONFIRMAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.No)
+            {
+                tb_servicos servico = standbyDB.tb_servicos.Find(Convert.ToInt32(lblIdServico.Text));
+                servico.sv_status = 0;
+                standbyDB.SaveChanges();
+
+                msgSucess.ConcluirServicoSucesso();
+            }
+        }
+
+        private void btnConcluirImprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                report_OrdemServico report = new report_OrdemServico();
+                report.Parameters["pIDServico"].Value = Convert.ToInt32(lblIdServico.Text);
+                //report.Parameters["clienteID"].Visible = false;
+                report.PrintingSystem.ShowPrintStatusDialog = false;
+                //documentViewer1.DocumentSource = report;
+                report.CreateDocument();
+                PrintToolBase tool = new PrintToolBase(report.PrintingSystem);
+                //tool.PrinterSettings.
+                tool.Print("Microsoft Print to PDF");
+                //using (var printTool = new DevExpress.XtraReports.UI.ReportPrintTool(report))
+                //{
+                //    //   printTool.Print(sPrinterDeliveryTkt);
+                //    printTool.Report.CreateDocument(false); // <- ADD THIS LINE
+                //    printTool.PrintingSystem.ExportToPdf(@"teste.pdf");
+                //}
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
             }
         }
     }
