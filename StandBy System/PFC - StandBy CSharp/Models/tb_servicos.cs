@@ -18,7 +18,7 @@ namespace PFC___StandBy_CSharp.Models
         public int sv_id { get; set; }
         public int? sv_ordem_serv { get; set; }
         [Column(TypeName = "date")]
-        public DateTime? sv_data { get; set; }
+        public DateTime sv_data { get; set; }
         public int sv_cl_idcliente { get; set; }
         [StringLength(50)]
         public string sv_tipo_aparelho { get; set; }
@@ -64,7 +64,9 @@ namespace PFC___StandBy_CSharp.Models
         [StringLength(8000)]
         public string sv_relato_cliente { get; set; }
         [StringLength(5000)]
-        public string sv_observacoes { get; set; }
+        public string sv_condicoes_balcao { get; set; }
+        [StringLength(5000)]
+        public string sv_solucao { get; set; }
         [StringLength(20)]
         public string sv_avaliacao_servico { get; set; }
 

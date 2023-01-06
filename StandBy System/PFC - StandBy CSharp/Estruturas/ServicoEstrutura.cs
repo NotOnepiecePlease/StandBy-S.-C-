@@ -58,7 +58,8 @@ namespace PFC___StandBy_CSharp.Models
 
         public string TempoRestanteParaEntregar { get; set; } = null;
         public string RelatoCliente { get; set; } = null;
-        public string Observacoes { get; set; } = null;
+        public string CondicoesBalcao { get; set; } = null;
+        public string Solucao { get; set; } = null;
 
         /// <summary>
         /// Avaliacao, completo ou Aprovado

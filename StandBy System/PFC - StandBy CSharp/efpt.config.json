@@ -47,7 +47,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "angelpc\\sqlexpress.standby_org.dbo",
+   "UiHint": "ANGELPC\\SQLEXPRESS.standby_org",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,

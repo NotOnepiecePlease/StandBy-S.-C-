@@ -13,6 +13,8 @@ namespace PFC___StandBy_CSharp.Dados
         private readonly MensagensErro mErro = new MensagensErro();
         private readonly MensagensSucesso mSucesso = new MensagensSucesso();
 
+        #region Atualizar Coluna Tempo de Entrega
+
         public void AtualizarColunaTempoEntrega(SqlConnection _con, string _tempo, int _id)
         {
             try
@@ -34,6 +36,8 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoAtualizarTempoRestanteEntrega(e);
             }
         }
+
+        #endregion Atualizar Coluna Tempo de Entrega
 
         #region Atualizar coluna das cores
 
@@ -353,6 +357,10 @@ namespace PFC___StandBy_CSharp.Dados
 
         #endregion Resetar Dados Mensais
 
+        //V2
+
+        #region Atualizar Ordem de Servico
+
         internal void AtualizarOS(ClienteEstrutura _clienteDados, ServicoEstrutura _servicoDados)
         {
             try
@@ -372,7 +380,7 @@ namespace PFC___StandBy_CSharp.Dados
                                    "sv_status = @Status0_1, " +
                                    "sv_senha_pattern = @SenhaPattern, " +
                                    "sv_relato_cliente = @RelatoCliente, " +
-                                   "sv_observacoes = @Observacoes, " +
+                                   "sv_condicoes_balcao = @CondicoesBalcao, " +
                                    "sv_avaliacao_servico = @AvaliacaoServico " +
                                    "WHERE sv_id = @idServico";
 
@@ -391,7 +399,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@Status0_1", SqlDbType.Int).Value = _servicoDados.Status;
                     cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid ?? Convert.DBNull;
                     cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente ?? Convert.DBNull;
-                    cmd.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = _servicoDados.Observacoes ?? Convert.DBNull;
+                    cmd.Parameters.Add("@CondicoesBalcao", SqlDbType.VarChar).Value = _servicoDados.CondicoesBalcao ?? Convert.DBNull;
                     cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
 
                     cmd.ExecuteNonQuery();
@@ -403,6 +411,10 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoAtualizarOrdemServico(e);
             }
         }
+
+        #endregion Atualizar Ordem de Servico
+
+        #region Atualizar o CheckList
 
         internal void AtualizarCheckList(int? _idServico, ChecklistEstrutura checklistDados)
         {
@@ -423,7 +435,7 @@ namespace PFC___StandBy_CSharp.Dados
                                    "ch_altofalante = @AltoFalante, " +
                                    "ch_bluetooth = @Bluetooth, " +
                                    "ch_carregamento = @Carregamento, " +
-                                   "ch_observacoes = @Observacoes, " +
+                                   "ch_observacoes = @CondicoesBalcao, " +
                                    "ch_ausente = @Ausente, " +
                                    "ch_motivo_ausencia = @MotivoAusencia " +
                                    "WHERE ch_sv_idservico = @idServico";
@@ -442,7 +454,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.AddWithValue("@AltoFalante", checklistDados.AltoFalante ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@Bluetooth", checklistDados.Bluetooth ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@Carregamento", checklistDados.Carregamento ?? Convert.DBNull);
-                    cmd.Parameters.AddWithValue("@Observacoes", checklistDados.Observacoes ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@CondicoesBalcao", checklistDados.Observacoes ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@Ausente", checklistDados.Ausente);
                     cmd.Parameters.AddWithValue("@MotivoAusencia", checklistDados.MotivoAusencia ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@idServico", _idServico);
@@ -456,6 +468,10 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoAtualizarCheckList(e);
             }
         }
+
+        #endregion Atualizar o CheckList
+
+        #region Atualizar Condicoes Fisicas
 
         public void AtualizarCondicoesFisicas(int? _idServico, CondicoesFisicasEstrutura _condicoesFisicasDados)
         {
@@ -489,5 +505,7 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoAtualizarCondicoesFisicas(e);
             }
         }
+
+        #endregion Atualizar Condicoes Fisicas
     }
 }

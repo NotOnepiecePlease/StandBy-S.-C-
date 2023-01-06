@@ -17,7 +17,7 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_DiaEntrega : Form
     {
         private form_OrdensServ formServ1;
-        private form_OrdemServico formOrdemServico;
+        private form_OrdemServicoEntrada formOrdemServico;
         private InserirDados id = new InserirDados();
         private BuscarDados bd = new BuscarDados();
         private AlterarDados ad = new AlterarDados();
@@ -30,7 +30,6 @@ namespace PFC___StandBy_CSharp.Forms
         private ChecklistEstrutura checklistDados;
         private CondicoesFisicasEstrutura condicoesFisicasDados;
         private int[] corGeral;
-        private bool isAtualizacao;
         private OrdemServico ordemServico;
 
         public form_DiaEntrega(form_OrdensServ _formServ, int[] _cor)
@@ -50,7 +49,7 @@ namespace PFC___StandBy_CSharp.Forms
         /// <param name="_checklistDados">Dados do checklist</param>
         /// <param name="_condicoesFisicasDados">Dados das condicoes fisicas</param>
         /// <param name="_isAtualizacao">true = se o form for pra atualizar dados que ja existem | false = se o form for pra inserir dados que ainda nao existem</param>
-        public form_DiaEntrega(form_OrdemServico _formServ, int[] _cor, ClienteEstrutura _clienteDados, ServicoEstrutura _servicoDados, ChecklistEstrutura _checklistDados, CondicoesFisicasEstrutura _condicoesFisicasDados, OrdemServico _tipo)
+        public form_DiaEntrega(form_OrdemServicoEntrada _formServ, int[] _cor, ClienteEstrutura _clienteDados, ServicoEstrutura _servicoDados, ChecklistEstrutura _checklistDados, CondicoesFisicasEstrutura _condicoesFisicasDados, OrdemServico _tipo)
         {
             InitializeComponent();
             ordemServico = _tipo;

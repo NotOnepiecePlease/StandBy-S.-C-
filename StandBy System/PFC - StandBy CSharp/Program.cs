@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Impressao;
 using Syncfusion.Licensing;
+using DevExpress.XtraEditors;
 
 namespace PFC___StandBy_CSharp
 {
@@ -16,6 +17,9 @@ namespace PFC___StandBy_CSharp
         [STAThread]
         private static void Main()
         {
+            //Essa linha abaixa desbuga as rows cortadas do gridview, era um problema com DPI dos monitores em escala 125%
+            //WindowsFormsSettings.SetDPIAware();
+            WindowsFormsSettings.SetPerMonitorDpiAware();
             //https://www.syncfusion.com/account/downloads
             SyncfusionLicenseProvider.RegisterLicense("Nzc3MDU4QDMyMzAyZTMzMmUzMEhpVEkwRGI5V21BSk5KbFd6ckYwUUNLNkRXcm55T2tGRFAwTHV6VFNqcFU9");
             //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");

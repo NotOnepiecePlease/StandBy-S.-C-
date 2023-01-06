@@ -1151,7 +1151,7 @@
             this.xrRichText1.BackColor = System.Drawing.Color.Transparent;
             this.xrRichText1.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)));
             this.xrRichText1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Rtf", "[sv_observacoes]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Rtf", "[sv_condicoes_balcao]")});
             this.xrRichText1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F);
             this.xrRichText1.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 186.6634F);
             this.xrRichText1.Name = "xrRichText1";
@@ -2377,7 +2377,7 @@
             columnExpression75.ColumnName = "sv_relato_cliente";
             columnExpression75.Table = table5;
             column75.Expression = columnExpression75;
-            columnExpression76.ColumnName = "sv_observacoes";
+            columnExpression76.ColumnName = "sv_condicoes_balcao";
             columnExpression76.Table = table5;
             column76.Expression = columnExpression76;
             columnExpression77.ColumnName = "sv_avaliacao_servico";
@@ -2494,7 +2494,7 @@
             columnExpression103.ColumnName = "sv_relato_cliente";
             columnExpression103.Table = table6;
             column103.Expression = columnExpression103;
-            columnExpression104.ColumnName = "sv_observacoes";
+            columnExpression104.ColumnName = "sv_condicoes_balcao";
             columnExpression104.Table = table6;
             column104.Expression = columnExpression104;
             columnExpression105.ColumnName = "sv_avaliacao_servico";

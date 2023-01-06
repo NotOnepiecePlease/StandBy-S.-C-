@@ -10,8 +10,6 @@ namespace PFC___StandBy_CSharp.Dados
     public class BackupDados
     {
         private static string pastaRaiz = @"./data";
-
-        //public string caminhoTXT = @"./data/dts.txt";
         public string CAMINHO_TXT = @"./data/dts.ini";
 
         private List<string> DadosParaEscrever { get; } = new List<string>()
@@ -23,13 +21,6 @@ namespace PFC___StandBy_CSharp.Dados
             "PASS= 123adr",
             "TYPE= 0"
         };
-
-        //private const string Title = "#SQL Data Config";
-        //private const string DataSource = "IP= localhost\\SQLEXPRESS";
-        //private const string Port = "PORT= 1433";
-        //private const string Login = "USER= sa";
-        //private const string Pass = "PASS= 123adr";
-        //private const string Type = "TYPE= 0";
 
         public void criarPasta()
         {

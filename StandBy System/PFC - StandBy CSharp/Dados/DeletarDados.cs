@@ -13,6 +13,8 @@ namespace PFC___StandBy_CSharp.Dados
         private readonly MensagensSucesso mSucesso = new MensagensSucesso();
         private readonly VerificarExistencia ve = new VerificarExistencia();
 
+        #region Deletar Servico (Por ID)
+
         public void DeletarServico(int _idServico)
         {
             try
@@ -35,6 +37,10 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroDeletarServico(ex);
             }
         }
+
+        #endregion Deletar Servico (Por ID)
+
+        #region Deletar Cliente (Por ID)
 
         public void DeletarCliente(int _idcliente)
         {
@@ -66,6 +72,10 @@ namespace PFC___StandBy_CSharp.Dados
             }
         }
 
+        #endregion Deletar Cliente (Por ID)
+
+        #region Deletar Gastos (Por ID)
+
         public void DeletarGastos(int _id, BunifuCustomDataGrid tabelaGastos)
         {
             using (SqlConnection conexao = OpenConnection())
@@ -82,6 +92,10 @@ namespace PFC___StandBy_CSharp.Dados
                 tabelaGastos.Update();
             }
         }
+
+        #endregion Deletar Gastos (Por ID)
+
+        #region Deletar Garantia (Por ID)
 
         public void DeletarGarantia(int _idServico)
         {
@@ -103,5 +117,7 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoDeletarGarantia(ex);
             }
         }
+
+        #endregion Deletar Garantia (Por ID)
     }
 }

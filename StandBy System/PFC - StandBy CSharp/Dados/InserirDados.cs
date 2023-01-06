@@ -75,8 +75,8 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection conexaoSQL = OpenConnection())
                 {
-                    string query = "INSERT INTO tb_servicos (sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho,sv_marca, sv_aparelho,sv_cor, sv_mei_serialnumber, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_observacoes, sv_avaliacao_servico) " +
-                    "output INSERTED.sv_id VALUES (@OrdemServico, @Data, @FkCliente, @TipoAparelho,@Marca,@Aparelho,@Cor,@MeiSerialNumber, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @Observacoes, @AvaliacaoServico)";
+                    string query = "INSERT INTO tb_servicos (sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho,sv_marca, sv_aparelho,sv_cor, sv_mei_serialnumber, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_condicoes_balcao, sv_avaliacao_servico) " +
+                    "output INSERTED.sv_id VALUES (@OrdemServico, @Data, @FkCliente, @TipoAparelho,@Marca,@Aparelho,@Cor,@MeiSerialNumber, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @CondicoesBalcao, @AvaliacaoServico)";
 
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
 
@@ -93,7 +93,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@Status0_1", SqlDbType.Int).Value = _servicoDados.Status;
                     cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid ?? Convert.DBNull;
                     cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente ?? Convert.DBNull;
-                    cmd.Parameters.Add("@Observacoes", SqlDbType.VarChar).Value = _servicoDados.Observacoes ?? Convert.DBNull;
+                    cmd.Parameters.Add("@CondicoesBalcao", SqlDbType.VarChar).Value = _servicoDados.CondicoesBalcao ?? Convert.DBNull;
                     cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
 
                     int idRegistrada = (int)cmd.ExecuteScalar();
@@ -269,6 +269,8 @@ namespace PFC___StandBy_CSharp.Dados
 
         #endregion Inserir Orcamento
 
+        //V2
+
         #region Inserir Checklist
 
         public void InserirCheckList(int _idServico, ChecklistEstrutura _checklistDados)
@@ -282,7 +284,7 @@ namespace PFC___StandBy_CSharp.Dados
                                    "ch_altofalante, ch_bluetooth, ch_carregamento, ch_observacoes, ch_ausente, ch_motivo_ausencia)" +
                                    " VALUES (@OrdemServico, @DataChecklist, @FK_IdServico, @Biometria," +
                                    "@Microfone, @Tela, @Chip, @Botoes, @Sensor, @Cameras, @Auricular, @Wifi," +
-                                   "@AltoFalante, @Bluetooth, @Carregamento, @Observacoes, @Ausente, @MotivoAusencia)";
+                                   "@AltoFalante, @Bluetooth, @Carregamento, @CondicoesBalcao, @Ausente, @MotivoAusencia)";
 
                     SqlCommand cmd = new SqlCommand(query, conexao);
                     cmd.Parameters.AddWithValue("@OrdemServico", _checklistDados.OrdemServico);
@@ -300,7 +302,7 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.AddWithValue("@AltoFalante", _checklistDados.AltoFalante ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@Bluetooth", _checklistDados.Bluetooth ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@Carregamento", _checklistDados.Carregamento ?? Convert.DBNull);
-                    cmd.Parameters.AddWithValue("@Observacoes", _checklistDados.Observacoes ?? Convert.DBNull);
+                    cmd.Parameters.AddWithValue("@CondicoesBalcao", _checklistDados.Observacoes ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@Ausente", _checklistDados.Ausente);
                     cmd.Parameters.AddWithValue("@MotivoAusencia", _checklistDados.MotivoAusencia ?? Convert.DBNull);
 
@@ -314,6 +316,8 @@ namespace PFC___StandBy_CSharp.Dados
         }
 
         #endregion Inserir Checklist
+
+        #region Inserir Condicoes Fisicas
 
         public void InserirCondicoesFisicas(int _idServico, CondicoesFisicasEstrutura _condicoesFisicasDados)
         {
@@ -344,5 +348,7 @@ namespace PFC___StandBy_CSharp.Dados
                 mErro.ErroAoInserirCondicoesFisicas(ex);
             }
         }
+
+        #endregion Inserir Condicoes Fisicas
     }
 }

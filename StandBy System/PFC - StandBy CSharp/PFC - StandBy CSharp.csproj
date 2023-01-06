@@ -709,22 +709,28 @@
     <Compile Include="Forms\form_Orcamento_Adicionar.Designer.cs">
       <DependentUpon>form_Orcamento_Adicionar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\form_OrdemServico.cs">
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\form_OrdemServico.Designer.cs">
-      <DependentUpon>form_OrdemServico.cs</DependentUpon>
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoEntrada.Designer.cs">
+      <DependentUpon>form_OrdemServicoEntrada.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\form_OrdensServ.cs">
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoSaida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\form_OrdensServ.Designer.cs">
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoSaida.Designer.cs">
+      <DependentUpon>form_OrdemServicoSaida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ.Designer.cs">
       <DependentUpon>form_OrdensServ.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\form_OrdensServ_Edit.cs">
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\form_OrdensServ_Edit.Designer.cs">
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ_Edit.Designer.cs">
       <DependentUpon>form_OrdensServ_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\form_Pagamento.cs">
@@ -846,11 +852,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SqlDbConnect\conexao.cs" />
-    <Compile Include="standby_orgDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>standby_orgDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Utils\Constantes.cs" />
     <Compile Include="Utils\ConvertImage.cs" />
     <Compile Include="Utils\FormatarCampos.cs" />
     <EmbeddedResource Include="Forms\form_ALERT.resx">
@@ -907,13 +909,16 @@
     <EmbeddedResource Include="Forms\form_Orcamento_Adicionar.resx">
       <DependentUpon>form_Orcamento_Adicionar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\form_OrdemServico.resx">
-      <DependentUpon>form_OrdemServico.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdemServicoEntrada.resx">
+      <DependentUpon>form_OrdemServicoEntrada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\form_OrdensServ.resx">
+    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdemServicoSaida.resx">
+      <DependentUpon>form_OrdemServicoSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdensServ.resx">
       <DependentUpon>form_OrdensServ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\form_OrdensServ_Edit.resx">
+    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdensServ_Edit.resx">
       <DependentUpon>form_OrdensServ_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_Pagamento.resx">
@@ -970,17 +975,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="standby_orgDataSet.xsc">
-      <DependentUpon>standby_orgDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="standby_orgDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>standby_orgDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="standby_orgDataSet.xss">
-      <DependentUpon>standby_orgDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

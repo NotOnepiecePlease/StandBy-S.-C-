@@ -218,6 +218,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelCentral.Controls.Add(formFilho);
             panelCentral.Tag = formFilho;
             formFilho.corGeral = corGeral;
+            formFilho.PopularGridview();
             formFilho.BringToFront();
             formFilho.Show();
         }

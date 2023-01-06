@@ -15,6 +15,8 @@ namespace PFC___StandBy_CSharp.Models
         public DateTime ch_data { get; set; }
         public int ch_sv_idservico { get; set; }
         [StringLength(50)]
+        public string ch_tipo { get; set; }
+        [StringLength(50)]
         public string ch_biometria_faceid { get; set; }
         [StringLength(50)]
         public string ch_microfone { get; set; }

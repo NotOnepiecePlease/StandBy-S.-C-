@@ -31,8 +31,8 @@ namespace PFC___StandBy_CSharp.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_ServicoPrincipal));
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             this.colsv_ordem_serv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridcol_Prazo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,15 +56,19 @@ namespace PFC___StandBy_CSharp.Forms
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnEditarOrdemServico = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEditarOrdemServicoEntrada = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.btnEditarServico = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEditarOrdemServicoSaida = new DevExpress.XtraBars.BarButtonItem();
+            this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.popupServicos = new DevExpress.XtraBars.PopupMenu(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.bar5 = new DevExpress.XtraBars.Bar();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridctrlServicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewServicos)).BeginInit();
@@ -179,10 +183,10 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.dataSourceGridServicos.ConnectionName = "standby_MainConn";
             this.dataSourceGridServicos.Name = "dataSourceGridServicos";
-            customSqlQuery2.Name = "Query";
-            customSqlQuery2.Sql = resources.GetString("customSqlQuery2.Sql");
+            customSqlQuery1.Name = "Query";
+            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             this.dataSourceGridServicos.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery2});
+            customSqlQuery1});
             this.dataSourceGridServicos.ResultSchemaSerializable = resources.GetString("dataSourceGridServicos.ResultSchemaSerializable");
             // 
             // gridviewServicos
@@ -200,9 +204,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.colsv_defeito,
             this.colsv_previsao_entrega});
             this.gridviewServicos.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            gridFormatRule2.Name = "Format0";
-            gridFormatRule2.Rule = null;
-            this.gridviewServicos.FormatRules.Add(gridFormatRule2);
+            gridFormatRule1.Name = "Format0";
+            gridFormatRule1.Rule = null;
+            this.gridviewServicos.FormatRules.Add(gridFormatRule1);
             this.gridviewServicos.GridControl = this.gridctrlServicos;
             this.gridviewServicos.Name = "gridviewServicos";
             this.gridviewServicos.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -307,11 +311,12 @@ namespace PFC___StandBy_CSharp.Forms
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btnEditarOrdemServico,
+            this.btnEditarOrdemServicoEntrada,
             this.barButtonItem2,
-            this.barToolbarsListItem1,
-            this.btnEditarServico});
-            this.barManager1.MaxItemId = 4;
+            this.btnEditarServico,
+            this.barButtonItem1,
+            this.btnEditarOrdemServicoSaida});
+            this.barManager1.MaxItemId = 7;
             // 
             // barDockControlTop
             // 
@@ -345,14 +350,14 @@ namespace PFC___StandBy_CSharp.Forms
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 665);
             // 
-            // btnEditarOrdemServico
+            // btnEditarOrdemServicoEntrada
             // 
-            this.btnEditarOrdemServico.Caption = "Editar O.S";
-            this.btnEditarOrdemServico.Id = 0;
-            this.btnEditarOrdemServico.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarOrdemServico.ImageOptions.Image")));
-            this.btnEditarOrdemServico.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEditarOrdemServico.ImageOptions.LargeImage")));
-            this.btnEditarOrdemServico.Name = "btnEditarOrdemServico";
-            this.btnEditarOrdemServico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditarOrdemServico_ItemClick);
+            this.btnEditarOrdemServicoEntrada.Caption = "O.S - ENTRADA";
+            this.btnEditarOrdemServicoEntrada.Id = 0;
+            this.btnEditarOrdemServicoEntrada.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarOrdemServicoEntrada.ImageOptions.Image")));
+            this.btnEditarOrdemServicoEntrada.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEditarOrdemServicoEntrada.ImageOptions.LargeImage")));
+            this.btnEditarOrdemServicoEntrada.Name = "btnEditarOrdemServicoEntrada";
+            this.btnEditarOrdemServicoEntrada.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditarOrdemServicoEntrada_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -362,12 +367,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // barToolbarsListItem1
-            // 
-            this.barToolbarsListItem1.Caption = "barToolbarsListItem1";
-            this.barToolbarsListItem1.Id = 2;
-            this.barToolbarsListItem1.Name = "barToolbarsListItem1";
-            // 
             // btnEditarServico
             // 
             this.btnEditarServico.Caption = "Editar Serviço";
@@ -376,6 +375,27 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnEditarServico.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEditarServico.ImageOptions.LargeImage")));
             this.btnEditarServico.Name = "btnEditarServico";
             this.btnEditarServico.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditarServico_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnEditarOrdemServicoSaida
+            // 
+            this.btnEditarOrdemServicoSaida.Caption = "O.S - SAIDA";
+            this.btnEditarOrdemServicoSaida.Id = 6;
+            this.btnEditarOrdemServicoSaida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarOrdemServicoSaida.ImageOptions.Image")));
+            this.btnEditarOrdemServicoSaida.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEditarOrdemServicoSaida.ImageOptions.LargeImage")));
+            this.btnEditarOrdemServicoSaida.Name = "btnEditarOrdemServicoSaida";
+            this.btnEditarOrdemServicoSaida.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditarOrdemServicoSaida_ItemClick);
+            // 
+            // barToolbarsListItem1
+            // 
+            this.barToolbarsListItem1.Caption = "barToolbarsListItem1";
+            this.barToolbarsListItem1.Id = 2;
+            this.barToolbarsListItem1.Name = "barToolbarsListItem1";
             // 
             // bar2
             // 
@@ -411,9 +431,24 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.popupServicos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditarServico),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnEditarOrdemServico)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEditarOrdemServicoEntrada),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEditarOrdemServicoSaida)});
             this.popupServicos.Manager = this.barManager1;
             this.popupServicos.Name = "popupServicos";
+            // 
+            // bar5
+            // 
+            this.bar5.BarName = "Custom 2";
+            this.bar5.DockCol = 0;
+            this.bar5.DockRow = 0;
+            this.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar5.Text = "Custom 2";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "barSubItem1";
+            this.barSubItem1.Id = 4;
+            this.barSubItem1.Name = "barSubItem1";
             // 
             // form_ServicoPrincipal
             // 
@@ -461,7 +496,6 @@ namespace PFC___StandBy_CSharp.Forms
         private DevExpress.XtraGrid.Columns.GridColumn colsv_aparelho;
         private DevExpress.XtraGrid.Columns.GridColumn colsv_defeito;
         private DevExpress.XtraGrid.Columns.GridColumn colsv_previsao_entrega;
-        private DevExpress.DataAccess.Sql.SqlDataSource dataSourceGridServicos;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
@@ -472,10 +506,15 @@ namespace PFC___StandBy_CSharp.Forms
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.PopupMenu popupServicos;
-        private DevExpress.XtraBars.BarButtonItem btnEditarOrdemServico;
+        private DevExpress.XtraBars.BarButtonItem btnEditarOrdemServicoEntrada;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraBars.BarToolbarsListItem barToolbarsListItem1;
         private DevExpress.XtraBars.BarButtonItem btnEditarServico;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Bar bar5;
+        private DevExpress.XtraBars.BarButtonItem btnEditarOrdemServicoSaida;
+        private DevExpress.DataAccess.Sql.SqlDataSource dataSourceGridServicos;
     }
 }

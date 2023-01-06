@@ -30,9 +30,7 @@ namespace PFC___StandBy_CSharp.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=standby_org;User ID=sa;Password=123adr");
-                optionsBuilder.UseSqlServer("Server=.;Database=standby_org;User Id=sa;Password=123adr;TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=standby_org;Persist Security Info=True;User ID=sa;Password=123adr;TrustServerCertificate=True");
             }
         }
 
@@ -72,6 +70,8 @@ namespace PFC___StandBy_CSharp.Context
                 entity.Property(e => e.ch_sensor).IsUnicode(false);
 
                 entity.Property(e => e.ch_tela).IsUnicode(false);
+
+                entity.Property(e => e.ch_tipo).IsUnicode(false);
 
                 entity.Property(e => e.ch_wifi).IsUnicode(false);
 
@@ -209,6 +209,8 @@ namespace PFC___StandBy_CSharp.Context
 
                 entity.Property(e => e.sv_avaliacao_servico).IsUnicode(false);
 
+                entity.Property(e => e.sv_condicoes_balcao).IsUnicode(false);
+
                 entity.Property(e => e.sv_cor).IsUnicode(false);
 
                 entity.Property(e => e.sv_defeito)
@@ -220,8 +222,6 @@ namespace PFC___StandBy_CSharp.Context
                 entity.Property(e => e.sv_marca).IsUnicode(false);
 
                 entity.Property(e => e.sv_mei_serialnumber).IsUnicode(false);
-
-                entity.Property(e => e.sv_observacoes).IsUnicode(false);
 
                 entity.Property(e => e.sv_relato_cliente).IsUnicode(false);
 
@@ -236,6 +236,8 @@ namespace PFC___StandBy_CSharp.Context
                 entity.Property(e => e.sv_situacao)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('-----------------')");
+
+                entity.Property(e => e.sv_solucao).IsUnicode(false);
 
                 entity.Property(e => e.sv_status).HasDefaultValueSql("((1))");
 

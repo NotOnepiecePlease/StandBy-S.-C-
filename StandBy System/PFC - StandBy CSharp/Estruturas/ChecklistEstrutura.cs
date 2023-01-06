@@ -12,6 +12,7 @@ namespace PFC___StandBy_CSharp.Models
         public int? OrdemServico { get; set; } = null;
         public DateTime? DataChecklist { get; set; } = null;
         public int? FK_IdServico { get; set; } = null;
+        public string Tipo { get; set; } = null;
         public string BiometriaFaceID { get; set; } = null;
         public string Microfone { get; set; } = null;
         public string Tela { get; set; } = null;
