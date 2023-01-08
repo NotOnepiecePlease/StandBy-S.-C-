@@ -17,7 +17,7 @@ namespace PFC___StandBy_CSharp.Impressao
         public ReportDesigner()
         {
             InitializeComponent();
-            report_OrdemServico report = new report_OrdemServico();
+            report_OrdemServicoEntrada report = new report_OrdemServicoEntrada();
             report.Parameters["pIDServico"].Value = 34000;
             report.Parameters["pIDServico"].Visible = false;
             report.PrintingSystem.ShowPrintStatusDialog = false;

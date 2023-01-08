@@ -111,7 +111,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 try
                 {
-                    report_OrdemServico report = new report_OrdemServico();
+                    report_OrdemServicoSaida report = new report_OrdemServicoSaida();
                     report.Parameters["pIDServico"].Value = Convert.ToInt32(lblIdServico.Text);
                     //report.Parameters["clienteID"].Visible = false;
                     report.PrintingSystem.ShowPrintStatusDialog = false;

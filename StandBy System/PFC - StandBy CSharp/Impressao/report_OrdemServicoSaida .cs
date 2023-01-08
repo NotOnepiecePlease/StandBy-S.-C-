@@ -6,12 +6,11 @@ using System.Drawing;
 
 namespace PFC___StandBy_CSharp.Impressao
 {
-    public partial class report_OrdemServico : DevExpress.XtraReports.UI.XtraReport
+    public partial class report_OrdemServicoSaida : DevExpress.XtraReports.UI.XtraReport
     {
-        public report_OrdemServico()
+        public report_OrdemServicoSaida()
         {
             InitializeComponent();
         }
-
     }
 }

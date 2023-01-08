@@ -34,6 +34,7 @@
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -67,6 +68,21 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>49AE60658BA376B3A92E333B14EFDE899F82B892</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PFC - StandBy CSharp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Azure.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
@@ -110,6 +126,9 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
       <HintPath>..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
@@ -601,6 +620,12 @@
     <Compile Include="Dados\InserirDados.cs" />
     <Compile Include="Dados\VerificarExistencia.cs" />
     <Compile Include="Enum\Enum.cs" />
+    <Compile Include="Forms\Configurações\form_PainelCentral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Configurações\form_PainelCentral.Designer.cs">
+      <DependentUpon>form_PainelCentral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\form_ALERT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -636,6 +661,12 @@
     </Compile>
     <Compile Include="Forms\form_Concluido_Desfazer.Designer.cs">
       <DependentUpon>form_Concluido_Desfazer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Configurações\form_ComboboxConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Configurações\form_ComboboxConfig.Designer.cs">
+      <DependentUpon>form_ComboboxConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\form_DeveloperCommand.cs">
       <SubType>Form</SubType>
@@ -798,11 +829,17 @@
     <Compile Include="Impressao\ReportDesigner.Designer.cs">
       <DependentUpon>ReportDesigner.cs</DependentUpon>
     </Compile>
-    <Compile Include="Impressao\report_OrdemServico.cs">
+    <Compile Include="Impressao\report_OrdemServicoSaida .cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Impressao\report_OrdemServico.Designer.cs">
-      <DependentUpon>report_OrdemServico.cs</DependentUpon>
+    <Compile Include="Impressao\report_OrdemServicoSaida .Designer.cs">
+      <DependentUpon>report_OrdemServicoSaida .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impressao\report_OrdemServicoEntrada.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Impressao\report_OrdemServicoEntrada.Designer.cs">
+      <DependentUpon>report_OrdemServicoEntrada.cs</DependentUpon>
     </Compile>
     <Compile Include="LockScreenAndroid\GestureSubmittedEventArgs.cs" />
     <Compile Include="LockScreenAndroid\LockScreenControl.cs">
@@ -855,6 +892,9 @@
     <Compile Include="Utils\Constantes.cs" />
     <Compile Include="Utils\ConvertImage.cs" />
     <Compile Include="Utils\FormatarCampos.cs" />
+    <EmbeddedResource Include="Forms\Configurações\form_PainelCentral.resx">
+      <DependentUpon>form_PainelCentral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_ALERT.resx">
       <DependentUpon>form_ALERT.cs</DependentUpon>
     </EmbeddedResource>
@@ -872,6 +912,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_Concluido_Desfazer.resx">
       <DependentUpon>form_Concluido_Desfazer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Configurações\form_ComboboxConfig.resx">
+      <DependentUpon>form_ComboboxConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_DeveloperCommand.resx">
       <DependentUpon>form_DeveloperCommand.cs</DependentUpon>
@@ -954,8 +997,11 @@
     <EmbeddedResource Include="Impressao\ReportDesigner.resx">
       <DependentUpon>ReportDesigner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Impressao\report_OrdemServico.resx">
-      <DependentUpon>report_OrdemServico.cs</DependentUpon>
+    <EmbeddedResource Include="Impressao\report_OrdemServicoSaida .resx">
+      <DependentUpon>report_OrdemServicoSaida .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impressao\report_OrdemServicoEntrada.resx">
+      <DependentUpon>report_OrdemServicoEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -966,6 +1012,7 @@
     <None Include="app.manifest" />
     <None Include="efpt.config.json" />
     <None Include="packages.config" />
+    <None Include="PFC - StandBy CSharp_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

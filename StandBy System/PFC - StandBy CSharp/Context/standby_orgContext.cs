@@ -41,10 +41,6 @@ namespace PFC___StandBy_CSharp.Context
                 entity.HasKey(e => e.ch_id)
                     .HasName("PK_TB_CHECKLIST");
 
-                entity.HasIndex(e => e.ch_ordem_serv)
-                    .HasName("UQ__tb_check__C7EAA61BCC82F6C2")
-                    .IsUnique();
-
                 entity.Property(e => e.ch_altofalante).IsUnicode(false);
 
                 entity.Property(e => e.ch_auricular).IsUnicode(false);
@@ -126,11 +122,13 @@ namespace PFC___StandBy_CSharp.Context
                 entity.HasKey(e => e.item_id)
                     .HasName("PK_TB_COMP_ITEMS");
 
-                entity.Property(e => e.item_campo).IsUnicode(false);
-
-                entity.Property(e => e.item_categoria).IsUnicode(false);
+                entity.Property(e => e.item_grupo).IsUnicode(false);
 
                 entity.Property(e => e.item_nome).IsUnicode(false);
+
+                entity.Property(e => e.item_tela).IsUnicode(false);
+
+                entity.Property(e => e.item_texto).IsUnicode(false);
             });
 
             modelBuilder.Entity<tb_condicoes_fisicas>(entity =>

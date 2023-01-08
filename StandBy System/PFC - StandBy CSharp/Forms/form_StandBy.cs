@@ -21,6 +21,7 @@ using DevExpress.Utils.Svg;
 using Application = System.Windows.Forms.Application;
 using Point = System.Drawing.Point;
 using Newtonsoft.Json;
+using PFC___StandBy_CSharp.Utils;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -40,6 +41,7 @@ namespace PFC___StandBy_CSharp.Forms
         public form_StandBy()
         {
             InitializeComponent();
+            Constantes.IniciarOpcoesChecklistEntrada();
             InicializarSkinStandbyDevexpress();
             CarregarGraficos(bunifuDataViz1, lblQntServicosSemanais, bunifuDataViz2, lblQntServicosMensais);
             //Pega a versão do sistema e seta na label.

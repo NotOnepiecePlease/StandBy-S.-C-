@@ -25,7 +25,7 @@ namespace PFC___StandBy_CSharp
             //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_StandBy());
+            Application.Run(new form_ComboboxConfig());
         }
     }
 }

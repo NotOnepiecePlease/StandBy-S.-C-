@@ -539,7 +539,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCarregamento.Name = "cmbChecklistCarregamento";
             this.cmbChecklistCarregamento.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCarregamento.TabIndex = 47;
-            this.cmbChecklistCarregamento.Text = "RUIM";
             this.cmbChecklistCarregamento.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistCarregamento.TextLeftMargin = 5;
             // 
@@ -592,7 +591,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBluetooth.Name = "cmbChecklistBluetooth";
             this.cmbChecklistBluetooth.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBluetooth.TabIndex = 45;
-            this.cmbChecklistBluetooth.Text = "FUNCIONANDO";
             this.cmbChecklistBluetooth.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBluetooth.TextLeftMargin = 5;
             // 
@@ -658,7 +656,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAltoFaltante.Name = "cmbChecklistAltoFaltante";
             this.cmbChecklistAltoFaltante.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAltoFaltante.TabIndex = 43;
-            this.cmbChecklistAltoFaltante.Text = "FUNCIONANDO";
             this.cmbChecklistAltoFaltante.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistAltoFaltante.TextLeftMargin = 5;
             // 
@@ -711,7 +708,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistWifi.Name = "cmbChecklistWifi";
             this.cmbChecklistWifi.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistWifi.TabIndex = 41;
-            this.cmbChecklistWifi.Text = "FUNCIONANDO";
             this.cmbChecklistWifi.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistWifi.TextLeftMargin = 5;
             // 
@@ -764,7 +760,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAuricular.Name = "cmbChecklistAuricular";
             this.cmbChecklistAuricular.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAuricular.TabIndex = 39;
-            this.cmbChecklistAuricular.Text = "FUNCIONANDO";
             this.cmbChecklistAuricular.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistAuricular.TextLeftMargin = 5;
             // 
@@ -817,7 +812,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCameras.Name = "cmbChecklistCameras";
             this.cmbChecklistCameras.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCameras.TabIndex = 37;
-            this.cmbChecklistCameras.Text = "FUNCIONANDO";
             this.cmbChecklistCameras.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistCameras.TextLeftMargin = 5;
             // 
@@ -870,7 +864,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistSensor.Name = "cmbChecklistSensor";
             this.cmbChecklistSensor.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistSensor.TabIndex = 35;
-            this.cmbChecklistSensor.Text = "FUNCIONANDO";
             this.cmbChecklistSensor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistSensor.TextLeftMargin = 5;
             // 
@@ -923,7 +916,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBotoes.Name = "cmbChecklistBotoes";
             this.cmbChecklistBotoes.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBotoes.TabIndex = 33;
-            this.cmbChecklistBotoes.Text = "VOLUME MENOS RUIM";
             this.cmbChecklistBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBotoes.TextLeftMargin = 5;
             // 
@@ -976,7 +968,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistChip.Name = "cmbChecklistChip";
             this.cmbChecklistChip.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistChip.TabIndex = 31;
-            this.cmbChecklistChip.Text = "FUNCIONANDO";
             this.cmbChecklistChip.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistChip.TextLeftMargin = 5;
             // 
@@ -1029,7 +1020,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistTela.Name = "cmbChecklistTela";
             this.cmbChecklistTela.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistTela.TabIndex = 29;
-            this.cmbChecklistTela.Text = "FUNCIONANDO";
             this.cmbChecklistTela.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistTela.TextLeftMargin = 5;
             // 
@@ -1082,7 +1072,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistMicrofone.Name = "cmbChecklistMicrofone";
             this.cmbChecklistMicrofone.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistMicrofone.TabIndex = 27;
-            this.cmbChecklistMicrofone.Text = "FUNCIONANDO";
             this.cmbChecklistMicrofone.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistMicrofone.TextLeftMargin = 5;
             // 
@@ -1135,7 +1124,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBiometria.Name = "cmbChecklistBiometria";
             this.cmbChecklistBiometria.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBiometria.TabIndex = 25;
-            this.cmbChecklistBiometria.Text = "FUNCIONANDO";
             this.cmbChecklistBiometria.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBiometria.TextLeftMargin = 5;
             // 
@@ -2100,6 +2088,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_OrdemServico";
             this.Load += new System.EventHandler(this.form_OrdemServico_Load);
+            this.Shown += new System.EventHandler(this.form_OrdemServicoEntrada_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_OrdemServico_KeyDown);
             this.panel_FormOrdemServico.ResumeLayout(false);
             this.panel_FormOrdemServico.PerformLayout();

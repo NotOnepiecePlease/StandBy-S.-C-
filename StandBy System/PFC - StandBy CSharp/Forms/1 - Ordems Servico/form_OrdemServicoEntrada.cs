@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
@@ -23,6 +24,7 @@ using PFC___StandBy_CSharp.Context;
 using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.Impressao;
 using DevExpress.XtraPrinting;
+using BunifuDropdown = Bunifu.UI.WinForms.BunifuDropdown;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -30,7 +32,7 @@ namespace PFC___StandBy_CSharp.Forms
     [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Local")]
     public partial class form_OrdemServicoEntrada : Form
     {
-        private standby_orgContext standbyDB = new standby_orgContext();
+        private standby_orgContext context = new standby_orgContext();
         private BuscarDados buscarDados = new BuscarDados();
         private VerificarExistencia verifExistencia = new VerificarExistencia();
         private List<ClienteEstrutura> listClientesComId = new List<ClienteEstrutura>();
@@ -45,7 +47,6 @@ namespace PFC___StandBy_CSharp.Forms
         public form_OrdemServicoEntrada(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico, int[] _corGeral)
         {
             InitializeComponent();
-            var a = lblIdServico.Text;
             corGeral = _corGeral;
             SetarCores();
             CarregarComboxClientes();
@@ -66,6 +67,39 @@ namespace PFC___StandBy_CSharp.Forms
             InicializarDatas();
             tipoAparelhoGlobal = _tipoAparelhoGlobal;
             cmbStatusServico.SelectedItem = "AVALIAÇÃO";
+        }
+
+        private void InicializarOpcoesCombobox()
+        {
+            //Stopwatch stopwatch = new Stopwatch();
+            //stopwatch.Start();
+            //var opcoes = context.tb_comp_items.ToList();
+            //PreencherCombobox("Biometria", cmbChecklistBiometria, opcoes);
+            //PreencherCombobox("Microfone", cmbChecklistMicrofone, opcoes);
+            //PreencherCombobox("Tela", cmbChecklistTela, opcoes);
+            //PreencherCombobox("Chip", cmbChecklistChip, opcoes);
+            //stopwatch.Start();
+            //TimeSpan ts = stopwatch.Elapsed;
+            //MessageBox.Show("Tempo de execução: " + ts.TotalSeconds);
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            PreencherCombobox("Biometria", cmbChecklistBiometria, Constantes.opcoes);
+            PreencherCombobox("Microfone", cmbChecklistMicrofone, Constantes.opcoes);
+            PreencherCombobox("Tela", cmbChecklistTela, Constantes.opcoes);
+            PreencherCombobox("Chip", cmbChecklistChip, Constantes.opcoes);
+            PreencherCombobox("Bluetooth", cmbChecklistBluetooth, Constantes.opcoes);
+            stopwatch.Start();
+            TimeSpan ts = stopwatch.Elapsed;
+            //MessageBox.Show("Tempo de execução: " + ts.TotalSeconds);
+        }
+
+        private void PreencherCombobox(string _itemNome, BunifuDropdown _comboBox, List<tb_comp_items> _dados)
+        {
+            _dados.Where(y => y.item_tela == Constantes.ORDEM_SERVICO_ENTRADA
+                              && y.item_grupo == Constantes.CHECKLIST_ITEM
+                              && y.item_nome == _itemNome)
+                .ForEach(x => _comboBox.Items.Add(x.item_texto));
         }
 
         private void SetarCores()
@@ -419,9 +453,9 @@ namespace PFC___StandBy_CSharp.Forms
             ////Completando servico com entity framework
             if (MessageBox.Show(@"Deseja concluir esse serviço?", @"CONFIRMAÇÃO", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.No)
             {
-                tb_servicos servico = standbyDB.tb_servicos.Find(Convert.ToInt32(lblIdServico.Text));
+                tb_servicos servico = context.tb_servicos.Find(Convert.ToInt32(lblIdServico.Text));
                 servico.sv_status = 0;
-                standbyDB.SaveChanges();
+                context.SaveChanges();
 
                 msgSucess.ConcluirServicoSucesso();
             }
@@ -434,7 +468,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 try
                 {
-                    report_OrdemServico report = new report_OrdemServico();
+                    report_OrdemServicoEntrada report = new report_OrdemServicoEntrada();
                     report.Parameters["pIDServico"].Value = Convert.ToInt32(lblIdServico.Text);
                     //report.Parameters["clienteID"].Visible = false;
                     report.PrintingSystem.ShowPrintStatusDialog = false;
@@ -455,6 +489,11 @@ namespace PFC___StandBy_CSharp.Forms
                     MessageBox.Show(exception.ToString());
                 }
             }
+        }
+
+        private void form_OrdemServicoEntrada_Shown(object sender, EventArgs e)
+        {
+            InicializarOpcoesCombobox();
         }
     }
 }
