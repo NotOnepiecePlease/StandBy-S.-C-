@@ -127,33 +127,34 @@ namespace PFC___StandBy_CSharp.Forms
         {
             try
             {
-                if (e.RowHandle == GridControl.NewItemRowHandle)
+                tb_comp_items dado = e.Row as tb_comp_items;
+                bool isAcessoAdministrativoLiberado = gridView1.Columns[5].OptionsColumn.AllowEdit;
+
+                if (isAcessoAdministrativoLiberado == false && dado.item_editavel == false)
                 {
-                    tb_comp_items dado = e.Row as tb_comp_items;
-
-                    if (Control.ModifierKeys == Keys.Shift)
-                    {
-                        context.tb_comp_items.Add(dado);
-                    }
-                    else
-                    {
-                        if (dado.item_editavel == false)
-                        {
-                            MessageBox.Show("Item nao pode ser removido ou editado");
-                            return;
-                        }
-                        context.tb_comp_items.Add(dado);
-                    }
+                    MessageBox.Show("Item nao pode ser removido ou editado", "Acesso restrito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
-                gridView1.UpdateCurrentRow();
-                context.SaveChanges();
+                else
+                {
+                    InserirAlterarRegistro(e, dado);
+                }
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
-            MessageBox.Show("Salvou");
+        }
+
+        private void InserirAlterarRegistro(RowObjectEventArgs _rowEvent, tb_comp_items _dado)
+        {
+            if (_rowEvent.RowHandle == GridControl.NewItemRowHandle)
+            {
+                context.tb_comp_items.Add(_dado);
+            }
+
+            gridView1.UpdateCurrentRow();
+            context.SaveChanges();
+            MessageBox.Show("Item salvo com sucesso!");
         }
 
         private void btnAdicionarRegistro_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -210,12 +211,12 @@ namespace PFC___StandBy_CSharp.Forms
 
                 gridView1.UpdateCurrentRow();
                 context.SaveChanges();
+                MessageBox.Show("Item removido com sucesso!");
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
-            MessageBox.Show("REMOVIDO");
         }
 
         private void form_ComboboxConfig_KeyDown(object sender, KeyEventArgs e)
@@ -225,33 +226,34 @@ namespace PFC___StandBy_CSharp.Forms
                 Constantes.IniciarOpcoesChecklistEntrada();
                 this.Close();
             }
-            else if (e.Modifiers == Keys.Shift)
+            else if (e.Control & e.Shift)
             {
-                if ((ModifierKeys & Keys.Shift) != 0)
+                bool isAcessoAdministrativoLiberado = gridView1.Columns[5].OptionsColumn.AllowEdit;
+                if (isAcessoAdministrativoLiberado == true)
                 {
-                    gridView1.Columns[5].OptionsColumn.AllowEdit = false;
-                    gridView1.Columns[5].OptionsColumn.AllowFocus = false;
-                    gridView1.Columns[5].OptionsColumn.ReadOnly = true;
+                    BloquearAcessoRestrito();
                 }
                 else
                 {
-                    gridView1.Columns[5].OptionsColumn.AllowEdit = true;
-                    gridView1.Columns[5].OptionsColumn.AllowFocus = true;
-                    gridView1.Columns[5].OptionsColumn.ReadOnly = false;
+                    LiberarAcessoRestrito();
                 }
-                // MessageBox.Show("Liberado acesso");
             }
         }
 
-        private void form_ComboboxConfig_KeyUp(object sender, KeyEventArgs e)
+        private void LiberarAcessoRestrito()
         {
-            //if (e.KeyData == Keys.ShiftKey)
-            //{
-            //    gridView1.Columns[5].OptionsColumn.AllowEdit = false;
-            //    gridView1.Columns[5].OptionsColumn.AllowFocus = false;
-            //    gridView1.Columns[5].OptionsColumn.ReadOnly = true;
-            //    //MessageBox.Show("Bloqueado acesso");
-            //}
+            gridView1.Columns[5].OptionsColumn.AllowEdit = true;
+            gridView1.Columns[5].OptionsColumn.AllowFocus = true;
+            gridView1.Columns[5].OptionsColumn.ReadOnly = false;
+            MessageBox.Show("Acesso administrativo liberado!");
+        }
+
+        private void BloquearAcessoRestrito()
+        {
+            gridView1.Columns[5].OptionsColumn.AllowEdit = false;
+            gridView1.Columns[5].OptionsColumn.AllowFocus = false;
+            gridView1.Columns[5].OptionsColumn.ReadOnly = true;
+            MessageBox.Show("Acesso administrativo removido!");
         }
     }
 }

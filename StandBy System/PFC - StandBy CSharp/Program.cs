@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using PFC___StandBy_CSharp.Impressao;
 using Syncfusion.Licensing;
 using DevExpress.XtraEditors;
+using PFC___StandBy_CSharp.Forms._1___Ordems_Servico;
 
 namespace PFC___StandBy_CSharp
 {
@@ -25,7 +26,7 @@ namespace PFC___StandBy_CSharp
             //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_ComboboxConfig());
+            Application.Run(new form_OrdemServicoEditar());
         }
     }
 }

@@ -620,6 +620,18 @@
     <Compile Include="Dados\InserirDados.cs" />
     <Compile Include="Dados\VerificarExistencia.cs" />
     <Compile Include="Enum\Enum.cs" />
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoEditar.Designer.cs">
+      <DependentUpon>form_OrdemServicoEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\1 - Ordems Servico\form_RichTextboxExterno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\1 - Ordems Servico\form_RichTextboxExterno.Designer.cs">
+      <DependentUpon>form_RichTextboxExterno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Configurações\form_PainelCentral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -892,6 +904,12 @@
     <Compile Include="Utils\Constantes.cs" />
     <Compile Include="Utils\ConvertImage.cs" />
     <Compile Include="Utils\FormatarCampos.cs" />
+    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdemServicoEditar.resx">
+      <DependentUpon>form_OrdemServicoEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_RichTextboxExterno.resx">
+      <DependentUpon>form_RichTextboxExterno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configurações\form_PainelCentral.resx">
       <DependentUpon>form_PainelCentral.cs</DependentUpon>
     </EmbeddedResource>
@@ -1095,6 +1113,8 @@
     <None Include="Resources\google banner.png" />
     <None Include="Resources\google banner sem fundo.png" />
     <None Include="Resources\google-minimal-logo.png" />
+    <None Include="Resources\settings_480px.png" />
+    <None Include="Resources\settings_480px1.png" />
     <Content Include="Utils\Atalhos.txt" />
     <None Include="Resources\toilet_20px.png" />
     <None Include="Resources\warning.png" />

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms.BunifuTextbox;
 using Guna.UI.WinForms;
 
 namespace PFC___StandBy_CSharp.Utils
@@ -179,6 +180,23 @@ namespace PFC___StandBy_CSharp.Utils
             }
         }
 
+        public static void ApenasValorNumericoVirgulasBunifu(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
+            {
+                if (e.KeyChar == ',')
+                {
+                    e.Handled = (txt.Text.Contains(','));
+                }
+                else
+                {
+                    e.Handled = true;
+                    MessageBox.Show(@"Apenas numeros e virgulas!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
         public static void ApenasValorNumerico(object sender, KeyPressEventArgs e)
         {
             GunaLineTextBox txt = (GunaLineTextBox)sender;
@@ -238,12 +256,56 @@ namespace PFC___StandBy_CSharp.Utils
             txt.Select(txt.Text.Length, 0);
         }
 
+        public static void FormatarMoedaBunifu(object sender, KeyEventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            string valor = txt.Text.Replace("R$", "").Replace(",", "").Replace(" ", "").Replace("00,", "");
+            if (valor.Length == 0)
+            {
+                txt.Text = "0,00" + valor;
+            }
+            if (valor.Length == 1)
+            {
+                txt.Text = "0,0" + valor;
+            }
+            if (valor.Length == 2)
+            {
+                txt.Text = "0," + valor;
+            }
+            else if (valor.Length >= 3)
+            {
+                if (txt.Text.StartsWith("0,"))
+                {
+                    txt.Text = valor.Insert(valor.Length - 2, ",").Replace("0,", "");
+                }
+                else if (txt.Text.Contains("00,"))
+                {
+                    txt.Text = valor.Insert(valor.Length - 2, ",").Replace("00,", "");
+                }
+                else
+                {
+                    txt.Text = valor.Insert(valor.Length - 2, ",");
+                }
+            }
+            valor = txt.Text;
+            txt.Text = $"{Convert.ToDouble(valor):C}";
+            txt.Select(txt.Text.Length, 0);
+        }
+
         public static void AplicarApenasNumeroVirgulaEMoeda(GunaLineTextBox txt)
         {
             //txt.Enter += TirarMascaraEnter;
             //txt.Leave += RetornarMascara;
             txt.KeyPress += ApenasValorNumericoVirgulas;
             txt.KeyUp += FormatarMoeda;
+        }
+
+        public static void AplicarApenasNumeroVirgulaEMoeda(BunifuTextBox txt)
+        {
+            //txt.Enter += TirarMascaraEnter;
+            //txt.Leave += RetornarMascara;
+            txt.KeyPress += ApenasValorNumericoVirgulasBunifu;
+            txt.KeyUp += FormatarMoedaBunifu;
         }
 
         public static void AplicarApenasNumerosSemVirgula(GunaLineTextBox txt)

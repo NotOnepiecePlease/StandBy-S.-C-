@@ -26,6 +26,12 @@ namespace PFC___StandBy_CSharp.Forms
                 formCommand.ShowDialog();
                 this.Close();
             }
+            else if (cmbComando.Text.ToLower().Trim() == "dev")
+            {
+                form_ComboboxConfig formCommand = new form_ComboboxConfig();
+                formCommand.ShowDialog();
+                this.Close();
+            }
             else
             {
                 MessageBox.Show("Comando não reconhecido");

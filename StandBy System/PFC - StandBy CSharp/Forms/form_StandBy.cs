@@ -6,6 +6,7 @@ using PFC___StandBy_CSharp.Models;
 //using PFC___StandBy_CSharp.LogSystem;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -237,8 +238,8 @@ namespace PFC___StandBy_CSharp.Forms
 
             if (dialogo == DialogResult.Yes)
             {
-                MessageBox.Show("Funcao desativada no momento para evitar problemas.");
-                //Process.Start("shutdown", "/s /t 0");
+                //MessageBox.Show("Funcao desativada no momento para evitar problemas.");
+                Process.Start("shutdown", "/s /t 0");
             }
         }
 
@@ -263,7 +264,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomRight = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientTopLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnReset.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConfig.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             btnSimAtualizar.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -346,7 +347,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomRight = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientTopLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnReset.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConfig.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             btnClientes.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -393,7 +394,7 @@ namespace PFC___StandBy_CSharp.Forms
             panelMenu.GradientBottomRight = cor;
             panelMenu.GradientTopLeft = cor;
             btnNotepad.colorActive = cor;
-            btnReset.colorActive = cor;
+            btnConfig.colorActive = cor;
             iconClose.IconColor = cor;
             btnClientes.BackColor = cor;
             btnClientes.Iconcolor = cor;
@@ -585,22 +586,10 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void btn3_Click(object sender, EventArgs e)
+        private void btnConfig_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcao desativada pois o sistema efetua o reset automaticamente.", "!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //DialogResult dialog1 = MessageBox.Show("Voce esta prestes a resetar o mês, fazendo isso voce armazena todos os dados" +
-            //    "com segurança no banco de dados e reinicia todas as tabelas dos dados do mês em questão, essa ação é irreversivel," +
-            //    " você tem certeza disso?", "----- PERIGO -----", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
-
-            //if (dialog1 == DialogResult.Yes)
-            //{
-            //    DialogResult dialog2 = MessageBox.Show("ULTIMO AVISO!!!\n\nEfetue o reset apenas se você tiver permissão para isso, essa ação" +
-            //        " não poderá ser desfeita, voce tem certeza do que está fazendo?", "ULTIMO AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
-            //    if (dialog2 == DialogResult.Yes)
-            //    {
-            //        ad.ResetarDadosMensais();
-            //    }
-            //}
+            form_ComboboxConfig formCommand = new form_ComboboxConfig();
+            formCommand.ShowDialog();
         }
 
         private void form_StandBy_Resize(object sender, EventArgs e)
@@ -708,6 +697,13 @@ namespace PFC___StandBy_CSharp.Forms
             lblDesejaAtualizar.Visible = false;
             btnSimAtualizar.Visible = false;
             btnNaoAtualizar.Visible = false;
+        }
+
+        private void btnConfiguracoes_Click(object sender, EventArgs e)
+        {
+            form_ComboboxConfig formCommand = new form_ComboboxConfig();
+            formCommand.ShowDialog();
+            //this.Close();
         }
     }
 }

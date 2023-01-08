@@ -44,8 +44,8 @@
             this.cmbComando.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbComando.Properties.Items.AddRange(new object[] {
-            "dev",
-            "cmb"});
+            "cmb",
+            "dev"});
             this.cmbComando.Size = new System.Drawing.Size(224, 30);
             this.cmbComando.TabIndex = 0;
             this.cmbComando.ToolTip = "dev = Painel de Desenvolvedor | cmb = Edicao das combobox";
