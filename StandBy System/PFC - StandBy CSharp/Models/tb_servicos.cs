@@ -65,8 +65,6 @@ namespace PFC___StandBy_CSharp.Models
         public string sv_relato_cliente { get; set; }
         [StringLength(5000)]
         public string sv_condicoes_balcao { get; set; }
-        [StringLength(5000)]
-        public string sv_solucao { get; set; }
         [StringLength(20)]
         public string sv_avaliacao_servico { get; set; }
 

@@ -24,6 +24,7 @@ using PFC___StandBy_CSharp.Context;
 using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.Impressao;
 using DevExpress.XtraPrinting;
+using PFC___StandBy_CSharp.PreencherComponentes.Tela_6___Usada_por_Varias_Telas;
 using BunifuDropdown = Bunifu.UI.WinForms.BunifuDropdown;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -43,11 +44,13 @@ namespace PFC___StandBy_CSharp.Forms
         private DataTable dt;
         private Aparelho tipoAparelhoGlobal;
         private int[] corGeral = new[] { 0, 0, 0 };
+        private bool isNovaOrdemServico = false;
 
         public form_OrdemServicoEntrada(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico, int[] _corGeral)
         {
             InitializeComponent();
             corGeral = _corGeral;
+            isNovaOrdemServico = _isNovaOrdemServico;
             SetarCores();
             CarregarComboxClientes();
             if (_isNovaOrdemServico == true)
@@ -62,6 +65,7 @@ namespace PFC___StandBy_CSharp.Forms
                 //Caso seja o form em modo de atualizacao de uma OS q existe, entao seto o cliente
                 //responsavel pelo servico.
                 SetarComboboxComUltimoClienteAdicionado(dt, _idClientePreSetado);
+                cmbCliente.Enabled = true;
             }
             //ZerarTodosCampos();
             InicializarDatas();
@@ -69,29 +73,20 @@ namespace PFC___StandBy_CSharp.Forms
             cmbStatusServico.SelectedItem = "AVALIAÇÃO";
         }
 
+        private void form_OrdemServicoEntrada_Shown(object sender, EventArgs e)
+        {
+            InicializarOpcoesCombobox();
+        }
+
         private void InicializarOpcoesCombobox()
         {
-            //Stopwatch stopwatch = new Stopwatch();
-            //stopwatch.Start();
-            //var opcoes = context.tb_comp_items.ToList();
-            //PreencherCombobox("Biometria", cmbChecklistBiometria, opcoes);
-            //PreencherCombobox("Microfone", cmbChecklistMicrofone, opcoes);
-            //PreencherCombobox("Tela", cmbChecklistTela, opcoes);
-            //PreencherCombobox("Chip", cmbChecklistChip, opcoes);
-            //stopwatch.Start();
-            //TimeSpan ts = stopwatch.Elapsed;
-            //MessageBox.Show("Tempo de execução: " + ts.TotalSeconds);
-
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            PreencherCombobox("Biometria", cmbChecklistBiometria, Constantes.opcoes);
-            PreencherCombobox("Microfone", cmbChecklistMicrofone, Constantes.opcoes);
-            PreencherCombobox("Tela", cmbChecklistTela, Constantes.opcoes);
-            PreencherCombobox("Chip", cmbChecklistChip, Constantes.opcoes);
-            PreencherCombobox("Bluetooth", cmbChecklistBluetooth, Constantes.opcoes);
-            stopwatch.Start();
-            TimeSpan ts = stopwatch.Elapsed;
-            //MessageBox.Show("Tempo de execução: " + ts.TotalSeconds);
+            PreencherComboboxServicos p = new PreencherComboboxServicos();
+            //checklist
+            p.PreencherInfoChecklist(this);
+            //info aparelho
+            p.PreencherInfoAparelho(this);
+            //cond fisicas
+            p.PreencherInfoCondFisicas(this);
         }
 
         private void PreencherCombobox(string _itemNome, BunifuDropdown _comboBox, List<tb_comp_items> _dados)
@@ -174,55 +169,7 @@ namespace PFC___StandBy_CSharp.Forms
         public void CarregarComboxClientes()
         {
             cmbCliente.SelectedIndexChanged -= cmbCliente_SelectedIndexChanged;
-            this.cmbCliente.Style = Syncfusion.Windows.Forms.VisualStyle.Office2007;
-            this.cmbCliente.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Black;
-
-            listClientesComId = preencherCombobox.Preencher();
-
-            dt = new DataTable("Table1");
-            dt.Columns.Add("ID");
-            dt.Columns.Add("Nome");
-            dt.Columns.Add("Cpf");
-            dt.Columns.Add("⠀⠀⠀Telefone⠀⠀");
-            //dt.Columns.Add("Recado");
-            //dt.Columns.Add("Nascimento");
-            //dt.Columns.Add("⠀⠀⠀⠀⠀⠀⠀⠀Endereço⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-            //dt.Columns.Add("⠀⠀⠀Bairro⠀⠀⠀");
-            //dt.Columns.Add("Estado");
-            dt.Columns[0].ColumnMapping = MappingType.Hidden;
-
-            DataSet ds = new DataSet();
-            ds.Tables.Add(dt);
-
-            listClientesComId
-                .OrderBy(x => x.Nome)
-                .ToList()
-                .ForEach(cliente =>
-                {
-                    //Pegando a id do ultimo cliente adicionado (ou o que tem MAIOR ID q da na mesma)
-                    ultimoClienteAdicionadoID = cliente.ID > ultimoClienteAdicionadoID ? cliente.ID : ultimoClienteAdicionadoID;
-
-                    dt.Rows.Add(new string[]
-                    {
-                        $"{cliente.ID}",
-                        $"{cliente.Nome}",
-                        $"{cliente.Cpf}",
-                        $"{cliente.Telefone}",
-                       // $"{cliente.TelefoneRecado}",
-                        //$"{cliente.DataNascimento}",
-                        //$"{cliente.Endereco}",
-                        //$"{cliente.Bairro}",
-                        //$"{cliente.Estado}"
-                    });
-                });
-
-            DataView view = new DataView(dt);
-
-            this.cmbCliente.DataSource = view;
-            this.cmbCliente.DisplayMember = "Nome";
-            this.cmbCliente.ValueMember = "ID";
-
-            //SetarComboboxComUltimoClienteAdicionado(dt);
+            ultimoClienteAdicionadoID = preencherCombobox.CarregarComboxClientes(cmbCliente, ref dt);
             cmbCliente.SelectedIndexChanged += cmbCliente_SelectedIndexChanged;
         }
 
@@ -273,7 +220,13 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnSalvarOrdemServico_Click(object sender, EventArgs e)
         {
             //ZerarTodosCampos();
+            SalvarOrdemServico();
 
+            this.Close();
+        }
+
+        private void SalvarOrdemServico()
+        {
             if (string.IsNullOrWhiteSpace(cmbMarca.Text))
             {
                 MessageBox.Show(@"Voce esqueceu de selecionar a marca do aparelho", "ALERTA!",
@@ -304,6 +257,9 @@ namespace PFC___StandBy_CSharp.Forms
                     InserirOrdemServico(OrdemServico.NovaInsercao);
                 }
             }
+
+            standby_orgContext context = new standby_orgContext();
+            lblIdServico.Text = context.tb_servicos.First(x => x.sv_ordem_serv == ordemServicoID).sv_id.ToString();
         }
 
         private void InserirOrdemServico(OrdemServico _tipo)
@@ -403,7 +359,15 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void picSenhaPattern_Click(object sender, EventArgs e)
         {
-            VerSenhaPattern();
+            if (isNovaOrdemServico == true)
+            {
+                form_PasswordPattern pp = new form_PasswordPattern(this, corGeral);
+                pp.ShowDialog();
+            }
+            else
+            {
+                VerSenhaPattern();
+            }
         }
 
         private void VerSenhaPattern()
@@ -468,6 +432,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 try
                 {
+                    SalvarOrdemServico();
                     report_OrdemServicoEntrada report = new report_OrdemServicoEntrada();
                     report.Parameters["pIDServico"].Value = Convert.ToInt32(lblIdServico.Text);
                     //report.Parameters["clienteID"].Visible = false;
@@ -491,9 +456,41 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void form_OrdemServicoEntrada_Shown(object sender, EventArgs e)
+        private void switchChecklistAusente_Toggled(object sender, EventArgs e)
         {
-            InicializarOpcoesCombobox();
+            if (switchChecklistAusente.IsOn == true)
+            {
+                //MessageBox.Show("Ativado");
+                foreach (Control control in groupBox4.Controls)
+                {
+                    if (control is BunifuDropdown && control.Name.StartsWith("cmbChecklist"))
+                    {
+                        control.Enabled = false;
+                    }
+                    else if (control.Name == "txtChecklistObservacoes")
+                    {
+                        var richTextBox = (RichTextBox)control;
+                        control.BackColor = Color.FromArgb(64, 64, 64);
+                        richTextBox.ReadOnly = true;
+                    }
+                }
+            }
+            else
+            {
+                foreach (Control control in groupBox4.Controls)
+                {
+                    if (control is BunifuDropdown && control.Name.StartsWith("cmbChecklist"))
+                    {
+                        control.Enabled = true;
+                    }
+                    else if (control.Name == "txtChecklistObservacoes")
+                    {
+                        var richTextBox = (RichTextBox)control;
+                        control.BackColor = Color.FromArgb(23, 23, 36);
+                        richTextBox.ReadOnly = false;
+                    }
+                }
+            }
         }
     }
 }

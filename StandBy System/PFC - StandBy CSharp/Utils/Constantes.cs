@@ -21,8 +21,10 @@ namespace PFC___StandBy_CSharp.Utils
         #region Carregamento das opções de todos os combobox
 
         private static readonly standby_orgContext context = new standby_orgContext();
-        public const string ORDEM_SERVICO_ENTRADA = "ORDEM_SERVICO_ENTRADA";
+        public const string ORDEM_SERVICO_ENTRADA = "ORDEM_SERVICO";
         public const string CHECKLIST_ITEM = "CHECKLIST_ITEM";
+        public const string CONDICOES_FISICAS_ITEM = "CONDICOES_FISICAS_ITEM";
+        public const string INFOS_APARELHO_ITEM = "INFOS_APARELHO_ITEM";
         public static List<tb_comp_items> opcoes;
 
         public static void IniciarOpcoesChecklistEntrada()//Inicializo no inicio e uso no restante das telas pra ganhar performance

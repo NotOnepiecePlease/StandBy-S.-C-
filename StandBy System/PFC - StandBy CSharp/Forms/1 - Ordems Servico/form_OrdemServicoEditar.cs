@@ -7,18 +7,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Context;
+using PFC___StandBy_CSharp.Dados;
+using PFC___StandBy_CSharp.Models;
+using PFC___StandBy_CSharp.MsgBox;
+using PFC___StandBy_CSharp.PreencherComponentes;
+using PFC___StandBy_CSharp.PreencherComponentes.Tela_6___Usada_por_Varias_Telas;
 using PFC___StandBy_CSharp.Utils;
+using Syncfusion.Windows.Forms.Tools;
+using static PFC___StandBy_CSharp.Enum.Enum;
 
 namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 {
     public partial class form_OrdemServicoEditar : Form
     {
-        public form_OrdemServicoEditar()
+        private BuscarDados bd = new BuscarDados();
+        private AlterarDados ad = new AlterarDados();
+        private PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
+        private DataTable dt;
+        private MensagensSucesso mSucesso = new MensagensSucesso();
+        private bool isServicoSemChecklistCondFisicas = false;
+
+        public form_OrdemServicoEditar(int _idCliente, bool _isServicoSemChecklistCondFisicas)
         {
             InitializeComponent();
+            isServicoSemChecklistCondFisicas = _isServicoSemChecklistCondFisicas;
+            CarregarComboxClientes();
+            SetarComboboxComUltimoClienteAdicionado(dt, _idCliente);
+            InicializarOpcoesCombobox();
             FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtServicoValor);
             FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtPecaValor);
             FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtLucroValor);
+        }
+
+        private void InicializarOpcoesCombobox()
+        {
+            PreencherComboboxServicos p = new PreencherComboboxServicos();
+            //info aparelho
+            p.PreencherInfoAparelho(this);
+            //cond fisicas
+            p.PreencherInfoCondFisicas(this);
+        }
+
+        private void SetarComboboxComUltimoClienteAdicionado(DataTable _dt, int _id)
+        {
+            //Pego a linha que tem o ultimo ID cadastrado
+            DataRow[] rows = _dt.Select($"ID ='{_id}'");
+            //Seto a index da combobox para a index dessa linha que peguei acima.
+            cmbCliente.SelectedIndex = _dt.Rows.IndexOf(rows[0]);
+        }
+
+        public void CarregarComboxClientes()
+        {
+            cmbCliente.SelectedIndexChanged -= cmbCliente_SelectedIndexChanged;
+            preencherCombobox.CarregarComboxClientes(cmbCliente, ref dt);
+            cmbCliente.SelectedIndexChanged += cmbCliente_SelectedIndexChanged;
+        }
+
+        private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBoxBaseDataBound combobox = cmbCliente as ComboBoxBaseDataBound;
+            if (combobox.SelectedIndex != -1)
+            {
+                DataRowView drv = combobox.Items[combobox.SelectedIndex] as DataRowView;
+                //lblIdCliente.Text = listClientesComId.ElementAt(multiColumnComboBox1.SelectedIndex).ID.ToString();
+                lblIdCliente.Text = drv.Row[0].ToString();
+            }
         }
 
         private void AbrirRichtextExterna(RichTextBox _richText)
@@ -129,14 +183,146 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             }
         }
 
-        private void txtServicoValor_KeyUp(object sender, KeyEventArgs e)
-        {
-            //CalcularLucro();
-        }
-
         private void txtPecaValor_TextChange(object sender, EventArgs e)
         {
             CalcularLucro();
+        }
+
+        private void form_OrdemServicoEditar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnCheckListENTRADA_Click(object sender, EventArgs e)
+        {
+            if (isServicoSemChecklistCondFisicas == true)
+            {
+                var escolha = MessageBox.Show("Deseja inserir um checklist de entrada?", " ", MessageBoxButtons.YesNo);
+                if (escolha == DialogResult.Yes)
+                {
+                    //Abrir form
+                    form_InserirEditarChecklist form =
+                        new form_InserirEditarChecklist(Checklist.ENTRADA, true);
+                    form.lblIdServico.Text = lblIdServico.Text;
+                    form.btnSalvarChecklist.Text = "Inserir checklist - Entrada";
+                    form.lblTituloChecklist.Text = "Checklist - ENTRADA";
+                    form.lblOrdemServico.Text = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
+                    form.lblDataCad.Text = dtpDataServico.EditValue.ToString();
+                    form.ShowDialog();
+                }
+            }
+            else
+            {
+                var escolha = MessageBox.Show("Deseja alterar um checklist de entrada?", " ", MessageBoxButtons.YesNo);
+                if (escolha == DialogResult.Yes)
+                {
+                    //Abrir form
+                    form_InserirEditarChecklist form =
+                        new form_InserirEditarChecklist(Checklist.ENTRADA, false);
+                    form.lblIdServico.Text = lblIdServico.Text;
+                    form.btnSalvarChecklist.Text = "Alterar checklist - Entrada";
+                    form.lblTituloChecklist.Text = "Checklist - ENTRADA";
+                    form.lblOrdemServico.Text = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
+                    form.lblDataCad.Text = dtpDataServico.EditValue.ToString();
+                    form.ShowDialog();
+                }
+            }
+        }
+
+        private void btnChecklistSAIDA_Click(object sender, EventArgs e)
+        {
+            if (isServicoSemChecklistCondFisicas == true)
+            {
+                var escolha = MessageBox.Show("Deseja inserir um checklist de saida?", " ", MessageBoxButtons.YesNo);
+                if (escolha == DialogResult.Yes)
+                {
+                    //Abrir form
+                    form_InserirEditarChecklist form =
+                        new form_InserirEditarChecklist(Checklist.SAIDA, true);
+                    form.lblIdServico.Text = lblIdServico.Text;
+                    form.btnSalvarChecklist.Text = "Inserir checklist - Saida";
+                    form.lblTituloChecklist.Text = "Checklist - SAIDA";
+                    form.lblOrdemServico.Text = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
+                    form.lblDataCad.Text = dtpDataServico.EditValue.ToString();
+                    form.ShowDialog();
+                }
+            }
+            else
+            {
+                var escolha = MessageBox.Show("Deseja alterar um checklist de saida?", " ", MessageBoxButtons.YesNo);
+                if (escolha == DialogResult.Yes)
+                {
+                    //Abrir form
+                    form_InserirEditarChecklist form =
+                        new form_InserirEditarChecklist(Checklist.SAIDA, false);
+                    form.lblIdServico.Text = lblIdServico.Text;
+                    form.btnSalvarChecklist.Text = "Alterar checklist - Saida";
+                    form.lblTituloChecklist.Text = "Checklist - SAIDA";
+                    form.lblOrdemServico.Text = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
+                    form.lblDataCad.Text = dtpDataServico.EditValue.ToString();
+                    form.ShowDialog();
+                }
+            }
+        }
+
+        private void cmbTipoAparelho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnTipoAparelho.ImageOptions.SvgImage = svgCollection[cmbTipoAparelho.Text];
+        }
+
+        private void btnSalvarOrdemServico_Click(object sender, EventArgs e)
+        {
+            ad.AtualizarServico(this);
+            ad.AtualizarCondicoesFisicas(this);
+            mSucesso.AlterarServicoSucesso();
+            this.Close();
+        }
+
+        private void btnConcluirServico_Click(object sender, EventArgs e)
+        {
+            Aparelho tipoAparelho = Aparelho.VAZIO;
+            switch (cmbTipoAparelho.Text)
+            {
+                case "Celular":
+                    tipoAparelho = Aparelho.Celular;
+                    break;
+
+                case "Notebook":
+                    tipoAparelho = Aparelho.Notebook;
+                    break;
+
+                case "Computador":
+                    tipoAparelho = Aparelho.Computador;
+                    break;
+            }
+
+            if (tipoAparelho != Aparelho.VAZIO)
+            {
+                if (MessageBox.Show("Gostaria de imprimir a O.S de Saida apos a conclusão do serviço?",
+                        "Deseja imprimir OS - Saida?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    int idCliente = Convert.ToInt32(lblIdCliente.Text);
+                    form_OrdemServicoSaida formSaida = new form_OrdemServicoSaida(tipoAparelho, idCliente, false, new[] { 255, 0, 103 });
+                    formSaida.lblIdServico.Text = lblIdServico.Text;
+                    formSaida.lblIdCliente.Text = lblIdCliente.Text;
+                    formSaida.lblIdChecklist.Text = lblIdChecklist.Text;
+                    formSaida.lblIdCondicoesFisicas.Text = lblIdCondicoesFisicas.Text;
+                    formSaida.ShowDialog();
+                    return;
+                }
+
+                ad.AtualizarServico(this);
+                ad.AtualizarCondicoesFisicas(this);
+                ad.ConcluirServicos(Convert.ToInt32(lblIdServico.Text));
+                this.Close();
+            }
+        }
+
+        private void btnConcluirImprimir_Click(object sender, EventArgs e)
+        {
         }
     }
 }

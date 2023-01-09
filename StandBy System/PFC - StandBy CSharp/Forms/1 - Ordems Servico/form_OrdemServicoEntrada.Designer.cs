@@ -111,9 +111,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbCor = new Bunifu.UI.WinForms.BunifuDropdown();
             this.cmbMarca = new Bunifu.UI.WinForms.BunifuDropdown();
             this.picSenhaPattern = new System.Windows.Forms.PictureBox();
-            this.txtSenhaDispositivo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtMei_SerialNumber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtModelo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.dtpDataServico = new Bunifu.Framework.UI.BunifuDatepicker();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -126,6 +123,12 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblDataOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.txtModelo = new DevExpress.XtraEditors.TextEdit();
+            this.bunifuSeparator9 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.bunifuSeparator10 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.txtMei_SerialNumber = new DevExpress.XtraEditors.TextEdit();
+            this.bunifuSeparator11 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.txtSenhaDispositivo = new DevExpress.XtraEditors.TextEdit();
             this.panel_FormOrdemServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
@@ -143,6 +146,9 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.panel_OrdemServCodigo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMei_SerialNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSenhaDispositivo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_FormOrdemServico
@@ -289,6 +295,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnConcluirServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnConcluirServico.TabIndex = 72;
             this.btnConcluirServico.TabStop = false;
+            this.btnConcluirServico.Visible = false;
             this.btnConcluirServico.Zoom = 15;
             this.btnConcluirServico.Click += new System.EventHandler(this.btnConcluirServico_Click);
             // 
@@ -454,6 +461,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.switchChecklistAusente.Properties.ShowText = false;
             this.switchChecklistAusente.Size = new System.Drawing.Size(66, 32);
             this.switchChecklistAusente.TabIndex = 6;
+            this.switchChecklistAusente.Toggled += new System.EventHandler(this.switchChecklistAusente_Toggled);
             // 
             // txtChecklistMotivoAusencia
             // 
@@ -466,7 +474,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
             this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 66);
             this.txtChecklistMotivoAusencia.TabIndex = 67;
-            this.txtChecklistMotivoAusencia.Text = "O Aparelho chegou totalmente apagado";
+            this.txtChecklistMotivoAusencia.Text = "";
             // 
             // bunifuCustomLabel27
             // 
@@ -509,9 +517,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCarregamento.BorderRadius = 2;
             this.cmbChecklistCarregamento.Color = System.Drawing.Color.Gray;
             this.cmbChecklistCarregamento.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistCarregamento.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistCarregamento.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistCarregamento.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistCarregamento.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistCarregamento.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistCarregamento.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistCarregamento.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistCarregamento.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistCarregamento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -539,6 +547,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCarregamento.Name = "cmbChecklistCarregamento";
             this.cmbChecklistCarregamento.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCarregamento.TabIndex = 47;
+            this.cmbChecklistCarregamento.Text = null;
             this.cmbChecklistCarregamento.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistCarregamento.TextLeftMargin = 5;
             // 
@@ -561,9 +570,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBluetooth.BorderRadius = 2;
             this.cmbChecklistBluetooth.Color = System.Drawing.Color.Gray;
             this.cmbChecklistBluetooth.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistBluetooth.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistBluetooth.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistBluetooth.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistBluetooth.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBluetooth.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBluetooth.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistBluetooth.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistBluetooth.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistBluetooth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -591,6 +600,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBluetooth.Name = "cmbChecklistBluetooth";
             this.cmbChecklistBluetooth.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBluetooth.TabIndex = 45;
+            this.cmbChecklistBluetooth.Text = null;
             this.cmbChecklistBluetooth.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBluetooth.TextLeftMargin = 5;
             // 
@@ -616,7 +626,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
             this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
             this.txtChecklistObservacoes.TabIndex = 6;
-            this.txtChecklistObservacoes.Text = "O Microfone funciona bem, porem aparenta estar desgastado";
+            this.txtChecklistObservacoes.Text = "";
             // 
             // cmbChecklistAltoFaltante
             // 
@@ -626,9 +636,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAltoFaltante.BorderRadius = 2;
             this.cmbChecklistAltoFaltante.Color = System.Drawing.Color.Gray;
             this.cmbChecklistAltoFaltante.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistAltoFaltante.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistAltoFaltante.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistAltoFaltante.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistAltoFaltante.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistAltoFaltante.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistAltoFaltante.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistAltoFaltante.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistAltoFaltante.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistAltoFaltante.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -656,6 +666,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAltoFaltante.Name = "cmbChecklistAltoFaltante";
             this.cmbChecklistAltoFaltante.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAltoFaltante.TabIndex = 43;
+            this.cmbChecklistAltoFaltante.Text = null;
             this.cmbChecklistAltoFaltante.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistAltoFaltante.TextLeftMargin = 5;
             // 
@@ -678,9 +689,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistWifi.BorderRadius = 2;
             this.cmbChecklistWifi.Color = System.Drawing.Color.Gray;
             this.cmbChecklistWifi.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistWifi.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistWifi.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistWifi.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistWifi.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistWifi.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistWifi.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistWifi.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistWifi.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistWifi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -708,6 +719,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistWifi.Name = "cmbChecklistWifi";
             this.cmbChecklistWifi.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistWifi.TabIndex = 41;
+            this.cmbChecklistWifi.Text = null;
             this.cmbChecklistWifi.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistWifi.TextLeftMargin = 5;
             // 
@@ -730,9 +742,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAuricular.BorderRadius = 2;
             this.cmbChecklistAuricular.Color = System.Drawing.Color.Gray;
             this.cmbChecklistAuricular.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistAuricular.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistAuricular.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistAuricular.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistAuricular.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistAuricular.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistAuricular.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistAuricular.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistAuricular.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistAuricular.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -760,6 +772,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAuricular.Name = "cmbChecklistAuricular";
             this.cmbChecklistAuricular.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAuricular.TabIndex = 39;
+            this.cmbChecklistAuricular.Text = null;
             this.cmbChecklistAuricular.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistAuricular.TextLeftMargin = 5;
             // 
@@ -782,9 +795,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCameras.BorderRadius = 2;
             this.cmbChecklistCameras.Color = System.Drawing.Color.Gray;
             this.cmbChecklistCameras.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistCameras.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistCameras.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistCameras.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistCameras.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistCameras.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistCameras.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistCameras.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistCameras.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistCameras.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -812,6 +825,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCameras.Name = "cmbChecklistCameras";
             this.cmbChecklistCameras.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCameras.TabIndex = 37;
+            this.cmbChecklistCameras.Text = null;
             this.cmbChecklistCameras.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistCameras.TextLeftMargin = 5;
             // 
@@ -834,9 +848,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistSensor.BorderRadius = 2;
             this.cmbChecklistSensor.Color = System.Drawing.Color.Gray;
             this.cmbChecklistSensor.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistSensor.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistSensor.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistSensor.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistSensor.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistSensor.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistSensor.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistSensor.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistSensor.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistSensor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -864,6 +878,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistSensor.Name = "cmbChecklistSensor";
             this.cmbChecklistSensor.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistSensor.TabIndex = 35;
+            this.cmbChecklistSensor.Text = null;
             this.cmbChecklistSensor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistSensor.TextLeftMargin = 5;
             // 
@@ -886,9 +901,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBotoes.BorderRadius = 2;
             this.cmbChecklistBotoes.Color = System.Drawing.Color.Gray;
             this.cmbChecklistBotoes.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistBotoes.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistBotoes.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistBotoes.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistBotoes.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBotoes.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBotoes.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistBotoes.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistBotoes.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistBotoes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -916,6 +931,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBotoes.Name = "cmbChecklistBotoes";
             this.cmbChecklistBotoes.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBotoes.TabIndex = 33;
+            this.cmbChecklistBotoes.Text = null;
             this.cmbChecklistBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBotoes.TextLeftMargin = 5;
             // 
@@ -938,9 +954,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistChip.BorderRadius = 2;
             this.cmbChecklistChip.Color = System.Drawing.Color.Gray;
             this.cmbChecklistChip.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistChip.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistChip.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistChip.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistChip.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistChip.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistChip.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistChip.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistChip.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistChip.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -968,6 +984,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistChip.Name = "cmbChecklistChip";
             this.cmbChecklistChip.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistChip.TabIndex = 31;
+            this.cmbChecklistChip.Text = null;
             this.cmbChecklistChip.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistChip.TextLeftMargin = 5;
             // 
@@ -990,9 +1007,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistTela.BorderRadius = 2;
             this.cmbChecklistTela.Color = System.Drawing.Color.Gray;
             this.cmbChecklistTela.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistTela.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistTela.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistTela.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistTela.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistTela.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistTela.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistTela.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistTela.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistTela.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -1020,6 +1037,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistTela.Name = "cmbChecklistTela";
             this.cmbChecklistTela.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistTela.TabIndex = 29;
+            this.cmbChecklistTela.Text = null;
             this.cmbChecklistTela.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistTela.TextLeftMargin = 5;
             // 
@@ -1042,9 +1060,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistMicrofone.BorderRadius = 2;
             this.cmbChecklistMicrofone.Color = System.Drawing.Color.Gray;
             this.cmbChecklistMicrofone.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistMicrofone.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistMicrofone.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistMicrofone.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistMicrofone.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistMicrofone.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistMicrofone.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistMicrofone.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistMicrofone.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistMicrofone.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -1072,6 +1090,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistMicrofone.Name = "cmbChecklistMicrofone";
             this.cmbChecklistMicrofone.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistMicrofone.TabIndex = 27;
+            this.cmbChecklistMicrofone.Text = null;
             this.cmbChecklistMicrofone.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistMicrofone.TextLeftMargin = 5;
             // 
@@ -1094,9 +1113,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBiometria.BorderRadius = 2;
             this.cmbChecklistBiometria.Color = System.Drawing.Color.Gray;
             this.cmbChecklistBiometria.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistBiometria.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbChecklistBiometria.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbChecklistBiometria.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbChecklistBiometria.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBiometria.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBiometria.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmbChecklistBiometria.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cmbChecklistBiometria.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
             this.cmbChecklistBiometria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -1124,6 +1143,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBiometria.Name = "cmbChecklistBiometria";
             this.cmbChecklistBiometria.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBiometria.TabIndex = 25;
+            this.cmbChecklistBiometria.Text = null;
             this.cmbChecklistBiometria.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBiometria.TextLeftMargin = 5;
             // 
@@ -1162,8 +1182,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtCondicoesBalcao.Name = "txtCondicoesBalcao";
             this.txtCondicoesBalcao.Size = new System.Drawing.Size(745, 104);
             this.txtCondicoesBalcao.TabIndex = 5;
-            this.txtCondicoesBalcao.Text = "Foi passado um orçamento para o cliente de 200 reais, o pagamento vai ser parcela" +
-    "do em 12 vezes, o cliente ficou de trazer mais.";
+            this.txtCondicoesBalcao.Text = "";
             // 
             // group_RelatoCliente
             // 
@@ -1189,7 +1208,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtRelatoCliente.Name = "txtRelatoCliente";
             this.txtRelatoCliente.Size = new System.Drawing.Size(745, 93);
             this.txtRelatoCliente.TabIndex = 5;
-            this.txtRelatoCliente.Text = "Tava cagando e ai disse que caiu no vaso nao sei como";
+            this.txtRelatoCliente.Text = "";
             // 
             // group_OutrasObservacoes
             // 
@@ -1215,7 +1234,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(745, 66);
             this.txtObservacoes.TabIndex = 5;
-            this.txtObservacoes.Text = "Outras obs aqui";
+            this.txtObservacoes.Text = "";
             // 
             // group_CondicoesFisicas
             // 
@@ -1305,7 +1324,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbLenteCamera.Name = "cmbLenteCamera";
             this.cmbLenteCamera.Size = new System.Drawing.Size(270, 32);
             this.cmbLenteCamera.TabIndex = 76;
-            this.cmbLenteCamera.Text = "COM ARRANHÕES";
+            this.cmbLenteCamera.Text = null;
             this.cmbLenteCamera.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbLenteCamera.TextLeftMargin = 5;
             // 
@@ -1366,7 +1385,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbBotoes.Name = "cmbBotoes";
             this.cmbBotoes.Size = new System.Drawing.Size(270, 32);
             this.cmbBotoes.TabIndex = 74;
-            this.cmbBotoes.Text = "CLICANDO NORMAL";
+            this.cmbBotoes.Text = null;
             this.cmbBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbBotoes.TextLeftMargin = 5;
             // 
@@ -1427,7 +1446,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbAro.Name = "cmbAro";
             this.cmbAro.Size = new System.Drawing.Size(270, 32);
             this.cmbAro.TabIndex = 72;
-            this.cmbAro.Text = "MARCAS DE PANCADA";
+            this.cmbAro.Text = null;
             this.cmbAro.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbAro.TextLeftMargin = 5;
             // 
@@ -1488,7 +1507,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbTampa.Name = "cmbTampa";
             this.cmbTampa.Size = new System.Drawing.Size(270, 32);
             this.cmbTampa.TabIndex = 70;
-            this.cmbTampa.Text = "SEM PROBLEMAS VISÍVEIS";
+            this.cmbTampa.Text = null;
             this.cmbTampa.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbTampa.TextLeftMargin = 5;
             // 
@@ -1549,7 +1568,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbTela.Name = "cmbTela";
             this.cmbTela.Size = new System.Drawing.Size(270, 32);
             this.cmbTela.TabIndex = 68;
-            this.cmbTela.Text = "COM ARRANHÕES";
+            this.cmbTela.Text = null;
             this.cmbTela.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbTela.TextLeftMargin = 5;
             // 
@@ -1619,7 +1638,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbPelicula.Name = "cmbPelicula";
             this.cmbPelicula.Size = new System.Drawing.Size(270, 32);
             this.cmbPelicula.TabIndex = 66;
-            this.cmbPelicula.Text = "SEM PELÍCULA";
+            this.cmbPelicula.Text = null;
             this.cmbPelicula.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbPelicula.TextLeftMargin = 5;
             // 
@@ -1692,15 +1711,18 @@ namespace PFC___StandBy_CSharp.Forms
             // group_InformacoesAparelho
             // 
             this.group_InformacoesAparelho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.group_InformacoesAparelho.Controls.Add(this.bunifuSeparator11);
+            this.group_InformacoesAparelho.Controls.Add(this.txtSenhaDispositivo);
+            this.group_InformacoesAparelho.Controls.Add(this.bunifuSeparator10);
+            this.group_InformacoesAparelho.Controls.Add(this.txtMei_SerialNumber);
+            this.group_InformacoesAparelho.Controls.Add(this.bunifuSeparator9);
+            this.group_InformacoesAparelho.Controls.Add(this.txtModelo);
             this.group_InformacoesAparelho.Controls.Add(this.bunifuSeparator8);
             this.group_InformacoesAparelho.Controls.Add(this.bunifuSeparator1);
             this.group_InformacoesAparelho.Controls.Add(this.separatorCPF);
             this.group_InformacoesAparelho.Controls.Add(this.cmbCor);
             this.group_InformacoesAparelho.Controls.Add(this.cmbMarca);
             this.group_InformacoesAparelho.Controls.Add(this.picSenhaPattern);
-            this.group_InformacoesAparelho.Controls.Add(this.txtSenhaDispositivo);
-            this.group_InformacoesAparelho.Controls.Add(this.txtMei_SerialNumber);
-            this.group_InformacoesAparelho.Controls.Add(this.txtModelo);
             this.group_InformacoesAparelho.Controls.Add(this.separatorControl1);
             this.group_InformacoesAparelho.Controls.Add(this.dtpDataServico);
             this.group_InformacoesAparelho.Controls.Add(this.bunifuCustomLabel12);
@@ -1813,7 +1835,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbCor.Name = "cmbCor";
             this.cmbCor.Size = new System.Drawing.Size(270, 32);
             this.cmbCor.TabIndex = 32;
-            this.cmbCor.Text = "AZUL";
+            this.cmbCor.Text = null;
             this.cmbCor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbCor.TextLeftMargin = 5;
             // 
@@ -1850,16 +1872,12 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbMarca.ItemHeight = 26;
             this.cmbMarca.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbMarca.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.cmbMarca.Items.AddRange(new object[] {
-            "SAMSUNG",
-            "LG",
-            "MOTOROLA"});
             this.cmbMarca.ItemTopMargin = 3;
             this.cmbMarca.Location = new System.Drawing.Point(107, 49);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(270, 32);
             this.cmbMarca.TabIndex = 24;
-            this.cmbMarca.Text = "MOTOROLA";
+            this.cmbMarca.Text = null;
             this.cmbMarca.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbMarca.TextLeftMargin = 5;
             // 
@@ -1873,78 +1891,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.picSenhaPattern.TabIndex = 31;
             this.picSenhaPattern.TabStop = false;
             this.picSenhaPattern.Click += new System.EventHandler(this.picSenhaPattern_Click);
-            // 
-            // txtSenhaDispositivo
-            // 
-            this.txtSenhaDispositivo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtSenhaDispositivo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtSenhaDispositivo.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtSenhaDispositivo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSenhaDispositivo.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtSenhaDispositivo.ForeColor = System.Drawing.Color.White;
-            this.txtSenhaDispositivo.HintForeColor = System.Drawing.Color.Empty;
-            this.txtSenhaDispositivo.HintText = "";
-            this.txtSenhaDispositivo.isPassword = false;
-            this.txtSenhaDispositivo.LineFocusedColor = System.Drawing.Color.White;
-            this.txtSenhaDispositivo.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtSenhaDispositivo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.txtSenhaDispositivo.LineThickness = 3;
-            this.txtSenhaDispositivo.Location = new System.Drawing.Point(107, 197);
-            this.txtSenhaDispositivo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSenhaDispositivo.MaxLength = 32767;
-            this.txtSenhaDispositivo.Name = "txtSenhaDispositivo";
-            this.txtSenhaDispositivo.Size = new System.Drawing.Size(211, 30);
-            this.txtSenhaDispositivo.TabIndex = 30;
-            this.txtSenhaDispositivo.Text = "12345";
-            this.txtSenhaDispositivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtMei_SerialNumber
-            // 
-            this.txtMei_SerialNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtMei_SerialNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtMei_SerialNumber.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtMei_SerialNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMei_SerialNumber.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtMei_SerialNumber.ForeColor = System.Drawing.Color.White;
-            this.txtMei_SerialNumber.HintForeColor = System.Drawing.Color.Empty;
-            this.txtMei_SerialNumber.HintText = "";
-            this.txtMei_SerialNumber.isPassword = false;
-            this.txtMei_SerialNumber.LineFocusedColor = System.Drawing.Color.White;
-            this.txtMei_SerialNumber.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtMei_SerialNumber.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.txtMei_SerialNumber.LineThickness = 3;
-            this.txtMei_SerialNumber.Location = new System.Drawing.Point(107, 160);
-            this.txtMei_SerialNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMei_SerialNumber.MaxLength = 32767;
-            this.txtMei_SerialNumber.Name = "txtMei_SerialNumber";
-            this.txtMei_SerialNumber.Size = new System.Drawing.Size(270, 30);
-            this.txtMei_SerialNumber.TabIndex = 29;
-            this.txtMei_SerialNumber.Text = "6352489641651";
-            this.txtMei_SerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtModelo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtModelo.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtModelo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtModelo.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtModelo.ForeColor = System.Drawing.Color.White;
-            this.txtModelo.HintForeColor = System.Drawing.Color.Empty;
-            this.txtModelo.HintText = "";
-            this.txtModelo.isPassword = false;
-            this.txtModelo.LineFocusedColor = System.Drawing.Color.White;
-            this.txtModelo.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtModelo.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.txtModelo.LineThickness = 3;
-            this.txtModelo.Location = new System.Drawing.Point(107, 86);
-            this.txtModelo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtModelo.MaxLength = 32767;
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(270, 30);
-            this.txtModelo.TabIndex = 27;
-            this.txtModelo.Text = "G9 PLAY";
-            this.txtModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // separatorControl1
             // 
@@ -2076,6 +2022,102 @@ namespace PFC___StandBy_CSharp.Forms
             this.moverForm.TargetControl = null;
             this.moverForm.Vertical = true;
             // 
+            // txtModelo
+            // 
+            this.txtModelo.EditValue = "";
+            this.txtModelo.Location = new System.Drawing.Point(107, 84);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtModelo.Properties.Appearance.Options.UseFont = true;
+            this.txtModelo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtModelo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtModelo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtModelo.Size = new System.Drawing.Size(270, 34);
+            this.txtModelo.TabIndex = 6;
+            // 
+            // bunifuSeparator9
+            // 
+            this.bunifuSeparator9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator9.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator9.BackgroundImage")));
+            this.bunifuSeparator9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator9.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator9.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator9.LineColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator9.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator9.LineThickness = 3;
+            this.bunifuSeparator9.Location = new System.Drawing.Point(107, 112);
+            this.bunifuSeparator9.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuSeparator9.Name = "bunifuSeparator9";
+            this.bunifuSeparator9.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator9.Size = new System.Drawing.Size(274, 10);
+            this.bunifuSeparator9.TabIndex = 72;
+            this.bunifuSeparator9.TabStop = false;
+            // 
+            // bunifuSeparator10
+            // 
+            this.bunifuSeparator10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator10.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator10.BackgroundImage")));
+            this.bunifuSeparator10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator10.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator10.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator10.LineColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator10.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator10.LineThickness = 3;
+            this.bunifuSeparator10.Location = new System.Drawing.Point(107, 180);
+            this.bunifuSeparator10.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuSeparator10.Name = "bunifuSeparator10";
+            this.bunifuSeparator10.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator10.Size = new System.Drawing.Size(270, 10);
+            this.bunifuSeparator10.TabIndex = 74;
+            this.bunifuSeparator10.TabStop = false;
+            // 
+            // txtMei_SerialNumber
+            // 
+            this.txtMei_SerialNumber.EditValue = "";
+            this.txtMei_SerialNumber.Location = new System.Drawing.Point(107, 154);
+            this.txtMei_SerialNumber.Name = "txtMei_SerialNumber";
+            this.txtMei_SerialNumber.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtMei_SerialNumber.Properties.Appearance.Options.UseFont = true;
+            this.txtMei_SerialNumber.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtMei_SerialNumber.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtMei_SerialNumber.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtMei_SerialNumber.Size = new System.Drawing.Size(270, 34);
+            this.txtMei_SerialNumber.TabIndex = 73;
+            // 
+            // bunifuSeparator11
+            // 
+            this.bunifuSeparator11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator11.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator11.BackgroundImage")));
+            this.bunifuSeparator11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator11.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator11.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator11.LineColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator11.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator11.LineThickness = 3;
+            this.bunifuSeparator11.Location = new System.Drawing.Point(103, 223);
+            this.bunifuSeparator11.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuSeparator11.Name = "bunifuSeparator11";
+            this.bunifuSeparator11.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator11.Size = new System.Drawing.Size(213, 10);
+            this.bunifuSeparator11.TabIndex = 76;
+            this.bunifuSeparator11.TabStop = false;
+            // 
+            // txtSenhaDispositivo
+            // 
+            this.txtSenhaDispositivo.EditValue = "";
+            this.txtSenhaDispositivo.Location = new System.Drawing.Point(103, 194);
+            this.txtSenhaDispositivo.Name = "txtSenhaDispositivo";
+            this.txtSenhaDispositivo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtSenhaDispositivo.Properties.Appearance.Options.UseFont = true;
+            this.txtSenhaDispositivo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtSenhaDispositivo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtSenhaDispositivo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtSenhaDispositivo.Size = new System.Drawing.Size(209, 34);
+            this.txtSenhaDispositivo.TabIndex = 75;
+            // 
             // form_OrdemServicoEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2112,6 +2154,9 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             this.panel_OrdemServCodigo.ResumeLayout(false);
             this.panel_OrdemServCodigo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMei_SerialNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSenhaDispositivo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2137,9 +2182,6 @@ namespace PFC___StandBy_CSharp.Forms
         public Bunifu.Framework.UI.BunifuDatepicker dtpDataServico;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtSenhaDispositivo;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtMei_SerialNumber;
-        public Bunifu.Framework.UI.BunifuMaterialTextbox txtModelo;
         private DevExpress.XtraEditors.SeparatorControl separatorControl2;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
         private Bunifu.UI.WinForms.BunifuSeparator separatorCPF;
@@ -2212,5 +2254,11 @@ namespace PFC___StandBy_CSharp.Forms
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdServico;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdCondicoesFisicas;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdChecklist;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator9;
+        public DevExpress.XtraEditors.TextEdit txtModelo;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator10;
+        public DevExpress.XtraEditors.TextEdit txtMei_SerialNumber;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator11;
+        public DevExpress.XtraEditors.TextEdit txtSenhaDispositivo;
     }
 }

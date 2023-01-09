@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using PFC___StandBy_CSharp.SqlDbConnect;
 using PFC___StandBy_CSharp.MsgBox;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Models;
+using PFC___StandBy_CSharp.Context;
+using PFC___StandBy_CSharp.Forms._1___Ordems_Servico;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -239,23 +242,31 @@ namespace PFC___StandBy_CSharp.Dados
 
         #endregion Alterar Clientes
 
-        #region Concluir Servicos
+        #region Concluir Servicos (efcore)
 
         public void ConcluirServicos(int _idServico)
         {
             try
             {
-                using (SqlConnection con = OpenConnection())
-                {
-                    string query = "update tb_servicos set sv_status = 0, sv_data_conclusao = GETDATE() where sv_id = @sv_id";
+                standby_orgContext context = new standby_orgContext();
 
-                    SqlCommand cmd = new SqlCommand(query, con);
+                tb_servicos servico = context.tb_servicos.FirstOrDefault(x => x.sv_id == _idServico);
+                servico.sv_status = 0;
+                servico.sv_data_conclusao = DateTime.Now;
 
-                    cmd.Parameters.AddWithValue("@sv_id", _idServico);
-                    cmd.ExecuteNonQuery();
+                context.SaveChanges();
 
-                    mSucesso.ConcluirServicoSucesso();
-                }
+                //using (SqlConnection con = OpenConnection())
+                //{
+                //    string query = "update tb_servicos set sv_status = 0, sv_data_conclusao = GETDATE() where sv_id = @sv_id";
+
+                //    SqlCommand cmd = new SqlCommand(query, con);
+
+                //    cmd.Parameters.AddWithValue("@sv_id", _idServico);
+                //    cmd.ExecuteNonQuery();
+
+                //}
+                mSucesso.ConcluirServicoSucesso();
             }
             catch (Exception ex)
             {
@@ -263,7 +274,7 @@ namespace PFC___StandBy_CSharp.Dados
             }
         }
 
-        #endregion Concluir Servicos
+        #endregion Concluir Servicos (efcore)
 
         #region Cancelar Serviço concluido
 
@@ -359,7 +370,105 @@ namespace PFC___StandBy_CSharp.Dados
 
         //V2
 
-        #region Atualizar Ordem de Servico
+        #region Atualizar servico (efcore)
+
+        public void AtualizarServico(form_OrdemServicoEditar _form)
+        {
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+                if (_form.lblIdServico.Text != "IdServico")
+                {
+                    tb_servicos s =
+                        context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(_form.lblIdServico.Text));
+
+                    s.sv_marca = _form.cmbMarca.Text;
+                    s.sv_aparelho = _form.txtModelo.Text;
+                    s.sv_cor = _form.cmbCor.Text;
+                    s.sv_mei_serialnumber = _form.txtMei_SerialNumber.Text;
+                    s.sv_senha = _form.txtSenhaDispositivo.Text;
+                    s.sv_situacao = _form.txtObservacoes.Text;
+                    s.sv_relato_cliente = _form.txtRelatoCliente.Text;
+                    s.sv_condicoes_balcao = _form.txtCondicoesBalcao.Text;
+                    s.sv_servico = _form.txtSolucao.Text;
+                    s.sv_defeito = _form.txtDefeito.Text;
+                    s.sv_tipo_aparelho = _form.cmbTipoAparelho.Text;
+                    s.sv_valorservico = Convert.ToDecimal(_form.txtServicoValor.Text.TrimStart('R', '$').Trim());
+                    s.sv_valorpeca = Convert.ToDecimal(_form.txtPecaValor.Text.TrimStart('R', '$').Trim());
+                    s.sv_lucro = Convert.ToDecimal(_form.txtLucroValor.Text.TrimStart('R', '$').Trim());
+                    s.sv_previsao_entrega = _form.dtpPrevisaoEntrega.DateTime;
+                    s.sv_acessorios = _form.txtAcessorios.Text;
+                    s.sv_avaliacao_servico = _form.cmbStatusServico.Text;
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                mErro.erroAoAtualizarServico(e);
+            }
+        }
+
+        #endregion Atualizar servico (efcore)
+
+        #region Atualizar condicoes fisicas (efcore)
+
+        public void AtualizarCondicoesFisicas(form_OrdemServicoEditar _form)
+        {
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+                if (_form.lblIdServico.Text != "IdServico")
+                {
+                    tb_condicoes_fisicas c =
+                        context.tb_condicoes_fisicas.FirstOrDefault(x => x.cf_sv_idservico == Convert.ToInt32(_form.lblIdServico.Text));
+
+                    //Caso nao encontre, tenho que criar um novo.
+                    if (c == null)
+                    {
+                        if (!string.IsNullOrWhiteSpace(_form.cmbPelicula.Text) ||
+                            !string.IsNullOrWhiteSpace(_form.cmbTela.Text) ||
+                            !string.IsNullOrWhiteSpace(_form.cmbTampa.Text) ||
+                            !string.IsNullOrWhiteSpace(_form.cmbAro.Text) ||
+                            !string.IsNullOrWhiteSpace(_form.cmbBotoes.Text) ||
+                            !string.IsNullOrWhiteSpace(_form.cmbLenteCamera.Text))
+                        {
+                            c = new tb_condicoes_fisicas();
+                            c.cf_pelicula = _form.cmbPelicula.Text;
+                            c.cf_tela = _form.cmbTela.Text;
+                            c.cf_tampa = _form.cmbTampa.Text;
+                            c.cf_aro = _form.cmbAro.Text;
+                            c.cf_botoes = _form.cmbBotoes.Text;
+                            c.cf_lente_camera = _form.cmbLenteCamera.Text;
+
+                            context.tb_condicoes_fisicas.Add(c);
+                            context.SaveChanges();
+
+                            return;
+                        }
+
+                        return;
+                    }
+
+                    c.cf_pelicula = _form.cmbPelicula.Text;
+                    c.cf_tela = _form.cmbTela.Text;
+                    c.cf_tampa = _form.cmbTampa.Text;
+                    c.cf_aro = _form.cmbAro.Text;
+                    c.cf_botoes = _form.cmbBotoes.Text;
+                    c.cf_lente_camera = _form.cmbLenteCamera.Text;
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                mErro.ErroAoAtualizarCondicoesFisicasEfCore(e);
+            }
+        }
+
+        #endregion Atualizar condicoes fisicas (efcore)
+
+        #region Atualizar ordem de servico
 
         internal void AtualizarOS(ClienteEstrutura _clienteDados, ServicoEstrutura _servicoDados)
         {
@@ -412,7 +521,7 @@ namespace PFC___StandBy_CSharp.Dados
             }
         }
 
-        #endregion Atualizar Ordem de Servico
+        #endregion Atualizar ordem de servico
 
         #region Atualizar o CheckList
 

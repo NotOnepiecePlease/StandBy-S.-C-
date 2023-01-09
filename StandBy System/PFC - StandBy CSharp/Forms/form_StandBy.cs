@@ -208,23 +208,24 @@ namespace PFC___StandBy_CSharp.Forms
             panelCentral.Controls.Add(formFilho);
             panelCentral.Tag = formFilho;
             formFilho.BringToFront();
-            formPrincipal.Hide(); //Form principal é carregado diferente dos outros
+            //formPrincipal.Hide(); //Form principal é carregado diferente dos outros
             formFilho.Show();
             //lblAbaAtual.Text = formFilho.Text;
         }
 
-        private void OpenChildForm(form_ServicoPrincipal formFilho)
-        {
-            formFilho.TopLevel = false;
-            formFilho.FormBorderStyle = FormBorderStyle.None;
-            formFilho.Dock = DockStyle.Fill;
-            panelCentral.Controls.Add(formFilho);
-            panelCentral.Tag = formFilho;
-            formFilho.corGeral = corGeral;
-            formFilho.PopularGridview();
-            formFilho.BringToFront();
-            formFilho.Show();
-        }
+        //private void OpenChildForm(form_ServicoPrincipal formFilho)
+        //{
+        //    currentChildForm = formFilho;
+        //    formFilho.TopLevel = false;
+        //    formFilho.FormBorderStyle = FormBorderStyle.None;
+        //    formFilho.Dock = DockStyle.Fill;
+        //    panelCentral.Controls.Add(formFilho);
+        //    panelCentral.Tag = formFilho;
+        //    formFilho.corGeral = corGeral;
+        //    formFilho.PopularGridview();
+        //    formFilho.BringToFront();
+        //    formFilho.Show();
+        //}
 
         private void btnServicosPorMes_Click(object sender, EventArgs e)
         {
@@ -468,20 +469,42 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnServicos_Click(object sender, EventArgs e)
         {
-            //if (Application.OpenForms.OfType<form_OrdensServ>().Count() > 0)
             if (Application.OpenForms.OfType<form_ServicoPrincipal>().Count() > 0)
             {
                 //MessageBox.Show("O Form2 já está aberto!");
-                OpenChildForm(formPrincipal);
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i].Name == "form_ServicoPrincipal")
+                    {
+                        Application.OpenForms[i].Close();
+                        OpenChildForm(new form_ServicoPrincipal());
+                        break;
+                    }
+                }
             }
             else
             {
-                if (formPrincipal == null)
-                {
-                    formPrincipal = new form_ServicoPrincipal();
-                    OpenChildForm(formPrincipal);
-                }
+                OpenChildForm(new form_ServicoPrincipal());
             }
+
+            ////if (Application.OpenForms.OfType<form_OrdensServ>().Count() > 0)
+            //if (Application.OpenForms.OfType<form_ServicoPrincipal>().Count() > 0)
+            //{
+            //    //MessageBox.Show("O Form2 já está aberto!");
+            //    OpenChildForm(formPrincipal);
+            //}
+            //else
+            //{
+            //    if (formPrincipal == null)
+            //    {
+            //        formPrincipal = new form_ServicoPrincipal();
+            //        OpenChildForm(formPrincipal);
+            //    }
+            //    else
+            //    {
+            //        OpenChildForm(formPrincipal);
+            //    }
+            //}
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

@@ -43,6 +43,12 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
             }
         }
 
+        public string BuscarStringConexao()
+        {
+            LerDataSourceSql();
+            return connectionString;
+        }
+
         public SqlConnection OpenConnection()
         {
             bckData.criarPasta();

@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Guna.UI.WinForms;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Context;
 using PFC___StandBy_CSharp.Models;
 
 // ReSharper disable All
@@ -439,6 +441,55 @@ namespace PFC___StandBy_CSharp.Dados
 
         #endregion Buscar ID ultima Ordem de Servico
 
+        #region Buscar lista de clientes colunas selecionadas para combobox
+
+        public List<ClienteEstrutura> BuscarListaClientes()
+        {
+            List<ClienteEstrutura> listClientes = new List<ClienteEstrutura>();
+            SqlConnection con = OpenConnection();
+            string query = "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado, cl_data_nascimento, cl_endereco, cl_bairro, cl_estado from tb_clientes order by cl_id";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader dataReader;
+
+            try
+            {
+                dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    int id = dataReader.GetInt32(0);
+                    string nome = dataReader.GetString(1);
+                    string cpf = dataReader.GetString(2);
+                    string telefone = dataReader.GetString(3);
+                    string telefoneRecado = dataReader.GetString(4);
+                    string dataNascimento = dataReader.IsDBNull(5) ? "---" : dataReader.GetDateTime(5).ToShortDateString();
+                    string endereco = dataReader.IsDBNull(6) ? "---" : dataReader.GetString(6);
+                    string bairro = (dataReader.IsDBNull(7)) || (dataReader.GetString(7) == "") ? "---" : dataReader.GetString(7);
+                    string estado = dataReader.IsDBNull(8) ? "---" : dataReader.GetString(8);
+
+                    listClientes.Add(new ClienteEstrutura
+                    {
+                        ID = id,
+                        Nome = nome,
+                        Cpf = cpf,
+                        Telefone = telefone,
+                        TelefoneRecado = telefoneRecado,
+                        DataNascimento = dataNascimento,
+                        Endereco = endereco,
+                        Bairro = bairro,
+                        Estado = estado
+                    });
+                }
+            }
+            catch (Exception e)
+            {
+                me.ComboBoxClienteErroEmPreencher(e);
+            }
+
+            return listClientes;
+        }
+
+        #endregion Buscar lista de clientes colunas selecionadas para combobox
+
         //V2
 
         #region Buscar OS pela ID (servico)
@@ -590,5 +641,62 @@ namespace PFC___StandBy_CSharp.Dados
         }
 
         #endregion Buscar OS pela ID (servico, condicao fisica, checklist)
+
+        #region Buscar OS pela ID (servico, condicao fisica, checklist) - Efcore
+
+        public (tb_servicos, tb_checklist, tb_condicoes_fisicas) BuscarOSPelaID(int _idServico)
+        {
+            tb_servicos servicoDados = null;
+            tb_checklist checklistDados = null;
+            tb_condicoes_fisicas condFisicasDados = null;
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+
+                //var teste = context.tb_servicos
+                //    .Join(context.tb_checklist, // the source table of the inner join
+                //        servC => servC.sv_id, // Select the primary key (the first part of the "on" clause in an sql "join" statement)
+                //        check => check.ch_sv_idservico, // Select the foreign key (the second part of the "on" clause)
+                //        (servC, check) => new { ServC = servC, Check = check })
+                //    .Join(context.tb_condicoes_fisicas,
+                //        servCondF => servCondF.ServC.sv_id,
+                //        condF => condF.cf_sv_idservico,
+                //        (servCondF, condF) => new { ServCondF = servCondF, CondF = condF })
+                //    .Where(serv => serv.ServCondF.ServC.sv_id == 34000).ToList();
+
+                var query = from servico in context.tb_servicos
+                            join checklist in context.tb_checklist
+                                on servico.sv_id equals checklist.ch_sv_idservico
+                            join condFisicas in context.tb_condicoes_fisicas
+                                on servico.sv_id equals condFisicas.cf_sv_idservico
+                            where servico.sv_id == _idServico
+                            select new { Servico = servico, Checklist = checklist, CondicoesFisicas = condFisicas };
+
+                var queryInnerjoin = query.ToList();
+
+                if (queryInnerjoin.Count == 0)
+                {
+                    var queryNew =
+                        from servico in context.tb_servicos
+                        where servico.sv_id == _idServico
+                        select servico;
+
+                    var servicoData = queryNew.First();
+                    servicoDados = servicoData;
+                    return (servicoDados, checklistDados, condFisicasDados);
+                }
+
+                servicoDados = queryInnerjoin[0].Servico;
+                checklistDados = queryInnerjoin[0].Checklist;
+                condFisicasDados = queryInnerjoin[0].CondicoesFisicas;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"{e}");
+            }
+            return (servicoDados, checklistDados, condFisicasDados);
+        }
+
+        #endregion Buscar OS pela ID (servico, condicao fisica, checklist) - Efcore
     }
 }

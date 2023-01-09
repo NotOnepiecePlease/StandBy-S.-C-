@@ -39,7 +39,8 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbCliente.Style = Syncfusion.Windows.Forms.VisualStyle.Office2007;
             this.cmbCliente.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Black;
 
-            listClientesComId = preencherCombobox.Preencher();
+            //listClientesComId = preencherCombobox.Preencher();
+            listClientesComId = buscarDados.BuscarListaClientes();
 
             DataTable dt = new DataTable("Table1");
             dt.Columns.Add("ID");

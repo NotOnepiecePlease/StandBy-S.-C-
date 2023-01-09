@@ -31,8 +31,8 @@ namespace PFC___StandBy_CSharp.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_ServicoPrincipal));
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
             this.colsv_ordem_serv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridcol_Prazo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -183,10 +183,10 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.dataSourceGridServicos.ConnectionName = "standby_MainConn";
             this.dataSourceGridServicos.Name = "dataSourceGridServicos";
-            customSqlQuery1.Name = "Query";
-            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
+            customSqlQuery2.Name = "Query";
+            customSqlQuery2.Sql = resources.GetString("customSqlQuery2.Sql");
             this.dataSourceGridServicos.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery1});
+            customSqlQuery2});
             this.dataSourceGridServicos.ResultSchemaSerializable = resources.GetString("dataSourceGridServicos.ResultSchemaSerializable");
             // 
             // gridviewServicos
@@ -204,14 +204,15 @@ namespace PFC___StandBy_CSharp.Forms
             this.colsv_defeito,
             this.colsv_previsao_entrega});
             this.gridviewServicos.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            gridFormatRule1.Name = "Format0";
-            gridFormatRule1.Rule = null;
-            this.gridviewServicos.FormatRules.Add(gridFormatRule1);
+            gridFormatRule2.Name = "Format0";
+            gridFormatRule2.Rule = null;
+            this.gridviewServicos.FormatRules.Add(gridFormatRule2);
             this.gridviewServicos.GridControl = this.gridctrlServicos;
             this.gridviewServicos.Name = "gridviewServicos";
             this.gridviewServicos.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridviewServicos.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridviewServicos.OptionsBehavior.Editable = false;
+            this.gridviewServicos.OptionsBehavior.KeepFocusedRowOnUpdate = false;
             this.gridviewServicos.OptionsDetail.EnableMasterViewMode = false;
             this.gridviewServicos.OptionsLayout.StoreFormatRules = true;
             this.gridviewServicos.OptionsMenu.ShowConditionalFormattingItem = true;

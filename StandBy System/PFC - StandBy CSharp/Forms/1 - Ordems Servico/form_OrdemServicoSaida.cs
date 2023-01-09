@@ -15,6 +15,7 @@ using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.Utils;
 using static PFC___StandBy_CSharp.Enum.Enum;
+using PFC___StandBy_CSharp.PreencherComponentes.Tela_6___Usada_por_Varias_Telas;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -25,6 +26,18 @@ namespace PFC___StandBy_CSharp.Forms
         public form_OrdemServicoSaida(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico, int[] _corGeral)
         {
             InitializeComponent();
+            InicializarOpcoesCombobox();
+        }
+
+        private void InicializarOpcoesCombobox()
+        {
+            PreencherComboboxServicos p = new PreencherComboboxServicos();
+            //checklist
+            p.PreencherInfoChecklist(this);
+            //info aparelho
+            p.PreencherInfoAparelho(this);
+            //cond fisicas
+            p.PreencherInfoCondFisicas(this);
         }
 
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
@@ -55,7 +68,7 @@ namespace PFC___StandBy_CSharp.Forms
             servico.sv_senha_pattern = picSenhaPattern.Image != null ? ConvertImage.ConvertImageToByte(picSenhaPattern.Image) : null;
             servico.sv_status = 0; //Concluido
             servico.sv_situacao = txtObservacoes.Text;
-            servico.sv_solucao = txtSolucao.Text;
+            servico.sv_servico = txtSolucao.Text;
             servico.sv_data_conclusao = DateTime.Now;
 
             var condFisicas = standbyContext.tb_condicoes_fisicas.First(x => x.cf_sv_idservico == idServico);

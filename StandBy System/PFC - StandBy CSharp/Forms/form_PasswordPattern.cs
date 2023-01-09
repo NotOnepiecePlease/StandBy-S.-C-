@@ -38,11 +38,11 @@ namespace PFC___StandBy_CSharp.Forms
         {
             InitializeComponent();
             criarPastaDasSenhas();
-            formOrdemServico = _formOrdemServico;
             corGeral = _corRgb;
             MudarCores();
             isUpdate = false;
             this.Size = new Size(261, 239);
+            formOrdemServico = _formOrdemServico;
         }
 
         public form_PasswordPattern(int[] _corRgb, bool _isUpdate)

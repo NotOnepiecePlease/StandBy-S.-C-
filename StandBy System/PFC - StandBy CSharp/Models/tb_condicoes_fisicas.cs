@@ -14,22 +14,16 @@ namespace PFC___StandBy_CSharp.Models
         [Column(TypeName = "datetime")]
         public DateTime cf_data { get; set; }
         public int cf_sv_idservico { get; set; }
-        [Required]
         [StringLength(50)]
         public string cf_pelicula { get; set; }
-        [Required]
         [StringLength(50)]
         public string cf_tela { get; set; }
-        [Required]
         [StringLength(50)]
         public string cf_tampa { get; set; }
-        [Required]
         [StringLength(50)]
         public string cf_aro { get; set; }
-        [Required]
         [StringLength(50)]
         public string cf_botoes { get; set; }
-        [Required]
         [StringLength(50)]
         public string cf_lente_camera { get; set; }
 

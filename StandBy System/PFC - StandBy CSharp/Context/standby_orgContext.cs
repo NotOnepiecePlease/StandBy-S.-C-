@@ -235,8 +235,6 @@ namespace PFC___StandBy_CSharp.Context
                     .IsUnicode(false)
                     .HasDefaultValueSql("('-----------------')");
 
-                entity.Property(e => e.sv_solucao).IsUnicode(false);
-
                 entity.Property(e => e.sv_status).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.sv_tempo_para_entregar).IsUnicode(false);

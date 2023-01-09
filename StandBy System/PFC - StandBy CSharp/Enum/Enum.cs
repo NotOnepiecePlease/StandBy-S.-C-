@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 namespace PFC___StandBy_CSharp.Enum
 {
     /// <summary>
-    /// 0 = Celular
-    /// 1 = Notebook
-    /// 2 = Computador
+    /// Tipos de aparelho
+    /// Tipos de ordem de servico
+    /// Tipos de checklist
     /// </summary>
     public class Enum
     {
         public enum Aparelho
         {
+            VAZIO,
             Celular,
             Notebook,
             Computador
@@ -25,6 +26,12 @@ namespace PFC___StandBy_CSharp.Enum
             AtualizarTudo,
             ExisteApenasServico,
             NovaInsercao
+        }
+
+        public enum Checklist
+        {
+            ENTRADA,
+            SAIDA
         }
     }
 }

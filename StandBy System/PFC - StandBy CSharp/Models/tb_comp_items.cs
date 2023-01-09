@@ -8,19 +8,15 @@ namespace PFC___StandBy_CSharp.Models
 {
     public partial class tb_comp_items
     {
-       
         [Key]
         public int item_id { get; set; }
-        [Required]
         [StringLength(50)]
         public string item_tela { get; set; }
-        [Required]
         [StringLength(50)]
         public string item_grupo { get; set; }
         [StringLength(50)]
         public string item_nome { get; set; }
-        public bool item_editavel { get; set; }
-        [Required]
+        public bool? item_editavel { get; set; }
         [StringLength(50)]
         public string item_texto { get; set; }
     }

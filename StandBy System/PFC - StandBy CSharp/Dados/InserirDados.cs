@@ -75,11 +75,13 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection conexaoSQL = OpenConnection())
                 {
-                    string query = "INSERT INTO tb_servicos (sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho,sv_marca, sv_aparelho,sv_cor, sv_mei_serialnumber, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_condicoes_balcao, sv_avaliacao_servico) " +
-                    "output INSERTED.sv_id VALUES (@OrdemServico, @Data, @FkCliente, @TipoAparelho,@Marca,@Aparelho,@Cor,@MeiSerialNumber, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @CondicoesBalcao, @AvaliacaoServico)";
+                    string query = "INSERT INTO tb_servicos (sv_previsao_entrega, sv_existe_um_prazo,sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho,sv_marca, sv_aparelho,sv_cor, sv_mei_serialnumber, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_condicoes_balcao, sv_avaliacao_servico) " +
+                    "output INSERTED.sv_id VALUES (@PrevisaoEntrega, @ExistePrazo, @OrdemServico, @Data, @FkCliente, @TipoAparelho,@Marca,@Aparelho,@Cor,@MeiSerialNumber, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @CondicoesBalcao, @AvaliacaoServico)";
 
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
 
+                    cmd.Parameters.Add("@PrevisaoEntrega", SqlDbType.DateTime).Value = _servicoDados.PrevisaoEntrega;
+                    cmd.Parameters.Add("@ExistePrazo", SqlDbType.Int).Value = _servicoDados.ExistePrazo;
                     cmd.Parameters.Add("@OrdemServico", SqlDbType.Int).Value = _servicoDados.OrdemServico;
                     cmd.Parameters.Add("@Data", SqlDbType.Date).Value = _servicoDados.DataServico;
                     cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = _clienteDados.ID;

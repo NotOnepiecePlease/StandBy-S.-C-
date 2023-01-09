@@ -193,7 +193,7 @@
             this.txtSolucao.Name = "txtSolucao";
             this.txtSolucao.Size = new System.Drawing.Size(745, 247);
             this.txtSolucao.TabIndex = 5;
-            this.txtSolucao.Text = "Problema resolvido com sucesso";
+            this.txtSolucao.Text = "";
             // 
             // lblIdChecklist
             // 
@@ -485,7 +485,7 @@
             this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
             this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 66);
             this.txtChecklistMotivoAusencia.TabIndex = 67;
-            this.txtChecklistMotivoAusencia.Text = "O Aparelho chegou totalmente apagado";
+            this.txtChecklistMotivoAusencia.Text = "";
             // 
             // bunifuCustomLabel27
             // 
@@ -558,7 +558,6 @@
             this.cmbChecklistCarregamento.Name = "cmbChecklistCarregamento";
             this.cmbChecklistCarregamento.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCarregamento.TabIndex = 47;
-            this.cmbChecklistCarregamento.Text = "RUIM";
             this.cmbChecklistCarregamento.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistCarregamento.TextLeftMargin = 5;
             // 
@@ -611,7 +610,6 @@
             this.cmbChecklistBluetooth.Name = "cmbChecklistBluetooth";
             this.cmbChecklistBluetooth.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBluetooth.TabIndex = 45;
-            this.cmbChecklistBluetooth.Text = "FUNCIONANDO";
             this.cmbChecklistBluetooth.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBluetooth.TextLeftMargin = 5;
             // 
@@ -637,7 +635,7 @@
             this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
             this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
             this.txtChecklistObservacoes.TabIndex = 6;
-            this.txtChecklistObservacoes.Text = "O Microfone funciona bem, porem aparenta estar desgastado";
+            this.txtChecklistObservacoes.Text = "";
             // 
             // cmbChecklistAltoFaltante
             // 
@@ -677,7 +675,6 @@
             this.cmbChecklistAltoFaltante.Name = "cmbChecklistAltoFaltante";
             this.cmbChecklistAltoFaltante.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAltoFaltante.TabIndex = 43;
-            this.cmbChecklistAltoFaltante.Text = "FUNCIONANDO";
             this.cmbChecklistAltoFaltante.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistAltoFaltante.TextLeftMargin = 5;
             // 
@@ -730,7 +727,6 @@
             this.cmbChecklistWifi.Name = "cmbChecklistWifi";
             this.cmbChecklistWifi.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistWifi.TabIndex = 41;
-            this.cmbChecklistWifi.Text = "FUNCIONANDO";
             this.cmbChecklistWifi.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistWifi.TextLeftMargin = 5;
             // 
@@ -783,7 +779,6 @@
             this.cmbChecklistAuricular.Name = "cmbChecklistAuricular";
             this.cmbChecklistAuricular.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAuricular.TabIndex = 39;
-            this.cmbChecklistAuricular.Text = "FUNCIONANDO";
             this.cmbChecklistAuricular.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistAuricular.TextLeftMargin = 5;
             // 
@@ -836,7 +831,6 @@
             this.cmbChecklistCameras.Name = "cmbChecklistCameras";
             this.cmbChecklistCameras.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCameras.TabIndex = 37;
-            this.cmbChecklistCameras.Text = "FUNCIONANDO";
             this.cmbChecklistCameras.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistCameras.TextLeftMargin = 5;
             // 
@@ -889,7 +883,6 @@
             this.cmbChecklistSensor.Name = "cmbChecklistSensor";
             this.cmbChecklistSensor.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistSensor.TabIndex = 35;
-            this.cmbChecklistSensor.Text = "FUNCIONANDO";
             this.cmbChecklistSensor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistSensor.TextLeftMargin = 5;
             // 
@@ -942,7 +935,6 @@
             this.cmbChecklistBotoes.Name = "cmbChecklistBotoes";
             this.cmbChecklistBotoes.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBotoes.TabIndex = 33;
-            this.cmbChecklistBotoes.Text = "VOLUME MENOS RUIM";
             this.cmbChecklistBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBotoes.TextLeftMargin = 5;
             // 
@@ -995,7 +987,6 @@
             this.cmbChecklistChip.Name = "cmbChecklistChip";
             this.cmbChecklistChip.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistChip.TabIndex = 31;
-            this.cmbChecklistChip.Text = "FUNCIONANDO";
             this.cmbChecklistChip.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistChip.TextLeftMargin = 5;
             // 
@@ -1048,7 +1039,6 @@
             this.cmbChecklistTela.Name = "cmbChecklistTela";
             this.cmbChecklistTela.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistTela.TabIndex = 29;
-            this.cmbChecklistTela.Text = "FUNCIONANDO";
             this.cmbChecklistTela.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistTela.TextLeftMargin = 5;
             // 
@@ -1101,7 +1091,6 @@
             this.cmbChecklistMicrofone.Name = "cmbChecklistMicrofone";
             this.cmbChecklistMicrofone.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistMicrofone.TabIndex = 27;
-            this.cmbChecklistMicrofone.Text = "FUNCIONANDO";
             this.cmbChecklistMicrofone.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistMicrofone.TextLeftMargin = 5;
             // 
@@ -1154,7 +1143,6 @@
             this.cmbChecklistBiometria.Name = "cmbChecklistBiometria";
             this.cmbChecklistBiometria.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBiometria.TabIndex = 25;
-            this.cmbChecklistBiometria.Text = "FUNCIONANDO";
             this.cmbChecklistBiometria.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBiometria.TextLeftMargin = 5;
             // 
@@ -1193,7 +1181,7 @@
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(745, 66);
             this.txtObservacoes.TabIndex = 5;
-            this.txtObservacoes.Text = "Outras obs aqui";
+            this.txtObservacoes.Text = "";
             // 
             // group_CondicoesFisicas
             // 
@@ -1283,7 +1271,6 @@
             this.cmbLenteCamera.Name = "cmbLenteCamera";
             this.cmbLenteCamera.Size = new System.Drawing.Size(270, 32);
             this.cmbLenteCamera.TabIndex = 76;
-            this.cmbLenteCamera.Text = "COM ARRANHÕES";
             this.cmbLenteCamera.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbLenteCamera.TextLeftMargin = 5;
             // 
@@ -1344,7 +1331,6 @@
             this.cmbBotoes.Name = "cmbBotoes";
             this.cmbBotoes.Size = new System.Drawing.Size(270, 32);
             this.cmbBotoes.TabIndex = 74;
-            this.cmbBotoes.Text = "CLICANDO NORMAL";
             this.cmbBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbBotoes.TextLeftMargin = 5;
             // 
@@ -1405,7 +1391,6 @@
             this.cmbAro.Name = "cmbAro";
             this.cmbAro.Size = new System.Drawing.Size(270, 32);
             this.cmbAro.TabIndex = 72;
-            this.cmbAro.Text = "MARCAS DE PANCADA";
             this.cmbAro.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbAro.TextLeftMargin = 5;
             // 
@@ -1466,7 +1451,6 @@
             this.cmbTampa.Name = "cmbTampa";
             this.cmbTampa.Size = new System.Drawing.Size(270, 32);
             this.cmbTampa.TabIndex = 70;
-            this.cmbTampa.Text = "SEM PROBLEMAS VISÍVEIS";
             this.cmbTampa.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbTampa.TextLeftMargin = 5;
             // 
@@ -1527,7 +1511,6 @@
             this.cmbTela.Name = "cmbTela";
             this.cmbTela.Size = new System.Drawing.Size(270, 32);
             this.cmbTela.TabIndex = 68;
-            this.cmbTela.Text = "COM ARRANHÕES";
             this.cmbTela.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbTela.TextLeftMargin = 5;
             // 
@@ -1597,7 +1580,6 @@
             this.cmbPelicula.Name = "cmbPelicula";
             this.cmbPelicula.Size = new System.Drawing.Size(270, 32);
             this.cmbPelicula.TabIndex = 66;
-            this.cmbPelicula.Text = "SEM PELÍCULA";
             this.cmbPelicula.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbPelicula.TextLeftMargin = 5;
             // 
@@ -1791,7 +1773,6 @@
             this.cmbCor.Name = "cmbCor";
             this.cmbCor.Size = new System.Drawing.Size(270, 32);
             this.cmbCor.TabIndex = 32;
-            this.cmbCor.Text = "AZUL";
             this.cmbCor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbCor.TextLeftMargin = 5;
             // 
@@ -1828,16 +1809,11 @@
             this.cmbMarca.ItemHeight = 26;
             this.cmbMarca.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbMarca.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.cmbMarca.Items.AddRange(new object[] {
-            "SAMSUNG",
-            "LG",
-            "MOTOROLA"});
             this.cmbMarca.ItemTopMargin = 3;
             this.cmbMarca.Location = new System.Drawing.Point(107, 49);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(270, 32);
             this.cmbMarca.TabIndex = 24;
-            this.cmbMarca.Text = "MOTOROLA";
             this.cmbMarca.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbMarca.TextLeftMargin = 5;
             // 
@@ -1872,7 +1848,6 @@
             this.txtSenhaDispositivo.Name = "txtSenhaDispositivo";
             this.txtSenhaDispositivo.Size = new System.Drawing.Size(211, 30);
             this.txtSenhaDispositivo.TabIndex = 30;
-            this.txtSenhaDispositivo.Text = "12345";
             this.txtSenhaDispositivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtMei_SerialNumber
@@ -1896,7 +1871,6 @@
             this.txtMei_SerialNumber.Name = "txtMei_SerialNumber";
             this.txtMei_SerialNumber.Size = new System.Drawing.Size(270, 30);
             this.txtMei_SerialNumber.TabIndex = 29;
-            this.txtMei_SerialNumber.Text = "6352489641651";
             this.txtMei_SerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtModelo
@@ -1920,7 +1894,6 @@
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(270, 30);
             this.txtModelo.TabIndex = 27;
-            this.txtModelo.Text = "G9 PLAY";
             this.txtModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // separatorControl1
