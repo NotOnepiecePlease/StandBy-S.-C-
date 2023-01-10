@@ -47,7 +47,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtBuscaGoogle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grupo_Checklist = new System.Windows.Forms.GroupBox();
             this.switchChecklistAusente = new DevExpress.XtraEditors.ToggleSwitch();
             this.txtChecklistMotivoAusencia = new System.Windows.Forms.RichTextBox();
             this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -105,6 +105,12 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.group_InformacoesAparelho = new System.Windows.Forms.GroupBox();
+            this.bunifuSeparator11 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.txtSenhaDispositivo = new DevExpress.XtraEditors.TextEdit();
+            this.bunifuSeparator10 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.txtMei_SerialNumber = new DevExpress.XtraEditors.TextEdit();
+            this.bunifuSeparator9 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.txtModelo = new DevExpress.XtraEditors.TextEdit();
             this.bunifuSeparator8 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.separatorCPF = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -123,19 +129,13 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblDataOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.txtModelo = new DevExpress.XtraEditors.TextEdit();
-            this.bunifuSeparator9 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.bunifuSeparator10 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.txtMei_SerialNumber = new DevExpress.XtraEditors.TextEdit();
-            this.bunifuSeparator11 = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.txtSenhaDispositivo = new DevExpress.XtraEditors.TextEdit();
             this.panel_FormOrdemServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            this.grupo_Checklist.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
             this.group_CondicoesBalcao.SuspendLayout();
             this.group_RelatoCliente.SuspendLayout();
@@ -143,12 +143,12 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_CondicoesFisicas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             this.group_InformacoesAparelho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSenhaDispositivo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMei_SerialNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.panel_OrdemServCodigo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMei_SerialNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSenhaDispositivo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_FormOrdemServico
@@ -168,7 +168,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel_FormOrdemServico.Controls.Add(this.bunifuCustomLabel28);
             this.panel_FormOrdemServico.Controls.Add(this.txtBuscaGoogle);
             this.panel_FormOrdemServico.Controls.Add(this.pictureBox2);
-            this.panel_FormOrdemServico.Controls.Add(this.groupBox4);
+            this.panel_FormOrdemServico.Controls.Add(this.grupo_Checklist);
             this.panel_FormOrdemServico.Controls.Add(this.group_CondicoesBalcao);
             this.panel_FormOrdemServico.Controls.Add(this.group_RelatoCliente);
             this.panel_FormOrdemServico.Controls.Add(this.group_OutrasObservacoes);
@@ -403,47 +403,47 @@ namespace PFC___StandBy_CSharp.Forms
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
             // 
-            // groupBox4
+            // grupo_Checklist
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.groupBox4.Controls.Add(this.switchChecklistAusente);
-            this.groupBox4.Controls.Add(this.txtChecklistMotivoAusencia);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel27);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel25);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel26);
-            this.groupBox4.Controls.Add(this.cmbChecklistCarregamento);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel23);
-            this.groupBox4.Controls.Add(this.cmbChecklistBluetooth);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel24);
-            this.groupBox4.Controls.Add(this.txtChecklistObservacoes);
-            this.groupBox4.Controls.Add(this.cmbChecklistAltoFaltante);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel21);
-            this.groupBox4.Controls.Add(this.cmbChecklistWifi);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel22);
-            this.groupBox4.Controls.Add(this.cmbChecklistAuricular);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel19);
-            this.groupBox4.Controls.Add(this.cmbChecklistCameras);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel20);
-            this.groupBox4.Controls.Add(this.cmbChecklistSensor);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel17);
-            this.groupBox4.Controls.Add(this.cmbChecklistBotoes);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel18);
-            this.groupBox4.Controls.Add(this.cmbChecklistChip);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel15);
-            this.groupBox4.Controls.Add(this.cmbChecklistTela);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel16);
-            this.groupBox4.Controls.Add(this.cmbChecklistMicrofone);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel14);
-            this.groupBox4.Controls.Add(this.cmbChecklistBiometria);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel13);
-            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox4.Location = new System.Drawing.Point(805, 57);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(354, 595);
-            this.groupBox4.TabIndex = 26;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "CHECK LIST";
+            this.grupo_Checklist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.grupo_Checklist.Controls.Add(this.switchChecklistAusente);
+            this.grupo_Checklist.Controls.Add(this.txtChecklistMotivoAusencia);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel27);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel25);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel26);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistCarregamento);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel23);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistBluetooth);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel24);
+            this.grupo_Checklist.Controls.Add(this.txtChecklistObservacoes);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistAltoFaltante);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel21);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistWifi);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel22);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistAuricular);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel19);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistCameras);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel20);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistSensor);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel17);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistBotoes);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel18);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistChip);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel15);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistTela);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel16);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistMicrofone);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel14);
+            this.grupo_Checklist.Controls.Add(this.cmbChecklistBiometria);
+            this.grupo_Checklist.Controls.Add(this.bunifuCustomLabel13);
+            this.grupo_Checklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grupo_Checklist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.grupo_Checklist.Location = new System.Drawing.Point(805, 57);
+            this.grupo_Checklist.Name = "grupo_Checklist";
+            this.grupo_Checklist.Size = new System.Drawing.Size(354, 595);
+            this.grupo_Checklist.TabIndex = 26;
+            this.grupo_Checklist.TabStop = false;
+            this.grupo_Checklist.Text = "CHECK LIST";
             // 
             // switchChecklistAusente
             // 
@@ -474,7 +474,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
             this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 66);
             this.txtChecklistMotivoAusencia.TabIndex = 67;
-            this.txtChecklistMotivoAusencia.Text = "";
+            this.txtChecklistMotivoAusencia.Text = "2354234324";
             // 
             // bunifuCustomLabel27
             // 
@@ -626,7 +626,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
             this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
             this.txtChecklistObservacoes.TabIndex = 6;
-            this.txtChecklistObservacoes.Text = "";
+            this.txtChecklistObservacoes.Text = "2354234324";
             // 
             // cmbChecklistAltoFaltante
             // 
@@ -1182,7 +1182,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtCondicoesBalcao.Name = "txtCondicoesBalcao";
             this.txtCondicoesBalcao.Size = new System.Drawing.Size(745, 104);
             this.txtCondicoesBalcao.TabIndex = 5;
-            this.txtCondicoesBalcao.Text = "";
+            this.txtCondicoesBalcao.Text = "2354234324";
             // 
             // group_RelatoCliente
             // 
@@ -1208,7 +1208,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtRelatoCliente.Name = "txtRelatoCliente";
             this.txtRelatoCliente.Size = new System.Drawing.Size(745, 93);
             this.txtRelatoCliente.TabIndex = 5;
-            this.txtRelatoCliente.Text = "";
+            this.txtRelatoCliente.Text = "2354234324";
             // 
             // group_OutrasObservacoes
             // 
@@ -1234,7 +1234,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(745, 66);
             this.txtObservacoes.TabIndex = 5;
-            this.txtObservacoes.Text = "";
+            this.txtObservacoes.Text = "2354234324";
             // 
             // group_CondicoesFisicas
             // 
@@ -1740,6 +1740,102 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_InformacoesAparelho.TabStop = false;
             this.group_InformacoesAparelho.Text = "INFORMAÇÕES DO APARELHO";
             // 
+            // bunifuSeparator11
+            // 
+            this.bunifuSeparator11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator11.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator11.BackgroundImage")));
+            this.bunifuSeparator11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator11.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator11.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator11.LineColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator11.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator11.LineThickness = 3;
+            this.bunifuSeparator11.Location = new System.Drawing.Point(103, 223);
+            this.bunifuSeparator11.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuSeparator11.Name = "bunifuSeparator11";
+            this.bunifuSeparator11.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator11.Size = new System.Drawing.Size(213, 10);
+            this.bunifuSeparator11.TabIndex = 76;
+            this.bunifuSeparator11.TabStop = false;
+            // 
+            // txtSenhaDispositivo
+            // 
+            this.txtSenhaDispositivo.EditValue = "123";
+            this.txtSenhaDispositivo.Location = new System.Drawing.Point(103, 194);
+            this.txtSenhaDispositivo.Name = "txtSenhaDispositivo";
+            this.txtSenhaDispositivo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtSenhaDispositivo.Properties.Appearance.Options.UseFont = true;
+            this.txtSenhaDispositivo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtSenhaDispositivo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtSenhaDispositivo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtSenhaDispositivo.Size = new System.Drawing.Size(209, 34);
+            this.txtSenhaDispositivo.TabIndex = 75;
+            // 
+            // bunifuSeparator10
+            // 
+            this.bunifuSeparator10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator10.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator10.BackgroundImage")));
+            this.bunifuSeparator10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator10.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator10.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator10.LineColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator10.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator10.LineThickness = 3;
+            this.bunifuSeparator10.Location = new System.Drawing.Point(107, 180);
+            this.bunifuSeparator10.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuSeparator10.Name = "bunifuSeparator10";
+            this.bunifuSeparator10.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator10.Size = new System.Drawing.Size(270, 10);
+            this.bunifuSeparator10.TabIndex = 74;
+            this.bunifuSeparator10.TabStop = false;
+            // 
+            // txtMei_SerialNumber
+            // 
+            this.txtMei_SerialNumber.EditValue = "234234324324";
+            this.txtMei_SerialNumber.Location = new System.Drawing.Point(107, 154);
+            this.txtMei_SerialNumber.Name = "txtMei_SerialNumber";
+            this.txtMei_SerialNumber.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtMei_SerialNumber.Properties.Appearance.Options.UseFont = true;
+            this.txtMei_SerialNumber.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtMei_SerialNumber.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtMei_SerialNumber.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtMei_SerialNumber.Size = new System.Drawing.Size(270, 34);
+            this.txtMei_SerialNumber.TabIndex = 73;
+            // 
+            // bunifuSeparator9
+            // 
+            this.bunifuSeparator9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuSeparator9.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator9.BackgroundImage")));
+            this.bunifuSeparator9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator9.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator9.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator9.LineColor = System.Drawing.Color.Gray;
+            this.bunifuSeparator9.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator9.LineThickness = 3;
+            this.bunifuSeparator9.Location = new System.Drawing.Point(107, 112);
+            this.bunifuSeparator9.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuSeparator9.Name = "bunifuSeparator9";
+            this.bunifuSeparator9.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator9.Size = new System.Drawing.Size(274, 10);
+            this.bunifuSeparator9.TabIndex = 72;
+            this.bunifuSeparator9.TabStop = false;
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.EditValue = "S21";
+            this.txtModelo.Location = new System.Drawing.Point(107, 84);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtModelo.Properties.Appearance.Options.UseFont = true;
+            this.txtModelo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtModelo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtModelo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtModelo.Size = new System.Drawing.Size(270, 34);
+            this.txtModelo.TabIndex = 6;
+            // 
             // bunifuSeparator8
             // 
             this.bunifuSeparator8.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1835,7 +1931,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbCor.Name = "cmbCor";
             this.cmbCor.Size = new System.Drawing.Size(270, 32);
             this.cmbCor.TabIndex = 32;
-            this.cmbCor.Text = null;
+            this.cmbCor.Text = "PRETO";
             this.cmbCor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbCor.TextLeftMargin = 5;
             // 
@@ -1877,7 +1973,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(270, 32);
             this.cmbMarca.TabIndex = 24;
-            this.cmbMarca.Text = null;
+            this.cmbMarca.Text = "LG";
             this.cmbMarca.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbMarca.TextLeftMargin = 5;
             // 
@@ -2022,102 +2118,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.moverForm.TargetControl = null;
             this.moverForm.Vertical = true;
             // 
-            // txtModelo
-            // 
-            this.txtModelo.EditValue = "";
-            this.txtModelo.Location = new System.Drawing.Point(107, 84);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtModelo.Properties.Appearance.Options.UseFont = true;
-            this.txtModelo.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtModelo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtModelo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtModelo.Size = new System.Drawing.Size(270, 34);
-            this.txtModelo.TabIndex = 6;
-            // 
-            // bunifuSeparator9
-            // 
-            this.bunifuSeparator9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuSeparator9.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator9.BackgroundImage")));
-            this.bunifuSeparator9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator9.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator9.ForeColor = System.Drawing.Color.Gray;
-            this.bunifuSeparator9.LineColor = System.Drawing.Color.Gray;
-            this.bunifuSeparator9.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator9.LineThickness = 3;
-            this.bunifuSeparator9.Location = new System.Drawing.Point(107, 112);
-            this.bunifuSeparator9.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuSeparator9.Name = "bunifuSeparator9";
-            this.bunifuSeparator9.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator9.Size = new System.Drawing.Size(274, 10);
-            this.bunifuSeparator9.TabIndex = 72;
-            this.bunifuSeparator9.TabStop = false;
-            // 
-            // bunifuSeparator10
-            // 
-            this.bunifuSeparator10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuSeparator10.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator10.BackgroundImage")));
-            this.bunifuSeparator10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator10.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator10.ForeColor = System.Drawing.Color.Gray;
-            this.bunifuSeparator10.LineColor = System.Drawing.Color.Gray;
-            this.bunifuSeparator10.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator10.LineThickness = 3;
-            this.bunifuSeparator10.Location = new System.Drawing.Point(107, 180);
-            this.bunifuSeparator10.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuSeparator10.Name = "bunifuSeparator10";
-            this.bunifuSeparator10.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator10.Size = new System.Drawing.Size(270, 10);
-            this.bunifuSeparator10.TabIndex = 74;
-            this.bunifuSeparator10.TabStop = false;
-            // 
-            // txtMei_SerialNumber
-            // 
-            this.txtMei_SerialNumber.EditValue = "";
-            this.txtMei_SerialNumber.Location = new System.Drawing.Point(107, 154);
-            this.txtMei_SerialNumber.Name = "txtMei_SerialNumber";
-            this.txtMei_SerialNumber.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtMei_SerialNumber.Properties.Appearance.Options.UseFont = true;
-            this.txtMei_SerialNumber.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtMei_SerialNumber.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtMei_SerialNumber.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtMei_SerialNumber.Size = new System.Drawing.Size(270, 34);
-            this.txtMei_SerialNumber.TabIndex = 73;
-            // 
-            // bunifuSeparator11
-            // 
-            this.bunifuSeparator11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuSeparator11.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator11.BackgroundImage")));
-            this.bunifuSeparator11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuSeparator11.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.bunifuSeparator11.ForeColor = System.Drawing.Color.Gray;
-            this.bunifuSeparator11.LineColor = System.Drawing.Color.Gray;
-            this.bunifuSeparator11.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.bunifuSeparator11.LineThickness = 3;
-            this.bunifuSeparator11.Location = new System.Drawing.Point(103, 223);
-            this.bunifuSeparator11.Margin = new System.Windows.Forms.Padding(2);
-            this.bunifuSeparator11.Name = "bunifuSeparator11";
-            this.bunifuSeparator11.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.bunifuSeparator11.Size = new System.Drawing.Size(213, 10);
-            this.bunifuSeparator11.TabIndex = 76;
-            this.bunifuSeparator11.TabStop = false;
-            // 
-            // txtSenhaDispositivo
-            // 
-            this.txtSenhaDispositivo.EditValue = "";
-            this.txtSenhaDispositivo.Location = new System.Drawing.Point(103, 194);
-            this.txtSenhaDispositivo.Name = "txtSenhaDispositivo";
-            this.txtSenhaDispositivo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtSenhaDispositivo.Properties.Appearance.Options.UseFont = true;
-            this.txtSenhaDispositivo.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtSenhaDispositivo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtSenhaDispositivo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtSenhaDispositivo.Size = new System.Drawing.Size(209, 34);
-            this.txtSenhaDispositivo.TabIndex = 75;
-            // 
             // form_OrdemServicoEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2139,8 +2139,8 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.grupo_Checklist.ResumeLayout(false);
+            this.grupo_Checklist.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).EndInit();
             this.group_CondicoesBalcao.ResumeLayout(false);
             this.group_RelatoCliente.ResumeLayout(false);
@@ -2150,13 +2150,13 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
             this.group_InformacoesAparelho.ResumeLayout(false);
             this.group_InformacoesAparelho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSenhaDispositivo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMei_SerialNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             this.panel_OrdemServCodigo.ResumeLayout(false);
             this.panel_OrdemServCodigo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMei_SerialNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSenhaDispositivo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2197,7 +2197,7 @@ namespace PFC___StandBy_CSharp.Forms
         public System.Windows.Forms.RichTextBox txtCondicoesBalcao;
         private System.Windows.Forms.GroupBox group_RelatoCliente;
         public System.Windows.Forms.RichTextBox txtRelatoCliente;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grupo_Checklist;
         private System.Windows.Forms.PictureBox pictureBox2;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBuscaGoogle;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel25;

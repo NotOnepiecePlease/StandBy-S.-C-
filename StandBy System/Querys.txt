@@ -18,3 +18,23 @@ BEGIN
 			SET @cont = @cont + 1
 		end
 END  
+
+
+
+
+
+
+
+
+CREATE TRIGGER TGR_VENDAS_AI
+ON tb_servicos
+FOR INSERT
+AS
+BEGIN
+    DECLARE
+    @OrdemServico  int
+
+    SELECT @OrdemServico = sv_ordem_serv FROM INSERTED
+    UPDATE tb_log SET log_ultima_ordem_servico = @OrdemServico
+END
+GO

@@ -7,6 +7,7 @@ using PFC___StandBy_CSharp.Impressao;
 using Syncfusion.Licensing;
 using DevExpress.XtraEditors;
 using PFC___StandBy_CSharp.Forms._1___Ordems_Servico;
+using PFC___StandBy_CSharp.Forms.Pagamento;
 
 namespace PFC___StandBy_CSharp
 {
@@ -23,10 +24,10 @@ namespace PFC___StandBy_CSharp
             WindowsFormsSettings.SetPerMonitorDpiAware();
             //https://www.syncfusion.com/account/downloads
             SyncfusionLicenseProvider.RegisterLicense("Nzc3MDU4QDMyMzAyZTMzMmUzMEhpVEkwRGI5V21BSk5KbFd6ckYwUUNLNkRXcm55T2tGRFAwTHV6VFNqcFU9");
-            //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("pt-BR");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form_StandBy());
+            Application.Run(new form_Pagamento());
         }
     }
 }

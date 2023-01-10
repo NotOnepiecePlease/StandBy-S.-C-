@@ -412,35 +412,6 @@ namespace PFC___StandBy_CSharp.Dados
 
         #endregion Buscar servico por ID
 
-        #region Buscar ID ultima Ordem de Servico
-
-        public int BuscarUltimaIdOrdemServico()
-        {
-            try
-            {
-                using (SqlConnection con = OpenConnection())
-                {
-                    string query = "SELECT TOP 1 sv_ordem_serv FROM tb_servicos ORDER BY sv_id DESC";
-
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    SqlDataReader dr = cmd.ExecuteReader();
-
-                    if (dr.Read())
-                    {
-                        return dr.GetInt32(0);
-                    }
-                    return -1; //Retornando -1 porque 0 é um valor valido no banco.
-                }
-            }
-            catch (Exception ex)
-            {
-                me.ErroAoBuscarIDUltimaOrdemServico(ex);
-                return -1;
-            }
-        }
-
-        #endregion Buscar ID ultima Ordem de Servico
-
         #region Buscar lista de clientes colunas selecionadas para combobox
 
         public List<ClienteEstrutura> BuscarListaClientes()
@@ -550,7 +521,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Buscar OS pela ID (servico, condicao fisica, checklist)
 
-        public (ServicoEstrutura, CondicoesFisicasEstrutura, ChecklistEstrutura) BuscarOS(int _idServico)
+        public (ServicoEstrutura, CondicoesFisicasEstrutura, ChecklistEstrutura) BuscarOS(int _idServico, string _tipoChecklist)
         {
             ServicoEstrutura servico = new ServicoEstrutura();
             CondicoesFisicasEstrutura condicoesFisicas = new CondicoesFisicasEstrutura();
@@ -560,7 +531,7 @@ namespace PFC___StandBy_CSharp.Dados
                 using (SqlConnection con = OpenConnection())
                 {
                     string query = "SELECT sv_id, sv_ordem_serv, sv_data, sv_cl_idcliente, sv_marca, sv_aparelho, sv_cor , sv_mei_serialnumber, sv_senha, sv_condicoes_balcao, sv_relato_cliente, sv_tipo_aparelho, " +
-                                   "sv_situacao, sv_avaliacao_servico,cf_id, cf_pelicula, cf_tela, cf_tampa, cf_aro, cf_botoes, cf_lente_camera,ch_id, ch_biometria_faceid, ch_microfone, " +
+                                   "sv_situacao, sv_avaliacao_servico,cf_id, cf_pelicula, cf_tela, cf_tampa, cf_aro, cf_botoes, cf_lente_camera,ch_id, ch_tipo, ch_biometria_faceid, ch_microfone, " +
                                    "ch_tela, ch_chip, ch_botoes, ch_sensor, ch_cameras, ch_auricular, ch_wifi, ch_altofalante, ch_bluetooth, ch_carregamento, " +
                                    "ch_observacoes, ch_ausente, ch_motivo_ausencia " +
                                    "FROM tb_servicos as servico " +
@@ -568,11 +539,13 @@ namespace PFC___StandBy_CSharp.Dados
                                    "ON servico.sv_id = checklist.ch_sv_idservico " +
                                    "INNER JOIN tb_condicoes_fisicas as condicoes " +
                                    "ON servico.sv_id = condicoes.cf_sv_idservico " +
-                                   "WHERE sv_id = @idServico";
+                                   "WHERE sv_id = @idServico " +
+                                   "AND ch_tipo = @tipoChecklist";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@idServico", _idServico);
+                        cmd.Parameters.AddWithValue("@tipoChecklist", _tipoChecklist);
                         using (SqlDataReader dr = cmd.ExecuteReader())
                         {
                             dr.Read();
@@ -698,5 +671,39 @@ namespace PFC___StandBy_CSharp.Dados
         }
 
         #endregion Buscar OS pela ID (servico, condicao fisica, checklist) - Efcore
+
+        #region Buscar ID ultima Ordem de Servico - Efcore
+
+        public int BuscarUltimaIdOrdemServico()
+        {
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+
+                int ultimaOrdemServico = context.tb_log.Select(x => x.log_ultima_ordem_servico).FirstOrDefault();
+                return ultimaOrdemServico;
+
+                //using (SqlConnection con = OpenConnection())
+                //{
+                //    string query = "SELECT TOP 1 sv_ordem_serv FROM tb_servicos ORDER BY sv_id DESC";
+
+                //    SqlCommand cmd = new SqlCommand(query, con);
+                //    SqlDataReader dr = cmd.ExecuteReader();
+
+                //    if (dr.Read())
+                //    {
+                //        return dr.GetInt32(0);
+                //    }
+                //    return -1; //Retornando -1 porque 0 é um valor valido no banco.
+                //}
+            }
+            catch (Exception ex)
+            {
+                me.ErroAoBuscarIDUltimaOrdemServico(ex);
+                return -1;
+            }
+        }
+
+        #endregion Buscar ID ultima Ordem de Servico - Efcore
     }
 }

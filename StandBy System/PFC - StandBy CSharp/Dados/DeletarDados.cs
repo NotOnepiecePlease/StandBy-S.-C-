@@ -4,6 +4,7 @@ using PFC___StandBy_CSharp.SqlDbConnect;
 using PFC___StandBy_CSharp.MsgBox;
 using System.Data;
 using Bunifu.Framework.UI;
+using PFC___StandBy_CSharp.Context;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -19,18 +20,21 @@ namespace PFC___StandBy_CSharp.Dados
         {
             try
             {
-                using (SqlConnection con = OpenConnection())
-                {
-                    string query = "delete from tb_servicos where sv_id = @IdServico";
+                standby_orgContext context = new standby_orgContext();
+                context.tb_servicos.Remove(context.tb_servicos.Find(_idServico));
+                context.SaveChanges();
+                mSucesso.DeletarServicoSucesso();
+                //using (SqlConnection con = OpenConnection())
+                //{
+                //    string query = "delete from tb_servicos where sv_id = @IdServico";
 
-                    SqlCommand cmd = new SqlCommand(query, con);
+                //    SqlCommand cmd = new SqlCommand(query, con);
 
-                    cmd.Parameters.Add("@IdServico", SqlDbType.Int).Value = _idServico;
+                //    cmd.Parameters.Add("@IdServico", SqlDbType.Int).Value = _idServico;
 
-                    cmd.ExecuteNonQuery();
-                    //con.Close();
-                    mSucesso.DeletarServicoSucesso();
-                }
+                //    cmd.ExecuteNonQuery();
+                //    //con.Close();
+                //}
             }
             catch (Exception ex)
             {

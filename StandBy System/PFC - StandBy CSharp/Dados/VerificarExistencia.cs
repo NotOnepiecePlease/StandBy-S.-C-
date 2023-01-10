@@ -126,7 +126,8 @@ namespace PFC___StandBy_CSharp.Dados
                                "from tb_checklist as chk " +
                                "inner join tb_condicoes_fisicas as cond " +
                                "on chk.ch_sv_idservico = cond.cf_sv_idservico " +
-                               "where ch_sv_idservico = @idServico";
+                               "where ch_sv_idservico = @idServico " +
+                               "and ch_tipo = 'ENTRADA'";
 
                 SqlCommand cmd = new SqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@idServico", _fkServico);

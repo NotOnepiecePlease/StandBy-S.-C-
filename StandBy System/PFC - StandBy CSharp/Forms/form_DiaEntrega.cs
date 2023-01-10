@@ -153,10 +153,13 @@ namespace PFC___StandBy_CSharp.Forms
                 // ignored
             }
 
-            DateTime previsaoEntrega = DateTime.Now;
-            previsaoEntrega = previsaoEntrega.AddDays(_diasParaEntrega);
+            if (_diasParaEntrega != 0 && _seExistePrazo != 0)
+            {
+                DateTime previsaoEntrega = DateTime.Now;
+                previsaoEntrega = previsaoEntrega.AddDays(_diasParaEntrega);
 
-            servicoDados.PrevisaoEntrega = previsaoEntrega;
+                servicoDados.PrevisaoEntrega = previsaoEntrega;
+            }
             servicoDados.ExistePrazo = _seExistePrazo;
             servicoDados.SenhaPatternAndroid = ConvertImageToByte(imagemSenhaPatternDoCliente);
 

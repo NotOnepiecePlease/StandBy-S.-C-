@@ -14,6 +14,9 @@ namespace PFC___StandBy_CSharp.Models
         [Column(TypeName = "datetime")]
         public DateTime cf_data { get; set; }
         public int cf_sv_idservico { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string cf_tipo { get; set; }
         [StringLength(50)]
         public string cf_pelicula { get; set; }
         [StringLength(50)]

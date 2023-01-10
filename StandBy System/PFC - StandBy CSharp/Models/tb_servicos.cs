@@ -16,8 +16,8 @@ namespace PFC___StandBy_CSharp.Models
 
         [Key]
         public int sv_id { get; set; }
-        public int? sv_ordem_serv { get; set; }
-        [Column(TypeName = "date")]
+        public int sv_ordem_serv { get; set; }
+        [Column(TypeName = "datetime")]
         public DateTime sv_data { get; set; }
         public int sv_cl_idcliente { get; set; }
         [StringLength(50)]
@@ -33,10 +33,8 @@ namespace PFC___StandBy_CSharp.Models
         public string sv_mei_serialnumber { get; set; }
         [StringLength(300)]
         public string sv_defeito { get; set; }
-        [Required]
         [StringLength(300)]
         public string sv_servico { get; set; }
-        [Required]
         [StringLength(100)]
         public string sv_senha { get; set; }
         [StringLength(8000)]
@@ -67,6 +65,8 @@ namespace PFC___StandBy_CSharp.Models
         public string sv_condicoes_balcao { get; set; }
         [StringLength(20)]
         public string sv_avaliacao_servico { get; set; }
+        [StringLength(50)]
+        public string sv_forma_pagamento { get; set; }
 
         [ForeignKey(nameof(sv_cl_idcliente))]
         [InverseProperty(nameof(tb_clientes.tb_servicos))]

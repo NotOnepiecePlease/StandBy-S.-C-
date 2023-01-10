@@ -785,12 +785,6 @@
     <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ_Edit.Designer.cs">
       <DependentUpon>form_OrdensServ_Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\form_Pagamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\form_Pagamento.Designer.cs">
-      <DependentUpon>form_Pagamento.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\form_PasswordPattern.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -839,6 +833,12 @@
     <Compile Include="Forms\form_WordNota.Designer.cs">
       <DependentUpon>form_WordNota.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pagamento\form_Pagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pagamento\form_Pagamento.Designer.cs">
+      <DependentUpon>form_Pagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Graficos\GraficoServicosAnuais.cs" />
     <Compile Include="Graficos\GraficoServicosMensais.cs" />
     <Compile Include="Graficos\GraficoServicosSemanais.cs" />
@@ -880,6 +880,7 @@
     <Compile Include="Models\tb_condicoes_fisicas.cs" />
     <Compile Include="Models\tb_garantias.cs" />
     <Compile Include="Models\tb_gastos.cs" />
+    <Compile Include="Models\tb_log.cs" />
     <Compile Include="Models\tb_orcamento.cs" />
     <Compile Include="Models\tb_servicos.cs" />
     <Compile Include="MsgBox\MensagensErro.cs" />
@@ -911,6 +912,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SqlDbConnect\conexao.cs" />
+    <Compile Include="Utils\ComboboxStatus.cs" />
     <Compile Include="Utils\Constantes.cs" />
     <Compile Include="Utils\ConvertImage.cs" />
     <Compile Include="Utils\FormatarCampos.cs" />
@@ -995,9 +997,6 @@
     <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdensServ_Edit.resx">
       <DependentUpon>form_OrdensServ_Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\form_Pagamento.resx">
-      <DependentUpon>form_Pagamento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_PasswordPattern.resx">
       <DependentUpon>form_PasswordPattern.cs</DependentUpon>
     </EmbeddedResource>
@@ -1021,6 +1020,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_WordNota.resx">
       <DependentUpon>form_WordNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pagamento\form_Pagamento.resx">
+      <DependentUpon>form_Pagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Principal.resx">
       <DependentUpon>form_Principal.cs</DependentUpon>
@@ -1128,6 +1130,9 @@
     <None Include="Resources\google-minimal-logo.png" />
     <None Include="Resources\settings_480px.png" />
     <None Include="Resources\settings_480px1.png" />
+    <None Include="Resources\card green.svg" />
+    <None Include="Resources\business_dollar.svg" />
+    <None Include="Resources\task.svg" />
     <Content Include="Utils\Atalhos.txt" />
     <None Include="Resources\toilet_20px.png" />
     <None Include="Resources\warning.png" />

@@ -23,6 +23,7 @@ namespace PFC___StandBy_CSharp.Context
         public virtual DbSet<tb_condicoes_fisicas> tb_condicoes_fisicas { get; set; }
         public virtual DbSet<tb_garantias> tb_garantias { get; set; }
         public virtual DbSet<tb_gastos> tb_gastos { get; set; }
+        public virtual DbSet<tb_log> tb_log { get; set; }
         public virtual DbSet<tb_orcamento> tb_orcamento { get; set; }
         public virtual DbSet<tb_servicos> tb_servicos { get; set; }
 
@@ -148,6 +149,8 @@ namespace PFC___StandBy_CSharp.Context
 
                 entity.Property(e => e.cf_tela).IsUnicode(false);
 
+                entity.Property(e => e.cf_tipo).IsUnicode(false);
+
                 entity.HasOne(d => d.cf_sv_idservicoNavigation)
                     .WithMany(p => p.tb_condicoes_fisicas)
                     .HasForeignKey(d => d.cf_sv_idservico)
@@ -214,6 +217,8 @@ namespace PFC___StandBy_CSharp.Context
                 entity.Property(e => e.sv_defeito)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('-----------------')");
+
+                entity.Property(e => e.sv_forma_pagamento).IsUnicode(false);
 
                 entity.Property(e => e.sv_lucro).HasDefaultValueSql("((0.00))");
 

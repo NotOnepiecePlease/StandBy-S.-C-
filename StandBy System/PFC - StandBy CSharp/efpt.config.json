@@ -39,6 +39,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[tb_log]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[tb_orcamento]",
          "ObjectType": 0
       },

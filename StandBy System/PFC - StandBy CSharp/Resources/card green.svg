@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg viewBox="-2 -6 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Layer_1" transform="translate(-2, -6)" style="enable-background:new 0 0 32 32">
+    <g id="CreditCard">
+      <path d="M29, 6L3, 6C2.4, 6 2, 6.5 2, 7L2, 12L2, 16L2, 25C2, 25.5 2.4, 26 3, 26L29, 26C29.6, 26 30, 25.5 30, 25L30, 16L30, 12L30, 7C30, 6.5 29.6, 6 29, 6zM28, 24L4, 24L4, 16L28, 16L28, 24zM4, 12L4, 8L28, 8L28, 12L4, 12z" fill="#039C23" class="Green" />
+    </g>
+  </g>
+</svg>

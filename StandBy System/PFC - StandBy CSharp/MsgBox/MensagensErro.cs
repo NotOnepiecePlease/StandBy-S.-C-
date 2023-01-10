@@ -132,9 +132,19 @@ namespace PFC___StandBy_CSharp.MsgBox
             MessageBox.Show("(OR-SV18)Erro ao atualizar O.S!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        internal void erroAoAtualizarServico(Exception e)
+        public void erroAoAtualizarServico(Exception e)
         {
             MessageBox.Show("(OR-SV19)Erro ao atualizar servico!\nERRO: " + e + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void ErroAoAbrirTelaInsercaoOrdemServico(Exception e)
+        {
+            MessageBox.Show("(OR-SV20)Erro ao abrir tela para inserir O.S!\nERRO: " + e.Message + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void ErroAoAtualizarOrdemServicoEntrada(Exception e)
+        {
+            MessageBox.Show("(OR-SV21)Erro ao atualizar O.S - Entrada!\nERRO: " + e.StackTrace + "", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion ORDENS DE SERVICO

@@ -1,31 +1,23 @@
-﻿using System;
+﻿using DevExpress.XtraPrinting;
+using PFC___StandBy_CSharp.Context;
+using PFC___StandBy_CSharp.Dados;
+using PFC___StandBy_CSharp.Impressao;
+using PFC___StandBy_CSharp.Models;
+using PFC___StandBy_CSharp.MsgBox;
+using PFC___StandBy_CSharp.PreencherComponentes;
+using PFC___StandBy_CSharp.PreencherComponentes.Tela_6___Usada_por_Varias_Telas;
+using PFC___StandBy_CSharp.Utils;
+using Syncfusion.Windows.Forms.Tools;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu.Framework.UI;
-using DevExpress.CodeParser;
-using PFC___StandBy_CSharp.Dados;
-using PFC___StandBy_CSharp.Models;
-using PFC___StandBy_CSharp.PreencherComponentes;
-using Syncfusion.DataSource.Extensions;
-using Syncfusion.Windows.Forms.Tools;
-using PFC___StandBy_CSharp.Utils;
 using static PFC___StandBy_CSharp.Enum.Enum;
-using ConvertImage = PFC___StandBy_CSharp.Utils.ConvertImage;
-using DevExpress.XtraEditors;
-using PFC___StandBy_CSharp.Context;
-using PFC___StandBy_CSharp.MsgBox;
-using PFC___StandBy_CSharp.Impressao;
-using DevExpress.XtraPrinting;
-using PFC___StandBy_CSharp.PreencherComponentes.Tela_6___Usada_por_Varias_Telas;
 using BunifuDropdown = Bunifu.UI.WinForms.BunifuDropdown;
+using ConvertImage = PFC___StandBy_CSharp.Utils.ConvertImage;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -33,6 +25,7 @@ namespace PFC___StandBy_CSharp.Forms
     [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Local")]
     public partial class form_OrdemServicoEntrada : Form
     {
+        private MensagensErro mErro = new MensagensErro();
         private standby_orgContext context = new standby_orgContext();
         private BuscarDados buscarDados = new BuscarDados();
         private VerificarExistencia verifExistencia = new VerificarExistencia();
@@ -40,7 +33,7 @@ namespace PFC___StandBy_CSharp.Forms
         private MensagensSucesso msgSucess = new MensagensSucesso();
         private readonly PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
         private int ultimoClienteAdicionadoID = 0;
-        private int ordemServicoID = 0;
+        private int ultimaOrdemServicoID = 0;
         private DataTable dt;
         private Aparelho tipoAparelhoGlobal;
         private int[] corGeral = new[] { 0, 0, 0 };
@@ -87,14 +80,6 @@ namespace PFC___StandBy_CSharp.Forms
             p.PreencherInfoAparelho(this);
             //cond fisicas
             p.PreencherInfoCondFisicas(this);
-        }
-
-        private void PreencherCombobox(string _itemNome, BunifuDropdown _comboBox, List<tb_comp_items> _dados)
-        {
-            _dados.Where(y => y.item_tela == Constantes.ORDEM_SERVICO_ENTRADA
-                              && y.item_grupo == Constantes.CHECKLIST_ITEM
-                              && y.item_nome == _itemNome)
-                .ForEach(x => _comboBox.Items.Add(x.item_texto));
         }
 
         private void SetarCores()
@@ -183,50 +168,48 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void GerarNovaOrdemServico()
         {
+            //int ultimaOrdemServicoAdicionada = buscarDados.BuscarUltimaIdOrdemServico();
             int ultimaOrdemServicoAdicionada = buscarDados.BuscarUltimaIdOrdemServico();
 
             if (ultimaOrdemServicoAdicionada != -1)
             {
                 int novaOrdemServico = ultimaOrdemServicoAdicionada + 1;
                 lblOrdemServico.Text = $@"OS {novaOrdemServico:0000}";
-                ordemServicoID = novaOrdemServico;
+                ultimaOrdemServicoID = novaOrdemServico;
             }
         }
 
         private void txtStatusServico_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MudarCorComboboxStatus();
-        }
-
-        private void MudarCorComboboxStatus()
-        {
-            if (cmbStatusServico.Text == @"APROVADO")
-            {
-                cmbStatusServico.BackColor = Color.DodgerBlue;
-                cmbStatusServico.BackgroundColor = Color.DodgerBlue;
-            }
-            else if (cmbStatusServico.Text == @"AVALIAÇÃO")
-            {
-                cmbStatusServico.BackColor = Color.DarkOrange;
-                cmbStatusServico.BackgroundColor = Color.DarkOrange;
-            }
-            else if (cmbStatusServico.Text == @"CONCLUÍDO")
-            {
-                cmbStatusServico.BackColor = Color.Chartreuse;
-                cmbStatusServico.BackgroundColor = Color.Chartreuse;
-            }
+            ComboboxStatus.MudarCor(cmbStatusServico);
         }
 
         private void btnSalvarOrdemServico_Click(object sender, EventArgs e)
         {
-            //ZerarTodosCampos();
             SalvarOrdemServico();
-
-            this.Close();
         }
 
         private void SalvarOrdemServico()
         {
+            //Validacao dos campos de condicoes fisicas, verificando se pelo menos 1 possui dados.
+            int camposCondFisicasSemDados = 0;
+            foreach (Control control in group_CondicoesFisicas.Controls)
+            {
+                if (control is BunifuDropdown && control.Name.StartsWith("cmb") && string.IsNullOrWhiteSpace(control.Text))
+                    camposCondFisicasSemDados++;
+            }
+
+            //Validacao dos campos de checklist, verificando se pelo menos 1 possui dados.
+            int camposChecklistSemDados = 0;
+            if (switchChecklistAusente.IsOn == false)
+            {
+                foreach (Control control in grupo_Checklist.Controls)
+                {
+                    if (control is BunifuDropdown && control.Name.StartsWith("cmbChecklist") && string.IsNullOrWhiteSpace(control.Text))
+                        camposChecklistSemDados++;
+                }
+            }
+
             if (string.IsNullOrWhiteSpace(cmbMarca.Text))
             {
                 MessageBox.Show(@"Voce esqueceu de selecionar a marca do aparelho", "ALERTA!",
@@ -237,6 +220,21 @@ namespace PFC___StandBy_CSharp.Forms
                 MessageBox.Show(@"Voce esqueceu de selecionar o modelo do aparelho", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (camposCondFisicasSemDados == 6)
+            {
+                MessageBox.Show(@"Voce deve preencher ao menos um campo das condições fisicas do aparelho.", "ALERTA!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (camposChecklistSemDados == 12)
+            {
+                MessageBox.Show(@"Voce deve preencher ao menos um campo de checklist do aparelho ou marcar a opção 'Impossivel fazer checklist'", "ALERTA!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (switchChecklistAusente.IsOn == true && string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text))
+            {
+                MessageBox.Show(@"Especifique o motivo para a ausência do checklist", "ALERTA!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 bool isExisteOrdemServico = verifExistencia.VerificarExistenciaOrdemServico(Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ')));
@@ -245,7 +243,8 @@ namespace PFC___StandBy_CSharp.Forms
                     bool isExisteCondFisicasChecklist = verifExistencia.VerificarExistenciaCondFisicasChecklist(Convert.ToInt32(lblIdServico.Text));
                     if (isExisteCondFisicasChecklist == true)
                     {
-                        InserirOrdemServico(OrdemServico.AtualizarTudo);
+                        //InserirOrdemServico(OrdemServico.AtualizarTudo);
+                        AtualizarOrdemServicoEntradaExistente();
                     }
                     else
                     {
@@ -256,94 +255,187 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     InserirOrdemServico(OrdemServico.NovaInsercao);
                 }
+                standby_orgContext context = new standby_orgContext();
+                lblIdServico.Text = context.tb_servicos.First(x => x.sv_ordem_serv == ultimaOrdemServicoID).sv_id.ToString();
+                this.Close();
             }
-
-            standby_orgContext context = new standby_orgContext();
-            lblIdServico.Text = context.tb_servicos.First(x => x.sv_ordem_serv == ordemServicoID).sv_id.ToString();
         }
 
         private void InserirOrdemServico(OrdemServico _tipo)
         {
-            ClienteEstrutura clienteDados = new ClienteEstrutura();
-            ServicoEstrutura servicoDados = new ServicoEstrutura();
-            ChecklistEstrutura checklistDados = new ChecklistEstrutura();
-            CondicoesFisicasEstrutura condicoesFisicasDados = new CondicoesFisicasEstrutura();
-
-            //Dados do cliente
-            clienteDados.ID = Convert.ToInt32(lblIdCliente.Text);
-
-            #region If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
-
-            string tipoAparelho = "NAO SETADA";
-            if (tipoAparelhoGlobal == Aparelho.Celular)
+            try
             {
-                tipoAparelho = "Celular";
+                ClienteEstrutura clienteDados = new ClienteEstrutura();
+                ServicoEstrutura servicoDados = new ServicoEstrutura();
+                ChecklistEstrutura checklistDados = new ChecklistEstrutura();
+                CondicoesFisicasEstrutura condicoesFisicasDados = new CondicoesFisicasEstrutura();
+
+                //Dados do cliente
+                clienteDados.ID = Convert.ToInt32(lblIdCliente.Text);
+
+                #region If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
+
+                string tipoAparelho = "NAO SETADA";
+                if (tipoAparelhoGlobal == Aparelho.Celular)
+                {
+                    tipoAparelho = "Celular";
+                }
+                else if (tipoAparelhoGlobal == Aparelho.Computador)
+                {
+                    tipoAparelho = "Computador";
+                }
+                else if (tipoAparelhoGlobal == Aparelho.Notebook)
+                {
+                    tipoAparelho = "Notebook";
+                }
+
+                #endregion If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
+
+                //Dados do servico
+                if (lblIdServico.Text != "IdServico")
+                {
+                    servicoDados.ID = Convert.ToInt32(lblIdServico.Text);
+                }
+                //servicoDados.OrdemServico = ordemServicoID;
+                servicoDados.OrdemServico = Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' '));
+                servicoDados.DataServico = DateTime.Now;
+                servicoDados.FK_IdCliente = clienteDados.ID;
+                servicoDados.TipoAparelho = tipoAparelho;
+                servicoDados.Marca = cmbMarca.Text;
+                servicoDados.Aparelho = txtModelo.Text;
+                servicoDados.Cor = cmbCor.Text;
+                servicoDados.MeiSerialNumber = txtMei_SerialNumber.Text;
+                servicoDados.Senha = string.IsNullOrWhiteSpace(txtSenhaDispositivo.Text) ? null : txtSenhaDispositivo.Text;
+                servicoDados.SenhaPatternAndroid = picSenhaPattern.Image != null ? ConvertImage.ConvertImageToByte(picSenhaPattern.Image) : null;
+                servicoDados.Situacao = string.IsNullOrWhiteSpace(txtObservacoes.Text) ? null : txtObservacoes.Text;
+                servicoDados.Status = 1;
+                servicoDados.RelatoCliente = string.IsNullOrWhiteSpace(txtRelatoCliente.Text) ? null : txtRelatoCliente.Text;
+                servicoDados.CondicoesBalcao = string.IsNullOrWhiteSpace(txtCondicoesBalcao.Text) ? null : txtCondicoesBalcao.Text;
+                servicoDados.AvaliacaoServico = cmbStatusServico.Text;
+
+                //Dados do Checklist
+                checklistDados.FK_IdServico = servicoDados.ID;
+                checklistDados.OrdemServico = servicoDados.OrdemServico;
+                checklistDados.DataChecklist = servicoDados.DataServico;
+                checklistDados.Tipo = Constantes.CHK_ENTRADA;
+                checklistDados.BiometriaFaceID = switchChecklistAusente.IsOn == true ? null : cmbChecklistBiometria.Text;
+                checklistDados.Microfone = switchChecklistAusente.IsOn == true ? null : cmbChecklistMicrofone.Text;
+                checklistDados.Tela = switchChecklistAusente.IsOn == true ? null : cmbChecklistTela.Text;
+                checklistDados.Chip = switchChecklistAusente.IsOn == true ? null : cmbChecklistChip.Text;
+                checklistDados.Botoes = switchChecklistAusente.IsOn == true ? null : cmbChecklistBotoes.Text;
+                checklistDados.Sensor = switchChecklistAusente.IsOn == true ? null : cmbChecklistSensor.Text;
+                checklistDados.Cameras = switchChecklistAusente.IsOn == true ? null : cmbChecklistCameras.Text;
+                checklistDados.Auricular = switchChecklistAusente.IsOn == true ? null : cmbChecklistAuricular.Text;
+                checklistDados.Wifi = switchChecklistAusente.IsOn == true ? null : cmbChecklistWifi.Text;
+                checklistDados.AltoFalante = switchChecklistAusente.IsOn == true ? null : cmbChecklistAltoFaltante.Text;
+                checklistDados.Bluetooth = switchChecklistAusente.IsOn == true ? null : cmbChecklistBluetooth.Text;
+                checklistDados.Carregamento = switchChecklistAusente.IsOn == true ? null : cmbChecklistCarregamento.Text;
+                //Ternario aninhado basicamente para dizer "Se o switch ausente ta on, significa que o valor fica null, caso nao, ele verifica se o campo ta vazio e poem null"
+                checklistDados.Observacoes = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text) ? null : txtChecklistObservacoes.Text; ;
+                checklistDados.Ausente = switchChecklistAusente.IsOn;
+                checklistDados.MotivoAusencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text) ? null : txtChecklistMotivoAusencia.Text;
+
+                //Dados das condicoes fisicas
+                condicoesFisicasDados.FK_IdServico = servicoDados.ID;
+                condicoesFisicasDados.OrdemServico = servicoDados.OrdemServico;
+                condicoesFisicasDados.DataCondicoesFisicas = servicoDados.DataServico;
+                condicoesFisicasDados.Tipo = Constantes.CHK_ENTRADA;
+                condicoesFisicasDados.Pelicula = cmbPelicula.Text;
+                condicoesFisicasDados.Tela = cmbTela.Text;
+                condicoesFisicasDados.Tampa = cmbTampa.Text;
+                condicoesFisicasDados.Aro = cmbAro.Text;
+                condicoesFisicasDados.Botoes = cmbBotoes.Text;
+                condicoesFisicasDados.LenteCamera = cmbLenteCamera.Text;
+
+                form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral, clienteDados, servicoDados, checklistDados, condicoesFisicasDados, _tipo);
+                formPrevisaoEntrega.ShowDialog();
             }
-            else if (tipoAparelhoGlobal == Aparelho.Computador)
+            catch (Exception e)
             {
-                tipoAparelho = "Computador";
+                mErro.ErroAoAbrirTelaInsercaoOrdemServico(e);
             }
-            else if (tipoAparelhoGlobal == Aparelho.Notebook)
+        }
+
+        private void AtualizarOrdemServicoEntradaExistente()
+        {
+            try
             {
-                tipoAparelho = "Notebook";
+                standby_orgContext context = new standby_orgContext();
+                tb_clientes clienteDados = context.tb_clientes.FirstOrDefault(x => x.cl_id == Convert.ToInt32(lblIdCliente.Text));
+                tb_servicos servicoDados = context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(lblIdServico.Text));
+                tb_checklist checklistDados = context.tb_checklist.FirstOrDefault(x => x.ch_sv_idservico == servicoDados.sv_id);
+                tb_condicoes_fisicas condicoesFisicasDados = context.tb_condicoes_fisicas.FirstOrDefault(x => x.cf_sv_idservico == servicoDados.sv_id);
+
+                #region If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
+
+                string tipoAparelho = string.Empty;
+                if (tipoAparelhoGlobal == Aparelho.Celular)
+                {
+                    tipoAparelho = "Celular";
+                }
+                else if (tipoAparelhoGlobal == Aparelho.Computador)
+                {
+                    tipoAparelho = "Computador";
+                }
+                else if (tipoAparelhoGlobal == Aparelho.Notebook)
+                {
+                    tipoAparelho = "Notebook";
+                }
+
+                #endregion If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
+
+                servicoDados.sv_cl_idcliente = clienteDados.cl_id;
+                servicoDados.sv_tipo_aparelho = tipoAparelho;
+                servicoDados.sv_marca = cmbMarca.Text;
+                servicoDados.sv_aparelho = txtModelo.Text;
+                servicoDados.sv_cor = cmbCor.Text;
+                servicoDados.sv_mei_serialnumber = txtMei_SerialNumber.Text;
+                servicoDados.sv_senha = string.IsNullOrWhiteSpace(txtSenhaDispositivo.Text) ? null : txtSenhaDispositivo.Text;
+                servicoDados.sv_senha_pattern = picSenhaPattern.Image != null ? ConvertImage.ConvertImageToByte(picSenhaPattern.Image) : null;
+                servicoDados.sv_situacao = string.IsNullOrWhiteSpace(txtObservacoes.Text) ? null : txtObservacoes.Text;
+                servicoDados.sv_status = 1;
+                servicoDados.sv_relato_cliente = string.IsNullOrWhiteSpace(txtRelatoCliente.Text) ? null : txtRelatoCliente.Text;
+                servicoDados.sv_condicoes_balcao = string.IsNullOrWhiteSpace(txtCondicoesBalcao.Text) ? null : txtCondicoesBalcao.Text;
+                servicoDados.sv_avaliacao_servico = cmbStatusServico.Text;
+
+                //Dados do Checklist
+                checklistDados.ch_tipo = Constantes.CHK_ENTRADA;
+                checklistDados.ch_biometria_faceid = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistBiometria.Text) ? null : cmbChecklistBiometria.Text;
+                checklistDados.ch_microfone = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistMicrofone.Text) ? null : cmbChecklistMicrofone.Text;
+                checklistDados.ch_tela = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistTela.Text) ? null : cmbChecklistTela.Text;
+                checklistDados.ch_chip = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistChip.Text) ? null : cmbChecklistChip.Text;
+                checklistDados.ch_botoes = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistBotoes.Text) ? null : cmbChecklistBotoes.Text;
+                checklistDados.ch_sensor = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistSensor.Text) ? null : cmbChecklistSensor.Text;
+                checklistDados.ch_cameras = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistCameras.Text) ? null : cmbChecklistCameras.Text;
+                checklistDados.ch_auricular = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistAuricular.Text) ? null : cmbChecklistAuricular.Text;
+                checklistDados.ch_wifi = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistWifi.Text) ? null : cmbChecklistWifi.Text;
+                checklistDados.ch_altofalante = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistAltoFaltante.Text) ? null : cmbChecklistAltoFaltante.Text;
+                checklistDados.ch_bluetooth = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistBluetooth.Text) ? null : cmbChecklistBluetooth.Text;
+                checklistDados.ch_carregamento = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(cmbChecklistCarregamento.Text) ? null : cmbChecklistCarregamento.Text;
+                //Ternario aninhado basicamente para dizer "Se o switch ausente ta on, significa que o valor fica null, caso nao, ele verifica se o campo ta vazio e poem null"
+                checklistDados.ch_observacoes = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text) ? null : txtChecklistObservacoes.Text; ;
+                checklistDados.ch_ausente = switchChecklistAusente.IsOn;
+                checklistDados.ch_motivo_ausencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text) ? null : txtChecklistMotivoAusencia.Text;
+
+                //Dados das condicoes fisicas
+                condicoesFisicasDados.cf_data = servicoDados.sv_data;
+                condicoesFisicasDados.cf_pelicula = string.IsNullOrWhiteSpace(cmbPelicula.Text) ? null : cmbPelicula.Text;
+                condicoesFisicasDados.cf_tela = string.IsNullOrWhiteSpace(cmbTela.Text) ? null : cmbTela.Text;
+                condicoesFisicasDados.cf_tampa = string.IsNullOrWhiteSpace(cmbTampa.Text) ? null : cmbTampa.Text;
+                condicoesFisicasDados.cf_aro = string.IsNullOrWhiteSpace(cmbAro.Text) ? null : cmbAro.Text;
+                condicoesFisicasDados.cf_botoes = string.IsNullOrWhiteSpace(cmbBotoes.Text) ? null : cmbBotoes.Text;
+                condicoesFisicasDados.cf_lente_camera = string.IsNullOrWhiteSpace(cmbLenteCamera.Text) ? null : cmbLenteCamera.Text;
+
+                context.tb_servicos.Update(servicoDados);
+                context.tb_clientes.Update(clienteDados);
+                context.tb_checklist.Update(checklistDados);
+                context.tb_condicoes_fisicas.Update(condicoesFisicasDados);
+                context.SaveChanges();
             }
-
-            #endregion If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
-
-            //Dados do servico
-            if (lblIdServico.Text != "IdServico")
+            catch (Exception e)
             {
-                servicoDados.ID = Convert.ToInt32(lblIdServico.Text);
+                mErro.ErroAoAtualizarOrdemServicoEntrada(e);
             }
-            servicoDados.OrdemServico = ordemServicoID;
-            servicoDados.DataServico = DateTime.Now;
-            servicoDados.FK_IdCliente = clienteDados.ID;
-            servicoDados.TipoAparelho = tipoAparelho;
-            servicoDados.Marca = cmbMarca.Text;
-            servicoDados.Aparelho = txtModelo.Text;
-            servicoDados.Cor = cmbCor.Text;
-            servicoDados.MeiSerialNumber = txtMei_SerialNumber.Text;
-            servicoDados.Senha = string.IsNullOrWhiteSpace(txtSenhaDispositivo.Text) ? null : txtSenhaDispositivo.Text;
-            servicoDados.SenhaPatternAndroid = picSenhaPattern.Image != null ? ConvertImage.ConvertImageToByte(picSenhaPattern.Image) : null;
-            servicoDados.Situacao = string.IsNullOrWhiteSpace(txtObservacoes.Text) ? null : txtObservacoes.Text;
-            servicoDados.Status = 1;
-            servicoDados.RelatoCliente = string.IsNullOrWhiteSpace(txtRelatoCliente.Text) ? null : txtRelatoCliente.Text;
-            servicoDados.CondicoesBalcao = string.IsNullOrWhiteSpace(txtCondicoesBalcao.Text) ? null : txtCondicoesBalcao.Text;
-            servicoDados.AvaliacaoServico = cmbStatusServico.Text;
-
-            //Dados do Checklist
-            checklistDados.OrdemServico = servicoDados.OrdemServico;
-            checklistDados.DataChecklist = servicoDados.DataServico;
-            checklistDados.Tipo = Constantes.CHK_ENTRADA;
-            checklistDados.BiometriaFaceID = switchChecklistAusente.IsOn == true ? null : cmbChecklistBiometria.Text;
-            checklistDados.Microfone = switchChecklistAusente.IsOn == true ? null : cmbChecklistMicrofone.Text;
-            checklistDados.Tela = switchChecklistAusente.IsOn == true ? null : cmbChecklistTela.Text;
-            checklistDados.Chip = switchChecklistAusente.IsOn == true ? null : cmbChecklistChip.Text;
-            checklistDados.Botoes = switchChecklistAusente.IsOn == true ? null : cmbChecklistBotoes.Text;
-            checklistDados.Sensor = switchChecklistAusente.IsOn == true ? null : cmbChecklistSensor.Text;
-            checklistDados.Cameras = switchChecklistAusente.IsOn == true ? null : cmbChecklistCameras.Text;
-            checklistDados.Auricular = switchChecklistAusente.IsOn == true ? null : cmbChecklistAuricular.Text;
-            checklistDados.Wifi = switchChecklistAusente.IsOn == true ? null : cmbChecklistWifi.Text;
-            checklistDados.AltoFalante = switchChecklistAusente.IsOn == true ? null : cmbChecklistAltoFaltante.Text;
-            checklistDados.Bluetooth = switchChecklistAusente.IsOn == true ? null : cmbChecklistBluetooth.Text;
-            checklistDados.Carregamento = switchChecklistAusente.IsOn == true ? null : cmbChecklistCarregamento.Text;
-            //Ternario aninhado basicamente para dizer "Se o switch ausente ta on, significa que o valor fica null, caso nao, ele verifica se o campo ta vazio e poem null"
-            checklistDados.Observacoes = switchChecklistAusente.IsOn == true ? null : string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text) ? null : txtChecklistObservacoes.Text; ;
-            checklistDados.Ausente = switchChecklistAusente.IsOn;
-            checklistDados.MotivoAusencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text) ? null : txtChecklistMotivoAusencia.Text;
-
-            //Dados das condicoes fisicas
-            condicoesFisicasDados.OrdemServico = servicoDados.OrdemServico;
-            condicoesFisicasDados.DataCondicoesFisicas = servicoDados.DataServico;
-            condicoesFisicasDados.Pelicula = cmbPelicula.Text;
-            condicoesFisicasDados.Tela = cmbTela.Text;
-            condicoesFisicasDados.Tampa = cmbTampa.Text;
-            condicoesFisicasDados.Aro = cmbAro.Text;
-            condicoesFisicasDados.Botoes = cmbBotoes.Text;
-            condicoesFisicasDados.LenteCamera = cmbLenteCamera.Text;
-
-            form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral, clienteDados, servicoDados, checklistDados, condicoesFisicasDados, _tipo);
-            formPrevisaoEntrega.ShowDialog();
         }
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -427,6 +519,11 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
         {
+            SalvarImprimirOrdemServico();
+        }
+
+        private void SalvarImprimirOrdemServico()
+        {
             if (MessageBox.Show(@"Deseja imprimir a Ordem de Serviço - ENTRADA?", @"CONFIRMAÇÃO", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.No)
             {
@@ -461,23 +558,25 @@ namespace PFC___StandBy_CSharp.Forms
             if (switchChecklistAusente.IsOn == true)
             {
                 //MessageBox.Show("Ativado");
-                foreach (Control control in groupBox4.Controls)
+                foreach (Control control in grupo_Checklist.Controls)
                 {
                     if (control is BunifuDropdown && control.Name.StartsWith("cmbChecklist"))
                     {
                         control.Enabled = false;
+                        control.Text = string.Empty;
                     }
                     else if (control.Name == "txtChecklistObservacoes")
                     {
                         var richTextBox = (RichTextBox)control;
                         control.BackColor = Color.FromArgb(64, 64, 64);
+                        control.Text = string.Empty;
                         richTextBox.ReadOnly = true;
                     }
                 }
             }
             else
             {
-                foreach (Control control in groupBox4.Controls)
+                foreach (Control control in grupo_Checklist.Controls)
                 {
                     if (control is BunifuDropdown && control.Name.StartsWith("cmbChecklist"))
                     {

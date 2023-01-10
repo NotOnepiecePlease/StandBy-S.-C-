@@ -47,7 +47,7 @@
             this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtBuscaGoogle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.group_Checklist = new System.Windows.Forms.GroupBox();
             this.switchChecklistAusente = new DevExpress.XtraEditors.ToggleSwitch();
             this.txtChecklistMotivoAusencia = new System.Windows.Forms.RichTextBox();
             this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -128,7 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            this.group_Checklist.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
             this.group_OutrasObservacoes.SuspendLayout();
             this.group_CondicoesFisicas.SuspendLayout();
@@ -157,7 +157,7 @@
             this.panel_FormOrdemServico.Controls.Add(this.bunifuCustomLabel28);
             this.panel_FormOrdemServico.Controls.Add(this.txtBuscaGoogle);
             this.panel_FormOrdemServico.Controls.Add(this.pictureBox2);
-            this.panel_FormOrdemServico.Controls.Add(this.groupBox4);
+            this.panel_FormOrdemServico.Controls.Add(this.group_Checklist);
             this.panel_FormOrdemServico.Controls.Add(this.group_OutrasObservacoes);
             this.panel_FormOrdemServico.Controls.Add(this.group_CondicoesFisicas);
             this.panel_FormOrdemServico.Controls.Add(this.group_InformacoesAparelho);
@@ -369,6 +369,7 @@
             this.cmbStatusServico.Text = "AVALIAÇÃO";
             this.cmbStatusServico.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbStatusServico.TextLeftMargin = 5;
+            this.cmbStatusServico.SelectedIndexChanged += new System.EventHandler(this.cmbStatusServico_SelectedIndexChanged);
             // 
             // bunifuCustomLabel28
             // 
@@ -414,47 +415,47 @@
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
             // 
-            // groupBox4
+            // group_Checklist
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.groupBox4.Controls.Add(this.switchChecklistAusente);
-            this.groupBox4.Controls.Add(this.txtChecklistMotivoAusencia);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel27);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel25);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel26);
-            this.groupBox4.Controls.Add(this.cmbChecklistCarregamento);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel23);
-            this.groupBox4.Controls.Add(this.cmbChecklistBluetooth);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel24);
-            this.groupBox4.Controls.Add(this.txtChecklistObservacoes);
-            this.groupBox4.Controls.Add(this.cmbChecklistAltoFaltante);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel21);
-            this.groupBox4.Controls.Add(this.cmbChecklistWifi);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel22);
-            this.groupBox4.Controls.Add(this.cmbChecklistAuricular);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel19);
-            this.groupBox4.Controls.Add(this.cmbChecklistCameras);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel20);
-            this.groupBox4.Controls.Add(this.cmbChecklistSensor);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel17);
-            this.groupBox4.Controls.Add(this.cmbChecklistBotoes);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel18);
-            this.groupBox4.Controls.Add(this.cmbChecklistChip);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel15);
-            this.groupBox4.Controls.Add(this.cmbChecklistTela);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel16);
-            this.groupBox4.Controls.Add(this.cmbChecklistMicrofone);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel14);
-            this.groupBox4.Controls.Add(this.cmbChecklistBiometria);
-            this.groupBox4.Controls.Add(this.bunifuCustomLabel13);
-            this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox4.Location = new System.Drawing.Point(805, 57);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(354, 595);
-            this.groupBox4.TabIndex = 26;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "CHECK LIST";
+            this.group_Checklist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.group_Checklist.Controls.Add(this.switchChecklistAusente);
+            this.group_Checklist.Controls.Add(this.txtChecklistMotivoAusencia);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel27);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel25);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel26);
+            this.group_Checklist.Controls.Add(this.cmbChecklistCarregamento);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel23);
+            this.group_Checklist.Controls.Add(this.cmbChecklistBluetooth);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel24);
+            this.group_Checklist.Controls.Add(this.txtChecklistObservacoes);
+            this.group_Checklist.Controls.Add(this.cmbChecklistAltoFaltante);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel21);
+            this.group_Checklist.Controls.Add(this.cmbChecklistWifi);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel22);
+            this.group_Checklist.Controls.Add(this.cmbChecklistAuricular);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel19);
+            this.group_Checklist.Controls.Add(this.cmbChecklistCameras);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel20);
+            this.group_Checklist.Controls.Add(this.cmbChecklistSensor);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel17);
+            this.group_Checklist.Controls.Add(this.cmbChecklistBotoes);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel18);
+            this.group_Checklist.Controls.Add(this.cmbChecklistChip);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel15);
+            this.group_Checklist.Controls.Add(this.cmbChecklistTela);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel16);
+            this.group_Checklist.Controls.Add(this.cmbChecklistMicrofone);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel14);
+            this.group_Checklist.Controls.Add(this.cmbChecklistBiometria);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel13);
+            this.group_Checklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.group_Checklist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.group_Checklist.Location = new System.Drawing.Point(805, 57);
+            this.group_Checklist.Name = "group_Checklist";
+            this.group_Checklist.Size = new System.Drawing.Size(354, 595);
+            this.group_Checklist.TabIndex = 26;
+            this.group_Checklist.TabStop = false;
+            this.group_Checklist.Text = "CHECK LIST";
             // 
             // switchChecklistAusente
             // 
@@ -558,6 +559,7 @@
             this.cmbChecklistCarregamento.Name = "cmbChecklistCarregamento";
             this.cmbChecklistCarregamento.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCarregamento.TabIndex = 47;
+            this.cmbChecklistCarregamento.Text = null;
             this.cmbChecklistCarregamento.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistCarregamento.TextLeftMargin = 5;
             // 
@@ -610,6 +612,7 @@
             this.cmbChecklistBluetooth.Name = "cmbChecklistBluetooth";
             this.cmbChecklistBluetooth.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBluetooth.TabIndex = 45;
+            this.cmbChecklistBluetooth.Text = null;
             this.cmbChecklistBluetooth.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBluetooth.TextLeftMargin = 5;
             // 
@@ -675,6 +678,7 @@
             this.cmbChecklistAltoFaltante.Name = "cmbChecklistAltoFaltante";
             this.cmbChecklistAltoFaltante.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAltoFaltante.TabIndex = 43;
+            this.cmbChecklistAltoFaltante.Text = null;
             this.cmbChecklistAltoFaltante.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistAltoFaltante.TextLeftMargin = 5;
             // 
@@ -727,6 +731,7 @@
             this.cmbChecklistWifi.Name = "cmbChecklistWifi";
             this.cmbChecklistWifi.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistWifi.TabIndex = 41;
+            this.cmbChecklistWifi.Text = null;
             this.cmbChecklistWifi.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistWifi.TextLeftMargin = 5;
             // 
@@ -779,6 +784,7 @@
             this.cmbChecklistAuricular.Name = "cmbChecklistAuricular";
             this.cmbChecklistAuricular.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAuricular.TabIndex = 39;
+            this.cmbChecklistAuricular.Text = null;
             this.cmbChecklistAuricular.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistAuricular.TextLeftMargin = 5;
             // 
@@ -831,6 +837,7 @@
             this.cmbChecklistCameras.Name = "cmbChecklistCameras";
             this.cmbChecklistCameras.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCameras.TabIndex = 37;
+            this.cmbChecklistCameras.Text = null;
             this.cmbChecklistCameras.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistCameras.TextLeftMargin = 5;
             // 
@@ -883,6 +890,7 @@
             this.cmbChecklistSensor.Name = "cmbChecklistSensor";
             this.cmbChecklistSensor.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistSensor.TabIndex = 35;
+            this.cmbChecklistSensor.Text = null;
             this.cmbChecklistSensor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistSensor.TextLeftMargin = 5;
             // 
@@ -935,6 +943,7 @@
             this.cmbChecklistBotoes.Name = "cmbChecklistBotoes";
             this.cmbChecklistBotoes.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBotoes.TabIndex = 33;
+            this.cmbChecklistBotoes.Text = null;
             this.cmbChecklistBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBotoes.TextLeftMargin = 5;
             // 
@@ -987,6 +996,7 @@
             this.cmbChecklistChip.Name = "cmbChecklistChip";
             this.cmbChecklistChip.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistChip.TabIndex = 31;
+            this.cmbChecklistChip.Text = null;
             this.cmbChecklistChip.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistChip.TextLeftMargin = 5;
             // 
@@ -1039,6 +1049,7 @@
             this.cmbChecklistTela.Name = "cmbChecklistTela";
             this.cmbChecklistTela.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistTela.TabIndex = 29;
+            this.cmbChecklistTela.Text = null;
             this.cmbChecklistTela.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistTela.TextLeftMargin = 5;
             // 
@@ -1091,6 +1102,7 @@
             this.cmbChecklistMicrofone.Name = "cmbChecklistMicrofone";
             this.cmbChecklistMicrofone.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistMicrofone.TabIndex = 27;
+            this.cmbChecklistMicrofone.Text = null;
             this.cmbChecklistMicrofone.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistMicrofone.TextLeftMargin = 5;
             // 
@@ -1143,6 +1155,7 @@
             this.cmbChecklistBiometria.Name = "cmbChecklistBiometria";
             this.cmbChecklistBiometria.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBiometria.TabIndex = 25;
+            this.cmbChecklistBiometria.Text = null;
             this.cmbChecklistBiometria.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistBiometria.TextLeftMargin = 5;
             // 
@@ -1271,6 +1284,7 @@
             this.cmbLenteCamera.Name = "cmbLenteCamera";
             this.cmbLenteCamera.Size = new System.Drawing.Size(270, 32);
             this.cmbLenteCamera.TabIndex = 76;
+            this.cmbLenteCamera.Text = null;
             this.cmbLenteCamera.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbLenteCamera.TextLeftMargin = 5;
             // 
@@ -1331,6 +1345,7 @@
             this.cmbBotoes.Name = "cmbBotoes";
             this.cmbBotoes.Size = new System.Drawing.Size(270, 32);
             this.cmbBotoes.TabIndex = 74;
+            this.cmbBotoes.Text = null;
             this.cmbBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbBotoes.TextLeftMargin = 5;
             // 
@@ -1391,6 +1406,7 @@
             this.cmbAro.Name = "cmbAro";
             this.cmbAro.Size = new System.Drawing.Size(270, 32);
             this.cmbAro.TabIndex = 72;
+            this.cmbAro.Text = null;
             this.cmbAro.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbAro.TextLeftMargin = 5;
             // 
@@ -1451,6 +1467,7 @@
             this.cmbTampa.Name = "cmbTampa";
             this.cmbTampa.Size = new System.Drawing.Size(270, 32);
             this.cmbTampa.TabIndex = 70;
+            this.cmbTampa.Text = null;
             this.cmbTampa.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbTampa.TextLeftMargin = 5;
             // 
@@ -1511,6 +1528,7 @@
             this.cmbTela.Name = "cmbTela";
             this.cmbTela.Size = new System.Drawing.Size(270, 32);
             this.cmbTela.TabIndex = 68;
+            this.cmbTela.Text = null;
             this.cmbTela.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbTela.TextLeftMargin = 5;
             // 
@@ -1580,6 +1598,7 @@
             this.cmbPelicula.Name = "cmbPelicula";
             this.cmbPelicula.Size = new System.Drawing.Size(270, 32);
             this.cmbPelicula.TabIndex = 66;
+            this.cmbPelicula.Text = null;
             this.cmbPelicula.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbPelicula.TextLeftMargin = 5;
             // 
@@ -1773,6 +1792,7 @@
             this.cmbCor.Name = "cmbCor";
             this.cmbCor.Size = new System.Drawing.Size(270, 32);
             this.cmbCor.TabIndex = 32;
+            this.cmbCor.Text = null;
             this.cmbCor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbCor.TextLeftMargin = 5;
             // 
@@ -1814,6 +1834,7 @@
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(270, 32);
             this.cmbMarca.TabIndex = 24;
+            this.cmbMarca.Text = null;
             this.cmbMarca.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbMarca.TextLeftMargin = 5;
             // 
@@ -2026,9 +2047,11 @@
             this.ClientSize = new System.Drawing.Size(1230, 720);
             this.Controls.Add(this.panel_FormOrdemServico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "form_OrdemServicoSaida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_OrdemServicoSaida";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_OrdemServicoSaida_KeyDown);
             this.panel_FormOrdemServico.ResumeLayout(false);
             this.panel_FormOrdemServico.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -2037,8 +2060,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.group_Checklist.ResumeLayout(false);
+            this.group_Checklist.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).EndInit();
             this.group_OutrasObservacoes.ResumeLayout(false);
             this.group_CondicoesFisicas.ResumeLayout(false);
@@ -2073,7 +2096,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel28;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBuscaGoogle;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox group_Checklist;
         public DevExpress.XtraEditors.ToggleSwitch switchChecklistAusente;
         public System.Windows.Forms.RichTextBox txtChecklistMotivoAusencia;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel27;

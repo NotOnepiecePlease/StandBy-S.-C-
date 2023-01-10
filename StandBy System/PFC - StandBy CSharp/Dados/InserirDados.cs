@@ -76,14 +76,17 @@ namespace PFC___StandBy_CSharp.Dados
                 using (SqlConnection conexaoSQL = OpenConnection())
                 {
                     string query = "INSERT INTO tb_servicos (sv_previsao_entrega, sv_existe_um_prazo,sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho,sv_marca, sv_aparelho,sv_cor, sv_mei_serialnumber, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_condicoes_balcao, sv_avaliacao_servico) " +
-                    "output INSERTED.sv_id VALUES (@PrevisaoEntrega, @ExistePrazo, @OrdemServico, @Data, @FkCliente, @TipoAparelho,@Marca,@Aparelho,@Cor,@MeiSerialNumber, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @CondicoesBalcao, @AvaliacaoServico)";
+                    "VALUES (@PrevisaoEntrega, @ExistePrazo, @OrdemServico, @Data, @FkCliente, @TipoAparelho,@Marca,@Aparelho,@Cor,@MeiSerialNumber, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @CondicoesBalcao, @AvaliacaoServico)";
+
+                    //string query = "INSERT INTO tb_servicos (sv_previsao_entrega, sv_existe_um_prazo,sv_ordem_serv, sv_data, sv_cl_idcliente, sv_tipo_aparelho,sv_marca, sv_aparelho,sv_cor, sv_mei_serialnumber, sv_senha, sv_situacao, sv_status, sv_senha_pattern, sv_relato_cliente, sv_condicoes_balcao, sv_avaliacao_servico) " +
+                    //               "output INSERTED.sv_id VALUES (@PrevisaoEntrega, @ExistePrazo, @OrdemServico, @Data, @FkCliente, @TipoAparelho,@Marca,@Aparelho,@Cor,@MeiSerialNumber, @Senha, @Situacao, @Status0_1, @SenhaPattern, @RelatoCliente, @CondicoesBalcao, @AvaliacaoServico)";
 
                     SqlCommand cmd = new SqlCommand(query, conexaoSQL);
 
-                    cmd.Parameters.Add("@PrevisaoEntrega", SqlDbType.DateTime).Value = _servicoDados.PrevisaoEntrega;
+                    cmd.Parameters.Add("@PrevisaoEntrega", SqlDbType.DateTime).Value = _servicoDados.PrevisaoEntrega ?? Convert.DBNull;
                     cmd.Parameters.Add("@ExistePrazo", SqlDbType.Int).Value = _servicoDados.ExistePrazo;
                     cmd.Parameters.Add("@OrdemServico", SqlDbType.Int).Value = _servicoDados.OrdemServico;
-                    cmd.Parameters.Add("@Data", SqlDbType.Date).Value = _servicoDados.DataServico;
+                    cmd.Parameters.Add("@Data", SqlDbType.DateTime).Value = _servicoDados.DataServico;
                     cmd.Parameters.Add("@FkCliente", SqlDbType.Int).Value = _clienteDados.ID;
                     cmd.Parameters.Add("@TipoAparelho", SqlDbType.VarChar).Value = _servicoDados.TipoAparelho;
                     cmd.Parameters.Add("@Marca", SqlDbType.VarChar).Value = _servicoDados.Marca;
@@ -97,8 +100,16 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente ?? Convert.DBNull;
                     cmd.Parameters.Add("@CondicoesBalcao", SqlDbType.VarChar).Value = _servicoDados.CondicoesBalcao ?? Convert.DBNull;
                     cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
+                    cmd.ExecuteNonQuery();
 
-                    int idRegistrada = (int)cmd.ExecuteScalar();
+                    int idRegistrada = 0;
+                    string queryBuscarUltimaID = "select top 1 sv_id from tb_servicos order by sv_id desc";
+                    SqlDataAdapter adapter = new SqlDataAdapter(queryBuscarUltimaID, conexaoSQL);
+                    SqlDataReader dr = adapter.SelectCommand.ExecuteReader();
+
+                    dr.Read();
+
+                    idRegistrada = dr.GetInt32(0);
 
                     return idRegistrada;
                 }
@@ -281,14 +292,15 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection conexao = OpenConnection())
                 {
-                    string query = "INSERT INTO tb_checklist (ch_ordem_serv, ch_data, ch_sv_idservico, ch_biometria_faceid, " +
+                    string query = "INSERT INTO tb_checklist (ch_tipo, ch_ordem_serv, ch_data, ch_sv_idservico, ch_biometria_faceid, " +
                                    "ch_microfone, ch_tela, ch_chip, ch_botoes, ch_sensor, ch_cameras, ch_auricular, ch_wifi, " +
                                    "ch_altofalante, ch_bluetooth, ch_carregamento, ch_observacoes, ch_ausente, ch_motivo_ausencia)" +
-                                   " VALUES (@OrdemServico, @DataChecklist, @FK_IdServico, @Biometria," +
+                                   " VALUES (@Tipo, @OrdemServico, @DataChecklist, @FK_IdServico, @Biometria," +
                                    "@Microfone, @Tela, @Chip, @Botoes, @Sensor, @Cameras, @Auricular, @Wifi," +
                                    "@AltoFalante, @Bluetooth, @Carregamento, @CondicoesBalcao, @Ausente, @MotivoAusencia)";
 
                     SqlCommand cmd = new SqlCommand(query, conexao);
+                    cmd.Parameters.AddWithValue("@Tipo", _checklistDados.Tipo);
                     cmd.Parameters.AddWithValue("@OrdemServico", _checklistDados.OrdemServico);
                     cmd.Parameters.AddWithValue("@DataChecklist", _checklistDados.DataChecklist);
                     cmd.Parameters.AddWithValue("@FK_IdServico", _idServico);
@@ -327,14 +339,15 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection conexao = OpenConnection())
                 {
-                    string query = "INSERT INTO tb_condicoes_fisicas (cf_ordem_serv, cf_data, cf_sv_idservico, cf_pelicula, cf_tela, " +
+                    string query = "INSERT INTO tb_condicoes_fisicas (cf_tipo, cf_ordem_serv, cf_data, cf_sv_idservico, cf_pelicula, cf_tela, " +
                                    "cf_tampa, cf_aro, cf_botoes, cf_lente_camera)" +
-                                   " VALUES (@OrdemServico, @DataCondicoesFisicas, @FK_IdServico, @Pelicula, @Tela, @Tampa, @Aro, @Botoes, @LenteCamera)";
+                                   " VALUES (@Tipo, @OrdemServico, @DataCondicoesFisicas, @FK_IdServico, @Pelicula, @Tela, @Tampa, @Aro, @Botoes, @LenteCamera)";
 
                     SqlCommand cmd = new SqlCommand(query, conexao);
                     cmd.Parameters.AddWithValue("@OrdemServico", _condicoesFisicasDados.OrdemServico);
                     cmd.Parameters.AddWithValue("@DataCondicoesFisicas", _condicoesFisicasDados.DataCondicoesFisicas);
                     cmd.Parameters.AddWithValue("@FK_IdServico", _idServico);
+                    cmd.Parameters.AddWithValue("@Tipo", _condicoesFisicasDados.Tipo);
                     cmd.Parameters.AddWithValue("@Pelicula", _condicoesFisicasDados.Pelicula ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@Tela", _condicoesFisicasDados.Tela ?? Convert.DBNull);
                     cmd.Parameters.AddWithValue("@Tampa", _condicoesFisicasDados.Tampa ?? Convert.DBNull);

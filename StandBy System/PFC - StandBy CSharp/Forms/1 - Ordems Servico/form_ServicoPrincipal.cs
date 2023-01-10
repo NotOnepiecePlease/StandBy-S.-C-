@@ -22,6 +22,7 @@ namespace PFC___StandBy_CSharp.Forms
         private int rowHandle;
 
         private GridColumn column;
+        private DeletarDados deletarDados = new DeletarDados();
         private BuscarDados buscarDados = new BuscarDados();
         public int[] corGeral = new[] { 0, 0, 0 };
 
@@ -56,7 +57,7 @@ namespace PFC___StandBy_CSharp.Forms
             //gridviewServicos.EndUpdate();
         }
 
-        // ReSharper disable once InconsistentNaming
+        //Seta o valor do prazo na celula
         private async Task SetarCorColunaOS()
         {
             gridviewServicos.CustomColumnDisplayText += (sender, e) =>
@@ -64,30 +65,77 @@ namespace PFC___StandBy_CSharp.Forms
                 if (e.Column.Name == "gridcol_Prazo")
                 {
                     var indexLinhaAtual = gridviewServicos.GetRowHandle(e.ListSourceRowIndex);
+                    var teste = gridviewServicos.GetRowCellValue(e.ListSourceRowIndex, gridcol_Prazo);
                     var dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
                     var servico = dadosDaLinhaAtual as IRow;
-                    DateTime dataCad = DateTime.MinValue;
-                    DateTime dataPrev = DateTime.MinValue;
+                    DateTime dataCad;
+                    DateTime dataPrev;
                     try
                     {
                         if (servico != null)
                         {
-                            if (servico[0].ToString() == "34008")
+                            if (servico[4].ToString() == "1922")
                             {
                             }
-                            dataCad = Convert.ToDateTime(servico[1]);
-                            dataPrev = Convert.ToDateTime(servico[6]);
-
-                            if (dataPrev != DateTime.MinValue)
+                            //sv_previsao_entrega
+                            if (servico[6] != null && servico[1] != null)
                             {
-                                TimeSpan r = dataPrev.Subtract(dataCad);
+                                dataCad = Convert.ToDateTime(servico[1]);
+                                dataPrev = Convert.ToDateTime(servico[6]);
 
-                                if (r.Days >= 0)
+                                //TimeSpan r = dataPrev.Subtract(dataCad);
+                                TimeSpan r = dataPrev.Subtract(DateTime.Now);
+
+                                if (r.Days == 0 && r.Hours <= 23 && r.Seconds <= 59)
                                 {
-                                    e.DisplayText = $"{r.Days}dias";
+                                    //HOJE - 15:00
+                                    var dataParaEntregar = DateTime.Now.AddHours(r.Hours);
+                                    var dataHoje = DateTime.Now;
+
+                                    if (dataParaEntregar.Date != dataHoje.Date)
+                                    {
+                                        e.DisplayText = $"AMANHÃ - {dataPrev:HH:mm}";
+                                    }
+                                    else
+                                    {
+                                        e.DisplayText = $"HOJE - {dataPrev:HH:mm}";
+                                        //e.Column.AppearanceCell.BackColor = Color.DarkOrange;
+                                    }
+                                }
+                                else if (r.Days == 1 && (r.Hours + DateTime.Now.Hour) >= 23)
+                                {
+                                    //AMANHÃ - 12:00
+                                    var dia = $"{dataPrev:dddd}";
+                                    var diaSemSufixo = dia.Split('-');
+                                    e.DisplayText = $"{diaSemSufixo[0].ToUpper()} - {dataPrev:HH:mm}";
+                                    //e.DisplayText = $"AMANHÃ - {DateTime.Now.AddHours(r.Days).AddHours(r.Hours):hh:mm}";
+                                }
+                                else if (r.Days == 1)
+                                {
+                                    e.DisplayText = $"AMANHÃ - {dataPrev:HH:mm}";
+                                }
+                                else if (r.Days == 2)
+                                {
+                                    //QUARTA - 12:00
+                                    //e.DisplayText = $"{DateTime.Now.AddHours(r.Days).AddHours(r.Hours):dddd} - {DateTime.Now.AddHours(r.Days).AddHours(r.Hours):hh:mm}";
+                                    var dia = $"{dataPrev:dddd}";
+                                    var diaSemSufixo = dia.Split('-');
+                                    e.DisplayText = $"{diaSemSufixo[0].ToUpper()} - {dataPrev:HH:mm}";
+                                }
+                                else if (r.Days >= 3 && r.Days < 15)
+                                {
+                                    //SÁBADO - 12:00
+                                    var dia = $"{dataPrev:dddd}";
+                                    var diaSemSufixo = dia.Split('-');
+                                    e.DisplayText = $"{diaSemSufixo[0].ToUpper()} - {dataPrev:HH:mm}";
+                                }
+                                else if (r.Days >= 15)
+                                {
+                                    var dia = $"{dataPrev:dddd}";
+                                    var diaSemSufixo = dia.Split('-');
+                                    e.DisplayText = $"{diaSemSufixo[0].ToUpper()} {dataPrev:dd/MM - HH:mm}";
                                 }
                             }
-
                             //Linha que demorei dias pra encontrar, aqui voce seta a aparencia da celula como prioridade maxima, nenhum evento pode modificar
                             //veja o ranking aqui: https://docs.devexpress.com/WindowsForms/114444/Common-Features/Application-Appearance-and-Skin-Colors
                             gridviewServicos.Columns[1].AppearanceCell.Options.HighPriority = true;
@@ -105,10 +153,93 @@ namespace PFC___StandBy_CSharp.Forms
             };
         }
 
+        //Seta cor da celula com base no prazo
+        private void gridviewServicos_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            if (e.Column.FieldName == "sv_ordem_serv")
+            {
+                var indexLinhaAtual = e.RowHandle;
+                var dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
+                var servico = dadosDaLinhaAtual as IRow;
+                DateTime dataCad = DateTime.MinValue;
+                DateTime dataPrev = DateTime.MinValue;
+                try
+                {
+                    if (servico != null)
+                    {
+                        if (servico[4].ToString() == "1922")
+                        {
+                        }
+                        //sv_previsao_entrega
+                        if (servico[6] != null && servico[1] != null)
+                        {
+                            dataCad = Convert.ToDateTime(servico[1]);
+                            dataPrev = Convert.ToDateTime(servico[6]);
+
+                            //TimeSpan r = dataPrev.Subtract(dataCad);
+                            TimeSpan r = dataPrev.Subtract(DateTime.Now);
+
+                            if (r.Days == 0 && r.Hours <= 23 && r.Seconds <= 59)
+                            {
+                                //HOJE - 15:00
+                                var dataParaEntregar = DateTime.Now.AddHours(r.Hours);
+                                var dataHoje = DateTime.Now;
+
+                                if (dataParaEntregar.Date != dataHoje.Date)
+                                {
+                                    e.Appearance.BackColor = Color.DeepSkyBlue;
+                                }
+                                else
+                                {
+                                    e.Appearance.BackColor = Color.DarkOrange;
+                                }
+                            }
+                            else if (r.Days == 1 && (r.Hours + DateTime.Now.Hour) >= 23)
+                            {
+                                //AMANHÃ - 12:00
+                                e.Appearance.BackColor = Color.LimeGreen;
+                            }
+                            else if (r.Days == 1)
+                            {
+                                e.Appearance.BackColor = Color.DeepSkyBlue;
+                            }
+                            else if (r.Days == 2)
+                            {
+                                //QUARTA - 12:00
+                                e.Appearance.BackColor = Color.LimeGreen;
+                            }
+                            else if (r.Days >= 3 && r.Days < 15)
+                            {
+                                //SÁBADO - 12:00
+                                e.Appearance.BackColor = Color.DarkRed;
+                            }
+                            else if (r.Days >= 15)
+                            {
+                                e.Appearance.BackColor = Color.Gray;
+                            }
+                        }
+
+                        //Linha que demorei dias pra encontrar, aqui voce seta a aparencia da celula como prioridade maxima, nenhum evento pode modificar
+                        //veja o ranking aqui: https://docs.devexpress.com/WindowsForms/114444/Common-Features/Application-Appearance-and-Skin-Colors
+                        gridviewServicos.Columns[1].AppearanceCell.Options.HighPriority = true;
+                    }
+                    else
+                    {
+                        e.Appearance.BackColor = Color.Purple;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"Erro Cor GRID: {exception}");
+                }
+            }
+        }
+
         private void btnCelular_Click(object sender, EventArgs e)
         {
             form_OrdemServicoEntrada ordemServico = new form_OrdemServicoEntrada(Aparelho.Celular, 0, true, new[] { 255, 0, 103 });
             ordemServico.ShowDialog();
+            PopularGridview();
         }
 
         private void form_ServicoPrincipal_Shown(object sender, EventArgs e)
@@ -127,41 +258,6 @@ namespace PFC___StandBy_CSharp.Forms
                 view.FocusedRowHandle = rowHandle = hitInfo.RowHandle;
                 column = hitInfo.Column;
                 popupServicos.ShowPopup(barManager1, view.GridControl.PointToScreen(e.Point));
-            }
-        }
-
-        private void gridviewServicos_RowCellStyle(object sender, RowCellStyleEventArgs e)
-        {
-            if (e.Column.FieldName == "sv_ordem_serv")
-            {
-                var indexLinhaAtual = e.RowHandle;
-                var dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
-                var servico = dadosDaLinhaAtual as IRow;
-                DateTime dataCad = DateTime.MinValue;
-                DateTime dataPrev = DateTime.MinValue;
-                try
-                {
-                    if (servico != null /*&& dataCad != DateTime.MinValue && dataPrev != DateTime.MinValue*/)
-                    {
-                        dataCad = Convert.ToDateTime(servico[1]);
-                        dataPrev = Convert.ToDateTime(servico[6]);
-                        TimeSpan r = dataPrev.Subtract(dataCad);
-
-                        e.Appearance.BackColor = r.TotalDays > 20 ? Color.Green : Color.DeepSkyBlue;
-
-                        //Linha que demorei dias pra encontrar, aqui voce seta a aparencia da celula como prioridade maxima, nenhum evento pode modificar
-                        //veja o ranking aqui: https://docs.devexpress.com/WindowsForms/114444/Common-Features/Application-Appearance-and-Skin-Colors
-                        e.Column.AppearanceCell.Options.HighPriority = true;
-                    }
-                    else
-                    {
-                        e.Appearance.BackColor = Color.Chartreuse;
-                    }
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show($"Erro Cor GRID: {exception}");
-                }
             }
         }
 
@@ -384,7 +480,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Pegando todos os dados necessarios com base na ID
             int idServico = Convert.ToInt32(servico[0]);
-            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico = buscarDados.BuscarOS(idServico);
+            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico = buscarDados.BuscarOS(idServico, "ENTRADA");
 
             if (string.IsNullOrWhiteSpace(dadosServico.servico.TipoAparelho))
             {
@@ -415,7 +511,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Pegando todos os dados necessarios com base na ID
             int idServico = Convert.ToInt32(servico[0]);
-            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico = buscarDados.BuscarOS(idServico);
+            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico = buscarDados.BuscarOS(idServico, "SAIDA");
 
             if (string.IsNullOrWhiteSpace(dadosServico.servico.TipoAparelho))
             {
@@ -613,6 +709,16 @@ namespace PFC___StandBy_CSharp.Forms
 
             formOrdemServico.cmbCliente.Enabled = false;
             formOrdemServico.ShowDialog();
+            PopularGridview();
+        }
+
+        private void btnRemoverServico_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //Pegando os dados da linha que o usuario clicou
+            var servico = BuscarDadosLinhaSelecionada();
+            //Pegando todos os dados necessarios com base na ID
+            int idServico = Convert.ToInt32(servico[0]);
+            deletarDados.DeletarServico(idServico);
             PopularGridview();
         }
     }

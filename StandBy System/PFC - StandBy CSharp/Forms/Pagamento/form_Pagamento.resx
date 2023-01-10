@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuSeparator5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAcUAAAAKCAYAAADFCEVRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA9SURBVHhe7dixDQBADAKxjM7mSUPx1U9gSzcDEgMAAAAA
+        AADwk2QlSVLWKEqS1IyiJEmtJyoAAAAAAK+ZA0ywQPVhwLstAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuSeparator6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAcUAAAAKCAYAAADFCEVRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA9SURBVHhe7dixDQBADAKxjM7mSUPx1U9gSzcDEgMAAAAA
+        AADwk2QlSVLWKEqS1IyiJEmtJyoAAAAAAK+ZA0ywQPVhwLstAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuSeparator7.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAcUAAAAKCAYAAADFCEVRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA9SURBVHhe7dixDQBADAKxjM7mSUPx1U9gSzcDEgMAAAAA
+        AADwk2QlSVLWKEqS1IyiJEmtJyoAAAAAAK+ZA0ywQPVhwLstAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuSeparator8.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAcUAAAAKCAYAAADFCEVRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA9SURBVHhe7dixDQBADAKxjM7mSUPx1U9gSzcDEgMAAAAA
+        AADwk2QlSVLWKEqS1IyiJEmtJyoAAAAAAK+ZA0ywQPVhwLstAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bunifuSeparator10.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAcUAAAAKCAYAAADFCEVRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA9SURBVHhe7dixDQBADAKxjM7mSUPx1U9gSzcDEgMAAAAA
+        AADwk2QlSVLWKEqS1IyiJEmtJyoAAAAAAK+ZA0ywQPVhwLstAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="unboundSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 17</value>
+  </metadata>
+  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

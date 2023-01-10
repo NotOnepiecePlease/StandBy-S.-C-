@@ -161,6 +161,26 @@ namespace PFC___StandBy_CSharp.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        public static DevExpress.Utils.Svg.SvgImage business_dollar {
+            get {
+                object obj = ResourceManager.GetObject("business_dollar", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        public static DevExpress.Utils.Svg.SvgImage card_green {
+            get {
+                object obj = ResourceManager.GetObject("card green", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Abadia
         ///Abadia de Carbonita
         ///Abadia de Goiás
@@ -834,6 +854,16 @@ namespace PFC___StandBy_CSharp.Properties {
             get {
                 object obj = ResourceManager.GetObject("Sucesso", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        public static DevExpress.Utils.Svg.SvgImage task {
+            get {
+                object obj = ResourceManager.GetObject("task", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }
         
