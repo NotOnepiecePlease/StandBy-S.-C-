@@ -47,6 +47,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 cmbTela.Properties.Items.Add(texto);
             }
+
             collection.EndUpdate();
             cmbTela.SelectedIndex = 0;
         }
@@ -56,12 +57,14 @@ namespace PFC___StandBy_CSharp.Forms
             ComboBoxItemCollection collection = cmbGrupo.Properties.Items;
             collection.BeginUpdate();
 
-            var grupo = context.tb_comp_items.Where(y => y.item_tela == cmbTela.Text).Select(x => x.item_grupo).Distinct().ToList();
+            var grupo = context.tb_comp_items.Where(y => y.item_tela == cmbTela.Text).Select(x => x.item_grupo)
+                .Distinct().ToList();
             cmbGrupo.Properties.Items.Clear();
             foreach (var texto in grupo)
             {
                 cmbGrupo.Properties.Items.Add(texto);
             }
+
             collection.EndUpdate();
             cmbGrupo.Enabled = true;
             cmbGrupo.SelectedIndex = 0;
@@ -72,12 +75,14 @@ namespace PFC___StandBy_CSharp.Forms
             ComboBoxItemCollection collection = cmbCampo.Properties.Items;
             collection.BeginUpdate();
 
-            var grupo = context.tb_comp_items.Where(y => y.item_tela == cmbTela.Text && y.item_grupo == cmbGrupo.Text).Select(x => x.item_nome).Distinct().ToList();
+            var grupo = context.tb_comp_items.Where(y => y.item_tela == cmbTela.Text && y.item_grupo == cmbGrupo.Text)
+                .Select(x => x.item_nome).Distinct().ToList();
             cmbCampo.Properties.Items.Clear();
             foreach (var texto in grupo)
             {
                 cmbCampo.Properties.Items.Add(texto);
             }
+
             collection.EndUpdate();
             cmbCampo.Enabled = true;
             cmbCampo.SelectedIndex = 0;
@@ -132,7 +137,8 @@ namespace PFC___StandBy_CSharp.Forms
 
                 if (isAcessoAdministrativoLiberado == false && dado.item_editavel == false)
                 {
-                    MessageBox.Show("Item nao pode ser removido ou editado", "Acesso restrito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Item nao pode ser removido ou editado", "Acesso restrito", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -174,7 +180,8 @@ namespace PFC___StandBy_CSharp.Forms
             //view.DeleteSelectedRows();
         }
 
-        private void gridView1_PopupMenuShowing(object sender, DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
+        private void gridView1_PopupMenuShowing(object sender,
+            DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventArgs e)
         {
             GridView view = sender as GridView;
             GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
@@ -207,6 +214,7 @@ namespace PFC___StandBy_CSharp.Forms
                     MessageBox.Show("Item nao pode ser removido ou editado");
                     return;
                 }
+
                 context.tb_comp_items.Remove(dado);
 
                 gridView1.UpdateCurrentRow();

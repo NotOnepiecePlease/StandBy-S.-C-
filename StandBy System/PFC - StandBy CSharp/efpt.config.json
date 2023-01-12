@@ -27,6 +27,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[tb_compras]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[tb_condicoes_fisicas]",
          "ObjectType": 0
       },
@@ -44,6 +48,10 @@
       },
       {
          "Name": "[dbo].[tb_orcamento]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tb_pagamento]",
          "ObjectType": 0
       },
       {

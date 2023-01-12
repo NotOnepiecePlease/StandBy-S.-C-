@@ -123,7 +123,8 @@ namespace PFC___StandBy_CSharp.Dados
         #region Alterar Servicos
 
         public void AlterarServico(int _idServico, DateTime _data, string _aparelho, string _defeito, string _senha,
-            string _situacao, float _valorServico, float _valorPeca, float _lucro, string _servico, DateTime _dataPrevisao, string _acessorios)
+            string _situacao, float _valorServico, float _valorPeca, float _lucro, string _servico,
+            DateTime _dataPrevisao, string _acessorios)
         {
             try
             {
@@ -132,15 +133,17 @@ namespace PFC___StandBy_CSharp.Dados
                     string query = "";
                     if (_dataPrevisao == DateTime.Parse("26/03/2020"))
                     {
-                        query = "update tb_servicos set sv_data = @Data, sv_aparelho = @Aparelho, sv_defeito = @Defeito, " +
-                        "sv_senha = @Senha, sv_situacao = @Situacao, sv_valorservico = @ValorServico, sv_valorpeca = @ValorPeca, " +
-                        "sv_lucro = @Lucro, sv_servico = @Servico, sv_previsao_entrega = null, sv_existe_um_prazo = 0, sv_acessorios = @Acessorios, sv_cor_tempo = 4 where sv_id = @IdServico";
+                        query =
+                            "update tb_servicos set sv_data = @Data, sv_aparelho = @Aparelho, sv_defeito = @Defeito, " +
+                            "sv_senha = @Senha, sv_situacao = @Situacao, sv_valorservico = @ValorServico, sv_valorpeca = @ValorPeca, " +
+                            "sv_lucro = @Lucro, sv_servico = @Servico, sv_previsao_entrega = null, sv_existe_um_prazo = 0, sv_acessorios = @Acessorios, sv_cor_tempo = 4 where sv_id = @IdServico";
                     }
                     else
                     {
-                        query = "update tb_servicos set sv_data = @Data, sv_aparelho = @Aparelho, sv_defeito = @Defeito, " +
-                        "sv_senha = @Senha, sv_situacao = @Situacao, sv_valorservico = @ValorServico, sv_valorpeca = @ValorPeca, " +
-                        "sv_lucro = @Lucro, sv_servico = @Servico, sv_previsao_entrega = @DataPrevisao, sv_existe_um_prazo = 1, sv_acessorios = @Acessorios where sv_id = @IdServico";
+                        query =
+                            "update tb_servicos set sv_data = @Data, sv_aparelho = @Aparelho, sv_defeito = @Defeito, " +
+                            "sv_senha = @Senha, sv_situacao = @Situacao, sv_valorservico = @ValorServico, sv_valorpeca = @ValorPeca, " +
+                            "sv_lucro = @Lucro, sv_servico = @Servico, sv_previsao_entrega = @DataPrevisao, sv_existe_um_prazo = 1, sv_acessorios = @Acessorios where sv_id = @IdServico";
                     }
 
                     //SqlCommand cmd = new SqlCommand("AlterarServicos", con);
@@ -207,22 +210,26 @@ namespace PFC___StandBy_CSharp.Dados
 
                     cmd.Parameters.AddWithValue("@_nome", SqlDbType.VarChar).Value = _dadosDoCliente.Nome;
                     cmd.Parameters.AddWithValue("@_telefone", SqlDbType.VarChar).Value = _dadosDoCliente.Telefone;
-                    cmd.Parameters.AddWithValue("@_telefoneRecados", SqlDbType.VarChar).Value = _dadosDoCliente.TelefoneRecado;
+                    cmd.Parameters.AddWithValue("@_telefoneRecados", SqlDbType.VarChar).Value =
+                        _dadosDoCliente.TelefoneRecado;
                     cmd.Parameters.AddWithValue("@_cpf", SqlDbType.VarChar).Value = _dadosDoCliente.Cpf;
                     cmd.Parameters.AddWithValue("@_idcliente", SqlDbType.VarChar).Value = _dadosDoCliente.ID;
                     cmd.Parameters.AddWithValue("@_nomeRecado", SqlDbType.VarChar).Value = _dadosDoCliente.NomeRecado;
-                    cmd.Parameters.AddWithValue("@_parentescoRecado", SqlDbType.VarChar).Value = _dadosDoCliente.ParentescoRecado;
+                    cmd.Parameters.AddWithValue("@_parentescoRecado", SqlDbType.VarChar).Value =
+                        _dadosDoCliente.ParentescoRecado;
                     cmd.Parameters.AddWithValue("@_sexo", SqlDbType.Char).Value = _dadosDoCliente.Sexo;
                     if (_dadosDoCliente.DataNascimento != "")
                     {
-                        cmd.Parameters.AddWithValue("@_dataNascimento", SqlDbType.DateTime).Value = _dadosDoCliente.DataNascimento;
+                        cmd.Parameters.AddWithValue("@_dataNascimento", SqlDbType.DateTime).Value =
+                            _dadosDoCliente.DataNascimento;
                     }
                     else
                     {
                         cmd.Parameters.AddWithValue("@_dataNascimento", SqlDbType.DateTime).Value = DBNull.Value;
                     }
 
-                    cmd.Parameters.AddWithValue("@_cep", SqlDbType.VarChar).Value = _dadosDoCliente.Cep.Equals("Ex: 42803317") ? string.Empty : _dadosDoCliente.Cep;
+                    cmd.Parameters.AddWithValue("@_cep", SqlDbType.VarChar).Value =
+                        _dadosDoCliente.Cep.Equals("Ex: 42803317") ? string.Empty : _dadosDoCliente.Cep;
                     cmd.Parameters.AddWithValue("@_endereco", SqlDbType.VarChar).Value = _dadosDoCliente.Endereco;
                     cmd.Parameters.AddWithValue("@_complemento", SqlDbType.VarChar).Value = _dadosDoCliente.Complemento;
                     cmd.Parameters.AddWithValue("@_bairro", SqlDbType.VarChar).Value = _dadosDoCliente.Bairro;
@@ -357,7 +364,8 @@ namespace PFC___StandBy_CSharp.Dados
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show(@"Mes resetado com sucesso, tenha um excelente trabalho este mês!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Mes resetado com sucesso, tenha um excelente trabalho este mês!", "Sucesso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -382,6 +390,13 @@ namespace PFC___StandBy_CSharp.Dados
                     tb_servicos s =
                         context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(_form.lblIdServico.Text));
 
+                    var a = _form.dtpPrevisaoEntrega.EditValue;
+                    var ba = _form.dtpPrevisaoEntrega.DateTime;
+                    if (_form.dtpPrevisaoEntrega.DateTime == DateTime.MinValue)
+                    {
+                        _form.dtpPrevisaoEntrega.EditValue = null;
+                    }
+
                     s.sv_marca = _form.cmbMarca.Text;
                     s.sv_aparelho = _form.txtModelo.Text;
                     s.sv_cor = _form.cmbCor.Text;
@@ -395,8 +410,8 @@ namespace PFC___StandBy_CSharp.Dados
                     s.sv_tipo_aparelho = _form.cmbTipoAparelho.Text;
                     s.sv_valorservico = Convert.ToDecimal(_form.txtServicoValor.Text.TrimStart('R', '$').Trim());
                     s.sv_valorpeca = Convert.ToDecimal(_form.txtPecaValor.Text.TrimStart('R', '$').Trim());
-                    s.sv_lucro = Convert.ToDecimal(_form.txtLucroValor.Text.TrimStart('R', '$').Trim());
-                    s.sv_previsao_entrega = _form.dtpPrevisaoEntrega.DateTime;
+                    s.sv_lucro = Convert.ToDecimal(_form.txtLucroValor.Text.Replace("R$ ", "").Trim());
+                    s.sv_previsao_entrega = (DateTime?)(_form.dtpPrevisaoEntrega.EditValue);
                     s.sv_acessorios = _form.txtAcessorios.Text;
                     s.sv_avaliacao_servico = _form.cmbStatusServico.Text;
 
@@ -421,7 +436,8 @@ namespace PFC___StandBy_CSharp.Dados
                 if (_form.lblIdServico.Text != "IdServico")
                 {
                     tb_condicoes_fisicas c =
-                        context.tb_condicoes_fisicas.FirstOrDefault(x => x.cf_sv_idservico == Convert.ToInt32(_form.lblIdServico.Text));
+                        context.tb_condicoes_fisicas.FirstOrDefault(x =>
+                            x.cf_sv_idservico == Convert.ToInt32(_form.lblIdServico.Text));
 
                     //Caso nao encontre, tenho que criar um novo.
                     if (c == null)
@@ -502,13 +518,17 @@ namespace PFC___StandBy_CSharp.Dados
                     cmd.Parameters.Add("@Marca", SqlDbType.VarChar).Value = _servicoDados.Marca;
                     cmd.Parameters.Add("@Aparelho", SqlDbType.VarChar).Value = _servicoDados.Aparelho;
                     cmd.Parameters.Add("@Cor", SqlDbType.VarChar).Value = _servicoDados.Cor ?? Convert.DBNull;
-                    cmd.Parameters.Add("@MeiSerialNumber", SqlDbType.VarChar).Value = _servicoDados.MeiSerialNumber ?? Convert.DBNull;
+                    cmd.Parameters.Add("@MeiSerialNumber", SqlDbType.VarChar).Value =
+                        _servicoDados.MeiSerialNumber ?? Convert.DBNull;
                     cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = _servicoDados.Senha ?? Convert.DBNull;
                     cmd.Parameters.Add("@Situacao", SqlDbType.VarChar).Value = _servicoDados.Situacao ?? Convert.DBNull;
                     cmd.Parameters.Add("@Status0_1", SqlDbType.Int).Value = _servicoDados.Status;
-                    cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value = _servicoDados.SenhaPatternAndroid ?? Convert.DBNull;
-                    cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value = _servicoDados.RelatoCliente ?? Convert.DBNull;
-                    cmd.Parameters.Add("@CondicoesBalcao", SqlDbType.VarChar).Value = _servicoDados.CondicoesBalcao ?? Convert.DBNull;
+                    cmd.Parameters.Add("@SenhaPattern", SqlDbType.Image).Value =
+                        _servicoDados.SenhaPatternAndroid ?? Convert.DBNull;
+                    cmd.Parameters.Add("@RelatoCliente", SqlDbType.VarChar).Value =
+                        _servicoDados.RelatoCliente ?? Convert.DBNull;
+                    cmd.Parameters.Add("@CondicoesBalcao", SqlDbType.VarChar).Value =
+                        _servicoDados.CondicoesBalcao ?? Convert.DBNull;
                     cmd.Parameters.Add("@AvaliacaoServico", SqlDbType.VarChar).Value = _servicoDados.AvaliacaoServico;
 
                     cmd.ExecuteNonQuery();

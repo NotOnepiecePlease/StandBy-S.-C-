@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Context;
 using PFC___StandBy_CSharp.Dados;
+using PFC___StandBy_CSharp.Forms.Pagamento;
+using PFC___StandBy_CSharp.Forms.Pagamento_e_Compras;
 using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.PreencherComponentes;
@@ -104,7 +106,8 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 
         private void txtServicoValor_TextChange(object sender, EventArgs e)
         {
-            if (txtServicoValor.Text.Trim() != "R$" && txtServicoValor.Text.Trim() != "R" && !string.IsNullOrWhiteSpace(txtServicoValor.Text))
+            if (txtServicoValor.Text.Trim() != "R$" && txtServicoValor.Text.Trim() != "R" &&
+                !string.IsNullOrWhiteSpace(txtServicoValor.Text))
             {
                 float servicoValor = float.Parse(txtServicoValor.Text.TrimStart('R', '$').Trim());
                 txtValorAvista.Text = $"{servicoValor:C}";
@@ -156,6 +159,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             {
                 // MessageBox.Show(ex.ToString());
             }
+
             if (lucro > 0)
             {
                 txtLucroValor.ForeColor = Color.LimeGreen;
@@ -230,6 +234,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     form.ShowDialog();
                 }
             }
+
             this.Close();
         }
 
@@ -284,6 +289,31 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 
         private void btnConcluirServico_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cmbTipoAparelho.Text))
+            {
+                MessageBox.Show(
+                    "Serviço só pode ser concluido quando você selecionar o tipo do aparelho.\nPara especificar o tipo basta selecionar no campo abaixo dos botoes de inserir checklist.",
+                    "Tipo do aparelho inexistente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ad.AtualizarServico(this);
+            EfetuarPagamento();
+            ConcluirServico();
+            this.Close();
+        }
+
+        private void EfetuarPagamento()
+        {
+            form_Pagamento formPagamento = new form_Pagamento(Convert.ToInt32(lblIdServico.Text));
+            formPagamento.txtValorServico.Text = txtServicoValor.Text;
+            formPagamento.txtServicoExecutado.Text = txtSolucao.Text;
+            formPagamento.lblIdServico.Text = lblIdServico.Text;
+            formPagamento.ShowDialog();
+        }
+
+        private void ConcluirServico()
+        {
             Aparelho tipoAparelho = Aparelho.VAZIO;
             switch (cmbTipoAparelho.Text)
             {
@@ -306,7 +336,8 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                         "Deseja imprimir OS - Saida?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int idCliente = Convert.ToInt32(lblIdCliente.Text);
-                    form_OrdemServicoSaida formSaida = new form_OrdemServicoSaida(tipoAparelho, idCliente, false, new[] { 255, 0, 103 });
+                    form_OrdemServicoSaida formSaida =
+                        new form_OrdemServicoSaida(tipoAparelho, idCliente, false, new[] { 255, 0, 103 });
                     formSaida.lblIdServico.Text = lblIdServico.Text;
                     formSaida.lblIdCliente.Text = lblIdCliente.Text;
                     formSaida.lblIdChecklist.Text = lblIdChecklist.Text;
@@ -329,6 +360,31 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         private void cmbStatusServico_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboboxStatus.MudarCor(cmbStatusServico);
+        }
+
+        private void btnAbrirListaCompras_Click(object sender, EventArgs e)
+        {
+            AbrirFormaCompras();
+            txtPecaValor.Text = $"{bd.BuscarTotalPecas(Convert.ToInt32(lblIdServico.Text)):C}";
+        }
+
+        private void AbrirFormaCompras()
+        {
+            int ordemServico = Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ').Trim());
+            int idServico = Convert.ToInt32(lblIdServico.Text);
+            form_Compras formCompra = new form_Compras(ordemServico, idServico);
+            formCompra.lblIdServico.Text = lblIdServico.Text;
+            formCompra.cmbOrdemServico.Enabled = false;
+            formCompra.ShowDialog();
+        }
+
+        private void txtPecaValor_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja inserir novas peças para esse servico?", "Novas peças", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                AbrirFormaCompras();
+            }
         }
     }
 }

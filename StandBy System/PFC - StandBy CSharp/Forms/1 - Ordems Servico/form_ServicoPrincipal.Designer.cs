@@ -70,6 +70,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btnEditarListaPeçasCompradas = new DevExpress.XtraBars.BarButtonItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridctrlServicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewServicos)).BeginInit();
@@ -322,8 +323,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnEditarServico,
             this.barButtonItem1,
             this.btnEditarOrdemServicoSaida,
-            this.barButtonItem3});
-            this.barManager1.MaxItemId = 8;
+            this.barButtonItem3,
+            this.btnEditarListaPeçasCompradas});
+            this.barManager1.MaxItemId = 9;
             // 
             // barDockControlTop
             // 
@@ -446,6 +448,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.popupServicos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditarServico),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRemoverServico),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnEditarListaPeçasCompradas),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditarOrdemServicoEntrada, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEditarOrdemServicoSaida)});
             this.popupServicos.Manager = this.barManager1;
@@ -464,6 +467,14 @@ namespace PFC___StandBy_CSharp.Forms
             this.barSubItem1.Caption = "barSubItem1";
             this.barSubItem1.Id = 4;
             this.barSubItem1.Name = "barSubItem1";
+            // 
+            // btnEditarListaPeçasCompradas
+            // 
+            this.btnEditarListaPeçasCompradas.Caption = "Editar lista peças compradas";
+            this.btnEditarListaPeçasCompradas.Id = 8;
+            this.btnEditarListaPeçasCompradas.ImageOptions.LargeImage = global::PFC___StandBy_CSharp.Properties.Resources.pageorientationportrait_32x32;
+            this.btnEditarListaPeçasCompradas.Name = "btnEditarListaPeçasCompradas";
+            this.btnEditarListaPeçasCompradas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditarListaPeçasCompradas_ItemClick);
             // 
             // form_ServicoPrincipal
             // 
@@ -532,5 +543,6 @@ namespace PFC___StandBy_CSharp.Forms
         private DevExpress.XtraBars.BarButtonItem btnEditarOrdemServicoSaida;
         private DevExpress.DataAccess.Sql.SqlDataSource dataSourceGridServicos;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem btnEditarListaPeçasCompradas;
     }
 }

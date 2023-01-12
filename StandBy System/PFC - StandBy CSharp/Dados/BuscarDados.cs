@@ -9,7 +9,10 @@ using System.Linq;
 using Guna.UI.WinForms;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Context;
+using PFC___StandBy_CSharp.LockScreenAndroid;
 using PFC___StandBy_CSharp.Models;
+using System.Windows.Media.Media3D;
+using System.Runtime.Remoting.Contexts;
 
 // ReSharper disable All
 
@@ -27,7 +30,8 @@ namespace PFC___StandBy_CSharp.Dados
         {
             if (_idServico == -1)
             {
-                MessageBox.Show("Nao foi possivel buscar ordem de servico pois a ID é -1", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nao foi possivel buscar ordem de servico pois a ID é -1", "ERRO", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return null;
             }
 
@@ -113,6 +117,7 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 me.ErroBuscarIdCliente(e);
             }
+
             return idCliente;
         }
 
@@ -153,7 +158,8 @@ namespace PFC___StandBy_CSharp.Dados
         {
             using (SqlConnection con = OpenConnection())
             {
-                string Query = "select sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha from tb_servicos inner join tb_clientes on tb_servicos.sv_cl_idcliente = tb_clientes.cl_id where cl_nome like '%@NomeCliente%'";
+                string Query =
+                    "select sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha from tb_servicos inner join tb_clientes on tb_servicos.sv_cl_idcliente = tb_clientes.cl_id where cl_nome like '%@NomeCliente%'";
                 SqlCommand cmd = new SqlCommand(Query, con);
 
                 cmd.Parameters.Add("@NomeCliente", SqlDbType.VarChar).Value = _nomeCliente;
@@ -184,7 +190,8 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Buscar dias totais de garantia
 
-        public void BuscarDiasGarantia(GunaLabel _Emissao, GunaLabel _DataFinal, GunaLabel _DiasRestantes, int _idServico)
+        public void BuscarDiasGarantia(GunaLabel _Emissao, GunaLabel _DataFinal, GunaLabel _DiasRestantes,
+            int _idServico)
         {
             using (SqlConnection conexao = OpenConnection())
             {
@@ -211,12 +218,14 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Buscar dias faltantes da garantia
 
-        public void BuscarDiasFaltantesGarantia(GunaLabel _LabelDiasFaltantes, GunaLabel _DataFinal, GunaLabel _DiasRestantes, int _idServico)
+        public void BuscarDiasFaltantesGarantia(GunaLabel _LabelDiasFaltantes, GunaLabel _DataFinal,
+            GunaLabel _DiasRestantes, int _idServico)
         {
             using (SqlConnection conexao = OpenConnection())
             {
                 SqlDataReader dr;
-                string query = "select gar_data_inicial, gar_data_final, datediff(DD, GETDATE(), gar_data_final) as diferenca from tb_garantias where fk_servico_id = @_fkServico";
+                string query =
+                    "select gar_data_inicial, gar_data_final, datediff(DD, GETDATE(), gar_data_final) as diferenca from tb_garantias where fk_servico_id = @_fkServico";
 
                 SqlCommand cmd = new SqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@_fkServico", _idServico);
@@ -368,11 +377,12 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    string query = "select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
-                    "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo " +
-                    "FROM tb_servicos " +
-                    "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
-                    "WHERE sv_id = @IdServico";
+                    string query =
+                        "select sv_id, sv_cl_idcliente, sv_data, cl_nome, sv_aparelho, sv_defeito, sv_situacao, sv_senha, " +
+                        "sv_valorservico, sv_valorpeca, sv_lucro, sv_servico, sv_previsao_entrega, sv_existe_um_prazo, sv_acessorios, sv_cor_tempo " +
+                        "FROM tb_servicos " +
+                        "INNER JOIN tb_clientes ON tb_servicos.sv_cl_idcliente = tb_clientes.cl_id " +
+                        "WHERE sv_id = @IdServico";
 
                     List<object> dados = new List<object>();
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -381,22 +391,22 @@ namespace PFC___StandBy_CSharp.Dados
                     SqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        dados.Add(dr.GetValue(0));//id
-                        dados.Add(dr.GetValue(1));//id cliente
-                        dados.Add(dr.GetValue(2));//sv_data
-                        dados.Add(dr.GetValue(3));//cl_nome
-                        dados.Add(dr.GetValue(4));//sv_aparelho
-                        dados.Add(dr.GetValue(5));//sv_defeito
-                        dados.Add(dr.GetValue(6));//sv_situacao
-                        dados.Add(dr.GetValue(7));//sv_senha
-                        dados.Add(dr.GetValue(8));//sv_valorservico
-                        dados.Add(dr.GetValue(9));//sv_valorpeca
-                        dados.Add(dr.GetValue(10));//sv_lucro
-                        dados.Add(dr.GetValue(11));//sv_servico
-                        dados.Add(dr.GetValue(12));//sv_previsao_entrega
-                        dados.Add(dr.GetValue(13));//sv_existe_um_prazo
-                        dados.Add(dr.GetValue(14));//sv_acessorios
-                        dados.Add(dr.GetValue(15));//sv_cor_tempo
+                        dados.Add(dr.GetValue(0)); //id
+                        dados.Add(dr.GetValue(1)); //id cliente
+                        dados.Add(dr.GetValue(2)); //sv_data
+                        dados.Add(dr.GetValue(3)); //cl_nome
+                        dados.Add(dr.GetValue(4)); //sv_aparelho
+                        dados.Add(dr.GetValue(5)); //sv_defeito
+                        dados.Add(dr.GetValue(6)); //sv_situacao
+                        dados.Add(dr.GetValue(7)); //sv_senha
+                        dados.Add(dr.GetValue(8)); //sv_valorservico
+                        dados.Add(dr.GetValue(9)); //sv_valorpeca
+                        dados.Add(dr.GetValue(10)); //sv_lucro
+                        dados.Add(dr.GetValue(11)); //sv_servico
+                        dados.Add(dr.GetValue(12)); //sv_previsao_entrega
+                        dados.Add(dr.GetValue(13)); //sv_existe_um_prazo
+                        dados.Add(dr.GetValue(14)); //sv_acessorios
+                        dados.Add(dr.GetValue(15)); //sv_cor_tempo
 
                         return dados;
                     }
@@ -418,7 +428,8 @@ namespace PFC___StandBy_CSharp.Dados
         {
             List<ClienteEstrutura> listClientes = new List<ClienteEstrutura>();
             SqlConnection con = OpenConnection();
-            string query = "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado, cl_data_nascimento, cl_endereco, cl_bairro, cl_estado from tb_clientes order by cl_id";
+            string query =
+                "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado, cl_data_nascimento, cl_endereco, cl_bairro, cl_estado from tb_clientes order by cl_id";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader dataReader;
 
@@ -432,9 +443,12 @@ namespace PFC___StandBy_CSharp.Dados
                     string cpf = dataReader.GetString(2);
                     string telefone = dataReader.GetString(3);
                     string telefoneRecado = dataReader.GetString(4);
-                    string dataNascimento = dataReader.IsDBNull(5) ? "---" : dataReader.GetDateTime(5).ToShortDateString();
+                    string dataNascimento =
+                        dataReader.IsDBNull(5) ? "---" : dataReader.GetDateTime(5).ToShortDateString();
                     string endereco = dataReader.IsDBNull(6) ? "---" : dataReader.GetString(6);
-                    string bairro = (dataReader.IsDBNull(7)) || (dataReader.GetString(7) == "") ? "---" : dataReader.GetString(7);
+                    string bairro = (dataReader.IsDBNull(7)) || (dataReader.GetString(7) == "")
+                        ? "---"
+                        : dataReader.GetString(7);
                     string estado = dataReader.IsDBNull(8) ? "---" : dataReader.GetString(8);
 
                     listClientes.Add(new ClienteEstrutura
@@ -474,10 +488,11 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    string query = "SELECT sv_id, sv_ordem_serv, sv_data, sv_cl_idcliente, sv_marca, sv_aparelho, sv_cor , sv_mei_serialnumber, sv_senha, sv_condicoes_balcao, sv_relato_cliente, " +
-                                   "sv_tipo_aparelho, sv_situacao, sv_avaliacao_servico " +
-                                   "FROM tb_servicos " +
-                                   "WHERE sv_id = @idServico";
+                    string query =
+                        "SELECT sv_id, sv_ordem_serv, sv_data, sv_cl_idcliente, sv_marca, sv_aparelho, sv_cor , sv_mei_serialnumber, sv_senha, sv_condicoes_balcao, sv_relato_cliente, " +
+                        "sv_tipo_aparelho, sv_situacao, sv_avaliacao_servico " +
+                        "FROM tb_servicos " +
+                        "WHERE sv_id = @idServico";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -521,7 +536,8 @@ namespace PFC___StandBy_CSharp.Dados
 
         #region Buscar OS pela ID (servico, condicao fisica, checklist)
 
-        public (ServicoEstrutura, CondicoesFisicasEstrutura, ChecklistEstrutura) BuscarOS(int _idServico, string _tipoChecklist)
+        public (ServicoEstrutura, CondicoesFisicasEstrutura, ChecklistEstrutura) BuscarOS(int _idServico,
+            string _tipoChecklist)
         {
             ServicoEstrutura servico = new ServicoEstrutura();
             CondicoesFisicasEstrutura condicoesFisicas = new CondicoesFisicasEstrutura();
@@ -530,17 +546,18 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    string query = "SELECT sv_id, sv_ordem_serv, sv_data, sv_cl_idcliente, sv_marca, sv_aparelho, sv_cor , sv_mei_serialnumber, sv_senha, sv_condicoes_balcao, sv_relato_cliente, sv_tipo_aparelho, " +
-                                   "sv_situacao, sv_avaliacao_servico,cf_id, cf_pelicula, cf_tela, cf_tampa, cf_aro, cf_botoes, cf_lente_camera,ch_id, ch_tipo, ch_biometria_faceid, ch_microfone, " +
-                                   "ch_tela, ch_chip, ch_botoes, ch_sensor, ch_cameras, ch_auricular, ch_wifi, ch_altofalante, ch_bluetooth, ch_carregamento, " +
-                                   "ch_observacoes, ch_ausente, ch_motivo_ausencia " +
-                                   "FROM tb_servicos as servico " +
-                                   "INNER JOIN tb_checklist as checklist " +
-                                   "ON servico.sv_id = checklist.ch_sv_idservico " +
-                                   "INNER JOIN tb_condicoes_fisicas as condicoes " +
-                                   "ON servico.sv_id = condicoes.cf_sv_idservico " +
-                                   "WHERE sv_id = @idServico " +
-                                   "AND ch_tipo = @tipoChecklist";
+                    string query =
+                        "SELECT sv_id, sv_ordem_serv, sv_data, sv_cl_idcliente, sv_marca, sv_aparelho, sv_cor , sv_mei_serialnumber, sv_senha, sv_condicoes_balcao, sv_relato_cliente, sv_tipo_aparelho, " +
+                        "sv_situacao, sv_avaliacao_servico,cf_id, cf_pelicula, cf_tela, cf_tampa, cf_aro, cf_botoes, cf_lente_camera,ch_id, ch_tipo, ch_biometria_faceid, ch_microfone, " +
+                        "ch_tela, ch_chip, ch_botoes, ch_sensor, ch_cameras, ch_auricular, ch_wifi, ch_altofalante, ch_bluetooth, ch_carregamento, " +
+                        "ch_observacoes, ch_ausente, ch_motivo_ausencia " +
+                        "FROM tb_servicos as servico " +
+                        "INNER JOIN tb_checklist as checklist " +
+                        "ON servico.sv_id = checklist.ch_sv_idservico " +
+                        "INNER JOIN tb_condicoes_fisicas as condicoes " +
+                        "ON servico.sv_id = condicoes.cf_sv_idservico " +
+                        "WHERE sv_id = @idServico " +
+                        "AND ch_tipo = @tipoChecklist";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -638,12 +655,12 @@ namespace PFC___StandBy_CSharp.Dados
                 //    .Where(serv => serv.ServCondF.ServC.sv_id == 34000).ToList();
 
                 var query = from servico in context.tb_servicos
-                            join checklist in context.tb_checklist
-                                on servico.sv_id equals checklist.ch_sv_idservico
-                            join condFisicas in context.tb_condicoes_fisicas
-                                on servico.sv_id equals condFisicas.cf_sv_idservico
-                            where servico.sv_id == _idServico
-                            select new { Servico = servico, Checklist = checklist, CondicoesFisicas = condFisicas };
+                    join checklist in context.tb_checklist
+                        on servico.sv_id equals checklist.ch_sv_idservico
+                    join condFisicas in context.tb_condicoes_fisicas
+                        on servico.sv_id equals condFisicas.cf_sv_idservico
+                    where servico.sv_id == _idServico
+                    select new { Servico = servico, Checklist = checklist, CondicoesFisicas = condFisicas };
 
                 var queryInnerjoin = query.ToList();
 
@@ -667,6 +684,7 @@ namespace PFC___StandBy_CSharp.Dados
             {
                 MessageBox.Show($"{e}");
             }
+
             return (servicoDados, checklistDados, condFisicasDados);
         }
 
@@ -705,5 +723,104 @@ namespace PFC___StandBy_CSharp.Dados
         }
 
         #endregion Buscar ID ultima Ordem de Servico - Efcore
+
+        #region Buscar ID Servico pela O.S - Efcore
+
+        public int BuscarIDServicoPelaOS(int _ordemServico)
+        {
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+
+                int ordemServico = context.tb_servicos.Where(x => x.sv_ordem_serv == _ordemServico).Select(x => x.sv_id)
+                    .FirstOrDefault();
+                return ordemServico;
+
+                //using (SqlConnection con = OpenConnection())
+                //{
+                //    string query = "SELECT TOP 1 sv_ordem_serv FROM tb_servicos ORDER BY sv_id DESC";
+
+                //    SqlCommand cmd = new SqlCommand(query, con);
+                //    SqlDataReader dr = cmd.ExecuteReader();
+
+                //    if (dr.Read())
+                //    {
+                //        return dr.GetInt32(0);
+                //    }
+                //    return -1; //Retornando -1 porque 0 é um valor valido no banco.
+                //}
+            }
+            catch (Exception ex)
+            {
+                me.ErroAoBuscarIDUltimaOrdemServico(ex);
+                return -1;
+            }
+        }
+
+        #endregion Buscar ID Servico pela O.S - Efcore
+
+        #region Buscar total de pecas de um servico pela ID - Efcore
+
+        public List<tb_compras> BuscarPecasDoServico(int _idServico)
+        {
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+                var compra = context.tb_compras.Where(x => x.cp_sv_id == _idServico).ToList();
+                return compra;
+            }
+            catch (Exception e)
+            {
+                me.ErroAoBuscarPecasDoServico(e);
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region Buscar valor total das pecas - Efcore
+
+        public decimal BuscarTotalPecas(int _idServico)
+        {
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+                var pecas = context.tb_compras.Where(x => x.cp_sv_id == _idServico).ToList();
+
+                decimal valorTotalPecas = 0;
+                foreach (tb_compras peca in pecas)
+                {
+                    valorTotalPecas += peca.cp_valor_peca;
+                }
+
+                return valorTotalPecas;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Erro ao buscar total de pecas.\n\n{e}");
+                return -1;
+            }
+        }
+
+        #endregion
+
+        #region Buscar numero da OS pela id do servico - Efcore
+
+        public int BuscarNumeroDaOSPelaIdServico(int _idServico)
+        {
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+                int numeroOS = context.tb_servicos.Find(_idServico).sv_ordem_serv;
+                return numeroOS;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Erro ao buscar o numero da OS!\n\n{e}");
+                return -1;
+            }
+        }
+
+        #endregion
     }
 }

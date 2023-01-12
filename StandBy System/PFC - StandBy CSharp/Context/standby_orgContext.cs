@@ -20,19 +20,19 @@ namespace PFC___StandBy_CSharp.Context
         public virtual DbSet<tb_checklist> tb_checklist { get; set; }
         public virtual DbSet<tb_clientes> tb_clientes { get; set; }
         public virtual DbSet<tb_comp_items> tb_comp_items { get; set; }
+        public virtual DbSet<tb_compras> tb_compras { get; set; }
         public virtual DbSet<tb_condicoes_fisicas> tb_condicoes_fisicas { get; set; }
         public virtual DbSet<tb_garantias> tb_garantias { get; set; }
         public virtual DbSet<tb_gastos> tb_gastos { get; set; }
         public virtual DbSet<tb_log> tb_log { get; set; }
         public virtual DbSet<tb_orcamento> tb_orcamento { get; set; }
+        public virtual DbSet<tb_pagamento> tb_pagamento { get; set; }
         public virtual DbSet<tb_servicos> tb_servicos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=standby_org;Persist Security Info=True;User ID=sa;Password=123adr;TrustServerCertificate=True");
-            }
+            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=standby_org;Persist Security Info=True;User ID=sa;Password=123adr;TrustServerCertificate=True");
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -132,6 +132,18 @@ namespace PFC___StandBy_CSharp.Context
                 entity.Property(e => e.item_texto).IsUnicode(false);
             });
 
+            modelBuilder.Entity<tb_compras>(entity =>
+            {
+                entity.Property(e => e.cp_fornecedor).IsUnicode(false);
+
+                entity.Property(e => e.cp_peca_comprada).IsUnicode(false);
+
+                entity.HasOne(d => d.cp_sv_)
+                    .WithMany(p => p.tb_compras)
+                    .HasForeignKey(d => d.cp_sv_id)
+                    .HasConstraintName("FK_tb_compras_tb_servico");
+            });
+
             modelBuilder.Entity<tb_condicoes_fisicas>(entity =>
             {
                 entity.HasKey(e => e.cf_id)
@@ -190,6 +202,16 @@ namespace PFC___StandBy_CSharp.Context
                 entity.Property(e => e.total).HasDefaultValueSql("((0.00))");
             });
 
+            modelBuilder.Entity<tb_pagamento>(entity =>
+            {
+                entity.Property(e => e.pag_forma).IsUnicode(false);
+
+                entity.HasOne(d => d.pag_sv_)
+                    .WithMany(p => p.tb_pagamento)
+                    .HasForeignKey(d => d.pag_sv_id)
+                    .HasConstraintName("FK_tb_pagamento_tb_servico");
+            });
+
             modelBuilder.Entity<tb_servicos>(entity =>
             {
                 entity.HasKey(e => e.sv_id)
@@ -217,8 +239,6 @@ namespace PFC___StandBy_CSharp.Context
                 entity.Property(e => e.sv_defeito)
                     .IsUnicode(false)
                     .HasDefaultValueSql("('-----------------')");
-
-                entity.Property(e => e.sv_forma_pagamento).IsUnicode(false);
 
                 entity.Property(e => e.sv_lucro).HasDefaultValueSql("((0.00))");
 

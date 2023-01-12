@@ -5,8 +5,10 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.Forms._1___Ordems_Servico;
+using PFC___StandBy_CSharp.Forms.Pagamento_e_Compras;
 using PFC___StandBy_CSharp.Models;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +22,6 @@ namespace PFC___StandBy_CSharp.Forms
     {
         //rowHandle e column servem pra mostrar o popup menu no grid servicos
         private int rowHandle;
-
         private GridColumn column;
         private DeletarDados deletarDados = new DeletarDados();
         private BuscarDados buscarDados = new BuscarDados();
@@ -77,6 +78,7 @@ namespace PFC___StandBy_CSharp.Forms
                             if (servico[4].ToString() == "1922")
                             {
                             }
+
                             //sv_previsao_entrega
                             if (servico[6] != null && servico[1] != null)
                             {
@@ -136,6 +138,7 @@ namespace PFC___StandBy_CSharp.Forms
                                     e.DisplayText = $"{diaSemSufixo[0].ToUpper()} {dataPrev:dd/MM - HH:mm}";
                                 }
                             }
+
                             //Linha que demorei dias pra encontrar, aqui voce seta a aparencia da celula como prioridade maxima, nenhum evento pode modificar
                             //veja o ranking aqui: https://docs.devexpress.com/WindowsForms/114444/Common-Features/Application-Appearance-and-Skin-Colors
                             gridviewServicos.Columns[1].AppearanceCell.Options.HighPriority = true;
@@ -170,6 +173,7 @@ namespace PFC___StandBy_CSharp.Forms
                         if (servico[4].ToString() == "1922")
                         {
                         }
+
                         //sv_previsao_entrega
                         if (servico[6] != null && servico[1] != null)
                         {
@@ -237,7 +241,8 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnCelular_Click(object sender, EventArgs e)
         {
-            form_OrdemServicoEntrada ordemServico = new form_OrdemServicoEntrada(Aparelho.Celular, 0, true, new[] { 255, 0, 103 });
+            form_OrdemServicoEntrada ordemServico =
+                new form_OrdemServicoEntrada(Aparelho.Celular, 0, true, new[] { 255, 0, 103 });
             ordemServico.ShowDialog();
             PopularGridview();
         }
@@ -284,18 +289,22 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 var dadosLinhaSelecionada = BuscarDadosLinhaSelecionada();
                 int idServico = Convert.ToInt32(dadosLinhaSelecionada[0]);
-                (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) dadosServico = buscarDados.BuscarOSPelaID(idServico);
+
+                List<tb_compras> pecasDoServico = buscarDados.BuscarPecasDoServico(idServico);
+
+                (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) dadosServico =
+                    buscarDados.BuscarOSPelaID(idServico);
 
                 form_OrdemServicoEditar formEditarServico;
                 if (dadosServico.checklist == null || dadosServico.condicoesFisicas == null)
                 {
                     formEditarServico = new form_OrdemServicoEditar(dadosServico.servico.sv_cl_idcliente, true);
-                    PreencherFormApenasDadosServico(formEditarServico, dadosServico);
+                    PreencherFormApenasDadosServico(formEditarServico, dadosServico, pecasDoServico);
                 }
                 else
                 {
                     formEditarServico = new form_OrdemServicoEditar(dadosServico.servico.sv_cl_idcliente, false);
-                    PreencherFormDadosCompletos(formEditarServico, dadosServico);
+                    PreencherFormDadosCompletos(formEditarServico, dadosServico, pecasDoServico);
                 }
 
                 formEditarServico.ShowDialog();
@@ -306,9 +315,12 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void PreencherFormDadosCompletos(form_OrdemServicoEditar formEditarServico, (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) dadosServico)
+        private void PreencherFormDadosCompletos(form_OrdemServicoEditar formEditarServico,
+            (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) dadosServico,
+            List<tb_compras> _pecas)
         {
             //Groupbox informacoes aparelho
+            formEditarServico.lblOrdemServico.Text = "OS " + dadosServico.servico.sv_ordem_serv;
             formEditarServico.lblIdServico.Text = dadosServico.servico.sv_id.ToString();
             formEditarServico.lblIdCliente.Text = dadosServico.servico.sv_cl_idcliente.ToString();
             formEditarServico.lblIdCondicoesFisicas.Text = dadosServico.condicoesFisicas.cf_id.ToString();
@@ -323,7 +335,8 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Setando o icone do tipo do aparelho la no canto superior direito
             string tipoAparelho = dadosServico.servico.sv_tipo_aparelho;
-            formEditarServico.btnTipoAparelho.ImageOptions.SvgImage = formEditarServico.svgCollection[tipoAparelho ?? "SemTipo"];
+            formEditarServico.btnTipoAparelho.ImageOptions.SvgImage =
+                formEditarServico.svgCollection[tipoAparelho ?? "SemTipo"];
 
             //Groupbox Cond fisicas
             formEditarServico.cmbPelicula.Text = dadosServico.condicoesFisicas.cf_pelicula;
@@ -342,9 +355,20 @@ namespace PFC___StandBy_CSharp.Forms
             formEditarServico.txtAcessorios.Text = dadosServico.servico.sv_acessorios;
 
             //Groupbox dos valores
+            decimal valorTotalPecas = 0;
+            foreach (var peca in _pecas)
+            {
+                valorTotalPecas += peca.cp_valor_peca;
+            }
+
+            formEditarServico.txtPecaValor.Text = $"{valorTotalPecas:C}";
+            //formEditarServico.txtPecaValor.Text = $"{dadosServico.servico.sv_valorpeca:C}";
             formEditarServico.txtServicoValor.Text = $"{dadosServico.servico.sv_valorservico:C}";
-            formEditarServico.txtPecaValor.Text = $"{dadosServico.servico.sv_valorpeca:C}";
-            formEditarServico.txtLucroValor.Text = $"{dadosServico.servico.sv_lucro:C}";
+
+            decimal lucro = (decimal)(dadosServico.servico.sv_valorservico - valorTotalPecas);
+            formEditarServico.txtLucroValor.Text = $"{lucro:C}";
+
+            //formEditarServico.txtLucroValor.Text = $"{dadosServico.servico.sv_lucro:C}";
 
             //Groupbox previsao
             formEditarServico.dtpPrevisaoEntrega.EditValue = dadosServico.servico.sv_previsao_entrega;
@@ -353,55 +377,68 @@ namespace PFC___StandBy_CSharp.Forms
             formEditarServico.cmbStatusServico.Text = dadosServico.servico.sv_avaliacao_servico;
         }
 
-        private void PreencherFormApenasDadosServico(form_OrdemServicoEditar formEditarServico, (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) dadosServico)
+        private void PreencherFormApenasDadosServico(form_OrdemServicoEditar _formEditarServico,
+            (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) _dadosServico,
+            List<tb_compras> _pecas)
         {
             //Groupbox informacoes aparelho
-            formEditarServico.lblIdServico.Text = dadosServico.servico.sv_id.ToString();
-            formEditarServico.lblIdCliente.Text = dadosServico.servico.sv_cl_idcliente.ToString();
+            _formEditarServico.lblOrdemServico.Text = "OS " + _dadosServico.servico.sv_ordem_serv;
+            _formEditarServico.lblIdServico.Text = _dadosServico.servico.sv_id.ToString();
+            _formEditarServico.lblIdCliente.Text = _dadosServico.servico.sv_cl_idcliente.ToString();
             //formEditarServico.lblIdCondicoesFisicas.Text = dadosServico.condicoesFisicas.cf_id.ToString();
             //formEditarServico.lblIdChecklist.Text = dadosServico.checklist.ch_id.ToString();
-            formEditarServico.dtpDataServico.DateTime = dadosServico.servico.sv_data;
-            formEditarServico.cmbMarca.Text = dadosServico.servico.sv_marca;
-            formEditarServico.txtModelo.Text = dadosServico.servico.sv_aparelho;
-            formEditarServico.cmbCor.Text = dadosServico.servico.sv_cor;
-            formEditarServico.txtMei_SerialNumber.Text = dadosServico.servico.sv_mei_serialnumber;
-            formEditarServico.txtSenhaDispositivo.Text = dadosServico.servico.sv_senha;
-            formEditarServico.cmbTipoAparelho.Text = dadosServico.servico.sv_tipo_aparelho;
+            _formEditarServico.dtpDataServico.DateTime = _dadosServico.servico.sv_data;
+            _formEditarServico.cmbMarca.Text = _dadosServico.servico.sv_marca;
+            _formEditarServico.txtModelo.Text = _dadosServico.servico.sv_aparelho;
+            _formEditarServico.cmbCor.Text = _dadosServico.servico.sv_cor;
+            _formEditarServico.txtMei_SerialNumber.Text = _dadosServico.servico.sv_mei_serialnumber;
+            _formEditarServico.txtSenhaDispositivo.Text = _dadosServico.servico.sv_senha;
+            _formEditarServico.cmbTipoAparelho.Text = _dadosServico.servico.sv_tipo_aparelho;
 
             //Setando o icone do tipo do aparelho la no canto superior direito
-            string tipoAparelho = dadosServico.servico.sv_tipo_aparelho;
-            formEditarServico.btnTipoAparelho.ImageOptions.SvgImage = formEditarServico.svgCollection[tipoAparelho ?? "SemTipo"];
+            string tipoAparelho = _dadosServico.servico.sv_tipo_aparelho;
+            _formEditarServico.btnTipoAparelho.ImageOptions.SvgImage =
+                _formEditarServico.svgCollection[tipoAparelho ?? "SemTipo"];
 
             //Groupbox Cond fisicas
-            formEditarServico.cmbPelicula.Text = "";
-            formEditarServico.cmbTela.Text = "";
-            formEditarServico.cmbTampa.Text = "";
-            formEditarServico.cmbAro.Text = "";
-            formEditarServico.cmbBotoes.Text = "";
-            formEditarServico.cmbLenteCamera.Text = "";
+            _formEditarServico.cmbPelicula.Text = "";
+            _formEditarServico.cmbTela.Text = "";
+            _formEditarServico.cmbTampa.Text = "";
+            _formEditarServico.cmbAro.Text = "";
+            _formEditarServico.cmbBotoes.Text = "";
+            _formEditarServico.cmbLenteCamera.Text = "";
 
             //Botoes de checklist
-            formEditarServico.btnCheckListENTRADA.Text = "[CHECKLIST AUSENTE] Inserir Checklist - ENTRADA";
-            formEditarServico.btnChecklistSAIDA.Text = "[CHECKLIST AUSENTE] Inserir Checklist - SAIDA";
+            _formEditarServico.btnCheckListENTRADA.Text = "[CHECKLIST AUSENTE] Inserir Checklist - ENTRADA";
+            _formEditarServico.btnChecklistSAIDA.Text = "[CHECKLIST AUSENTE] Inserir Checklist - SAIDA";
 
             //Groupbox dados da parte de baixo
-            formEditarServico.txtObservacoes.Text = dadosServico.servico.sv_situacao;
-            formEditarServico.txtRelatoCliente.Text = dadosServico.servico.sv_relato_cliente;
-            formEditarServico.txtCondicoesBalcao.Text = dadosServico.servico.sv_condicoes_balcao;
-            formEditarServico.txtSolucao.Text = dadosServico.servico.sv_servico;
-            formEditarServico.txtDefeito.Text = dadosServico.servico.sv_defeito;
-            formEditarServico.txtAcessorios.Text = dadosServico.servico.sv_acessorios;
+            _formEditarServico.txtObservacoes.Text = _dadosServico.servico.sv_situacao;
+            _formEditarServico.txtRelatoCliente.Text = _dadosServico.servico.sv_relato_cliente;
+            _formEditarServico.txtCondicoesBalcao.Text = _dadosServico.servico.sv_condicoes_balcao;
+            _formEditarServico.txtSolucao.Text = _dadosServico.servico.sv_servico;
+            _formEditarServico.txtDefeito.Text = _dadosServico.servico.sv_defeito;
+            _formEditarServico.txtAcessorios.Text = _dadosServico.servico.sv_acessorios;
 
             //Groupbox dos valores
-            formEditarServico.txtServicoValor.Text = $"{dadosServico.servico.sv_valorservico:C}";
-            formEditarServico.txtPecaValor.Text = $"{dadosServico.servico.sv_valorpeca:C}";
-            formEditarServico.txtLucroValor.Text = $"{dadosServico.servico.sv_lucro:C}";
+            decimal valorTotalPecas = 0;
+            foreach (var peca in _pecas)
+            {
+                valorTotalPecas += peca.cp_valor_peca;
+            }
+
+            _formEditarServico.txtPecaValor.Text = $"{valorTotalPecas:C}";
+            _formEditarServico.txtServicoValor.Text = $"{_dadosServico.servico.sv_valorservico:C}";
+            //_formEditarServico.txtPecaValor.Text = $"{_dadosServico.servico.sv_valorpeca:C}";
+            //_formEditarServico.txtLucroValor.Text = $"{_dadosServico.servico.sv_lucro:C}";
+            decimal lucro = (decimal)(_dadosServico.servico.sv_valorservico - valorTotalPecas);
+            _formEditarServico.txtLucroValor.Text = $"{lucro:C}";
 
             //Groupbox previsao
-            formEditarServico.dtpPrevisaoEntrega.EditValue = dadosServico.servico.sv_previsao_entrega;
+            _formEditarServico.dtpPrevisaoEntrega.EditValue = _dadosServico.servico.sv_previsao_entrega;
 
             //Status
-            formEditarServico.cmbStatusServico.Text = dadosServico.servico.sv_avaliacao_servico ?? "N/A";
+            _formEditarServico.cmbStatusServico.Text = _dadosServico.servico.sv_avaliacao_servico ?? "N/A";
         }
 
         public void EditarUmServico()
@@ -424,6 +461,7 @@ namespace PFC___StandBy_CSharp.Forms
             catch (Exception)
             {
             }
+
             editarServicos.lblIDservico.Text = servico.ID.ToString();
             editarServicos.lblIDcliente.Text = servico.FK_IdCliente.ToString();
             editarServicos.dtpDataEdit.Value = servico.DataServico;
@@ -480,26 +518,32 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Pegando todos os dados necessarios com base na ID
             int idServico = Convert.ToInt32(servico[0]);
-            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico = buscarDados.BuscarOS(idServico, "ENTRADA");
+            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico =
+                buscarDados.BuscarOS(idServico, "ENTRADA");
 
             if (string.IsNullOrWhiteSpace(dadosServico.servico.TipoAparelho))
             {
-                MessageBox.Show("Necessario editar o aparelho e definir o seu tipo para ter acesso a O.S \n\nTipos existentes: Celular, Notebook ou Computador!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Necessario editar o aparelho e definir o seu tipo para ter acesso a O.S \n\nTipos existentes: Celular, Notebook ou Computador!",
+                    "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (servico != null && dadosServico != (null, null, null))
             {
                 //existe uma possibilidade de dadosServico vir (comDados, null, null)
                 if (dadosServico.servico.TipoAparelho == "Celular")
                 {
-                    AbrirOrdemServicoEntrada(Aparelho.Celular, dadosServico.servico, dadosServico.condF, dadosServico.chkList);
+                    AbrirOrdemServicoEntrada(Aparelho.Celular, dadosServico.servico, dadosServico.condF,
+                        dadosServico.chkList);
                 }
                 else if (dadosServico.servico.TipoAparelho == "Computador")
                 {
-                    AbrirOrdemServicoEntrada(Aparelho.Computador, dadosServico.servico, dadosServico.condF, dadosServico.chkList);
+                    AbrirOrdemServicoEntrada(Aparelho.Computador, dadosServico.servico, dadosServico.condF,
+                        dadosServico.chkList);
                 }
                 else if (dadosServico.servico.TipoAparelho == "Notebook")
                 {
-                    AbrirOrdemServicoEntrada(Aparelho.Notebook, dadosServico.servico, dadosServico.condF, dadosServico.chkList);
+                    AbrirOrdemServicoEntrada(Aparelho.Notebook, dadosServico.servico, dadosServico.condF,
+                        dadosServico.chkList);
                 }
             }
         }
@@ -511,33 +555,41 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Pegando todos os dados necessarios com base na ID
             int idServico = Convert.ToInt32(servico[0]);
-            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico = buscarDados.BuscarOS(idServico, "SAIDA");
+            (ServicoEstrutura servico, CondicoesFisicasEstrutura condF, ChecklistEstrutura chkList) dadosServico =
+                buscarDados.BuscarOS(idServico, "SAIDA");
 
             if (string.IsNullOrWhiteSpace(dadosServico.servico.TipoAparelho))
             {
-                MessageBox.Show("Necessario editar o aparelho e definir o seu tipo para ter acesso a O.S \n\nTipos existentes: Celular, Notebook ou Computador!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Necessario editar o aparelho e definir o seu tipo para ter acesso a O.S \n\nTipos existentes: Celular, Notebook ou Computador!",
+                    "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (servico != null && dadosServico != (null, null, null))
             {
                 //existe uma possibilidade de dadosServico vir (comDados, null, null)
                 if (dadosServico.servico.TipoAparelho == "Celular")
                 {
-                    AbrirOrdemServicoSaida(Aparelho.Celular, dadosServico.servico, dadosServico.condF, dadosServico.chkList);
+                    AbrirOrdemServicoSaida(Aparelho.Celular, dadosServico.servico, dadosServico.condF,
+                        dadosServico.chkList);
                 }
                 else if (dadosServico.servico.TipoAparelho == "Computador")
                 {
-                    AbrirOrdemServicoSaida(Aparelho.Computador, dadosServico.servico, dadosServico.condF, dadosServico.chkList);
+                    AbrirOrdemServicoSaida(Aparelho.Computador, dadosServico.servico, dadosServico.condF,
+                        dadosServico.chkList);
                 }
                 else if (dadosServico.servico.TipoAparelho == "Notebook")
                 {
-                    AbrirOrdemServicoSaida(Aparelho.Notebook, dadosServico.servico, dadosServico.condF, dadosServico.chkList);
+                    AbrirOrdemServicoSaida(Aparelho.Notebook, dadosServico.servico, dadosServico.condF,
+                        dadosServico.chkList);
                 }
             }
         }
 
-        private void AbrirOrdemServicoEntrada(Aparelho _tipoAparelho, ServicoEstrutura _servico, CondicoesFisicasEstrutura _condicoesFisicas, ChecklistEstrutura _checklist)
+        private void AbrirOrdemServicoEntrada(Aparelho _tipoAparelho, ServicoEstrutura _servico,
+            CondicoesFisicasEstrutura _condicoesFisicas, ChecklistEstrutura _checklist)
         {
-            form_OrdemServicoEntrada formOrdemServico = new form_OrdemServicoEntrada(_tipoAparelho, _servico.FK_IdCliente, false, corGeral);
+            form_OrdemServicoEntrada formOrdemServico =
+                new form_OrdemServicoEntrada(_tipoAparelho, _servico.FK_IdCliente, false, corGeral);
             formOrdemServico.lblOrdemServico.Text = $@"OS {_servico.OrdemServico:0000}";
             formOrdemServico.lblDataOrdemServico.Text = $@"{_servico.DataServico:G}";
             formOrdemServico.lblIdCliente.Text = _servico.FK_IdCliente.ToString();
@@ -616,16 +668,19 @@ namespace PFC___StandBy_CSharp.Forms
                 formOrdemServico.cmbChecklistCarregamento.Text = "";
                 formOrdemServico.txtChecklistObservacoes.Text = "";
                 formOrdemServico.switchChecklistAusente.IsOn = false;
-                formOrdemServico.txtChecklistMotivoAusencia.Text = ""; ;
+                formOrdemServico.txtChecklistMotivoAusencia.Text = "";
+                ;
             }
 
             formOrdemServico.ShowDialog();
             gridviewServicos.RefreshData();
         }
 
-        private void AbrirOrdemServicoSaida(Aparelho _tipoAparelho, ServicoEstrutura _servico, CondicoesFisicasEstrutura _condicoesFisicas, ChecklistEstrutura _checklist)
+        private void AbrirOrdemServicoSaida(Aparelho _tipoAparelho, ServicoEstrutura _servico,
+            CondicoesFisicasEstrutura _condicoesFisicas, ChecklistEstrutura _checklist)
         {
-            form_OrdemServicoSaida formOrdemServico = new form_OrdemServicoSaida(_tipoAparelho, _servico.FK_IdCliente, false, corGeral);
+            form_OrdemServicoSaida formOrdemServico =
+                new form_OrdemServicoSaida(_tipoAparelho, _servico.FK_IdCliente, false, corGeral);
             formOrdemServico.lblOrdemServico.Text = $@"OS {_servico.OrdemServico:0000}";
             formOrdemServico.lblDataOrdemServico.Text = $@"{_servico.DataServico:G}";
             formOrdemServico.lblIdCliente.Text = _servico.FK_IdCliente.ToString();
@@ -704,7 +759,8 @@ namespace PFC___StandBy_CSharp.Forms
                 formOrdemServico.cmbChecklistCarregamento.Text = "";
                 formOrdemServico.txtChecklistObservacoes.Text = "";
                 formOrdemServico.switchChecklistAusente.IsOn = false;
-                formOrdemServico.txtChecklistMotivoAusencia.Text = ""; ;
+                formOrdemServico.txtChecklistMotivoAusencia.Text = "";
+                ;
             }
 
             formOrdemServico.cmbCliente.Enabled = false;
@@ -720,6 +776,19 @@ namespace PFC___StandBy_CSharp.Forms
             int idServico = Convert.ToInt32(servico[0]);
             deletarDados.DeletarServico(idServico);
             PopularGridview();
+        }
+
+        private void btnEditarListaPeçasCompradas_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var servico = BuscarDadosLinhaSelecionada();
+
+            int idServico = Convert.ToInt32(servico[0]);
+            int ordemServico = Convert.ToInt32(servico[4]);
+
+            form_Compras formCompra = new form_Compras(ordemServico, idServico);
+            formCompra.lblIdServico.Text = idServico.ToString();
+            formCompra.cmbOrdemServico.Enabled = false;
+            formCompra.ShowDialog();
         }
     }
 }

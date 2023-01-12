@@ -11,7 +11,9 @@ namespace PFC___StandBy_CSharp.Models
         public tb_servicos()
         {
             tb_checklist = new HashSet<tb_checklist>();
+            tb_compras = new HashSet<tb_compras>();
             tb_condicoes_fisicas = new HashSet<tb_condicoes_fisicas>();
+            tb_pagamento = new HashSet<tb_pagamento>();
         }
 
         [Key]
@@ -65,15 +67,17 @@ namespace PFC___StandBy_CSharp.Models
         public string sv_condicoes_balcao { get; set; }
         [StringLength(20)]
         public string sv_avaliacao_servico { get; set; }
-        [StringLength(50)]
-        public string sv_forma_pagamento { get; set; }
 
         [ForeignKey(nameof(sv_cl_idcliente))]
         [InverseProperty(nameof(tb_clientes.tb_servicos))]
         public virtual tb_clientes sv_cl_idclienteNavigation { get; set; }
         [InverseProperty("ch_sv_idservicoNavigation")]
         public virtual ICollection<tb_checklist> tb_checklist { get; set; }
+        [InverseProperty("cp_sv_")]
+        public virtual ICollection<tb_compras> tb_compras { get; set; }
         [InverseProperty("cf_sv_idservicoNavigation")]
         public virtual ICollection<tb_condicoes_fisicas> tb_condicoes_fisicas { get; set; }
+        [InverseProperty("pag_sv_")]
+        public virtual ICollection<tb_pagamento> tb_pagamento { get; set; }
     }
 }
