@@ -1,1 +1,7 @@
-﻿Ctrl M + O = Minimiza todos os metodos 
+﻿Ctrl M + O = Minimiza todos os metodos  //https://stackoverflow.com/questions/30620641/collapse-all-regions-only-in-c-sharp-visual-studio
+
+Ctrl M + L will expand all. (in VS 2013 - Toggle All outlining)
+
+Ctrl M + P will expand all and disable outlining.
+
+Ctrl M + M will collapse/expand the current section.

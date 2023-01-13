@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ using PFC___StandBy_CSharp.PreencherComponentes;
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_6___Usada_por_Varias_Telas;
 using PFC___StandBy_CSharp.Utils;
 using Syncfusion.Windows.Forms.Tools;
-using static PFC___StandBy_CSharp.Enum.Enum;
+using static PFC___StandBy_CSharp.Enums.EnumStandby;
 
 namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 {
@@ -26,6 +27,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         private BuscarDados bd = new BuscarDados();
         private AlterarDados ad = new AlterarDados();
         private PreencherComboBoxCliente preencherCombobox = new PreencherComboBoxCliente();
+        private BuscarDados buscarDados = new BuscarDados();
         private DataTable dt;
         private MensagensSucesso mSucesso = new MensagensSucesso();
         private bool isServicoSemChecklistCondFisicas = false;
@@ -35,7 +37,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             InitializeComponent();
             isServicoSemChecklistCondFisicas = _isServicoSemChecklistCondFisicas;
             CarregarComboxClientes();
-            SetarComboboxComUltimoClienteAdicionado(dt, _idCliente);
+            SetarComboboxDeCliente(dt, _idCliente);
             InicializarOpcoesCombobox();
             FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtServicoValor);
             FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtPecaValor);
@@ -51,7 +53,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             p.PreencherInfoCondFisicas(this);
         }
 
-        private void SetarComboboxComUltimoClienteAdicionado(DataTable _dt, int _id)
+        private void SetarComboboxDeCliente(DataTable _dt, int _id)
         {
             //Pego a linha que tem o ultimo ID cadastrado
             DataRow[] rows = _dt.Select($"ID ='{_id}'");
@@ -115,12 +117,6 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                 txtValorCartao.Text = $"{servicoValor * 1.05f:C}";
                 CalcularLucro();
             }
-        }
-
-        private void txtServicoValor_Leave(object sender, EventArgs e)
-        {
-            //float servicoValor = float.Parse(txtServicoValor.Text.TrimStart('R', '$').Trim());
-            //txtValorAvista.Text = $"{servicoValor:C}";
         }
 
         private void txtValorAvista_TextChange(object sender, EventArgs e)
@@ -234,8 +230,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     form.ShowDialog();
                 }
             }
-
-            this.Close();
+            //this.Close();
         }
 
         private void btnChecklistSAIDA_Click(object sender, EventArgs e)
@@ -281,6 +276,12 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 
         private void btnSalvarOrdemServico_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cmbTipoAparelho.Text))
+            {
+                MessageBox.Show(@"Voce esqueceu de selecionar o tipo do aparelho", "ALERTA!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             ad.AtualizarServico(this);
             ad.AtualizarCondicoesFisicas(this);
             mSucesso.AlterarServicoSucesso();
@@ -336,12 +337,15 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                         "Deseja imprimir OS - Saida?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int idCliente = Convert.ToInt32(lblIdCliente.Text);
-                    form_OrdemServicoSaida formSaida =
-                        new form_OrdemServicoSaida(tipoAparelho, idCliente, false, new[] { 255, 0, 103 });
+                    form_OrdemServicoSaida formSaida = new form_OrdemServicoSaida();
+                    //form_OrdemServicoSaida formSaida = new form_OrdemServicoSaida(tipoAparelho, idCliente, false, new[] { 255, 0, 103 });
+                    formSaida.lblOrdemServico.Text = lblOrdemServico.Text;
+                    formSaida.lblDataOrdemServico.Text = lblDataOrdemServico.Text;
                     formSaida.lblIdServico.Text = lblIdServico.Text;
                     formSaida.lblIdCliente.Text = lblIdCliente.Text;
                     formSaida.lblIdChecklist.Text = lblIdChecklist.Text;
                     formSaida.lblIdCondicoesFisicas.Text = lblIdCondicoesFisicas.Text;
+                    formSaida.btnSalvarOrdemServico.Visible = false;
                     formSaida.ShowDialog();
                     return;
                 }
@@ -352,6 +356,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                 this.Close();
             }
         }
+
 
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
         {
@@ -384,6 +389,77 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 AbrirFormaCompras();
+            }
+        }
+
+        private void form_OrdemServicoEditar_Shown(object sender, EventArgs e)
+        {
+            BuscarInformacoesCliente();
+        }
+
+        private void BuscarInformacoesCliente()
+        {
+            foreach (DataRowView VARIABLE in cmbCliente.Items)
+            {
+                txtCPFCliente.Text = VARIABLE.Row["Cpf"].ToString();
+                txtTelefonePrincipal.Text = VARIABLE.Row["⠀⠀⠀Telefone⠀⠀"].ToString();
+                txtTelefoneRecado.Text = VARIABLE.Row["Recado"].ToString();
+            }
+        }
+
+        private void picSenhaPattern_Click(object sender, EventArgs e)
+        {
+            standby_orgContext context = new standby_orgContext();
+            var senhaPadrao = context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(lblIdServico.Text)).sv_senha_pattern;
+
+            if (senhaPadrao == null || senhaPadrao[0] == 0x00 && picSenhaPattern.Image == null)
+            {
+                VerSenhaPattern();
+                var senhaRecemAdd = context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(lblIdServico.Text)).sv_senha_pattern;
+                picSenhaPattern.Image = ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
+            }
+            else
+            {
+                form_PasswordPattern formPass = new form_PasswordPattern(this, new[] { 255, 0, 103 });
+                formPass.ShowDialog();
+            }
+
+            //var isExisteSenhaPadrao = context.tb_servicos.Any(x => x.sv_id == Convert.ToInt32(lblIdServico.Text) && x.sv_senha_pattern != null);
+            //if (isExisteSenhaPadrao == false)
+            //{
+            //    form_PasswordPattern pp = new form_PasswordPattern(this, new[] { 255, 0, 103 });
+            //    pp.ShowDialog();
+            //}
+            //else
+            //{
+            //    VerSenhaPattern();
+            //}
+        }
+
+        private void VerSenhaPattern()
+        {
+            using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(new[] { 255, 0, 103 }))
+            {
+                passShow.pictureBox1.Image =
+                    ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
+                if (passShow.pictureBox1.Image == null)
+                {
+                    passShow.lblSemPadrao.Visible = true;
+                    passShow.lblDesejaCadastrar.Visible = true;
+                    passShow.btnSim.Visible = true;
+                    passShow.btnNao.Visible = true;
+                    passShow.lblIDServico.Text = lblIdServico.Text;
+                }
+                else
+                {
+                    passShow.lblSemPadrao.Visible = false;
+                    passShow.lblDesejaCadastrar.Visible = false;
+                    passShow.btnSim.Visible = false;
+                    passShow.btnNao.Visible = false;
+                    passShow.lblIDServico.Text = lblIdServico.Text;
+                }
+
+                passShow.ShowDialog();
             }
         }
     }

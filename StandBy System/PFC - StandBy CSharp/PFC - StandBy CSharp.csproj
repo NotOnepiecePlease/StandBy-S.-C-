@@ -616,7 +616,7 @@
     <Compile Include="Dados\DeletarDados.cs" />
     <Compile Include="Dados\InserirDados.cs" />
     <Compile Include="Dados\VerificarExistencia.cs" />
-    <Compile Include="Enum\Enum.cs" />
+    <Compile Include="Enums\EnumStandby.cs" />
     <Compile Include="Forms\1 - Ordems Servico\form_InserirEditarChecklist.cs">
       <SubType>Form</SubType>
     </Compile>

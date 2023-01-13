@@ -12,57 +12,12 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
 {
     internal class PreencherComboBoxCliente : MensagensErro
     {
-        //private DataTable dt;
         private List<ClienteEstrutura> listClientesComId = new List<ClienteEstrutura>();
 
         private BuscarDados bd = new BuscarDados();
 
         private int ultimoClienteAdicionadoID = 0;
 
-        //public List<ClienteEstrutura> Preencher()
-        //{
-        //    List<ClienteEstrutura> listClientes = new List<ClienteEstrutura>();
-        //    SqlConnection con = OpenConnection();
-        //    string query = "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado, cl_data_nascimento, cl_endereco, cl_bairro, cl_estado from tb_clientes order by cl_id";
-        //    SqlCommand cmd = new SqlCommand(query, con);
-        //    SqlDataReader dataReader;
-
-        //    try
-        //    {
-        //        dataReader = cmd.ExecuteReader();
-        //        while (dataReader.Read())
-        //        {
-        //            int id = dataReader.GetInt32(0);
-        //            string nome = dataReader.GetString(1);
-        //            string cpf = dataReader.GetString(2);
-        //            string telefone = dataReader.GetString(3);
-        //            string telefoneRecado = dataReader.GetString(4);
-        //            string dataNascimento = dataReader.IsDBNull(5) ? "---" : dataReader.GetDateTime(5).ToShortDateString();
-        //            string endereco = dataReader.IsDBNull(6) ? "---" : dataReader.GetString(6);
-        //            string bairro = (dataReader.IsDBNull(7)) || (dataReader.GetString(7) == "") ? "---" : dataReader.GetString(7);
-        //            string estado = dataReader.IsDBNull(8) ? "---" : dataReader.GetString(8);
-
-        //            listClientes.Add(new ClienteEstrutura
-        //            {
-        //                ID = id,
-        //                Nome = nome,
-        //                Cpf = cpf,
-        //                Telefone = telefone,
-        //                TelefoneRecado = telefoneRecado,
-        //                DataNascimento = dataNascimento,
-        //                Endereco = endereco,
-        //                Bairro = bairro,
-        //                Estado = estado
-        //            });
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        ComboBoxClienteErroEmPreencher(e);
-        //    }
-
-        //    return listClientes;
-        //}
 
         public int CarregarComboxClientes(MultiColumnComboBox cmbCliente, ref DataTable _dtPrincipal)
         {
@@ -76,9 +31,10 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
             dtLocal.Columns.Add("Nome");
             dtLocal.Columns.Add("Cpf");
             dtLocal.Columns.Add("⠀⠀⠀Telefone⠀⠀");
-            dtLocal.Columns.Add("Full", typeof(string),
-                "Nome + ' - ' + Cpf ");
-            //dt.Columns.Add("Recado");
+            //dtLocal.Columns.Add("Full", typeof(string),
+            //    "Nome + ' - ' + Cpf ");
+            //"Nome + ' - ' + Cpf ");
+            dtLocal.Columns.Add("Recado");
             //dt.Columns.Add("Nascimento");
             //dt.Columns.Add("⠀⠀⠀⠀⠀⠀⠀⠀Endereço⠀⠀⠀⠀⠀⠀⠀⠀⠀");
             //dt.Columns.Add("⠀⠀⠀Bairro⠀⠀⠀");
@@ -103,7 +59,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                         $"{cliente.Nome}",
                         $"{cliente.Cpf}",
                         $"{cliente.Telefone}",
-                       // $"{cliente.TelefoneRecado}",
+                        $"{cliente.TelefoneRecado}",
                         //$"{cliente.DataNascimento}",
                         //$"{cliente.Endereco}",
                         //$"{cliente.Bairro}",
@@ -115,7 +71,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
             _dtPrincipal = dtLocal;
 
             cmbCliente.DataSource = view;
-            cmbCliente.DisplayMember = "Full";
+            cmbCliente.DisplayMember = "Nome";
             cmbCliente.ValueMember = "ID";
 
             return ultimoClienteAdicionadoID;

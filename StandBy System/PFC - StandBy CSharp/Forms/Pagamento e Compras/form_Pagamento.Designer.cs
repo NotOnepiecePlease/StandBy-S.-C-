@@ -357,12 +357,16 @@
             // 
             this.colpag_id.FieldName = "pag_id";
             this.colpag_id.Name = "colpag_id";
+            this.colpag_id.OptionsColumn.AllowEdit = false;
+            this.colpag_id.OptionsColumn.AllowFocus = false;
             // 
             // colpag_sv_id
             // 
             this.colpag_sv_id.Caption = "ID Serv";
             this.colpag_sv_id.FieldName = "pag_sv_id";
             this.colpag_sv_id.Name = "colpag_sv_id";
+            this.colpag_sv_id.OptionsColumn.AllowEdit = false;
+            this.colpag_sv_id.OptionsColumn.AllowFocus = false;
             // 
             // colpag_forma
             // 
@@ -370,6 +374,8 @@
             this.colpag_forma.ColumnEdit = this.cmbMetodosPagamento;
             this.colpag_forma.FieldName = "pag_forma";
             this.colpag_forma.Name = "colpag_forma";
+            this.colpag_forma.Visible = true;
+            this.colpag_forma.VisibleIndex = 0;
             // 
             // cmbMetodosPagamento
             // 
@@ -392,6 +398,8 @@
             this.colpag_parcelas.Caption = "x VEZES";
             this.colpag_parcelas.FieldName = "pag_parcelas";
             this.colpag_parcelas.Name = "colpag_parcelas";
+            this.colpag_parcelas.Visible = true;
+            this.colpag_parcelas.VisibleIndex = 1;
             // 
             // colpag_valor
             // 
@@ -401,6 +409,8 @@
             this.colpag_valor.OptionsColumn.AllowEdit = false;
             this.colpag_valor.OptionsColumn.AllowFocus = false;
             this.colpag_valor.OptionsColumn.ReadOnly = true;
+            this.colpag_valor.Visible = true;
+            this.colpag_valor.VisibleIndex = 2;
             // 
             // sqlDataSource1
             // 

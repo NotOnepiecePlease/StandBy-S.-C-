@@ -8,6 +8,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Forms._1___Ordems_Servico;
 using PFC___StandBy_CSharp.LockScreenAndroid;
 
 namespace PFC___StandBy_CSharp.Forms
@@ -20,6 +21,7 @@ namespace PFC___StandBy_CSharp.Forms
         private AlterarDados ad = new AlterarDados();
         private Image image1 = null;
         private form_OrdemServicoEntrada formOrdemServico;
+        private form_OrdemServicoEditar formEditarOrdemServico;
 
         private int[] corGeral = new int[3] { 0, 0, 0 };
         private bool isUpdate = false;
@@ -43,6 +45,17 @@ namespace PFC___StandBy_CSharp.Forms
             isUpdate = false;
             this.Size = new Size(261, 239);
             formOrdemServico = _formOrdemServico;
+        }
+
+        public form_PasswordPattern(form_OrdemServicoEditar _formEditarOrdemServico, int[] _corRgb)
+        {
+            InitializeComponent();
+            criarPastaDasSenhas();
+            corGeral = _corRgb;
+            MudarCores();
+            isUpdate = false;
+            this.Size = new Size(261, 239);
+            formEditarOrdemServico = _formEditarOrdemServico;
         }
 
         public form_PasswordPattern(int[] _corRgb, bool _isUpdate)
@@ -126,8 +139,10 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     lblPasswordInNumbers.Text += (item + 1);
                 }
+
                 cnt++;
             }
+
             CentralizarLabels(lblPasswordInNumbers);
             this.Size = new Size(261, 337);
             SaveScreenshot(this);
@@ -221,7 +236,11 @@ namespace PFC___StandBy_CSharp.Forms
             if (isUpdate == false)
             {
                 this.Close();
-                formOrdemServico.picSenhaPattern.Image = GetCopyImage(@"./PasswordPattern/Screen.png");
+                if (formEditarOrdemServico == null)
+                    formOrdemServico.picSenhaPattern.Image = GetCopyImage(@"./PasswordPattern/Screen.png");
+
+                if (formOrdemServico == null)
+                    formEditarOrdemServico.picSenhaPattern.Image = GetCopyImage(@"./PasswordPattern/Screen.png");
             }
             else
             {
@@ -235,6 +254,7 @@ namespace PFC___StandBy_CSharp.Forms
                 catch (Exception)
                 {
                 }
+
                 //Atualizar senha
                 ad.AlterarSenhaPattern(ConvertImageToByte(image1), Convert.ToInt32(lblIDServico.Text));
                 this.Close();

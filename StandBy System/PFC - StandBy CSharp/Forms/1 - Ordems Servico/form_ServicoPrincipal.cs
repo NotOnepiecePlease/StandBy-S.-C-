@@ -11,8 +11,13 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
-using static PFC___StandBy_CSharp.Enum.Enum;
+using Bunifu.UI.WinForms;
+using PFC___StandBy_CSharp.Utils;
+using static PFC___StandBy_CSharp.Enums.EnumStandby;
+using GridView = DevExpress.XtraGrid.Views.Grid.GridView;
+using RichTextBox = System.Windows.Forms.RichTextBox;
 
 // ReSharper disable InconsistentNaming
 
@@ -25,7 +30,7 @@ namespace PFC___StandBy_CSharp.Forms
         private GridColumn column;
         private DeletarDados deletarDados = new DeletarDados();
         private BuscarDados buscarDados = new BuscarDados();
-        public int[] corGeral = new[] { 0, 0, 0 };
+        public int[] corGeral = new[] { 255, 0, 103 };
 
         public form_ServicoPrincipal()
         {
@@ -48,14 +53,12 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void LimparLinhasSelecionadasGrid(object sender, EventArgs e)
         {
-            gridviewServicos.ClearSelection();
-            gridviewServicos.LayoutChanged();
-            int rowHandle = 0;
-            //gridviewServicos.BeginUpdate();
-            gridviewServicos.SelectRow(rowHandle);
-            gridviewServicos.FocusedRowHandle = rowHandle;
-            gridviewServicos.MoveFirst();
-            //gridviewServicos.EndUpdate();
+            //gridviewServicos.ClearSelection();
+            //gridviewServicos.LayoutChanged();
+            //int rowHandle = 0;
+            //gridviewServicos.SelectRow(rowHandle);
+            //gridviewServicos.FocusedRowHandle = rowHandle;
+            //gridviewServicos.MoveFirst();
         }
 
         //Seta o valor do prazo na celula
@@ -239,13 +242,6 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void btnCelular_Click(object sender, EventArgs e)
-        {
-            form_OrdemServicoEntrada ordemServico =
-                new form_OrdemServicoEntrada(Aparelho.Celular, 0, true, new[] { 255, 0, 103 });
-            ordemServico.ShowDialog();
-            PopularGridview();
-        }
 
         private void form_ServicoPrincipal_Shown(object sender, EventArgs e)
         {
@@ -315,44 +311,70 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void PreencherFormDadosCompletos(form_OrdemServicoEditar formEditarServico,
-            (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) dadosServico,
+        private void PreencherFormDadosCompletos(form_OrdemServicoEditar _formEditarServico,
+            (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) _dadosServico,
             List<tb_compras> _pecas)
         {
             //Groupbox informacoes aparelho
-            formEditarServico.lblOrdemServico.Text = "OS " + dadosServico.servico.sv_ordem_serv;
-            formEditarServico.lblIdServico.Text = dadosServico.servico.sv_id.ToString();
-            formEditarServico.lblIdCliente.Text = dadosServico.servico.sv_cl_idcliente.ToString();
-            formEditarServico.lblIdCondicoesFisicas.Text = dadosServico.condicoesFisicas.cf_id.ToString();
-            formEditarServico.lblIdChecklist.Text = dadosServico.checklist.ch_id.ToString();
-            formEditarServico.dtpDataServico.DateTime = dadosServico.servico.sv_data;
-            formEditarServico.cmbMarca.Text = dadosServico.servico.sv_marca;
-            formEditarServico.txtModelo.Text = dadosServico.servico.sv_aparelho;
-            formEditarServico.cmbCor.Text = dadosServico.servico.sv_cor;
-            formEditarServico.txtMei_SerialNumber.Text = dadosServico.servico.sv_mei_serialnumber;
-            formEditarServico.txtSenhaDispositivo.Text = dadosServico.servico.sv_senha;
-            formEditarServico.cmbTipoAparelho.Text = dadosServico.servico.sv_tipo_aparelho;
+            if (_dadosServico.checklist.ch_tipo == Constantes.CHK_ENTRADA && _dadosServico.condicoesFisicas.cf_tipo == Constantes.CHK_ENTRADA)
+            {
+                _formEditarServico.lblTipoOrdemServico.Text = Constantes.CHK_ENTRADA;
+                _formEditarServico.lblTipoOrdemServico.ForeColor = Color.DarkOrange;
+            }
+            else if (_dadosServico.checklist.ch_tipo == Constantes.CHK_SAIDA && _dadosServico.condicoesFisicas.cf_tipo == Constantes.CHK_SAIDA)
+            {
+                _formEditarServico.lblTipoOrdemServico.Text = Constantes.CHK_SAIDA;
+                _formEditarServico.lblTipoOrdemServico.ForeColor = Color.LimeGreen;
+            }
+            else
+            {
+                _formEditarServico.lblTipoOrdemServico.Text = "ANTIGO";
+                _formEditarServico.lblTipoOrdemServico.ForeColor = Color.PaleGoldenrod;
+            }
+
+            if (_dadosServico.servico.sv_tipo_aparelho != Enum.GetName(typeof(Aparelho), Aparelho.Celular))
+            {
+                _ = _formEditarServico.picSenhaPattern.Enabled == false;
+            }
+            else
+            {
+                _formEditarServico.picSenhaPattern.Image = ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(_dadosServico.servico.sv_id.ToString()));
+            }
+
+            _formEditarServico.lblOrdemServico.Text = "OS " + _dadosServico.servico.sv_ordem_serv;
+            _formEditarServico.lblIdServico.Text = _dadosServico.servico.sv_id.ToString();
+            _formEditarServico.lblIdCliente.Text = _dadosServico.servico.sv_cl_idcliente.ToString();
+            _formEditarServico.lblDataOrdemServico.Text = _dadosServico.servico.sv_data.ToString();
+            _formEditarServico.lblIdCondicoesFisicas.Text = _dadosServico.condicoesFisicas.cf_id.ToString();
+            _formEditarServico.lblIdChecklist.Text = _dadosServico.checklist.ch_id.ToString();
+            _formEditarServico.dtpDataServico.DateTime = _dadosServico.servico.sv_data;
+            _formEditarServico.cmbMarca.Text = _dadosServico.servico.sv_marca;
+            _formEditarServico.txtModelo.Text = _dadosServico.servico.sv_aparelho;
+            _formEditarServico.cmbCor.Text = _dadosServico.servico.sv_cor;
+            _formEditarServico.txtMei_SerialNumber.Text = _dadosServico.servico.sv_mei_serialnumber;
+            _formEditarServico.txtSenhaDispositivo.Text = _dadosServico.servico.sv_senha;
+            _formEditarServico.cmbTipoAparelho.Text = _dadosServico.servico.sv_tipo_aparelho;
 
             //Setando o icone do tipo do aparelho la no canto superior direito
-            string tipoAparelho = dadosServico.servico.sv_tipo_aparelho;
-            formEditarServico.btnTipoAparelho.ImageOptions.SvgImage =
-                formEditarServico.svgCollection[tipoAparelho ?? "SemTipo"];
+            string tipoAparelho = _dadosServico.servico.sv_tipo_aparelho;
+            _formEditarServico.btnTipoAparelho.ImageOptions.SvgImage =
+                _formEditarServico.svgCollection[tipoAparelho ?? "SemTipo"];
 
             //Groupbox Cond fisicas
-            formEditarServico.cmbPelicula.Text = dadosServico.condicoesFisicas.cf_pelicula;
-            formEditarServico.cmbTela.Text = dadosServico.condicoesFisicas.cf_tela;
-            formEditarServico.cmbTampa.Text = dadosServico.condicoesFisicas.cf_tampa;
-            formEditarServico.cmbAro.Text = dadosServico.condicoesFisicas.cf_aro;
-            formEditarServico.cmbBotoes.Text = dadosServico.condicoesFisicas.cf_botoes;
-            formEditarServico.cmbLenteCamera.Text = dadosServico.condicoesFisicas.cf_lente_camera;
+            _formEditarServico.cmbPelicula.Text = _dadosServico.condicoesFisicas.cf_pelicula;
+            _formEditarServico.cmbTela.Text = _dadosServico.condicoesFisicas.cf_tela;
+            _formEditarServico.cmbTampa.Text = _dadosServico.condicoesFisicas.cf_tampa;
+            _formEditarServico.cmbAro.Text = _dadosServico.condicoesFisicas.cf_aro;
+            _formEditarServico.cmbBotoes.Text = _dadosServico.condicoesFisicas.cf_botoes;
+            _formEditarServico.cmbLenteCamera.Text = _dadosServico.condicoesFisicas.cf_lente_camera;
 
             //Groupbox dados da parte de baixo
-            formEditarServico.txtObservacoes.Text = dadosServico.servico.sv_situacao;
-            formEditarServico.txtRelatoCliente.Text = dadosServico.servico.sv_relato_cliente;
-            formEditarServico.txtCondicoesBalcao.Text = dadosServico.servico.sv_condicoes_balcao;
-            formEditarServico.txtSolucao.Text = dadosServico.servico.sv_servico;
-            formEditarServico.txtDefeito.Text = dadosServico.servico.sv_defeito;
-            formEditarServico.txtAcessorios.Text = dadosServico.servico.sv_acessorios;
+            _formEditarServico.txtObservacoes.Text = _dadosServico.servico.sv_situacao;
+            _formEditarServico.txtRelatoCliente.Text = _dadosServico.servico.sv_relato_cliente;
+            _formEditarServico.txtCondicoesBalcao.Text = _dadosServico.servico.sv_condicoes_balcao;
+            _formEditarServico.txtSolucao.Text = _dadosServico.servico.sv_servico;
+            _formEditarServico.txtDefeito.Text = _dadosServico.servico.sv_defeito;
+            _formEditarServico.txtAcessorios.Text = _dadosServico.servico.sv_acessorios;
 
             //Groupbox dos valores
             decimal valorTotalPecas = 0;
@@ -361,20 +383,20 @@ namespace PFC___StandBy_CSharp.Forms
                 valorTotalPecas += peca.cp_valor_peca;
             }
 
-            formEditarServico.txtPecaValor.Text = $"{valorTotalPecas:C}";
+            _formEditarServico.txtPecaValor.Text = $"{valorTotalPecas:C}";
             //formEditarServico.txtPecaValor.Text = $"{dadosServico.servico.sv_valorpeca:C}";
-            formEditarServico.txtServicoValor.Text = $"{dadosServico.servico.sv_valorservico:C}";
+            _formEditarServico.txtServicoValor.Text = $"{_dadosServico.servico.sv_valorservico:C}";
 
-            decimal lucro = (decimal)(dadosServico.servico.sv_valorservico - valorTotalPecas);
-            formEditarServico.txtLucroValor.Text = $"{lucro:C}";
+            decimal lucro = (decimal)(_dadosServico.servico.sv_valorservico - valorTotalPecas);
+            _formEditarServico.txtLucroValor.Text = $"{lucro:C}";
 
             //formEditarServico.txtLucroValor.Text = $"{dadosServico.servico.sv_lucro:C}";
 
             //Groupbox previsao
-            formEditarServico.dtpPrevisaoEntrega.EditValue = dadosServico.servico.sv_previsao_entrega;
+            _formEditarServico.dtpPrevisaoEntrega.EditValue = _dadosServico.servico.sv_previsao_entrega;
 
             //Status
-            formEditarServico.cmbStatusServico.Text = dadosServico.servico.sv_avaliacao_servico;
+            _formEditarServico.cmbStatusServico.Text = _dadosServico.servico.sv_avaliacao_servico;
         }
 
         private void PreencherFormApenasDadosServico(form_OrdemServicoEditar _formEditarServico,
@@ -382,9 +404,16 @@ namespace PFC___StandBy_CSharp.Forms
             List<tb_compras> _pecas)
         {
             //Groupbox informacoes aparelho
+
+            _formEditarServico.lblTipoOrdemServico.Text = "SEM CHECKLIST";
+            _formEditarServico.lblTipoOrdemServico.ForeColor = Color.Bisque;
+            _formEditarServico.lblTipoOrdemServico.Location = new Point(21, -3);
+
+
             _formEditarServico.lblOrdemServico.Text = "OS " + _dadosServico.servico.sv_ordem_serv;
             _formEditarServico.lblIdServico.Text = _dadosServico.servico.sv_id.ToString();
             _formEditarServico.lblIdCliente.Text = _dadosServico.servico.sv_cl_idcliente.ToString();
+            _formEditarServico.lblDataOrdemServico.Text = _dadosServico.servico.sv_data.ToString();
             //formEditarServico.lblIdCondicoesFisicas.Text = dadosServico.condicoesFisicas.cf_id.ToString();
             //formEditarServico.lblIdChecklist.Text = dadosServico.checklist.ch_id.ToString();
             _formEditarServico.dtpDataServico.DateTime = _dadosServico.servico.sv_data;
@@ -393,7 +422,17 @@ namespace PFC___StandBy_CSharp.Forms
             _formEditarServico.cmbCor.Text = _dadosServico.servico.sv_cor;
             _formEditarServico.txtMei_SerialNumber.Text = _dadosServico.servico.sv_mei_serialnumber;
             _formEditarServico.txtSenhaDispositivo.Text = _dadosServico.servico.sv_senha;
+            //_formEditarServico.picSenhaPattern.Image = ConvertImage.ConvertByteArrayToImage(_dadosServico.servico.sv_senha_pattern);
             _formEditarServico.cmbTipoAparelho.Text = _dadosServico.servico.sv_tipo_aparelho;
+
+            if (_dadosServico.servico.sv_tipo_aparelho != Enum.GetName(typeof(Aparelho), Aparelho.Celular))
+            {
+                _ = _formEditarServico.picSenhaPattern.Enabled == false;
+            }
+            else
+            {
+                _formEditarServico.picSenhaPattern.Image = ConvertImage.ConvertByteArrayToImage(_dadosServico.servico.sv_senha_pattern);
+            }
 
             //Setando o icone do tipo do aparelho la no canto superior direito
             string tipoAparelho = _dadosServico.servico.sv_tipo_aparelho;
@@ -679,8 +718,8 @@ namespace PFC___StandBy_CSharp.Forms
         private void AbrirOrdemServicoSaida(Aparelho _tipoAparelho, ServicoEstrutura _servico,
             CondicoesFisicasEstrutura _condicoesFisicas, ChecklistEstrutura _checklist)
         {
-            form_OrdemServicoSaida formOrdemServico =
-                new form_OrdemServicoSaida(_tipoAparelho, _servico.FK_IdCliente, false, corGeral);
+            form_OrdemServicoSaida formOrdemServico = new form_OrdemServicoSaida();
+            //form_OrdemServicoSaida formOrdemServico = new form_OrdemServicoSaida(_tipoAparelho, _servico.FK_IdCliente, false, corGeral);
             formOrdemServico.lblOrdemServico.Text = $@"OS {_servico.OrdemServico:0000}";
             formOrdemServico.lblDataOrdemServico.Text = $@"{_servico.DataServico:G}";
             formOrdemServico.lblIdCliente.Text = _servico.FK_IdCliente.ToString();
@@ -699,69 +738,116 @@ namespace PFC___StandBy_CSharp.Forms
             formOrdemServico.cmbStatusServico.Text = _servico.AvaliacaoServico;
             formOrdemServico.cmbStatusServico.Enabled = false;
 
-            if (_condicoesFisicas != null)
+
+            if (_tipoAparelho == Aparelho.Computador || _tipoAparelho == Aparelho.Notebook)
             {
-                //Condicioes Fisicas
-                formOrdemServico.cmbPelicula.Text = _condicoesFisicas.Pelicula;
-                formOrdemServico.cmbTela.Text = _condicoesFisicas.Tela;
-                formOrdemServico.cmbTampa.Text = _condicoesFisicas.Tampa;
-                formOrdemServico.cmbAro.Text = _condicoesFisicas.Aro;
-                formOrdemServico.cmbBotoes.Text = _condicoesFisicas.Botoes;
-                formOrdemServico.cmbLenteCamera.Text = _condicoesFisicas.LenteCamera;
-                formOrdemServico.lblIdCondicoesFisicas.Text = _condicoesFisicas.ID.ToString();
-            }
-            else
-            {
-                formOrdemServico.lblIdCondicoesFisicas.Text = "";
-                formOrdemServico.cmbPelicula.Text = "";
-                formOrdemServico.cmbTela.Text = "";
-                formOrdemServico.cmbTampa.Text = "";
-                formOrdemServico.cmbAro.Text = "";
-                formOrdemServico.cmbBotoes.Text = "";
-                formOrdemServico.cmbLenteCamera.Text = "";
+                foreach (var control in formOrdemServico.group_CondicoesFisicas.Controls)
+                {
+                    var teste = (BunifuDropdown)control;
+                    teste.Enabled = false;
+                }
+
+                foreach (var control in formOrdemServico.group_Checklist.Controls)
+                {
+                    if (control is BunifuDropdown)
+                    {
+                        var teste = (BunifuDropdown)control;
+                        teste.Enabled = false;
+                    }
+                    else if (control is RichTextBox)
+                    {
+                        var teste = (RichTextBox)control;
+                        teste.Enabled = false;
+                    }
+
+                    formOrdemServico.switchChecklistAusente.Enabled = false;
+                    formOrdemServico.cmbMarca.Enabled = false;
+                    formOrdemServico.txtModelo.Enabled = false;
+                    formOrdemServico.cmbCor.Enabled = false;
+                    formOrdemServico.txtMei_SerialNumber.Enabled = false;
+                }
             }
 
-            if (_checklist != null)
+            if (_tipoAparelho == Aparelho.Celular)
             {
-                //Checklist
-                formOrdemServico.lblIdChecklist.Text = _checklist.ID.ToString();
-                formOrdemServico.cmbChecklistBiometria.Text = _checklist.BiometriaFaceID;
-                formOrdemServico.cmbChecklistMicrofone.Text = _checklist.Microfone;
-                formOrdemServico.cmbChecklistTela.Text = _checklist.Tela;
-                formOrdemServico.cmbChecklistChip.Text = _checklist.Chip;
-                formOrdemServico.cmbChecklistBotoes.Text = _checklist.Botoes;
-                formOrdemServico.cmbChecklistSensor.Text = _checklist.Sensor;
-                formOrdemServico.cmbChecklistCameras.Text = _checklist.Cameras;
-                formOrdemServico.cmbChecklistAuricular.Text = _checklist.Auricular;
-                formOrdemServico.cmbChecklistWifi.Text = _checklist.Wifi;
-                formOrdemServico.cmbChecklistAltoFaltante.Text = _checklist.AltoFalante;
-                formOrdemServico.cmbChecklistBluetooth.Text = _checklist.Bluetooth;
-                formOrdemServico.cmbChecklistCarregamento.Text = _checklist.Carregamento;
-                formOrdemServico.txtChecklistObservacoes.Text = _checklist.Observacoes;
-                formOrdemServico.switchChecklistAusente.IsOn = _checklist.Ausente;
-                formOrdemServico.txtChecklistMotivoAusencia.Text = _checklist.MotivoAusencia;
+                if (_condicoesFisicas != null)
+                {
+                    //Condicioes Fisicas
+                    formOrdemServico.cmbPelicula.Text = _condicoesFisicas.Pelicula;
+                    formOrdemServico.cmbTela.Text = _condicoesFisicas.Tela;
+                    formOrdemServico.cmbTampa.Text = _condicoesFisicas.Tampa;
+                    formOrdemServico.cmbAro.Text = _condicoesFisicas.Aro;
+                    formOrdemServico.cmbBotoes.Text = _condicoesFisicas.Botoes;
+                    formOrdemServico.cmbLenteCamera.Text = _condicoesFisicas.LenteCamera;
+                    formOrdemServico.lblIdCondicoesFisicas.Text = _condicoesFisicas.ID.ToString();
+                }
+                else
+                {
+                    formOrdemServico.lblIdCondicoesFisicas.Text = "";
+                    formOrdemServico.cmbPelicula.Text = "";
+                    formOrdemServico.cmbTela.Text = "";
+                    formOrdemServico.cmbTampa.Text = "";
+                    formOrdemServico.cmbAro.Text = "";
+                    formOrdemServico.cmbBotoes.Text = "";
+                    formOrdemServico.cmbLenteCamera.Text = "";
+                }
+
+
+                if (_checklist != null)
+                {
+                    //Checklist
+                    formOrdemServico.lblIdChecklist.Text = _checklist.ID.ToString();
+                    formOrdemServico.cmbChecklistBiometria.Text = _checklist.BiometriaFaceID;
+                    formOrdemServico.cmbChecklistMicrofone.Text = _checklist.Microfone;
+                    formOrdemServico.cmbChecklistTela.Text = _checklist.Tela;
+                    formOrdemServico.cmbChecklistChip.Text = _checklist.Chip;
+                    formOrdemServico.cmbChecklistBotoes.Text = _checklist.Botoes;
+                    formOrdemServico.cmbChecklistSensor.Text = _checklist.Sensor;
+                    formOrdemServico.cmbChecklistCameras.Text = _checklist.Cameras;
+                    formOrdemServico.cmbChecklistAuricular.Text = _checklist.Auricular;
+                    formOrdemServico.cmbChecklistWifi.Text = _checklist.Wifi;
+                    formOrdemServico.cmbChecklistAltoFaltante.Text = _checklist.AltoFalante;
+                    formOrdemServico.cmbChecklistBluetooth.Text = _checklist.Bluetooth;
+                    formOrdemServico.cmbChecklistCarregamento.Text = _checklist.Carregamento;
+                    formOrdemServico.txtChecklistObservacoes.Text = _checklist.Observacoes;
+                    formOrdemServico.switchChecklistAusente.IsOn = _checklist.Ausente;
+
+                    if (_checklist.Ausente == true)
+                    {
+                        formOrdemServico.txtChecklistMotivoAusencia.BackColor = Color.FromArgb(64, 64, 64);
+                        formOrdemServico.txtChecklistMotivoAusencia.Text = string.Empty;
+                        formOrdemServico.txtChecklistMotivoAusencia.ReadOnly = true;
+                    }
+                    else
+                    {
+                        formOrdemServico.txtChecklistMotivoAusencia.BackColor = Color.FromArgb(23, 23, 36);
+                        formOrdemServico.txtChecklistMotivoAusencia.ReadOnly = false;
+                        formOrdemServico.txtChecklistMotivoAusencia.Text = _checklist.MotivoAusencia;
+                    }
+                }
+                else
+                {
+                    //Checklist
+                    formOrdemServico.lblIdChecklist.Text = "";
+                    formOrdemServico.cmbChecklistBiometria.Text = "";
+                    formOrdemServico.cmbChecklistMicrofone.Text = "";
+                    formOrdemServico.cmbChecklistTela.Text = "";
+                    formOrdemServico.cmbChecklistChip.Text = "";
+                    formOrdemServico.cmbChecklistBotoes.Text = "";
+                    formOrdemServico.cmbChecklistSensor.Text = "";
+                    formOrdemServico.cmbChecklistCameras.Text = "";
+                    formOrdemServico.cmbChecklistAuricular.Text = "";
+                    formOrdemServico.cmbChecklistWifi.Text = "";
+                    formOrdemServico.cmbChecklistAltoFaltante.Text = "";
+                    formOrdemServico.cmbChecklistBluetooth.Text = "";
+                    formOrdemServico.cmbChecklistCarregamento.Text = "";
+                    formOrdemServico.txtChecklistObservacoes.Text = "";
+                    formOrdemServico.switchChecklistAusente.IsOn = false;
+                    formOrdemServico.txtChecklistMotivoAusencia.Text = "";
+                    ;
+                }
             }
-            else
-            {
-                //Checklist
-                formOrdemServico.lblIdChecklist.Text = "";
-                formOrdemServico.cmbChecklistBiometria.Text = "";
-                formOrdemServico.cmbChecklistMicrofone.Text = "";
-                formOrdemServico.cmbChecklistTela.Text = "";
-                formOrdemServico.cmbChecklistChip.Text = "";
-                formOrdemServico.cmbChecklistBotoes.Text = "";
-                formOrdemServico.cmbChecklistSensor.Text = "";
-                formOrdemServico.cmbChecklistCameras.Text = "";
-                formOrdemServico.cmbChecklistAuricular.Text = "";
-                formOrdemServico.cmbChecklistWifi.Text = "";
-                formOrdemServico.cmbChecklistAltoFaltante.Text = "";
-                formOrdemServico.cmbChecklistBluetooth.Text = "";
-                formOrdemServico.cmbChecklistCarregamento.Text = "";
-                formOrdemServico.txtChecklistObservacoes.Text = "";
-                formOrdemServico.switchChecklistAusente.IsOn = false;
-                formOrdemServico.txtChecklistMotivoAusencia.Text = "";
-                ;
-            }
+
 
             formOrdemServico.cmbCliente.Enabled = false;
             formOrdemServico.ShowDialog();
@@ -770,12 +856,17 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnRemoverServico_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //Pegando os dados da linha que o usuario clicou
-            var servico = BuscarDadosLinhaSelecionada();
-            //Pegando todos os dados necessarios com base na ID
-            int idServico = Convert.ToInt32(servico[0]);
-            deletarDados.DeletarServico(idServico);
-            PopularGridview();
+            if (MessageBox.Show(
+                    "Deseja mesmo remover esse serviço? todas informações dele serão removidas tambem como checklist, ordem de servico e garantias!",
+                    "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                //Pegando os dados da linha que o usuario clicou
+                var servico = BuscarDadosLinhaSelecionada();
+                //Pegando todos os dados necessarios com base na ID
+                int idServico = Convert.ToInt32(servico[0]);
+                deletarDados.DeletarServico(idServico);
+                PopularGridview();
+            }
         }
 
         private void btnEditarListaPeçasCompradas_ItemClick(object sender, ItemClickEventArgs e)
@@ -789,6 +880,32 @@ namespace PFC___StandBy_CSharp.Forms
             formCompra.lblIdServico.Text = idServico.ToString();
             formCompra.cmbOrdemServico.Enabled = false;
             formCompra.ShowDialog();
+        }
+
+        private void btnCelular_Click(object sender, EventArgs e)
+        {
+            AbrirOSEntradaForm(Aparelho.Celular);
+        }
+
+        private void btnNotebook_Click(object sender, EventArgs e)
+        {
+            AbrirOSEntradaForm(Aparelho.Notebook);
+        }
+
+        private void btnComputador_Click(object sender, EventArgs e)
+        {
+            AbrirOSEntradaForm(Aparelho.Computador);
+        }
+
+        private void AbrirOSEntradaForm(Aparelho _tipoAparelho)
+        {
+            form_OrdemServicoEntrada ordemServico =
+                new form_OrdemServicoEntrada(_tipoAparelho, 0, true, new[] { 255, 0, 103 });
+            ordemServico.switchChecklistAusente.IsOn = false;
+            ordemServico.txtChecklistMotivoAusencia.BackColor = Color.FromArgb(64, 64, 64);
+            ordemServico.txtChecklistMotivoAusencia.ReadOnly = true;
+            ordemServico.ShowDialog();
+            PopularGridview();
         }
     }
 }

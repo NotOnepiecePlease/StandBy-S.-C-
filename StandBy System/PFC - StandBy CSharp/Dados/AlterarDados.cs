@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.Context;
 using PFC___StandBy_CSharp.Forms._1___Ordems_Servico;
+using PFC___StandBy_CSharp.Utils;
 
 namespace PFC___StandBy_CSharp.Dados
 {
@@ -289,18 +290,43 @@ namespace PFC___StandBy_CSharp.Dados
         {
             try
             {
-                using (SqlConnection con = OpenConnection())
+                standby_orgContext context = new standby_orgContext();
+                if (MessageBox.Show("Deseja apagar os checklists de SAIDA relacionados a esse serviço?, para concluir ele após isso, os checklists devem ser preenchidos novamente.", "Remover checklists",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    string procedure = "Servico_Cancelar_Conclusao";
-                    SqlCommand cmd = new SqlCommand(procedure, con);
+                    tb_checklist checklist = context.tb_checklist.FirstOrDefault(x => x.ch_sv_idservico == _idServico);
+                    tb_condicoes_fisicas condF = context.tb_condicoes_fisicas.FirstOrDefault(x => x.cf_sv_idservico == _idServico);
 
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@sv_id", _idServico);
+                    if (checklist != null)
+                        context.tb_checklist.Remove(checklist);
 
-                    cmd.ExecuteNonQuery();
+                    if (condF != null)
+                        context.tb_condicoes_fisicas.Remove(condF);
 
-                    mSucesso.CancelarConclusaoSucesso();
+
+                    context.SaveChanges();
                 }
+
+
+                tb_servicos servico = context.tb_servicos.FirstOrDefault(x => x.sv_id == _idServico);
+                servico.sv_status = 1;
+                servico.sv_avaliacao_servico = Constantes.STATUS_AVALIACAO;
+                servico.sv_data_conclusao = null;
+                context.SaveChanges();
+                mSucesso.CancelarConclusaoSucesso();
+
+                //using (SqlConnection con = OpenConnection())
+                //{
+                //    string procedure = "Servico_Cancelar_Conclusao";
+                //    SqlCommand cmd = new SqlCommand(procedure, con);
+
+                //    cmd.CommandType = CommandType.StoredProcedure;
+                //    cmd.Parameters.AddWithValue("@sv_id", _idServico);
+
+                //    cmd.ExecuteNonQuery();
+
+                //    mSucesso.CancelarConclusaoSucesso();
+                //}
             }
             catch (Exception ex)
             {
@@ -387,8 +413,7 @@ namespace PFC___StandBy_CSharp.Dados
                 standby_orgContext context = new standby_orgContext();
                 if (_form.lblIdServico.Text != "IdServico")
                 {
-                    tb_servicos s =
-                        context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(_form.lblIdServico.Text));
+                    tb_servicos s = context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(_form.lblIdServico.Text));
 
                     var a = _form.dtpPrevisaoEntrega.EditValue;
                     var ba = _form.dtpPrevisaoEntrega.DateTime;
@@ -402,6 +427,7 @@ namespace PFC___StandBy_CSharp.Dados
                     s.sv_cor = _form.cmbCor.Text;
                     s.sv_mei_serialnumber = _form.txtMei_SerialNumber.Text;
                     s.sv_senha = _form.txtSenhaDispositivo.Text;
+                    s.sv_senha_pattern = ConvertImage.ConvertImageToByte(_form.picSenhaPattern.Image);
                     s.sv_situacao = _form.txtObservacoes.Text;
                     s.sv_relato_cliente = _form.txtRelatoCliente.Text;
                     s.sv_condicoes_balcao = _form.txtCondicoesBalcao.Text;
@@ -414,6 +440,7 @@ namespace PFC___StandBy_CSharp.Dados
                     s.sv_previsao_entrega = (DateTime?)(_form.dtpPrevisaoEntrega.EditValue);
                     s.sv_acessorios = _form.txtAcessorios.Text;
                     s.sv_avaliacao_servico = _form.cmbStatusServico.Text;
+
 
                     context.SaveChanges();
                 }

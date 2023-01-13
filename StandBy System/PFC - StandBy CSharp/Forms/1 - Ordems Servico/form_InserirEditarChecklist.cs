@@ -12,7 +12,8 @@ using System.Windows.Forms;
 using Bunifu.UI.WinForms;
 using DevExpress.Utils.Extensions;
 using PFC___StandBy_CSharp.Context;
-using static PFC___StandBy_CSharp.Enum.Enum;
+using PFC___StandBy_CSharp.Enums;
+using static PFC___StandBy_CSharp.Enums.EnumStandby;
 
 namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 {
@@ -44,8 +45,9 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             {
                 standby_orgContext context = new standby_orgContext();
 
-                string tipoChecklistString = System.Enum.GetName(typeof(Checklist), (int)tipoChecklist);
-                checklistDoServico = context.tb_checklist.FirstOrDefault(x => x.ch_sv_idservico == Convert.ToInt32(lblIdServico.Text) && x.ch_tipo == tipoChecklistString);
+                string tipoChecklistString = System.Enum.GetName(typeof(EnumStandby.Checklist), (int)tipoChecklist);
+                checklistDoServico = context.tb_checklist.FirstOrDefault(x =>
+                    x.ch_sv_idservico == Convert.ToInt32(lblIdServico.Text) && x.ch_tipo == tipoChecklistString);
                 cmbChecklistBiometria.Text = checklistDoServico.ch_biometria_faceid ?? string.Empty;
                 cmbChecklistMicrofone.Text = checklistDoServico.ch_microfone ?? string.Empty;
                 cmbChecklistTela.Text = checklistDoServico.ch_tela ?? string.Empty;
@@ -102,6 +104,12 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 
         private void btnSalvarChecklist_Click(object sender, EventArgs e)
         {
+            InserirOuAlterarChecklistEntrada();
+            this.Close();
+        }
+
+        private void InserirOuAlterarChecklistEntrada()
+        {
             if (isNovoChecklist == true)
             {
                 //Fazer insert
@@ -113,25 +121,47 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                 checklist.ch_data = Convert.ToDateTime(lblDataCad.Text);
                 checklist.ch_sv_idservico = Convert.ToInt32(lblIdServico.Text);
                 checklist.ch_tipo = tipoChecklistString;
-                checklist.ch_biometria_faceid = string.IsNullOrWhiteSpace(cmbChecklistBiometria.Text) ? null : cmbChecklistBiometria.Text;
-                checklist.ch_microfone = string.IsNullOrWhiteSpace(cmbChecklistMicrofone.Text) ? null : cmbChecklistMicrofone.Text;
+                checklist.ch_biometria_faceid = string.IsNullOrWhiteSpace(cmbChecklistBiometria.Text)
+                    ? null
+                    : cmbChecklistBiometria.Text;
+                checklist.ch_microfone = string.IsNullOrWhiteSpace(cmbChecklistMicrofone.Text)
+                    ? null
+                    : cmbChecklistMicrofone.Text;
                 checklist.ch_tela = string.IsNullOrWhiteSpace(cmbChecklistTela.Text) ? null : cmbChecklistTela.Text;
                 checklist.ch_chip = string.IsNullOrWhiteSpace(cmbChecklistChip.Text) ? null : cmbChecklistChip.Text;
-                checklist.ch_botoes = string.IsNullOrWhiteSpace(cmbChecklistBotoes.Text) ? null : cmbChecklistBotoes.Text;
-                checklist.ch_sensor = string.IsNullOrWhiteSpace(cmbChecklistSensor.Text) ? null : cmbChecklistSensor.Text;
-                checklist.ch_cameras = string.IsNullOrWhiteSpace(cmbChecklistCameras.Text) ? null : cmbChecklistCameras.Text;
-                checklist.ch_auricular = string.IsNullOrWhiteSpace(cmbChecklistAuricular.Text) ? null : cmbChecklistAuricular.Text;
+                checklist.ch_botoes =
+                    string.IsNullOrWhiteSpace(cmbChecklistBotoes.Text) ? null : cmbChecklistBotoes.Text;
+                checklist.ch_sensor =
+                    string.IsNullOrWhiteSpace(cmbChecklistSensor.Text) ? null : cmbChecklistSensor.Text;
+                checklist.ch_cameras = string.IsNullOrWhiteSpace(cmbChecklistCameras.Text)
+                    ? null
+                    : cmbChecklistCameras.Text;
+                checklist.ch_auricular = string.IsNullOrWhiteSpace(cmbChecklistAuricular.Text)
+                    ? null
+                    : cmbChecklistAuricular.Text;
                 checklist.ch_wifi = string.IsNullOrWhiteSpace(cmbChecklistWifi.Text) ? null : cmbChecklistWifi.Text;
-                checklist.ch_altofalante = string.IsNullOrWhiteSpace(cmbChecklistAltoFaltante.Text) ? null : cmbChecklistAltoFaltante.Text;
-                checklist.ch_bluetooth = string.IsNullOrWhiteSpace(cmbChecklistBluetooth.Text) ? null : cmbChecklistBluetooth.Text;
-                checklist.ch_carregamento = string.IsNullOrWhiteSpace(cmbChecklistCarregamento.Text) ? null : cmbChecklistCarregamento.Text; ;
-                checklist.ch_observacoes = string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text) ? null : txtChecklistObservacoes.Text;
+                checklist.ch_altofalante = string.IsNullOrWhiteSpace(cmbChecklistAltoFaltante.Text)
+                    ? null
+                    : cmbChecklistAltoFaltante.Text;
+                checklist.ch_bluetooth = string.IsNullOrWhiteSpace(cmbChecklistBluetooth.Text)
+                    ? null
+                    : cmbChecklistBluetooth.Text;
+                checklist.ch_carregamento = string.IsNullOrWhiteSpace(cmbChecklistCarregamento.Text)
+                    ? null
+                    : cmbChecklistCarregamento.Text;
+                ;
+                checklist.ch_observacoes = string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text)
+                    ? null
+                    : txtChecklistObservacoes.Text;
                 checklist.ch_ausente = switchChecklistAusente.IsOn;
-                checklist.ch_motivo_ausencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text) ? null : txtChecklistMotivoAusencia.Text;
+                checklist.ch_motivo_ausencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text)
+                    ? null
+                    : txtChecklistMotivoAusencia.Text;
 
                 context.tb_checklist.Add(checklist);
                 context.SaveChanges();
-                MessageBox.Show($@"OS:{lblOrdemServico.Text} - Checklist inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($@"OS:{lblOrdemServico.Text} - Checklist inserido com sucesso!", "Sucesso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -139,29 +169,52 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                 standby_orgContext context = new standby_orgContext();
 
                 string tipoChecklistString = System.Enum.GetName(typeof(Checklist), (int)tipoChecklist);
-                tb_checklist checklist = context.tb_checklist.FirstOrDefault(x => x.ch_sv_idservico == Convert.ToInt32(lblIdServico.Text) && x.ch_tipo == tipoChecklistString);
+                tb_checklist checklist = context.tb_checklist.FirstOrDefault(x =>
+                    x.ch_sv_idservico == Convert.ToInt32(lblIdServico.Text) && x.ch_tipo == tipoChecklistString);
                 checklist.ch_ordem_serv = Convert.ToInt32(lblOrdemServico.Text);
                 checklist.ch_data = Convert.ToDateTime(lblDataCad.Text);
                 checklist.ch_sv_idservico = Convert.ToInt32(lblIdServico.Text);
                 checklist.ch_tipo = tipoChecklistString;
-                checklist.ch_biometria_faceid = string.IsNullOrWhiteSpace(cmbChecklistBiometria.Text) ? null : cmbChecklistBiometria.Text;
-                checklist.ch_microfone = string.IsNullOrWhiteSpace(cmbChecklistMicrofone.Text) ? null : cmbChecklistMicrofone.Text;
+                checklist.ch_biometria_faceid = string.IsNullOrWhiteSpace(cmbChecklistBiometria.Text)
+                    ? null
+                    : cmbChecklistBiometria.Text;
+                checklist.ch_microfone = string.IsNullOrWhiteSpace(cmbChecklistMicrofone.Text)
+                    ? null
+                    : cmbChecklistMicrofone.Text;
                 checklist.ch_tela = string.IsNullOrWhiteSpace(cmbChecklistTela.Text) ? null : cmbChecklistTela.Text;
                 checklist.ch_chip = string.IsNullOrWhiteSpace(cmbChecklistChip.Text) ? null : cmbChecklistChip.Text;
-                checklist.ch_botoes = string.IsNullOrWhiteSpace(cmbChecklistBotoes.Text) ? null : cmbChecklistBotoes.Text;
-                checklist.ch_sensor = string.IsNullOrWhiteSpace(cmbChecklistSensor.Text) ? null : cmbChecklistSensor.Text;
-                checklist.ch_cameras = string.IsNullOrWhiteSpace(cmbChecklistCameras.Text) ? null : cmbChecklistCameras.Text;
-                checklist.ch_auricular = string.IsNullOrWhiteSpace(cmbChecklistAuricular.Text) ? null : cmbChecklistAuricular.Text;
+                checklist.ch_botoes =
+                    string.IsNullOrWhiteSpace(cmbChecklistBotoes.Text) ? null : cmbChecklistBotoes.Text;
+                checklist.ch_sensor =
+                    string.IsNullOrWhiteSpace(cmbChecklistSensor.Text) ? null : cmbChecklistSensor.Text;
+                checklist.ch_cameras = string.IsNullOrWhiteSpace(cmbChecklistCameras.Text)
+                    ? null
+                    : cmbChecklistCameras.Text;
+                checklist.ch_auricular = string.IsNullOrWhiteSpace(cmbChecklistAuricular.Text)
+                    ? null
+                    : cmbChecklistAuricular.Text;
                 checklist.ch_wifi = string.IsNullOrWhiteSpace(cmbChecklistWifi.Text) ? null : cmbChecklistWifi.Text;
-                checklist.ch_altofalante = string.IsNullOrWhiteSpace(cmbChecklistAltoFaltante.Text) ? null : cmbChecklistAltoFaltante.Text;
-                checklist.ch_bluetooth = string.IsNullOrWhiteSpace(cmbChecklistBluetooth.Text) ? null : cmbChecklistBluetooth.Text;
-                checklist.ch_carregamento = string.IsNullOrWhiteSpace(cmbChecklistCarregamento.Text) ? null : cmbChecklistCarregamento.Text; ;
-                checklist.ch_observacoes = string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text) ? null : txtChecklistObservacoes.Text;
+                checklist.ch_altofalante = string.IsNullOrWhiteSpace(cmbChecklistAltoFaltante.Text)
+                    ? null
+                    : cmbChecklistAltoFaltante.Text;
+                checklist.ch_bluetooth = string.IsNullOrWhiteSpace(cmbChecklistBluetooth.Text)
+                    ? null
+                    : cmbChecklistBluetooth.Text;
+                checklist.ch_carregamento = string.IsNullOrWhiteSpace(cmbChecklistCarregamento.Text)
+                    ? null
+                    : cmbChecklistCarregamento.Text;
+                ;
+                checklist.ch_observacoes = string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text)
+                    ? null
+                    : txtChecklistObservacoes.Text;
                 checklist.ch_ausente = switchChecklistAusente.IsOn;
-                checklist.ch_motivo_ausencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text) ? null : txtChecklistMotivoAusencia.Text;
+                checklist.ch_motivo_ausencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text)
+                    ? null
+                    : txtChecklistMotivoAusencia.Text;
 
                 context.SaveChanges();
-                MessageBox.Show($@"OS:{lblOrdemServico.Text} - Checklist alterado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($@"OS:{lblOrdemServico.Text} - Checklist alterado com sucesso!", "Sucesso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

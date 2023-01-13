@@ -62,6 +62,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditarOrdemServicoSaida = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEditarListaPeçasCompradas = new DevExpress.XtraBars.BarButtonItem();
             this.barToolbarsListItem1 = new DevExpress.XtraBars.BarToolbarsListItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -70,7 +71,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.btnEditarListaPeçasCompradas = new DevExpress.XtraBars.BarButtonItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridctrlServicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewServicos)).BeginInit();
@@ -133,6 +133,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnNotebook.Size = new System.Drawing.Size(155, 31);
             this.btnNotebook.TabIndex = 38;
             this.btnNotebook.Text = "NOTEBOOK";
+            this.btnNotebook.Click += new System.EventHandler(this.btnNotebook_Click);
             this.btnNotebook.MouseEnter += new System.EventHandler(this.LimparLinhasSelecionadasGrid);
             // 
             // btnComputador
@@ -147,6 +148,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnComputador.Size = new System.Drawing.Size(155, 31);
             this.btnComputador.TabIndex = 37;
             this.btnComputador.Text = "COMPUTADOR";
+            this.btnComputador.Click += new System.EventHandler(this.btnComputador_Click);
             this.btnComputador.MouseEnter += new System.EventHandler(this.LimparLinhasSelecionadasGrid);
             // 
             // btnCelular
@@ -407,6 +409,14 @@ namespace PFC___StandBy_CSharp.Forms
             this.barButtonItem3.Id = 7;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
+            // btnEditarListaPeçasCompradas
+            // 
+            this.btnEditarListaPeçasCompradas.Caption = "Editar lista peças compradas";
+            this.btnEditarListaPeçasCompradas.Id = 8;
+            this.btnEditarListaPeçasCompradas.ImageOptions.LargeImage = global::PFC___StandBy_CSharp.Properties.Resources.pageorientationportrait_32x32;
+            this.btnEditarListaPeçasCompradas.Name = "btnEditarListaPeçasCompradas";
+            this.btnEditarListaPeçasCompradas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditarListaPeçasCompradas_ItemClick);
+            // 
             // barToolbarsListItem1
             // 
             this.barToolbarsListItem1.Caption = "barToolbarsListItem1";
@@ -467,14 +477,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.barSubItem1.Caption = "barSubItem1";
             this.barSubItem1.Id = 4;
             this.barSubItem1.Name = "barSubItem1";
-            // 
-            // btnEditarListaPeçasCompradas
-            // 
-            this.btnEditarListaPeçasCompradas.Caption = "Editar lista peças compradas";
-            this.btnEditarListaPeçasCompradas.Id = 8;
-            this.btnEditarListaPeçasCompradas.ImageOptions.LargeImage = global::PFC___StandBy_CSharp.Properties.Resources.pageorientationportrait_32x32;
-            this.btnEditarListaPeçasCompradas.Name = "btnEditarListaPeçasCompradas";
-            this.btnEditarListaPeçasCompradas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEditarListaPeçasCompradas_ItemClick);
             // 
             // form_ServicoPrincipal
             // 

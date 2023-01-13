@@ -198,15 +198,29 @@
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression78 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column79 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression79 = new DevExpress.DataAccess.Sql.ColumnExpression();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo1 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.SelectQuery selectQuery6 = new DevExpress.DataAccess.Sql.SelectQuery();
+            DevExpress.DataAccess.Sql.AllColumns allColumns1 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table6 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.AllColumns allColumns2 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table7 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.AllColumns allColumns3 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table8 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.AllColumns allColumns4 = new DevExpress.DataAccess.Sql.AllColumns();
+            DevExpress.DataAccess.Sql.Table table9 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Join join1 = new DevExpress.DataAccess.Sql.Join();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo2 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.Join join2 = new DevExpress.DataAccess.Sql.Join();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo2 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo3 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.Join join3 = new DevExpress.DataAccess.Sql.Join();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo3 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo4 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo1 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo4 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo2 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo5 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo3 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo6 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo4 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo7 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
@@ -910,13 +924,13 @@
             this.xrRichText2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrRichText2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Rtf", "[sv_solucao]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Rtf", "[sv_servico]")});
             this.xrRichText2.Font = new DevExpress.Drawing.DXFont("Segoe UI", 9.75F);
             this.xrRichText2.LocationFloat = new DevExpress.Utils.PointFloat(0.001017253F, 244.2467F);
             this.xrRichText2.Name = "xrRichText2";
             this.xrRichText2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrRichText2.SerializableRtfString = resources.GetString("xrRichText2.SerializableRtfString");
-            this.xrRichText2.SizeF = new System.Drawing.SizeF(575.4954F, 112.4617F);
+            this.xrRichText2.SizeF = new System.Drawing.SizeF(575.4954F, 41.33667F);
             this.xrRichText2.StylePriority.UseBackColor = false;
             this.xrRichText2.StylePriority.UseBorders = false;
             // 
@@ -1968,6 +1982,8 @@
             selectQuery1.Columns.Add(column18);
             selectQuery1.Columns.Add(column19);
             selectQuery1.Columns.Add(column20);
+            selectQuery1.FilterString = "[tb_checklist.ch_tipo] = \'SAIDA\'";
+            selectQuery1.GroupFilterString = "";
             selectQuery1.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"155\" Height=\"424\" />";
             selectQuery1.Name = "tb_checklist";
             selectQuery1.Tables.Add(table1);
@@ -2037,7 +2053,7 @@
             selectQuery2.Name = "tb_clientes";
             selectQuery2.Tables.Add(table2);
             columnExpression36.ColumnName = "cf_id";
-            table3.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"264\" />";
+            table3.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"284\" />";
             table3.Name = "tb_condicoes_fisicas";
             columnExpression36.Table = table3;
             column36.Expression = columnExpression36;
@@ -2227,34 +2243,73 @@
             selectQuery5.MetaSerializable = "<Meta X=\"706\" Y=\"20\" Width=\"191\" Height=\"664\" />";
             selectQuery5.Name = "tb_servicos";
             selectQuery5.Tables.Add(table5);
-            customSqlQuery1.Name = "OrdemServicoDados";
-            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
+            table6.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"624\" />";
+            table6.Name = "tb_servicos";
+            allColumns1.Table = table6;
+            table7.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"364\" />";
+            table7.Name = "tb_clientes";
+            allColumns2.Table = table7;
+            table8.MetaSerializable = "<Meta X=\"340\" Y=\"30\" Width=\"125\" Height=\"464\" />";
+            table8.Name = "tb_checklist";
+            allColumns3.Table = table8;
+            table9.MetaSerializable = "<Meta X=\"495\" Y=\"30\" Width=\"125\" Height=\"284\" />";
+            table9.Name = "tb_condicoes_fisicas";
+            allColumns4.Table = table9;
+            selectQuery6.Columns.Add(allColumns1);
+            selectQuery6.Columns.Add(allColumns2);
+            selectQuery6.Columns.Add(allColumns3);
+            selectQuery6.Columns.Add(allColumns4);
+            selectQuery6.FilterString = "[tb_checklist.ch_tipo] = \'SAIDA\' And [tb_condicoes_fisicas.cf_tipo] = \'SAIDA\'";
+            selectQuery6.GroupFilterString = "";
+            selectQuery6.Name = "OrdemServicoDados";
+            relationColumnInfo1.NestedKeyColumn = "cl_id";
+            relationColumnInfo1.ParentKeyColumn = "sv_cl_idcliente";
+            join1.KeyColumns.Add(relationColumnInfo1);
+            join1.Nested = table7;
+            join1.Parent = table6;
+            relationColumnInfo2.NestedKeyColumn = "ch_sv_idservico";
+            relationColumnInfo2.ParentKeyColumn = "sv_id";
+            join2.KeyColumns.Add(relationColumnInfo2);
+            join2.Nested = table8;
+            join2.Parent = table6;
+            relationColumnInfo3.NestedKeyColumn = "cf_sv_idservico";
+            relationColumnInfo3.ParentKeyColumn = "sv_id";
+            join3.KeyColumns.Add(relationColumnInfo3);
+            join3.Nested = table9;
+            join3.Parent = table6;
+            selectQuery6.Relations.Add(join1);
+            selectQuery6.Relations.Add(join2);
+            selectQuery6.Relations.Add(join3);
+            selectQuery6.Tables.Add(table6);
+            selectQuery6.Tables.Add(table7);
+            selectQuery6.Tables.Add(table8);
+            selectQuery6.Tables.Add(table9);
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             selectQuery1,
             selectQuery2,
             selectQuery3,
             selectQuery4,
             selectQuery5,
-            customSqlQuery1});
+            selectQuery6});
             masterDetailInfo1.DetailQueryName = "tb_condicoes_fisicas";
-            relationColumnInfo1.NestedKeyColumn = "cf_sv_idservico";
-            relationColumnInfo1.ParentKeyColumn = "sv_id";
-            masterDetailInfo1.KeyColumns.Add(relationColumnInfo1);
+            relationColumnInfo4.NestedKeyColumn = "cf_sv_idservico";
+            relationColumnInfo4.ParentKeyColumn = "sv_id";
+            masterDetailInfo1.KeyColumns.Add(relationColumnInfo4);
             masterDetailInfo1.MasterQueryName = "tb_servicos";
             masterDetailInfo2.DetailQueryName = "tb_checklist";
-            relationColumnInfo2.NestedKeyColumn = "ch_sv_idservico";
-            relationColumnInfo2.ParentKeyColumn = "sv_id";
-            masterDetailInfo2.KeyColumns.Add(relationColumnInfo2);
+            relationColumnInfo5.NestedKeyColumn = "ch_sv_idservico";
+            relationColumnInfo5.ParentKeyColumn = "sv_id";
+            masterDetailInfo2.KeyColumns.Add(relationColumnInfo5);
             masterDetailInfo2.MasterQueryName = "tb_servicos";
             masterDetailInfo3.DetailQueryName = "tb_garantias";
-            relationColumnInfo3.NestedKeyColumn = "fk_servico_id";
-            relationColumnInfo3.ParentKeyColumn = "sv_id";
-            masterDetailInfo3.KeyColumns.Add(relationColumnInfo3);
+            relationColumnInfo6.NestedKeyColumn = "fk_servico_id";
+            relationColumnInfo6.ParentKeyColumn = "sv_id";
+            masterDetailInfo3.KeyColumns.Add(relationColumnInfo6);
             masterDetailInfo3.MasterQueryName = "tb_servicos";
             masterDetailInfo4.DetailQueryName = "tb_servicos";
-            relationColumnInfo4.NestedKeyColumn = "sv_cl_idcliente";
-            relationColumnInfo4.ParentKeyColumn = "cl_id";
-            masterDetailInfo4.KeyColumns.Add(relationColumnInfo4);
+            relationColumnInfo7.NestedKeyColumn = "sv_cl_idcliente";
+            relationColumnInfo7.ParentKeyColumn = "cl_id";
+            masterDetailInfo4.KeyColumns.Add(relationColumnInfo7);
             masterDetailInfo4.MasterQueryName = "tb_clientes";
             this.sqlDataSource1.Relations.AddRange(new DevExpress.DataAccess.Sql.MasterDetailInfo[] {
             masterDetailInfo1,
@@ -2268,7 +2323,7 @@
             this.pIDServico.Description = "Id do serviço";
             this.pIDServico.Name = "pIDServico";
             this.pIDServico.Type = typeof(int);
-            this.pIDServico.ValueInfo = "34000";
+            this.pIDServico.ValueInfo = "35029";
             this.pIDServico.Visible = false;
             // 
             // GroupFooter1

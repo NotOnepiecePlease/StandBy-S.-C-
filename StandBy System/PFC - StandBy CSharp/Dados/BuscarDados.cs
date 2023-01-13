@@ -13,6 +13,9 @@ using PFC___StandBy_CSharp.LockScreenAndroid;
 using PFC___StandBy_CSharp.Models;
 using System.Windows.Media.Media3D;
 using System.Runtime.Remoting.Contexts;
+using PFC___StandBy_CSharp.Utils;
+using static System.Enum;
+using static PFC___StandBy_CSharp.Enums.EnumStandby;
 
 // ReSharper disable All
 
@@ -636,56 +639,71 @@ namespace PFC___StandBy_CSharp.Dados
 
         public (tb_servicos, tb_checklist, tb_condicoes_fisicas) BuscarOSPelaID(int _idServico)
         {
-            tb_servicos servicoDados = null;
-            tb_checklist checklistDados = null;
-            tb_condicoes_fisicas condFisicasDados = null;
+            //tb_servicos servicoDados = null;
+            //tb_checklist checklistDados = null;
+            //tb_condicoes_fisicas condFisicasDados = null;
+            standby_orgContext context = new standby_orgContext();
+            tb_servicos serv_data = context.tb_servicos.Find(_idServico);
+            tb_checklist checklist_data = null;
+            tb_condicoes_fisicas condFisicas_data = null;
             try
             {
-                standby_orgContext context = new standby_orgContext();
-
-                //var teste = context.tb_servicos
-                //    .Join(context.tb_checklist, // the source table of the inner join
-                //        servC => servC.sv_id, // Select the primary key (the first part of the "on" clause in an sql "join" statement)
-                //        check => check.ch_sv_idservico, // Select the foreign key (the second part of the "on" clause)
-                //        (servC, check) => new { ServC = servC, Check = check })
-                //    .Join(context.tb_condicoes_fisicas,
-                //        servCondF => servCondF.ServC.sv_id,
-                //        condF => condF.cf_sv_idservico,
-                //        (servCondF, condF) => new { ServCondF = servCondF, CondF = condF })
-                //    .Where(serv => serv.ServCondF.ServC.sv_id == 34000).ToList();
-
-                var query = from servico in context.tb_servicos
-                    join checklist in context.tb_checklist
-                        on servico.sv_id equals checklist.ch_sv_idservico
-                    join condFisicas in context.tb_condicoes_fisicas
-                        on servico.sv_id equals condFisicas.cf_sv_idservico
-                    where servico.sv_id == _idServico
-                    select new { Servico = servico, Checklist = checklist, CondicoesFisicas = condFisicas };
-
-                var queryInnerjoin = query.ToList();
-
-                if (queryInnerjoin.Count == 0)
+                if (serv_data.sv_tipo_aparelho == GetName(typeof(Aparelho), Aparelho.Celular)) //No caso de pc e notebook, eles nao tem esses checklists abaixo.
                 {
-                    var queryNew =
-                        from servico in context.tb_servicos
-                        where servico.sv_id == _idServico
-                        select servico;
+                    checklist_data = context.tb_checklist
+                        .Where(x => x.ch_sv_idservico == _idServico && x.ch_tipo == Constantes.CHK_SAIDA)
+                        .FirstOrDefault();
 
-                    var servicoData = queryNew.First();
-                    servicoDados = servicoData;
-                    return (servicoDados, checklistDados, condFisicasDados);
+                    condFisicas_data = context.tb_condicoes_fisicas
+                        .Where(x => x.cf_sv_idservico == _idServico && x.cf_tipo == Constantes.CHK_SAIDA)
+                        .FirstOrDefault();
+
+                    if (checklist_data == null) //so verifico o checklist porque se tem checklist, tem condF.
+                    {
+                        checklist_data = context.tb_checklist
+                            .Where(x => x.ch_sv_idservico == _idServico && x.ch_tipo == Constantes.CHK_ENTRADA)
+                            .FirstOrDefault();
+
+                        condFisicas_data = context.tb_condicoes_fisicas
+                            .Where(x => x.cf_sv_idservico == _idServico && x.cf_tipo == Constantes.CHK_ENTRADA)
+                            .FirstOrDefault();
+                    }
                 }
 
-                servicoDados = queryInnerjoin[0].Servico;
-                checklistDados = queryInnerjoin[0].Checklist;
-                condFisicasDados = queryInnerjoin[0].CondicoesFisicas;
+                return (serv_data, checklist_data, condFisicas_data);
+
+                //var query = from servico in context.tb_servicos
+                //    join checklist in context.tb_checklist
+                //        on servico.sv_id equals checklist.ch_sv_idservico
+                //    join condFisicas in context.tb_condicoes_fisicas
+                //        on servico.sv_id equals condFisicas.cf_sv_idservico
+                //    where servico.sv_id == _idServico
+                //    select new { Servico = servico, Checklist = checklist, CondicoesFisicas = condFisicas };
+
+                //var queryInnerjoin = query.ToList();
+
+                //if (queryInnerjoin.Count == 0)
+                //{
+                //    var queryNew =
+                //        from servico in context.tb_servicos
+                //        where servico.sv_id == _idServico
+                //        select servico;
+
+                //    var servicoData = queryNew.First();
+                //    servicoDados = servicoData;
+                //    return (servicoDados, checklistDados, condFisicasDados);
+                //}
+
+                //servicoDados = queryInnerjoin[0].Servico;
+                //checklistDados = queryInnerjoin[0].Checklist;
+                //condFisicasDados = queryInnerjoin[0].CondicoesFisicas;
             }
             catch (Exception e)
             {
                 MessageBox.Show($"{e}");
             }
 
-            return (servicoDados, checklistDados, condFisicasDados);
+            return (serv_data, checklist_data, condFisicas_data);
         }
 
         #endregion Buscar OS pela ID (servico, condicao fisica, checklist) - Efcore

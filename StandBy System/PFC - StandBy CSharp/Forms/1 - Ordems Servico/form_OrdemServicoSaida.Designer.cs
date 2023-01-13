@@ -37,6 +37,7 @@
             this.lblIdCondicoesFisicas = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIdServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnTipoAparelho = new DevExpress.XtraEditors.SimpleButton();
+            this.picSenhaPattern = new System.Windows.Forms.PictureBox();
             this.lblIdCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbCliente = new Syncfusion.Windows.Forms.Tools.MultiColumnComboBox();
@@ -106,7 +107,6 @@
             this.separatorCPF = new Bunifu.UI.WinForms.BunifuSeparator();
             this.cmbCor = new Bunifu.UI.WinForms.BunifuDropdown();
             this.cmbMarca = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.picSenhaPattern = new System.Windows.Forms.PictureBox();
             this.txtSenhaDispositivo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtMei_SerialNumber = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtModelo = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -119,10 +119,12 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel_OrdemServCodigo = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel29 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDataOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel_FormOrdemServico.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).BeginInit();
@@ -134,7 +136,6 @@
             this.group_CondicoesFisicas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             this.group_InformacoesAparelho.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.panel_OrdemServCodigo.SuspendLayout();
             this.SuspendLayout();
@@ -147,6 +148,7 @@
             this.panel_FormOrdemServico.Controls.Add(this.lblIdCondicoesFisicas);
             this.panel_FormOrdemServico.Controls.Add(this.lblIdServico);
             this.panel_FormOrdemServico.Controls.Add(this.btnTipoAparelho);
+            this.panel_FormOrdemServico.Controls.Add(this.picSenhaPattern);
             this.panel_FormOrdemServico.Controls.Add(this.lblIdCliente);
             this.panel_FormOrdemServico.Controls.Add(this.lblCliente);
             this.panel_FormOrdemServico.Controls.Add(this.cmbCliente);
@@ -241,6 +243,17 @@
             this.btnTipoAparelho.Name = "btnTipoAparelho";
             this.btnTipoAparelho.Size = new System.Drawing.Size(38, 31);
             this.btnTipoAparelho.TabIndex = 76;
+            // 
+            // picSenhaPattern
+            // 
+            this.picSenhaPattern.BackColor = System.Drawing.Color.Gainsboro;
+            this.picSenhaPattern.Location = new System.Drawing.Point(1172, 499);
+            this.picSenhaPattern.Name = "picSenhaPattern";
+            this.picSenhaPattern.Size = new System.Drawing.Size(43, 37);
+            this.picSenhaPattern.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSenhaPattern.TabIndex = 31;
+            this.picSenhaPattern.TabStop = false;
+            this.picSenhaPattern.Visible = false;
             // 
             // lblIdCliente
             // 
@@ -1676,7 +1689,6 @@
             this.group_InformacoesAparelho.Controls.Add(this.separatorCPF);
             this.group_InformacoesAparelho.Controls.Add(this.cmbCor);
             this.group_InformacoesAparelho.Controls.Add(this.cmbMarca);
-            this.group_InformacoesAparelho.Controls.Add(this.picSenhaPattern);
             this.group_InformacoesAparelho.Controls.Add(this.txtSenhaDispositivo);
             this.group_InformacoesAparelho.Controls.Add(this.txtMei_SerialNumber);
             this.group_InformacoesAparelho.Controls.Add(this.txtModelo);
@@ -1838,16 +1850,6 @@
             this.cmbMarca.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbMarca.TextLeftMargin = 5;
             // 
-            // picSenhaPattern
-            // 
-            this.picSenhaPattern.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.picSenhaPattern.Location = new System.Drawing.Point(318, 192);
-            this.picSenhaPattern.Name = "picSenhaPattern";
-            this.picSenhaPattern.Size = new System.Drawing.Size(59, 50);
-            this.picSenhaPattern.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSenhaPattern.TabIndex = 31;
-            this.picSenhaPattern.TabStop = false;
-            // 
             // txtSenhaDispositivo
             // 
             this.txtSenhaDispositivo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -1867,7 +1869,7 @@
             this.txtSenhaDispositivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenhaDispositivo.MaxLength = 32767;
             this.txtSenhaDispositivo.Name = "txtSenhaDispositivo";
-            this.txtSenhaDispositivo.Size = new System.Drawing.Size(211, 30);
+            this.txtSenhaDispositivo.Size = new System.Drawing.Size(270, 30);
             this.txtSenhaDispositivo.TabIndex = 30;
             this.txtSenhaDispositivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2010,6 +2012,7 @@
             // panel_OrdemServCodigo
             // 
             this.panel_OrdemServCodigo.BackColor = System.Drawing.Color.DimGray;
+            this.panel_OrdemServCodigo.Controls.Add(this.bunifuCustomLabel29);
             this.panel_OrdemServCodigo.Controls.Add(this.lblDataOrdemServico);
             this.panel_OrdemServCodigo.Controls.Add(this.lblOrdemServico);
             this.panel_OrdemServCodigo.Location = new System.Drawing.Point(4, 4);
@@ -2017,12 +2020,23 @@
             this.panel_OrdemServCodigo.Size = new System.Drawing.Size(142, 51);
             this.panel_OrdemServCodigo.TabIndex = 0;
             // 
+            // bunifuCustomLabel29
+            // 
+            this.bunifuCustomLabel29.AutoSize = true;
+            this.bunifuCustomLabel29.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel29.ForeColor = System.Drawing.Color.Chartreuse;
+            this.bunifuCustomLabel29.Location = new System.Drawing.Point(49, -3);
+            this.bunifuCustomLabel29.Name = "bunifuCustomLabel29";
+            this.bunifuCustomLabel29.Size = new System.Drawing.Size(46, 17);
+            this.bunifuCustomLabel29.TabIndex = 68;
+            this.bunifuCustomLabel29.Text = "SAIDA";
+            // 
             // lblDataOrdemServico
             // 
             this.lblDataOrdemServico.AutoSize = true;
             this.lblDataOrdemServico.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.lblDataOrdemServico.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDataOrdemServico.Location = new System.Drawing.Point(7, 29);
+            this.lblDataOrdemServico.Location = new System.Drawing.Point(7, 32);
             this.lblDataOrdemServico.Name = "lblDataOrdemServico";
             this.lblDataOrdemServico.Size = new System.Drawing.Size(135, 17);
             this.lblDataOrdemServico.TabIndex = 66;
@@ -2034,7 +2048,7 @@
             this.lblOrdemServico.AutoSize = true;
             this.lblOrdemServico.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdemServico.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblOrdemServico.Location = new System.Drawing.Point(15, 0);
+            this.lblOrdemServico.Location = new System.Drawing.Point(15, 5);
             this.lblOrdemServico.Name = "lblOrdemServico";
             this.lblOrdemServico.Size = new System.Drawing.Size(108, 32);
             this.lblOrdemServico.TabIndex = 66;
@@ -2051,10 +2065,12 @@
             this.Name = "form_OrdemServicoSaida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_OrdemServicoSaida";
+            this.Shown += new System.EventHandler(this.form_OrdemServicoSaida_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_OrdemServicoSaida_KeyDown);
             this.panel_FormOrdemServico.ResumeLayout(false);
             this.panel_FormOrdemServico.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirServico)).EndInit();
@@ -2069,7 +2085,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
             this.group_InformacoesAparelho.ResumeLayout(false);
             this.group_InformacoesAparelho.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             this.panel_OrdemServCodigo.ResumeLayout(false);
             this.panel_OrdemServCodigo.PerformLayout();
@@ -2091,12 +2106,10 @@
         public Syncfusion.Windows.Forms.Tools.MultiColumnComboBox cmbCliente;
         private Bunifu.Framework.UI.BunifuImageButton btnConcluirImprimir;
         public Bunifu.Framework.UI.BunifuImageButton btnConcluirServico;
-        private Bunifu.Framework.UI.BunifuImageButton btnSalvarOrdemServico;
         public Bunifu.UI.WinForms.BunifuDropdown cmbStatusServico;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel28;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBuscaGoogle;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.GroupBox group_Checklist;
         public DevExpress.XtraEditors.ToggleSwitch switchChecklistAusente;
         public System.Windows.Forms.RichTextBox txtChecklistMotivoAusencia;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel27;
@@ -2129,7 +2142,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
         private System.Windows.Forms.GroupBox group_OutrasObservacoes;
         public System.Windows.Forms.RichTextBox txtObservacoes;
-        private System.Windows.Forms.GroupBox group_CondicoesFisicas;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator7;
         public Bunifu.UI.WinForms.BunifuDropdown cmbLenteCamera;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator6;
@@ -2170,5 +2182,9 @@
         private System.Windows.Forms.Panel panel_OrdemServCodigo;
         public Bunifu.Framework.UI.BunifuCustomLabel lblDataOrdemServico;
         public Bunifu.Framework.UI.BunifuCustomLabel lblOrdemServico;
+        public Bunifu.Framework.UI.BunifuImageButton btnSalvarOrdemServico;
+        public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel29;
+        public System.Windows.Forms.GroupBox group_Checklist;
+        public System.Windows.Forms.GroupBox group_CondicoesFisicas;
     }
 }

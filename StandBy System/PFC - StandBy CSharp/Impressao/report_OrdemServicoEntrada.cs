@@ -12,6 +12,5 @@ namespace PFC___StandBy_CSharp.Impressao
         {
             InitializeComponent();
         }
-
     }
 }

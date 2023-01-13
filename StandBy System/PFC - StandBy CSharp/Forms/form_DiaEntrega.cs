@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using PFC___StandBy_CSharp.Models;
-using static PFC___StandBy_CSharp.Enum.Enum;
+using static PFC___StandBy_CSharp.Enums.EnumStandby;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -49,7 +49,9 @@ namespace PFC___StandBy_CSharp.Forms
         /// <param name="_checklistDados">Dados do checklist</param>
         /// <param name="_condicoesFisicasDados">Dados das condicoes fisicas</param>
         /// <param name="_isAtualizacao">true = se o form for pra atualizar dados que ja existem | false = se o form for pra inserir dados que ainda nao existem</param>
-        public form_DiaEntrega(form_OrdemServicoEntrada _formServ, int[] _cor, ClienteEstrutura _clienteDados, ServicoEstrutura _servicoDados, ChecklistEstrutura _checklistDados, CondicoesFisicasEstrutura _condicoesFisicasDados, OrdemServico _tipo)
+        public form_DiaEntrega(form_OrdemServicoEntrada _formServ, int[] _cor, ClienteEstrutura _clienteDados,
+            ServicoEstrutura _servicoDados, ChecklistEstrutura _checklistDados,
+            CondicoesFisicasEstrutura _condicoesFisicasDados, OrdemServico _tipo)
         {
             InitializeComponent();
             ordemServico = _tipo;
@@ -75,6 +77,7 @@ namespace PFC___StandBy_CSharp.Forms
                 checkboxes[i].OnHoverUnchecked.BorderColor = Color.Gray;
                 checkboxes[i].Checked = false;
             }
+
             chk0d.Checked = true;
 
             btnConfirmarPrevisaoEntrega.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -160,6 +163,7 @@ namespace PFC___StandBy_CSharp.Forms
 
                 servicoDados.PrevisaoEntrega = previsaoEntrega;
             }
+
             servicoDados.ExistePrazo = _seExistePrazo;
             servicoDados.SenhaPatternAndroid = ConvertImageToByte(imagemSenhaPatternDoCliente);
 

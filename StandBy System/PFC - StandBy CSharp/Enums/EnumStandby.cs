@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PFC___StandBy_CSharp.Enum
+﻿namespace PFC___StandBy_CSharp.Enums
 {
     /// <summary>
     /// Tipos de aparelho
     /// Tipos de ordem de servico
     /// Tipos de checklist
     /// </summary>
-    public class Enum
+    public class EnumStandby
     {
         public enum Aparelho
         {

@@ -27,11 +27,24 @@ namespace PFC___StandBy_CSharp.Utils
         public const string INFOS_APARELHO_ITEM = "INFOS_APARELHO_ITEM";
         public static List<tb_comp_items> opcoes;
 
-        public static void IniciarOpcoesChecklistEntrada()//Inicializo no inicio e uso no restante das telas pra ganhar performance
+        public static void
+            IniciarOpcoesChecklistEntrada() //Inicializo no inicio e uso no restante das telas pra ganhar performance
         {
             opcoes = context.tb_comp_items.ToList();
         }
 
         #endregion Carregamento das opções de todos os combobox
+
+        #region Status dos servicos
+
+        //APROVADO
+        //AVALIAÇÃO
+        //CONCLUÍDO
+        //public const string STATUS_AGUARDANDO = "AGUARDANDO";
+        public const string STATUS_APROVADO = "APROVADO";
+        public const string STATUS_AVALIACAO = "AVALIAÇÃO";
+        public const string STATUS_CONCLUIDO = "CONCLUÍDO";
+
+        #endregion
     }
 }
