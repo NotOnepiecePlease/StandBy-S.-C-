@@ -63,16 +63,11 @@ namespace PFC___StandBy_CSharp.Forms
             darGarantia.ShowDialog();
         }
 
-        private void btnConcluirServico_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnSalvarOrdemServico_Click(object sender, EventArgs e)
         {
             SalvarOrdemServicoSaida();
             //ImprimirOrdemServicoSaida();
         }
-
 
         private void SalvarOrdemServicoSaida()
         {
