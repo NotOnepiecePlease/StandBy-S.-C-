@@ -11,60 +11,68 @@ Sistema de gerenciamento de faturamento, clientes, dispositivos e serviços para
 
 Este sistema foi desenvolvido ao gosto do cliente, totalmente customizado de acordo com as necessidades do mesmo, portanto se utilizado para outros fins ou outra assistência técnica, muito provavelmente será necessário fazer pequenos ajustes ou grandes mudanças.
 
-Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o desenvolvimento das minhas habilidades.
-&nbsp;
-&nbsp;
-**
+Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência e o desenvolvimento das minhas habilidades.
+
 ## CONCLUIDOS
 <b>== Modulo de Serviços </b>
 
-- [x] Cadastro de Serviços *****[OK]*****
-- fk_Cliente
+ - [x] Cadastro de Serviços ***[OK]***
+ - [x] Edição de Serviços ***[OK]***
+ - [x] Conclusão de Serviços ***[OK]***
+ - [x] Remoção de Serviços ***[OK]***
+-  Ordem de Serviço
+- Cliente_FK
+- Tipo do Aparelho (Celular, Desktop, Notebook)
+- Marca (Samsung, LG, etc...)
 - Aparelho (Modelo)
+- Cor
+- Serial Number
 - Defeito
+- Serviço feito
 - Senha (Texto)
 - Senha (Padrão Lock Screen Android)
 - Situação do Aparelho
-- Acessorios que vieram juntos.
---
-- [x] Edição de Serviços ***[OK]***
-- Data de Cadastro
-- Aparelho (Modelo)
-- Defeito
-- Senha (Texto)
-- Senha (Padrão Lock Screen Android)
-- Situação do Aparelho
-- Acessorios que vieram juntos.
-- Valor Serviço R$
-- Valor Peça R$
-- Lucro Serviço R$
-- Serviço Feito
-- Data Entrega/Data Analise
---
-- [x] Conclusão de Serviços ***[OK]***
-- [x] Remoção de Serviços ***[OK]***
-- [x] Exibição de Serviços ***[OK]***
-- [x] Busca de Serviços por Nome ***[OK]***
-- [x] Sistema RGB, altera as cores em todos os forms. ***[OK]***
-- [x] Exibição dos Gráficos semanais e mensais. ***[OK]***
-- [x] Sistema de Atraso. ***[OK]*** &nbsp;
-		- Mais de 12 horas para entrega = **VERDE**&nbsp;
-		- Entre 0 e 12 horas para a entrega = **LARANJA**&nbsp;
-		- Tempo de entrega finalizado = **VERMELHO**
-
+- Acessórios que vieram juntos.
+- Valor do Serviço
+- Valor da Peça
+- Lucro
+- Previsão de entrega
+- Relato do Cliente
+- Condições no balcão
+- Avaliação do Serviço
+ - [x] Exibição de Serviços ***[OK]***
+ - [x] Busca de Serviços por Nome ***[OK]***
+ - [x] Exibição dos Gráficos semanais e mensais. ***[OK]***
+ - [x] Sistema de Atraso. ***[OK]*** &nbsp;
+		- ATÉ 3 HORAS = **LARANJA**&nbsp;
+		- 24 HORAS = **AZUL**&nbsp;
+		- 48 HORAS = **VERDE**&nbsp;
+		- 5 DIAS = **VERMELHO**&nbsp;
+		- 15 DIAS = **CINZA**&nbsp;
+		
+---
+<b>== Ordens de Serviço ENTRADA/SAIDA</b>
+- [x] Cadastro da O.S de ENTRADA/SAIDA
+- [x] Alteração da O.S de ENTRADA/SAIDA
+- [x] Impressão para assinatura da O.S de ENTRADA/SAIDA
+---
+<b>== Edição dos items das Comboboxs</b>
+- [x] Cadastro de novas opções 
+- [x] Remoção das opções
+---
 <b>== Modulo de Clientes</b>
-- [x] Cadastro de Clientes (Nome, Telefone Principal, Telefone Alternativo, CPF/CNPJ, Nome Recado, Parentesco Recado, Sexo, Data Nascimento, CEP, Endereço, Complemento, Bairro, Cidade e Estado) ***[OK]***
-- [x] Edição de Clientes ***[OK]***
-- [x] Remoção de Clientes ***[OK]***
-- [x] Exibição de Clientes ***[OK]***
-- [x] Busca de Clientes por Nome ***[OK]***
-- [x] **Clientes nao podem ser removidos se existirem serviços vinculados** ***[OK]***
-
+ - [x] Cadastro de Clientes (Nome, Telefone Principal, Telefone Alternativo, CPF/CNPJ, Nome Recado, Parentesco Recado, Sexo, Data Nascimento, CEP, Endereço, Complemento, Bairro, Cidade e Estado) ***[OK]***
+ - [x] Edição de Clientes ***[OK]***
+ - [x] Remoção de Clientes ***[OK]***
+ - [x] Exibição de Clientes ***[OK]***
+ - [x] Busca de Clientes por Nome ***[OK]***
+ - [x] **Clientes nao podem ser removidos se existirem serviços vinculados** ***[OK]***
+---
 <b>== Modulo de Conclusões</b>
 - [x] Cancelamento da conclusão de um serviço ***[OK]***
 - [x] Busca por serviços concluídos ***[OK]***
 - [x] Ver garantia do serviço ***[OK]***
-
+---
 <b>== Modulo de Lucros/Gastos</b>
 - [x] Busca dos lucros entre datas determinadas ***[OK]***
 - [x] Cadastro de gastos com a empresa ***[OK]***
@@ -72,27 +80,22 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 - [x] Busca de dados entre datas
 - [x] Cadastro de gastos temporários ***[OK]***
 - [x] Calculo dos lucros do mes atual automaticamente ***[OK]***
-
+---
 <b>== Graficos</b>
 - [x] Dados dos lucros semanais ***[OK]***
 - [x] Dados dos lucros mensais ***[OK]***
 - [x] Dados dos lucros anuais ***[OK]***
-
+---
 <b>== Tela de Anotações</b>
 - [x] Inserir anotações ***[OK]***
 - [x] Abrir anotações salvas ***[OK]***
 - [x] Salvar anotações ***[OK]***
 - [x] Customização do bloco de notas para atender o cliente. ***[OK]***
-
-<b>== Modulo de Impressão</b>
-- [x] Imprimir nota nao fiscal. ***[OK]***
-- [x] Dados gerados automaticamente de acordo com o serviço ***[OK]***
-- [x] Dados podem ser editados para customização da nota. ***[OK]***
-
+---
 <b>== Modulo de Garantias</b>
 - [x] Adicionar quantidade em dias de garantia para o cliente. ***[OK]***
 - [x] Tela para verificação das garantias. ***[OK]***
-
+---
 <b>== Modulo de Update</b>
 - [x] Verificação de Versão na nuvem. ***[OK]***
 - [x] Automaticamente baixa e instala o sistema. ***[OK]***
@@ -108,10 +111,32 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 # **TELA PRINCIPAL**![alt text](https://i.imgur.com/B1CszX3.png)
 &nbsp;
 &nbsp;
-# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/fnqyG1e.png)
+# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/mcktnNm.png)
 &nbsp;
 &nbsp;
-# EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/PFAHkj1.png)
+# EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/qICwKWk.png)
+&nbsp;
+&nbsp;
+# TELA DE COMPRAS![alt text](https://i.imgur.com/Tsw78mw.png)
+&nbsp;
+&nbsp;
+# TELA DE PAGAMENTO
+![](https://i.imgur.com/yYsmh2o.png)
+&nbsp;
+&nbsp;
+# O.S - ENTRADA ![alt text](https://i.imgur.com/xZil4ql.png)
+&nbsp;
+&nbsp;
+# IMPRESSÃO O.S - ENTRADA![alt text](https://i.imgur.com/N5YNqEt.png)
+&nbsp;
+&nbsp;
+# O.S - SAIDA![alt text](https://i.imgur.com/w6Om1sq.png)
+&nbsp;
+&nbsp;
+# IMPRESSÃO O.S - SAIDA![alt text](https://i.imgur.com/n0EE5Ir.png)
+&nbsp;
+&nbsp;
+# CONFIG - ITEMS DAS COMBOBOX's![alt text](https://i.imgur.com/M5jQYf8.png)
 &nbsp;
 &nbsp;
 # CADASTRO DE CLIENTE![alt text](https://i.imgur.com/mG8e6jn.png)
@@ -139,12 +164,6 @@ Sistema desenvolvido por mim sem fins lucrativos, apenas por experiência de o d
 
 # MODULO DE ANOTAÇÕES INTEGRADO AO SISTEMA 
 ![enter image description here](https://i.imgur.com/8GrEuzw.gif)
-&nbsp;
-&nbsp;
-
-
-# MODULO DE IMPRESSÃO INTEGRADO AO SISTEMA 
-![enter image description here](https://i.imgur.com/XyqGfLo.gif)
 &nbsp;
 &nbsp;
 
