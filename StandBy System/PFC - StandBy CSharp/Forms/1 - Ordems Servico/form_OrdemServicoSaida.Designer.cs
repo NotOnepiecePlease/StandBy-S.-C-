@@ -321,7 +321,6 @@
             this.btnConcluirServico.TabStop = false;
             this.btnConcluirServico.Visible = false;
             this.btnConcluirServico.Zoom = 15;
-            this.btnConcluirServico.Click += new System.EventHandler(this.btnConcluirServico_Click);
             // 
             // btnSalvarOrdemServico
             // 

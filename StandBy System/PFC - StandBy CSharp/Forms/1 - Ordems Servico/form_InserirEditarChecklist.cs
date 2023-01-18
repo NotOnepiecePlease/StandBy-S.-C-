@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.UI.WinForms;
 using DevExpress.Utils.Extensions;
+using DevExpress.XtraEditors;
 using PFC___StandBy_CSharp.Context;
 using PFC___StandBy_CSharp.Enums;
 using static PFC___StandBy_CSharp.Enums.EnumStandby;
@@ -228,12 +229,20 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     if (control is BunifuDropdown && control.Name.StartsWith("cmbChecklist"))
                     {
                         control.Enabled = false;
+                        control.Text = string.Empty;
                     }
                     else if (control.Name == "txtChecklistObservacoes")
                     {
-                        var richTextBox = (RichTextBox)control;
+                        var richTextBox = (MemoEdit)control;
                         control.BackColor = Color.FromArgb(64, 64, 64);
+                        control.Text = string.Empty;
                         richTextBox.ReadOnly = true;
+                    }
+                    else if (control.Name == "txtChecklistMotivoAusencia")
+                    {
+                        var richTextBox = (MemoEdit)control;
+                        control.BackColor = Color.FromArgb(23, 23, 36);
+                        richTextBox.ReadOnly = false;
                     }
                 }
             }
@@ -247,9 +256,16 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     }
                     else if (control.Name == "txtChecklistObservacoes")
                     {
-                        var richTextBox = (RichTextBox)control;
+                        var richTextBox = (MemoEdit)control;
                         control.BackColor = Color.FromArgb(23, 23, 36);
                         richTextBox.ReadOnly = false;
+                    }
+                    else if (control.Name == "txtChecklistMotivoAusencia")
+                    {
+                        var richTextBox = (MemoEdit)control;
+                        control.BackColor = Color.FromArgb(64, 64, 64);
+                        control.Text = string.Empty;
+                        richTextBox.ReadOnly = true;
                     }
                 }
             }

@@ -1217,7 +1217,6 @@
             this.btnConcluirImprimir.TabStop = false;
             this.btnConcluirImprimir.Visible = false;
             this.btnConcluirImprimir.Zoom = 15;
-            this.btnConcluirImprimir.Click += new System.EventHandler(this.btnConcluirImprimir_Click);
             // 
             // btnConcluirServico
             // 

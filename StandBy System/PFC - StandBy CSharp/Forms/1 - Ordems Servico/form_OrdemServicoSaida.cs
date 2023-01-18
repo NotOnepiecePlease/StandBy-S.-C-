@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Bunifu.UI.WinForms;
 using DevExpress.XtraEditors;
 using PFC___StandBy_CSharp.Context;
+using PFC___StandBy_CSharp.Dados;
 using PFC___StandBy_CSharp.Models;
 using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.Utils;
@@ -24,6 +25,7 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_OrdemServicoSaida : Form
     {
         private MensagensSucesso ms = new MensagensSucesso();
+        AlterarDados ad = new AlterarDados();
 
         public form_OrdemServicoSaida()
         {
@@ -47,7 +49,18 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnConcluirImprimir_Click(object sender, EventArgs e)
         {
             SalvarOrdemServicoSaida();
+            InserirGarantia();
+            ad.ConcluirServicos(Convert.ToInt32(lblIdServico.Text));
             ImprimirOrdemServicoSaida();
+            ms.ConcluirServicoSucesso();
+        }
+
+        private void InserirGarantia()
+        {
+            form_QntdGarantia darGarantia = new form_QntdGarantia(new[] { 255, 0, 103 });
+            darGarantia.lblIDServico.Text = lblIdServico.Text;
+            darGarantia.lblIDCliente.Text = lblIdCliente.Text;
+            darGarantia.ShowDialog();
         }
 
         private void btnConcluirServico_Click(object sender, EventArgs e)
@@ -59,6 +72,7 @@ namespace PFC___StandBy_CSharp.Forms
             SalvarOrdemServicoSaida();
             //ImprimirOrdemServicoSaida();
         }
+
 
         private void SalvarOrdemServicoSaida()
         {
@@ -77,13 +91,10 @@ namespace PFC___StandBy_CSharp.Forms
             servico.sv_marca = string.IsNullOrWhiteSpace(cmbMarca.Text) ? null : cmbMarca.Text;
             servico.sv_aparelho = txtModelo.Text;
             servico.sv_cor = string.IsNullOrWhiteSpace(cmbCor.Text) ? null : cmbCor.Text;
-            servico.sv_mei_serialnumber =
-                string.IsNullOrWhiteSpace(txtMei_SerialNumber.Text) ? null : txtMei_SerialNumber.Text;
+            servico.sv_mei_serialnumber = string.IsNullOrWhiteSpace(txtMei_SerialNumber.Text) ? null : txtMei_SerialNumber.Text;
             servico.sv_senha = txtSenhaDispositivo.Text;
-            servico.sv_senha_pattern = picSenhaPattern.Image != null
-                ? ConvertImage.ConvertImageToByte(picSenhaPattern.Image)
-                : null;
-            servico.sv_status = 0; //Concluido
+            servico.sv_senha_pattern = picSenhaPattern.Image != null ? ConvertImage.ConvertImageToByte(picSenhaPattern.Image) : null;
+            //servico.sv_status = 0; //Concluido
             servico.sv_situacao = string.IsNullOrWhiteSpace(txtObservacoes.Text) ? null : txtObservacoes.Text;
             servico.sv_servico = string.IsNullOrWhiteSpace(txtSolucao.Text) ? null : txtSolucao.Text;
             servico.sv_data_conclusao = DateTime.Now;
@@ -152,15 +163,13 @@ namespace PFC___StandBy_CSharp.Forms
 
             //Ternario aninhado basicamente para dizer "Se o switch ausente ta on, significa que o valor fica null, caso nao, ele verifica se o campo ta vazio e poem null"
             checklist.ch_ausente = switchChecklistAusente.IsOn;
-            checklist.ch_motivo_ausencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text)
-                ? null
-                : txtChecklistMotivoAusencia.Text;
+            checklist.ch_motivo_ausencia = string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text) ? null : txtChecklistMotivoAusencia.Text;
 
             standbyContext.tb_checklist.Update(checklist);
             standbyContext.tb_servicos.Update(servico);
             standbyContext.tb_condicoes_fisicas.Update(condFisicas);
             standbyContext.SaveChanges();
-            ms.ConcluirServicoSucesso();
+            //ms.ConcluirServicoSucesso();
             this.Close();
         }
 
@@ -207,7 +216,7 @@ namespace PFC___StandBy_CSharp.Forms
                     }
                     else if (control.Name == "txtChecklistObservacoes")
                     {
-                        var richTextBox = (RichTextBox)control;
+                        var richTextBox = (MemoEdit)control;
                         control.BackColor = Color.FromArgb(64, 64, 64);
                         control.Text = string.Empty;
                         richTextBox.ReadOnly = true;
@@ -230,7 +239,7 @@ namespace PFC___StandBy_CSharp.Forms
                     }
                     else if (control.Name == "txtChecklistObservacoes")
                     {
-                        var richTextBox = (RichTextBox)control;
+                        var richTextBox = (MemoEdit)control;
                         control.BackColor = Color.FromArgb(23, 23, 36);
                         richTextBox.ReadOnly = false;
                     }

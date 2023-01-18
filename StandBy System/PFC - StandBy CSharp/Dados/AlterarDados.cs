@@ -476,7 +476,13 @@ namespace PFC___StandBy_CSharp.Dados
                             !string.IsNullOrWhiteSpace(_form.cmbBotoes.Text) ||
                             !string.IsNullOrWhiteSpace(_form.cmbLenteCamera.Text))
                         {
+                            tb_servicos servico = context.tb_servicos.Find(Convert.ToInt32(_form.lblIdServico.Text));
                             c = new tb_condicoes_fisicas();
+
+                            c.cf_ordem_serv = servico.sv_ordem_serv;
+                            c.cf_data = servico.sv_data;
+                            c.cf_sv_idservico = servico.sv_id;
+                            c.cf_tipo = Constantes.CHK_ENTRADA;
                             c.cf_pelicula = _form.cmbPelicula.Text;
                             c.cf_tela = _form.cmbTela.Text;
                             c.cf_tampa = _form.cmbTampa.Text;
@@ -663,5 +669,24 @@ namespace PFC___StandBy_CSharp.Dados
         }
 
         #endregion Atualizar Condicoes Fisicas
+
+        #region Concluir Serviço (Efcore)
+
+        private void ConcluirServico(int _idServico)
+        {
+            try
+            {
+                standby_orgContext context = new standby_orgContext();
+                tb_servicos servico = context.tb_servicos.Find(_idServico);
+                servico.sv_status = 0;
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                mErro.ErroAoConcluirServicoEfcore(e);
+            }
+        }
+
+        #endregion
     }
 }

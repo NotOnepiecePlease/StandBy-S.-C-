@@ -357,11 +357,6 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             }
         }
 
-
-        private void btnConcluirImprimir_Click(object sender, EventArgs e)
-        {
-        }
-
         private void cmbStatusServico_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboboxStatus.MudarCor(cmbStatusServico);

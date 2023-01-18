@@ -167,6 +167,12 @@ namespace PFC___StandBy_CSharp.MsgBox
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        public void ErroAoConcluirServicoEfcore(Exception e)
+        {
+            MessageBox.Show("(OR-SV22)Erro ao concluir serviço!\nERRO: " + e + "", "ERRO",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         #endregion ORDENS DE SERVICO
 
         #region COMPRAS/PECAS

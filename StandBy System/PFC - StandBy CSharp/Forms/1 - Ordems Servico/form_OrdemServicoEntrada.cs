@@ -264,6 +264,44 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void SalvarOrdemServico()
         {
+            if (ValidarCampos() == true)
+            {
+                bool isExisteOrdemServico =
+                    verifExistencia.VerificarExistenciaOrdemServico(
+                        Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ')));
+                if (isExisteOrdemServico == true)
+                {
+                    bool isExisteCondFisicasChecklist =
+                        verifExistencia.VerificarExistenciaCondFisicasChecklist(Convert.ToInt32(lblIdServico.Text));
+                    if (isExisteCondFisicasChecklist == true)
+                    {
+                        //InserirOrdemServico(OrdemServico.AtualizarTudo);
+                        AtualizarOrdemServicoEntradaExistente();
+                    }
+                    else
+                    {
+                        InserirOrdemServico(OrdemServico.ExisteApenasServico);
+                    }
+                }
+                else
+                {
+                    InserirOrdemServico(OrdemServico.NovaInsercao);
+                }
+
+                if (ultimaOrdemServicoID != 0)
+                {
+                    standby_orgContext context = new standby_orgContext();
+                    lblIdServico.Text = context.tb_servicos.First(x => x.sv_ordem_serv == ultimaOrdemServicoID).sv_id
+                        .ToString();
+                }
+
+                this.Close();
+            }
+        }
+
+        private bool ValidarCampos()
+        {
+            bool isValidado = false;
             //Validacao dos campos de condicoes fisicas, verificando se pelo menos 1 possui dados.
             int camposCondFisicasSemDados = 0;
             foreach (Control control in group_CondicoesFisicas.Controls)
@@ -289,16 +327,19 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 MessageBox.Show(@"Voce esqueceu de selecionar a marca do aparelho", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return isValidado;
             }
             else if (string.IsNullOrWhiteSpace(txtModelo.Text))
             {
                 MessageBox.Show(@"Voce esqueceu de selecionar o modelo do aparelho", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return isValidado;
             }
             else if (camposCondFisicasSemDados == 6)
             {
                 MessageBox.Show(@"Voce deve preencher ao menos um campo das condições fisicas do aparelho.", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return isValidado;
             }
             else if (camposChecklistSemDados == 12)
             {
@@ -306,41 +347,16 @@ namespace PFC___StandBy_CSharp.Forms
                     @"Voce deve preencher ao menos um campo de checklist do aparelho ou marcar a opção 'Impossivel fazer checklist'",
                     "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return isValidado;
             }
             else if (switchChecklistAusente.IsOn == true && string.IsNullOrWhiteSpace(txtChecklistMotivoAusencia.Text))
             {
                 MessageBox.Show(@"Especifique o motivo para a ausência do checklist", "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return isValidado;
             }
-            else
-            {
-                bool isExisteOrdemServico =
-                    verifExistencia.VerificarExistenciaOrdemServico(
-                        Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ')));
-                if (isExisteOrdemServico == true)
-                {
-                    bool isExisteCondFisicasChecklist =
-                        verifExistencia.VerificarExistenciaCondFisicasChecklist(Convert.ToInt32(lblIdServico.Text));
-                    if (isExisteCondFisicasChecklist == true)
-                    {
-                        //InserirOrdemServico(OrdemServico.AtualizarTudo);
-                        AtualizarOrdemServicoEntradaExistente();
-                    }
-                    else
-                    {
-                        InserirOrdemServico(OrdemServico.ExisteApenasServico);
-                    }
-                }
-                else
-                {
-                    InserirOrdemServico(OrdemServico.NovaInsercao);
-                }
 
-                standby_orgContext context = new standby_orgContext();
-                lblIdServico.Text = context.tb_servicos.First(x => x.sv_ordem_serv == ultimaOrdemServicoID).sv_id
-                    .ToString();
-                this.Close();
-            }
+            return isValidado = true;
         }
 
         private void InserirOrdemServico(OrdemServico _tipo)
@@ -651,32 +667,35 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void SalvarImprimirOrdemServico()
         {
-            if (MessageBox.Show(@"Deseja imprimir a Ordem de Serviço - ENTRADA?", @"CONFIRMAÇÃO",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.No)
+            if (ValidarCampos() == true)
             {
-                try
+                if (MessageBox.Show(@"Deseja imprimir a Ordem de Serviço - ENTRADA?", @"CONFIRMAÇÃO",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) != DialogResult.No)
                 {
-                    SalvarOrdemServico();
-                    report_OrdemServicoEntrada report = new report_OrdemServicoEntrada();
-                    report.Parameters["pIDServico"].Value = Convert.ToInt32(lblIdServico.Text);
-                    //report.Parameters["clienteID"].Visible = false;
-                    report.PrintingSystem.ShowPrintStatusDialog = false;
-                    //documentViewer1.DocumentSource = report;
-                    report.CreateDocument();
-                    PrintToolBase tool = new PrintToolBase(report.PrintingSystem);
-                    //tool.PrinterSettings.
-                    tool.Print("Microsoft Print to PDF");
-                    //using (var printTool = new DevExpress.XtraReports.UI.ReportPrintTool(report))
-                    //{
-                    //    //   printTool.Print(sPrinterDeliveryTkt);
-                    //    printTool.Report.CreateDocument(false); // <- ADD THIS LINE
-                    //    printTool.PrintingSystem.ExportToPdf(@"teste.pdf");
-                    //}
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.ToString());
+                    try
+                    {
+                        SalvarOrdemServico();
+                        report_OrdemServicoEntrada report = new report_OrdemServicoEntrada();
+                        report.Parameters["pIDServico"].Value = Convert.ToInt32(lblIdServico.Text);
+                        //report.Parameters["clienteID"].Visible = false;
+                        report.PrintingSystem.ShowPrintStatusDialog = false;
+                        //documentViewer1.DocumentSource = report;
+                        report.CreateDocument();
+                        PrintToolBase tool = new PrintToolBase(report.PrintingSystem);
+                        //tool.PrinterSettings.
+                        tool.Print("Microsoft Print to PDF");
+                        //using (var printTool = new DevExpress.XtraReports.UI.ReportPrintTool(report))
+                        //{
+                        //    //   printTool.Print(sPrinterDeliveryTkt);
+                        //    printTool.Report.CreateDocument(false); // <- ADD THIS LINE
+                        //    printTool.PrintingSystem.ExportToPdf(@"teste.pdf");
+                        //}
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.ToString());
+                    }
                 }
             }
         }
@@ -695,7 +714,7 @@ namespace PFC___StandBy_CSharp.Forms
                     }
                     else if (control.Name == "txtChecklistObservacoes")
                     {
-                        var richTextBox = (RichTextBox)control;
+                        var richTextBox = (MemoEdit)control;
                         control.BackColor = Color.FromArgb(64, 64, 64);
                         control.Text = string.Empty;
                         richTextBox.ReadOnly = true;
@@ -718,7 +737,7 @@ namespace PFC___StandBy_CSharp.Forms
                     }
                     else if (control.Name == "txtChecklistObservacoes")
                     {
-                        var richTextBox = (RichTextBox)control;
+                        var richTextBox = (MemoEdit)control;
                         control.BackColor = Color.FromArgb(23, 23, 36);
                         richTextBox.ReadOnly = false;
                     }

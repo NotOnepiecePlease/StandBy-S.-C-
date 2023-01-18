@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_InserirEditarChecklist));
             this.switchChecklistAusente = new DevExpress.XtraEditors.ToggleSwitch();
-            this.txtChecklistMotivoAusencia = new System.Windows.Forms.RichTextBox();
             this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel25 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel26 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -38,7 +37,6 @@
             this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistBluetooth = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel24 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtChecklistObservacoes = new System.Windows.Forms.RichTextBox();
             this.cmbChecklistAltoFaltante = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistWifi = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -65,7 +63,11 @@
             this.lblIdServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDataCad = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.txtChecklistObservacoes = new DevExpress.XtraEditors.MemoEdit();
+            this.txtChecklistMotivoAusencia = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // switchChecklistAusente
@@ -85,19 +87,6 @@
             this.switchChecklistAusente.Size = new System.Drawing.Size(66, 32);
             this.switchChecklistAusente.TabIndex = 6;
             this.switchChecklistAusente.Toggled += new System.EventHandler(this.switchChecklistAusente_Toggled);
-            // 
-            // txtChecklistMotivoAusencia
-            // 
-            this.txtChecklistMotivoAusencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtChecklistMotivoAusencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtChecklistMotivoAusencia.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtChecklistMotivoAusencia.ForeColor = System.Drawing.Color.White;
-            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(23, 556);
-            this.txtChecklistMotivoAusencia.MaxLength = 4000;
-            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
-            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 66);
-            this.txtChecklistMotivoAusencia.TabIndex = 67;
-            this.txtChecklistMotivoAusencia.Text = "O Aparelho chegou totalmente apagado";
             // 
             // bunifuCustomLabel27
             // 
@@ -237,19 +226,6 @@
             this.bunifuCustomLabel24.Size = new System.Drawing.Size(87, 19);
             this.bunifuCustomLabel24.TabIndex = 44;
             this.bunifuCustomLabel24.Text = "BLUETOOTH";
-            // 
-            // txtChecklistObservacoes
-            // 
-            this.txtChecklistObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtChecklistObservacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtChecklistObservacoes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtChecklistObservacoes.ForeColor = System.Drawing.Color.White;
-            this.txtChecklistObservacoes.Location = new System.Drawing.Point(23, 427);
-            this.txtChecklistObservacoes.MaxLength = 4000;
-            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
-            this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
-            this.txtChecklistObservacoes.TabIndex = 6;
-            this.txtChecklistObservacoes.Text = "O Microfone funciona bem, porem aparenta estar desgastado";
             // 
             // cmbChecklistAltoFaltante
             // 
@@ -785,7 +761,7 @@
             // 
             this.btnSalvarChecklist.Appearance.Options.UseTextOptions = true;
             this.btnSalvarChecklist.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.btnSalvarChecklist.Location = new System.Drawing.Point(23, 634);
+            this.btnSalvarChecklist.Location = new System.Drawing.Point(23, 641);
             this.btnSalvarChecklist.Name = "btnSalvarChecklist";
             this.btnSalvarChecklist.Size = new System.Drawing.Size(334, 37);
             this.btnSalvarChecklist.TabIndex = 81;
@@ -828,6 +804,7 @@
             this.lblIdServico.Size = new System.Drawing.Size(61, 17);
             this.lblIdServico.TabIndex = 84;
             this.lblIdServico.Text = "IdServico";
+            this.lblIdServico.Visible = false;
             // 
             // lblOrdemServico
             // 
@@ -839,6 +816,7 @@
             this.lblOrdemServico.Size = new System.Drawing.Size(25, 17);
             this.lblOrdemServico.TabIndex = 85;
             this.lblOrdemServico.Text = "OS";
+            this.lblOrdemServico.Visible = false;
             // 
             // lblDataCad
             // 
@@ -850,6 +828,25 @@
             this.lblDataCad.Size = new System.Drawing.Size(64, 17);
             this.lblDataCad.TabIndex = 86;
             this.lblDataCad.Text = "Data Serv";
+            this.lblDataCad.Visible = false;
+            // 
+            // txtChecklistObservacoes
+            // 
+            this.txtChecklistObservacoes.Location = new System.Drawing.Point(23, 422);
+            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
+            this.txtChecklistObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistObservacoes.Properties.Appearance.Options.UseBackColor = true;
+            this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 71);
+            this.txtChecklistObservacoes.TabIndex = 87;
+            // 
+            // txtChecklistMotivoAusencia
+            // 
+            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(23, 559);
+            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
+            this.txtChecklistMotivoAusencia.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistMotivoAusencia.Properties.Appearance.Options.UseBackColor = true;
+            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 69);
+            this.txtChecklistMotivoAusencia.TabIndex = 88;
             // 
             // form_InserirEditarChecklist
             // 
@@ -857,6 +854,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(378, 690);
+            this.Controls.Add(this.txtChecklistMotivoAusencia);
+            this.Controls.Add(this.txtChecklistObservacoes);
             this.Controls.Add(this.lblDataCad);
             this.Controls.Add(this.lblOrdemServico);
             this.Controls.Add(this.lblIdServico);
@@ -864,8 +863,6 @@
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.btnSalvarChecklist);
             this.Controls.Add(this.switchChecklistAusente);
-            this.Controls.Add(this.txtChecklistMotivoAusencia);
-            this.Controls.Add(this.txtChecklistObservacoes);
             this.Controls.Add(this.bunifuCustomLabel27);
             this.Controls.Add(this.bunifuCustomLabel13);
             this.Controls.Add(this.bunifuCustomLabel25);
@@ -901,6 +898,8 @@
             this.Shown += new System.EventHandler(this.form_InserirEditarChecklist_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_InserirEditarChecklist_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -908,7 +907,6 @@
 
         #endregion
         public DevExpress.XtraEditors.ToggleSwitch switchChecklistAusente;
-        public System.Windows.Forms.RichTextBox txtChecklistMotivoAusencia;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel27;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel25;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel26;
@@ -916,7 +914,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel23;
         public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBluetooth;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel24;
-        public System.Windows.Forms.RichTextBox txtChecklistObservacoes;
         public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistAltoFaltante;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
         public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistWifi;
@@ -943,5 +940,7 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdServico;
         public Bunifu.Framework.UI.BunifuCustomLabel lblOrdemServico;
         public Bunifu.Framework.UI.BunifuCustomLabel lblDataCad;
+        public DevExpress.XtraEditors.MemoEdit txtChecklistObservacoes;
+        private DevExpress.XtraEditors.MemoEdit txtChecklistMotivoAusencia;
     }
 }
