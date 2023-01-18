@@ -93,6 +93,16 @@ namespace PFC___StandBy_CSharp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap about_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("about_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap acessorios_512px {
             get {
                 object obj = ResourceManager.GetObject("acessorios_512px", resourceCulture);
@@ -176,6 +186,26 @@ namespace PFC___StandBy_CSharp.Properties {
         public static System.Drawing.Bitmap birthday_cake_20px {
             get {
                 object obj = ResourceManager.GetObject("birthday_cake_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap bottomrightverticalinside_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("bottomrightverticalinside_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap bottomrightverticalinside_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("bottomrightverticalinside_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

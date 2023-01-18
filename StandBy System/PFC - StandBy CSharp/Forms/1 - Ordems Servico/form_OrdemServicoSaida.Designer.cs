@@ -32,7 +32,7 @@
             Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
             this.panel_FormOrdemServico = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtSolucao = new System.Windows.Forms.RichTextBox();
+            this.txtSolucao = new DevExpress.XtraEditors.MemoEdit();
             this.lblIdChecklist = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIdCondicoesFisicas = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIdServico = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -49,8 +49,8 @@
             this.txtBuscaGoogle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.group_Checklist = new System.Windows.Forms.GroupBox();
+            this.txtChecklistMotivoAusencia = new DevExpress.XtraEditors.MemoEdit();
             this.switchChecklistAusente = new DevExpress.XtraEditors.ToggleSwitch();
-            this.txtChecklistMotivoAusencia = new System.Windows.Forms.RichTextBox();
             this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel25 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel26 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -80,7 +80,7 @@
             this.cmbChecklistBiometria = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.group_OutrasObservacoes = new System.Windows.Forms.GroupBox();
-            this.txtObservacoes = new System.Windows.Forms.RichTextBox();
+            this.txtObservacoes = new DevExpress.XtraEditors.MemoEdit();
             this.group_CondicoesFisicas = new System.Windows.Forms.GroupBox();
             this.bunifuSeparator7 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.cmbLenteCamera = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -124,6 +124,7 @@
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel_FormOrdemServico.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSolucao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
@@ -131,8 +132,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.group_Checklist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
             this.group_OutrasObservacoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservacoes.Properties)).BeginInit();
             this.group_CondicoesFisicas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             this.group_InformacoesAparelho.SuspendLayout();
@@ -186,16 +189,12 @@
             // 
             // txtSolucao
             // 
-            this.txtSolucao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtSolucao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSolucao.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.txtSolucao.ForeColor = System.Drawing.Color.White;
-            this.txtSolucao.Location = new System.Drawing.Point(16, 22);
-            this.txtSolucao.MaxLength = 4000;
+            this.txtSolucao.Location = new System.Drawing.Point(16, 19);
             this.txtSolucao.Name = "txtSolucao";
-            this.txtSolucao.Size = new System.Drawing.Size(745, 247);
-            this.txtSolucao.TabIndex = 5;
-            this.txtSolucao.Text = "";
+            this.txtSolucao.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtSolucao.Properties.Appearance.Options.UseBackColor = true;
+            this.txtSolucao.Size = new System.Drawing.Size(745, 248);
+            this.txtSolucao.TabIndex = 0;
             // 
             // lblIdChecklist
             // 
@@ -431,8 +430,8 @@
             // group_Checklist
             // 
             this.group_Checklist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.group_Checklist.Controls.Add(this.switchChecklistAusente);
             this.group_Checklist.Controls.Add(this.txtChecklistMotivoAusencia);
+            this.group_Checklist.Controls.Add(this.switchChecklistAusente);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel27);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel25);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel26);
@@ -470,6 +469,15 @@
             this.group_Checklist.TabStop = false;
             this.group_Checklist.Text = "CHECK LIST";
             // 
+            // txtChecklistMotivoAusencia
+            // 
+            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(15, 523);
+            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
+            this.txtChecklistMotivoAusencia.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistMotivoAusencia.Properties.Appearance.Options.UseBackColor = true;
+            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(330, 63);
+            this.txtChecklistMotivoAusencia.TabIndex = 10;
+            // 
             // switchChecklistAusente
             // 
             this.switchChecklistAusente.Location = new System.Drawing.Point(12, 463);
@@ -487,19 +495,6 @@
             this.switchChecklistAusente.Size = new System.Drawing.Size(66, 32);
             this.switchChecklistAusente.TabIndex = 6;
             this.switchChecklistAusente.Toggled += new System.EventHandler(this.switchChecklistAusente_Toggled);
-            // 
-            // txtChecklistMotivoAusencia
-            // 
-            this.txtChecklistMotivoAusencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtChecklistMotivoAusencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtChecklistMotivoAusencia.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtChecklistMotivoAusencia.ForeColor = System.Drawing.Color.White;
-            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(11, 520);
-            this.txtChecklistMotivoAusencia.MaxLength = 4000;
-            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
-            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 66);
-            this.txtChecklistMotivoAusencia.TabIndex = 67;
-            this.txtChecklistMotivoAusencia.Text = "";
             // 
             // bunifuCustomLabel27
             // 
@@ -1198,16 +1193,12 @@
             // 
             // txtObservacoes
             // 
-            this.txtObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtObservacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtObservacoes.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.txtObservacoes.ForeColor = System.Drawing.Color.White;
-            this.txtObservacoes.Location = new System.Drawing.Point(16, 22);
-            this.txtObservacoes.MaxLength = 4000;
+            this.txtObservacoes.Location = new System.Drawing.Point(16, 19);
             this.txtObservacoes.Name = "txtObservacoes";
-            this.txtObservacoes.Size = new System.Drawing.Size(745, 66);
-            this.txtObservacoes.TabIndex = 5;
-            this.txtObservacoes.Text = "";
+            this.txtObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtObservacoes.Properties.Appearance.Options.UseBackColor = true;
+            this.txtObservacoes.Size = new System.Drawing.Size(745, 77);
+            this.txtObservacoes.TabIndex = 0;
             // 
             // group_CondicoesFisicas
             // 
@@ -2070,6 +2061,7 @@
             this.panel_FormOrdemServico.ResumeLayout(false);
             this.panel_FormOrdemServico.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSolucao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).EndInit();
@@ -2078,8 +2070,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.group_Checklist.ResumeLayout(false);
             this.group_Checklist.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).EndInit();
             this.group_OutrasObservacoes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservacoes.Properties)).EndInit();
             this.group_CondicoesFisicas.ResumeLayout(false);
             this.group_CondicoesFisicas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
@@ -2096,7 +2090,6 @@
 
         private System.Windows.Forms.Panel panel_FormOrdemServico;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.RichTextBox txtSolucao;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdChecklist;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdCondicoesFisicas;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdServico;
@@ -2111,7 +2104,6 @@
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBuscaGoogle;
         private System.Windows.Forms.PictureBox pictureBox2;
         public DevExpress.XtraEditors.ToggleSwitch switchChecklistAusente;
-        public System.Windows.Forms.RichTextBox txtChecklistMotivoAusencia;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel27;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel25;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel26;
@@ -2141,7 +2133,6 @@
         public Bunifu.UI.WinForms.BunifuDropdown cmbChecklistBiometria;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
         private System.Windows.Forms.GroupBox group_OutrasObservacoes;
-        public System.Windows.Forms.RichTextBox txtObservacoes;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator7;
         public Bunifu.UI.WinForms.BunifuDropdown cmbLenteCamera;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator6;
@@ -2186,5 +2177,8 @@
         public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel29;
         public System.Windows.Forms.GroupBox group_Checklist;
         public System.Windows.Forms.GroupBox group_CondicoesFisicas;
+        public DevExpress.XtraEditors.MemoEdit txtChecklistMotivoAusencia;
+        public DevExpress.XtraEditors.MemoEdit txtSolucao;
+        public DevExpress.XtraEditors.MemoEdit txtObservacoes;
     }
 }

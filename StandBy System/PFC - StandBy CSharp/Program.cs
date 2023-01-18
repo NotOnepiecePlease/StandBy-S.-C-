@@ -1,21 +1,17 @@
-﻿using PFC___StandBy_CSharp.Forms;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
-using PFC___StandBy_CSharp.Impressao;
-using Syncfusion.Licensing;
 using DevExpress.XtraEditors;
-using PFC___StandBy_CSharp.Forms._1___Ordems_Servico;
-using PFC___StandBy_CSharp.Forms.Pagamento;
-using PFC___StandBy_CSharp.Forms.Pagamento_e_Compras;
+using PFC___StandBy_CSharp.Forms;
+using Syncfusion.Licensing;
 
 namespace PFC___StandBy_CSharp
 {
     internal static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         [STAThread]
         private static void Main()

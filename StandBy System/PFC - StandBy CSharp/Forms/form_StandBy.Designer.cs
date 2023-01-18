@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_StandBy));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            BunifuAnimatorNS.Animation animation7 = new BunifuAnimatorNS.Animation();
             this.panelTopStandBy = new System.Windows.Forms.Panel();
             this.btnConfiguracoes = new DevExpress.XtraEditors.SvgImageBox();
             this.btnNaoAtualizar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -96,7 +95,6 @@
             this.bunifuColorTransition1 = new Bunifu.Framework.UI.BunifuColorTransition(this.components);
             this.mudarCorGeral = new System.Windows.Forms.Timer(this.components);
             this.iniciarFormTransicao = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
-            this.animationMenuShow1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.animationMenuHide1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.ArredondarBordaEsquerda = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -147,7 +145,6 @@
             this.panelTopStandBy.Controls.Add(this.imgbuttonTitulo);
             this.panelTopStandBy.Controls.Add(this.iconRestaure);
             this.animationMenuHide1.SetDecoration(this.panelTopStandBy, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.panelTopStandBy, BunifuAnimatorNS.DecorationType.None);
             this.panelTopStandBy.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopStandBy.Location = new System.Drawing.Point(0, 0);
             this.panelTopStandBy.Name = "panelTopStandBy";
@@ -158,7 +155,6 @@
             // 
             this.btnConfiguracoes.BackColor = System.Drawing.Color.Transparent;
             this.animationMenuHide1.SetDecoration(this.btnConfiguracoes, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnConfiguracoes, BunifuAnimatorNS.DecorationType.None);
             this.btnConfiguracoes.ItemAppearance.Hovered.FillColor = System.Drawing.Color.Gray;
             this.btnConfiguracoes.ItemAppearance.Normal.FillColor = System.Drawing.Color.White;
             this.btnConfiguracoes.ItemAppearance.Pressed.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -190,13 +186,12 @@
             this.btnNaoAtualizar.ColorContrastOnClick = 45;
             this.btnNaoAtualizar.ColorContrastOnHover = 45;
             this.btnNaoAtualizar.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnNaoAtualizar.CustomizableEdges = borderEdges3;
+            borderEdges13.BottomLeft = true;
+            borderEdges13.BottomRight = true;
+            borderEdges13.TopLeft = true;
+            borderEdges13.TopRight = true;
+            this.btnNaoAtualizar.CustomizableEdges = borderEdges13;
             this.animationMenuHide1.SetDecoration(this.btnNaoAtualizar, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnNaoAtualizar, BunifuAnimatorNS.DecorationType.None);
             this.btnNaoAtualizar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnNaoAtualizar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnNaoAtualizar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -283,13 +278,12 @@
             this.btnSimAtualizar.ColorContrastOnClick = 45;
             this.btnSimAtualizar.ColorContrastOnHover = 45;
             this.btnSimAtualizar.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnSimAtualizar.CustomizableEdges = borderEdges4;
+            borderEdges14.BottomLeft = true;
+            borderEdges14.BottomRight = true;
+            borderEdges14.TopLeft = true;
+            borderEdges14.TopRight = true;
+            this.btnSimAtualizar.CustomizableEdges = borderEdges14;
             this.animationMenuHide1.SetDecoration(this.btnSimAtualizar, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnSimAtualizar, BunifuAnimatorNS.DecorationType.None);
             this.btnSimAtualizar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSimAtualizar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSimAtualizar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -365,7 +359,6 @@
             this.bunifuSeparator3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuSeparator3.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
             this.animationMenuHide1.SetDecoration(this.bunifuSeparator3, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuSeparator3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuSeparator3.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator3.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator3.LineThickness = 1;
@@ -382,7 +375,6 @@
             this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
             this.animationMenuHide1.SetDecoration(this.bunifuSeparator2, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuSeparator2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator2.LineThickness = 1;
@@ -396,7 +388,6 @@
             // 
             this.lblDesejaAtualizar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDesejaAtualizar.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.lblDesejaAtualizar, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblDesejaAtualizar, BunifuAnimatorNS.DecorationType.None);
             this.lblDesejaAtualizar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.lblDesejaAtualizar.ForeColor = System.Drawing.Color.White;
@@ -410,7 +401,6 @@
             // lblIpLocal
             // 
             this.lblIpLocal.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.lblIpLocal, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblIpLocal, BunifuAnimatorNS.DecorationType.None);
             this.lblIpLocal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIpLocal.ForeColor = System.Drawing.SystemColors.Control;
@@ -428,7 +418,6 @@
             this.bunifuSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuSeparator1.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
             this.animationMenuHide1.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 1;
@@ -440,12 +429,13 @@
             // 
             // lblUpdate
             // 
+            this.lblUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUpdate.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.lblUpdate, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblUpdate, BunifuAnimatorNS.DecorationType.None);
             this.lblUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdate.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblUpdate.Location = new System.Drawing.Point(178, 9);
+            this.lblUpdate.Location = new System.Drawing.Point(191, 9);
             this.lblUpdate.Name = "lblUpdate";
             this.lblUpdate.Size = new System.Drawing.Size(111, 15);
             this.lblUpdate.TabIndex = 10;
@@ -455,7 +445,6 @@
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.lblVersion, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblVersion, BunifuAnimatorNS.DecorationType.None);
             this.lblVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersion.ForeColor = System.Drawing.SystemColors.Control;
@@ -470,9 +459,9 @@
             this.iconMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.animationMenuHide1.SetDecoration(this.iconMinimize, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconMinimize, BunifuAnimatorNS.DecorationType.None);
             this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.iconMinimize.IconColor = System.Drawing.Color.White;
+            this.iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMinimize.IconSize = 29;
             this.iconMinimize.Location = new System.Drawing.Point(1213, 4);
             this.iconMinimize.Name = "iconMinimize";
@@ -488,9 +477,9 @@
             this.iconMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMaximize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.animationMenuHide1.SetDecoration(this.iconMaximize, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconMaximize, BunifuAnimatorNS.DecorationType.None);
             this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.iconMaximize.IconColor = System.Drawing.Color.White;
+            this.iconMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMaximize.IconSize = 29;
             this.iconMaximize.Location = new System.Drawing.Point(1213, 4);
             this.iconMaximize.Name = "iconMaximize";
@@ -507,10 +496,10 @@
             this.iconClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.animationMenuHide1.SetDecoration(this.iconClose, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconClose, BunifuAnimatorNS.DecorationType.None);
             this.iconClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.iconClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.iconClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.iconClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconClose.IconSize = 29;
             this.iconClose.Location = new System.Drawing.Point(1248, 4);
             this.iconClose.Name = "iconClose";
@@ -525,7 +514,6 @@
             // 
             this.imgbuttonTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.animationMenuHide1.SetDecoration(this.imgbuttonTitulo, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.imgbuttonTitulo, BunifuAnimatorNS.DecorationType.None);
             this.imgbuttonTitulo.Image = ((System.Drawing.Image)(resources.GetObject("imgbuttonTitulo.Image")));
             this.imgbuttonTitulo.ImageActive = null;
             this.imgbuttonTitulo.Location = new System.Drawing.Point(547, 3);
@@ -542,9 +530,9 @@
             this.iconRestaure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconRestaure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.animationMenuHide1.SetDecoration(this.iconRestaure, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.iconRestaure, BunifuAnimatorNS.DecorationType.None);
             this.iconRestaure.IconChar = FontAwesome.Sharp.IconChar.WindowRestore;
             this.iconRestaure.IconColor = System.Drawing.Color.White;
+            this.iconRestaure.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconRestaure.IconSize = 29;
             this.iconRestaure.Location = new System.Drawing.Point(1213, 0);
             this.iconRestaure.Name = "iconRestaure";
@@ -584,7 +572,6 @@
             this.panelMenu.Controls.Add(this.btnServicos);
             this.panelMenu.Controls.Add(this.btnMenuSuperior);
             this.animationMenuHide1.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.panelMenu, BunifuAnimatorNS.DecorationType.None);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenu.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.panelMenu.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
@@ -606,7 +593,6 @@
             this.btnLucros.BorderRadius = 0;
             this.btnLucros.ButtonText = "LUCROS";
             this.btnLucros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnLucros, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.btnLucros, BunifuAnimatorNS.DecorationType.None);
             this.btnLucros.DisabledColor = System.Drawing.Color.Gray;
             this.btnLucros.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
@@ -645,7 +631,6 @@
             this.btnOrcamentos.BorderRadius = 0;
             this.btnOrcamentos.ButtonText = "ORÇAMENTOS";
             this.btnOrcamentos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnOrcamentos, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.btnOrcamentos, BunifuAnimatorNS.DecorationType.None);
             this.btnOrcamentos.DisabledColor = System.Drawing.Color.Gray;
             this.btnOrcamentos.Enabled = false;
@@ -685,7 +670,6 @@
             this.btnClientes.BorderRadius = 0;
             this.btnClientes.ButtonText = "CLIENTES";
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.btnClientes, BunifuAnimatorNS.DecorationType.None);
             this.btnClientes.DisabledColor = System.Drawing.Color.Gray;
             this.btnClientes.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
@@ -724,7 +708,6 @@
             this.btnConcluidos.BorderRadius = 0;
             this.btnConcluidos.ButtonText = "CONCLUIDOS";
             this.btnConcluidos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnConcluidos, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.btnConcluidos, BunifuAnimatorNS.DecorationType.None);
             this.btnConcluidos.DisabledColor = System.Drawing.Color.Gray;
             this.btnConcluidos.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
@@ -763,7 +746,6 @@
             this.btnServicos.BorderRadius = 0;
             this.btnServicos.ButtonText = "SERVIÇOS";
             this.btnServicos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnServicos, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.btnServicos, BunifuAnimatorNS.DecorationType.None);
             this.btnServicos.DisabledColor = System.Drawing.Color.Gray;
             this.btnServicos.Iconcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
@@ -801,7 +783,6 @@
             this.btnMenuSuperior.BorderRadius = 0;
             this.btnMenuSuperior.ButtonText = "";
             this.btnMenuSuperior.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.animationMenuShow1.SetDecoration(this.btnMenuSuperior, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.btnMenuSuperior, BunifuAnimatorNS.DecorationType.None);
             this.btnMenuSuperior.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnMenuSuperior.Enabled = false;
@@ -842,7 +823,6 @@
             this.buniCardsMensais.Controls.Add(this.lblQntServicosMensais);
             this.buniCardsMensais.Controls.Add(this.bunifuCustomLabel2);
             this.animationMenuHide1.SetDecoration(this.buniCardsMensais, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.buniCardsMensais, BunifuAnimatorNS.DecorationType.None);
             this.buniCardsMensais.LeftSahddow = false;
             this.buniCardsMensais.Location = new System.Drawing.Point(0, 327);
             this.buniCardsMensais.Name = "buniCardsMensais";
@@ -876,7 +856,6 @@
             this.bunifuDataViz2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.bunifuDataViz2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.animationMenuHide1.SetDecoration(this.bunifuDataViz2, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuDataViz2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuDataViz2.Location = new System.Drawing.Point(0, 58);
             this.bunifuDataViz2.Name = "bunifuDataViz2";
             this.bunifuDataViz2.Size = new System.Drawing.Size(1277, 251);
@@ -890,7 +869,6 @@
             this.lblQntServicosMensais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblQntServicosMensais.AutoSize = true;
             this.lblQntServicosMensais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.animationMenuShow1.SetDecoration(this.lblQntServicosMensais, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblQntServicosMensais, BunifuAnimatorNS.DecorationType.None);
             this.lblQntServicosMensais.Font = new System.Drawing.Font("Segoe UI Semibold", 30.25F, System.Drawing.FontStyle.Bold);
             this.lblQntServicosMensais.ForeColor = System.Drawing.Color.White;
@@ -906,7 +884,6 @@
             this.bunifuCustomLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.animationMenuShow1.SetDecoration(this.bunifuCustomLabel2, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.bunifuCustomLabel2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
@@ -921,7 +898,6 @@
             this.lblQntServicosSemanais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblQntServicosSemanais.AutoSize = true;
             this.lblQntServicosSemanais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.animationMenuShow1.SetDecoration(this.lblQntServicosSemanais, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblQntServicosSemanais, BunifuAnimatorNS.DecorationType.None);
             this.lblQntServicosSemanais.Font = new System.Drawing.Font("Segoe UI Semibold", 30.25F, System.Drawing.FontStyle.Bold);
             this.lblQntServicosSemanais.ForeColor = System.Drawing.Color.White;
@@ -938,7 +914,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.animationMenuShow1.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
@@ -973,7 +948,6 @@
             this.bunifuDataViz1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.bunifuDataViz1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.animationMenuHide1.SetDecoration(this.bunifuDataViz1, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuDataViz1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuDataViz1.Location = new System.Drawing.Point(3, 43);
             this.bunifuDataViz1.Name = "bunifuDataViz1";
             this.bunifuDataViz1.Size = new System.Drawing.Size(738, 275);
@@ -994,7 +968,6 @@
             this.buniCardsBotoes.Controls.Add(this.bunifuCards5);
             this.buniCardsBotoes.Controls.Add(this.bunifuCards4);
             this.animationMenuHide1.SetDecoration(this.buniCardsBotoes, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.buniCardsBotoes, BunifuAnimatorNS.DecorationType.None);
             this.buniCardsBotoes.LeftSahddow = false;
             this.buniCardsBotoes.Location = new System.Drawing.Point(750, 6);
             this.buniCardsBotoes.Name = "buniCardsBotoes";
@@ -1012,7 +985,6 @@
             this.bunifuCards7.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.bunifuCards7.Controls.Add(this.btnDesligarPc);
             this.animationMenuHide1.SetDecoration(this.bunifuCards7, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuCards7, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards7.LeftSahddow = false;
             this.bunifuCards7.Location = new System.Drawing.Point(415, 10);
             this.bunifuCards7.Name = "bunifuCards7";
@@ -1029,7 +1001,6 @@
             this.btnDesligarPc.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnDesligarPc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.animationMenuHide1.SetDecoration(this.btnDesligarPc, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnDesligarPc, BunifuAnimatorNS.DecorationType.None);
             this.btnDesligarPc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesligarPc.ForeColor = System.Drawing.Color.White;
             this.btnDesligarPc.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_shutdown_96px;
@@ -1053,7 +1024,6 @@
             this.bunifuCards6.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.bunifuCards6.Controls.Add(this.btnConfig);
             this.animationMenuHide1.SetDecoration(this.bunifuCards6, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuCards6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards6.LeftSahddow = false;
             this.bunifuCards6.Location = new System.Drawing.Point(286, 10);
             this.bunifuCards6.Name = "bunifuCards6";
@@ -1070,7 +1040,6 @@
             this.btnConfig.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnConfig.Cursor = System.Windows.Forms.Cursors.Hand;
             this.animationMenuHide1.SetDecoration(this.btnConfig, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnConfig, BunifuAnimatorNS.DecorationType.None);
             this.btnConfig.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
@@ -1094,7 +1063,6 @@
             this.bunifuCards5.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.bunifuCards5.Controls.Add(this.btnNotepad);
             this.animationMenuHide1.SetDecoration(this.bunifuCards5, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuCards5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards5.LeftSahddow = false;
             this.bunifuCards5.Location = new System.Drawing.Point(152, 10);
             this.bunifuCards5.Name = "bunifuCards5";
@@ -1111,7 +1079,6 @@
             this.btnNotepad.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnNotepad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.animationMenuHide1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnNotepad, BunifuAnimatorNS.DecorationType.None);
             this.btnNotepad.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotepad.ForeColor = System.Drawing.Color.White;
             this.btnNotepad.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_notepad_480px;
@@ -1135,7 +1102,6 @@
             this.bunifuCards4.color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.bunifuCards4.Controls.Add(this.btnServicosPorMes);
             this.animationMenuHide1.SetDecoration(this.bunifuCards4, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuCards4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards4.LeftSahddow = false;
             this.bunifuCards4.Location = new System.Drawing.Point(21, 10);
             this.bunifuCards4.Name = "bunifuCards4";
@@ -1154,7 +1120,6 @@
             this.btnServicosPorMes.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnServicosPorMes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.animationMenuHide1.SetDecoration(this.btnServicosPorMes, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnServicosPorMes, BunifuAnimatorNS.DecorationType.None);
             this.btnServicosPorMes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServicosPorMes.ForeColor = System.Drawing.Color.White;
             this.btnServicosPorMes.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_list_512px;
@@ -1189,7 +1154,6 @@
             this.buniCardsCores.Controls.Add(this.track_RED);
             this.buniCardsCores.Controls.Add(this.panel_CorGeral);
             this.animationMenuHide1.SetDecoration(this.buniCardsCores, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.buniCardsCores, BunifuAnimatorNS.DecorationType.None);
             this.buniCardsCores.LeftSahddow = false;
             this.buniCardsCores.Location = new System.Drawing.Point(750, 125);
             this.buniCardsCores.Name = "buniCardsCores";
@@ -1203,7 +1167,6 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.label3, BunifuAnimatorNS.DecorationType.None);
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
@@ -1217,7 +1180,6 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
@@ -1231,7 +1193,6 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
@@ -1245,7 +1206,6 @@
             // 
             this.lblBLUE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBLUE.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.lblBLUE, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblBLUE, BunifuAnimatorNS.DecorationType.None);
             this.lblBLUE.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBLUE.ForeColor = System.Drawing.Color.Gainsboro;
@@ -1259,7 +1219,6 @@
             // 
             this.lblGREEN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGREEN.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.lblGREEN, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblGREEN, BunifuAnimatorNS.DecorationType.None);
             this.lblGREEN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGREEN.ForeColor = System.Drawing.Color.Gainsboro;
@@ -1273,7 +1232,6 @@
             // 
             this.lblRED.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRED.AutoSize = true;
-            this.animationMenuShow1.SetDecoration(this.lblRED, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.lblRED, BunifuAnimatorNS.DecorationType.None);
             this.lblRED.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRED.ForeColor = System.Drawing.Color.Gainsboro;
@@ -1287,7 +1245,6 @@
             // 
             this.btnResetarCor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.animationMenuHide1.SetDecoration(this.btnResetarCor, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnResetarCor, BunifuAnimatorNS.DecorationType.None);
             this.btnResetarCor.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_reset_480px;
             this.btnResetarCor.ImageActive = null;
             this.btnResetarCor.Location = new System.Drawing.Point(457, 136);
@@ -1303,7 +1260,6 @@
             // 
             this.btnMudarCor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.animationMenuHide1.SetDecoration(this.btnMudarCor, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.btnMudarCor, BunifuAnimatorNS.DecorationType.None);
             this.btnMudarCor.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_paint_roller_512px;
             this.btnMudarCor.ImageActive = null;
             this.btnMudarCor.Location = new System.Drawing.Point(457, 81);
@@ -1322,7 +1278,6 @@
             this.track_BLUE.BackgroudColor = System.Drawing.Color.LightGray;
             this.track_BLUE.BorderRadius = 0;
             this.animationMenuHide1.SetDecoration(this.track_BLUE, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.track_BLUE, BunifuAnimatorNS.DecorationType.None);
             this.track_BLUE.IndicatorColor = System.Drawing.Color.Blue;
             this.track_BLUE.Location = new System.Drawing.Point(21, 153);
             this.track_BLUE.MaximumValue = 255;
@@ -1340,7 +1295,6 @@
             this.track_GREEN.BackgroudColor = System.Drawing.Color.LightGray;
             this.track_GREEN.BorderRadius = 0;
             this.animationMenuHide1.SetDecoration(this.track_GREEN, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.track_GREEN, BunifuAnimatorNS.DecorationType.None);
             this.track_GREEN.IndicatorColor = System.Drawing.Color.LimeGreen;
             this.track_GREEN.Location = new System.Drawing.Point(21, 117);
             this.track_GREEN.MaximumValue = 255;
@@ -1358,7 +1312,6 @@
             this.track_RED.BackgroudColor = System.Drawing.Color.LightGray;
             this.track_RED.BorderRadius = 0;
             this.animationMenuHide1.SetDecoration(this.track_RED, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.track_RED, BunifuAnimatorNS.DecorationType.None);
             this.track_RED.IndicatorColor = System.Drawing.Color.Red;
             this.track_RED.Location = new System.Drawing.Point(21, 81);
             this.track_RED.MaximumValue = 255;
@@ -1374,7 +1327,6 @@
             this.panel_CorGeral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_CorGeral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.animationMenuHide1.SetDecoration(this.panel_CorGeral, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.panel_CorGeral, BunifuAnimatorNS.DecorationType.None);
             this.panel_CorGeral.Location = new System.Drawing.Point(21, 12);
             this.panel_CorGeral.Name = "panel_CorGeral";
             this.panel_CorGeral.Size = new System.Drawing.Size(410, 62);
@@ -1390,7 +1342,6 @@
             this.panelCentral.Controls.Add(this.buniCardSemanais);
             this.panelCentral.Controls.Add(this.buniCardsMensais);
             this.animationMenuHide1.SetDecoration(this.panelCentral, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.panelCentral, BunifuAnimatorNS.DecorationType.None);
             this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCentral.Location = new System.Drawing.Point(0, 69);
             this.panelCentral.Name = "panelCentral";
@@ -1406,7 +1357,6 @@
             this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel3);
             this.animationMenuHide1.SetDecoration(this.bunifuCards1, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.bunifuCards1, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(750, 125);
             this.bunifuCards1.Name = "bunifuCards1";
@@ -1422,7 +1372,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.animationMenuShow1.SetDecoration(this.bunifuCustomLabel3, BunifuAnimatorNS.DecorationType.None);
             this.animationMenuHide1.SetDecoration(this.bunifuCustomLabel3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
@@ -1444,7 +1393,6 @@
             this.buniCardSemanais.Controls.Add(this.bunifuCustomLabel1);
             this.buniCardSemanais.Controls.Add(this.bunifuDataViz1);
             this.animationMenuHide1.SetDecoration(this.buniCardSemanais, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this.buniCardSemanais, BunifuAnimatorNS.DecorationType.None);
             this.buniCardSemanais.LeftSahddow = false;
             this.buniCardSemanais.Location = new System.Drawing.Point(0, 6);
             this.buniCardSemanais.Name = "buniCardSemanais";
@@ -1468,47 +1416,26 @@
             // 
             this.iniciarFormTransicao.Delay = 100;
             // 
-            // animationMenuShow1
-            // 
-            this.animationMenuShow1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
-            this.animationMenuShow1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.animationMenuShow1.DefaultAnimation = animation4;
-            // 
             // animationMenuHide1
             // 
             this.animationMenuHide1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
             this.animationMenuHide1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.animationMenuHide1.DefaultAnimation = animation3;
+            animation7.AnimateOnlyDifferences = true;
+            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
+            animation7.LeafCoeff = 0F;
+            animation7.MaxTime = 1F;
+            animation7.MinTime = 0F;
+            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
+            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
+            animation7.MosaicSize = 0;
+            animation7.Padding = new System.Windows.Forms.Padding(0);
+            animation7.RotateCoeff = 0F;
+            animation7.RotateLimit = 0F;
+            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
+            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
+            animation7.TimeCoeff = 0F;
+            animation7.TransparencyCoeff = 0F;
+            this.animationMenuHide1.DefaultAnimation = animation7;
             // 
             // ArredondarBordaEsquerda
             // 
@@ -1565,7 +1492,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelTopStandBy);
             this.animationMenuHide1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
-            this.animationMenuShow1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -1650,7 +1577,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblQntServicosMensais;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuFormFadeTransition iniciarFormTransicao;
-        private BunifuAnimatorNS.BunifuTransition animationMenuShow1;
         private BunifuAnimatorNS.BunifuTransition animationMenuHide1;
         private Bunifu.Framework.UI.BunifuImageButton imgbuttonTitulo;
         private Bunifu.Framework.UI.BunifuCards buniCardSemanais;

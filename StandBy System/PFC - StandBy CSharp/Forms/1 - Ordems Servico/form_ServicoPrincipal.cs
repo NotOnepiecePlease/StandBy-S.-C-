@@ -48,6 +48,7 @@ namespace PFC___StandBy_CSharp.Forms
             gridviewServicos.SelectRow(rowHandle);
             gridviewServicos.FocusedRowHandle = rowHandle;
             gridviewServicos.MoveFirst();
+            //MessageBox.Show("Test");
             //gridviewServicos.EndUpdate();
         }
 

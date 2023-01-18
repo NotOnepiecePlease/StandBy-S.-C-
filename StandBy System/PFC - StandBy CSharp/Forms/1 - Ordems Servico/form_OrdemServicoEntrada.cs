@@ -16,6 +16,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Bunifu.UI.WinForms;
+using DevExpress.XtraEditors;
 using BunifuDropdown = Bunifu.UI.WinForms.BunifuDropdown;
 using ConvertImage = PFC___StandBy_CSharp.Utils.ConvertImage;
 using static PFC___StandBy_CSharp.Enums.EnumStandby;
@@ -701,7 +702,7 @@ namespace PFC___StandBy_CSharp.Forms
                     }
                     else if (control.Name == "txtChecklistMotivoAusencia")
                     {
-                        var richTextBox = (RichTextBox)control;
+                        var richTextBox = (MemoEdit)control;
                         control.BackColor = Color.FromArgb(23, 23, 36);
                         richTextBox.ReadOnly = false;
                     }
@@ -723,7 +724,7 @@ namespace PFC___StandBy_CSharp.Forms
                     }
                     else if (control.Name == "txtChecklistMotivoAusencia")
                     {
-                        var richTextBox = (RichTextBox)control;
+                        var richTextBox = (MemoEdit)control;
                         control.BackColor = Color.FromArgb(64, 64, 64);
                         control.Text = string.Empty;
                         richTextBox.ReadOnly = true;

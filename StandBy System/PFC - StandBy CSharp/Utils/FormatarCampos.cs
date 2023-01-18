@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Bunifu.UI.WinForms.BunifuTextbox;
+using DevExpress.XtraEditors;
 using Guna.UI.WinForms;
 
 namespace PFC___StandBy_CSharp.Utils
@@ -32,6 +33,7 @@ namespace PFC___StandBy_CSharp.Utils
                 {
                     CPF.Text += "-";
                 }
+
                 CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
@@ -51,6 +53,7 @@ namespace PFC___StandBy_CSharp.Utils
                 {
                     CPF.Text += "-";
                 }
+
                 CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
@@ -74,6 +77,7 @@ namespace PFC___StandBy_CSharp.Utils
                 {
                     CPF.Text += "-";
                 }
+
                 CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
@@ -99,6 +103,7 @@ namespace PFC___StandBy_CSharp.Utils
                 {
                     CPF.Text += "-";
                 }
+
                 CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
@@ -128,6 +133,7 @@ namespace PFC___StandBy_CSharp.Utils
                 {
                     CPF.Text += "-";
                 }
+
                 CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
@@ -151,6 +157,7 @@ namespace PFC___StandBy_CSharp.Utils
                     {
                         txtData.Text += "/";
                     }
+
                     txtData.SelectionStart = txtData.Text.Length + 1;
                 }
             }
@@ -182,7 +189,7 @@ namespace PFC___StandBy_CSharp.Utils
 
         public static void ApenasValorNumericoVirgulasBunifu(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
+            TextEdit txt = (TextEdit)sender;
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back))
             {
                 if (e.KeyChar == ',')
@@ -228,10 +235,12 @@ namespace PFC___StandBy_CSharp.Utils
             {
                 txt.Text = "0,00" + valor;
             }
+
             if (valor.Length == 1)
             {
                 txt.Text = "0,0" + valor;
             }
+
             if (valor.Length == 2)
             {
                 txt.Text = "0," + valor;
@@ -251,6 +260,7 @@ namespace PFC___StandBy_CSharp.Utils
                     txt.Text = valor.Insert(valor.Length - 2, ",");
                 }
             }
+
             valor = txt.Text;
             txt.Text = $"{Convert.ToDouble(valor):C}";
             txt.Select(txt.Text.Length, 0);
@@ -258,16 +268,18 @@ namespace PFC___StandBy_CSharp.Utils
 
         public static void FormatarMoedaBunifu(object sender, KeyEventArgs e)
         {
-            TextBox txt = (TextBox)sender;
+            TextEdit txt = (TextEdit)sender;
             string valor = txt.Text.Replace("R$", "").Replace(",", "").Replace(" ", "").Replace("00,", "");
             if (valor.Length == 0)
             {
                 txt.Text = "0,00" + valor;
             }
+
             if (valor.Length == 1)
             {
                 txt.Text = "0,0" + valor;
             }
+
             if (valor.Length == 2)
             {
                 txt.Text = "0," + valor;
@@ -287,6 +299,7 @@ namespace PFC___StandBy_CSharp.Utils
                     txt.Text = valor.Insert(valor.Length - 2, ",");
                 }
             }
+
             valor = txt.Text;
             txt.Text = $"{Convert.ToDouble(valor):C}";
             txt.Select(txt.Text.Length, 0);
@@ -300,7 +313,7 @@ namespace PFC___StandBy_CSharp.Utils
             txt.KeyUp += FormatarMoeda;
         }
 
-        public static void AplicarApenasNumeroVirgulaEMoeda(BunifuTextBox txt)
+        public static void AplicarApenasNumeroVirgulaEMoeda(TextEdit txt)
         {
             //txt.Enter += TirarMascaraEnter;
             //txt.Leave += RetornarMascara;

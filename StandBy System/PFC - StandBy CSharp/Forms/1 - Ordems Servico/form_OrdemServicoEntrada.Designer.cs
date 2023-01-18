@@ -48,8 +48,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtBuscaGoogle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.group_Checklist = new System.Windows.Forms.GroupBox();
+            this.txtChecklistObservacoes = new DevExpress.XtraEditors.MemoEdit();
+            this.txtChecklistMotivoAusencia = new DevExpress.XtraEditors.MemoEdit();
             this.switchChecklistAusente = new DevExpress.XtraEditors.ToggleSwitch();
-            this.txtChecklistMotivoAusencia = new System.Windows.Forms.RichTextBox();
             this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel25 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel26 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -57,7 +58,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel23 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistBluetooth = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel24 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtChecklistObservacoes = new System.Windows.Forms.RichTextBox();
             this.cmbChecklistAltoFaltante = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistWifi = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -79,11 +79,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBiometria = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.group_CondicoesBalcao = new System.Windows.Forms.GroupBox();
-            this.txtCondicoesBalcao = new System.Windows.Forms.RichTextBox();
+            this.txtCondicoesBalcao = new DevExpress.XtraEditors.MemoEdit();
             this.group_RelatoCliente = new System.Windows.Forms.GroupBox();
-            this.txtRelatoCliente = new System.Windows.Forms.RichTextBox();
+            this.txtRelatoCliente = new DevExpress.XtraEditors.MemoEdit();
             this.group_OutrasObservacoes = new System.Windows.Forms.GroupBox();
-            this.txtObservacoes = new System.Windows.Forms.RichTextBox();
+            this.txtObservacoes = new DevExpress.XtraEditors.MemoEdit();
             this.group_CondicoesFisicas = new System.Windows.Forms.GroupBox();
             this.bunifuSeparator7 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.cmbLenteCamera = new Bunifu.UI.WinForms.BunifuDropdown();
@@ -136,10 +136,15 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.group_Checklist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
             this.group_CondicoesBalcao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCondicoesBalcao.Properties)).BeginInit();
             this.group_RelatoCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRelatoCliente.Properties)).BeginInit();
             this.group_OutrasObservacoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservacoes.Properties)).BeginInit();
             this.group_CondicoesFisicas.SuspendLayout();
             this.group_InformacoesAparelho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSenhaDispositivo.Properties)).BeginInit();
@@ -405,8 +410,9 @@ namespace PFC___StandBy_CSharp.Forms
             // group_Checklist
             // 
             this.group_Checklist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.group_Checklist.Controls.Add(this.switchChecklistAusente);
+            this.group_Checklist.Controls.Add(this.txtChecklistObservacoes);
             this.group_Checklist.Controls.Add(this.txtChecklistMotivoAusencia);
+            this.group_Checklist.Controls.Add(this.switchChecklistAusente);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel27);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel25);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel26);
@@ -414,7 +420,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel23);
             this.group_Checklist.Controls.Add(this.cmbChecklistBluetooth);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel24);
-            this.group_Checklist.Controls.Add(this.txtChecklistObservacoes);
             this.group_Checklist.Controls.Add(this.cmbChecklistAltoFaltante);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel21);
             this.group_Checklist.Controls.Add(this.cmbChecklistWifi);
@@ -444,6 +449,24 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_Checklist.TabStop = false;
             this.group_Checklist.Text = "CHECK LIST";
             // 
+            // txtChecklistObservacoes
+            // 
+            this.txtChecklistObservacoes.Location = new System.Drawing.Point(16, 384);
+            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
+            this.txtChecklistObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistObservacoes.Properties.Appearance.Options.UseBackColor = true;
+            this.txtChecklistObservacoes.Size = new System.Drawing.Size(329, 68);
+            this.txtChecklistObservacoes.TabIndex = 53;
+            // 
+            // txtChecklistMotivoAusencia
+            // 
+            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(16, 523);
+            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
+            this.txtChecklistMotivoAusencia.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistMotivoAusencia.Properties.Appearance.Options.UseBackColor = true;
+            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(329, 63);
+            this.txtChecklistMotivoAusencia.TabIndex = 7;
+            // 
             // switchChecklistAusente
             // 
             this.switchChecklistAusente.Location = new System.Drawing.Point(12, 463);
@@ -461,19 +484,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.switchChecklistAusente.Size = new System.Drawing.Size(66, 32);
             this.switchChecklistAusente.TabIndex = 6;
             this.switchChecklistAusente.Toggled += new System.EventHandler(this.switchChecklistAusente_Toggled);
-            // 
-            // txtChecklistMotivoAusencia
-            // 
-            this.txtChecklistMotivoAusencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtChecklistMotivoAusencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtChecklistMotivoAusencia.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtChecklistMotivoAusencia.ForeColor = System.Drawing.Color.White;
-            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(11, 520);
-            this.txtChecklistMotivoAusencia.MaxLength = 4000;
-            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
-            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(334, 66);
-            this.txtChecklistMotivoAusencia.TabIndex = 67;
-            this.txtChecklistMotivoAusencia.Text = "2354234324";
             // 
             // bunifuCustomLabel27
             // 
@@ -613,19 +623,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel24.Size = new System.Drawing.Size(87, 19);
             this.bunifuCustomLabel24.TabIndex = 44;
             this.bunifuCustomLabel24.Text = "BLUETOOTH";
-            // 
-            // txtChecklistObservacoes
-            // 
-            this.txtChecklistObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtChecklistObservacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtChecklistObservacoes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtChecklistObservacoes.ForeColor = System.Drawing.Color.White;
-            this.txtChecklistObservacoes.Location = new System.Drawing.Point(11, 391);
-            this.txtChecklistObservacoes.MaxLength = 4000;
-            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
-            this.txtChecklistObservacoes.Size = new System.Drawing.Size(334, 66);
-            this.txtChecklistObservacoes.TabIndex = 6;
-            this.txtChecklistObservacoes.Text = "2354234324";
             // 
             // cmbChecklistAltoFaltante
             // 
@@ -1172,16 +1169,12 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             // txtCondicoesBalcao
             // 
-            this.txtCondicoesBalcao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtCondicoesBalcao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCondicoesBalcao.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.txtCondicoesBalcao.ForeColor = System.Drawing.Color.White;
-            this.txtCondicoesBalcao.Location = new System.Drawing.Point(16, 23);
-            this.txtCondicoesBalcao.MaxLength = 4000;
+            this.txtCondicoesBalcao.Location = new System.Drawing.Point(15, 19);
             this.txtCondicoesBalcao.Name = "txtCondicoesBalcao";
-            this.txtCondicoesBalcao.Size = new System.Drawing.Size(745, 104);
-            this.txtCondicoesBalcao.TabIndex = 5;
-            this.txtCondicoesBalcao.Text = "2354234324";
+            this.txtCondicoesBalcao.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtCondicoesBalcao.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCondicoesBalcao.Size = new System.Drawing.Size(746, 107);
+            this.txtCondicoesBalcao.TabIndex = 0;
             // 
             // group_RelatoCliente
             // 
@@ -1198,16 +1191,12 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             // txtRelatoCliente
             // 
-            this.txtRelatoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtRelatoCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRelatoCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.txtRelatoCliente.ForeColor = System.Drawing.Color.White;
-            this.txtRelatoCliente.Location = new System.Drawing.Point(16, 23);
-            this.txtRelatoCliente.MaxLength = 4000;
+            this.txtRelatoCliente.Location = new System.Drawing.Point(16, 18);
             this.txtRelatoCliente.Name = "txtRelatoCliente";
-            this.txtRelatoCliente.Size = new System.Drawing.Size(745, 93);
-            this.txtRelatoCliente.TabIndex = 5;
-            this.txtRelatoCliente.Text = "2354234324";
+            this.txtRelatoCliente.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtRelatoCliente.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRelatoCliente.Size = new System.Drawing.Size(745, 104);
+            this.txtRelatoCliente.TabIndex = 0;
             // 
             // group_OutrasObservacoes
             // 
@@ -1224,16 +1213,12 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             // txtObservacoes
             // 
-            this.txtObservacoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtObservacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtObservacoes.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.txtObservacoes.ForeColor = System.Drawing.Color.White;
-            this.txtObservacoes.Location = new System.Drawing.Point(16, 22);
-            this.txtObservacoes.MaxLength = 4000;
+            this.txtObservacoes.Location = new System.Drawing.Point(16, 19);
             this.txtObservacoes.Name = "txtObservacoes";
-            this.txtObservacoes.Size = new System.Drawing.Size(745, 66);
-            this.txtObservacoes.TabIndex = 5;
-            this.txtObservacoes.Text = "2354234324";
+            this.txtObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtObservacoes.Properties.Appearance.Options.UseBackColor = true;
+            this.txtObservacoes.Size = new System.Drawing.Size(745, 71);
+            this.txtObservacoes.TabIndex = 8;
             // 
             // group_CondicoesFisicas
             // 
@@ -1921,6 +1906,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbCor.Name = "cmbCor";
             this.cmbCor.Size = new System.Drawing.Size(273, 32);
             this.cmbCor.TabIndex = 32;
+            this.cmbCor.Text = null;
             this.cmbCor.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbCor.TextLeftMargin = 5;
             // 
@@ -1962,6 +1948,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(273, 32);
             this.cmbMarca.TabIndex = 24;
+            this.cmbMarca.Text = null;
             this.cmbMarca.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbMarca.TextLeftMargin = 5;
             // 
@@ -2139,10 +2126,15 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.group_Checklist.ResumeLayout(false);
             this.group_Checklist.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).EndInit();
             this.group_CondicoesBalcao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtCondicoesBalcao.Properties)).EndInit();
             this.group_RelatoCliente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtRelatoCliente.Properties)).EndInit();
             this.group_OutrasObservacoes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservacoes.Properties)).EndInit();
             this.group_CondicoesFisicas.ResumeLayout(false);
             this.group_CondicoesFisicas.PerformLayout();
             this.group_InformacoesAparelho.ResumeLayout(false);
@@ -2187,11 +2179,8 @@ namespace PFC___StandBy_CSharp.Forms
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
         private System.Windows.Forms.GroupBox group_OutrasObservacoes;
-        public System.Windows.Forms.RichTextBox txtObservacoes;
         private System.Windows.Forms.GroupBox group_CondicoesBalcao;
-        public System.Windows.Forms.RichTextBox txtCondicoesBalcao;
         private System.Windows.Forms.GroupBox group_RelatoCliente;
-        public System.Windows.Forms.RichTextBox txtRelatoCliente;
         private System.Windows.Forms.GroupBox group_Checklist;
         private System.Windows.Forms.PictureBox pictureBox2;
         public Bunifu.Framework.UI.BunifuMaterialTextbox txtBuscaGoogle;
@@ -2209,8 +2198,6 @@ namespace PFC___StandBy_CSharp.Forms
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
-        public System.Windows.Forms.RichTextBox txtChecklistObservacoes;
-        public System.Windows.Forms.RichTextBox txtChecklistMotivoAusencia;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel27;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel28;
         private Bunifu.Framework.UI.BunifuImageButton btnConcluirImprimir;
@@ -2257,5 +2244,11 @@ namespace PFC___StandBy_CSharp.Forms
         public DevExpress.XtraEditors.TextEdit txtSenhaDispositivo;
         public Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel29;
         public DevExpress.Utils.SvgImageCollection svgCollection;
+        public DevExpress.XtraEditors.MemoEdit txtChecklistMotivoAusencia;
+        public DevExpress.XtraEditors.MemoEdit txtObservacoes;
+        public DevExpress.XtraEditors.MemoEdit txtCondicoesBalcao;
+        public DevExpress.XtraEditors.MemoEdit txtRelatoCliente;
+        public DevExpress.XtraEditors.MemoEdit txtChecklistObservacoes;
+        //private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
     }
 }

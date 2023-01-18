@@ -462,5 +462,9 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                 passShow.ShowDialog();
             }
         }
+
+        private void txtCPFCliente_EditValueChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

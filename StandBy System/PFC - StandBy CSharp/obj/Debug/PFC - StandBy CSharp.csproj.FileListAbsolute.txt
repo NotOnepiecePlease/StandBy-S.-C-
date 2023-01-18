@@ -1,0 +1,3 @@
+C:\Tchurendio\DATA\t\StandBy System.exe.config
+C:\Tchurendio\DATA\t\StandBy System.exe
+C:\Tchurendio\DATA\t\StandBy System.pdb
