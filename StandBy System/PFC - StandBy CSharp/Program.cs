@@ -2,8 +2,11 @@
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using DevExpress.Utils;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
 using PFC___StandBy_CSharp.Forms;
+using PFC___StandBy_CSharp.Forms.Testes;
 using Syncfusion.Licensing;
 
 namespace PFC___StandBy_CSharp
@@ -26,6 +29,7 @@ namespace PFC___StandBy_CSharp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new form_StandBy());
+            //Application.Run(new form_V2Standby());
         }
     }
 }

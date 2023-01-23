@@ -645,34 +645,40 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void workerVerificarVersao_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            lblUpdate.Text = @"Verificando atualizações...";
-            lblUpdate.ForeColor = Color.DarkOrange;
-            lblUpdate.Location = new Point(174, 9);
+            try
+            {
+                lblUpdate.Text = @"Verificando atualizações...";
+                lblUpdate.ForeColor = Color.DarkOrange;
+                lblUpdate.Location = new Point(174, 9);
 
-            statusAtualizacao = verificarUpd.ChecarVersaoStandBy();
-            if (statusAtualizacao == "Atualização Pendente!")
-            {
-                lblUpdate.Text = @"Atualização Pendente!";
-                lblUpdate.ForeColor = Color.Yellow;
-                lblUpdate.Location = new Point(183, 9);
+                statusAtualizacao = verificarUpd.ChecarVersaoStandBy();
+                if (statusAtualizacao == "Atualização Pendente!")
+                {
+                    lblUpdate.Text = @"Atualização Pendente!";
+                    lblUpdate.ForeColor = Color.Yellow;
+                    lblUpdate.Location = new Point(183, 9);
+                }
+                else if (statusAtualizacao == "Sistema Atualizado!")
+                {
+                    lblUpdate.Text = @"Sistema Atualizado!";
+                    lblUpdate.ForeColor = Color.LawnGreen;
+                    lblUpdate.Location = new Point(188, 9);
+                }
+                else if (statusAtualizacao == "Erro ao atualizar!")
+                {
+                    lblUpdate.Text = @"Erro ao atualizar";
+                    lblUpdate.ForeColor = Color.Crimson;
+                    lblUpdate.Location = new Point(199, 9);
+                }
+                else
+                {
+                    lblUpdate.Text = @"Erro Desconhecido!";
+                    lblUpdate.ForeColor = Color.AntiqueWhite;
+                    lblUpdate.Location = new Point(191, 9);
+                }
             }
-            else if (statusAtualizacao == "Sistema Atualizado!")
+            catch
             {
-                lblUpdate.Text = @"Sistema Atualizado!";
-                lblUpdate.ForeColor = Color.LawnGreen;
-                lblUpdate.Location = new Point(188, 9);
-            }
-            else if (statusAtualizacao == "Erro ao atualizar!")
-            {
-                lblUpdate.Text = @"Erro ao atualizar";
-                lblUpdate.ForeColor = Color.Crimson;
-                lblUpdate.Location = new Point(199, 9);
-            }
-            else
-            {
-                lblUpdate.Text = @"Erro Desconhecido!";
-                lblUpdate.ForeColor = Color.AntiqueWhite;
-                lblUpdate.Location = new Point(191, 9);
             }
         }
 

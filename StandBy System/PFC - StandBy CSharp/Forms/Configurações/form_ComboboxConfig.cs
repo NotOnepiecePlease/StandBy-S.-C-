@@ -126,7 +126,6 @@ namespace PFC___StandBy_CSharp.Forms
             gridView1.RefreshData();
         }
 
-        private int zero = 0;
 
         private void gridView1_RowUpdated(object sender, RowObjectEventArgs e)
         {

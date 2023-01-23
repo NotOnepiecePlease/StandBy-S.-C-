@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServicoSaida));
+            Syncfusion.Windows.Forms.MetroColorTable metroColorTable2 = new Syncfusion.Windows.Forms.MetroColorTable();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServicoSaida));
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
             this.panel_FormOrdemServico = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSolucao = new DevExpress.XtraEditors.MemoEdit();
@@ -61,6 +61,7 @@
             this.txtBuscaGoogle = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.group_Checklist = new System.Windows.Forms.GroupBox();
+            this.txtChecklistObservacoes = new DevExpress.XtraEditors.MemoEdit();
             this.txtChecklistMotivoAusencia = new DevExpress.XtraEditors.MemoEdit();
             this.switchChecklistAusente = new DevExpress.XtraEditors.ToggleSwitch();
             this.bunifuCustomLabel27 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -113,6 +114,8 @@
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.group_InformacoesAparelho = new System.Windows.Forms.GroupBox();
+            this.sepMODELO = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.txtModelo = new DevExpress.XtraEditors.TextEdit();
             this.bunifuSeparator8 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.separatorCPF = new Bunifu.UI.WinForms.BunifuSeparator();
@@ -132,9 +135,6 @@
             this.bunifuCustomLabel29 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblDataOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblOrdemServico = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.sepMODELO = new Bunifu.UI.WinForms.BunifuSeparator();
-            this.txtModelo = new DevExpress.XtraEditors.TextEdit();
-            this.txtChecklistObservacoes = new DevExpress.XtraEditors.MemoEdit();
             this.panel_FormOrdemServico.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSolucao.Properties)).BeginInit();
@@ -145,6 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSalvarOrdemServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.group_Checklist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
             this.group_OutrasObservacoes.SuspendLayout();
@@ -152,10 +153,9 @@
             this.group_CondicoesFisicas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             this.group_InformacoesAparelho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             this.panel_OrdemServCodigo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_FormOrdemServico
@@ -209,15 +209,15 @@
             this.txtSolucao.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtSolucao.Properties.Appearance.Options.UseBackColor = true;
             this.txtSolucao.Size = new System.Drawing.Size(745, 248);
-            toolTipTitleItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            toolTipTitleItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem1.Text = "Dica:";
-            toolTipItem1.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem1.Appearance.Options.UseForeColor = true;
-            toolTipItem1.Text = "Exemplo: \"Foi feita a troca da tela.\"";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.txtSolucao.SuperTip = superToolTip1;
+            toolTipTitleItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            toolTipTitleItem5.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem5.Text = "Dica:";
+            toolTipItem5.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem5.Appearance.Options.UseForeColor = true;
+            toolTipItem5.Text = "Exemplo: \"Foi feita a troca da tela.\"";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            superToolTip5.Items.Add(toolTipItem5);
+            this.txtSolucao.SuperTip = superToolTip5;
             this.txtSolucao.TabIndex = 0;
             // 
             // lblIdChecklist
@@ -317,7 +317,7 @@
             this.cmbCliente.MaxDropDownItems = 10;
             this.cmbCliente.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.ScrollMetroColorTable = metroColorTable1;
+            this.cmbCliente.ScrollMetroColorTable = metroColorTable2;
             this.cmbCliente.Size = new System.Drawing.Size(602, 31);
             this.cmbCliente.TabIndex = 74;
             this.cmbCliente.Text = "Adriano Fraga de Andrade";
@@ -397,8 +397,8 @@
             this.cmbStatusServico.ItemHighLightColor = System.Drawing.Color.Gainsboro;
             this.cmbStatusServico.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbStatusServico.Items.AddRange(new object[] {
-            "APROVADO",
             "AVALIAÇÃO",
+            "APROVADO",
             "CONCLUÍDO"});
             this.cmbStatusServico.ItemTopMargin = 3;
             this.cmbStatusServico.Location = new System.Drawing.Point(805, 676);
@@ -496,6 +496,24 @@
             this.group_Checklist.TabStop = false;
             this.group_Checklist.Text = "CHECK LIST";
             // 
+            // txtChecklistObservacoes
+            // 
+            this.txtChecklistObservacoes.Location = new System.Drawing.Point(15, 386);
+            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
+            this.txtChecklistObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistObservacoes.Properties.Appearance.Options.UseBackColor = true;
+            this.txtChecklistObservacoes.Size = new System.Drawing.Size(330, 71);
+            toolTipTitleItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
+            toolTipTitleItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem1.Text = "Dica:\r\n";
+            toolTipItem1.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem1.Appearance.Options.UseForeColor = true;
+            toolTipItem1.Text = "Exemplo: \"Botão funciona mas algumas vezes precisa apertar um pouco mais forte\"";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.txtChecklistObservacoes.SuperTip = superToolTip1;
+            this.txtChecklistObservacoes.TabIndex = 1;
+            // 
             // txtChecklistMotivoAusencia
             // 
             this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(15, 523);
@@ -503,15 +521,15 @@
             this.txtChecklistMotivoAusencia.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtChecklistMotivoAusencia.Properties.Appearance.Options.UseBackColor = true;
             this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(330, 63);
-            toolTipTitleItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
-            toolTipTitleItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem3.Text = "Dica:\r\n";
-            toolTipItem3.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem3.Appearance.Options.UseForeColor = true;
-            toolTipItem3.Text = "Exemplo: \"A Tela nao liga, incapaz de fazer checklist\"";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.txtChecklistMotivoAusencia.SuperTip = superToolTip3;
+            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
+            toolTipTitleItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem2.Text = "Dica:\r\n";
+            toolTipItem2.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem2.Appearance.Options.UseForeColor = true;
+            toolTipItem2.Text = "Exemplo: \"A Tela nao liga, incapaz de fazer checklist\"";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.txtChecklistMotivoAusencia.SuperTip = superToolTip2;
             this.txtChecklistMotivoAusencia.TabIndex = 10;
             // 
             // switchChecklistAusente
@@ -1221,16 +1239,16 @@
             this.txtObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtObservacoes.Properties.Appearance.Options.UseBackColor = true;
             this.txtObservacoes.Size = new System.Drawing.Size(745, 77);
-            toolTipTitleItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
-            toolTipTitleItem4.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem4.Text = "Dica:";
-            toolTipItem4.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem4.Appearance.Options.UseForeColor = true;
-            toolTipItem4.Text = "Exemplo 1: \"Aparelho chegou desmontado.\"\r\nExemplo 2: \"Faltando bateria.\"\r\nExemplo" +
+            toolTipTitleItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
+            toolTipTitleItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem3.Text = "Dica:";
+            toolTipItem3.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem3.Appearance.Options.UseForeColor = true;
+            toolTipItem3.Text = "Exemplo 1: \"Aparelho chegou desmontado.\"\r\nExemplo 2: \"Faltando bateria.\"\r\nExemplo" +
     " 3: \"Tela descolando.\"";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.txtObservacoes.SuperTip = superToolTip4;
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.txtObservacoes.SuperTip = superToolTip3;
             this.txtObservacoes.TabIndex = 0;
             // 
             // group_CondicoesFisicas
@@ -1734,6 +1752,40 @@
             this.group_InformacoesAparelho.TabStop = false;
             this.group_InformacoesAparelho.Text = "INFORMAÇÕES DO APARELHO";
             // 
+            // sepMODELO
+            // 
+            this.sepMODELO.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.sepMODELO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.sepMODELO.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sepMODELO.BackgroundImage")));
+            this.sepMODELO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sepMODELO.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.sepMODELO.ForeColor = System.Drawing.Color.Gray;
+            this.sepMODELO.LineColor = System.Drawing.Color.Gray;
+            this.sepMODELO.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.sepMODELO.LineThickness = 3;
+            this.sepMODELO.Location = new System.Drawing.Point(107, 108);
+            this.sepMODELO.Margin = new System.Windows.Forms.Padding(2);
+            this.sepMODELO.Name = "sepMODELO";
+            this.sepMODELO.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.sepMODELO.Size = new System.Drawing.Size(272, 10);
+            this.sepMODELO.TabIndex = 74;
+            this.sepMODELO.TabStop = false;
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.EditValue = "";
+            this.txtModelo.Location = new System.Drawing.Point(107, 80);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtModelo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtModelo.Properties.Appearance.Options.UseBackColor = true;
+            this.txtModelo.Properties.Appearance.Options.UseFont = true;
+            this.txtModelo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtModelo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtModelo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.txtModelo.Size = new System.Drawing.Size(273, 34);
+            this.txtModelo.TabIndex = 73;
+            // 
             // bunifuSeparator8
             // 
             this.bunifuSeparator8.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -2056,56 +2108,6 @@
             this.lblOrdemServico.TabIndex = 66;
             this.lblOrdemServico.Text = "OS 1052";
             // 
-            // sepMODELO
-            // 
-            this.sepMODELO.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.sepMODELO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.sepMODELO.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sepMODELO.BackgroundImage")));
-            this.sepMODELO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.sepMODELO.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
-            this.sepMODELO.ForeColor = System.Drawing.Color.Gray;
-            this.sepMODELO.LineColor = System.Drawing.Color.Gray;
-            this.sepMODELO.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
-            this.sepMODELO.LineThickness = 3;
-            this.sepMODELO.Location = new System.Drawing.Point(107, 108);
-            this.sepMODELO.Margin = new System.Windows.Forms.Padding(2);
-            this.sepMODELO.Name = "sepMODELO";
-            this.sepMODELO.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
-            this.sepMODELO.Size = new System.Drawing.Size(272, 10);
-            this.sepMODELO.TabIndex = 74;
-            this.sepMODELO.TabStop = false;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.EditValue = "";
-            this.txtModelo.Location = new System.Drawing.Point(107, 80);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtModelo.Properties.Appearance.Options.UseFont = true;
-            this.txtModelo.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtModelo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtModelo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtModelo.Size = new System.Drawing.Size(273, 34);
-            this.txtModelo.TabIndex = 73;
-            // 
-            // txtChecklistObservacoes
-            // 
-            this.txtChecklistObservacoes.Location = new System.Drawing.Point(15, 386);
-            this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
-            this.txtChecklistObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtChecklistObservacoes.Properties.Appearance.Options.UseBackColor = true;
-            this.txtChecklistObservacoes.Size = new System.Drawing.Size(330, 71);
-            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
-            toolTipTitleItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem2.Text = "Dica:\r\n";
-            toolTipItem2.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem2.Appearance.Options.UseForeColor = true;
-            toolTipItem2.Text = "Exemplo: \"Botão funciona mas algumas vezes precisa apertar um pouco mais forte\"";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.txtChecklistObservacoes.SuperTip = superToolTip2;
-            this.txtChecklistObservacoes.TabIndex = 1;
-            // 
             // form_OrdemServicoSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2131,6 +2133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.group_Checklist.ResumeLayout(false);
             this.group_Checklist.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).EndInit();
             this.group_OutrasObservacoes.ResumeLayout(false);
@@ -2140,11 +2143,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
             this.group_InformacoesAparelho.ResumeLayout(false);
             this.group_InformacoesAparelho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             this.panel_OrdemServCodigo.ResumeLayout(false);
             this.panel_OrdemServCodigo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtModelo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

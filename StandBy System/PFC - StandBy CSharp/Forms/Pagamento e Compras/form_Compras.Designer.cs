@@ -168,7 +168,7 @@
             // 
             // txtPeca
             // 
-            this.txtPeca.EditValue = "FRONTAL S21 ULTRA";
+            this.txtPeca.EditValue = "";
             this.txtPeca.Location = new System.Drawing.Point(340, 81);
             this.txtPeca.Name = "txtPeca";
             this.txtPeca.Size = new System.Drawing.Size(170, 30);
@@ -184,7 +184,7 @@
             // 
             // txtFornecedor
             // 
-            this.txtFornecedor.EditValue = "GLOBAL";
+            this.txtFornecedor.EditValue = "";
             this.txtFornecedor.Location = new System.Drawing.Point(686, 81);
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.Size = new System.Drawing.Size(120, 30);

@@ -214,6 +214,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblIdChecklist.Size = new System.Drawing.Size(53, 17);
             this.lblIdChecklist.TabIndex = 79;
             this.lblIdChecklist.Text = "idCheck";
+            this.lblIdChecklist.Visible = false;
             // 
             // lblIdCondicoesFisicas
             // 
@@ -226,6 +227,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblIdCondicoesFisicas.Size = new System.Drawing.Size(56, 17);
             this.lblIdCondicoesFisicas.TabIndex = 78;
             this.lblIdCondicoesFisicas.Text = "IdCondF";
+            this.lblIdCondicoesFisicas.Visible = false;
             // 
             // lblIdServico
             // 
@@ -238,6 +240,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblIdServico.Size = new System.Drawing.Size(61, 17);
             this.lblIdServico.TabIndex = 77;
             this.lblIdServico.Text = "IdServico";
+            this.lblIdServico.Visible = false;
             // 
             // btnTipoAparelho
             // 
@@ -264,6 +267,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblIdCliente.Size = new System.Drawing.Size(58, 17);
             this.lblIdCliente.TabIndex = 67;
             this.lblIdCliente.Text = "IdCliente";
+            this.lblIdCliente.Visible = false;
             // 
             // lblCliente
             // 
@@ -377,8 +381,8 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbStatusServico.ItemHighLightColor = System.Drawing.Color.Gainsboro;
             this.cmbStatusServico.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbStatusServico.Items.AddRange(new object[] {
-            "APROVADO",
             "AVALIAÇÃO",
+            "APROVADO",
             "CONCLUÍDO"});
             this.cmbStatusServico.ItemTopMargin = 3;
             this.cmbStatusServico.Location = new System.Drawing.Point(805, 676);
@@ -1865,7 +1869,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtSenhaDispositivo.EditValue = "";
             this.txtSenhaDispositivo.Location = new System.Drawing.Point(107, 195);
             this.txtSenhaDispositivo.Name = "txtSenhaDispositivo";
+            this.txtSenhaDispositivo.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.txtSenhaDispositivo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtSenhaDispositivo.Properties.Appearance.Options.UseBackColor = true;
             this.txtSenhaDispositivo.Properties.Appearance.Options.UseFont = true;
             this.txtSenhaDispositivo.Properties.Appearance.Options.UseTextOptions = true;
             this.txtSenhaDispositivo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1933,7 +1939,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtModelo.EditValue = "";
             this.txtModelo.Location = new System.Drawing.Point(107, 89);
             this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.txtModelo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.txtModelo.Properties.Appearance.Options.UseBackColor = true;
             this.txtModelo.Properties.Appearance.Options.UseFont = true;
             this.txtModelo.Properties.Appearance.Options.UseTextOptions = true;
             this.txtModelo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;

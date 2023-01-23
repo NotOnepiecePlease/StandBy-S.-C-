@@ -17,7 +17,7 @@ namespace PFC___StandBy_CSharp.Forms.Pagamento_e_Compras
 {
     public partial class form_Compras : DevExpress.XtraEditors.XtraForm
     {
-        private BindingList<tb_comp_items> bindFiltrado;
+        //private BindingList<tb_comp_items> bindFiltrado;
         private BuscarDados bd = new BuscarDados();
         private standby_orgContext context = new standby_orgContext();
         private int ordemServico = 0;
@@ -79,7 +79,7 @@ namespace PFC___StandBy_CSharp.Forms.Pagamento_e_Compras
                 txtFornecedor.Text = gridView1.GetRowCellValue(e.FocusedRowHandle, "cp_fornecedor").ToString();
                 //MessageBox.Show($"{gridView1.GetRowCellValue(e.FocusedRowHandle, "sv_ordem_serv")}\n{gridView1.GetRowCellValue(e.FocusedRowHandle, "cp_valor_peca")}");
             }
-            catch (Exception exception)
+            catch
             {
             }
         }

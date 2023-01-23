@@ -192,7 +192,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         {
             if (e.KeyData == Keys.Escape)
             {
-                this.Close();
+                this.Dispose();
             }
         }
 
@@ -456,10 +456,6 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 
                 passShow.ShowDialog();
             }
-        }
-
-        private void txtCPFCliente_EditValueChanged(object sender, EventArgs e)
-        {
         }
     }
 }

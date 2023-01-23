@@ -10,14 +10,14 @@ using PFC___StandBy_CSharp.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Threading.Tasks;
-using System.Windows.Controls;
+using System.Threading;
 using System.Windows.Forms;
 using Bunifu.UI.WinForms;
 using PFC___StandBy_CSharp.Utils;
 using static PFC___StandBy_CSharp.Enums.EnumStandby;
 using GridView = DevExpress.XtraGrid.Views.Grid.GridView;
 using RichTextBox = System.Windows.Forms.RichTextBox;
+using System.Threading.Tasks;
 
 // ReSharper disable InconsistentNaming
 
@@ -274,9 +274,14 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnEditarServico_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //EditarUmServico();
+            //for (int i = 0; i < 500; i++)
+            //{
+            //    EditarServicoV2();
+            //    PopularGridview();
+            //    Thread.Sleep(300);
+            //}
+
             EditarServicoV2();
-            //gridviewServicos.RefreshData();
             PopularGridview();
         }
 
@@ -292,19 +297,28 @@ namespace PFC___StandBy_CSharp.Forms
                 (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) dadosServico =
                     buscarDados.BuscarOSPelaID(idServico);
 
-                form_OrdemServicoEditar formEditarServico;
+
                 if (dadosServico.checklist == null || dadosServico.condicoesFisicas == null)
                 {
-                    formEditarServico = new form_OrdemServicoEditar(dadosServico.servico.sv_cl_idcliente, true);
-                    PreencherFormApenasDadosServico(formEditarServico, dadosServico, pecasDoServico);
+                    using (form_OrdemServicoEditar formEditarServico = new form_OrdemServicoEditar(dadosServico.servico.sv_cl_idcliente, true))
+                    {
+                        PreencherFormApenasDadosServico(formEditarServico, dadosServico, pecasDoServico);
+                        formEditarServico.ShowDialog();
+                    }
                 }
                 else
                 {
-                    formEditarServico = new form_OrdemServicoEditar(dadosServico.servico.sv_cl_idcliente, false);
-                    PreencherFormDadosCompletos(formEditarServico, dadosServico, pecasDoServico);
+                    using (form_OrdemServicoEditar formEditarServico = new form_OrdemServicoEditar(dadosServico.servico.sv_cl_idcliente, false))
+                    {
+                        PreencherFormDadosCompletos(formEditarServico, dadosServico, pecasDoServico);
+                        formEditarServico.ShowDialog();
+                    }
                 }
 
-                formEditarServico.ShowDialog();
+                pecasDoServico.Clear();
+                dadosServico.servico = null;
+                dadosServico.checklist = null;
+                dadosServico.condicoesFisicas = null;
             }
             catch (Exception e)
             {
