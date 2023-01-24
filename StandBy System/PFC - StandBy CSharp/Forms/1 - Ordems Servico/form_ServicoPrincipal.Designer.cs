@@ -31,8 +31,8 @@ namespace PFC___StandBy_CSharp.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_ServicoPrincipal));
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery6 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
             this.colsv_ordem_serv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridcol_Prazo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -116,7 +116,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1280, 665);
+            this.panel1.Size = new System.Drawing.Size(1278, 610);
             this.panel1.TabIndex = 1;
             this.panel1.TabStop = true;
             this.panel1.MouseEnter += new System.EventHandler(this.LimparLinhasSelecionadasGrid);
@@ -168,6 +168,9 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             // gridctrlServicos
             // 
+            this.gridctrlServicos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.behaviorManager1.SetBehaviors(this.gridctrlServicos, new DevExpress.Utils.Behaviors.Behavior[] {
             ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.Common.PersistenceBehavior.Create(typeof(DevExpress.Utils.BehaviorSource.PersistenceBehaviorSourceForControl), "C:\\StandBy EXE\\mylayout.xml", DevExpress.Utils.Behaviors.Common.Storage.File, DevExpress.Utils.DefaultBoolean.Default)))});
             this.gridctrlServicos.DataMember = "Query";
@@ -177,7 +180,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.gridctrlServicos.Name = "gridctrlServicos";
             this.gridctrlServicos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.gridctrlServicos.Size = new System.Drawing.Size(1256, 585);
+            this.gridctrlServicos.Size = new System.Drawing.Size(1254, 540);
             this.gridctrlServicos.TabIndex = 35;
             this.gridctrlServicos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridviewServicos});
@@ -187,10 +190,10 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.dataSourceGridServicos.ConnectionName = "standby_MainConn";
             this.dataSourceGridServicos.Name = "dataSourceGridServicos";
-            customSqlQuery1.Name = "Query";
-            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
+            customSqlQuery6.Name = "Query";
+            customSqlQuery6.Sql = resources.GetString("customSqlQuery6.Sql");
             this.dataSourceGridServicos.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery1});
+            customSqlQuery6});
             this.dataSourceGridServicos.ResultSchemaSerializable = resources.GetString("dataSourceGridServicos.ResultSchemaSerializable");
             // 
             // gridviewServicos
@@ -208,9 +211,9 @@ namespace PFC___StandBy_CSharp.Forms
             this.colsv_defeito,
             this.colsv_previsao_entrega});
             this.gridviewServicos.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            gridFormatRule1.Name = "Format0";
-            gridFormatRule1.Rule = null;
-            this.gridviewServicos.FormatRules.Add(gridFormatRule1);
+            gridFormatRule2.Name = "Format0";
+            gridFormatRule2.Rule = null;
+            this.gridviewServicos.FormatRules.Add(gridFormatRule2);
             this.gridviewServicos.GridControl = this.gridctrlServicos;
             this.gridviewServicos.Name = "gridviewServicos";
             this.gridviewServicos.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -296,7 +299,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblSituacao.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.lblSituacao.ForeColor = System.Drawing.Color.Lavender;
             this.lblSituacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSituacao.Location = new System.Drawing.Point(91, 116);
+            this.lblSituacao.Location = new System.Drawing.Point(89, 116);
             this.lblSituacao.Name = "lblSituacao";
             this.lblSituacao.Size = new System.Drawing.Size(16, 17);
             this.lblSituacao.TabIndex = 34;
@@ -335,15 +338,15 @@ namespace PFC___StandBy_CSharp.Forms
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1280, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1278, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 665);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 610);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1280, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1278, 0);
             // 
             // barDockControlLeft
             // 
@@ -351,15 +354,15 @@ namespace PFC___StandBy_CSharp.Forms
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 665);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 610);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1280, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1278, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 665);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 610);
             // 
             // btnEditarOrdemServicoEntrada
             // 
@@ -482,7 +485,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 665);
+            this.ClientSize = new System.Drawing.Size(1278, 610);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

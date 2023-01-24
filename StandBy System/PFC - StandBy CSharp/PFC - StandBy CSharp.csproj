@@ -1031,6 +1031,7 @@
     <Compile Include="Utils\ComboboxStatus.cs" />
     <Compile Include="Utils\Constantes.cs" />
     <Compile Include="Utils\ConvertImage.cs" />
+    <Compile Include="Utils\CustomOverlayPainter.cs" />
     <Compile Include="Utils\FormatarCampos.cs" />
     <EmbeddedResource Include="Forms\1 - Ordems Servico\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
