@@ -758,8 +758,11 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 foreach (var control in formOrdemServico.group_CondicoesFisicas.Controls)
                 {
-                    var teste = (BunifuDropdown)control;
-                    teste.Enabled = false;
+                    if (control is BunifuDropdown)
+                    {
+                        var teste = (BunifuDropdown)control;
+                        teste.Enabled = false;
+                    }
                 }
 
                 foreach (var control in formOrdemServico.group_Checklist.Controls)

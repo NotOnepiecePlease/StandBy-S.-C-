@@ -19,6 +19,7 @@ namespace PFC___StandBy_CSharp.Forms.Testes
         public form_V2Standby()
         {
             InitializeComponent();
+            Constantes.IniciarOpcoesChecklistEntrada();
             menuSuperior.OptionsBar.DrawDragBorder = false;
             sourceServicosSemanais.Fill();
             sourceServicosMensais.Fill();

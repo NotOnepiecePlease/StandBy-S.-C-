@@ -19,6 +19,7 @@ using PFC___StandBy_CSharp.MsgBox;
 using PFC___StandBy_CSharp.Utils;
 using static PFC___StandBy_CSharp.Enums.EnumStandby;
 using PFC___StandBy_CSharp.PreencherComponentes.Tela_6___Usada_por_Varias_Telas;
+using System.Drawing.Printing;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -177,25 +178,41 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     report_OrdemServicoSaida report = new report_OrdemServicoSaida();
                     report.Parameters["pIDServico"].Value = Convert.ToInt32(lblIdServico.Text);
-                    //report.Parameters["clienteID"].Visible = false;
                     report.PrintingSystem.ShowPrintStatusDialog = false;
-                    //documentViewer1.DocumentSource = report;
                     report.CreateDocument();
                     PrintToolBase tool = new PrintToolBase(report.PrintingSystem);
-                    //tool.PrinterSettings.
-                    tool.Print("Microsoft Print to PDF");
-                    //using (var printTool = new DevExpress.XtraReports.UI.ReportPrintTool(report))
-                    //{
-                    //    //   printTool.Print(sPrinterDeliveryTkt);
-                    //    printTool.Report.CreateDocument(false); // <- ADD THIS LINE
-                    //    printTool.PrintingSystem.ExportToPdf(@"teste.pdf");
-                    //}
+
+                    string impressoraPadrao = pegarImpressoraPadrao();
+                    if (impressoraPadrao != string.Empty)
+                    {
+                        tool.Print(impressoraPadrao);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Impressora nao configurada corretamente");
+                    }
                 }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.ToString());
                 }
             }
+        }
+
+        private string pegarImpressoraPadrao()
+        {
+            try
+            {
+                var configImpressora = new PrinterSettings();
+                Console.WriteLine(configImpressora.PrinterName);
+                return configImpressora.PrinterName;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+
+            return string.Empty;
         }
 
         private void switchChecklistAusente_Toggled(object sender, EventArgs e)
