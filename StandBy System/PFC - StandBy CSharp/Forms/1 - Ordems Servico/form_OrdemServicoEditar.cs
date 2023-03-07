@@ -47,8 +47,10 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         private void InicializarOpcoesCombobox()
         {
             PreencherComboboxServicos p = new PreencherComboboxServicos();
+
             //info aparelho
             p.PreencherInfoAparelho(this);
+
             //cond fisicas
             p.PreencherInfoCondFisicas(this);
         }
@@ -57,6 +59,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         {
             //Pego a linha que tem o ultimo ID cadastrado
             DataRow[] rows = _dt.Select($"ID ='{_id}'");
+
             //Seto a index da combobox para a index dessa linha que peguei acima.
             cmbCliente.SelectedIndex = _dt.Rows.IndexOf(rows[0]);
         }
@@ -74,6 +77,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             if (combobox.SelectedIndex != -1)
             {
                 DataRowView drv = combobox.Items[combobox.SelectedIndex] as DataRowView;
+
                 //lblIdCliente.Text = listClientesComId.ElementAt(multiColumnComboBox1.SelectedIndex).ID.ToString();
                 lblIdCliente.Text = drv.Row[0].ToString();
             }
@@ -122,7 +126,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         private void txtValorAvista_TextChange(object sender, EventArgs e)
         {
             float servicoValor = float.Parse(txtServicoValor.Text.TrimStart('R', '$').Trim());
-            int parcelas = int.Parse(txtParcelas.Text);
+            int   parcelas     = int.Parse(txtParcelas.Text);
             txtValorParcelaIndividual.Text = $"{servicoValor / parcelas:C}";
         }
 
@@ -131,7 +135,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             if (!string.IsNullOrWhiteSpace(txtParcelas.Text))
             {
                 float servicoValor = float.Parse(txtServicoValor.Text.TrimStart('R', '$').Trim());
-                int parcelas = int.Parse(txtParcelas.Text);
+                int   parcelas     = int.Parse(txtParcelas.Text);
                 txtValorParcelaIndividual.Text = $"{servicoValor / parcelas:C}";
             }
             else
@@ -143,13 +147,13 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         public void CalcularLucro()
         {
             float valorServico = 0.0f;
-            float valorPeca = 0.0f;
-            float lucro = valorServico - valorPeca;
+            float valorPeca    = 0.0f;
+            float lucro        = valorServico - valorPeca;
             try
             {
                 valorServico = float.Parse(txtServicoValor.Text.TrimStart('R', '$').Trim());
-                valorPeca = float.Parse(txtPecaValor.Text.TrimStart('R', '$').Trim());
-                lucro = valorServico - valorPeca;
+                valorPeca    = float.Parse(txtPecaValor.Text.TrimStart('R', '$').Trim());
+                lucro        = valorServico - valorPeca;
             }
             catch (Exception)
             {
@@ -159,8 +163,9 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             if (lucro > 0)
             {
                 txtLucroValor.ForeColor = Color.LimeGreen;
-                sepLucro.ForeColor = Color.LimeGreen;
-                sepLucro.LineColor = Color.LimeGreen;
+                sepLucro.ForeColor      = Color.LimeGreen;
+                sepLucro.LineColor      = Color.LimeGreen;
+
                 //sepLucro.LineFocusedColor = Color.LimeGreen;
                 //txtLucroValor.Font = new Font(this.Font.Name, 11, FontStyle.Bold);
                 txtLucroValor.Text = $"{lucro:C}";
@@ -168,16 +173,18 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             else if (lucro == 0)
             {
                 txtLucroValor.ForeColor = Color.White;
-                sepLucro.ForeColor = Color.White;
-                sepLucro.LineColor = Color.White;
+                sepLucro.ForeColor      = Color.White;
+                sepLucro.LineColor      = Color.White;
+
                 //txtLucroValor.LineFocusedColor = Color.White;
                 txtLucroValor.Text = $"{lucro:C}";
             }
             else if (lucro < 0)
             {
                 txtLucroValor.ForeColor = Color.Red;
-                sepLucro.ForeColor = Color.Red;
-                sepLucro.LineColor = Color.Red;
+                sepLucro.ForeColor      = Color.Red;
+                sepLucro.LineColor      = Color.Red;
+
                 //txtLucroValor.LineFocusedColor = Color.Red;
                 txtLucroValor.Text = $"{lucro:C}";
             }
@@ -206,11 +213,11 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     //Abrir form
                     form_InserirEditarChecklist form =
                         new form_InserirEditarChecklist(Checklist.ENTRADA, true);
-                    form.lblIdServico.Text = lblIdServico.Text;
+                    form.lblIdServico.Text       = lblIdServico.Text;
                     form.btnSalvarChecklist.Text = "Inserir checklist - Entrada";
                     form.lblTituloChecklist.Text = "Checklist - ENTRADA";
-                    form.lblOrdemServico.Text = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
-                    form.lblDataCad.Text = dtpDataServico.EditValue.ToString();
+                    form.lblOrdemServico.Text    = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
+                    form.lblDataCad.Text         = dtpDataServico.EditValue.ToString();
                     form.ShowDialog();
                 }
             }
@@ -222,14 +229,15 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     //Abrir form
                     form_InserirEditarChecklist form =
                         new form_InserirEditarChecklist(Checklist.ENTRADA, false);
-                    form.lblIdServico.Text = lblIdServico.Text;
+                    form.lblIdServico.Text       = lblIdServico.Text;
                     form.btnSalvarChecklist.Text = "Alterar checklist - Entrada";
                     form.lblTituloChecklist.Text = "Checklist - ENTRADA";
-                    form.lblOrdemServico.Text = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
-                    form.lblDataCad.Text = dtpDataServico.EditValue.ToString();
+                    form.lblOrdemServico.Text    = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
+                    form.lblDataCad.Text         = dtpDataServico.EditValue.ToString();
                     form.ShowDialog();
                 }
             }
+
             //this.Close();
         }
 
@@ -243,11 +251,11 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     //Abrir form
                     form_InserirEditarChecklist form =
                         new form_InserirEditarChecklist(Checklist.SAIDA, true);
-                    form.lblIdServico.Text = lblIdServico.Text;
+                    form.lblIdServico.Text       = lblIdServico.Text;
                     form.btnSalvarChecklist.Text = "Inserir checklist - Saida";
                     form.lblTituloChecklist.Text = "Checklist - SAIDA";
-                    form.lblOrdemServico.Text = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
-                    form.lblDataCad.Text = dtpDataServico.EditValue.ToString();
+                    form.lblOrdemServico.Text    = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
+                    form.lblDataCad.Text         = dtpDataServico.EditValue.ToString();
                     form.ShowDialog();
                 }
             }
@@ -259,11 +267,11 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     //Abrir form
                     form_InserirEditarChecklist form =
                         new form_InserirEditarChecklist(Checklist.SAIDA, false);
-                    form.lblIdServico.Text = lblIdServico.Text;
+                    form.lblIdServico.Text       = lblIdServico.Text;
                     form.btnSalvarChecklist.Text = "Alterar checklist - Saida";
                     form.lblTituloChecklist.Text = "Checklist - SAIDA";
-                    form.lblOrdemServico.Text = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
-                    form.lblDataCad.Text = dtpDataServico.EditValue.ToString();
+                    form.lblOrdemServico.Text    = lblOrdemServico.Text.TrimStart('O', 'S').Trim();
+                    form.lblDataCad.Text         = dtpDataServico.EditValue.ToString();
                     form.ShowDialog();
                 }
             }
@@ -278,7 +286,8 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         {
             if (string.IsNullOrWhiteSpace(cmbTipoAparelho.Text))
             {
-                MessageBox.Show(@"Voce esqueceu de selecionar o tipo do aparelho", "ALERTA!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Voce esqueceu de selecionar o tipo do aparelho", "ALERTA!", MessageBoxButtons.OK
+                    , MessageBoxIcon.Warning);
                 return;
             }
 
@@ -293,7 +302,8 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             if (string.IsNullOrWhiteSpace(cmbTipoAparelho.Text))
             {
                 MessageBox.Show(
-                    "Serviço só pode ser concluido quando você selecionar o tipo do aparelho.\nPara especificar o tipo basta selecionar no campo abaixo dos botoes de inserir checklist.",
+                    "Serviço só pode ser concluido quando você selecionar o tipo do aparelho.\nPara especificar o tipo basta selecionar no campo abaixo dos botoes de inserir checklist."
+                    ,
                     "Tipo do aparelho inexistente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -307,9 +317,9 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         private void EfetuarPagamento()
         {
             form_Pagamento formPagamento = new form_Pagamento(Convert.ToInt32(lblIdServico.Text));
-            formPagamento.txtValorServico.Text = txtServicoValor.Text;
+            formPagamento.txtValorServico.Text     = txtServicoValor.Text;
             formPagamento.txtServicoExecutado.Text = txtSolucao.Text;
-            formPagamento.lblIdServico.Text = lblIdServico.Text;
+            formPagamento.lblIdServico.Text        = lblIdServico.Text;
             formPagamento.ShowDialog();
         }
 
@@ -336,15 +346,16 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                 if (MessageBox.Show("Gostaria de imprimir a O.S de Saida apos a conclusão do serviço?",
                         "Deseja imprimir OS - Saida?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    int idCliente = Convert.ToInt32(lblIdCliente.Text);
+                    int                    idCliente = Convert.ToInt32(lblIdCliente.Text);
                     form_OrdemServicoSaida formSaida = new form_OrdemServicoSaida();
+
                     //form_OrdemServicoSaida formSaida = new form_OrdemServicoSaida(tipoAparelho, idCliente, false, new[] { 255, 0, 103 });
-                    formSaida.lblOrdemServico.Text = lblOrdemServico.Text;
-                    formSaida.lblDataOrdemServico.Text = lblDataOrdemServico.Text;
-                    formSaida.lblIdServico.Text = lblIdServico.Text;
-                    formSaida.lblIdCliente.Text = lblIdCliente.Text;
-                    formSaida.lblIdChecklist.Text = lblIdChecklist.Text;
-                    formSaida.lblIdCondicoesFisicas.Text = lblIdCondicoesFisicas.Text;
+                    formSaida.lblOrdemServico.Text          = lblOrdemServico.Text;
+                    formSaida.lblDataOrdemServico.Text      = lblDataOrdemServico.Text;
+                    formSaida.lblIdServico.Text             = lblIdServico.Text;
+                    formSaida.lblIdCliente.Text             = lblIdCliente.Text;
+                    formSaida.lblIdChecklist.Text           = lblIdChecklist.Text;
+                    formSaida.lblIdCondicoesFisicas.Text    = lblIdCondicoesFisicas.Text;
                     formSaida.btnSalvarOrdemServico.Visible = false;
                     formSaida.ShowDialog();
                     return;
@@ -370,10 +381,10 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 
         private void AbrirFormaCompras()
         {
-            int ordemServico = Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ').Trim());
-            int idServico = Convert.ToInt32(lblIdServico.Text);
-            form_Compras formCompra = new form_Compras(ordemServico, idServico);
-            formCompra.lblIdServico.Text = lblIdServico.Text;
+            int          ordemServico = Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ').Trim());
+            int          idServico    = Convert.ToInt32(lblIdServico.Text);
+            form_Compras formCompra   = new form_Compras(ordemServico, idServico);
+            formCompra.lblIdServico.Text       = lblIdServico.Text;
             formCompra.cmbOrdemServico.Enabled = false;
             formCompra.ShowDialog();
         }
@@ -396,22 +407,25 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         {
             foreach (DataRowView VARIABLE in cmbCliente.Items)
             {
-                txtCPFCliente.Text = VARIABLE.Row["Cpf"].ToString();
+                txtCPFCliente.Text        = VARIABLE.Row["Cpf"].ToString();
                 txtTelefonePrincipal.Text = VARIABLE.Row["⠀⠀⠀Telefone⠀⠀"].ToString();
-                txtTelefoneRecado.Text = VARIABLE.Row["Recado"].ToString();
+                txtTelefoneRecado.Text    = VARIABLE.Row["Recado"].ToString();
             }
         }
 
         private void picSenhaPattern_Click(object sender, EventArgs e)
         {
             standby_orgContext context = new standby_orgContext();
-            var senhaPadrao = context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(lblIdServico.Text)).sv_senha_pattern;
+            var senhaPadrao = context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(lblIdServico.Text))
+                .sv_senha_pattern;
 
             if (senhaPadrao == null || senhaPadrao[0] == 0x00 && picSenhaPattern.Image == null)
             {
                 VerSenhaPattern();
-                var senhaRecemAdd = context.tb_servicos.FirstOrDefault(x => x.sv_id == Convert.ToInt32(lblIdServico.Text)).sv_senha_pattern;
-                picSenhaPattern.Image = ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
+                var senhaRecemAdd = context.tb_servicos
+                    .FirstOrDefault(x => x.sv_id == Convert.ToInt32(lblIdServico.Text)).sv_senha_pattern;
+                picSenhaPattern.Image =
+                    ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
             }
             else
             {
@@ -439,19 +453,19 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                     ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
                 if (passShow.pictureBox1.Image == null)
                 {
-                    passShow.lblSemPadrao.Visible = true;
+                    passShow.lblSemPadrao.Visible       = true;
                     passShow.lblDesejaCadastrar.Visible = true;
-                    passShow.btnSim.Visible = true;
-                    passShow.btnNao.Visible = true;
-                    passShow.lblIDServico.Text = lblIdServico.Text;
+                    passShow.btnSim.Visible             = true;
+                    passShow.btnNao.Visible             = true;
+                    passShow.lblIDServico.Text          = lblIdServico.Text;
                 }
                 else
                 {
-                    passShow.lblSemPadrao.Visible = false;
+                    passShow.lblSemPadrao.Visible       = false;
                     passShow.lblDesejaCadastrar.Visible = false;
-                    passShow.btnSim.Visible = false;
-                    passShow.btnNao.Visible = false;
-                    passShow.lblIDServico.Text = lblIdServico.Text;
+                    passShow.btnSim.Visible             = false;
+                    passShow.btnNao.Visible             = false;
+                    passShow.lblIDServico.Text          = lblIdServico.Text;
                 }
 
                 passShow.ShowDialog();

@@ -42,11 +42,12 @@ namespace PFC___StandBy_CSharp.Forms
         private bool isNovaOrdemServico = false;
 
         public form_OrdemServicoEntrada(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico,
-            int[] _corGeral)
+            int[]                                _corGeral)
         {
             InitializeComponent();
-            corGeral = _corGeral;
+            corGeral           = _corGeral;
             isNovaOrdemServico = _isNovaOrdemServico;
+
             //txtChecklistMotivoAusencia.BackColor = Color.FromArgb(64, 64, 64);
             //txtChecklistMotivoAusencia.ReadOnly = true;
             SetarCores();
@@ -68,7 +69,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             //ZerarTodosCampos();
             InicializarDatas();
-            tipoAparelhoGlobal = _tipoAparelhoGlobal;
+            tipoAparelhoGlobal            = _tipoAparelhoGlobal;
             cmbStatusServico.SelectedItem = "AVALIAÇÃO";
 
             string tipoAparelho = System.Enum.GetName(typeof(Aparelho), (int)tipoAparelhoGlobal);
@@ -84,10 +85,13 @@ namespace PFC___StandBy_CSharp.Forms
         {
             DesabilitarOpcoesDeAcordoTipoAparelho();
             PreencherComboboxServicos p = new PreencherComboboxServicos();
+
             //checklist
             p.PreencherInfoChecklist(this);
+
             //info aparelho
             p.PreencherInfoAparelho(this);
+
             //cond fisicas
             p.PreencherInfoCondFisicas(this);
         }
@@ -118,6 +122,7 @@ namespace PFC___StandBy_CSharp.Forms
                         var controle = (BunifuDropdown)control;
                         controle.Enabled = false;
                     }
+
                     //else if (control is RichTextBox)
                     //{
                     //    var teste = (RichTextBox)control;
@@ -125,25 +130,26 @@ namespace PFC___StandBy_CSharp.Forms
                     //}
 
                     switchChecklistAusente.Enabled = false;
-                    cmbMarca.Enabled = false;
-                    sepMARCA.BackColor = Color.FromArgb(64, 64, 64);
-                    txtModelo.Enabled = false;
-                    sepMODELO.BackColor = Color.FromArgb(64, 64, 64);
-                    cmbCor.Enabled = false;
-                    sepCOR.BackColor = Color.FromArgb(64, 64, 64);
-                    txtMei_SerialNumber.Enabled = false;
-                    txtMei_SerialNumber.BackColor = Color.FromArgb(64, 64, 64);
-                    sepMei.BackColor = Color.FromArgb(64, 64, 64);
+                    cmbMarca.Enabled               = false;
+                    sepMARCA.BackColor             = Color.FromArgb(64, 64, 64);
+                    txtModelo.Enabled              = false;
+                    sepMODELO.BackColor            = Color.FromArgb(64, 64, 64);
+                    cmbCor.Enabled                 = false;
+                    sepCOR.BackColor               = Color.FromArgb(64, 64, 64);
+                    txtMei_SerialNumber.Enabled    = false;
+                    txtMei_SerialNumber.BackColor  = Color.FromArgb(64, 64, 64);
+                    sepMei.BackColor               = Color.FromArgb(64, 64, 64);
 
                     txtModelo.BackColor = Color.FromArgb(64, 64, 64);
 
                     if (control.Name == "txtChecklistObservacoes" || control.Name == "txtChecklistMotivoAusencia")
                     {
                         var richTextBox = (RichTextBox)control;
-                        control.BackColor = Color.FromArgb(64, 64, 64);
-                        control.Text = string.Empty;
+                        control.BackColor    = Color.FromArgb(64, 64, 64);
+                        control.Text         = string.Empty;
                         richTextBox.ReadOnly = true;
                     }
+
                     //else if (control.Name == "txtChecklistMotivoAusencia")
                     //{
                     //    var richTextBox = (RichTextBox)control;
@@ -157,10 +163,10 @@ namespace PFC___StandBy_CSharp.Forms
         private void SetarCores()
         {
             group_InformacoesAparelho.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            group_CondicoesFisicas.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            group_OutrasObservacoes.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            group_RelatoCliente.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            group_CondicoesBalcao.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            group_CondicoesFisicas.ForeColor    = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            group_OutrasObservacoes.ForeColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            group_RelatoCliente.ForeColor       = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            group_CondicoesBalcao.ForeColor     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void ZerarTodosCampos()
@@ -170,37 +176,37 @@ namespace PFC___StandBy_CSharp.Forms
 
             cmbStatusServico.SelectedItem = "AVALIAÇÃO";
 
-            cmbMarca.Text = "";
-            txtModelo.Text = "";
-            cmbCor.Text = "";
+            cmbMarca.Text            = "";
+            txtModelo.Text           = "";
+            cmbCor.Text              = "";
             txtMei_SerialNumber.Text = "";
             txtSenhaDispositivo.Text = "";
 
-            cmbPelicula.Text = "";
-            cmbTela.Text = "";
-            cmbTampa.Text = "";
-            cmbAro.Text = "";
-            cmbBotoes.Text = "";
+            cmbPelicula.Text    = "";
+            cmbTela.Text        = "";
+            cmbTampa.Text       = "";
+            cmbAro.Text         = "";
+            cmbBotoes.Text      = "";
             cmbLenteCamera.Text = "";
 
-            txtObservacoes.Text = "";
-            txtRelatoCliente.Text = "";
+            txtObservacoes.Text     = "";
+            txtRelatoCliente.Text   = "";
             txtCondicoesBalcao.Text = "";
 
-            cmbChecklistBiometria.Text = "";
-            cmbChecklistMicrofone.Text = "";
-            cmbChecklistTela.Text = "";
-            cmbChecklistChip.Text = "";
-            cmbChecklistBotoes.Text = "";
-            cmbChecklistSensor.Text = "";
-            cmbChecklistCameras.Text = "";
-            cmbChecklistAuricular.Text = "";
-            cmbChecklistWifi.Text = "";
+            cmbChecklistBiometria.Text    = "";
+            cmbChecklistMicrofone.Text    = "";
+            cmbChecklistTela.Text         = "";
+            cmbChecklistChip.Text         = "";
+            cmbChecklistBotoes.Text       = "";
+            cmbChecklistSensor.Text       = "";
+            cmbChecklistCameras.Text      = "";
+            cmbChecklistAuricular.Text    = "";
+            cmbChecklistWifi.Text         = "";
             cmbChecklistAltoFaltante.Text = "";
-            cmbChecklistBluetooth.Text = "";
+            cmbChecklistBluetooth.Text    = "";
             cmbChecklistCarregamento.Text = "";
 
-            txtChecklistObservacoes.Text = "";
+            txtChecklistObservacoes.Text    = "";
             txtChecklistMotivoAusencia.Text = "";
 
             switchChecklistAusente.IsOn = false;
@@ -221,13 +227,13 @@ namespace PFC___StandBy_CSharp.Forms
         private void InicializarDatas()
         {
             lblDataOrdemServico.Text = $"{DateTime.Now:G}";
-            dtpDataServico.Value = DateTime.Now;
+            dtpDataServico.Value     = DateTime.Now;
         }
 
         public void CarregarComboxClientes()
         {
             cmbCliente.SelectedIndexChanged -= cmbCliente_SelectedIndexChanged;
-            ultimoClienteAdicionadoID = preencherCombobox.CarregarComboxClientes(cmbCliente, ref dt);
+            ultimoClienteAdicionadoID       =  preencherCombobox.CarregarComboxClientes(cmbCliente, ref dt);
             cmbCliente.SelectedIndexChanged += cmbCliente_SelectedIndexChanged;
         }
 
@@ -235,6 +241,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             //Pego a linha que tem o ultimo ID cadastrado
             DataRow[] rows = _dt.Select($"ID ='{_id}'");
+
             //Seto a index da combobox para a index dessa linha que peguei acima.
             cmbCliente.SelectedIndex = _dt.Rows.IndexOf(rows[0]);
         }
@@ -302,6 +309,7 @@ namespace PFC___StandBy_CSharp.Forms
         private bool ValidarCampos()
         {
             bool isValidado = false;
+
             //Validacao dos campos de condicoes fisicas, verificando se pelo menos 1 possui dados.
             int camposCondFisicasSemDados = 0;
             foreach (Control control in group_CondicoesFisicas.Controls)
@@ -344,7 +352,8 @@ namespace PFC___StandBy_CSharp.Forms
             else if (camposChecklistSemDados == 12)
             {
                 MessageBox.Show(
-                    @"Voce deve preencher ao menos um campo de checklist do aparelho ou marcar a opção 'Impossivel fazer checklist'",
+                    @"Voce deve preencher ao menos um campo de checklist do aparelho ou marcar a opção 'Impossivel fazer checklist'"
+                    ,
                     "ALERTA!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return isValidado;
@@ -363,16 +372,15 @@ namespace PFC___StandBy_CSharp.Forms
         {
             try
             {
-                ClienteEstrutura clienteDados = new ClienteEstrutura();
-                ServicoEstrutura servicoDados = new ServicoEstrutura();
-                ChecklistEstrutura checklistDados = new ChecklistEstrutura();
+                ClienteEstrutura          clienteDados          = new ClienteEstrutura();
+                ServicoEstrutura          servicoDados          = new ServicoEstrutura();
+                ChecklistEstrutura        checklistDados        = new ChecklistEstrutura();
                 CondicoesFisicasEstrutura condicoesFisicasDados = new CondicoesFisicasEstrutura();
 
                 //Dados do cliente
                 clienteDados.ID = Convert.ToInt32(lblIdCliente.Text);
 
                 #region If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
-
                 string tipoAparelho = "NAO SETADA";
                 if (tipoAparelhoGlobal == Aparelho.Celular)
                 {
@@ -386,7 +394,6 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     tipoAparelho = "Notebook";
                 }
-
                 #endregion If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
 
                 //Dados do servico
@@ -396,13 +403,13 @@ namespace PFC___StandBy_CSharp.Forms
                 }
 
                 //servicoDados.OrdemServico = ordemServicoID;
-                servicoDados.OrdemServico = Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' '));
-                servicoDados.DataServico = DateTime.Now;
-                servicoDados.FK_IdCliente = clienteDados.ID;
-                servicoDados.TipoAparelho = tipoAparelho;
-                servicoDados.Marca = cmbMarca.Text;
-                servicoDados.Aparelho = txtModelo.Text;
-                servicoDados.Cor = cmbCor.Text;
+                servicoDados.OrdemServico    = Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' '));
+                servicoDados.DataServico     = DateTime.Now;
+                servicoDados.FK_IdCliente    = clienteDados.ID;
+                servicoDados.TipoAparelho    = tipoAparelho;
+                servicoDados.Marca           = cmbMarca.Text;
+                servicoDados.Aparelho        = txtModelo.Text;
+                servicoDados.Cor             = cmbCor.Text;
                 servicoDados.MeiSerialNumber = txtMei_SerialNumber.Text;
                 servicoDados.Senha = string.IsNullOrWhiteSpace(txtSenhaDispositivo.Text)
                     ? null
@@ -411,7 +418,7 @@ namespace PFC___StandBy_CSharp.Forms
                     ? ConvertImage.ConvertImageToByte(picSenhaPattern.Image)
                     : null;
                 servicoDados.Situacao = string.IsNullOrWhiteSpace(txtObservacoes.Text) ? null : txtObservacoes.Text;
-                servicoDados.Status = 1;
+                servicoDados.Status   = 1;
                 servicoDados.RelatoCliente =
                     string.IsNullOrWhiteSpace(txtRelatoCliente.Text) ? null : txtRelatoCliente.Text;
                 servicoDados.CondicoesBalcao =
@@ -419,24 +426,25 @@ namespace PFC___StandBy_CSharp.Forms
                 servicoDados.AvaliacaoServico = cmbStatusServico.Text;
 
                 //Dados do Checklist
-                checklistDados.FK_IdServico = servicoDados.ID;
-                checklistDados.OrdemServico = servicoDados.OrdemServico;
+                checklistDados.FK_IdServico  = servicoDados.ID;
+                checklistDados.OrdemServico  = servicoDados.OrdemServico;
                 checklistDados.DataChecklist = servicoDados.DataServico;
-                checklistDados.Tipo = Constantes.CHK_ENTRADA;
+                checklistDados.Tipo          = Constantes.CHK_ENTRADA;
                 checklistDados.BiometriaFaceID =
                     switchChecklistAusente.IsOn == true ? null : cmbChecklistBiometria.Text;
-                checklistDados.Microfone = switchChecklistAusente.IsOn == true ? null : cmbChecklistMicrofone.Text;
-                checklistDados.Tela = switchChecklistAusente.IsOn == true ? null : cmbChecklistTela.Text;
-                checklistDados.Chip = switchChecklistAusente.IsOn == true ? null : cmbChecklistChip.Text;
-                checklistDados.Botoes = switchChecklistAusente.IsOn == true ? null : cmbChecklistBotoes.Text;
-                checklistDados.Sensor = switchChecklistAusente.IsOn == true ? null : cmbChecklistSensor.Text;
-                checklistDados.Cameras = switchChecklistAusente.IsOn == true ? null : cmbChecklistCameras.Text;
-                checklistDados.Auricular = switchChecklistAusente.IsOn == true ? null : cmbChecklistAuricular.Text;
-                checklistDados.Wifi = switchChecklistAusente.IsOn == true ? null : cmbChecklistWifi.Text;
+                checklistDados.Microfone   = switchChecklistAusente.IsOn == true ? null : cmbChecklistMicrofone.Text;
+                checklistDados.Tela        = switchChecklistAusente.IsOn == true ? null : cmbChecklistTela.Text;
+                checklistDados.Chip        = switchChecklistAusente.IsOn == true ? null : cmbChecklistChip.Text;
+                checklistDados.Botoes      = switchChecklistAusente.IsOn == true ? null : cmbChecklistBotoes.Text;
+                checklistDados.Sensor      = switchChecklistAusente.IsOn == true ? null : cmbChecklistSensor.Text;
+                checklistDados.Cameras     = switchChecklistAusente.IsOn == true ? null : cmbChecklistCameras.Text;
+                checklistDados.Auricular   = switchChecklistAusente.IsOn == true ? null : cmbChecklistAuricular.Text;
+                checklistDados.Wifi        = switchChecklistAusente.IsOn == true ? null : cmbChecklistWifi.Text;
                 checklistDados.AltoFalante = switchChecklistAusente.IsOn == true ? null : cmbChecklistAltoFaltante.Text;
-                checklistDados.Bluetooth = switchChecklistAusente.IsOn == true ? null : cmbChecklistBluetooth.Text;
+                checklistDados.Bluetooth   = switchChecklistAusente.IsOn == true ? null : cmbChecklistBluetooth.Text;
                 checklistDados.Carregamento =
                     switchChecklistAusente.IsOn == true ? null : cmbChecklistCarregamento.Text;
+
                 //Ternario aninhado basicamente para dizer "Se o switch ausente ta on, significa que o valor fica null, caso nao, ele verifica se o campo ta vazio e poem null"
                 checklistDados.Observacoes = switchChecklistAusente.IsOn == true ? null :
                     string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text) ? null : txtChecklistObservacoes.Text;
@@ -447,16 +455,16 @@ namespace PFC___StandBy_CSharp.Forms
                     : txtChecklistMotivoAusencia.Text;
 
                 //Dados das condicoes fisicas
-                condicoesFisicasDados.FK_IdServico = servicoDados.ID;
-                condicoesFisicasDados.OrdemServico = servicoDados.OrdemServico;
+                condicoesFisicasDados.FK_IdServico         = servicoDados.ID;
+                condicoesFisicasDados.OrdemServico         = servicoDados.OrdemServico;
                 condicoesFisicasDados.DataCondicoesFisicas = servicoDados.DataServico;
-                condicoesFisicasDados.Tipo = Constantes.CHK_ENTRADA;
-                condicoesFisicasDados.Pelicula = cmbPelicula.Text;
-                condicoesFisicasDados.Tela = cmbTela.Text;
-                condicoesFisicasDados.Tampa = cmbTampa.Text;
-                condicoesFisicasDados.Aro = cmbAro.Text;
-                condicoesFisicasDados.Botoes = cmbBotoes.Text;
-                condicoesFisicasDados.LenteCamera = cmbLenteCamera.Text;
+                condicoesFisicasDados.Tipo                 = Constantes.CHK_ENTRADA;
+                condicoesFisicasDados.Pelicula             = cmbPelicula.Text;
+                condicoesFisicasDados.Tela                 = cmbTela.Text;
+                condicoesFisicasDados.Tampa                = cmbTampa.Text;
+                condicoesFisicasDados.Aro                  = cmbAro.Text;
+                condicoesFisicasDados.Botoes               = cmbBotoes.Text;
+                condicoesFisicasDados.LenteCamera          = cmbLenteCamera.Text;
 
                 form_DiaEntrega formPrevisaoEntrega = new form_DiaEntrega(this, corGeral, clienteDados, servicoDados,
                     checklistDados, condicoesFisicasDados, _tipo);
@@ -483,7 +491,6 @@ namespace PFC___StandBy_CSharp.Forms
                     context.tb_condicoes_fisicas.FirstOrDefault(x => x.cf_sv_idservico == servicoDados.sv_id);
 
                 #region If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
-
                 string tipoAparelho = string.Empty;
                 if (tipoAparelhoGlobal == Aparelho.Celular)
                 {
@@ -497,14 +504,13 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     tipoAparelho = "Notebook";
                 }
-
                 #endregion If pra verificar o tipo do aparelho de acordo com o icone setado no form que chama esse aqui
 
-                servicoDados.sv_cl_idcliente = clienteDados.cl_id;
-                servicoDados.sv_tipo_aparelho = tipoAparelho;
-                servicoDados.sv_marca = cmbMarca.Text;
-                servicoDados.sv_aparelho = txtModelo.Text;
-                servicoDados.sv_cor = cmbCor.Text;
+                servicoDados.sv_cl_idcliente     = clienteDados.cl_id;
+                servicoDados.sv_tipo_aparelho    = tipoAparelho;
+                servicoDados.sv_marca            = cmbMarca.Text;
+                servicoDados.sv_aparelho         = txtModelo.Text;
+                servicoDados.sv_cor              = cmbCor.Text;
                 servicoDados.sv_mei_serialnumber = txtMei_SerialNumber.Text;
                 servicoDados.sv_senha = string.IsNullOrWhiteSpace(txtSenhaDispositivo.Text)
                     ? null
@@ -513,7 +519,7 @@ namespace PFC___StandBy_CSharp.Forms
                     ? ConvertImage.ConvertImageToByte(picSenhaPattern.Image)
                     : null;
                 servicoDados.sv_situacao = string.IsNullOrWhiteSpace(txtObservacoes.Text) ? null : txtObservacoes.Text;
-                servicoDados.sv_status = 1;
+                servicoDados.sv_status   = 1;
                 servicoDados.sv_relato_cliente =
                     string.IsNullOrWhiteSpace(txtRelatoCliente.Text) ? null : txtRelatoCliente.Text;
                 servicoDados.sv_condicoes_balcao = string.IsNullOrWhiteSpace(txtCondicoesBalcao.Text)
@@ -547,6 +553,7 @@ namespace PFC___StandBy_CSharp.Forms
                     string.IsNullOrWhiteSpace(cmbChecklistBluetooth.Text) ? null : cmbChecklistBluetooth.Text;
                 checklistDados.ch_carregamento = switchChecklistAusente.IsOn == true ? null :
                     string.IsNullOrWhiteSpace(cmbChecklistCarregamento.Text) ? null : cmbChecklistCarregamento.Text;
+
                 //Ternario aninhado basicamente para dizer "Se o switch ausente ta on, significa que o valor fica null, caso nao, ele verifica se o campo ta vazio e poem null"
                 checklistDados.ch_observacoes = switchChecklistAusente.IsOn == true ? null :
                     string.IsNullOrWhiteSpace(txtChecklistObservacoes.Text) ? null : txtChecklistObservacoes.Text;
@@ -560,9 +567,9 @@ namespace PFC___StandBy_CSharp.Forms
                 condicoesFisicasDados.cf_data = servicoDados.sv_data;
                 condicoesFisicasDados.cf_pelicula =
                     string.IsNullOrWhiteSpace(cmbPelicula.Text) ? null : cmbPelicula.Text;
-                condicoesFisicasDados.cf_tela = string.IsNullOrWhiteSpace(cmbTela.Text) ? null : cmbTela.Text;
-                condicoesFisicasDados.cf_tampa = string.IsNullOrWhiteSpace(cmbTampa.Text) ? null : cmbTampa.Text;
-                condicoesFisicasDados.cf_aro = string.IsNullOrWhiteSpace(cmbAro.Text) ? null : cmbAro.Text;
+                condicoesFisicasDados.cf_tela   = string.IsNullOrWhiteSpace(cmbTela.Text) ? null : cmbTela.Text;
+                condicoesFisicasDados.cf_tampa  = string.IsNullOrWhiteSpace(cmbTampa.Text) ? null : cmbTampa.Text;
+                condicoesFisicasDados.cf_aro    = string.IsNullOrWhiteSpace(cmbAro.Text) ? null : cmbAro.Text;
                 condicoesFisicasDados.cf_botoes = string.IsNullOrWhiteSpace(cmbBotoes.Text) ? null : cmbBotoes.Text;
                 condicoesFisicasDados.cf_lente_camera =
                     string.IsNullOrWhiteSpace(cmbLenteCamera.Text) ? null : cmbLenteCamera.Text;
@@ -585,6 +592,7 @@ namespace PFC___StandBy_CSharp.Forms
             if (combobox.SelectedIndex != -1)
             {
                 DataRowView drv = combobox.Items[combobox.SelectedIndex] as DataRowView;
+
                 //lblIdCliente.Text = listClientesComId.ElementAt(multiColumnComboBox1.SelectedIndex).ID.ToString();
                 lblIdCliente.Text = drv.Row[0].ToString();
             }
@@ -611,19 +619,19 @@ namespace PFC___StandBy_CSharp.Forms
                     ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
                 if (passShow.pictureBox1.Image == null)
                 {
-                    passShow.lblSemPadrao.Visible = true;
+                    passShow.lblSemPadrao.Visible       = true;
                     passShow.lblDesejaCadastrar.Visible = true;
-                    passShow.btnSim.Visible = true;
-                    passShow.btnNao.Visible = true;
-                    passShow.lblIDServico.Text = lblIdServico.Text;
+                    passShow.btnSim.Visible             = true;
+                    passShow.btnNao.Visible             = true;
+                    passShow.lblIDServico.Text          = lblIdServico.Text;
                 }
                 else
                 {
-                    passShow.lblSemPadrao.Visible = false;
+                    passShow.lblSemPadrao.Visible       = false;
                     passShow.lblDesejaCadastrar.Visible = false;
-                    passShow.btnSim.Visible = false;
-                    passShow.btnNao.Visible = false;
-                    passShow.lblIDServico.Text = lblIdServico.Text;
+                    passShow.btnSim.Visible             = false;
+                    passShow.btnNao.Visible             = false;
+                    passShow.lblIDServico.Text          = lblIdServico.Text;
                 }
 
                 passShow.ShowDialog();
@@ -678,13 +686,17 @@ namespace PFC___StandBy_CSharp.Forms
                         SalvarOrdemServico();
                         report_OrdemServicoEntrada report = new report_OrdemServicoEntrada();
                         report.Parameters["pIDServico"].Value = Convert.ToInt32(lblIdServico.Text);
+
                         //report.Parameters["clienteID"].Visible = false;
                         report.PrintingSystem.ShowPrintStatusDialog = false;
+
                         //documentViewer1.DocumentSource = report;
                         report.CreateDocument();
                         PrintToolBase tool = new PrintToolBase(report.PrintingSystem);
+
                         //tool.PrinterSettings.
                         tool.Print("Microsoft Print to PDF");
+
                         //using (var printTool = new DevExpress.XtraReports.UI.ReportPrintTool(report))
                         //{
                         //    //   printTool.Print(sPrinterDeliveryTkt);
@@ -710,19 +722,19 @@ namespace PFC___StandBy_CSharp.Forms
                     if (control is BunifuDropdown && control.Name.StartsWith("cmbChecklist"))
                     {
                         control.Enabled = false;
-                        control.Text = string.Empty;
+                        control.Text    = string.Empty;
                     }
                     else if (control.Name == "txtChecklistObservacoes")
                     {
                         var richTextBox = (MemoEdit)control;
-                        control.BackColor = Color.FromArgb(64, 64, 64);
-                        control.Text = string.Empty;
+                        control.BackColor    = Color.FromArgb(64, 64, 64);
+                        control.Text         = string.Empty;
                         richTextBox.ReadOnly = true;
                     }
                     else if (control.Name == "txtChecklistMotivoAusencia")
                     {
                         var richTextBox = (MemoEdit)control;
-                        control.BackColor = Color.FromArgb(23, 23, 36);
+                        control.BackColor    = Color.FromArgb(23, 23, 36);
                         richTextBox.ReadOnly = false;
                     }
                 }
@@ -738,14 +750,14 @@ namespace PFC___StandBy_CSharp.Forms
                     else if (control.Name == "txtChecklistObservacoes")
                     {
                         var richTextBox = (MemoEdit)control;
-                        control.BackColor = Color.FromArgb(23, 23, 36);
+                        control.BackColor    = Color.FromArgb(23, 23, 36);
                         richTextBox.ReadOnly = false;
                     }
                     else if (control.Name == "txtChecklistMotivoAusencia")
                     {
                         var richTextBox = (MemoEdit)control;
-                        control.BackColor = Color.FromArgb(64, 64, 64);
-                        control.Text = string.Empty;
+                        control.BackColor    = Color.FromArgb(64, 64, 64);
+                        control.Text         = string.Empty;
                         richTextBox.ReadOnly = true;
                     }
                 }

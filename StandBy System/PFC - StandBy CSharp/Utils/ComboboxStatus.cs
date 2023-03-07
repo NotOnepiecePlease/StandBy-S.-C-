@@ -14,18 +14,18 @@ namespace PFC___StandBy_CSharp.Utils
         {
             if (combobox.Text == @"APROVADO")
             {
-                combobox.BackColor = Color.DodgerBlue;
-                combobox.BackgroundColor = Color.DodgerBlue;
+                combobox.BackColor       = Color.Chartreuse;
+                combobox.BackgroundColor = Color.Chartreuse;
             }
             else if (combobox.Text == @"AVALIAÇÃO")
             {
-                combobox.BackColor = Color.DarkOrange;
+                combobox.BackColor       = Color.DarkOrange;
                 combobox.BackgroundColor = Color.DarkOrange;
             }
             else if (combobox.Text == @"CONCLUÍDO")
             {
-                combobox.BackColor = Color.Chartreuse;
-                combobox.BackgroundColor = Color.Chartreuse;
+                combobox.BackColor       = Color.DarkGray;
+                combobox.BackgroundColor = Color.DarkGray;
             }
         }
     }

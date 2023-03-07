@@ -30,11 +30,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServicoEntrada));
             Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
@@ -47,13 +43,16 @@ namespace PFC___StandBy_CSharp.Forms
             DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServicoEntrada));
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.panel_FormOrdemServico = new System.Windows.Forms.Panel();
             this.lblIdChecklist = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIdCondicoesFisicas = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblIdServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnTipoAparelho = new DevExpress.XtraEditors.SimpleButton();
             this.lblIdCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbCliente = new Syncfusion.Windows.Forms.Tools.MultiColumnComboBox();
             this.btnConcluirImprimir = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnConcluirServico = new Bunifu.Framework.UI.BunifuImageButton();
@@ -93,8 +92,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistBiometria = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.group_CondicoesBalcao = new System.Windows.Forms.GroupBox();
-            this.txtCondicoesBalcao = new DevExpress.XtraEditors.MemoEdit();
             this.group_RelatoCliente = new System.Windows.Forms.GroupBox();
             this.txtRelatoCliente = new DevExpress.XtraEditors.MemoEdit();
             this.group_OutrasObservacoes = new System.Windows.Forms.GroupBox();
@@ -145,6 +142,21 @@ namespace PFC___StandBy_CSharp.Forms
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.svgCollection = new DevExpress.Utils.SvgImageCollection(this.components);
             this.defaultToolTipController1 = new DevExpress.Utils.DefaultToolTipController(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bunifuCustomLabel30 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblCPF = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTelefone = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel33 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTelefoneRecado = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel35 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblBairro = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel37 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblRua = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel39 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblCEP = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel41 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel_FormOrdemServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConcluirImprimir)).BeginInit();
@@ -155,8 +167,6 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).BeginInit();
-            this.group_CondicoesBalcao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCondicoesBalcao.Properties)).BeginInit();
             this.group_RelatoCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRelatoCliente.Properties)).BeginInit();
             this.group_OutrasObservacoes.SuspendLayout();
@@ -169,18 +179,22 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.picSenhaPattern)).BeginInit();
             this.panel_OrdemServCodigo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgCollection)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_FormOrdemServico
             // 
             this.defaultToolTipController1.SetAllowHtmlText(this.panel_FormOrdemServico, DevExpress.Utils.DefaultBoolean.Default);
             this.panel_FormOrdemServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.panel_FormOrdemServico.Controls.Add(this.groupBox2);
+            this.panel_FormOrdemServico.Controls.Add(this.groupBox1);
             this.panel_FormOrdemServico.Controls.Add(this.lblIdChecklist);
             this.panel_FormOrdemServico.Controls.Add(this.lblIdCondicoesFisicas);
             this.panel_FormOrdemServico.Controls.Add(this.lblIdServico);
             this.panel_FormOrdemServico.Controls.Add(this.btnTipoAparelho);
             this.panel_FormOrdemServico.Controls.Add(this.lblIdCliente);
-            this.panel_FormOrdemServico.Controls.Add(this.lblCliente);
             this.panel_FormOrdemServico.Controls.Add(this.cmbCliente);
             this.panel_FormOrdemServico.Controls.Add(this.btnConcluirImprimir);
             this.panel_FormOrdemServico.Controls.Add(this.btnConcluirServico);
@@ -190,7 +204,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel_FormOrdemServico.Controls.Add(this.txtBuscaGoogle);
             this.panel_FormOrdemServico.Controls.Add(this.pictureBox2);
             this.panel_FormOrdemServico.Controls.Add(this.group_Checklist);
-            this.panel_FormOrdemServico.Controls.Add(this.group_CondicoesBalcao);
             this.panel_FormOrdemServico.Controls.Add(this.group_RelatoCliente);
             this.panel_FormOrdemServico.Controls.Add(this.group_OutrasObservacoes);
             this.panel_FormOrdemServico.Controls.Add(this.group_CondicoesFisicas);
@@ -269,34 +282,20 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblIdCliente.Text = "IdCliente";
             this.lblIdCliente.Visible = false;
             // 
-            // lblCliente
-            // 
-            this.defaultToolTipController1.SetAllowHtmlText(this.lblCliente, DevExpress.Utils.DefaultBoolean.Default);
-            this.lblCliente.BackColor = System.Drawing.Color.Transparent;
-            this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.lblCliente.ForeColor = System.Drawing.Color.Lavender;
-            this.lblCliente.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_user_20px;
-            this.lblCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCliente.Location = new System.Drawing.Point(157, 18);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(28, 22);
-            this.lblCliente.TabIndex = 75;
-            this.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // cmbCliente
             // 
             this.cmbCliente.AllowFiltering = false;
             this.defaultToolTipController1.SetAllowHtmlText(this.cmbCliente, DevExpress.Utils.DefaultBoolean.Default);
-            this.cmbCliente.BeforeTouchSize = new System.Drawing.Size(602, 31);
+            this.cmbCliente.BeforeTouchSize = new System.Drawing.Size(639, 31);
             this.cmbCliente.Filter = null;
             this.cmbCliente.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCliente.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmbCliente.Location = new System.Drawing.Point(188, 14);
+            this.cmbCliente.Location = new System.Drawing.Point(151, 4);
             this.cmbCliente.MaxDropDownItems = 10;
             this.cmbCliente.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.ScrollMetroColorTable = metroColorTable1;
-            this.cmbCliente.Size = new System.Drawing.Size(602, 31);
+            this.cmbCliente.Size = new System.Drawing.Size(639, 31);
             this.cmbCliente.TabIndex = 74;
             this.cmbCliente.Text = "Adriano Fraga de Andrade";
             this.cmbCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -422,11 +421,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtBuscaGoogle.LineIdleColor = System.Drawing.Color.Gray;
             this.txtBuscaGoogle.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
             this.txtBuscaGoogle.LineThickness = 3;
-            this.txtBuscaGoogle.Location = new System.Drawing.Point(850, 10);
+            this.txtBuscaGoogle.Location = new System.Drawing.Point(850, 4);
             this.txtBuscaGoogle.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscaGoogle.MaxLength = 32767;
             this.txtBuscaGoogle.Name = "txtBuscaGoogle";
-            this.txtBuscaGoogle.Size = new System.Drawing.Size(309, 35);
+            this.txtBuscaGoogle.Size = new System.Drawing.Size(309, 31);
             this.txtBuscaGoogle.TabIndex = 66;
             this.txtBuscaGoogle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -434,9 +433,9 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.defaultToolTipController1.SetAllowHtmlText(this.pictureBox2, DevExpress.Utils.DefaultBoolean.Default);
             this.pictureBox2.Image = global::PFC___StandBy_CSharp.Properties.Resources.google_minimal_logo;
-            this.pictureBox2.Location = new System.Drawing.Point(805, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(805, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(38, 33);
+            this.pictureBox2.Size = new System.Drawing.Size(36, 29);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 27;
             this.pictureBox2.TabStop = false;
@@ -477,52 +476,52 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel13);
             this.group_Checklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_Checklist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_Checklist.Location = new System.Drawing.Point(805, 57);
+            this.group_Checklist.Location = new System.Drawing.Point(805, 38);
             this.group_Checklist.Name = "group_Checklist";
-            this.group_Checklist.Size = new System.Drawing.Size(354, 595);
+            this.group_Checklist.Size = new System.Drawing.Size(354, 614);
             this.group_Checklist.TabIndex = 26;
             this.group_Checklist.TabStop = false;
             this.group_Checklist.Text = "CHECK LIST";
             // 
             // txtChecklistObservacoes
             // 
-            this.txtChecklistObservacoes.Location = new System.Drawing.Point(16, 384);
+            this.txtChecklistObservacoes.Location = new System.Drawing.Point(11, 384);
             this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
             this.txtChecklistObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtChecklistObservacoes.Properties.Appearance.Options.UseBackColor = true;
             this.txtChecklistObservacoes.Size = new System.Drawing.Size(329, 68);
-            toolTipTitleItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            toolTipTitleItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem1.Text = "Dica:";
-            toolTipItem1.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem1.Appearance.Options.UseForeColor = true;
-            toolTipItem1.Text = "Exemplo: \"Botão funciona mas algumas vezes precisa apertar um pouco mais forte\"";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.txtChecklistObservacoes.SuperTip = superToolTip1;
-            this.txtChecklistObservacoes.TabIndex = 53;
-            // 
-            // txtChecklistMotivoAusencia
-            // 
-            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(16, 523);
-            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
-            this.txtChecklistMotivoAusencia.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtChecklistMotivoAusencia.Properties.Appearance.Options.UseBackColor = true;
-            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(329, 63);
             toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
             toolTipTitleItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             toolTipTitleItem2.Text = "Dica:";
             toolTipItem2.Appearance.ForeColor = System.Drawing.Color.Gold;
             toolTipItem2.Appearance.Options.UseForeColor = true;
-            toolTipItem2.Text = "Exemplo: \"A Tela nao liga, incapaz de fazer checklist\"";
+            toolTipItem2.Text = "Exemplo: \"Botão funciona mas algumas vezes precisa apertar um pouco mais forte\"";
             superToolTip2.Items.Add(toolTipTitleItem2);
             superToolTip2.Items.Add(toolTipItem2);
-            this.txtChecklistMotivoAusencia.SuperTip = superToolTip2;
+            this.txtChecklistObservacoes.SuperTip = superToolTip2;
+            this.txtChecklistObservacoes.TabIndex = 53;
+            // 
+            // txtChecklistMotivoAusencia
+            // 
+            this.txtChecklistMotivoAusencia.Location = new System.Drawing.Point(11, 522);
+            this.txtChecklistMotivoAusencia.Name = "txtChecklistMotivoAusencia";
+            this.txtChecklistMotivoAusencia.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.txtChecklistMotivoAusencia.Properties.Appearance.Options.UseBackColor = true;
+            this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(329, 79);
+            toolTipTitleItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
+            toolTipTitleItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem3.Text = "Dica:";
+            toolTipItem3.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem3.Appearance.Options.UseForeColor = true;
+            toolTipItem3.Text = "Exemplo: \"A Tela nao liga, incapaz de fazer checklist\"";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.txtChecklistMotivoAusencia.SuperTip = superToolTip3;
             this.txtChecklistMotivoAusencia.TabIndex = 7;
             // 
             // switchChecklistAusente
             // 
-            this.switchChecklistAusente.Location = new System.Drawing.Point(12, 463);
+            this.switchChecklistAusente.Location = new System.Drawing.Point(8, 470);
             this.switchChecklistAusente.Name = "switchChecklistAusente";
             this.switchChecklistAusente.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.switchChecklistAusente.Properties.Appearance.Options.UseFont = true;
@@ -544,7 +543,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel27.AutoSize = true;
             this.bunifuCustomLabel27.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel27.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel27.Location = new System.Drawing.Point(11, 501);
+            this.bunifuCustomLabel27.Location = new System.Drawing.Point(6, 498);
             this.bunifuCustomLabel27.Name = "bunifuCustomLabel27";
             this.bunifuCustomLabel27.Size = new System.Drawing.Size(67, 19);
             this.bunifuCustomLabel27.TabIndex = 52;
@@ -556,7 +555,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel25.AutoSize = true;
             this.bunifuCustomLabel25.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel25.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel25.Location = new System.Drawing.Point(11, 364);
+            this.bunifuCustomLabel25.Location = new System.Drawing.Point(6, 364);
             this.bunifuCustomLabel25.Name = "bunifuCustomLabel25";
             this.bunifuCustomLabel25.Size = new System.Drawing.Size(104, 19);
             this.bunifuCustomLabel25.TabIndex = 49;
@@ -568,7 +567,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel26.AutoSize = true;
             this.bunifuCustomLabel26.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel26.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel26.Location = new System.Drawing.Point(78, 469);
+            this.bunifuCustomLabel26.Location = new System.Drawing.Point(74, 476);
             this.bunifuCustomLabel26.Name = "bunifuCustomLabel26";
             this.bunifuCustomLabel26.Size = new System.Drawing.Size(206, 19);
             this.bunifuCustomLabel26.TabIndex = 48;
@@ -609,7 +608,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCarregamento.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistCarregamento.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistCarregamento.ItemTopMargin = 3;
-            this.cmbChecklistCarregamento.Location = new System.Drawing.Point(181, 319);
+            this.cmbChecklistCarregamento.Location = new System.Drawing.Point(180, 319);
             this.cmbChecklistCarregamento.Name = "cmbChecklistCarregamento";
             this.cmbChecklistCarregamento.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCarregamento.TabIndex = 47;
@@ -623,7 +622,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel23.AutoSize = true;
             this.bunifuCustomLabel23.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel23.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel23.Location = new System.Drawing.Point(181, 300);
+            this.bunifuCustomLabel23.Location = new System.Drawing.Point(180, 300);
             this.bunifuCustomLabel23.Name = "bunifuCustomLabel23";
             this.bunifuCustomLabel23.Size = new System.Drawing.Size(120, 19);
             this.bunifuCustomLabel23.TabIndex = 46;
@@ -664,7 +663,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBluetooth.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistBluetooth.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistBluetooth.ItemTopMargin = 3;
-            this.cmbChecklistBluetooth.Location = new System.Drawing.Point(11, 319);
+            this.cmbChecklistBluetooth.Location = new System.Drawing.Point(10, 319);
             this.cmbChecklistBluetooth.Name = "cmbChecklistBluetooth";
             this.cmbChecklistBluetooth.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBluetooth.TabIndex = 45;
@@ -678,7 +677,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel24.AutoSize = true;
             this.bunifuCustomLabel24.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel24.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel24.Location = new System.Drawing.Point(11, 300);
+            this.bunifuCustomLabel24.Location = new System.Drawing.Point(10, 300);
             this.bunifuCustomLabel24.Name = "bunifuCustomLabel24";
             this.bunifuCustomLabel24.Size = new System.Drawing.Size(87, 19);
             this.bunifuCustomLabel24.TabIndex = 44;
@@ -719,7 +718,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAltoFaltante.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistAltoFaltante.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistAltoFaltante.ItemTopMargin = 3;
-            this.cmbChecklistAltoFaltante.Location = new System.Drawing.Point(181, 261);
+            this.cmbChecklistAltoFaltante.Location = new System.Drawing.Point(180, 261);
             this.cmbChecklistAltoFaltante.Name = "cmbChecklistAltoFaltante";
             this.cmbChecklistAltoFaltante.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAltoFaltante.TabIndex = 43;
@@ -733,7 +732,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel21.AutoSize = true;
             this.bunifuCustomLabel21.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel21.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel21.Location = new System.Drawing.Point(181, 242);
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(180, 242);
             this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
             this.bunifuCustomLabel21.Size = new System.Drawing.Size(103, 19);
             this.bunifuCustomLabel21.TabIndex = 42;
@@ -774,7 +773,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistWifi.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistWifi.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistWifi.ItemTopMargin = 3;
-            this.cmbChecklistWifi.Location = new System.Drawing.Point(11, 261);
+            this.cmbChecklistWifi.Location = new System.Drawing.Point(10, 261);
             this.cmbChecklistWifi.Name = "cmbChecklistWifi";
             this.cmbChecklistWifi.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistWifi.TabIndex = 41;
@@ -788,7 +787,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel22.AutoSize = true;
             this.bunifuCustomLabel22.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel22.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel22.Location = new System.Drawing.Point(11, 242);
+            this.bunifuCustomLabel22.Location = new System.Drawing.Point(10, 242);
             this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
             this.bunifuCustomLabel22.Size = new System.Drawing.Size(44, 19);
             this.bunifuCustomLabel22.TabIndex = 40;
@@ -829,7 +828,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAuricular.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistAuricular.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistAuricular.ItemTopMargin = 3;
-            this.cmbChecklistAuricular.Location = new System.Drawing.Point(181, 205);
+            this.cmbChecklistAuricular.Location = new System.Drawing.Point(180, 205);
             this.cmbChecklistAuricular.Name = "cmbChecklistAuricular";
             this.cmbChecklistAuricular.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAuricular.TabIndex = 39;
@@ -843,7 +842,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel19.AutoSize = true;
             this.bunifuCustomLabel19.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel19.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel19.Location = new System.Drawing.Point(181, 186);
+            this.bunifuCustomLabel19.Location = new System.Drawing.Point(180, 186);
             this.bunifuCustomLabel19.Name = "bunifuCustomLabel19";
             this.bunifuCustomLabel19.Size = new System.Drawing.Size(85, 19);
             this.bunifuCustomLabel19.TabIndex = 38;
@@ -884,7 +883,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCameras.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistCameras.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistCameras.ItemTopMargin = 3;
-            this.cmbChecklistCameras.Location = new System.Drawing.Point(11, 205);
+            this.cmbChecklistCameras.Location = new System.Drawing.Point(10, 205);
             this.cmbChecklistCameras.Name = "cmbChecklistCameras";
             this.cmbChecklistCameras.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCameras.TabIndex = 37;
@@ -898,7 +897,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel20.AutoSize = true;
             this.bunifuCustomLabel20.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel20.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel20.Location = new System.Drawing.Point(11, 186);
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(10, 186);
             this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
             this.bunifuCustomLabel20.Size = new System.Drawing.Size(73, 19);
             this.bunifuCustomLabel20.TabIndex = 36;
@@ -939,7 +938,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistSensor.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistSensor.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistSensor.ItemTopMargin = 3;
-            this.cmbChecklistSensor.Location = new System.Drawing.Point(181, 150);
+            this.cmbChecklistSensor.Location = new System.Drawing.Point(180, 150);
             this.cmbChecklistSensor.Name = "cmbChecklistSensor";
             this.cmbChecklistSensor.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistSensor.TabIndex = 35;
@@ -953,7 +952,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel17.AutoSize = true;
             this.bunifuCustomLabel17.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel17.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel17.Location = new System.Drawing.Point(181, 131);
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(180, 131);
             this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
             this.bunifuCustomLabel17.Size = new System.Drawing.Size(63, 19);
             this.bunifuCustomLabel17.TabIndex = 34;
@@ -994,7 +993,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBotoes.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistBotoes.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistBotoes.ItemTopMargin = 3;
-            this.cmbChecklistBotoes.Location = new System.Drawing.Point(11, 150);
+            this.cmbChecklistBotoes.Location = new System.Drawing.Point(10, 150);
             this.cmbChecklistBotoes.Name = "cmbChecklistBotoes";
             this.cmbChecklistBotoes.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBotoes.TabIndex = 33;
@@ -1008,7 +1007,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel18.AutoSize = true;
             this.bunifuCustomLabel18.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel18.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel18.Location = new System.Drawing.Point(11, 131);
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(10, 131);
             this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
             this.bunifuCustomLabel18.Size = new System.Drawing.Size(60, 19);
             this.bunifuCustomLabel18.TabIndex = 32;
@@ -1049,7 +1048,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistChip.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistChip.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistChip.ItemTopMargin = 3;
-            this.cmbChecklistChip.Location = new System.Drawing.Point(181, 96);
+            this.cmbChecklistChip.Location = new System.Drawing.Point(180, 96);
             this.cmbChecklistChip.Name = "cmbChecklistChip";
             this.cmbChecklistChip.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistChip.TabIndex = 31;
@@ -1063,7 +1062,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel15.AutoSize = true;
             this.bunifuCustomLabel15.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel15.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(181, 77);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(180, 77);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
             this.bunifuCustomLabel15.Size = new System.Drawing.Size(40, 19);
             this.bunifuCustomLabel15.TabIndex = 30;
@@ -1104,7 +1103,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistTela.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistTela.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistTela.ItemTopMargin = 3;
-            this.cmbChecklistTela.Location = new System.Drawing.Point(11, 96);
+            this.cmbChecklistTela.Location = new System.Drawing.Point(10, 96);
             this.cmbChecklistTela.Name = "cmbChecklistTela";
             this.cmbChecklistTela.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistTela.TabIndex = 29;
@@ -1118,7 +1117,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel16.AutoSize = true;
             this.bunifuCustomLabel16.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel16.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel16.Location = new System.Drawing.Point(11, 77);
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(10, 77);
             this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
             this.bunifuCustomLabel16.Size = new System.Drawing.Size(40, 19);
             this.bunifuCustomLabel16.TabIndex = 28;
@@ -1159,7 +1158,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistMicrofone.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistMicrofone.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistMicrofone.ItemTopMargin = 3;
-            this.cmbChecklistMicrofone.Location = new System.Drawing.Point(181, 39);
+            this.cmbChecklistMicrofone.Location = new System.Drawing.Point(180, 39);
             this.cmbChecklistMicrofone.Name = "cmbChecklistMicrofone";
             this.cmbChecklistMicrofone.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistMicrofone.TabIndex = 27;
@@ -1173,7 +1172,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel14.AutoSize = true;
             this.bunifuCustomLabel14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel14.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(181, 20);
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(180, 20);
             this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
             this.bunifuCustomLabel14.Size = new System.Drawing.Size(91, 19);
             this.bunifuCustomLabel14.TabIndex = 26;
@@ -1214,7 +1213,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBiometria.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistBiometria.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistBiometria.ItemTopMargin = 3;
-            this.cmbChecklistBiometria.Location = new System.Drawing.Point(11, 39);
+            this.cmbChecklistBiometria.Location = new System.Drawing.Point(10, 39);
             this.cmbChecklistBiometria.Name = "cmbChecklistBiometria";
             this.cmbChecklistBiometria.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBiometria.TabIndex = 25;
@@ -1228,43 +1227,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel13.AutoSize = true;
             this.bunifuCustomLabel13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel13.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(11, 20);
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(10, 20);
             this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
             this.bunifuCustomLabel13.Size = new System.Drawing.Size(147, 19);
             this.bunifuCustomLabel13.TabIndex = 19;
             this.bunifuCustomLabel13.Text = "BIOMETRIA / FACE-ID";
-            // 
-            // group_CondicoesBalcao
-            // 
-            this.defaultToolTipController1.SetAllowHtmlText(this.group_CondicoesBalcao, DevExpress.Utils.DefaultBoolean.Default);
-            this.group_CondicoesBalcao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.group_CondicoesBalcao.Controls.Add(this.txtCondicoesBalcao);
-            this.group_CondicoesBalcao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.group_CondicoesBalcao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_CondicoesBalcao.Location = new System.Drawing.Point(12, 564);
-            this.group_CondicoesBalcao.Name = "group_CondicoesBalcao";
-            this.group_CondicoesBalcao.Size = new System.Drawing.Size(778, 143);
-            this.group_CondicoesBalcao.TabIndex = 25;
-            this.group_CondicoesBalcao.TabStop = false;
-            this.group_CondicoesBalcao.Text = "CONDIÇÕES DO APARELHO NO BALCÃO";
-            // 
-            // txtCondicoesBalcao
-            // 
-            this.txtCondicoesBalcao.Location = new System.Drawing.Point(15, 19);
-            this.txtCondicoesBalcao.Name = "txtCondicoesBalcao";
-            this.txtCondicoesBalcao.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.txtCondicoesBalcao.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCondicoesBalcao.Size = new System.Drawing.Size(746, 107);
-            toolTipTitleItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
-            toolTipTitleItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem3.Text = "Dica:\r\n";
-            toolTipItem3.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem3.Appearance.Options.UseForeColor = true;
-            toolTipItem3.Text = "Exemplo: \"Aparelho no balcão vibra mas não tem imagem na tela.\"";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.txtCondicoesBalcao.SuperTip = superToolTip3;
-            this.txtCondicoesBalcao.TabIndex = 0;
             // 
             // group_RelatoCliente
             // 
@@ -1273,20 +1240,23 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_RelatoCliente.Controls.Add(this.txtRelatoCliente);
             this.group_RelatoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_RelatoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_RelatoCliente.Location = new System.Drawing.Point(12, 423);
+            this.group_RelatoCliente.Location = new System.Drawing.Point(12, 512);
             this.group_RelatoCliente.Name = "group_RelatoCliente";
-            this.group_RelatoCliente.Size = new System.Drawing.Size(778, 135);
+            this.group_RelatoCliente.Size = new System.Drawing.Size(778, 196);
             this.group_RelatoCliente.TabIndex = 25;
             this.group_RelatoCliente.TabStop = false;
             this.group_RelatoCliente.Text = "RELATO DO CLIENTE";
             // 
             // txtRelatoCliente
             // 
+            this.txtRelatoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRelatoCliente.Location = new System.Drawing.Point(16, 18);
             this.txtRelatoCliente.Name = "txtRelatoCliente";
             this.txtRelatoCliente.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtRelatoCliente.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRelatoCliente.Size = new System.Drawing.Size(745, 104);
+            this.txtRelatoCliente.Size = new System.Drawing.Size(745, 165);
             toolTipTitleItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
             toolTipTitleItem4.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             toolTipTitleItem4.Text = "Dica:";
@@ -1305,20 +1275,23 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_OutrasObservacoes.Controls.Add(this.txtObservacoes);
             this.group_OutrasObservacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_OutrasObservacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_OutrasObservacoes.Location = new System.Drawing.Point(12, 309);
+            this.group_OutrasObservacoes.Location = new System.Drawing.Point(12, 356);
             this.group_OutrasObservacoes.Name = "group_OutrasObservacoes";
-            this.group_OutrasObservacoes.Size = new System.Drawing.Size(778, 108);
+            this.group_OutrasObservacoes.Size = new System.Drawing.Size(381, 147);
             this.group_OutrasObservacoes.TabIndex = 24;
             this.group_OutrasObservacoes.TabStop = false;
             this.group_OutrasObservacoes.Text = "OBSERVAÇÕES";
             // 
             // txtObservacoes
             // 
-            this.txtObservacoes.Location = new System.Drawing.Point(16, 19);
+            this.txtObservacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtObservacoes.Location = new System.Drawing.Point(12, 15);
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtObservacoes.Properties.Appearance.Options.UseBackColor = true;
-            this.txtObservacoes.Size = new System.Drawing.Size(745, 71);
+            this.txtObservacoes.Size = new System.Drawing.Size(358, 122);
             toolTipTitleItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage4")));
             toolTipTitleItem5.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             toolTipTitleItem5.Text = "Dica:";
@@ -1355,7 +1328,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_CondicoesFisicas.Controls.Add(this.bunifuCustomLabel10);
             this.group_CondicoesFisicas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_CondicoesFisicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_CondicoesFisicas.Location = new System.Drawing.Point(409, 57);
+            this.group_CondicoesFisicas.Location = new System.Drawing.Point(409, 103);
             this.group_CondicoesFisicas.Name = "group_CondicoesFisicas";
             this.group_CondicoesFisicas.Size = new System.Drawing.Size(381, 246);
             this.group_CondicoesFisicas.TabIndex = 23;
@@ -1837,7 +1810,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_InformacoesAparelho.Controls.Add(this.bunifuCustomLabel9);
             this.group_InformacoesAparelho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_InformacoesAparelho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_InformacoesAparelho.Location = new System.Drawing.Point(12, 57);
+            this.group_InformacoesAparelho.Location = new System.Drawing.Point(12, 103);
             this.group_InformacoesAparelho.Name = "group_InformacoesAparelho";
             this.group_InformacoesAparelho.Size = new System.Drawing.Size(381, 246);
             this.group_InformacoesAparelho.TabIndex = 3;
@@ -2199,12 +2172,12 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.defaultToolTipController1.SetAllowHtmlText(this.panel_OrdemServCodigo, DevExpress.Utils.DefaultBoolean.Default);
             this.panel_OrdemServCodigo.BackColor = System.Drawing.Color.DimGray;
-            this.panel_OrdemServCodigo.Controls.Add(this.bunifuCustomLabel29);
             this.panel_OrdemServCodigo.Controls.Add(this.lblDataOrdemServico);
+            this.panel_OrdemServCodigo.Controls.Add(this.bunifuCustomLabel29);
             this.panel_OrdemServCodigo.Controls.Add(this.lblOrdemServico);
             this.panel_OrdemServCodigo.Location = new System.Drawing.Point(4, 4);
             this.panel_OrdemServCodigo.Name = "panel_OrdemServCodigo";
-            this.panel_OrdemServCodigo.Size = new System.Drawing.Size(142, 51);
+            this.panel_OrdemServCodigo.Size = new System.Drawing.Size(142, 89);
             this.panel_OrdemServCodigo.TabIndex = 0;
             // 
             // bunifuCustomLabel29
@@ -2213,7 +2186,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel29.AutoSize = true;
             this.bunifuCustomLabel29.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel29.ForeColor = System.Drawing.Color.DarkOrange;
-            this.bunifuCustomLabel29.Location = new System.Drawing.Point(42, -3);
+            this.bunifuCustomLabel29.Location = new System.Drawing.Point(42, 7);
             this.bunifuCustomLabel29.Name = "bunifuCustomLabel29";
             this.bunifuCustomLabel29.Size = new System.Drawing.Size(67, 17);
             this.bunifuCustomLabel29.TabIndex = 67;
@@ -2225,7 +2198,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblDataOrdemServico.AutoSize = true;
             this.lblDataOrdemServico.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.lblDataOrdemServico.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDataOrdemServico.Location = new System.Drawing.Point(7, 32);
+            this.lblDataOrdemServico.Location = new System.Drawing.Point(7, 55);
             this.lblDataOrdemServico.Name = "lblDataOrdemServico";
             this.lblDataOrdemServico.Size = new System.Drawing.Size(135, 17);
             this.lblDataOrdemServico.TabIndex = 66;
@@ -2238,7 +2211,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.lblOrdemServico.AutoSize = true;
             this.lblOrdemServico.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdemServico.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblOrdemServico.Location = new System.Drawing.Point(15, 5);
+            this.lblOrdemServico.Location = new System.Drawing.Point(15, 24);
             this.lblOrdemServico.Name = "lblOrdemServico";
             this.lblOrdemServico.Size = new System.Drawing.Size(108, 32);
             this.lblOrdemServico.TabIndex = 66;
@@ -2263,9 +2236,215 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             // 
             // 
+            this.defaultToolTipController1.DefaultController.AutoPopDelay = 10000;
             this.defaultToolTipController1.DefaultController.InitialDelay = 200;
             this.defaultToolTipController1.DefaultController.KeepWhileHovered = true;
             this.defaultToolTipController1.DefaultController.ToolTipType = DevExpress.Utils.ToolTipType.SuperTip;
+            // 
+            // groupBox1
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.groupBox1, DevExpress.Utils.DefaultBoolean.Default);
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.groupBox1.Controls.Add(this.memoEdit1);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.groupBox1.Location = new System.Drawing.Point(409, 356);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(381, 147);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ACESSÓRIOS DO APARELHO";
+            // 
+            // memoEdit1
+            // 
+            this.memoEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.memoEdit1.Location = new System.Drawing.Point(11, 15);
+            this.memoEdit1.Name = "memoEdit1";
+            this.memoEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.memoEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.memoEdit1.Size = new System.Drawing.Size(359, 122);
+            toolTipTitleItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            toolTipTitleItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem1.Text = "Dica:";
+            toolTipItem1.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem1.Appearance.Options.UseForeColor = true;
+            toolTipItem1.Text = "Exemplo 1: \"Aparelho chegou desmontado.\"\r\nExemplo 2: \"Faltando bateria.\"\r\nExemplo" +
+    " 3: \"Tela descolando.\"";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.memoEdit1.SuperTip = superToolTip1;
+            this.memoEdit1.TabIndex = 8;
+            // 
+            // groupBox2
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.groupBox2, DevExpress.Utils.DefaultBoolean.Default);
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.groupBox2.Controls.Add(this.lblBairro);
+            this.groupBox2.Controls.Add(this.bunifuCustomLabel37);
+            this.groupBox2.Controls.Add(this.lblRua);
+            this.groupBox2.Controls.Add(this.bunifuCustomLabel39);
+            this.groupBox2.Controls.Add(this.lblCEP);
+            this.groupBox2.Controls.Add(this.bunifuCustomLabel41);
+            this.groupBox2.Controls.Add(this.lblTelefoneRecado);
+            this.groupBox2.Controls.Add(this.bunifuCustomLabel35);
+            this.groupBox2.Controls.Add(this.lblTelefone);
+            this.groupBox2.Controls.Add(this.bunifuCustomLabel33);
+            this.groupBox2.Controls.Add(this.lblCPF);
+            this.groupBox2.Controls.Add(this.bunifuCustomLabel30);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.groupBox2.Location = new System.Drawing.Point(151, 38);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(639, 55);
+            this.groupBox2.TabIndex = 77;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "DADOS PESSOAIS";
+            // 
+            // bunifuCustomLabel30
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel30, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel30.AutoSize = true;
+            this.bunifuCustomLabel30.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel30.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel30.Location = new System.Drawing.Point(6, 13);
+            this.bunifuCustomLabel30.Name = "bunifuCustomLabel30";
+            this.bunifuCustomLabel30.Size = new System.Drawing.Size(32, 17);
+            this.bunifuCustomLabel30.TabIndex = 78;
+            this.bunifuCustomLabel30.Text = "CPF:";
+            // 
+            // lblCPF
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.lblCPF, DevExpress.Utils.DefaultBoolean.Default);
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblCPF.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCPF.Location = new System.Drawing.Point(36, 13);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(96, 17);
+            this.lblCPF.TabIndex = 79;
+            this.lblCPF.Text = "000.000.000-00";
+            // 
+            // lblTelefone
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.lblTelefone, DevExpress.Utils.DefaultBoolean.Default);
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblTelefone.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTelefone.Location = new System.Drawing.Point(278, 13);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(102, 17);
+            this.lblTelefone.TabIndex = 81;
+            this.lblTelefone.Text = "(71) 99285-5113";
+            // 
+            // bunifuCustomLabel33
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel33, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel33.AutoSize = true;
+            this.bunifuCustomLabel33.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel33.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel33.Location = new System.Drawing.Point(244, 13);
+            this.bunifuCustomLabel33.Name = "bunifuCustomLabel33";
+            this.bunifuCustomLabel33.Size = new System.Drawing.Size(31, 17);
+            this.bunifuCustomLabel33.TabIndex = 80;
+            this.bunifuCustomLabel33.Text = "TEL:";
+            // 
+            // lblTelefoneRecado
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.lblTelefoneRecado, DevExpress.Utils.DefaultBoolean.Default);
+            this.lblTelefoneRecado.AutoSize = true;
+            this.lblTelefoneRecado.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblTelefoneRecado.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTelefoneRecado.Location = new System.Drawing.Point(527, 13);
+            this.lblTelefoneRecado.Name = "lblTelefoneRecado";
+            this.lblTelefoneRecado.Size = new System.Drawing.Size(102, 17);
+            this.lblTelefoneRecado.TabIndex = 83;
+            this.lblTelefoneRecado.Text = "(71) 99285-5113";
+            // 
+            // bunifuCustomLabel35
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel35, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel35.AutoSize = true;
+            this.bunifuCustomLabel35.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel35.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel35.Location = new System.Drawing.Point(480, 13);
+            this.bunifuCustomLabel35.Name = "bunifuCustomLabel35";
+            this.bunifuCustomLabel35.Size = new System.Drawing.Size(46, 17);
+            this.bunifuCustomLabel35.TabIndex = 82;
+            this.bunifuCustomLabel35.Text = "TEL R.:";
+            // 
+            // lblBairro
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.lblBairro, DevExpress.Utils.DefaultBoolean.Default);
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblBairro.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblBairro.Location = new System.Drawing.Point(528, 31);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(53, 17);
+            this.lblBairro.TabIndex = 89;
+            this.lblBairro.Text = "Gleba B";
+            // 
+            // bunifuCustomLabel37
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel37, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel37.AutoSize = true;
+            this.bunifuCustomLabel37.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel37.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel37.Location = new System.Drawing.Point(471, 31);
+            this.bunifuCustomLabel37.Name = "bunifuCustomLabel37";
+            this.bunifuCustomLabel37.Size = new System.Drawing.Size(55, 17);
+            this.bunifuCustomLabel37.TabIndex = 88;
+            this.bunifuCustomLabel37.Text = "BAIRRO:";
+            // 
+            // lblRua
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.lblRua, DevExpress.Utils.DefaultBoolean.Default);
+            this.lblRua.AutoSize = true;
+            this.lblRua.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblRua.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblRua.Location = new System.Drawing.Point(278, 31);
+            this.lblRua.Name = "lblRua";
+            this.lblRua.Size = new System.Drawing.Size(130, 17);
+            this.lblRua.TabIndex = 87;
+            this.lblRua.Text = "Rua segunda ligação";
+            // 
+            // bunifuCustomLabel39
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel39, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel39.AutoSize = true;
+            this.bunifuCustomLabel39.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel39.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel39.Location = new System.Drawing.Point(240, 31);
+            this.bunifuCustomLabel39.Name = "bunifuCustomLabel39";
+            this.bunifuCustomLabel39.Size = new System.Drawing.Size(36, 17);
+            this.bunifuCustomLabel39.TabIndex = 86;
+            this.bunifuCustomLabel39.Text = "RUA:";
+            // 
+            // lblCEP
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.lblCEP, DevExpress.Utils.DefaultBoolean.Default);
+            this.lblCEP.AutoSize = true;
+            this.lblCEP.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblCEP.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCEP.Location = new System.Drawing.Point(36, 30);
+            this.lblCEP.Name = "lblCEP";
+            this.lblCEP.Size = new System.Drawing.Size(69, 17);
+            this.lblCEP.TabIndex = 85;
+            this.lblCEP.Text = "00000-000";
+            // 
+            // bunifuCustomLabel41
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel41, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel41.AutoSize = true;
+            this.bunifuCustomLabel41.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel41.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel41.Location = new System.Drawing.Point(5, 31);
+            this.bunifuCustomLabel41.Name = "bunifuCustomLabel41";
+            this.bunifuCustomLabel41.Size = new System.Drawing.Size(33, 17);
+            this.bunifuCustomLabel41.TabIndex = 84;
+            this.bunifuCustomLabel41.Text = "CEP:";
             // 
             // form_OrdemServicoEntrada
             // 
@@ -2294,8 +2473,6 @@ namespace PFC___StandBy_CSharp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.txtChecklistObservacoes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtChecklistMotivoAusencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.switchChecklistAusente.Properties)).EndInit();
-            this.group_CondicoesBalcao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtCondicoesBalcao.Properties)).EndInit();
             this.group_RelatoCliente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtRelatoCliente.Properties)).EndInit();
             this.group_OutrasObservacoes.ResumeLayout(false);
@@ -2311,6 +2488,10 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel_OrdemServCodigo.ResumeLayout(false);
             this.panel_OrdemServCodigo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgCollection)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2344,7 +2525,6 @@ namespace PFC___StandBy_CSharp.Forms
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator3;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
         private System.Windows.Forms.GroupBox group_OutrasObservacoes;
-        private System.Windows.Forms.GroupBox group_CondicoesBalcao;
         private System.Windows.Forms.GroupBox group_RelatoCliente;
         private System.Windows.Forms.GroupBox group_Checklist;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -2369,7 +2549,6 @@ namespace PFC___StandBy_CSharp.Forms
         public Bunifu.Framework.UI.BunifuImageButton btnConcluirServico;
         private Bunifu.Framework.UI.BunifuImageButton btnSalvarOrdemServico;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator8;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblCliente;
         public Bunifu.UI.WinForms.BunifuDropdown cmbMarca;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdCliente;
         public System.Windows.Forms.PictureBox picSenhaPattern;
@@ -2411,10 +2590,24 @@ namespace PFC___StandBy_CSharp.Forms
         public DevExpress.Utils.SvgImageCollection svgCollection;
         public DevExpress.XtraEditors.MemoEdit txtChecklistMotivoAusencia;
         public DevExpress.XtraEditors.MemoEdit txtObservacoes;
-        public DevExpress.XtraEditors.MemoEdit txtCondicoesBalcao;
         public DevExpress.XtraEditors.MemoEdit txtRelatoCliente;
         public DevExpress.XtraEditors.MemoEdit txtChecklistObservacoes;
         private DevExpress.Utils.DefaultToolTipController defaultToolTipController1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        public DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel30;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblBairro;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel37;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblRua;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel39;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblCEP;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel41;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblTelefoneRecado;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel35;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblTelefone;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel33;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblCPF;
         //private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
     }
 }
