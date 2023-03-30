@@ -30,22 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_CadastroClientes));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listboxEstados = new System.Windows.Forms.ListBox();
             this.btnLimparCampos = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.listboxCidades = new System.Windows.Forms.ListBox();
             this.btnCadastrarCliente = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuGroupBox2 = new Bunifu.UI.WinForms.BunifuGroupBox();
+            this.separatorESTADOS = new Bunifu.UI.WinForms.BunifuSeparator();
             this.lblCidades_Carregando = new System.Windows.Forms.Label();
+            this.cmbEstados = new Syncfusion.Windows.Forms.Tools.ComboBoxBase();
             this.separatorCIDADES = new Bunifu.UI.WinForms.BunifuSeparator();
             this.txtBairro = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.cmbCidades = new Syncfusion.Windows.Forms.Tools.ComboBoxBase();
-            this.txtEstado = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtComplemento = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtEndereco = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtCEP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -106,6 +108,7 @@
             this.autoCompleteCidades = new Syncfusion.Windows.Forms.Tools.AutoComplete(this.components);
             this.panel1.SuspendLayout();
             this.bunifuGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbEstados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_Clientes)).BeginInit();
             this.menuBotaoDireitoTabela.SuspendLayout();
@@ -116,6 +119,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.listboxEstados);
             this.panel1.Controls.Add(this.btnLimparCampos);
             this.panel1.Controls.Add(this.listboxCidades);
             this.panel1.Controls.Add(this.btnCadastrarCliente);
@@ -132,6 +136,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 651);
             this.panel1.TabIndex = 99999;
+            // 
+            // listboxEstados
+            // 
+            this.listboxEstados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.listboxEstados.ForeColor = System.Drawing.Color.Silver;
+            this.listboxEstados.FormattingEnabled = true;
+            this.listboxEstados.ItemHeight = 20;
+            this.listboxEstados.Items.AddRange(new object[] {
+            "BA",
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.listboxEstados.Location = new System.Drawing.Point(12, 201);
+            this.listboxEstados.Name = "listboxEstados";
+            this.listboxEstados.Size = new System.Drawing.Size(120, 104);
+            this.listboxEstados.TabIndex = 100001;
+            this.listboxEstados.TabStop = false;
             // 
             // btnLimparCampos
             // 
@@ -152,11 +196,11 @@
             this.btnLimparCampos.ColorContrastOnClick = 45;
             this.btnLimparCampos.ColorContrastOnHover = 45;
             this.btnLimparCampos.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btnLimparCampos.CustomizableEdges = borderEdges5;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnLimparCampos.CustomizableEdges = borderEdges1;
             this.btnLimparCampos.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLimparCampos.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLimparCampos.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -230,7 +274,7 @@
             this.listboxCidades.ForeColor = System.Drawing.Color.Silver;
             this.listboxCidades.FormattingEnabled = true;
             this.listboxCidades.ItemHeight = 20;
-            this.listboxCidades.Location = new System.Drawing.Point(24, 151);
+            this.listboxCidades.Location = new System.Drawing.Point(12, 91);
             this.listboxCidades.Name = "listboxCidades";
             this.listboxCidades.Size = new System.Drawing.Size(120, 104);
             this.listboxCidades.TabIndex = 1003;
@@ -255,11 +299,11 @@
             this.btnCadastrarCliente.ColorContrastOnClick = 45;
             this.btnCadastrarCliente.ColorContrastOnHover = 45;
             this.btnCadastrarCliente.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.btnCadastrarCliente.CustomizableEdges = borderEdges6;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnCadastrarCliente.CustomizableEdges = borderEdges2;
             this.btnCadastrarCliente.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCadastrarCliente.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCadastrarCliente.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -332,11 +376,12 @@
             this.bunifuGroupBox2.BorderColor = System.Drawing.SystemColors.Control;
             this.bunifuGroupBox2.BorderRadius = 1;
             this.bunifuGroupBox2.BorderThickness = 1;
+            this.bunifuGroupBox2.Controls.Add(this.separatorESTADOS);
             this.bunifuGroupBox2.Controls.Add(this.lblCidades_Carregando);
+            this.bunifuGroupBox2.Controls.Add(this.cmbEstados);
             this.bunifuGroupBox2.Controls.Add(this.separatorCIDADES);
             this.bunifuGroupBox2.Controls.Add(this.txtBairro);
             this.bunifuGroupBox2.Controls.Add(this.cmbCidades);
-            this.bunifuGroupBox2.Controls.Add(this.txtEstado);
             this.bunifuGroupBox2.Controls.Add(this.txtComplemento);
             this.bunifuGroupBox2.Controls.Add(this.txtEndereco);
             this.bunifuGroupBox2.Controls.Add(this.txtCEP);
@@ -358,6 +403,24 @@
             this.bunifuGroupBox2.TabStop = false;
             this.bunifuGroupBox2.Text = "Endereço";
             // 
+            // separatorESTADOS
+            // 
+            this.separatorESTADOS.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.separatorESTADOS.BackColor = System.Drawing.Color.Transparent;
+            this.separatorESTADOS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("separatorESTADOS.BackgroundImage")));
+            this.separatorESTADOS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.separatorESTADOS.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.separatorESTADOS.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
+            this.separatorESTADOS.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.separatorESTADOS.LineThickness = 2;
+            this.separatorESTADOS.Location = new System.Drawing.Point(734, 82);
+            this.separatorESTADOS.Margin = new System.Windows.Forms.Padding(2);
+            this.separatorESTADOS.Name = "separatorESTADOS";
+            this.separatorESTADOS.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.separatorESTADOS.Size = new System.Drawing.Size(149, 10);
+            this.separatorESTADOS.TabIndex = 100000;
+            this.separatorESTADOS.TabStop = false;
+            // 
             // lblCidades_Carregando
             // 
             this.lblCidades_Carregando.AutoSize = true;
@@ -368,6 +431,25 @@
             this.lblCidades_Carregando.Size = new System.Drawing.Size(151, 20);
             this.lblCidades_Carregando.TabIndex = 1002;
             this.lblCidades_Carregando.Text = "Carregando cidades...";
+            // 
+            // cmbEstados
+            // 
+            this.cmbEstados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbEstados.BeforeTouchSize = new System.Drawing.Size(154, 24);
+            this.cmbEstados.FlatBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbEstados.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.Flat;
+            this.cmbEstados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
+            this.cmbEstados.ForeColor = System.Drawing.Color.Silver;
+            this.cmbEstados.ListControl = this.listboxEstados;
+            this.cmbEstados.Location = new System.Drawing.Point(729, 62);
+            this.cmbEstados.MetroBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbEstados.Name = "cmbEstados";
+            this.cmbEstados.Size = new System.Drawing.Size(154, 24);
+            this.cmbEstados.TabIndex = 100000;
+            this.cmbEstados.Text = "Ex: BA";
+            this.cmbEstados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cmbEstados.Enter += new System.EventHandler(this.cmbEstados_Enter);
+            this.cmbEstados.Leave += new System.EventHandler(this.cmbEstados_Leave);
             // 
             // separatorCIDADES
             // 
@@ -439,36 +521,6 @@
             this.cmbCidades.Leave += new System.EventHandler(this.cmbCidades_Leave);
             this.cmbCidades.MouseEnter += new System.EventHandler(this.cmbCidades_MouseEnter);
             this.cmbCidades.MouseLeave += new System.EventHandler(this.cmbCidades_MouseLeave);
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtEstado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtEstado.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtEstado.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
-            this.txtEstado.ForeColor = System.Drawing.Color.Silver;
-            this.txtEstado.HintForeColor = System.Drawing.Color.Transparent;
-            this.txtEstado.HintText = "";
-            this.txtEstado.isPassword = false;
-            this.txtEstado.LineFocusedColor = System.Drawing.Color.Lavender;
-            this.txtEstado.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
-            this.txtEstado.LineMouseHoverColor = System.Drawing.Color.Lavender;
-            this.txtEstado.LineThickness = 2;
-            this.txtEstado.Location = new System.Drawing.Point(734, 57);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEstado.MaxLength = 100;
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(149, 34);
-            this.txtEstado.TabIndex = 15;
-            this.txtEstado.Text = "Ex: Bahia";
-            this.txtEstado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtEstado.Enter += new System.EventHandler(this.txtEstado_Enter);
-            this.txtEstado.KeyDown += new System.Windows.Forms.KeyEventHandler(this.eventoCadastrarClienteApertarEnter);
-            this.txtEstado.Leave += new System.EventHandler(this.txtEstado_Leave);
             // 
             // txtComplemento
             // 
@@ -734,7 +786,7 @@
             this.table_Clientes.EnableHeadersVisualStyles = false;
             this.table_Clientes.HeaderBgColor = System.Drawing.SystemColors.Control;
             this.table_Clientes.HeaderForeColor = System.Drawing.Color.Black;
-            this.table_Clientes.Location = new System.Drawing.Point(53, 395);
+            this.table_Clientes.Location = new System.Drawing.Point(53, 346);
             this.table_Clientes.Name = "table_Clientes";
             this.table_Clientes.ReadOnly = true;
             this.table_Clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -754,7 +806,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Snow;
             this.table_Clientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.table_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_Clientes.Size = new System.Drawing.Size(1173, 244);
+            this.table_Clientes.Size = new System.Drawing.Size(1173, 283);
             this.table_Clientes.TabIndex = 0;
             this.table_Clientes.TabStop = false;
             this.table_Clientes.DoubleClick += new System.EventHandler(this.table_Clientes_DoubleClick);
@@ -1545,6 +1597,7 @@
             this.panel1.ResumeLayout(false);
             this.bunifuGroupBox2.ResumeLayout(false);
             this.bunifuGroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbEstados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbCidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_Clientes)).EndInit();
             this.menuBotaoDireitoTabela.ResumeLayout(false);
@@ -1593,7 +1646,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtEndereco;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtBairro;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtEstado;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
@@ -1625,5 +1677,8 @@
         private System.Windows.Forms.ListBox listboxCidades;
         private Bunifu.UI.WinForms.BunifuSeparator separatorCIDADES;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnLimparCampos;
+        private System.Windows.Forms.ListBox listboxEstados;
+        private Bunifu.UI.WinForms.BunifuSeparator separatorESTADOS;
+        public Syncfusion.Windows.Forms.Tools.ComboBoxBase cmbEstados;
     }
 }

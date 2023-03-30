@@ -41,8 +41,8 @@ namespace PFC___StandBy_CSharp.Forms
         private int[] corGeral = new[] { 0, 0, 0 };
         private bool isNovaOrdemServico = false;
 
-        public form_OrdemServicoEntrada(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico,
-            int[]                                _corGeral)
+        public form_OrdemServicoEntrada(Aparelho _tipoAparelhoGlobal, int _idClientePreSetado, bool _isNovaOrdemServico
+                                        , int[]  _corGeral)
         {
             InitializeComponent();
             corGeral           = _corGeral;
@@ -166,7 +166,8 @@ namespace PFC___StandBy_CSharp.Forms
             group_CondicoesFisicas.ForeColor    = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             group_OutrasObservacoes.ForeColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             group_RelatoCliente.ForeColor       = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            group_CondicoesBalcao.ForeColor     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+
+            //group_CondicoesBalcao.ForeColor     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void ZerarTodosCampos()
@@ -189,9 +190,10 @@ namespace PFC___StandBy_CSharp.Forms
             cmbBotoes.Text      = "";
             cmbLenteCamera.Text = "";
 
-            txtObservacoes.Text     = "";
-            txtRelatoCliente.Text   = "";
-            txtCondicoesBalcao.Text = "";
+            txtObservacoes.Text   = "";
+            txtRelatoCliente.Text = "";
+
+            //txtCondicoesBalcao.Text = ""; //teste
 
             cmbChecklistBiometria.Text    = "";
             cmbChecklistMicrofone.Text    = "";
@@ -421,8 +423,7 @@ namespace PFC___StandBy_CSharp.Forms
                 servicoDados.Status   = 1;
                 servicoDados.RelatoCliente =
                     string.IsNullOrWhiteSpace(txtRelatoCliente.Text) ? null : txtRelatoCliente.Text;
-                servicoDados.CondicoesBalcao =
-                    string.IsNullOrWhiteSpace(txtCondicoesBalcao.Text) ? null : txtCondicoesBalcao.Text;
+                servicoDados.CondicoesBalcao  = null;
                 servicoDados.AvaliacaoServico = cmbStatusServico.Text;
 
                 //Dados do Checklist
@@ -522,9 +523,7 @@ namespace PFC___StandBy_CSharp.Forms
                 servicoDados.sv_status   = 1;
                 servicoDados.sv_relato_cliente =
                     string.IsNullOrWhiteSpace(txtRelatoCliente.Text) ? null : txtRelatoCliente.Text;
-                servicoDados.sv_condicoes_balcao = string.IsNullOrWhiteSpace(txtCondicoesBalcao.Text)
-                    ? null
-                    : txtCondicoesBalcao.Text;
+                servicoDados.sv_condicoes_balcao  = null;
                 servicoDados.sv_avaliacao_servico = cmbStatusServico.Text;
 
                 //Dados do Checklist
