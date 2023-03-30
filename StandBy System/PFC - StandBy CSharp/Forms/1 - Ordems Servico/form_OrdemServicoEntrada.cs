@@ -593,7 +593,13 @@ namespace PFC___StandBy_CSharp.Forms
                 DataRowView drv = combobox.Items[combobox.SelectedIndex] as DataRowView;
 
                 //lblIdCliente.Text = listClientesComId.ElementAt(multiColumnComboBox1.SelectedIndex).ID.ToString();
-                lblIdCliente.Text = drv.Row[0].ToString();
+                lblIdCliente.Text      = drv.Row[0].ToString();
+                lblCPF.Text            = drv.Row[2].ToString();
+                lblTelefone.Text       = drv.Row[3].ToString();
+                lblTelefoneRecado.Text = drv.Row[4].ToString();
+                lblCEP.Text            = drv.Row[5].ToString();
+                lblRua.Text            = drv.Row[6].ToString();
+                lblBairro.Text         = drv.Row[7].ToString();
             }
         }
 

@@ -18,29 +18,31 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
 
         private int ultimoClienteAdicionadoID = 0;
 
-
         public int CarregarComboxClientes(MultiColumnComboBox cmbCliente, ref DataTable _dtPrincipal)
         {
-            cmbCliente.Style = Syncfusion.Windows.Forms.VisualStyle.Office2007;
+            cmbCliente.Style                = Syncfusion.Windows.Forms.VisualStyle.Office2007;
             cmbCliente.Office2007ColorTheme = Syncfusion.Windows.Forms.Office2007Theme.Black;
 
             listClientesComId = bd.BuscarListaClientes();
 
             DataTable dtLocal = new DataTable("Table1");
-            dtLocal.Columns.Add("ID");
-            dtLocal.Columns.Add("Nome");
-            dtLocal.Columns.Add("Cpf");
-            dtLocal.Columns.Add("⠀⠀⠀Telefone⠀⠀");
+            dtLocal.Columns.Add("ID");            //0
+            dtLocal.Columns.Add("Nome");          //1
+            dtLocal.Columns.Add("Cpf");           //2
+            dtLocal.Columns.Add("⠀⠀⠀Telefone⠀⠀"); //3
+
             //dtLocal.Columns.Add("Full", typeof(string),
             //    "Nome + ' - ' + Cpf ");
             //"Nome + ' - ' + Cpf ");
-            dtLocal.Columns.Add("Recado");
-            //dt.Columns.Add("Nascimento");
-            //dt.Columns.Add("⠀⠀⠀⠀⠀⠀⠀⠀Endereço⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-            //dt.Columns.Add("⠀⠀⠀Bairro⠀⠀⠀");
-            //dt.Columns.Add("Estado");
+            dtLocal.Columns.Add("Recado"); //4
+            dtLocal.Columns.Add("CEP");    //5
+            dtLocal.Columns.Add("RUA");    //6
+            dtLocal.Columns.Add("BAIRRO"); //7
             dtLocal.Columns[0].ColumnMapping = MappingType.Hidden;
             dtLocal.Columns[4].ColumnMapping = MappingType.Hidden;
+            dtLocal.Columns[5].ColumnMapping = MappingType.Hidden;
+            dtLocal.Columns[6].ColumnMapping = MappingType.Hidden;
+            dtLocal.Columns[7].ColumnMapping = MappingType.Hidden;
 
             DataSet ds = new DataSet();
             ds.Tables.Add(dtLocal);
@@ -51,28 +53,22 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                 .ForEach(cliente =>
                 {
                     //Pegando a id do ultimo cliente adicionado (ou o que tem MAIOR ID q da na mesma)
-                    ultimoClienteAdicionadoID = cliente.ID > ultimoClienteAdicionadoID ? cliente.ID : ultimoClienteAdicionadoID;
+                    ultimoClienteAdicionadoID =
+                        cliente.ID > ultimoClienteAdicionadoID ? cliente.ID : ultimoClienteAdicionadoID;
 
                     dtLocal.Rows.Add(new string[]
                     {
-                        $"{cliente.ID}",
-                        $"{cliente.Nome}",
-                        $"{cliente.Cpf}",
-                        $"{cliente.Telefone}",
-                        $"{cliente.TelefoneRecado}",
-                        //$"{cliente.DataNascimento}",
-                        //$"{cliente.Endereco}",
-                        //$"{cliente.Bairro}",
-                        //$"{cliente.Estado}"
+                        $"{cliente.ID}", $"{cliente.Nome}", $"{cliente.Cpf}", $"{cliente.Telefone}"
+                        , $"{cliente.TelefoneRecado}", $"{cliente.Cep}", $"{cliente.Endereco}", $"{cliente.Bairro}"
                     });
                 });
 
             DataView view = new DataView(dtLocal);
             _dtPrincipal = dtLocal;
 
-            cmbCliente.DataSource = view;
+            cmbCliente.DataSource    = view;
             cmbCliente.DisplayMember = "Nome";
-            cmbCliente.ValueMember = "ID";
+            cmbCliente.ValueMember   = "ID";
 
             return ultimoClienteAdicionadoID;
         }
