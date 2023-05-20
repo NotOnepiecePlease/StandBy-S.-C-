@@ -35,7 +35,7 @@ namespace PFC___StandBy_CSharp.Forms
         public form_DiaEntrega(form_OrdensServ _formServ, int[] _cor)
         {
             InitializeComponent();
-            corGeral = _cor;
+            corGeral  = _cor;
             formServ1 = _formServ;
         }
 
@@ -49,17 +49,17 @@ namespace PFC___StandBy_CSharp.Forms
         /// <param name="_checklistDados">Dados do checklist</param>
         /// <param name="_condicoesFisicasDados">Dados das condicoes fisicas</param>
         /// <param name="_isAtualizacao">true = se o form for pra atualizar dados que ja existem | false = se o form for pra inserir dados que ainda nao existem</param>
-        public form_DiaEntrega(form_OrdemServicoEntrada _formServ, int[] _cor, ClienteEstrutura _clienteDados,
-            ServicoEstrutura _servicoDados, ChecklistEstrutura _checklistDados,
-            CondicoesFisicasEstrutura _condicoesFisicasDados, OrdemServico _tipo)
+        public form_DiaEntrega(form_OrdemServicoEntrada  _formServ, int[] _cor, ClienteEstrutura _clienteDados,
+                               ServicoEstrutura          _servicoDados, ChecklistEstrutura _checklistDados,
+                               CondicoesFisicasEstrutura _condicoesFisicasDados, OrdemServico _tipo)
         {
             InitializeComponent();
-            ordemServico = _tipo;
-            corGeral = _cor;
-            formOrdemServico = _formServ;
-            clienteDados = _clienteDados;
-            servicoDados = _servicoDados;
-            checklistDados = _checklistDados;
+            ordemServico          = _tipo;
+            corGeral              = _cor;
+            formOrdemServico      = _formServ;
+            clienteDados          = _clienteDados;
+            servicoDados          = _servicoDados;
+            checklistDados        = _checklistDados;
             condicoesFisicasDados = _condicoesFisicasDados;
         }
 
@@ -69,20 +69,20 @@ namespace PFC___StandBy_CSharp.Forms
 
             for (int i = 0; i < 7; i++)
             {
-                checkboxes[i].OnCheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-                checkboxes[i].OnCheck.CheckBoxColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-                checkboxes[i].OnUncheck.BorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-                checkboxes[i].OnHoverChecked.BorderColor = Color.Gray;
+                checkboxes[i].OnCheck.BorderColor          = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                checkboxes[i].OnCheck.CheckBoxColor        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                checkboxes[i].OnUncheck.BorderColor        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+                checkboxes[i].OnHoverChecked.BorderColor   = Color.Gray;
                 checkboxes[i].OnHoverChecked.CheckBoxColor = Color.Gray;
                 checkboxes[i].OnHoverUnchecked.BorderColor = Color.Gray;
-                checkboxes[i].Checked = false;
+                checkboxes[i].Checked                      = false;
             }
 
             chk0d.Checked = true;
 
             btnConfirmarPrevisaoEntrega.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnConfirmarPrevisaoEntrega.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConfirmarPrevisaoEntrega.IdleFillColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnClose.IconColor                          = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void btnConfirmarPrevisaoEntrega_Click(object sender, EventArgs e)
@@ -147,7 +147,7 @@ namespace PFC___StandBy_CSharp.Forms
             try
             {
                 imagemSenhaPatternDoCliente = GetCopyImage(@"./PasswordPattern/Screen.png");
-                var dir = new DirectoryInfo(@"./PasswordPattern/");
+                var dir   = new DirectoryInfo(@"./PasswordPattern/");
                 var files = dir.GetFiles().FirstOrDefault();
                 files?.Delete();
             }
@@ -164,7 +164,7 @@ namespace PFC___StandBy_CSharp.Forms
                 servicoDados.PrevisaoEntrega = previsaoEntrega;
             }
 
-            servicoDados.ExistePrazo = _seExistePrazo;
+            servicoDados.ExistePrazo         = _seExistePrazo;
             servicoDados.SenhaPatternAndroid = ConvertImageToByte(imagemSenhaPatternDoCliente);
 
             if (ordemServico == OrdemServico.AtualizarTudo)
@@ -199,6 +199,7 @@ namespace PFC___StandBy_CSharp.Forms
             else if (ordemServico == OrdemServico.ExisteApenasServico)
             {
                 ad.AtualizarOS(clienteDados, servicoDados);
+
                 //Inserir o checklist
                 id.InserirCheckList(servicoDados.ID ?? 0, checklistDados);
 
@@ -210,114 +211,23 @@ namespace PFC___StandBy_CSharp.Forms
             }
 
             this.Close();
-
-            #region Metodo antigo de insercao (tela antiga)
-
-            //if (formServ1.txtAparelhoOrdens.Text.Equals("Modelo do aparelho") || string.IsNullOrWhiteSpace(formServ1.txtAparelhoOrdens.Text))
-            //{
-            //    MessageBox.Show(@"Voce esqueceu de digitar o nome do Aparelho", "ALERTA!",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else
-            //{
-            //    try
-            //    {
-            //        //Pego a ID do cliente no banco de dados pelo nome dele na combobox.
-            //        //int _idCliente = bd.BuscarIdCliente(formServ1.cmbClientes.SelectedItem.ToString());
-            //        int _idCliente = Convert.ToInt32(formServ1.lblIdCliente.Text);
-            //        //Pego a data de hoje.
-            //        DateTime data = DateTime.Now;
-
-            //        try
-            //        {
-            //            imagemSenhaPatternDoCliente = GetCopyImage(@"./PasswordPattern/Screen.png");
-            //            var dir = new DirectoryInfo(@"./PasswordPattern/");
-            //            var files = dir.GetFiles().FirstOrDefault();
-            //            files?.Delete();
-            //        }
-            //        catch (Exception)
-            //        {
-            //            // ignored
-            //        }
-
-            //inserirImage(ConvertImageToByte(imagemSenhaPatternDoCliente));
-
-            //        //Insiro o servico com os dados.
-            //        string senha;
-            //        string acessorios;
-            //        if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
-            //        {
-            //            senha = "------------";
-            //        }
-            //        else
-            //        {
-            //            senha = formServ1.txtSenhaOrdens.Text;
-            //        }
-
-            //        if (formServ1.txtAcessoriosOrdens.Text.Equals("Acessorios que vieram junto c/ aparelho"))
-            //        {
-            //            acessorios = "------------";
-            //        }
-            //        else
-            //        {
-            //            acessorios = formServ1.txtAcessoriosOrdens.Text;
-            //        }
-
-            //        string situacaoAparelho = (formServ1.txtSituacaoOrdens.Text == "Situação do aparelho") ? "" : formServ1.txtSituacaoOrdens.Text;
-            //        id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, situacaoAparelho, _diasParaEntrega, _seExistePrazo, ConvertImageToByte(imagemSenhaPatternDoCliente), acessorios);
-
-            //        //Abrir tela de edição após o cadastro
-            //        int idUltimoServicoAdicionado = bd.BuscarIdUltimoServicoAdicionado();
-            //        List<object> dados = new List<object>();
-
-            //        dados = bd.BuscarServicoPorID(idUltimoServicoAdicionado);
-            //        EditarUmServicoPelaID(dados);
-
-            //        //if (formServ1.txtSenhaOrdens.Text.Equals("Digite a senha do celular"))
-            //        //{
-            //        //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, senha, formServ1.txtSituacaoOrdens.Text, _diasParaEntrega, _seExistePrazo, ConvertImageToByte(imagemSenhaPatternDoCliente));
-            //        //}
-            //        //else
-            //        //{
-            //        //    id.InserirServico(data, _idCliente, formServ1.txtAparelhoOrdens.Text, formServ1.txtDefeitoOrdens.Text, formServ1.txtSenhaOrdens.Text, formServ1.txtSituacaoOrdens.Text, _diasParaEntrega, _seExistePrazo, ConvertImageToByte(imagemSenhaPatternDoCliente));
-            //        //}
-
-            //        //Reseto os campos.
-            //        ResetarCamposDeCadastro();
-
-            //        //Mensagem de Conclusao
-            //        ms.InserirServicoSucesso();
-
-            //        //Atualizo a tabela
-            //        preencherTableServ.Preencher(formServ1.table_OrdensServicos);
-            //        preencherTableServ.Preencher(formServ1.table_OrdensServicos);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        //Mensagem de Erro
-            //        me.ErroInserirServico(ex);
-            //    }
-            //}
-            //this.Close();
-
-            #endregion Metodo antigo de insercao (tela antiga)
         }
 
         public void ResetarCamposDeCadastro()
         {
-            formServ1.txtAparelhoOrdens.Text = "Modelo do aparelho";
-            formServ1.txtAparelhoOrdens.Font = new Font(formServ1.txtAparelhoOrdens.Font, FontStyle.Italic);
-            formServ1.txtAparelhoOrdens.ForeColor = Color.Silver;
+            formServ1.txtAparelhoOrdens.Text          = "Modelo do aparelho";
+            formServ1.txtAparelhoOrdens.Font          = new Font(formServ1.txtAparelhoOrdens.Font, FontStyle.Italic);
+            formServ1.txtAparelhoOrdens.ForeColor     = Color.Silver;
             formServ1.txtAparelhoOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            formServ1.txtDefeitoOrdens.Text = "Digite o defeito";
-            formServ1.txtDefeitoOrdens.Font = new Font(formServ1.txtDefeitoOrdens.Font, FontStyle.Italic);
-            formServ1.txtDefeitoOrdens.ForeColor = Color.Silver;
+            formServ1.txtDefeitoOrdens.Text          = "Digite o defeito";
+            formServ1.txtDefeitoOrdens.Font          = new Font(formServ1.txtDefeitoOrdens.Font, FontStyle.Italic);
+            formServ1.txtDefeitoOrdens.ForeColor     = Color.Silver;
             formServ1.txtDefeitoOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            formServ1.txtSenhaOrdens.Text = "Digite a senha do celular";
-            formServ1.txtSenhaOrdens.Font = new Font(formServ1.txtSenhaOrdens.Font, FontStyle.Italic);
-            formServ1.txtSenhaOrdens.ForeColor = Color.Silver;
+            formServ1.txtSenhaOrdens.Text          = "Digite a senha do celular";
+            formServ1.txtSenhaOrdens.Font          = new Font(formServ1.txtSenhaOrdens.Font, FontStyle.Italic);
+            formServ1.txtSenhaOrdens.ForeColor     = Color.Silver;
             formServ1.txtSenhaOrdens.LineIdleColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             //formServ1.txtSituacaoOrdens.Text = "";
@@ -333,13 +243,13 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(this, corGeral);
 
-                string _TELCliente = bd.BuscarTelefoneCliente(Convert.ToInt32(dados[1]));
+                string _TELCliente     = bd.BuscarTelefoneCliente(Convert.ToInt32(dados[1]));
                 string _TEL_RECCliente = bd.BuscarTelefoneRecadoCliente(Convert.ToInt32(dados[1]));
-                float lucro = float.Parse(dados[10].ToString());
+                float  lucro           = float.Parse(dados[10].ToString());
                 try
                 {
                     string _CPFCliente = bd.BuscarCPFCliente(Convert.ToInt32(dados[1]));
-                    editarServicos.txtCPFCliente.Text = _CPFCliente;
+                    editarServicos.txtCPFCliente.Text     = _CPFCliente;
                     editarServicos.txtAcessoriosEdit.Text = dados[14].ToString();
                 }
                 catch
@@ -347,34 +257,34 @@ namespace PFC___StandBy_CSharp.Forms
                     // ignored
                 }
 
-                editarServicos.lblIDservico.Text = dados[0].ToString();
-                editarServicos.lblIDcliente.Text = dados[1].ToString();
-                editarServicos.dtpDataEdit.Value = Convert.ToDateTime(dados[2].ToString());
+                editarServicos.lblIDservico.Text   = dados[0].ToString();
+                editarServicos.lblIDcliente.Text   = dados[1].ToString();
+                editarServicos.dtpDataEdit.Value   = Convert.ToDateTime(dados[2].ToString());
                 editarServicos.lblClienteNome.Text = dados[3].ToString();
                 editarServicos.txtClienteNome.Text = dados[3].ToString();
 
                 editarServicos.txtTelefoneCliente.Text = _TELCliente;
-                editarServicos.txtTelefoneRecado.Text = _TEL_RECCliente;
-                editarServicos.txtAparelhoEdit.Text = dados[4].ToString();
-                editarServicos.txtDefeitoEdit.Text = dados[5].ToString();
-                editarServicos.txtSenhaEdit.Text = dados[7].ToString();
-                editarServicos.txtSituacaoEdit.Text = dados[6].ToString();
+                editarServicos.txtTelefoneRecado.Text  = _TEL_RECCliente;
+                editarServicos.txtAparelhoEdit.Text    = dados[4].ToString();
+                editarServicos.txtDefeitoEdit.Text     = dados[5].ToString();
+                editarServicos.txtSenhaEdit.Text       = dados[7].ToString();
+                editarServicos.txtSituacaoEdit.Text    = dados[6].ToString();
 
                 editarServicos.txtServicoValorEdit.Text = dados[8].ToString();
-                editarServicos.txtPecaValorEdit.Text = dados[9].ToString();
-                editarServicos.txtLucroValorEdit.Text = dados[10].ToString();
-                editarServicos.txtServicoEdit.Text = dados[11].ToString();
+                editarServicos.txtPecaValorEdit.Text    = dados[9].ToString();
+                editarServicos.txtLucroValorEdit.Text   = dados[10].ToString();
+                editarServicos.txtServicoEdit.Text      = dados[11].ToString();
                 if (dados[12] == DBNull.Value)
                 {
                     //MessageBox.Show("Sem data");
                     editarServicos.dtpDataEditPrevisao.FormatCustom = " ";
-                    editarServicos.dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
-                    editarServicos.chkSemData.Checked = true;
+                    editarServicos.dtpDataEditPrevisao.Format       = DateTimePickerFormat.Custom;
+                    editarServicos.chkSemData.Checked               = true;
                 }
                 else
                 {
                     editarServicos.dtpDataEditPrevisao.Value = Convert.ToDateTime(dados[12].ToString());
-                    editarServicos.chkSemData.Checked = false;
+                    editarServicos.chkSemData.Checked        = false;
                 }
 
                 if (lucro > 0)
@@ -393,6 +303,7 @@ namespace PFC___StandBy_CSharp.Forms
                 editarServicos.LabelResize();
 
                 editarServicos.ShowDialog();
+
                 //table_OrdensServicos.Refresh();
                 //refreshTable();
             }

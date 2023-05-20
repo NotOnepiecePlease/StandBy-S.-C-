@@ -199,7 +199,6 @@
     <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v22.2.UI, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.Diagram.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -340,6 +339,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.1.4\lib\net46\NLog.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore">
       <Private>True</Private>
@@ -708,12 +710,6 @@
     <Compile Include="Dados\InserirDados.cs" />
     <Compile Include="Dados\VerificarExistencia.cs" />
     <Compile Include="Enums\EnumStandby.cs" />
-    <Compile Include="Forms\1 - Ordems Servico\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\1 - Ordems Servico\form_InserirEditarChecklist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1033,9 +1029,6 @@
     <Compile Include="Utils\ConvertImage.cs" />
     <Compile Include="Utils\CustomOverlayPainter.cs" />
     <Compile Include="Utils\FormatarCampos.cs" />
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\1 - Ordems Servico\form_InserirEditarChecklist.resx">
       <DependentUpon>form_InserirEditarChecklist.cs</DependentUpon>
     </EmbeddedResource>
@@ -1173,6 +1166,7 @@
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="efpt.config.json" />
+    <None Include="bin\Debug\NLog.config" />
     <None Include="packages.config" />
     <None Include="PFC - StandBy CSharp_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

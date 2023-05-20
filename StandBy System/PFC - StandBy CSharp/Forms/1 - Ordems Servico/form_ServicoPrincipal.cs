@@ -331,9 +331,10 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void PreencherFormDadosCompletos(form_OrdemServicoEditar                         _formEditarServico,
-            (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) _dadosServico,
-            List<tb_compras>                                                                     _pecas)
+        private void PreencherFormDadosCompletos(form_OrdemServicoEditar _formEditarServico,
+                                                 (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas
+                                                     condicoesFisicas) _dadosServico,
+                                                 List<tb_compras> _pecas)
         {
             //Groupbox informacoes aparelho
             if (_dadosServico.checklist.ch_tipo == Constantes.CHK_ENTRADA &&
@@ -424,9 +425,10 @@ namespace PFC___StandBy_CSharp.Forms
             _formEditarServico.cmbStatusServico.Text = _dadosServico.servico.sv_avaliacao_servico;
         }
 
-        private void PreencherFormApenasDadosServico(form_OrdemServicoEditar                     _formEditarServico,
-            (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas condicoesFisicas) _dadosServico,
-            List<tb_compras>                                                                     _pecas)
+        private void PreencherFormApenasDadosServico(form_OrdemServicoEditar _formEditarServico,
+                                                     (tb_servicos servico, tb_checklist checklist, tb_condicoes_fisicas
+                                                         condicoesFisicas) _dadosServico,
+                                                     List<tb_compras> _pecas)
         {
             //Groupbox informacoes aparelho
 
@@ -656,8 +658,9 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void AbrirOrdemServicoEntrada(Aparelho _tipoAparelho,     ServicoEstrutura   _servico,
-            CondicoesFisicasEstrutura                  _condicoesFisicas, ChecklistEstrutura _checklist)
+        private void AbrirOrdemServicoEntrada(Aparelho                  _tipoAparelho, ServicoEstrutura _servico,
+                                              CondicoesFisicasEstrutura _condicoesFisicas
+                                              , ChecklistEstrutura      _checklist)
         {
             form_OrdemServicoEntrada formOrdemServico =
                 new form_OrdemServicoEntrada(_tipoAparelho, _servico.FK_IdCliente, false, corGeral);
@@ -748,8 +751,8 @@ namespace PFC___StandBy_CSharp.Forms
             gridviewServicos.RefreshData();
         }
 
-        private void AbrirOrdemServicoSaida(Aparelho _tipoAparelho,     ServicoEstrutura   _servico,
-            CondicoesFisicasEstrutura                _condicoesFisicas, ChecklistEstrutura _checklist)
+        private void AbrirOrdemServicoSaida(Aparelho                  _tipoAparelho,     ServicoEstrutura   _servico,
+                                            CondicoesFisicasEstrutura _condicoesFisicas, ChecklistEstrutura _checklist)
         {
             form_OrdemServicoSaida formOrdemServico = new form_OrdemServicoSaida();
 
@@ -928,11 +931,13 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnNotebook_Click(object sender, EventArgs e)
         {
+            //Nao esta em uso
             AbrirOSEntradaForm(Aparelho.Notebook);
         }
 
         private void btnComputador_Click(object sender, EventArgs e)
         {
+            //Nao esta em uso
             AbrirOSEntradaForm(Aparelho.Computador);
         }
 

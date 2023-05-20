@@ -7,10 +7,15 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
 {
     public class Verificar
     {
-        public string VERSAO_STANDBY { get; set; } = "7.4.1";
-        private const string LINK_STANDBY = "https://www.dropbox.com/s/snjdu5m150fcj7k/UpdateVersionStandBY_NEW.txt?dl=1";
+        public string VERSAO_STANDBY { get; set; } = "9.3.1";
+
+        private const string LINK_STANDBY =
+            "https://www.dropbox.com/s/snjdu5m150fcj7k/UpdateVersionStandBY_NEW.txt?dl=1";
+
         private const string VERSAO_CLIENT_SERVER = "3.1.1";
-        private const string LINK_CLIENT_SERVER = "https://www.dropbox.com/s/zb8ezcxnzk8fyz6/UpdateVersionClientServer.txt?dl=1";
+
+        private const string LINK_CLIENT_SERVER =
+            "https://www.dropbox.com/s/zb8ezcxnzk8fyz6/UpdateVersionClientServer.txt?dl=1";
 
         public void ForcarAtualizacao()
         {
@@ -32,7 +37,9 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nao foi possível verificar a versão do sistema, nao se preocupe, tudo funcionará normalmente.\n\n\nErro: " + ex, @"Falha na Verificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(
+                    "Nao foi possível verificar a versão do sistema, nao se preocupe, tudo funcionará normalmente.\n\n\nErro: " +
+                    ex, @"Falha na Verificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return "Erro ao atualizar!";
             }
         }
@@ -51,7 +58,9 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nao foi possível verificar a versão do sistema, nao se preocupe, tudo funcionará normalmente.\n\n\nErro: " + ex, @"Falha na Verificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(
+                    "Nao foi possível verificar a versão do sistema, nao se preocupe, tudo funcionará normalmente.\n\n\nErro: " +
+                    ex, @"Falha na Verificação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return "Erro ao atualizar!";
             }
         }

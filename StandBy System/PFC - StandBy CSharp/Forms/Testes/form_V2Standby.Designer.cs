@@ -82,7 +82,7 @@
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.lblVersion = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
@@ -302,7 +302,7 @@
             this.barButtonItem15,
             this.barHeaderItem1,
             this.barHeaderItem2,
-            this.barStaticItem2,
+            this.lblVersion,
             this.btnInicio});
             this.barManager1.MainMenu = this.menuSuperior;
             this.barManager1.MaxItemId = 52;
@@ -441,7 +441,7 @@
             this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.lblVersion)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
@@ -453,13 +453,13 @@
             this.barStaticItem1.Id = 46;
             this.barStaticItem1.Name = "barStaticItem1";
             // 
-            // barStaticItem2
+            // lblVersion
             // 
-            this.barStaticItem2.Caption = "v10.0.0";
-            this.barStaticItem2.Id = 50;
-            this.barStaticItem2.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Lime;
-            this.barStaticItem2.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.barStaticItem2.Name = "barStaticItem2";
+            this.lblVersion.Caption = "v10.0.0";
+            this.lblVersion.Id = 50;
+            this.lblVersion.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Lime;
+            this.lblVersion.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.lblVersion.Name = "lblVersion";
             // 
             // barDockControlTop
             // 
@@ -1057,7 +1057,7 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarStaticItem lblVersion;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnServicosPorMes;

@@ -76,7 +76,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(317, 213);
+            this.panel1.Size = new System.Drawing.Size(317, 193);
             this.panel1.TabIndex = 0;
             // 
             // btnClose
@@ -86,6 +86,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
             this.btnClose.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClose.IconSize = 29;
             this.btnClose.Location = new System.Drawing.Point(288, 0);
             this.btnClose.Name = "btnClose";
@@ -100,11 +101,12 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(156, 55);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(239, 173);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(60, 13);
             this.bunifuCustomLabel8.TabIndex = 56;
             this.bunifuCustomLabel8.Text = "Sem prévia";
+            this.bunifuCustomLabel8.Visible = false;
             // 
             // chk0d
             // 
@@ -125,7 +127,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk0d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
             this.chk0d.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chk0d.CustomCheckmarkImage = null;
-            this.chk0d.Location = new System.Drawing.Point(131, 50);
+            this.chk0d.Location = new System.Drawing.Point(214, 168);
             this.chk0d.MinimumSize = new System.Drawing.Size(17, 17);
             this.chk0d.Name = "chk0d";
             this.chk0d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
@@ -159,6 +161,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk0d.TabIndex = 55;
             this.chk0d.ThreeState = false;
             this.chk0d.ToolTipText = null;
+            this.chk0d.Visible = false;
             this.chk0d.Click += new System.EventHandler(this.chk0d_Click);
             // 
             // btnConfirmarPrevisaoEntrega
@@ -208,7 +211,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnConfirmarPrevisaoEntrega.IdleIconLeftImage = null;
             this.btnConfirmarPrevisaoEntrega.IdleIconRightImage = null;
             this.btnConfirmarPrevisaoEntrega.IndicateFocus = false;
-            this.btnConfirmarPrevisaoEntrega.Location = new System.Drawing.Point(40, 160);
+            this.btnConfirmarPrevisaoEntrega.Location = new System.Drawing.Point(40, 133);
             this.btnConfirmarPrevisaoEntrega.Name = "btnConfirmarPrevisaoEntrega";
             this.btnConfirmarPrevisaoEntrega.OnDisabledState.BorderColor = System.Drawing.Color.Empty;
             this.btnConfirmarPrevisaoEntrega.OnDisabledState.BorderRadius = 3;
@@ -247,7 +250,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnConfirmarPrevisaoEntrega.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnConfirmarPrevisaoEntrega.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnConfirmarPrevisaoEntrega.TextMarginLeft = 0;
-            this.btnConfirmarPrevisaoEntrega.TextPadding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btnConfirmarPrevisaoEntrega.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnConfirmarPrevisaoEntrega.UseDefaultRadiusAndThickness = true;
             this.btnConfirmarPrevisaoEntrega.Click += new System.EventHandler(this.btnConfirmarPrevisaoEntrega_Click);
             // 
@@ -255,7 +258,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(239, 126);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(239, 91);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(37, 13);
             this.bunifuCustomLabel7.TabIndex = 53;
@@ -265,7 +268,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(239, 92);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(239, 57);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(37, 13);
             this.bunifuCustomLabel6.TabIndex = 52;
@@ -275,7 +278,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(156, 126);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(156, 91);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(37, 13);
             this.bunifuCustomLabel5.TabIndex = 51;
@@ -285,7 +288,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(156, 92);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(156, 57);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(37, 13);
             this.bunifuCustomLabel4.TabIndex = 50;
@@ -295,7 +298,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(63, 126);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(63, 91);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(37, 13);
             this.bunifuCustomLabel3.TabIndex = 49;
@@ -305,7 +308,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(63, 92);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(63, 57);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(50, 13);
             this.bunifuCustomLabel2.TabIndex = 48;
@@ -316,11 +319,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Lavender;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(90, 9);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(60, 9);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(143, 24);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(196, 24);
             this.bunifuCustomLabel1.TabIndex = 47;
-            this.bunifuCustomLabel1.Text = "Ànalise/Entrega";
+            this.bunifuCustomLabel1.Text = "PRAZO DO SERVIÇO";
             // 
             // chk2d
             // 
@@ -341,13 +344,13 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk2d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chk2d.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chk2d.CustomCheckmarkImage = null;
-            this.chk2d.Location = new System.Drawing.Point(40, 122);
+            this.chk2d.Location = new System.Drawing.Point(40, 87);
             this.chk2d.MinimumSize = new System.Drawing.Size(17, 17);
             this.chk2d.Name = "chk2d";
-            this.chk2d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk2d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk2d.OnCheck.BorderRadius = 2;
             this.chk2d.OnCheck.BorderThickness = 2;
-            this.chk2d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk2d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk2d.OnCheck.CheckmarkColor = System.Drawing.Color.White;
             this.chk2d.OnCheck.CheckmarkThickness = 2;
             this.chk2d.OnDisable.BorderColor = System.Drawing.Color.LightGray;
@@ -396,13 +399,13 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk3d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chk3d.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chk3d.CustomCheckmarkImage = null;
-            this.chk3d.Location = new System.Drawing.Point(131, 87);
+            this.chk3d.Location = new System.Drawing.Point(131, 52);
             this.chk3d.MinimumSize = new System.Drawing.Size(17, 17);
             this.chk3d.Name = "chk3d";
-            this.chk3d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk3d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk3d.OnCheck.BorderRadius = 2;
             this.chk3d.OnCheck.BorderThickness = 2;
-            this.chk3d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk3d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk3d.OnCheck.CheckmarkColor = System.Drawing.Color.White;
             this.chk3d.OnCheck.CheckmarkThickness = 2;
             this.chk3d.OnDisable.BorderColor = System.Drawing.Color.LightGray;
@@ -447,17 +450,17 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk1d.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chk1d.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
             this.chk1d.BorderRadius = 12;
-            this.chk1d.Checked = false;
-            this.chk1d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.chk1d.Checked = true;
+            this.chk1d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
             this.chk1d.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chk1d.CustomCheckmarkImage = null;
-            this.chk1d.Location = new System.Drawing.Point(40, 87);
+            this.chk1d.Location = new System.Drawing.Point(40, 52);
             this.chk1d.MinimumSize = new System.Drawing.Size(17, 17);
             this.chk1d.Name = "chk1d";
-            this.chk1d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk1d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk1d.OnCheck.BorderRadius = 2;
             this.chk1d.OnCheck.BorderThickness = 2;
-            this.chk1d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk1d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk1d.OnCheck.CheckmarkColor = System.Drawing.Color.White;
             this.chk1d.OnCheck.CheckmarkThickness = 2;
             this.chk1d.OnDisable.BorderColor = System.Drawing.Color.LightGray;
@@ -506,13 +509,13 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk7d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chk7d.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chk7d.CustomCheckmarkImage = null;
-            this.chk7d.Location = new System.Drawing.Point(212, 122);
+            this.chk7d.Location = new System.Drawing.Point(212, 87);
             this.chk7d.MinimumSize = new System.Drawing.Size(17, 17);
             this.chk7d.Name = "chk7d";
-            this.chk7d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk7d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk7d.OnCheck.BorderRadius = 2;
             this.chk7d.OnCheck.BorderThickness = 2;
-            this.chk7d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk7d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk7d.OnCheck.CheckmarkColor = System.Drawing.Color.White;
             this.chk7d.OnCheck.CheckmarkThickness = 2;
             this.chk7d.OnDisable.BorderColor = System.Drawing.Color.LightGray;
@@ -561,13 +564,13 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk5d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chk5d.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chk5d.CustomCheckmarkImage = null;
-            this.chk5d.Location = new System.Drawing.Point(212, 87);
+            this.chk5d.Location = new System.Drawing.Point(212, 52);
             this.chk5d.MinimumSize = new System.Drawing.Size(17, 17);
             this.chk5d.Name = "chk5d";
-            this.chk5d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk5d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk5d.OnCheck.BorderRadius = 2;
             this.chk5d.OnCheck.BorderThickness = 2;
-            this.chk5d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk5d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk5d.OnCheck.CheckmarkColor = System.Drawing.Color.White;
             this.chk5d.OnCheck.CheckmarkThickness = 2;
             this.chk5d.OnDisable.BorderColor = System.Drawing.Color.LightGray;
@@ -616,13 +619,13 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk4d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chk4d.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chk4d.CustomCheckmarkImage = null;
-            this.chk4d.Location = new System.Drawing.Point(131, 122);
+            this.chk4d.Location = new System.Drawing.Point(131, 87);
             this.chk4d.MinimumSize = new System.Drawing.Size(17, 17);
             this.chk4d.Name = "chk4d";
-            this.chk4d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk4d.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk4d.OnCheck.BorderRadius = 2;
             this.chk4d.OnCheck.BorderThickness = 2;
-            this.chk4d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(69)))), ((int)(((byte)(155)))));
+            this.chk4d.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(2)))), ((int)(((byte)(102)))));
             this.chk4d.OnCheck.CheckmarkColor = System.Drawing.Color.White;
             this.chk4d.OnCheck.CheckmarkThickness = 2;
             this.chk4d.OnDisable.BorderColor = System.Drawing.Color.LightGray;
@@ -656,7 +659,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 213);
+            this.ClientSize = new System.Drawing.Size(317, 193);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

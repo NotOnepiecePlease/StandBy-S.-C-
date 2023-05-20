@@ -1,0 +1,64 @@
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\StandBy - CLIENT.SERVER.exe.config
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\StandBy - CLIENT.SERVER.exe
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\StandBy - CLIENT.SERVER.pdb
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\StandBy System.exe.config
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Bunifu.UI.WinForms.ToggleSwitch.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\BunifuDataViz.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Bunifu_UI_v1.5.3.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Newtonsoft.Json.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\System.Buffers.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\System.Memory.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\System.Numerics.Vectors.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraEditors.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Utils.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Data.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Syncfusion.Tools.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Syncfusion.Shared.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraPrinting.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraBars.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraReports.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.DataAccess.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Printing.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraGrid.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraCharts.v22.2.UI.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraCharts.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Data.Desktop.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Sparkline.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Syncfusion.SpellChecker.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Syncfusion.Grid.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Syncfusion.Shared.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Syncfusion.Grid.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\Syncfusion.Tools.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraLayout.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.RichEdit.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraTreeList.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Charts.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.PivotGrid.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraGauges.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Pdf.v22.2.Drawing.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Pdf.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Office.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Xpo.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraCharts.v22.2.Wizard.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.Utils.v22.2.UI.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraVerticalGrid.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraNavBar.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\bin\Debug\DevExpress.XtraRichEdit.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.csproj.AssemblyReference.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.csproj.SuggestedBindingRedirects.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.exe.config
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy___CLIENT.SERVER.form_PrincipalClientServer.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy___CLIENT.SERVER.Forms.form_ServicosAndamento.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy___CLIENT.SERVER.Forms.form_SQLConfig.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy___CLIENT.SERVER.Forms.form_TodosServicos.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy___CLIENT.SERVER.Forms.form_ServicosEdit.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy___CLIENT.SERVER.Properties.Resources.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.csproj.GenerateResource.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.csproj.CoreCompileInputs.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.csproj.Fody.CopyLocal.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.csproj.CopyComplete
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.exe
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\StandBy - CLIENT.SERVER\obj\Debug\StandBy - CLIENT.SERVER.pdb

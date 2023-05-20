@@ -8,13 +8,20 @@ using System.Drawing;
 using System.Threading;
 using Microsoft.VisualBasic.Devices;
 using DevExpress.XtraSplashScreen;
+using Microsoft.Identity.Client;
+using NLog;
 using PFC___StandBy_CSharp.Utils;
+using NLog.Fluent;
+using LogLevel = NLog.LogLevel;
+using PFC___StandBy_CSharp.ChecarUpdates;
 
 namespace PFC___StandBy_CSharp.Forms.Testes
 {
     public partial class form_V2Standby : DevExpress.XtraEditors.XtraForm
     {
         private Form currentChildForm;
+        NLog.Logger logger = LogManager.GetCurrentClassLogger();
+        private Verificar verificarUpd = new Verificar();
 
         public form_V2Standby()
         {
@@ -23,32 +30,40 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             menuSuperior.OptionsBar.DrawDragBorder = false;
             sourceServicosSemanais.Fill();
             sourceServicosMensais.Fill();
+            lblVersion.Caption = "v" + verificarUpd.VERSAO_STANDBY;
             var thread = new Thread(MonitorCpu);
             thread.Start();
         }
 
         private void MonitorCpu()
         {
-            var cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-            var computerInfo = new ComputerInfo();
-            var totalMemory = computerInfo.TotalPhysicalMemory / (1024 * 1024);
-            var memoryCounter = new PerformanceCounter("Memory", "Available MBytes");
-            while (true)
+            try
             {
-                var cpu = cpuCounter.NextValue();
-                var memory = memoryCounter.NextValue();
-                var memoryPercent = (memory / (double)totalMemory) * 100;
+                var cpuCounter    = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+                var computerInfo  = new ComputerInfo();
+                var totalMemory   = computerInfo.TotalPhysicalMemory / (1024 * 1024);
+                var memoryCounter = new PerformanceCounter("Memory", "Available MBytes");
+                while (true)
+                {
+                    var cpu           = cpuCounter.NextValue();
+                    var memory        = memoryCounter.NextValue();
+                    var memoryPercent = (memory / (double)totalMemory) * 100;
 
-                progressMemoriaGeral.Invoke((MethodInvoker)delegate
-                {
-                    progressMemoriaGeral.Value = Convert.ToInt32(memoryPercent);
-                    Console.WriteLine(memoryPercent + "%");
-                });
-                progressCPU.Invoke((MethodInvoker)delegate
-                {
-                    progressCPU.Value = Convert.ToInt32(cpu);
-                });
-                Thread.Sleep(500);
+                    progressMemoriaGeral.Invoke((MethodInvoker)delegate
+                    {
+                        progressMemoriaGeral.Value = Convert.ToInt32(memoryPercent);
+                        Console.WriteLine(memoryPercent + "%");
+                    });
+                    progressCPU.Invoke((MethodInvoker)delegate
+                    {
+                        progressCPU.Value = Convert.ToInt32(cpu);
+                    });
+                    Thread.Sleep(500);
+                }
+            }
+            catch (Exception e)
+            {
+                //Log
             }
         }
 
@@ -114,16 +129,20 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             }
 
             currentChildForm = formFilho;
+
             //End
-            formFilho.TopLevel = false;
+            formFilho.TopLevel        = false;
             formFilho.FormBorderStyle = FormBorderStyle.None;
-            formFilho.Dock = DockStyle.Fill;
+            formFilho.Dock            = DockStyle.Fill;
             panelControl1.Controls.Add(formFilho);
             panelControl1.Tag = formFilho;
+
             //this.Size = new Size(1500, 774);
             formFilho.BringToFront();
+
             //formPrincipal.Hide(); //Form principal é carregado diferente dos outros
             formFilho.Show();
+
             //lblAbaAtual.Text = formFilho.Text;
         }
 
@@ -142,6 +161,27 @@ namespace PFC___StandBy_CSharp.Forms.Testes
 
         private void btnServicosPorMes_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("Done");
+            //try
+            //{
+            //    logger.Info("Info de teste");
+            //    logger.Debug("Debug de teste");
+            //    logger.ConditionalDebug("ConditionalDebug de teste");
+            //    logger.ConditionalTrace("ConditionalTrace de teste");
+            //    logger.Error("Error de teste");
+            //    logger.Fatal("Fatal de teste");
+            //    logger.Log(LogLevel.Warn, "Log de teste");
+            //    var a     = 0;
+            //    var b     = 1;
+            //    var teste = b / a;
+            //}
+            //catch (Exception exception)
+            //{
+            //    logger.Trace(exception, "Log de teste");
+            //    MessageBox.Show(exception.Message);
+
+            //    //throw;
+            //}
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
@@ -149,13 +189,15 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             OverlayWindowOptions options = new OverlayWindowOptions(
                 startupDelay: 0,
                 backColor: Color.DarkOrange,
+
                 // opacity: 50.0,
                 fadeIn: true,
                 fadeOut: true,
                 imageSize: new Size(70, 70)
             );
 
-            using (IOverlaySplashScreenHandle handle = SplashScreenManager.ShowOverlayForm(this, customPainter: new CustomOverlayPainter()))
+            using (IOverlaySplashScreenHandle handle =
+                   SplashScreenManager.ShowOverlayForm(this, customPainter: new CustomOverlayPainter()))
             {
                 form_ComboboxConfig formCommand = new form_ComboboxConfig();
                 formCommand.ShowDialog();

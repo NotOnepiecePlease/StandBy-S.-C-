@@ -38,11 +38,13 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
             dtLocal.Columns.Add("CEP");    //5
             dtLocal.Columns.Add("RUA");    //6
             dtLocal.Columns.Add("BAIRRO"); //7
+            dtLocal.Columns.Add("CIDADE"); //8
             dtLocal.Columns[0].ColumnMapping = MappingType.Hidden;
             dtLocal.Columns[4].ColumnMapping = MappingType.Hidden;
             dtLocal.Columns[5].ColumnMapping = MappingType.Hidden;
             dtLocal.Columns[6].ColumnMapping = MappingType.Hidden;
             dtLocal.Columns[7].ColumnMapping = MappingType.Hidden;
+            dtLocal.Columns[8].ColumnMapping = MappingType.Hidden;
 
             DataSet ds = new DataSet();
             ds.Tables.Add(dtLocal);
@@ -60,6 +62,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes
                     {
                         $"{cliente.ID}", $"{cliente.Nome}", $"{cliente.Cpf}", $"{cliente.Telefone}"
                         , $"{cliente.TelefoneRecado}", $"{cliente.Cep}", $"{cliente.Endereco}", $"{cliente.Bairro}"
+                        , $"{cliente.Cidade}"
                     });
                 });
 

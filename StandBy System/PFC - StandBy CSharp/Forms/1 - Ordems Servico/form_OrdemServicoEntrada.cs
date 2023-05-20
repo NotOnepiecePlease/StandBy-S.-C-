@@ -74,6 +74,20 @@ namespace PFC___StandBy_CSharp.Forms
 
             string tipoAparelho = System.Enum.GetName(typeof(Aparelho), (int)tipoAparelhoGlobal);
             btnTipoAparelho.ImageOptions.SvgImage = svgCollection[tipoAparelho];
+
+            //InicializarOpcaoPadraoChecklist();
+        }
+
+        private void InicializarOpcaoPadraoChecklist()
+        {
+            foreach (var control in group_Checklist.Controls)
+            {
+                if (control is BunifuDropdown)
+                {
+                    var controle = (BunifuDropdown)control;
+                    controle.Text = "FUNCIONANDO";
+                }
+            }
         }
 
         private void form_OrdemServicoEntrada_Shown(object sender, EventArgs e)
@@ -600,6 +614,7 @@ namespace PFC___StandBy_CSharp.Forms
                 lblCEP.Text            = drv.Row[5].ToString();
                 lblRua.Text            = drv.Row[6].ToString();
                 lblBairro.Text         = drv.Row[7].ToString();
+                lblCidade.Text         = drv.Row[8].ToString();
             }
         }
 

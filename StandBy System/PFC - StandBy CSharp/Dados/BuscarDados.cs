@@ -28,7 +28,6 @@ namespace PFC___StandBy_CSharp.Dados
         private readonly MensagensErro me = new MensagensErro();
 
         #region Buscar numero da ordem de servico e a data pela ID
-
         public ServicoEstrutura BuscarOrdemServicoEDataPelaId(int _idServico)
         {
             if (_idServico == -1)
@@ -43,7 +42,7 @@ namespace PFC___StandBy_CSharp.Dados
                 using (SqlConnection con = OpenConnection())
                 {
                     ServicoEstrutura dadosDoServico = null;
-                    string query = "select sv_id from tb_servicos where sv_id = @IdServico";
+                    string           query          = "select sv_id from tb_servicos where sv_id = @IdServico";
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.Add(_idServico);
@@ -63,11 +62,9 @@ namespace PFC___StandBy_CSharp.Dados
                 return null;
             }
         }
-
         #endregion Buscar numero da ordem de servico e a data pela ID
 
         #region Buscar quantidade de clientes existentes
-
         public int buscarQuantidadeClientes()
         {
             try
@@ -76,8 +73,8 @@ namespace PFC___StandBy_CSharp.Dados
                 {
                     string query = "select count(cl_id) from tb_clientes";
 
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SqlCommand    cmd = new SqlCommand(query, con);
+                    SqlDataReader dr  = cmd.ExecuteReader();
 
                     dr.Read();
 
@@ -90,21 +87,19 @@ namespace PFC___StandBy_CSharp.Dados
                 return 0;
             }
         }
-
         #endregion Buscar quantidade de clientes existentes
 
         #region Buscar a ID do Cliente
-
         public int BuscarIdCliente(string _nome)
         {
-            int idCliente = 0;
+            int           idCliente = 0;
             SqlDataReader reader;
             try
             {
                 using (SqlConnection con = OpenConnection())
                 {
-                    string Query = "Select cl_id from tb_clientes where cl_nome = @Nome";
-                    SqlCommand cmd = new SqlCommand(Query, con);
+                    string     Query = "Select cl_id from tb_clientes where cl_nome = @Nome";
+                    SqlCommand cmd   = new SqlCommand(Query, con);
 
                     cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = _nome;
 
@@ -113,6 +108,7 @@ namespace PFC___StandBy_CSharp.Dados
                     idCliente = reader.GetInt32(0);
 
                     reader.Close();
+
                     //con.Close();
                 }
             }
@@ -123,22 +119,20 @@ namespace PFC___StandBy_CSharp.Dados
 
             return idCliente;
         }
-
         #endregion Buscar a ID do Cliente
 
         #region Buscar imagem do banco (Senha de padrao)
-
         public byte[] BuscarImagem(string _idServico)
         {
             byte[] bytes;
             using (SqlConnection con = OpenConnection())
             {
-                string query = "select sv_senha_pattern from tb_servicos where sv_id = @idServico";
-                SqlCommand cmd = new SqlCommand(query, con);
+                string        query = "select sv_senha_pattern from tb_servicos where sv_id = @idServico";
+                SqlCommand    cmd   = new SqlCommand(query, con);
                 SqlDataReader reader;
 
                 cmd.Parameters.AddWithValue("@idServico", SqlDbType.Int).Value = Convert.ToInt32(_idServico);
-                reader = cmd.ExecuteReader();
+                reader                                                         = cmd.ExecuteReader();
 
                 reader.Read();
                 try
@@ -152,11 +146,9 @@ namespace PFC___StandBy_CSharp.Dados
                 }
             }
         }
-
         #endregion Buscar imagem do banco (Senha de padrao)
 
         #region Buscar servicos do cliente
-
         public void BuscarServicosDoCliente(string _nomeCliente)
         {
             using (SqlConnection con = OpenConnection())
@@ -168,14 +160,13 @@ namespace PFC___StandBy_CSharp.Dados
                 cmd.Parameters.Add("@NomeCliente", SqlDbType.VarChar).Value = _nomeCliente;
 
                 cmd.ExecuteNonQuery();
+
                 //con.Close();
             }
         }
-
         #endregion Buscar servicos do cliente
 
         #region Buscar servicos concluidos (pesquisa por nome)
-
         public void BuscarServicosConcluidosPorNome(string _nomeCliente)
         {
             using (SqlConnection con = OpenConnection())
@@ -188,18 +179,16 @@ namespace PFC___StandBy_CSharp.Dados
                 cmd.ExecuteNonQuery();
             }
         }
-
         #endregion Buscar servicos concluidos (pesquisa por nome)
 
         #region Buscar dias totais de garantia
-
         public void BuscarDiasGarantia(GunaLabel _Emissao, GunaLabel _DataFinal, GunaLabel _DiasRestantes,
-            int _idServico)
+                                       int       _idServico)
         {
             using (SqlConnection conexao = OpenConnection())
             {
                 SqlDataReader dr;
-                string procedure = "GarantiaQuantosDias";
+                string        procedure = "GarantiaQuantosDias";
 
                 SqlCommand cmd = new SqlCommand(procedure, conexao);
                 cmd.Parameters.AddWithValue("@_fkServico", _idServico);
@@ -209,20 +198,18 @@ namespace PFC___StandBy_CSharp.Dados
 
                 dr.Read();
 
-                _Emissao.Text = dr.GetDateTime(0).ToShortDateString();
-                _DataFinal.Text = dr.GetDateTime(1).ToShortDateString();
+                _Emissao.Text       = dr.GetDateTime(0).ToShortDateString();
+                _DataFinal.Text     = dr.GetDateTime(1).ToShortDateString();
                 _DiasRestantes.Text = "Garantia: " + dr.GetInt32(2).ToString() + " Dias";
 
                 dr.Close();
             }
         }
-
         #endregion Buscar dias totais de garantia
 
         #region Buscar dias faltantes da garantia
-
         public void BuscarDiasFaltantesGarantia(GunaLabel _LabelDiasFaltantes, GunaLabel _DataFinal,
-            GunaLabel _DiasRestantes, int _idServico)
+                                                GunaLabel _DiasRestantes,      int       _idServico)
         {
             using (SqlConnection conexao = OpenConnection())
             {
@@ -239,7 +226,7 @@ namespace PFC___StandBy_CSharp.Dados
                 dr.Read();
 
                 _LabelDiasFaltantes.Text = dr.GetDateTime(0).ToShortDateString();
-                _DataFinal.Text = dr.GetDateTime(1).ToShortDateString();
+                _DataFinal.Text          = dr.GetDateTime(1).ToShortDateString();
                 if (dr.GetInt32(2) < 0)
                 {
                     _DiasRestantes.Text = "Faltam: 0 Dias";
@@ -252,17 +239,15 @@ namespace PFC___StandBy_CSharp.Dados
                 dr.Close();
             }
         }
-
         #endregion Buscar dias faltantes da garantia
 
         #region Buscar CPF do cliente
-
         public string BuscarCPFCliente(int _idCliente)
         {
             using (SqlConnection conexao = OpenConnection())
             {
                 SqlDataReader dr;
-                string query = "select cl_cpf from tb_clientes where cl_id = @IdCliente";
+                string        query = "select cl_cpf from tb_clientes where cl_id = @IdCliente";
 
                 SqlCommand cmd = new SqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@IdCliente", _idCliente);
@@ -273,17 +258,15 @@ namespace PFC___StandBy_CSharp.Dados
                 return dr.GetString(0);
             }
         }
-
         #endregion Buscar CPF do cliente
 
         #region Buscar Telefone do Cliente
-
         public string BuscarTelefoneCliente(int _idCliente)
         {
             using (SqlConnection conexao = OpenConnection())
             {
                 SqlDataReader dr;
-                string query = "select cl_telefone from tb_clientes where cl_id = @IdCliente";
+                string        query = "select cl_telefone from tb_clientes where cl_id = @IdCliente";
 
                 SqlCommand cmd = new SqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@IdCliente", _idCliente);
@@ -294,11 +277,9 @@ namespace PFC___StandBy_CSharp.Dados
                 return dr.GetString(0);
             }
         }
-
         #endregion Buscar Telefone do Cliente
 
         #region Buscar telefone secundario do cliente
-
         public string BuscarTelefoneRecadoCliente(int _idCliente)
         {
             using (SqlConnection conexao = OpenConnection())
@@ -314,11 +295,9 @@ namespace PFC___StandBy_CSharp.Dados
                 return dr.GetString(0);
             }
         }
-
         #endregion Buscar telefone secundario do cliente
 
         #region Buscar total de servicos concluidos
-
         public int BuscarTotalServicosConcluidos()
         {
             try
@@ -327,8 +306,8 @@ namespace PFC___StandBy_CSharp.Dados
                 {
                     string query = "SELECT COUNT(sv_id) FROM tb_servicos WHERE sv_status = 0 and sv_ativo = 1";
 
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SqlCommand    cmd = new SqlCommand(query, con);
+                    SqlDataReader dr  = cmd.ExecuteReader();
 
                     dr.Read();
 
@@ -341,11 +320,9 @@ namespace PFC___StandBy_CSharp.Dados
                 return 0;
             }
         }
-
         #endregion Buscar total de servicos concluidos
 
         #region Buscar ID do ultimo servico adicionado
-
         public int BuscarIdUltimoServicoAdicionado()
         {
             try
@@ -354,8 +331,8 @@ namespace PFC___StandBy_CSharp.Dados
                 {
                     string query = "select max(sv_id) from tb_servicos";
 
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    SqlCommand    cmd = new SqlCommand(query, con);
+                    SqlDataReader dr  = cmd.ExecuteReader();
 
                     dr.Read();
 
@@ -369,11 +346,9 @@ namespace PFC___StandBy_CSharp.Dados
                 return 0;
             }
         }
-
         #endregion Buscar ID do ultimo servico adicionado
 
         #region Buscar servico por ID
-
         public List<object> BuscarServicoPorID(int _idServico)
         {
             try
@@ -388,22 +363,22 @@ namespace PFC___StandBy_CSharp.Dados
                         "WHERE sv_id = @IdServico";
 
                     List<object> dados = new List<object>();
-                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlCommand   cmd   = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@IdServico", _idServico);
 
                     SqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        dados.Add(dr.GetValue(0)); //id
-                        dados.Add(dr.GetValue(1)); //id cliente
-                        dados.Add(dr.GetValue(2)); //sv_data
-                        dados.Add(dr.GetValue(3)); //cl_nome
-                        dados.Add(dr.GetValue(4)); //sv_aparelho
-                        dados.Add(dr.GetValue(5)); //sv_defeito
-                        dados.Add(dr.GetValue(6)); //sv_situacao
-                        dados.Add(dr.GetValue(7)); //sv_senha
-                        dados.Add(dr.GetValue(8)); //sv_valorservico
-                        dados.Add(dr.GetValue(9)); //sv_valorpeca
+                        dados.Add(dr.GetValue(0));  //id
+                        dados.Add(dr.GetValue(1));  //id cliente
+                        dados.Add(dr.GetValue(2));  //sv_data
+                        dados.Add(dr.GetValue(3));  //cl_nome
+                        dados.Add(dr.GetValue(4));  //sv_aparelho
+                        dados.Add(dr.GetValue(5));  //sv_defeito
+                        dados.Add(dr.GetValue(6));  //sv_situacao
+                        dados.Add(dr.GetValue(7));  //sv_senha
+                        dados.Add(dr.GetValue(8));  //sv_valorservico
+                        dados.Add(dr.GetValue(9));  //sv_valorpeca
                         dados.Add(dr.GetValue(10)); //sv_lucro
                         dados.Add(dr.GetValue(11)); //sv_servico
                         dados.Add(dr.GetValue(12)); //sv_previsao_entrega
@@ -422,18 +397,16 @@ namespace PFC___StandBy_CSharp.Dados
 
             return null;
         }
-
         #endregion Buscar servico por ID
 
         #region Buscar lista de clientes colunas selecionadas para combobox
-
         public List<ClienteEstrutura> BuscarListaClientes()
         {
             List<ClienteEstrutura> listClientes = new List<ClienteEstrutura>();
-            SqlConnection con = OpenConnection();
+            SqlConnection          con          = OpenConnection();
             string query =
-                "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado, cl_data_nascimento, cl_endereco, cl_bairro, cl_estado from tb_clientes order by cl_id";
-            SqlCommand cmd = new SqlCommand(query, con);
+                "select cl_id, cl_nome, cl_cpf, cl_telefone, cl_telefone_recado, cl_data_nascimento, cl_endereco, cl_bairro, cl_estado, cl_cidade from tb_clientes order by cl_id";
+            SqlCommand    cmd = new SqlCommand(query, con);
             SqlDataReader dataReader;
 
             try
@@ -441,11 +414,11 @@ namespace PFC___StandBy_CSharp.Dados
                 dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    int id = dataReader.GetInt32(0);
-                    string nome = dataReader.GetString(1);
-                    string cpf = dataReader.GetString(2);
-                    string telefone = dataReader.GetString(3);
-                    string telefoneRecado = dataReader.GetString(4);
+                    int    id             = dataReader.GetInt32(0);
+                    string nome           = dataReader.GetString(1);
+                    string cpf            = dataReader.GetString(2);
+                    string telefone       = dataReader.GetString(3) == "" ? "---" : dataReader.GetString(3);
+                    string telefoneRecado = dataReader.GetString(4) == "" ? "---" : dataReader.GetString(4);
                     string dataNascimento =
                         dataReader.IsDBNull(5) ? "---" : dataReader.GetDateTime(5).ToShortDateString();
                     string endereco = dataReader.IsDBNull(6) ? "---" : dataReader.GetString(6);
@@ -453,18 +426,12 @@ namespace PFC___StandBy_CSharp.Dados
                         ? "---"
                         : dataReader.GetString(7);
                     string estado = dataReader.IsDBNull(8) ? "---" : dataReader.GetString(8);
-
+                    string cidade = dataReader.IsDBNull(9) ? "---" : dataReader.GetString(9);
                     listClientes.Add(new ClienteEstrutura
                     {
-                        ID = id,
-                        Nome = nome,
-                        Cpf = cpf,
-                        Telefone = telefone,
-                        TelefoneRecado = telefoneRecado,
-                        DataNascimento = dataNascimento,
-                        Endereco = endereco,
-                        Bairro = bairro,
-                        Estado = estado
+                        ID = id, Nome = nome, Cpf = cpf, Telefone = telefone, TelefoneRecado = telefoneRecado
+                        , DataNascimento = dataNascimento, Endereco = endereco, Bairro = bairro, Estado = estado
+                        , Cidade = cidade
                     });
                 }
             }
@@ -475,18 +442,16 @@ namespace PFC___StandBy_CSharp.Dados
 
             return listClientes;
         }
-
         #endregion Buscar lista de clientes colunas selecionadas para combobox
 
         //V2
 
         #region Buscar OS pela ID (servico)
-
         public ServicoEstrutura BuscarOS_ApenasServico(int _idServico)
         {
-            ServicoEstrutura servico = new ServicoEstrutura();
+            ServicoEstrutura          servico          = new ServicoEstrutura();
             CondicoesFisicasEstrutura condicoesFisicas = new CondicoesFisicasEstrutura();
-            ChecklistEstrutura checklist = new ChecklistEstrutura();
+            ChecklistEstrutura        checklist        = new ChecklistEstrutura();
             try
             {
                 using (SqlConnection con = OpenConnection())
@@ -506,19 +471,19 @@ namespace PFC___StandBy_CSharp.Dados
                             if (dr.HasRows)
                             {
                                 //Dados do servico
-                                servico.ID = Convert.ToInt32(dr["sv_id"]);
-                                servico.OrdemServico = Convert.ToInt32(dr["sv_ordem_serv"]);
-                                servico.DataServico = Convert.ToDateTime(dr["sv_data"]);
-                                servico.FK_IdCliente = Convert.ToInt32(dr["sv_cl_idcliente"]);
-                                servico.Marca = dr["sv_marca"].ToString();
-                                servico.Aparelho = dr["sv_aparelho"].ToString();
-                                servico.Cor = dr["sv_cor"].ToString();
-                                servico.MeiSerialNumber = dr["sv_mei_serialnumber"].ToString();
-                                servico.Senha = dr["sv_senha"].ToString();
-                                servico.CondicoesBalcao = dr["sv_condicoes_balcao"].ToString();
-                                servico.RelatoCliente = dr["sv_relato_cliente"].ToString();
-                                servico.TipoAparelho = dr["sv_tipo_aparelho"].ToString();
-                                servico.Situacao = dr["sv_situacao"].ToString();
+                                servico.ID               = Convert.ToInt32(dr["sv_id"]);
+                                servico.OrdemServico     = Convert.ToInt32(dr["sv_ordem_serv"]);
+                                servico.DataServico      = Convert.ToDateTime(dr["sv_data"]);
+                                servico.FK_IdCliente     = Convert.ToInt32(dr["sv_cl_idcliente"]);
+                                servico.Marca            = dr["sv_marca"].ToString();
+                                servico.Aparelho         = dr["sv_aparelho"].ToString();
+                                servico.Cor              = dr["sv_cor"].ToString();
+                                servico.MeiSerialNumber  = dr["sv_mei_serialnumber"].ToString();
+                                servico.Senha            = dr["sv_senha"].ToString();
+                                servico.CondicoesBalcao  = dr["sv_condicoes_balcao"].ToString();
+                                servico.RelatoCliente    = dr["sv_relato_cliente"].ToString();
+                                servico.TipoAparelho     = dr["sv_tipo_aparelho"].ToString();
+                                servico.Situacao         = dr["sv_situacao"].ToString();
                                 servico.AvaliacaoServico = dr["sv_avaliacao_servico"].ToString();
 
                                 return servico;
@@ -534,17 +499,15 @@ namespace PFC___StandBy_CSharp.Dados
 
             return null;
         }
-
         #endregion Buscar OS pela ID (servico)
 
         #region Buscar OS pela ID (servico, condicao fisica, checklist)
-
         public (ServicoEstrutura, CondicoesFisicasEstrutura, ChecklistEstrutura) BuscarOS(int _idServico,
-            string _tipoChecklist)
+            string                                                                            _tipoChecklist)
         {
-            ServicoEstrutura servico = new ServicoEstrutura();
+            ServicoEstrutura          servico          = new ServicoEstrutura();
             CondicoesFisicasEstrutura condicoesFisicas = new CondicoesFisicasEstrutura();
-            ChecklistEstrutura checklist = new ChecklistEstrutura();
+            ChecklistEstrutura        checklist        = new ChecklistEstrutura();
             try
             {
                 using (SqlConnection con = OpenConnection())
@@ -572,47 +535,47 @@ namespace PFC___StandBy_CSharp.Dados
                             if (dr.HasRows)
                             {
                                 //Dados do servico
-                                servico.ID = Convert.ToInt32(dr["sv_id"]);
-                                servico.OrdemServico = Convert.ToInt32(dr["sv_ordem_serv"]);
-                                servico.DataServico = Convert.ToDateTime(dr["sv_data"]);
-                                servico.FK_IdCliente = Convert.ToInt32(dr["sv_cl_idcliente"]);
-                                servico.Marca = dr["sv_marca"].ToString();
-                                servico.Aparelho = dr["sv_aparelho"].ToString();
-                                servico.Cor = dr["sv_cor"].ToString();
-                                servico.MeiSerialNumber = dr["sv_mei_serialnumber"].ToString();
-                                servico.Senha = dr["sv_senha"].ToString();
-                                servico.CondicoesBalcao = dr["sv_condicoes_balcao"].ToString();
-                                servico.RelatoCliente = dr["sv_relato_cliente"].ToString();
-                                servico.TipoAparelho = dr["sv_tipo_aparelho"].ToString();
-                                servico.Situacao = dr["sv_situacao"].ToString();
+                                servico.ID               = Convert.ToInt32(dr["sv_id"]);
+                                servico.OrdemServico     = Convert.ToInt32(dr["sv_ordem_serv"]);
+                                servico.DataServico      = Convert.ToDateTime(dr["sv_data"]);
+                                servico.FK_IdCliente     = Convert.ToInt32(dr["sv_cl_idcliente"]);
+                                servico.Marca            = dr["sv_marca"].ToString();
+                                servico.Aparelho         = dr["sv_aparelho"].ToString();
+                                servico.Cor              = dr["sv_cor"].ToString();
+                                servico.MeiSerialNumber  = dr["sv_mei_serialnumber"].ToString();
+                                servico.Senha            = dr["sv_senha"].ToString();
+                                servico.CondicoesBalcao  = dr["sv_condicoes_balcao"].ToString();
+                                servico.RelatoCliente    = dr["sv_relato_cliente"].ToString();
+                                servico.TipoAparelho     = dr["sv_tipo_aparelho"].ToString();
+                                servico.Situacao         = dr["sv_situacao"].ToString();
                                 servico.AvaliacaoServico = dr["sv_avaliacao_servico"].ToString();
 
                                 //Dados das condicoes fisicas
-                                condicoesFisicas.ID = Convert.ToInt32(dr["cf_id"]);
-                                condicoesFisicas.Pelicula = dr["cf_pelicula"].ToString();
-                                condicoesFisicas.Tela = dr["cf_tela"].ToString();
-                                condicoesFisicas.Tampa = dr["cf_tampa"].ToString();
-                                condicoesFisicas.Aro = dr["cf_aro"].ToString();
-                                condicoesFisicas.Botoes = dr["cf_botoes"].ToString();
+                                condicoesFisicas.ID          = Convert.ToInt32(dr["cf_id"]);
+                                condicoesFisicas.Pelicula    = dr["cf_pelicula"].ToString();
+                                condicoesFisicas.Tela        = dr["cf_tela"].ToString();
+                                condicoesFisicas.Tampa       = dr["cf_tampa"].ToString();
+                                condicoesFisicas.Aro         = dr["cf_aro"].ToString();
+                                condicoesFisicas.Botoes      = dr["cf_botoes"].ToString();
                                 condicoesFisicas.LenteCamera = dr["cf_lente_camera"].ToString();
 
                                 //Dados do checklist
-                                checklist.ID = Convert.ToInt32(dr["ch_id"]);
+                                checklist.ID              = Convert.ToInt32(dr["ch_id"]);
                                 checklist.BiometriaFaceID = dr["ch_biometria_faceid"].ToString();
-                                checklist.Microfone = dr["ch_microfone"].ToString();
-                                checklist.Tela = dr["ch_tela"].ToString();
-                                checklist.Chip = dr["ch_chip"].ToString();
-                                checklist.Botoes = dr["ch_botoes"].ToString();
-                                checklist.Sensor = dr["ch_sensor"].ToString();
-                                checklist.Cameras = dr["ch_cameras"].ToString();
-                                checklist.Auricular = dr["ch_auricular"].ToString();
-                                checklist.Wifi = dr["ch_wifi"].ToString();
-                                checklist.AltoFalante = dr["ch_altofalante"].ToString();
-                                checklist.Bluetooth = dr["ch_bluetooth"].ToString();
-                                checklist.Carregamento = dr["ch_carregamento"].ToString();
-                                checklist.Observacoes = dr["ch_observacoes"].ToString();
-                                checklist.Ausente = (bool)dr["ch_ausente"];
-                                checklist.MotivoAusencia = dr["ch_motivo_ausencia"].ToString();
+                                checklist.Microfone       = dr["ch_microfone"].ToString();
+                                checklist.Tela            = dr["ch_tela"].ToString();
+                                checklist.Chip            = dr["ch_chip"].ToString();
+                                checklist.Botoes          = dr["ch_botoes"].ToString();
+                                checklist.Sensor          = dr["ch_sensor"].ToString();
+                                checklist.Cameras         = dr["ch_cameras"].ToString();
+                                checklist.Auricular       = dr["ch_auricular"].ToString();
+                                checklist.Wifi            = dr["ch_wifi"].ToString();
+                                checklist.AltoFalante     = dr["ch_altofalante"].ToString();
+                                checklist.Bluetooth       = dr["ch_bluetooth"].ToString();
+                                checklist.Carregamento    = dr["ch_carregamento"].ToString();
+                                checklist.Observacoes     = dr["ch_observacoes"].ToString();
+                                checklist.Ausente         = (bool)dr["ch_ausente"];
+                                checklist.MotivoAusencia  = dr["ch_motivo_ausencia"].ToString();
 
                                 return (servico, condicoesFisicas, checklist);
                             }
@@ -632,23 +595,23 @@ namespace PFC___StandBy_CSharp.Dados
 
             return (null, null, null);
         }
-
         #endregion Buscar OS pela ID (servico, condicao fisica, checklist)
 
         #region Buscar OS pela ID (servico, condicao fisica, checklist) - Efcore
-
         public (tb_servicos, tb_checklist, tb_condicoes_fisicas) BuscarOSPelaID(int _idServico)
         {
             //tb_servicos servicoDados = null;
             //tb_checklist checklistDados = null;
             //tb_condicoes_fisicas condFisicasDados = null;
-            standby_orgContext context = new standby_orgContext();
-            tb_servicos serv_data = context.tb_servicos.Find(_idServico);
-            tb_checklist checklist_data = null;
+            standby_orgContext   context          = new standby_orgContext();
+            tb_servicos          serv_data        = context.tb_servicos.Find(_idServico);
+            tb_checklist         checklist_data   = null;
             tb_condicoes_fisicas condFisicas_data = null;
             try
             {
-                if (serv_data.sv_tipo_aparelho == GetName(typeof(Aparelho), Aparelho.Celular)) //No caso de pc e notebook, eles nao tem esses checklists abaixo.
+                if (serv_data.sv_tipo_aparelho ==
+                    GetName(typeof(Aparelho)
+                        , Aparelho.Celular)) //No caso de pc e notebook, eles nao tem esses checklists abaixo.
                 {
                     checklist_data = context.tb_checklist
                         .Where(x => x.ch_sv_idservico == _idServico && x.ch_tipo == Constantes.CHK_SAIDA)
@@ -705,11 +668,9 @@ namespace PFC___StandBy_CSharp.Dados
 
             return (serv_data, checklist_data, condFisicas_data);
         }
-
         #endregion Buscar OS pela ID (servico, condicao fisica, checklist) - Efcore
 
         #region Buscar ID ultima Ordem de Servico - Efcore
-
         public int BuscarUltimaIdOrdemServico()
         {
             try
@@ -739,11 +700,9 @@ namespace PFC___StandBy_CSharp.Dados
                 return -1;
             }
         }
-
         #endregion Buscar ID ultima Ordem de Servico - Efcore
 
         #region Buscar ID Servico pela O.S - Efcore
-
         public int BuscarIDServicoPelaOS(int _ordemServico)
         {
             try
@@ -774,17 +733,15 @@ namespace PFC___StandBy_CSharp.Dados
                 return -1;
             }
         }
-
         #endregion Buscar ID Servico pela O.S - Efcore
 
         #region Buscar total de pecas de um servico pela ID - Efcore
-
         public List<tb_compras> BuscarPecasDoServico(int _idServico)
         {
             try
             {
                 standby_orgContext context = new standby_orgContext();
-                var compra = context.tb_compras.Where(x => x.cp_sv_id == _idServico).ToList();
+                var                compra  = context.tb_compras.Where(x => x.cp_sv_id == _idServico).ToList();
                 return compra;
             }
             catch (Exception e)
@@ -793,17 +750,15 @@ namespace PFC___StandBy_CSharp.Dados
                 return null;
             }
         }
-
         #endregion
 
         #region Buscar valor total das pecas - Efcore
-
         public decimal BuscarTotalPecas(int _idServico)
         {
             try
             {
                 standby_orgContext context = new standby_orgContext();
-                var pecas = context.tb_compras.Where(x => x.cp_sv_id == _idServico).ToList();
+                var                pecas   = context.tb_compras.Where(x => x.cp_sv_id == _idServico).ToList();
 
                 decimal valorTotalPecas = 0;
                 foreach (tb_compras peca in pecas)
@@ -819,17 +774,15 @@ namespace PFC___StandBy_CSharp.Dados
                 return -1;
             }
         }
-
         #endregion
 
         #region Buscar numero da OS pela id do servico - Efcore
-
         public int BuscarNumeroDaOSPelaIdServico(int _idServico)
         {
             try
             {
-                standby_orgContext context = new standby_orgContext();
-                int numeroOS = context.tb_servicos.Find(_idServico).sv_ordem_serv;
+                standby_orgContext context  = new standby_orgContext();
+                int                numeroOS = context.tb_servicos.Find(_idServico).sv_ordem_serv;
                 return numeroOS;
             }
             catch (Exception e)
@@ -838,7 +791,6 @@ namespace PFC___StandBy_CSharp.Dados
                 return -1;
             }
         }
-
         #endregion
     }
 }
