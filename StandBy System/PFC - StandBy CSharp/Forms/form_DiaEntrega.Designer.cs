@@ -123,8 +123,8 @@ namespace PFC___StandBy_CSharp.Forms
             this.chk0d.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chk0d.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
             this.chk0d.BorderRadius = 12;
-            this.chk0d.Checked = true;
-            this.chk0d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
+            this.chk0d.Checked = false;
+            this.chk0d.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.chk0d.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chk0d.CustomCheckmarkImage = null;
             this.chk0d.Location = new System.Drawing.Point(214, 168);

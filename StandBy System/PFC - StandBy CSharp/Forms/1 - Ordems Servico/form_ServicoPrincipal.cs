@@ -18,6 +18,7 @@ using static PFC___StandBy_CSharp.Enums.EnumStandby;
 using GridView = DevExpress.XtraGrid.Views.Grid.GridView;
 using RichTextBox = System.Windows.Forms.RichTextBox;
 using System.Threading.Tasks;
+using NLog;
 
 // ReSharper disable InconsistentNaming
 
@@ -31,6 +32,7 @@ namespace PFC___StandBy_CSharp.Forms
         private DeletarDados deletarDados = new DeletarDados();
         private BuscarDados buscarDados = new BuscarDados();
         public int[] corGeral = new[] { 255, 0, 103 };
+        private NLog.Logger logger = LogManager.GetCurrentClassLogger();
 
         public form_ServicoPrincipal()
         {
@@ -93,8 +95,15 @@ namespace PFC___StandBy_CSharp.Forms
 
                                 //TimeSpan r = dataPrev.Subtract(dataCad);
                                 TimeSpan r = dataPrev.Subtract(DateTime.Now);
-
-                                if (r.Days == 0 && r.Hours <= 23 && r.Seconds <= 59)
+                                if (r.Days == 0 && r.Hours < 0)
+                                {
+                                    e.DisplayText = $"Venceu tem: {Math.Abs(r.Hours)} HORA(S)";
+                                }
+                                else if (r.Days < 0)
+                                {
+                                    e.DisplayText = $"Venceu tem: {Math.Abs(r.Days)} DIA(S)";
+                                }
+                                else if (r.Days == 0 && r.Hours <= 23 && r.Seconds <= 59)
                                 {
                                     //HOJE - 15:00
                                     var dataParaEntregar = DateTime.Now.AddHours(r.Hours);
@@ -158,7 +167,7 @@ namespace PFC___StandBy_CSharp.Forms
                     }
                     catch (Exception exception)
                     {
-                        Console.WriteLine(exception);
+                        logger.Error(exception, "Erro ao setar valor da coluna prazo");
                     }
                 }
             };
@@ -185,45 +194,52 @@ namespace PFC___StandBy_CSharp.Forms
                         //sv_previsao_entrega
                         if (servico[6] != null && servico[1] != null)
                         {
+                            string hexColorAmarelo = "#F7DF3E";
                             dataCad  = Convert.ToDateTime(servico[1]);
                             dataPrev = Convert.ToDateTime(servico[6]);
 
                             //TimeSpan r = dataPrev.Subtract(dataCad);
                             TimeSpan r = dataPrev.Subtract(DateTime.Now);
 
-                            if (r.Days == 0 && r.Hours <= 23 && r.Seconds <= 59)
+                            if (r.Days < 0 && r.Hours < 0)
                             {
-                                //HOJE - 15:00
+                                e.Appearance.BackColor = Color.DarkRed;
+                            }
+                            else if (r.Days == 0 && r.Hours <= 0 && r.Seconds <= 59)
+                            {
+                                //HOJE - 15:00 ou AMANHÄ - 19:15
+                                //Contanto que seja menos que 24 hrs vai cair aqui, mas pode vir com AMANHA ou HOJE.
                                 var dataParaEntregar = DateTime.Now.AddHours(r.Hours);
                                 var dataHoje         = DateTime.Now;
 
                                 if (dataParaEntregar.Date != dataHoje.Date)
                                 {
-                                    e.Appearance.BackColor = Color.DeepSkyBlue;
+                                    e.Appearance.BackColor = Color.DarkRed;
                                 }
                                 else
                                 {
-                                    e.Appearance.BackColor = Color.DarkOrange;
+                                    e.Appearance.BackColor = Color.DarkRed;
                                 }
                             }
-                            else if (r.Days == 1 && (r.Hours + DateTime.Now.Hour) >= 23)
+
+                            //else if (r.Days == 0 && (r.Hours + DateTime.Now.Hour) <= 12)
+                            else if (r.Days == 0 && (r.Hours) <= 12)
                             {
                                 //AMANHÃ - 12:00
-                                e.Appearance.BackColor = Color.LimeGreen;
+                                Color cor = ColorTranslator.FromHtml(hexColorAmarelo);
+                                e.Appearance.BackColor = cor;
                             }
-                            else if (r.Days == 1)
+
+                            //else if (r.Days >= 1 && r.Days < 15)
+                            else if (r.Days >= 0 && r.Hours >= 12)
                             {
-                                e.Appearance.BackColor = Color.DeepSkyBlue;
+                                //Color cor = ColorTranslator.FromHtml(hexColorAmarelo);
+                                //e.Appearance.BackColor = cor;
+                                e.Appearance.BackColor = Color.Green;
                             }
-                            else if (r.Days == 2)
+                            else if (r.Days >= 1 && r.Days < 15)
                             {
-                                //QUARTA - 12:00
-                                e.Appearance.BackColor = Color.LimeGreen;
-                            }
-                            else if (r.Days >= 3 && r.Days < 15)
-                            {
-                                //SÁBADO - 12:00
-                                e.Appearance.BackColor = Color.DarkRed;
+                                e.Appearance.BackColor = Color.Green;
                             }
                             else if (r.Days >= 15)
                             {
@@ -242,6 +258,7 @@ namespace PFC___StandBy_CSharp.Forms
                 }
                 catch (Exception exception)
                 {
+                    logger.Error(exception, "Erro ao setar cor da coluna OS");
                     MessageBox.Show($"Erro Cor GRID: {exception}");
                 }
             }
@@ -949,6 +966,12 @@ namespace PFC___StandBy_CSharp.Forms
             ordemServico.txtChecklistMotivoAusencia.BackColor = Color.FromArgb(64, 64, 64);
             ordemServico.txtChecklistMotivoAusencia.ReadOnly  = true;
             ordemServico.ShowDialog();
+            PopularGridview();
+        }
+
+        private void gridctrlServicos_DoubleClick(object sender, EventArgs e)
+        {
+            EditarServicoV2();
             PopularGridview();
         }
     }

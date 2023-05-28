@@ -121,10 +121,10 @@
   <data name="chk0d.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACISURBVDhPY6Ap+M8Qz/GLKSXjN2NqAzn4F1NawX+GLAmo
-        cWADBX4zpb3/w5T2nxIMNOP7T4YUA7ChIBeCBP+iKSIHA11cATYU5HxsCsjBILNGDR01dNRQbArIwaOG
-        ohnKnI5VIVEYqhduKKhgxVBEJv7NnBYANhQEgBwPkC2U4D9MqREMDAwMAEPTiecwM2dTAAAAAElFTkSu
-        QmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACRSURBVDhPY6Ap+M8Qz/GLKSXjN2NqAzn4F1NawX+GLAmo
+        cWADBX4zpb3/w5T2nxIMNOP7T4YUA7ChIBdCJFLvY3MFMRio/zjIDKCLK8CGQgX/g2iwABkAw4xRQ0cN
+        HTV01FCwABkAp6FAvB/EJgeD9KIYCipYoYZSjH8zpwWADQUBIMcD3XZSMbCQj2BgYGAAAPyymK8ABEMl
+        AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnConfirmarPrevisaoEntrega.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

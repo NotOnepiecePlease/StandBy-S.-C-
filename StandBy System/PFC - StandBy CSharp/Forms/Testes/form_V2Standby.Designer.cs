@@ -74,6 +74,7 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
@@ -303,9 +304,10 @@
             this.barHeaderItem1,
             this.barHeaderItem2,
             this.lblVersion,
-            this.btnInicio});
+            this.btnInicio,
+            this.barButtonItem16});
             this.barManager1.MainMenu = this.menuSuperior;
-            this.barManager1.MaxItemId = 52;
+            this.barManager1.MaxItemId = 53;
             this.barManager1.StatusBar = this.bar3;
             // 
             // menuSuperior
@@ -388,9 +390,17 @@
             this.barSubItem3.Caption = "CLIENTES";
             this.barSubItem3.Id = 2;
             this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
             this.barSubItem3.Name = "barSubItem3";
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "Tela Principal";
+            this.barButtonItem16.Id = 52;
+            this.barButtonItem16.Name = "barButtonItem16";
+            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem16_ItemClick);
             // 
             // barButtonItem7
             // 
@@ -419,6 +429,7 @@
             this.barButtonItem9.Caption = "Tela Principal";
             this.barButtonItem9.Id = 13;
             this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
             // barButtonItem10
             // 
@@ -978,6 +989,7 @@
             this.Name = "form_V2Standby";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StandBy System - Assistência Técnica";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.form_V2Standby_FormClosing);
             this.Shown += new System.EventHandler(this.form_V2Standby_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_V2Standby_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_V2Standby_MouseDown);
@@ -1077,5 +1089,6 @@
         private Bunifu.UI.WinForms.BunifuCircleProgress progressCPU;
         private Bunifu.UI.WinForms.BunifuCircleProgress progressMemoriaGeral;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
     }
 }

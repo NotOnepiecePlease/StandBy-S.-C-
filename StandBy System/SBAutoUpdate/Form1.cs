@@ -23,7 +23,7 @@ namespace SBAutoUpdate
                 Task.Run(() =>
                 {
                     AtualizarStandBy.Atualizar(progress);
-                    File.Delete(@"Update.zip");
+                    File.Delete(@"UpdateNEW.zip");
                     FecharForm();
                 });
             }

@@ -31,6 +31,7 @@ namespace PFC___StandBy_CSharp
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new form_StandBy());
+
             Application.Run(new form_V2Standby());
         }
     }

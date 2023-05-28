@@ -20,7 +20,7 @@ namespace PFC___StandBy_CSharp.Forms.Testes
     public partial class form_V2Standby : DevExpress.XtraEditors.XtraForm
     {
         private Form currentChildForm;
-        NLog.Logger logger = LogManager.GetCurrentClassLogger();
+        private NLog.Logger logger = LogManager.GetCurrentClassLogger();
         private Verificar verificarUpd = new Verificar();
 
         public form_V2Standby()
@@ -52,7 +52,8 @@ namespace PFC___StandBy_CSharp.Forms.Testes
                     progressMemoriaGeral.Invoke((MethodInvoker)delegate
                     {
                         progressMemoriaGeral.Value = Convert.ToInt32(memoryPercent);
-                        Console.WriteLine(memoryPercent + "%");
+
+                        //Console.WriteLine(memoryPercent + "%");
                     });
                     progressCPU.Invoke((MethodInvoker)delegate
                     {
@@ -161,27 +162,27 @@ namespace PFC___StandBy_CSharp.Forms.Testes
 
         private void btnServicosPorMes_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Done");
-            //try
-            //{
-            //    logger.Info("Info de teste");
-            //    logger.Debug("Debug de teste");
-            //    logger.ConditionalDebug("ConditionalDebug de teste");
-            //    logger.ConditionalTrace("ConditionalTrace de teste");
-            //    logger.Error("Error de teste");
-            //    logger.Fatal("Fatal de teste");
-            //    logger.Log(LogLevel.Warn, "Log de teste");
-            //    var a     = 0;
-            //    var b     = 1;
-            //    var teste = b / a;
-            //}
-            //catch (Exception exception)
-            //{
-            //    logger.Trace(exception, "Log de teste");
-            //    MessageBox.Show(exception.Message);
+            MessageBox.Show("Done");
+            try
+            {
+                logger.Info("Info de teste");
+                logger.Debug("Debug de teste");
+                logger.ConditionalDebug("ConditionalDebug de teste");
+                logger.ConditionalTrace("ConditionalTrace de teste");
+                logger.Error("Error de teste");
+                logger.Fatal("Fatal de teste");
+                logger.Log(LogLevel.Warn, "Log de teste");
+                var a     = 0;
+                var b     = 1;
+                var teste = b / a;
+            }
+            catch (Exception exception)
+            {
+                logger.Trace(exception, "Log de teste");
+                MessageBox.Show(exception.Message);
 
-            //    //throw;
-            //}
+                //throw;
+            }
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
@@ -201,6 +202,53 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             {
                 form_ComboboxConfig formCommand = new form_ComboboxConfig();
                 formCommand.ShowDialog();
+            }
+        }
+
+        private void form_V2Standby_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            NLog.LogManager.Shutdown();
+        }
+
+        private void barButtonItem16_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (Application.OpenForms.OfType<form_CadastroClientes>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i].Name == "form_CadastroClientes")
+                    {
+                        Application.OpenForms[i].Close();
+                        OpenChildForm(new form_CadastroClientes(new int[] { 255, 0, 103 }));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                OpenChildForm(new form_CadastroClientes(new int[] { 255, 0, 103 }));
+            }
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (Application.OpenForms.OfType<form_Lucros>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i].Name == "form_Lucros")
+                    {
+                        Application.OpenForms[i].Close();
+                        OpenChildForm(new form_Lucros(new int[] { 255, 0, 103 }));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                OpenChildForm(new form_Lucros(new int[] { 255, 0, 103 }));
             }
         }
     }

@@ -78,7 +78,7 @@ namespace PFC___StandBy_CSharp.Forms
                 checkboxes[i].Checked                      = false;
             }
 
-            chk0d.Checked = true;
+            chk1d.Checked = true;
 
             btnConfirmarPrevisaoEntrega.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnConfirmarPrevisaoEntrega.IdleFillColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);

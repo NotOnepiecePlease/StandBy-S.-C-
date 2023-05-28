@@ -31,8 +31,8 @@ namespace PFC___StandBy_CSharp.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_ServicoPrincipal));
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery6 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             this.colsv_ordem_serv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridcol_Prazo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,7 +46,6 @@ namespace PFC___StandBy_CSharp.Forms
             this.colsv_data = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colcl_nome = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsv_aparelho = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsv_defeito = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsv_previsao_entrega = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.lblSituacao = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -85,15 +84,13 @@ namespace PFC___StandBy_CSharp.Forms
             this.colsv_ordem_serv.AppearanceCell.Options.HighPriority = true;
             this.colsv_ordem_serv.AppearanceCell.Options.UseTextOptions = true;
             this.colsv_ordem_serv.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colsv_ordem_serv.AppearanceHeader.Options.UseTextOptions = true;
-            this.colsv_ordem_serv.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.colsv_ordem_serv.Caption = "OS";
             this.colsv_ordem_serv.FieldName = "sv_ordem_serv";
             this.colsv_ordem_serv.Name = "colsv_ordem_serv";
             this.colsv_ordem_serv.UnboundDataType = typeof(int);
             this.colsv_ordem_serv.Visible = true;
             this.colsv_ordem_serv.VisibleIndex = 0;
-            this.colsv_ordem_serv.Width = 51;
+            this.colsv_ordem_serv.Width = 200;
             // 
             // gridcol_Prazo
             // 
@@ -103,7 +100,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.gridcol_Prazo.UnboundDataType = typeof(string);
             this.gridcol_Prazo.Visible = true;
             this.gridcol_Prazo.VisibleIndex = 2;
-            this.gridcol_Prazo.Width = 131;
+            this.gridcol_Prazo.Width = 203;
             // 
             // panel1
             // 
@@ -133,6 +130,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnNotebook.Size = new System.Drawing.Size(155, 31);
             this.btnNotebook.TabIndex = 38;
             this.btnNotebook.Text = "NOTEBOOK";
+            this.btnNotebook.Visible = false;
             this.btnNotebook.Click += new System.EventHandler(this.btnNotebook_Click);
             this.btnNotebook.MouseEnter += new System.EventHandler(this.LimparLinhasSelecionadasGrid);
             // 
@@ -148,6 +146,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.btnComputador.Size = new System.Drawing.Size(155, 31);
             this.btnComputador.TabIndex = 37;
             this.btnComputador.Text = "COMPUTADOR";
+            this.btnComputador.Visible = false;
             this.btnComputador.Click += new System.EventHandler(this.btnComputador_Click);
             this.btnComputador.MouseEnter += new System.EventHandler(this.LimparLinhasSelecionadasGrid);
             // 
@@ -180,20 +179,21 @@ namespace PFC___StandBy_CSharp.Forms
             this.gridctrlServicos.Name = "gridctrlServicos";
             this.gridctrlServicos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemComboBox1});
-            this.gridctrlServicos.Size = new System.Drawing.Size(1254, 540);
+            this.gridctrlServicos.Size = new System.Drawing.Size(1254, 528);
             this.gridctrlServicos.TabIndex = 35;
             this.gridctrlServicos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridviewServicos});
+            this.gridctrlServicos.DoubleClick += new System.EventHandler(this.gridctrlServicos_DoubleClick);
             this.gridctrlServicos.MouseEnter += new System.EventHandler(this.LimparLinhasSelecionadasGrid);
             // 
             // dataSourceGridServicos
             // 
             this.dataSourceGridServicos.ConnectionName = "standby_MainConn";
             this.dataSourceGridServicos.Name = "dataSourceGridServicos";
-            customSqlQuery6.Name = "Query";
-            customSqlQuery6.Sql = resources.GetString("customSqlQuery6.Sql");
+            customSqlQuery1.Name = "Query";
+            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             this.dataSourceGridServicos.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery6});
+            customSqlQuery1});
             this.dataSourceGridServicos.ResultSchemaSerializable = resources.GetString("dataSourceGridServicos.ResultSchemaSerializable");
             // 
             // gridviewServicos
@@ -208,12 +208,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.gridcol_Prazo,
             this.colcl_nome,
             this.colsv_aparelho,
-            this.colsv_defeito,
             this.colsv_previsao_entrega});
             this.gridviewServicos.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            gridFormatRule2.Name = "Format0";
-            gridFormatRule2.Rule = null;
-            this.gridviewServicos.FormatRules.Add(gridFormatRule2);
+            gridFormatRule1.Name = "Format0";
+            gridFormatRule1.Rule = null;
+            this.gridviewServicos.FormatRules.Add(gridFormatRule1);
             this.gridviewServicos.GridControl = this.gridctrlServicos;
             this.gridviewServicos.Name = "gridviewServicos";
             this.gridviewServicos.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -228,6 +227,8 @@ namespace PFC___StandBy_CSharp.Forms
             this.gridviewServicos.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.False;
             this.gridviewServicos.OptionsView.ShowIndicator = false;
             this.gridviewServicos.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.False;
+            this.gridviewServicos.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridcol_Prazo, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridviewServicos.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridviewServicos_RowCellStyle);
             this.gridviewServicos.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridviewServicos_PopupMenuShowing);
             // 
@@ -243,7 +244,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.colsv_data.Name = "colsv_data";
             this.colsv_data.Visible = true;
             this.colsv_data.VisibleIndex = 1;
-            this.colsv_data.Width = 131;
+            this.colsv_data.Width = 203;
             // 
             // colcl_nome
             // 
@@ -252,7 +253,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.colcl_nome.Name = "colcl_nome";
             this.colcl_nome.Visible = true;
             this.colcl_nome.VisibleIndex = 3;
-            this.colcl_nome.Width = 131;
+            this.colcl_nome.Width = 203;
             // 
             // colsv_aparelho
             // 
@@ -261,16 +262,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.colsv_aparelho.Name = "colsv_aparelho";
             this.colsv_aparelho.Visible = true;
             this.colsv_aparelho.VisibleIndex = 4;
-            this.colsv_aparelho.Width = 131;
-            // 
-            // colsv_defeito
-            // 
-            this.colsv_defeito.Caption = "Defeito";
-            this.colsv_defeito.FieldName = "sv_defeito";
-            this.colsv_defeito.Name = "colsv_defeito";
-            this.colsv_defeito.Visible = true;
-            this.colsv_defeito.VisibleIndex = 5;
-            this.colsv_defeito.Width = 85;
+            this.colsv_aparelho.Width = 203;
             // 
             // colsv_previsao_entrega
             // 
@@ -282,8 +274,8 @@ namespace PFC___StandBy_CSharp.Forms
             this.colsv_previsao_entrega.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colsv_previsao_entrega.Name = "colsv_previsao_entrega";
             this.colsv_previsao_entrega.Visible = true;
-            this.colsv_previsao_entrega.VisibleIndex = 6;
-            this.colsv_previsao_entrega.Width = 147;
+            this.colsv_previsao_entrega.VisibleIndex = 5;
+            this.colsv_previsao_entrega.Width = 242;
             // 
             // repositoryItemComboBox1
             // 
@@ -525,7 +517,6 @@ namespace PFC___StandBy_CSharp.Forms
         private DevExpress.XtraGrid.Columns.GridColumn colsv_data;
         private DevExpress.XtraGrid.Columns.GridColumn colcl_nome;
         private DevExpress.XtraGrid.Columns.GridColumn colsv_aparelho;
-        private DevExpress.XtraGrid.Columns.GridColumn colsv_defeito;
         private DevExpress.XtraGrid.Columns.GridColumn colsv_previsao_entrega;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarManager barManager1;
