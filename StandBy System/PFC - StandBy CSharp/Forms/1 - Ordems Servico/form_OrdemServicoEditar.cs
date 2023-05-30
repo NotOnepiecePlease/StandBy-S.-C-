@@ -78,8 +78,15 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             {
                 DataRowView drv = combobox.Items[combobox.SelectedIndex] as DataRowView;
 
-                //lblIdCliente.Text = listClientesComId.ElementAt(multiColumnComboBox1.SelectedIndex).ID.ToString();
-                lblIdCliente.Text = drv.Row[0].ToString();
+                lblIdCliente.Text      = drv.Row[0].ToString();
+                lblCPF.Text            = drv.Row[2].ToString();
+                lblTelefone.Text       = drv.Row[3].ToString();
+                lblTelefoneRecado.Text = drv.Row[4].ToString();
+                lblRua.Text            = drv.Row[6].ToString();
+                lblBairro.Text         = drv.Row[7].ToString();
+                lblCidade.Text         = drv.Row[8].ToString();
+
+                //lblCEP.Text            = drv.Row[5].ToString();
             }
         }
 
@@ -126,7 +133,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         private void txtValorAvista_TextChange(object sender, EventArgs e)
         {
             float servicoValor = float.Parse(txtServicoValor.Text.TrimStart('R', '$').Trim());
-            int   parcelas     = int.Parse(txtParcelas.Text);
+            int parcelas = int.Parse(txtParcelas.Text);
             txtValorParcelaIndividual.Text = $"{servicoValor / parcelas:C}";
         }
 
@@ -135,7 +142,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             if (!string.IsNullOrWhiteSpace(txtParcelas.Text))
             {
                 float servicoValor = float.Parse(txtServicoValor.Text.TrimStart('R', '$').Trim());
-                int   parcelas     = int.Parse(txtParcelas.Text);
+                int parcelas = int.Parse(txtParcelas.Text);
                 txtValorParcelaIndividual.Text = $"{servicoValor / parcelas:C}";
             }
             else
@@ -147,8 +154,8 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
         public void CalcularLucro()
         {
             float valorServico = 0.0f;
-            float valorPeca    = 0.0f;
-            float lucro        = valorServico - valorPeca;
+            float valorPeca = 0.0f;
+            float lucro = valorServico - valorPeca;
             try
             {
                 valorServico = float.Parse(txtServicoValor.Text.TrimStart('R', '$').Trim());
@@ -346,7 +353,7 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
                 if (MessageBox.Show("Gostaria de imprimir a O.S de Saida apos a conclusão do serviço?",
                         "Deseja imprimir OS - Saida?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    int                    idCliente = Convert.ToInt32(lblIdCliente.Text);
+                    int idCliente = Convert.ToInt32(lblIdCliente.Text);
                     form_OrdemServicoSaida formSaida = new form_OrdemServicoSaida();
 
                     //form_OrdemServicoSaida formSaida = new form_OrdemServicoSaida(tipoAparelho, idCliente, false, new[] { 255, 0, 103 });
@@ -381,9 +388,9 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 
         private void AbrirFormaCompras()
         {
-            int          ordemServico = Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ').Trim());
-            int          idServico    = Convert.ToInt32(lblIdServico.Text);
-            form_Compras formCompra   = new form_Compras(ordemServico, idServico);
+            int ordemServico = Convert.ToInt32(lblOrdemServico.Text.TrimStart('O', 'S', ' ').Trim());
+            int idServico = Convert.ToInt32(lblIdServico.Text);
+            form_Compras formCompra = new form_Compras(ordemServico, idServico);
             formCompra.lblIdServico.Text       = lblIdServico.Text;
             formCompra.cmbOrdemServico.Enabled = false;
             formCompra.ShowDialog();
@@ -398,20 +405,26 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
             }
         }
 
-        private void form_OrdemServicoEditar_Shown(object sender, EventArgs e)
+        private void FuncaoDesabilitada(object sender, EventArgs e)
         {
-            BuscarInformacoesCliente();
+            MessageBox.Show("Função desabilitada no momento.", "Função desabilitada", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
-        private void BuscarInformacoesCliente()
+        private void form_OrdemServicoEditar_Shown(object sender, EventArgs e)
         {
-            foreach (DataRowView VARIABLE in cmbCliente.Items)
-            {
-                txtCPFCliente.Text        = VARIABLE.Row["Cpf"].ToString();
-                txtTelefonePrincipal.Text = VARIABLE.Row["⠀⠀⠀Telefone⠀⠀"].ToString();
-                txtTelefoneRecado.Text    = VARIABLE.Row["Recado"].ToString();
-            }
+            //BuscarInformacoesCliente();
         }
+
+        //private void BuscarInformacoesCliente()
+        //{
+        //    foreach (DataRowView VARIABLE in cmbCliente.Items)
+        //    {
+        //        txtCPFCliente.Text        = VARIABLE.Row["Cpf"].ToString();
+        //        txtTelefonePrincipal.Text = VARIABLE.Row["⠀⠀⠀Telefone⠀⠀"].ToString();
+        //        txtTelefoneRecado.Text    = VARIABLE.Row["Recado"].ToString();
+        //    }
+        //}
 
         private void picSenhaPattern_Click(object sender, EventArgs e)
         {

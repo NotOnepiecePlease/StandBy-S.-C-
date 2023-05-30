@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PFC___StandBy_CSharp.Forms.Configurações;
 
 namespace PFC___StandBy_CSharp.Forms
 {
@@ -28,7 +29,7 @@ namespace PFC___StandBy_CSharp.Forms
             }
             else if (cmbComando.Text.ToLower().Trim() == "dev")
             {
-                form_ComboboxConfig formCommand = new form_ComboboxConfig();
+                form_PainelCentral formCommand = new form_PainelCentral();
                 formCommand.ShowDialog();
                 this.Close();
             }

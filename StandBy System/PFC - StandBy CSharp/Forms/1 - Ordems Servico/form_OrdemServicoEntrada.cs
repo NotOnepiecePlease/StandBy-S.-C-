@@ -388,9 +388,9 @@ namespace PFC___StandBy_CSharp.Forms
         {
             try
             {
-                ClienteEstrutura          clienteDados          = new ClienteEstrutura();
-                ServicoEstrutura          servicoDados          = new ServicoEstrutura();
-                ChecklistEstrutura        checklistDados        = new ChecklistEstrutura();
+                ClienteEstrutura clienteDados = new ClienteEstrutura();
+                ServicoEstrutura servicoDados = new ServicoEstrutura();
+                ChecklistEstrutura checklistDados = new ChecklistEstrutura();
                 CondicoesFisicasEstrutura condicoesFisicasDados = new CondicoesFisicasEstrutura();
 
                 //Dados do cliente

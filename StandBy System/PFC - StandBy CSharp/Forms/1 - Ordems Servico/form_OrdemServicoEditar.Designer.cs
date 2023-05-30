@@ -30,36 +30,42 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServicoEditar));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
-            Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem9 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem10 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem11 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem12 = new DevExpress.Utils.ToolTipItem();
+            Syncfusion.Windows.Forms.MetroColorTable metroColorTable2 = new Syncfusion.Windows.Forms.MetroColorTable();
             this.panel_FormOrdemServico = new System.Windows.Forms.Panel();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.lblCidade = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel32 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblBairro = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel37 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblRua = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel39 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTelefoneRecado = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel35 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblTelefone = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel33 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblCPF = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel30 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnAbrirListaCompras = new Bunifu.Framework.UI.BunifuImageButton();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             this.cmbTipoAparelho = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.txtTelefoneRecado = new DevExpress.XtraEditors.TextEdit();
-            this.txtTelefonePrincipal = new DevExpress.XtraEditors.TextEdit();
-            this.txtCPFCliente = new DevExpress.XtraEditors.TextEdit();
-            this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dtpPrevisaoEntrega = new DevExpress.XtraEditors.DateEdit();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -107,7 +113,6 @@
             this.lblIdServico = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnTipoAparelho = new DevExpress.XtraEditors.SimpleButton();
             this.lblIdCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblCliente = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbCliente = new Syncfusion.Windows.Forms.Tools.MultiColumnComboBox();
             this.btnConcluirImprimir = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnConcluirServico = new Bunifu.Framework.UI.BunifuImageButton();
@@ -161,12 +166,9 @@
             this.moverForm = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.panel_FormOrdemServico.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbrirListaCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTelefoneRecado.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTelefonePrincipal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCPFCliente.Properties)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtpPrevisaoEntrega.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpPrevisaoEntrega.Properties.CalendarTimeProperties)).BeginInit();
@@ -204,10 +206,10 @@
             // panel_FormOrdemServico
             // 
             this.panel_FormOrdemServico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
+            this.panel_FormOrdemServico.Controls.Add(this.groupBox9);
             this.panel_FormOrdemServico.Controls.Add(this.btnAbrirListaCompras);
             this.panel_FormOrdemServico.Controls.Add(this.svgImageBox1);
             this.panel_FormOrdemServico.Controls.Add(this.cmbTipoAparelho);
-            this.panel_FormOrdemServico.Controls.Add(this.groupBox8);
             this.panel_FormOrdemServico.Controls.Add(this.groupBox7);
             this.panel_FormOrdemServico.Controls.Add(this.groupBox6);
             this.panel_FormOrdemServico.Controls.Add(this.groupBox5);
@@ -224,7 +226,6 @@
             this.panel_FormOrdemServico.Controls.Add(this.lblIdServico);
             this.panel_FormOrdemServico.Controls.Add(this.btnTipoAparelho);
             this.panel_FormOrdemServico.Controls.Add(this.lblIdCliente);
-            this.panel_FormOrdemServico.Controls.Add(this.lblCliente);
             this.panel_FormOrdemServico.Controls.Add(this.cmbCliente);
             this.panel_FormOrdemServico.Controls.Add(this.btnConcluirImprimir);
             this.panel_FormOrdemServico.Controls.Add(this.btnConcluirServico);
@@ -242,6 +243,162 @@
             this.panel_FormOrdemServico.TabIndex = 3;
             this.panel_FormOrdemServico.TabStop = true;
             // 
+            // groupBox9
+            // 
+            this.groupBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.groupBox9.Controls.Add(this.lblCidade);
+            this.groupBox9.Controls.Add(this.bunifuCustomLabel32);
+            this.groupBox9.Controls.Add(this.lblBairro);
+            this.groupBox9.Controls.Add(this.bunifuCustomLabel37);
+            this.groupBox9.Controls.Add(this.lblRua);
+            this.groupBox9.Controls.Add(this.bunifuCustomLabel39);
+            this.groupBox9.Controls.Add(this.lblTelefoneRecado);
+            this.groupBox9.Controls.Add(this.bunifuCustomLabel35);
+            this.groupBox9.Controls.Add(this.lblTelefone);
+            this.groupBox9.Controls.Add(this.bunifuCustomLabel33);
+            this.groupBox9.Controls.Add(this.lblCPF);
+            this.groupBox9.Controls.Add(this.bunifuCustomLabel30);
+            this.groupBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.groupBox9.Location = new System.Drawing.Point(151, 38);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(639, 55);
+            this.groupBox9.TabIndex = 1000000;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "DADOS PESSOAIS";
+            // 
+            // lblCidade
+            // 
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblCidade.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCidade.Location = new System.Drawing.Point(527, 29);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(13, 17);
+            this.lblCidade.TabIndex = 999999;
+            this.lblCidade.Text = "-";
+            // 
+            // bunifuCustomLabel32
+            // 
+            this.bunifuCustomLabel32.AutoSize = true;
+            this.bunifuCustomLabel32.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel32.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel32.Location = new System.Drawing.Point(471, 30);
+            this.bunifuCustomLabel32.Name = "bunifuCustomLabel32";
+            this.bunifuCustomLabel32.Size = new System.Drawing.Size(55, 17);
+            this.bunifuCustomLabel32.TabIndex = 999999;
+            this.bunifuCustomLabel32.Text = "CIDADE:";
+            // 
+            // lblBairro
+            // 
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblBairro.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblBairro.Location = new System.Drawing.Point(278, 30);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(13, 17);
+            this.lblBairro.TabIndex = 999999;
+            this.lblBairro.Text = "-";
+            // 
+            // bunifuCustomLabel37
+            // 
+            this.bunifuCustomLabel37.AutoSize = true;
+            this.bunifuCustomLabel37.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel37.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel37.Location = new System.Drawing.Point(220, 30);
+            this.bunifuCustomLabel37.Name = "bunifuCustomLabel37";
+            this.bunifuCustomLabel37.Size = new System.Drawing.Size(55, 17);
+            this.bunifuCustomLabel37.TabIndex = 999999;
+            this.bunifuCustomLabel37.Text = "BAIRRO:";
+            // 
+            // lblRua
+            // 
+            this.lblRua.AutoSize = true;
+            this.lblRua.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblRua.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblRua.Location = new System.Drawing.Point(36, 30);
+            this.lblRua.Name = "lblRua";
+            this.lblRua.Size = new System.Drawing.Size(13, 17);
+            this.lblRua.TabIndex = 999999;
+            this.lblRua.Text = "-";
+            // 
+            // bunifuCustomLabel39
+            // 
+            this.bunifuCustomLabel39.AutoSize = true;
+            this.bunifuCustomLabel39.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel39.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel39.Location = new System.Drawing.Point(2, 30);
+            this.bunifuCustomLabel39.Name = "bunifuCustomLabel39";
+            this.bunifuCustomLabel39.Size = new System.Drawing.Size(36, 17);
+            this.bunifuCustomLabel39.TabIndex = 999999;
+            this.bunifuCustomLabel39.Text = "RUA:";
+            // 
+            // lblTelefoneRecado
+            // 
+            this.lblTelefoneRecado.AutoSize = true;
+            this.lblTelefoneRecado.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblTelefoneRecado.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTelefoneRecado.Location = new System.Drawing.Point(527, 13);
+            this.lblTelefoneRecado.Name = "lblTelefoneRecado";
+            this.lblTelefoneRecado.Size = new System.Drawing.Size(13, 17);
+            this.lblTelefoneRecado.TabIndex = 999999;
+            this.lblTelefoneRecado.Text = "-";
+            // 
+            // bunifuCustomLabel35
+            // 
+            this.bunifuCustomLabel35.AutoSize = true;
+            this.bunifuCustomLabel35.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel35.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel35.Location = new System.Drawing.Point(465, 13);
+            this.bunifuCustomLabel35.Name = "bunifuCustomLabel35";
+            this.bunifuCustomLabel35.Size = new System.Drawing.Size(61, 17);
+            this.bunifuCustomLabel35.TabIndex = 999999;
+            this.bunifuCustomLabel35.Text = "RECADO:";
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblTelefone.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblTelefone.Location = new System.Drawing.Point(278, 13);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(13, 17);
+            this.lblTelefone.TabIndex = 999999;
+            this.lblTelefone.Text = "-";
+            // 
+            // bunifuCustomLabel33
+            // 
+            this.bunifuCustomLabel33.AutoSize = true;
+            this.bunifuCustomLabel33.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel33.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel33.Location = new System.Drawing.Point(204, 13);
+            this.bunifuCustomLabel33.Name = "bunifuCustomLabel33";
+            this.bunifuCustomLabel33.Size = new System.Drawing.Size(71, 17);
+            this.bunifuCustomLabel33.TabIndex = 999999;
+            this.bunifuCustomLabel33.Text = "TELEFONE:";
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblCPF.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCPF.Location = new System.Drawing.Point(36, 13);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(13, 17);
+            this.lblCPF.TabIndex = 999999;
+            this.lblCPF.Text = "-";
+            // 
+            // bunifuCustomLabel30
+            // 
+            this.bunifuCustomLabel30.AutoSize = true;
+            this.bunifuCustomLabel30.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.bunifuCustomLabel30.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel30.Location = new System.Drawing.Point(6, 13);
+            this.bunifuCustomLabel30.Name = "bunifuCustomLabel30";
+            this.bunifuCustomLabel30.Size = new System.Drawing.Size(32, 17);
+            this.bunifuCustomLabel30.TabIndex = 999999;
+            this.bunifuCustomLabel30.Text = "CPF:";
+            // 
             // btnAbrirListaCompras
             // 
             this.btnAbrirListaCompras.Image = global::PFC___StandBy_CSharp.Properties.Resources.bill_512px;
@@ -257,7 +414,7 @@
             // 
             // svgImageBox1
             // 
-            this.svgImageBox1.Location = new System.Drawing.Point(814, 112);
+            this.svgImageBox1.Location = new System.Drawing.Point(805, 111);
             this.svgImageBox1.Name = "svgImageBox1";
             this.svgImageBox1.Size = new System.Drawing.Size(30, 41);
             this.svgImageBox1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("svgImageBox1.SvgImage")));
@@ -302,107 +459,14 @@
             "Notebook",
             "Computador"});
             this.cmbTipoAparelho.ItemTopMargin = 3;
-            this.cmbTipoAparelho.Location = new System.Drawing.Point(850, 117);
+            this.cmbTipoAparelho.Location = new System.Drawing.Point(841, 117);
             this.cmbTipoAparelho.Name = "cmbTipoAparelho";
-            this.cmbTipoAparelho.Size = new System.Drawing.Size(309, 32);
+            this.cmbTipoAparelho.Size = new System.Drawing.Size(318, 32);
             this.cmbTipoAparelho.TabIndex = 91;
             this.cmbTipoAparelho.Text = null;
             this.cmbTipoAparelho.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Center;
             this.cmbTipoAparelho.TextLeftMargin = 5;
             this.cmbTipoAparelho.SelectedIndexChanged += new System.EventHandler(this.cmbTipoAparelho_SelectedIndexChanged);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.groupBox8.Controls.Add(this.txtTelefoneRecado);
-            this.groupBox8.Controls.Add(this.txtTelefonePrincipal);
-            this.groupBox8.Controls.Add(this.txtCPFCliente);
-            this.groupBox8.Controls.Add(this.bunifuCustomLabel22);
-            this.groupBox8.Controls.Add(this.bunifuCustomLabel13);
-            this.groupBox8.Controls.Add(this.bunifuCustomLabel21);
-            this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox8.Location = new System.Drawing.Point(12, 590);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(778, 47);
-            this.groupBox8.TabIndex = 83;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "DADOS PESSOAIS";
-            // 
-            // txtTelefoneRecado
-            // 
-            this.txtTelefoneRecado.Location = new System.Drawing.Point(579, 9);
-            this.txtTelefoneRecado.Name = "txtTelefoneRecado";
-            this.txtTelefoneRecado.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtTelefoneRecado.Properties.Appearance.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtTelefoneRecado.Properties.Appearance.Options.UseFont = true;
-            this.txtTelefoneRecado.Properties.Appearance.Options.UseForeColor = true;
-            this.txtTelefoneRecado.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtTelefoneRecado.Properties.NullText = "(71) 99285-5113";
-            this.txtTelefoneRecado.Properties.ReadOnly = true;
-            this.txtTelefoneRecado.Size = new System.Drawing.Size(185, 34);
-            this.txtTelefoneRecado.TabIndex = 6;
-            // 
-            // txtTelefonePrincipal
-            // 
-            this.txtTelefonePrincipal.Location = new System.Drawing.Point(303, 9);
-            this.txtTelefonePrincipal.Name = "txtTelefonePrincipal";
-            this.txtTelefonePrincipal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtTelefonePrincipal.Properties.Appearance.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtTelefonePrincipal.Properties.Appearance.Options.UseFont = true;
-            this.txtTelefonePrincipal.Properties.Appearance.Options.UseForeColor = true;
-            this.txtTelefonePrincipal.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtTelefonePrincipal.Properties.NullText = "(71) 99285-5113";
-            this.txtTelefonePrincipal.Properties.ReadOnly = true;
-            this.txtTelefonePrincipal.Size = new System.Drawing.Size(192, 34);
-            this.txtTelefonePrincipal.TabIndex = 6;
-            // 
-            // txtCPFCliente
-            // 
-            this.txtCPFCliente.Location = new System.Drawing.Point(48, 11);
-            this.txtCPFCliente.Name = "txtCPFCliente";
-            this.txtCPFCliente.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtCPFCliente.Properties.Appearance.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtCPFCliente.Properties.Appearance.Options.UseFont = true;
-            this.txtCPFCliente.Properties.Appearance.Options.UseForeColor = true;
-            this.txtCPFCliente.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtCPFCliente.Properties.NullText = "071.548.143-95";
-            this.txtCPFCliente.Properties.ReadOnly = true;
-            this.txtCPFCliente.Size = new System.Drawing.Size(200, 34);
-            this.txtCPFCliente.TabIndex = 6;
-            // 
-            // bunifuCustomLabel22
-            // 
-            this.bunifuCustomLabel22.AutoSize = true;
-            this.bunifuCustomLabel22.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel22.Location = new System.Drawing.Point(533, 17);
-            this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
-            this.bunifuCustomLabel22.Size = new System.Drawing.Size(47, 20);
-            this.bunifuCustomLabel22.TabIndex = 96;
-            this.bunifuCustomLabel22.Text = "Tel R.:";
-            // 
-            // bunifuCustomLabel13
-            // 
-            this.bunifuCustomLabel13.AutoSize = true;
-            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(6, 18);
-            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
-            this.bunifuCustomLabel13.Size = new System.Drawing.Size(36, 20);
-            this.bunifuCustomLabel13.TabIndex = 92;
-            this.bunifuCustomLabel13.Text = "CPF:";
-            // 
-            // bunifuCustomLabel21
-            // 
-            this.bunifuCustomLabel21.AutoSize = true;
-            this.bunifuCustomLabel21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bunifuCustomLabel21.Location = new System.Drawing.Point(268, 16);
-            this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
-            this.bunifuCustomLabel21.Size = new System.Drawing.Size(31, 20);
-            this.bunifuCustomLabel21.TabIndex = 94;
-            this.bunifuCustomLabel21.Text = "Tel:";
             // 
             // groupBox7
             // 
@@ -480,6 +544,7 @@
             this.txtParcelas.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtParcelas.Size = new System.Drawing.Size(83, 32);
             this.txtParcelas.TabIndex = 105;
+            this.txtParcelas.Click += new System.EventHandler(this.FuncaoDesabilitada);
             // 
             // txtValorParcelaIndividual
             // 
@@ -496,6 +561,7 @@
             this.txtValorParcelaIndividual.Properties.ReadOnly = true;
             this.txtValorParcelaIndividual.Size = new System.Drawing.Size(83, 32);
             this.txtValorParcelaIndividual.TabIndex = 104;
+            this.txtValorParcelaIndividual.Click += new System.EventHandler(this.FuncaoDesabilitada);
             // 
             // txtValorAvista
             // 
@@ -513,6 +579,7 @@
             this.txtValorAvista.Size = new System.Drawing.Size(83, 32);
             this.txtValorAvista.TabIndex = 103;
             this.txtValorAvista.TextChanged += new System.EventHandler(this.txtValorAvista_TextChange);
+            this.txtValorAvista.Click += new System.EventHandler(this.FuncaoDesabilitada);
             // 
             // txtValorCartao
             // 
@@ -529,6 +596,7 @@
             this.txtValorCartao.Properties.ReadOnly = true;
             this.txtValorCartao.Size = new System.Drawing.Size(83, 32);
             this.txtValorCartao.TabIndex = 6;
+            this.txtValorCartao.Click += new System.EventHandler(this.FuncaoDesabilitada);
             // 
             // bunifuSeparator18
             // 
@@ -661,6 +729,7 @@
             this.bunifuCustomLabel20.Size = new System.Drawing.Size(56, 20);
             this.bunifuCustomLabel20.TabIndex = 37;
             this.bunifuCustomLabel20.Text = "V.PARC";
+            this.bunifuCustomLabel20.Click += new System.EventHandler(this.FuncaoDesabilitada);
             // 
             // bunifuCustomLabel19
             // 
@@ -672,6 +741,7 @@
             this.bunifuCustomLabel19.Size = new System.Drawing.Size(77, 20);
             this.bunifuCustomLabel19.TabIndex = 35;
             this.bunifuCustomLabel19.Text = "PARCELAS";
+            this.bunifuCustomLabel19.Click += new System.EventHandler(this.FuncaoDesabilitada);
             // 
             // bunifuCustomLabel18
             // 
@@ -683,6 +753,7 @@
             this.bunifuCustomLabel18.Size = new System.Drawing.Size(61, 20);
             this.bunifuCustomLabel18.TabIndex = 33;
             this.bunifuCustomLabel18.Text = "À VISTA";
+            this.bunifuCustomLabel18.Click += new System.EventHandler(this.FuncaoDesabilitada);
             // 
             // bunifuCustomLabel17
             // 
@@ -694,6 +765,7 @@
             this.bunifuCustomLabel17.Size = new System.Drawing.Size(64, 20);
             this.bunifuCustomLabel17.TabIndex = 31;
             this.bunifuCustomLabel17.Text = "CARTÃO";
+            this.bunifuCustomLabel17.Click += new System.EventHandler(this.FuncaoDesabilitada);
             // 
             // groupBox5
             // 
@@ -721,15 +793,15 @@
             this.txtAcessorios.MaxLength = 4000;
             this.txtAcessorios.Name = "txtAcessorios";
             this.txtAcessorios.Size = new System.Drawing.Size(341, 70);
-            toolTipTitleItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            toolTipTitleItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem1.Text = "Dica:";
-            toolTipItem1.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem1.Appearance.Options.UseForeColor = true;
-            toolTipItem1.Text = "Exemplo: \"Vieram bateria e capa\"";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.toolTipController1.SetSuperTip(this.txtAcessorios, superToolTip1);
+            toolTipTitleItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            toolTipTitleItem7.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem7.Text = "Dica:";
+            toolTipItem7.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem7.Appearance.Options.UseForeColor = true;
+            toolTipItem7.Text = "Exemplo: \"Vieram bateria e capa\"";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            superToolTip7.Items.Add(toolTipItem7);
+            this.toolTipController1.SetSuperTip(this.txtAcessorios, superToolTip7);
             this.txtAcessorios.TabIndex = 6;
             this.txtAcessorios.Text = "";
             // 
@@ -739,7 +811,7 @@
             this.groupBox4.Controls.Add(this.txtDefeito);
             this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox4.Location = new System.Drawing.Point(409, 403);
+            this.groupBox4.Location = new System.Drawing.Point(409, 545);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(381, 87);
             this.groupBox4.TabIndex = 86;
@@ -759,15 +831,15 @@
             this.txtDefeito.MaxLength = 4000;
             this.txtDefeito.Name = "txtDefeito";
             this.txtDefeito.Size = new System.Drawing.Size(368, 70);
-            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
-            toolTipTitleItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem2.Text = "Dica:";
-            toolTipItem2.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem2.Appearance.Options.UseForeColor = true;
-            toolTipItem2.Text = "Exemplo: \"Tela veio quebrada e os botões não funcionam\"";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.toolTipController1.SetSuperTip(this.txtDefeito, superToolTip2);
+            toolTipTitleItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
+            toolTipTitleItem8.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem8.Text = "Dica:";
+            toolTipItem8.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem8.Appearance.Options.UseForeColor = true;
+            toolTipItem8.Text = "Exemplo: \"Tela veio quebrada e os botões não funcionam\"";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            superToolTip8.Items.Add(toolTipItem8);
+            this.toolTipController1.SetSuperTip(this.txtDefeito, superToolTip8);
             this.txtDefeito.TabIndex = 5;
             this.txtDefeito.Text = "";
             // 
@@ -943,7 +1015,7 @@
             this.groupBox2.Controls.Add(this.txtObservacoes);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox2.Location = new System.Drawing.Point(12, 309);
+            this.groupBox2.Location = new System.Drawing.Point(14, 357);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(381, 87);
             this.groupBox2.TabIndex = 82;
@@ -963,15 +1035,15 @@
             this.txtObservacoes.MaxLength = 4000;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(368, 70);
-            toolTipTitleItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
-            toolTipTitleItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem3.Text = "Dica:";
-            toolTipItem3.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem3.Appearance.Options.UseForeColor = true;
-            toolTipItem3.Text = "Exemplo: \"Aparelho chegou desmontado\"";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.toolTipController1.SetSuperTip(this.txtObservacoes, superToolTip3);
+            toolTipTitleItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
+            toolTipTitleItem9.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem9.Text = "Dica:";
+            toolTipItem9.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem9.Appearance.Options.UseForeColor = true;
+            toolTipItem9.Text = "Exemplo: \"Aparelho chegou desmontado\"";
+            superToolTip9.Items.Add(toolTipTitleItem9);
+            superToolTip9.Items.Add(toolTipItem9);
+            this.toolTipController1.SetSuperTip(this.txtObservacoes, superToolTip9);
             this.txtObservacoes.TabIndex = 5;
             this.txtObservacoes.Text = "";
             this.txtObservacoes.DoubleClick += new System.EventHandler(this.txtObservacoes_DoubleClick);
@@ -982,9 +1054,9 @@
             this.group_RelatoCliente.Controls.Add(this.txtRelatoCliente);
             this.group_RelatoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_RelatoCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_RelatoCliente.Location = new System.Drawing.Point(12, 403);
+            this.group_RelatoCliente.Location = new System.Drawing.Point(14, 451);
             this.group_RelatoCliente.Name = "group_RelatoCliente";
-            this.group_RelatoCliente.Size = new System.Drawing.Size(381, 87);
+            this.group_RelatoCliente.Size = new System.Drawing.Size(776, 87);
             this.group_RelatoCliente.TabIndex = 83;
             this.group_RelatoCliente.TabStop = false;
             this.group_RelatoCliente.Text = "RELATO DO CLIENTE";
@@ -1001,16 +1073,16 @@
             this.txtRelatoCliente.Location = new System.Drawing.Point(6, 11);
             this.txtRelatoCliente.MaxLength = 4000;
             this.txtRelatoCliente.Name = "txtRelatoCliente";
-            this.txtRelatoCliente.Size = new System.Drawing.Size(368, 70);
-            toolTipTitleItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
-            toolTipTitleItem4.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem4.Text = "Dica:";
-            toolTipItem4.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem4.Appearance.Options.UseForeColor = true;
-            toolTipItem4.Text = "Exemplo: \"Cliente informa que o aparelho caiu e quebrou a tela\"";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.toolTipController1.SetSuperTip(this.txtRelatoCliente, superToolTip4);
+            this.txtRelatoCliente.Size = new System.Drawing.Size(763, 70);
+            toolTipTitleItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
+            toolTipTitleItem10.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem10.Text = "Dica:";
+            toolTipItem10.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem10.Appearance.Options.UseForeColor = true;
+            toolTipItem10.Text = "Exemplo: \"Cliente informa que o aparelho caiu e quebrou a tela\"";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            superToolTip10.Items.Add(toolTipItem10);
+            this.toolTipController1.SetSuperTip(this.txtRelatoCliente, superToolTip10);
             this.txtRelatoCliente.TabIndex = 5;
             this.txtRelatoCliente.Text = "";
             this.txtRelatoCliente.DoubleClick += new System.EventHandler(this.txtRelatoCliente_DoubleClick);
@@ -1021,9 +1093,9 @@
             this.group_CondicoesBalcao.Controls.Add(this.txtCondicoesBalcao);
             this.group_CondicoesBalcao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_CondicoesBalcao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_CondicoesBalcao.Location = new System.Drawing.Point(12, 497);
+            this.group_CondicoesBalcao.Location = new System.Drawing.Point(14, 545);
             this.group_CondicoesBalcao.Name = "group_CondicoesBalcao";
-            this.group_CondicoesBalcao.Size = new System.Drawing.Size(778, 87);
+            this.group_CondicoesBalcao.Size = new System.Drawing.Size(381, 87);
             this.group_CondicoesBalcao.TabIndex = 84;
             this.group_CondicoesBalcao.TabStop = false;
             this.group_CondicoesBalcao.Text = "CONDIÇÕES DO APARELHO NO BALCÃO";
@@ -1040,16 +1112,16 @@
             this.txtCondicoesBalcao.Location = new System.Drawing.Point(6, 11);
             this.txtCondicoesBalcao.MaxLength = 4000;
             this.txtCondicoesBalcao.Name = "txtCondicoesBalcao";
-            this.txtCondicoesBalcao.Size = new System.Drawing.Size(765, 70);
-            toolTipTitleItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage4")));
-            toolTipTitleItem5.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem5.Text = "Dica:";
-            toolTipItem5.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem5.Appearance.Options.UseForeColor = true;
-            toolTipItem5.Text = "Exemplo: \"Aparelho no balcão vibra mas não da imagem na tela\"";
-            superToolTip5.Items.Add(toolTipTitleItem5);
-            superToolTip5.Items.Add(toolTipItem5);
-            this.toolTipController1.SetSuperTip(this.txtCondicoesBalcao, superToolTip5);
+            this.txtCondicoesBalcao.Size = new System.Drawing.Size(368, 70);
+            toolTipTitleItem11.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage4")));
+            toolTipTitleItem11.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem11.Text = "Dica:";
+            toolTipItem11.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem11.Appearance.Options.UseForeColor = true;
+            toolTipItem11.Text = "Exemplo: \"Aparelho no balcão vibra mas não da imagem na tela\"";
+            superToolTip11.Items.Add(toolTipTitleItem11);
+            superToolTip11.Items.Add(toolTipItem11);
+            this.toolTipController1.SetSuperTip(this.txtCondicoesBalcao, superToolTip11);
             this.txtCondicoesBalcao.TabIndex = 5;
             this.txtCondicoesBalcao.Text = "";
             this.txtCondicoesBalcao.DoubleClick += new System.EventHandler(this.txtCondicoesBalcao_DoubleClick);
@@ -1083,9 +1155,9 @@
             this.groupBox1.Controls.Add(this.txtSolucao);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.groupBox1.Location = new System.Drawing.Point(409, 309);
+            this.groupBox1.Location = new System.Drawing.Point(411, 357);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(381, 87);
+            this.groupBox1.Size = new System.Drawing.Size(379, 87);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "SOLUÇÃO";
@@ -1102,16 +1174,16 @@
             this.txtSolucao.Location = new System.Drawing.Point(6, 11);
             this.txtSolucao.MaxLength = 4000;
             this.txtSolucao.Name = "txtSolucao";
-            this.txtSolucao.Size = new System.Drawing.Size(368, 70);
-            toolTipTitleItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage5")));
-            toolTipTitleItem6.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem6.Text = "Dica:";
-            toolTipItem6.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem6.Appearance.Options.UseForeColor = true;
-            toolTipItem6.Text = "Exemplo: \"Foi feita a troca de tela\"";
-            superToolTip6.Items.Add(toolTipTitleItem6);
-            superToolTip6.Items.Add(toolTipItem6);
-            this.toolTipController1.SetSuperTip(this.txtSolucao, superToolTip6);
+            this.txtSolucao.Size = new System.Drawing.Size(366, 70);
+            toolTipTitleItem12.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage5")));
+            toolTipTitleItem12.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem12.Text = "Dica:";
+            toolTipItem12.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem12.Appearance.Options.UseForeColor = true;
+            toolTipItem12.Text = "Exemplo: \"Foi feita a troca de tela\"";
+            superToolTip12.Items.Add(toolTipTitleItem12);
+            superToolTip12.Items.Add(toolTipItem12);
+            this.toolTipController1.SetSuperTip(this.txtSolucao, superToolTip12);
             this.txtSolucao.TabIndex = 5;
             this.txtSolucao.Text = "";
             this.txtSolucao.DoubleClick += new System.EventHandler(this.txtSolucao_DoubleClick);
@@ -1177,33 +1249,20 @@
             this.lblIdCliente.Text = "IdCliente";
             this.lblIdCliente.Visible = false;
             // 
-            // lblCliente
-            // 
-            this.lblCliente.BackColor = System.Drawing.Color.Transparent;
-            this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.lblCliente.ForeColor = System.Drawing.Color.Lavender;
-            this.lblCliente.Image = global::PFC___StandBy_CSharp.Properties.Resources.icons8_user_20px;
-            this.lblCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCliente.Location = new System.Drawing.Point(157, 18);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(28, 22);
-            this.lblCliente.TabIndex = 75;
-            this.lblCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // cmbCliente
             // 
             this.cmbCliente.AllowFiltering = false;
-            this.cmbCliente.BeforeTouchSize = new System.Drawing.Size(602, 31);
+            this.cmbCliente.BeforeTouchSize = new System.Drawing.Size(639, 31);
             this.cmbCliente.Filter = null;
             this.cmbCliente.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCliente.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmbCliente.Location = new System.Drawing.Point(188, 14);
+            this.cmbCliente.Location = new System.Drawing.Point(151, 4);
             this.cmbCliente.MaxDropDownItems = 10;
             this.cmbCliente.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.ReadOnly = true;
-            this.cmbCliente.ScrollMetroColorTable = metroColorTable1;
-            this.cmbCliente.Size = new System.Drawing.Size(602, 31);
+            this.cmbCliente.ScrollMetroColorTable = metroColorTable2;
+            this.cmbCliente.Size = new System.Drawing.Size(639, 31);
             this.cmbCliente.TabIndex = 74;
             this.cmbCliente.Text = "Adriano Fraga de Andrade";
             this.cmbCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1352,7 +1411,7 @@
             this.group_CondicoesFisicas.Controls.Add(this.bunifuCustomLabel10);
             this.group_CondicoesFisicas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_CondicoesFisicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.group_CondicoesFisicas.Location = new System.Drawing.Point(409, 57);
+            this.group_CondicoesFisicas.Location = new System.Drawing.Point(409, 103);
             this.group_CondicoesFisicas.Name = "group_CondicoesFisicas";
             this.group_CondicoesFisicas.Size = new System.Drawing.Size(381, 246);
             this.group_CondicoesFisicas.TabIndex = 23;
@@ -1822,7 +1881,7 @@
             this.group_InformacoesAparelho.Controls.Add(this.bunifuCustomLabel9);
             this.group_InformacoesAparelho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_InformacoesAparelho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
-            this.group_InformacoesAparelho.Location = new System.Drawing.Point(12, 57);
+            this.group_InformacoesAparelho.Location = new System.Drawing.Point(12, 103);
             this.group_InformacoesAparelho.Name = "group_InformacoesAparelho";
             this.group_InformacoesAparelho.Size = new System.Drawing.Size(381, 246);
             this.group_InformacoesAparelho.TabIndex = 3;
@@ -2151,7 +2210,7 @@
             this.panel_OrdemServCodigo.Controls.Add(this.lblOrdemServico);
             this.panel_OrdemServCodigo.Location = new System.Drawing.Point(4, 4);
             this.panel_OrdemServCodigo.Name = "panel_OrdemServCodigo";
-            this.panel_OrdemServCodigo.Size = new System.Drawing.Size(142, 51);
+            this.panel_OrdemServCodigo.Size = new System.Drawing.Size(142, 89);
             this.panel_OrdemServCodigo.TabIndex = 0;
             // 
             // lblTipoOrdemServico
@@ -2159,7 +2218,7 @@
             this.lblTipoOrdemServico.AutoSize = true;
             this.lblTipoOrdemServico.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoOrdemServico.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblTipoOrdemServico.Location = new System.Drawing.Point(37, -2);
+            this.lblTipoOrdemServico.Location = new System.Drawing.Point(42, 7);
             this.lblTipoOrdemServico.Name = "lblTipoOrdemServico";
             this.lblTipoOrdemServico.Size = new System.Drawing.Size(67, 17);
             this.lblTipoOrdemServico.TabIndex = 68;
@@ -2170,7 +2229,7 @@
             this.lblDataOrdemServico.AutoSize = true;
             this.lblDataOrdemServico.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.lblDataOrdemServico.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDataOrdemServico.Location = new System.Drawing.Point(7, 32);
+            this.lblDataOrdemServico.Location = new System.Drawing.Point(7, 55);
             this.lblDataOrdemServico.Name = "lblDataOrdemServico";
             this.lblDataOrdemServico.Size = new System.Drawing.Size(135, 17);
             this.lblDataOrdemServico.TabIndex = 66;
@@ -2182,7 +2241,7 @@
             this.lblOrdemServico.AutoSize = true;
             this.lblOrdemServico.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdemServico.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblOrdemServico.Location = new System.Drawing.Point(15, 5);
+            this.lblOrdemServico.Location = new System.Drawing.Point(15, 24);
             this.lblOrdemServico.Name = "lblOrdemServico";
             this.lblOrdemServico.Size = new System.Drawing.Size(108, 32);
             this.lblOrdemServico.TabIndex = 66;
@@ -2221,13 +2280,10 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_OrdemServicoEditar_KeyDown);
             this.panel_FormOrdemServico.ResumeLayout(false);
             this.panel_FormOrdemServico.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbrirListaCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTelefoneRecado.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTelefonePrincipal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCPFCliente.Properties)).EndInit();
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtpPrevisaoEntrega.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpPrevisaoEntrega.Properties)).EndInit();
@@ -2278,7 +2334,6 @@
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdCondicoesFisicas;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdServico;
         public Bunifu.Framework.UI.BunifuCustomLabel lblIdCliente;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblCliente;
         public Syncfusion.Windows.Forms.Tools.MultiColumnComboBox cmbCliente;
         private Bunifu.Framework.UI.BunifuImageButton btnConcluirImprimir;
         public Bunifu.Framework.UI.BunifuImageButton btnConcluirServico;
@@ -2358,10 +2413,6 @@
         private System.Windows.Forms.GroupBox groupBox7;
         public DevExpress.XtraEditors.DateEdit dtpDataServico;
         public DevExpress.XtraEditors.DateEdit dtpPrevisaoEntrega;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
         public DevExpress.XtraEditors.SimpleButton btnCheckListENTRADA;
         public DevExpress.XtraEditors.SimpleButton btnChecklistSAIDA;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
@@ -2378,9 +2429,19 @@
         public DevExpress.XtraEditors.TextEdit txtValorParcelaIndividual;
         public DevExpress.XtraEditors.TextEdit txtValorAvista;
         public DevExpress.XtraEditors.TextEdit txtParcelas;
-        private DevExpress.XtraEditors.TextEdit txtCPFCliente;
-        private DevExpress.XtraEditors.TextEdit txtTelefonePrincipal;
-        private DevExpress.XtraEditors.TextEdit txtTelefoneRecado;
         private DevExpress.Utils.ToolTipController toolTipController1;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblCidade;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel32;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblBairro;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel37;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblRua;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel39;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblTelefoneRecado;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel35;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblTelefone;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel33;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblCPF;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel30;
     }
 }

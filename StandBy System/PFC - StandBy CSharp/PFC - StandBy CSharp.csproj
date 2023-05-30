@@ -203,6 +203,7 @@
     <Reference Include="DevExpress.Diagram.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v22.2, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v22.2.Drawing, Version=22.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -728,6 +729,12 @@
     <Compile Include="Forms\1 - Ordems Servico\form_RichTextboxExterno.Designer.cs">
       <DependentUpon>form_RichTextboxExterno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Configurações\Banco de Dados\form_BancoDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Configurações\Banco de Dados\form_BancoDados.Designer.cs">
+      <DependentUpon>form_BancoDados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Configurações\form_PainelCentral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -776,10 +783,10 @@
     <Compile Include="Forms\Configurações\form_ComboboxConfig.Designer.cs">
       <DependentUpon>form_ComboboxConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\form_DeveloperCommand.cs">
+    <Compile Include="Forms\Configurações\form_DeveloperCommand.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\form_DeveloperCommand.Designer.cs">
+    <Compile Include="Forms\Configurações\form_DeveloperCommand.Designer.cs">
       <DependentUpon>form_DeveloperCommand.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\form_DiaEntrega.cs">
@@ -1038,6 +1045,9 @@
     <EmbeddedResource Include="Forms\1 - Ordems Servico\form_RichTextboxExterno.resx">
       <DependentUpon>form_RichTextboxExterno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Configurações\Banco de Dados\form_BancoDados.resx">
+      <DependentUpon>form_BancoDados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configurações\form_PainelCentral.resx">
       <DependentUpon>form_PainelCentral.cs</DependentUpon>
     </EmbeddedResource>
@@ -1062,7 +1072,7 @@
     <EmbeddedResource Include="Forms\Configurações\form_ComboboxConfig.resx">
       <DependentUpon>form_ComboboxConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\form_DeveloperCommand.resx">
+    <EmbeddedResource Include="Forms\Configurações\form_DeveloperCommand.resx">
       <DependentUpon>form_DeveloperCommand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_DiaEntrega.resx">

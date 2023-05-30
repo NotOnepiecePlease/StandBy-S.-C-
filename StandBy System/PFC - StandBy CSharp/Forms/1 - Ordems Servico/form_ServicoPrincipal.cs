@@ -73,10 +73,10 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 if (e.Column.Name == "gridcol_Prazo")
                 {
-                    var      indexLinhaAtual   = gridviewServicos.GetRowHandle(e.ListSourceRowIndex);
-                    var      teste             = gridviewServicos.GetRowCellValue(e.ListSourceRowIndex, gridcol_Prazo);
-                    var      dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
-                    var      servico           = dadosDaLinhaAtual as IRow;
+                    var indexLinhaAtual = gridviewServicos.GetRowHandle(e.ListSourceRowIndex);
+                    var teste = gridviewServicos.GetRowCellValue(e.ListSourceRowIndex, gridcol_Prazo);
+                    var dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
+                    var servico = dadosDaLinhaAtual as IRow;
                     DateTime dataCad;
                     DateTime dataPrev;
                     try
@@ -107,7 +107,7 @@ namespace PFC___StandBy_CSharp.Forms
                                 {
                                     //HOJE - 15:00
                                     var dataParaEntregar = DateTime.Now.AddHours(r.Hours);
-                                    var dataHoje         = DateTime.Now;
+                                    var dataHoje = DateTime.Now;
 
                                     if (dataParaEntregar.Date != dataHoje.Date)
                                     {
@@ -123,7 +123,7 @@ namespace PFC___StandBy_CSharp.Forms
                                 else if (r.Days == 1 && (r.Hours + DateTime.Now.Hour) >= 23)
                                 {
                                     //AMANHÃ - 12:00
-                                    var dia          = $"{dataPrev:dddd}";
+                                    var dia = $"{dataPrev:dddd}";
                                     var diaSemSufixo = dia.Split('-');
                                     e.DisplayText = $"{diaSemSufixo[0].ToUpper()} - {dataPrev:HH:mm}";
 
@@ -137,20 +137,20 @@ namespace PFC___StandBy_CSharp.Forms
                                 {
                                     //QUARTA - 12:00
                                     //e.DisplayText = $"{DateTime.Now.AddHours(r.Days).AddHours(r.Hours):dddd} - {DateTime.Now.AddHours(r.Days).AddHours(r.Hours):hh:mm}";
-                                    var dia          = $"{dataPrev:dddd}";
+                                    var dia = $"{dataPrev:dddd}";
                                     var diaSemSufixo = dia.Split('-');
                                     e.DisplayText = $"{diaSemSufixo[0].ToUpper()} - {dataPrev:HH:mm}";
                                 }
                                 else if (r.Days >= 3 && r.Days < 15)
                                 {
                                     //SÁBADO - 12:00
-                                    var dia          = $"{dataPrev:dddd}";
+                                    var dia = $"{dataPrev:dddd}";
                                     var diaSemSufixo = dia.Split('-');
                                     e.DisplayText = $"{diaSemSufixo[0].ToUpper()} - {dataPrev:HH:mm}";
                                 }
                                 else if (r.Days >= 15)
                                 {
-                                    var dia          = $"{dataPrev:dddd}";
+                                    var dia = $"{dataPrev:dddd}";
                                     var diaSemSufixo = dia.Split('-');
                                     e.DisplayText = $"{diaSemSufixo[0].ToUpper()} {dataPrev:dd/MM - HH:mm}";
                                 }
@@ -178,11 +178,11 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (e.Column.FieldName == "sv_ordem_serv")
             {
-                var      indexLinhaAtual   = e.RowHandle;
-                var      dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
-                var      servico           = dadosDaLinhaAtual as IRow;
-                DateTime dataCad           = DateTime.MinValue;
-                DateTime dataPrev          = DateTime.MinValue;
+                var indexLinhaAtual = e.RowHandle;
+                var dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
+                var servico = dadosDaLinhaAtual as IRow;
+                DateTime dataCad = DateTime.MinValue;
+                DateTime dataPrev = DateTime.MinValue;
                 try
                 {
                     if (servico != null)
@@ -210,7 +210,7 @@ namespace PFC___StandBy_CSharp.Forms
                                 //HOJE - 15:00 ou AMANHÄ - 19:15
                                 //Contanto que seja menos que 24 hrs vai cair aqui, mas pode vir com AMANHA ou HOJE.
                                 var dataParaEntregar = DateTime.Now.AddHours(r.Hours);
-                                var dataHoje         = DateTime.Now;
+                                var dataHoje = DateTime.Now;
 
                                 if (dataParaEntregar.Date != dataHoje.Date)
                                 {
@@ -273,7 +273,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             //Faz o component de popup ser associado ao gridview
             //assim quando clico botao direito no grid, ele aparece
-            GridView    view    = sender as GridView;
+            GridView view = sender as GridView;
             GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
             if (hitInfo.InRowCell)
             {
@@ -285,9 +285,9 @@ namespace PFC___StandBy_CSharp.Forms
 
         private IRow BuscarDadosLinhaSelecionada()
         {
-            var indexLinhaAtual   = gridviewServicos.FocusedRowHandle;
+            var indexLinhaAtual = gridviewServicos.FocusedRowHandle;
             var dadosDaLinhaAtual = gridviewServicos.GetRow(indexLinhaAtual);
-            var servico           = dadosDaLinhaAtual as IRow;
+            var servico = dadosDaLinhaAtual as IRow;
 
             return servico;
         }
@@ -310,7 +310,7 @@ namespace PFC___StandBy_CSharp.Forms
             try
             {
                 var dadosLinhaSelecionada = BuscarDadosLinhaSelecionada();
-                int idServico             = Convert.ToInt32(dadosLinhaSelecionada[0]);
+                int idServico = Convert.ToInt32(dadosLinhaSelecionada[0]);
 
                 List<tb_compras> pecasDoServico = buscarDados.BuscarPecasDoServico(idServico);
 
@@ -530,15 +530,15 @@ namespace PFC___StandBy_CSharp.Forms
 
         public void EditarUmServico()
         {
-            var    dadosLinhaSelecionada = BuscarDadosLinhaSelecionada();
-            int    idServico             = Convert.ToInt32(dadosLinhaSelecionada[0]);
-            string nomeCliente           = dadosLinhaSelecionada[2].ToString();
-            var    servico               = buscarDados.BuscarOS_ApenasServico(idServico);
+            var dadosLinhaSelecionada = BuscarDadosLinhaSelecionada();
+            int idServico = Convert.ToInt32(dadosLinhaSelecionada[0]);
+            string nomeCliente = dadosLinhaSelecionada[2].ToString();
+            var servico = buscarDados.BuscarOS_ApenasServico(idServico);
 
-            string               _TELCliente     = buscarDados.BuscarTelefoneCliente(servico.FK_IdCliente);
-            string               _TEL_RECCliente = buscarDados.BuscarTelefoneRecadoCliente(servico.FK_IdCliente);
-            float                lucro           = float.Parse(servico.Lucro.ToString());
-            form_OrdensServ_Edit editarServicos  = new form_OrdensServ_Edit(corGeral);
+            string _TELCliente = buscarDados.BuscarTelefoneCliente(servico.FK_IdCliente);
+            string _TEL_RECCliente = buscarDados.BuscarTelefoneRecadoCliente(servico.FK_IdCliente);
+            float lucro = float.Parse(servico.Lucro.ToString());
+            form_OrdensServ_Edit editarServicos = new form_OrdensServ_Edit(corGeral);
             try
             {
                 string _CPFCliente = buscarDados.BuscarCPFCliente(servico.FK_IdCliente);
@@ -932,7 +932,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             var servico = BuscarDadosLinhaSelecionada();
 
-            int idServico    = Convert.ToInt32(servico[0]);
+            int idServico = Convert.ToInt32(servico[0]);
             int ordemServico = Convert.ToInt32(servico[4]);
 
             form_Compras formCompra = new form_Compras(ordemServico, idServico);

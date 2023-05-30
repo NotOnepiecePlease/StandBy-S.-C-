@@ -45,16 +45,20 @@ namespace PFC___StandBy_CSharp.Forms
             Constantes.IniciarOpcoesChecklistEntrada();
             InicializarSkinStandbyDevexpress();
             CarregarGraficos(bunifuDataViz1, lblQntServicosSemanais, bunifuDataViz2, lblQntServicosMensais);
+
             //Pega a versão do sistema e seta na label.
             lblVersion.Text = verificarUpd.VERSAO_STANDBY;
+
             //Aqui sao todos os itens que inicializa junto com o form.
             workerInicializarJuntoComForm.RunWorkerAsync();
+
             //Aqui ele verifica a versao do sistema.
             workerVerificarVersao.RunWorkerAsync();
 
             formPrincipal = new form_ServicoPrincipal();
             formPrincipal.Show();
             formPrincipal.Hide();
+
             //Logs.GerarLogErro();
         }
 
@@ -65,7 +69,8 @@ namespace PFC___StandBy_CSharp.Forms
             var commonSkin = CommonSkins.GetSkin(UserLookAndFeel.Default);
             SvgPalette svgPalette = commonSkin.SvgPalettes[Skin.DefaultSkinPaletteName] as SvgPalette;
 
-            commonSkin.CustomSvgPalettes.Add(new SvgPaletteKey(commonSkin.CustomSvgPalettes.Count, "StandBy THEME"), svgPalette);
+            commonSkin.CustomSvgPalettes.Add(new SvgPaletteKey(commonSkin.CustomSvgPalettes.Count, "StandBy THEME")
+                , svgPalette);
             UserLookAndFeel.Default.SetSkinStyle(commonSkin.Name, "StandBy THEME");
         }
 
@@ -88,7 +93,8 @@ namespace PFC___StandBy_CSharp.Forms
             try
             {
                 HttpClient client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync("https://servicodados.ibge.gov.br/api/v1/localidades/distritos");
+                HttpResponseMessage response =
+                    await client.GetAsync("https://servicodados.ibge.gov.br/api/v1/localidades/distritos");
                 string content = await response.Content.ReadAsStringAsync();
 
                 var jsonDeserializado = JsonConvert.DeserializeObject<List<MunicipioEstrutura.Municipio>>(content);
@@ -128,12 +134,15 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private static async void CarregarGraficos(BunifuDataViz _datavizSemanal, Label _lblQntServicosSemanais, BunifuDataViz _datavizMensal, Label _lblQntServicosMensais)
+        private static async void CarregarGraficos(BunifuDataViz   _datavizSemanal, Label _lblQntServicosSemanais
+                                                   , BunifuDataViz _datavizMensal,  Label _lblQntServicosMensais)
         {
-            await CarregarGraficosAsync(_datavizSemanal, _lblQntServicosSemanais, _datavizMensal, _lblQntServicosMensais);
+            await CarregarGraficosAsync(_datavizSemanal, _lblQntServicosSemanais, _datavizMensal
+                , _lblQntServicosMensais);
         }
 
-        private static async Task CarregarGraficosAsync(BunifuDataViz _datavizSemanal, Label _lblQntServicosSemanais, BunifuDataViz _datavizMensal, Label _lblQntServicosMensais)
+        private static async Task CarregarGraficosAsync(BunifuDataViz   _datavizSemanal, Label _lblQntServicosSemanais
+                                                        , BunifuDataViz _datavizMensal,  Label _lblQntServicosMensais)
         {
             try
             {
@@ -142,7 +151,8 @@ namespace PFC___StandBy_CSharp.Forms
             }
             catch (Exception)
             {
-                MessageBox.Show(@"Nao foi possivel carregar os graficos pois nao existem dados", "Sem dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Nao foi possivel carregar os graficos pois nao existem dados", "Sem dados"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -150,14 +160,17 @@ namespace PFC___StandBy_CSharp.Forms
         {
             corGeral[0] = track_RED.Value;
             lblRED.Text = track_RED.Value.ToString();
+
             //lblRED.ForeColor = Color.FromArgb(track_RED.Value, 0, 0);
 
-            corGeral[1] = track_GREEN.Value;
+            corGeral[1]   = track_GREEN.Value;
             lblGREEN.Text = track_GREEN.Value.ToString();
+
             //lblGREEN.ForeColor = Color.FromArgb(0, track_GREEN.Value, 0);
 
-            corGeral[2] = track_BLUE.Value;
+            corGeral[2]  = track_BLUE.Value;
             lblBLUE.Text = track_BLUE.Value.ToString();
+
             //lblBLUE.ForeColor = Color.FromArgb(0, 0, track_BLUE.Value);
 
             panel_CorGeral.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
@@ -169,6 +182,7 @@ namespace PFC___StandBy_CSharp.Forms
             //if (dialog == DialogResult.Yes)
             //{
             Application.Exit();
+
             //}
         }
 
@@ -179,16 +193,17 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void iconRestaure_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Normal;
+            WindowState          = FormWindowState.Normal;
             iconMaximize.Visible = true;
             iconRestaure.Visible = false;
         }
 
         private void iconMaximize_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Maximized;
+            WindowState          = FormWindowState.Maximized;
             iconMaximize.Visible = false;
             iconRestaure.Visible = true;
+
             //ordensserv.lblSituacao.Anchor = AnchorStyles.None;
         }
 
@@ -202,15 +217,18 @@ namespace PFC___StandBy_CSharp.Forms
             }
 
             currentChildForm = formFilho;
+
             //End
-            formFilho.TopLevel = false;
+            formFilho.TopLevel        = false;
             formFilho.FormBorderStyle = FormBorderStyle.None;
-            formFilho.Dock = DockStyle.Fill;
+            formFilho.Dock            = DockStyle.Fill;
             panelCentral.Controls.Add(formFilho);
             panelCentral.Tag = formFilho;
             formFilho.BringToFront();
+
             //formPrincipal.Hide(); //Form principal é carregado diferente dos outros
             formFilho.Show();
+
             //lblAbaAtual.Text = formFilho.Text;
         }
 
@@ -236,7 +254,8 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnDesligarPc_Click(object sender, EventArgs e)
         {
-            DialogResult dialogo = MessageBox.Show("Deseja desligar o computador?", "DESLIGAR", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dialogo = MessageBox.Show("Deseja desligar o computador?", "DESLIGAR", MessageBoxButtons.YesNo
+                , MessageBoxIcon.Warning);
 
             if (dialogo == DialogResult.Yes)
             {
@@ -250,68 +269,68 @@ namespace PFC___StandBy_CSharp.Forms
             corGeral[0] = track_RED.Value;
             lblRED.Text = track_RED.Value.ToString();
 
-            corGeral[1] = track_GREEN.Value;
+            corGeral[1]   = track_GREEN.Value;
             lblGREEN.Text = track_GREEN.Value.ToString();
 
-            corGeral[2] = track_BLUE.Value;
+            corGeral[2]  = track_BLUE.Value;
             lblBLUE.Text = track_BLUE.Value.ToString();
 
             btnServicosPorMes.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnDesligarPc.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            buniCardSemanais.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            buniCardsMensais.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            buniCardsBotoes.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            buniCardsCores.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            panelMenu.GradientBottomLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnDesligarPc.colorActive     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            buniCardSemanais.color        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            buniCardsMensais.color        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            buniCardsBotoes.color         = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            buniCardsCores.color          = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            panelMenu.GradientBottomLeft  = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientBottomRight = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            panelMenu.GradientTopLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnConfig.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            panelMenu.GradientTopLeft     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnNotepad.colorActive        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConfig.colorActive         = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            iconClose.IconColor           = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             btnSimAtualizar.IdleBorderColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnSimAtualizar.IdleFillColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnSimAtualizar.IdleFillColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             if ((corGeral[0] - 70) < 0)
             {
-                btnSimAtualizar.onHoverState.BorderColor = Color.FromArgb(0, corGeral[1], corGeral[2]);
-                btnSimAtualizar.onHoverState.FillColor = Color.FromArgb(0, corGeral[1], corGeral[2]);
-                btnSimAtualizar.OnPressedState.FillColor = Color.FromArgb(0, corGeral[1], corGeral[2]);
+                btnSimAtualizar.onHoverState.BorderColor   = Color.FromArgb(0, corGeral[1], corGeral[2]);
+                btnSimAtualizar.onHoverState.FillColor     = Color.FromArgb(0, corGeral[1], corGeral[2]);
+                btnSimAtualizar.OnPressedState.FillColor   = Color.FromArgb(0, corGeral[1], corGeral[2]);
                 btnSimAtualizar.OnPressedState.BorderColor = Color.FromArgb(0, corGeral[1], corGeral[2]);
             }
             else
             {
-                btnSimAtualizar.onHoverState.BorderColor = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
-                btnSimAtualizar.onHoverState.FillColor = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
-                btnSimAtualizar.OnPressedState.FillColor = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
+                btnSimAtualizar.onHoverState.BorderColor   = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
+                btnSimAtualizar.onHoverState.FillColor     = Color.FromArgb(corGeral[0] - 50, corGeral[1], corGeral[2]);
+                btnSimAtualizar.OnPressedState.FillColor   = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
                 btnSimAtualizar.OnPressedState.BorderColor = Color.FromArgb(corGeral[0] - 70, corGeral[1], corGeral[2]);
             }
 
             panel_CorGeral.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnClientes.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnClientes.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnClientes.BackColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnClientes.Iconcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnClientes.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnServicos.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnServicos.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnServicos.BackColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnServicos.Iconcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnServicos.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnConcluidos.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnConcluidos.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConcluidos.BackColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConcluidos.Iconcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnConcluidos.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             //btnOrcamentos.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             //btnOrcamentos.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             // btnOrcamentos.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnLucros.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnLucros.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnLucros.BackColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnLucros.Iconcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnLucros.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnMenuSuperior.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnMenuSuperior.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnMenuSuperior.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnMenuSuperior.BackColor     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnMenuSuperior.Iconcolor     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnMenuSuperior.Normalcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnMenuSuperior.DisabledColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
@@ -329,52 +348,52 @@ namespace PFC___StandBy_CSharp.Forms
             corGeral[1] = random.Next(_corInicial, 255);
             corGeral[2] = random.Next(_corInicial, 255);
 
-            track_RED.Value = corGeral[0];
+            track_RED.Value   = corGeral[0];
             track_GREEN.Value = corGeral[1];
-            track_BLUE.Value = corGeral[2];
+            track_BLUE.Value  = corGeral[2];
 
-            lblRED.Text = corGeral[0].ToString();
+            lblRED.Text   = corGeral[0].ToString();
             lblGREEN.Text = corGeral[1].ToString();
-            lblBLUE.Text = corGeral[2].ToString();
+            lblBLUE.Text  = corGeral[2].ToString();
 
             panel_CorGeral.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             btnServicosPorMes.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnDesligarPc.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            buniCardSemanais.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            buniCardsMensais.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            buniCardsBotoes.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            buniCardsCores.color = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            panelMenu.GradientBottomLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnDesligarPc.colorActive     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            buniCardSemanais.color        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            buniCardsMensais.color        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            buniCardsBotoes.color         = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            buniCardsCores.color          = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            panelMenu.GradientBottomLeft  = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             panelMenu.GradientBottomRight = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            panelMenu.GradientTopLeft = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnNotepad.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnConfig.colorActive = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            iconClose.IconColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            panelMenu.GradientTopLeft     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnNotepad.colorActive        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConfig.colorActive         = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            iconClose.IconColor           = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnClientes.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnClientes.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnClientes.BackColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnClientes.Iconcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnClientes.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnServicos.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnServicos.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnServicos.BackColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnServicos.Iconcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnServicos.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnConcluidos.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnConcluidos.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConcluidos.BackColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnConcluidos.Iconcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnConcluidos.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             //btnOrcamentos.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             //btnOrcamentos.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             // btnOrcamentos.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnLucros.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnLucros.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnLucros.BackColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnLucros.Iconcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnLucros.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            btnMenuSuperior.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnMenuSuperior.Iconcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnMenuSuperior.Normalcolor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnMenuSuperior.BackColor     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnMenuSuperior.Iconcolor     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnMenuSuperior.Normalcolor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnMenuSuperior.DisabledColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
@@ -387,41 +406,42 @@ namespace PFC___StandBy_CSharp.Forms
         {
             Color cor = Color.FromArgb(255, 0, 103);
             btnServicosPorMes.colorActive = cor;
-            btnDesligarPc.colorActive = cor;
-            buniCardSemanais.color = cor;
-            buniCardsMensais.color = cor;
-            buniCardsBotoes.color = cor;
-            buniCardsCores.color = cor;
-            panelMenu.GradientBottomLeft = cor;
+            btnDesligarPc.colorActive     = cor;
+            buniCardSemanais.color        = cor;
+            buniCardsMensais.color        = cor;
+            buniCardsBotoes.color         = cor;
+            buniCardsCores.color          = cor;
+            panelMenu.GradientBottomLeft  = cor;
             panelMenu.GradientBottomRight = cor;
-            panelMenu.GradientTopLeft = cor;
-            btnNotepad.colorActive = cor;
-            btnConfig.colorActive = cor;
-            iconClose.IconColor = cor;
-            btnClientes.BackColor = cor;
-            btnClientes.Iconcolor = cor;
-            btnClientes.Normalcolor = cor;
-            btnServicos.BackColor = cor;
-            btnServicos.Iconcolor = cor;
-            btnServicos.Normalcolor = cor;
-            btnConcluidos.BackColor = cor;
-            btnConcluidos.Iconcolor = cor;
-            btnConcluidos.Normalcolor = cor;
+            panelMenu.GradientTopLeft     = cor;
+            btnNotepad.colorActive        = cor;
+            btnConfig.colorActive         = cor;
+            iconClose.IconColor           = cor;
+            btnClientes.BackColor         = cor;
+            btnClientes.Iconcolor         = cor;
+            btnClientes.Normalcolor       = cor;
+            btnServicos.BackColor         = cor;
+            btnServicos.Iconcolor         = cor;
+            btnServicos.Normalcolor       = cor;
+            btnConcluidos.BackColor       = cor;
+            btnConcluidos.Iconcolor       = cor;
+            btnConcluidos.Normalcolor     = cor;
+
             //btnOrcamentos.BackColor = cor;
             //btnOrcamentos.Iconcolor = cor;
             // btnOrcamentos.Normalcolor = cor;
-            btnLucros.BackColor = cor;
-            btnLucros.Iconcolor = cor;
-            btnLucros.Normalcolor = cor;
-            btnMenuSuperior.BackColor = cor;
-            btnMenuSuperior.Iconcolor = cor;
-            btnMenuSuperior.Normalcolor = cor;
+            btnLucros.BackColor           = cor;
+            btnLucros.Iconcolor           = cor;
+            btnLucros.Normalcolor         = cor;
+            btnMenuSuperior.BackColor     = cor;
+            btnMenuSuperior.Iconcolor     = cor;
+            btnMenuSuperior.Normalcolor   = cor;
             btnMenuSuperior.DisabledColor = cor;
-            corGeral = new int[] { 255, 0, 103 };
+            corGeral                      = new int[] { 255, 0, 103 };
 
-            track_RED.Value = 255;
-            track_GREEN.Value = 0;
-            track_BLUE.Value = 103;
+            track_RED.Value          = 255;
+            track_GREEN.Value        = 0;
+            track_BLUE.Value         = 103;
             panel_CorGeral.BackColor = cor;
         }
 
@@ -605,6 +625,7 @@ namespace PFC___StandBy_CSharp.Forms
                 else
                 {
                     OpenChildForm(new form_OrdensServ(corGeral));
+
                     //imgbuttonTitulo.Image = Image.FromFile(@"..\\..\\Resources\\TITULO ORDENS DE SERVICO.png");
                 }
             }
@@ -629,7 +650,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Show();
-            this.WindowState = FormWindowState.Normal;
+            this.WindowState    = FormWindowState.Normal;
             notifyIcon1.Visible = false;
         }
 
@@ -647,34 +668,34 @@ namespace PFC___StandBy_CSharp.Forms
         {
             try
             {
-                lblUpdate.Text = @"Verificando atualizações...";
+                lblUpdate.Text      = @"Verificando atualizações...";
                 lblUpdate.ForeColor = Color.DarkOrange;
-                lblUpdate.Location = new Point(174, 9);
+                lblUpdate.Location  = new Point(174, 9);
 
                 statusAtualizacao = verificarUpd.ChecarVersaoStandBy();
                 if (statusAtualizacao == "Atualização Pendente!")
                 {
-                    lblUpdate.Text = @"Atualização Pendente!";
+                    lblUpdate.Text      = @"Atualização Pendente!";
                     lblUpdate.ForeColor = Color.Yellow;
-                    lblUpdate.Location = new Point(183, 9);
+                    lblUpdate.Location  = new Point(183, 9);
                 }
                 else if (statusAtualizacao == "Sistema Atualizado!")
                 {
-                    lblUpdate.Text = @"Sistema Atualizado!";
+                    lblUpdate.Text      = @"Sistema Atualizado!";
                     lblUpdate.ForeColor = Color.LawnGreen;
-                    lblUpdate.Location = new Point(188, 9);
+                    lblUpdate.Location  = new Point(188, 9);
                 }
                 else if (statusAtualizacao == "Erro ao atualizar!")
                 {
-                    lblUpdate.Text = @"Erro ao atualizar";
+                    lblUpdate.Text      = @"Erro ao atualizar";
                     lblUpdate.ForeColor = Color.Crimson;
-                    lblUpdate.Location = new Point(199, 9);
+                    lblUpdate.Location  = new Point(199, 9);
                 }
                 else
                 {
-                    lblUpdate.Text = @"Erro Desconhecido!";
+                    lblUpdate.Text      = @"Erro Desconhecido!";
                     lblUpdate.ForeColor = Color.AntiqueWhite;
-                    lblUpdate.Location = new Point(191, 9);
+                    lblUpdate.Location  = new Point(191, 9);
                 }
             }
             catch
@@ -682,7 +703,8 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
-        private void workerVerificarVersao_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        private void workerVerificarVersao_RunWorkerCompleted(object                                              sender
+                                                              , System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
             //lblUpdate.Visible = false;
             lblUpdate.Visible = true;
@@ -690,14 +712,14 @@ namespace PFC___StandBy_CSharp.Forms
             if (statusAtualizacao == "Atualização Pendente!")
             {
                 lblDesejaAtualizar.Visible = true;
-                btnSimAtualizar.Visible = true;
-                btnNaoAtualizar.Visible = true;
+                btnSimAtualizar.Visible    = true;
+                btnNaoAtualizar.Visible    = true;
             }
             else
             {
                 lblDesejaAtualizar.Visible = false;
-                btnSimAtualizar.Visible = false;
-                btnNaoAtualizar.Visible = false;
+                btnSimAtualizar.Visible    = false;
+                btnNaoAtualizar.Visible    = false;
             }
         }
 
@@ -709,6 +731,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void form_StandBy_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
+
             //workerInicializarJuntoComForm.RunWorkerAsync();
         }
 
@@ -725,14 +748,15 @@ namespace PFC___StandBy_CSharp.Forms
         private void btnNaoAtualizar_Click(object sender, EventArgs e)
         {
             lblDesejaAtualizar.Visible = false;
-            btnSimAtualizar.Visible = false;
-            btnNaoAtualizar.Visible = false;
+            btnSimAtualizar.Visible    = false;
+            btnNaoAtualizar.Visible    = false;
         }
 
         private void btnConfiguracoes_Click(object sender, EventArgs e)
         {
             form_ComboboxConfig formCommand = new form_ComboboxConfig();
             formCommand.ShowDialog();
+
             //this.Close();
         }
     }

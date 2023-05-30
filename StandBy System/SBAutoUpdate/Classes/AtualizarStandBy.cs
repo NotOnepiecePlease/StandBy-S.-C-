@@ -1,4 +1,5 @@
-﻿using Guna.UI.WinForms;
+﻿using DevExpress.CodeParser;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -40,10 +41,9 @@ namespace SBAutoUpdate.Classes
                         Uteis.DeleteTodosExceto(meuDiretorio, arquivosSeremMantidos, true);
 
                         var client = new WebClient();
-                        client.DownloadFile("https://www.dropbox.com/s/xqoqoh12zmgsbmf/UpdateNEW.zip?dl=1"
+                        client.DownloadFile("https://www.dropbox.com/s/nxtk7sztle13th2/UpdateNEW.zip?dl=1"
                             , ARQUIVO_NOME);
 
-                        //client.DownloadFile("https://www.dropbox.com/s/8a5oekhvwuujhqx/Update.zip?dl=1", "Update.zip");
                         DirectoryInfo diretorioArquivoBaixado = new DirectoryInfo(ARQUIVO_NOME);
                         Thread.Sleep(10);
                         string diretorioParaExtrair = @".\";

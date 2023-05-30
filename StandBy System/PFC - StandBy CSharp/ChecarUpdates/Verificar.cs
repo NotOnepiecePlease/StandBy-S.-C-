@@ -7,7 +7,7 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
 {
     public class Verificar
     {
-        public string VERSAO_STANDBY { get; set; } = "9.5.0";
+        public string VERSAO_STANDBY { get; set; } = "9.5.2";
 
         private const string LINK_STANDBY =
             "https://www.dropbox.com/s/snjdu5m150fcj7k/UpdateVersionStandBY_NEW.txt?dl=1";
@@ -28,7 +28,7 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
             WebClient webClient = new WebClient();
             try
             {
-                if (!webClient.DownloadString(LINK_STANDBY).Contains(VERSAO_STANDBY))
+                if (!webClient.DownloadString(LINK_STANDBY).Equals(VERSAO_STANDBY))
                 {
                     return @"Atualização Pendente!";
                 }

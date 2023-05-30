@@ -6,6 +6,7 @@ using DevExpress.Utils;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraEditors;
 using PFC___StandBy_CSharp.Forms;
+using PFC___StandBy_CSharp.Forms.Configurações.Banco_de_Dados;
 using PFC___StandBy_CSharp.Forms.Testes;
 using Syncfusion.Licensing;
 
@@ -32,7 +33,8 @@ namespace PFC___StandBy_CSharp
 
             //Application.Run(new form_StandBy());
 
-            Application.Run(new form_V2Standby());
+            //Application.Run(new form_V2Standby());
+            Application.Run(new form_BancoDados());
         }
     }
 }
