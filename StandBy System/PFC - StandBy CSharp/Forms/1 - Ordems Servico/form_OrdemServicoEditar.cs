@@ -434,16 +434,17 @@ namespace PFC___StandBy_CSharp.Forms._1___Ordems_Servico
 
             if (senhaPadrao == null || senhaPadrao[0] == 0x00 && picSenhaPattern.Image == null)
             {
+                form_PasswordPattern formPass = new form_PasswordPattern(this, new[] { 255, 0, 103 });
+                formPass.ShowDialog();
+            }
+            else
+            {
                 VerSenhaPattern();
                 var senhaRecemAdd = context.tb_servicos
                     .FirstOrDefault(x => x.sv_id == Convert.ToInt32(lblIdServico.Text)).sv_senha_pattern;
                 picSenhaPattern.Image =
                     ConvertImage.ConvertByteArrayToImage(buscarDados.BuscarImagem(lblIdServico.Text));
-            }
-            else
-            {
-                form_PasswordPattern formPass = new form_PasswordPattern(this, new[] { 255, 0, 103 });
-                formPass.ShowDialog();
+                
             }
 
             //var isExisteSenhaPadrao = context.tb_servicos.Any(x => x.sv_id == Convert.ToInt32(lblIdServico.Text) && x.sv_senha_pattern != null);

@@ -29,35 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_V2Standby));
-            DevExpress.XtraCharts.XYDiagram xyDiagram5 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView5 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel5 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SeriesKeyColorColorizer seriesKeyColorColorizer5 = new DevExpress.XtraCharts.SeriesKeyColorColorizer();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView3 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle5 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.XtraCharts.XYDiagram xyDiagram6 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView6 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel6 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SeriesKeyColorColorizer seriesKeyColorColorizer6 = new DevExpress.XtraCharts.SeriesKeyColorColorizer();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView4 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle6 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram7 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView7 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel7 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SeriesKeyColorColorizer seriesKeyColorColorizer7 = new DevExpress.XtraCharts.SeriesKeyColorColorizer();
-            DevExpress.XtraCharts.ChartTitle chartTitle7 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram8 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series8 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView8 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel8 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SeriesKeyColorColorizer seriesKeyColorColorizer8 = new DevExpress.XtraCharts.SeriesKeyColorColorizer();
-            DevExpress.XtraCharts.ChartTitle chartTitle8 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SeriesKeyColorColorizer seriesKeyColorColorizer1 = new DevExpress.XtraCharts.SeriesKeyColorColorizer();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel2 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SeriesKeyColorColorizer seriesKeyColorColorizer2 = new DevExpress.XtraCharts.SeriesKeyColorColorizer();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram3 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView3 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SeriesKeyColorColorizer seriesKeyColorColorizer3 = new DevExpress.XtraCharts.SeriesKeyColorColorizer();
+            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram4 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView4 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel4 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SeriesKeyColorColorizer seriesKeyColorColorizer4 = new DevExpress.XtraCharts.SeriesKeyColorColorizer();
+            DevExpress.XtraCharts.ChartTitle chartTitle4 = new DevExpress.XtraCharts.ChartTitle();
             this.sourceServicosSemanais = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.graficoMensal = new DevExpress.XtraCharts.ChartControl();
             this.sourceServicosMensais = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -66,31 +66,31 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.menuSuperior = new DevExpress.XtraBars.Bar();
             this.btnInicio = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTelaClientesMenu = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBuscarServicos = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.lblStatusUpdate = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.lblVersao = new DevExpress.XtraBars.BarStaticItem();
             this.btnAtualizarSistema = new DevExpress.XtraBars.BarButtonItem();
+            this.lblIP = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
@@ -98,6 +98,7 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.bindingServicosSemanais = new System.Windows.Forms.BindingSource(this.components);
             this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
@@ -124,29 +125,29 @@
             this.workerVerificarVersao = new System.ComponentModel.BackgroundWorker();
             this.workerInicializarJuntoComForm = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.graficoMensal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.graficoSemanal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingServicosSemanais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -158,10 +159,10 @@
             // 
             this.sourceServicosSemanais.ConnectionName = "standby_MainConn";
             this.sourceServicosSemanais.Name = "sourceServicosSemanais";
-            storedProcQuery2.Name = "Query";
-            storedProcQuery2.StoredProcName = "ServicosUltimos7DiasV2";
+            storedProcQuery1.Name = "Query";
+            storedProcQuery1.StoredProcName = "ServicosUltimos7DiasV2";
             this.sourceServicosSemanais.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery1});
             this.sourceServicosSemanais.ResultSchemaSerializable = resources.GetString("sourceServicosSemanais.ResultSchemaSerializable");
             // 
             // graficoMensal
@@ -171,50 +172,53 @@
             this.graficoMensal.BorderOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.graficoMensal.BorderOptions.Thickness = 2;
             this.graficoMensal.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram5.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram5.AxisY.VisibleInPanesSerializable = "-1";
-            this.graficoMensal.Diagram = xyDiagram5;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.graficoMensal.Diagram = xyDiagram1;
+            this.graficoMensal.Legend.LegendID = -1;
             this.graficoMensal.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.graficoMensal.Location = new System.Drawing.Point(12, 465);
             this.graficoMensal.Name = "graficoMensal";
             this.graficoMensal.SeriesDataMember = "NomeMes";
-            series5.ArgumentDataMember = "NomeMes";
-            series5.CrosshairEnabled = DevExpress.Utils.DefaultBoolean.False;
-            series5.Name = "Series 4";
-            series5.ValueDataMembersSerializable = "Quantidade";
-            lineSeriesView5.Color = System.Drawing.SystemColors.ControlLightLight;
-            lineSeriesView5.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            lineSeriesView5.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Diamond;
-            lineSeriesView5.LineMarkerOptions.Size = 5;
-            lineSeriesView5.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series5.View = lineSeriesView5;
+            series1.ArgumentDataMember = "NomeMes";
+            series1.CrosshairEnabled = DevExpress.Utils.DefaultBoolean.False;
+            series1.Name = "Series 4";
+            series1.SeriesID = 0;
+            series1.ValueDataMembersSerializable = "Quantidade";
+            lineSeriesView1.Color = System.Drawing.SystemColors.ControlLightLight;
+            lineSeriesView1.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            lineSeriesView1.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Diamond;
+            lineSeriesView1.LineMarkerOptions.Size = 5;
+            lineSeriesView1.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series1.View = lineSeriesView1;
             this.graficoMensal.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series5};
+        series1};
             this.graficoMensal.SeriesTemplate.ArgumentDataMember = "NomeMes";
-            sideBySideBarSeriesLabel5.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
-            this.graficoMensal.SeriesTemplate.Label = sideBySideBarSeriesLabel5;
+            sideBySideBarSeriesLabel1.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
+            this.graficoMensal.SeriesTemplate.Label = sideBySideBarSeriesLabel1;
             this.graficoMensal.SeriesTemplate.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            seriesKeyColorColorizer5.PaletteName = "Violet II";
-            this.graficoMensal.SeriesTemplate.SeriesColorizer = seriesKeyColorColorizer5;
+            seriesKeyColorColorizer1.PaletteName = "Violet II";
+            this.graficoMensal.SeriesTemplate.SeriesColorizer = seriesKeyColorColorizer1;
             this.graficoMensal.SeriesTemplate.SeriesDataMember = "NomeMes";
             this.graficoMensal.SeriesTemplate.ShowInLegend = false;
             this.graficoMensal.SeriesTemplate.ValueDataMembersSerializable = "Quantidade";
-            sideBySideBarSeriesView3.BarWidth = 1D;
-            this.graficoMensal.SeriesTemplate.View = sideBySideBarSeriesView3;
+            sideBySideBarSeriesView1.BarWidth = 1D;
+            this.graficoMensal.SeriesTemplate.View = sideBySideBarSeriesView1;
             this.graficoMensal.Size = new System.Drawing.Size(1256, 222);
             this.graficoMensal.TabIndex = 24;
-            chartTitle5.Text = "Serviços Mensais";
+            chartTitle1.Text = "Serviços Mensais";
+            chartTitle1.TitleID = 0;
             this.graficoMensal.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle5});
+            chartTitle1});
             // 
             // sourceServicosMensais
             // 
             this.sourceServicosMensais.ConnectionName = "standby_MainConn";
             this.sourceServicosMensais.Name = "sourceServicosMensais";
-            customSqlQuery2.Name = "Query";
-            customSqlQuery2.Sql = resources.GetString("customSqlQuery2.Sql");
+            customSqlQuery1.Name = "Query";
+            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             this.sourceServicosMensais.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery2});
+            customSqlQuery1});
             this.sourceServicosMensais.ResultSchemaSerializable = resources.GetString("sourceServicosMensais.ResultSchemaSerializable");
             // 
             // graficoSemanal
@@ -224,45 +228,48 @@
             this.graficoSemanal.BorderOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.graficoSemanal.BorderOptions.Thickness = 2;
             this.graficoSemanal.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram6.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram6.AxisY.VisibleInPanesSerializable = "-1";
-            this.graficoSemanal.Diagram = xyDiagram6;
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            this.graficoSemanal.Diagram = xyDiagram2;
+            this.graficoSemanal.Legend.LegendID = -1;
             this.graficoSemanal.Legend.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.graficoSemanal.Location = new System.Drawing.Point(12, 44);
             this.graficoSemanal.Name = "graficoSemanal";
             this.graficoSemanal.SeriesDataMember = "day_of_week";
-            series6.ArgumentDataMember = "day_of_week";
-            series6.CrosshairEnabled = DevExpress.Utils.DefaultBoolean.False;
-            series6.CrosshairLabelVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series6.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series6.Name = "Series 4";
-            series6.ShowInLegend = false;
-            series6.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.False;
-            series6.ValueDataMembersSerializable = "count";
-            lineSeriesView6.Color = System.Drawing.SystemColors.HighlightText;
-            lineSeriesView6.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            lineSeriesView6.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Diamond;
-            lineSeriesView6.LineMarkerOptions.Size = 5;
-            lineSeriesView6.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series6.View = lineSeriesView6;
+            series2.ArgumentDataMember = "day_of_week";
+            series2.CrosshairEnabled = DevExpress.Utils.DefaultBoolean.False;
+            series2.CrosshairLabelVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series2.Name = "Series 4";
+            series2.SeriesID = 0;
+            series2.ShowInLegend = false;
+            series2.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.False;
+            series2.ValueDataMembersSerializable = "count";
+            lineSeriesView2.Color = System.Drawing.SystemColors.HighlightText;
+            lineSeriesView2.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            lineSeriesView2.LineMarkerOptions.Kind = DevExpress.XtraCharts.MarkerKind.Diamond;
+            lineSeriesView2.LineMarkerOptions.Size = 5;
+            lineSeriesView2.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series2.View = lineSeriesView2;
             this.graficoSemanal.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series6};
+        series2};
             this.graficoSemanal.SeriesTemplate.ArgumentDataMember = "day_of_week";
-            sideBySideBarSeriesLabel6.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
-            this.graficoSemanal.SeriesTemplate.Label = sideBySideBarSeriesLabel6;
+            sideBySideBarSeriesLabel2.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
+            this.graficoSemanal.SeriesTemplate.Label = sideBySideBarSeriesLabel2;
             this.graficoSemanal.SeriesTemplate.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            seriesKeyColorColorizer6.PaletteName = "Violet II";
-            this.graficoSemanal.SeriesTemplate.SeriesColorizer = seriesKeyColorColorizer6;
+            seriesKeyColorColorizer2.PaletteName = "Violet II";
+            this.graficoSemanal.SeriesTemplate.SeriesColorizer = seriesKeyColorColorizer2;
             this.graficoSemanal.SeriesTemplate.SeriesDataMember = "day_of_week";
             this.graficoSemanal.SeriesTemplate.ShowInLegend = false;
             this.graficoSemanal.SeriesTemplate.ValueDataMembersSerializable = "count";
-            sideBySideBarSeriesView4.BarWidth = 1D;
-            this.graficoSemanal.SeriesTemplate.View = sideBySideBarSeriesView4;
+            sideBySideBarSeriesView2.BarWidth = 1D;
+            this.graficoSemanal.SeriesTemplate.View = sideBySideBarSeriesView2;
             this.graficoSemanal.Size = new System.Drawing.Size(812, 222);
             this.graficoSemanal.TabIndex = 0;
-            chartTitle6.Text = "Serviços Semanais";
+            chartTitle2.Text = "Serviços Semanais";
+            chartTitle2.TitleID = 0;
             this.graficoSemanal.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle6});
+            chartTitle2});
             // 
             // barDockControlLeft
             // 
@@ -285,7 +292,7 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barSubItem1,
             this.barSubItem2,
-            this.barSubItem3,
+            this.btnTelaClientesMenu,
             this.barSubItem4,
             this.barButtonItem1,
             this.barButtonItem2,
@@ -293,7 +300,7 @@
             this.barButtonItem3,
             this.barButtonItem4,
             this.barButtonItem5,
-            this.barButtonItem6,
+            this.btnBuscarServicos,
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
@@ -311,9 +318,10 @@
             this.btnInicio,
             this.barButtonItem16,
             this.lblVersao,
-            this.btnAtualizarSistema});
+            this.btnAtualizarSistema,
+            this.lblIP});
             this.barManager1.MainMenu = this.menuSuperior;
-            this.barManager1.MaxItemId = 55;
+            this.barManager1.MaxItemId = 56;
             this.barManager1.StatusBar = this.bar3;
             // 
             // menuSuperior
@@ -325,8 +333,8 @@
             this.menuSuperior.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.menuSuperior.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnInicio),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTelaClientesMenu),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem3),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem4)});
             this.menuSuperior.OptionsBar.DrawDragBorder = false;
             this.menuSuperior.OptionsBar.MultiLine = true;
@@ -340,6 +348,13 @@
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInicio_ItemClick);
             // 
+            // btnTelaClientesMenu
+            // 
+            this.btnTelaClientesMenu.Caption = "CLIENTES";
+            this.btnTelaClientesMenu.Id = 2;
+            this.btnTelaClientesMenu.Name = "btnTelaClientesMenu";
+            this.btnTelaClientesMenu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTelaClientesMenu_ItemClick);
+            // 
             // barSubItem2
             // 
             this.barSubItem2.Caption = "SERVIÇOS";
@@ -347,7 +362,7 @@
             this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem6)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBuscarServicos)});
             this.barSubItem2.Name = "barSubItem2";
             // 
             // barButtonItem1
@@ -385,40 +400,12 @@
             this.barButtonItem5.Id = 9;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // barButtonItem6
+            // btnBuscarServicos
             // 
-            this.barButtonItem6.Caption = "Buscar Serviços";
-            this.barButtonItem6.Id = 10;
-            this.barButtonItem6.Name = "barButtonItem6";
-            // 
-            // barSubItem3
-            // 
-            this.barSubItem3.Caption = "CLIENTES";
-            this.barSubItem3.Id = 2;
-            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem16),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem7),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem8)});
-            this.barSubItem3.Name = "barSubItem3";
-            // 
-            // barButtonItem16
-            // 
-            this.barButtonItem16.Caption = "Tela Principal";
-            this.barButtonItem16.Id = 52;
-            this.barButtonItem16.Name = "barButtonItem16";
-            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem16_ItemClick);
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "Cadastrar Cliente";
-            this.barButtonItem7.Id = 11;
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "Buscar Cliente";
-            this.barButtonItem8.Id = 12;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.btnBuscarServicos.Caption = "Buscar Serviços";
+            this.btnBuscarServicos.Id = 10;
+            this.btnBuscarServicos.Name = "btnBuscarServicos";
+            this.btnBuscarServicos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barSubItem4
             // 
@@ -460,18 +447,12 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.lblStatusUpdate),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1),
             new DevExpress.XtraBars.LinkPersistInfo(this.lblVersao),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnAtualizarSistema)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAtualizarSistema),
+            new DevExpress.XtraBars.LinkPersistInfo(this.lblIP)});
             this.bar3.OptionsBar.AllowQuickCustomization = false;
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Status bar";
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barStaticItem1.Caption = "Desenvolvido por: voidEnterprise";
-            this.barStaticItem1.Id = 46;
-            this.barStaticItem1.Name = "barStaticItem1";
             // 
             // lblStatusUpdate
             // 
@@ -480,6 +461,13 @@
             this.lblStatusUpdate.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Lime;
             this.lblStatusUpdate.ItemAppearance.Normal.Options.UseForeColor = true;
             this.lblStatusUpdate.Name = "lblStatusUpdate";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItem1.Caption = "Desenvolvido por: voidEnterprise";
+            this.barStaticItem1.Id = 46;
+            this.barStaticItem1.Name = "barStaticItem1";
             // 
             // lblVersao
             // 
@@ -500,6 +488,12 @@
             this.btnAtualizarSistema.Name = "btnAtualizarSistema";
             this.btnAtualizarSistema.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnAtualizarSistema.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAtualizarSistema_ItemClick);
+            // 
+            // lblIP
+            // 
+            this.lblIP.Caption = "127.0.0.1";
+            this.lblIP.Id = 55;
+            this.lblIP.Name = "lblIP";
             // 
             // barDockControlTop
             // 
@@ -536,6 +530,18 @@
             this.barButtonItem2.Caption = "barButtonItem2";
             this.barButtonItem2.Id = 5;
             this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Cadastrar Cliente";
+            this.barButtonItem7.Id = 11;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Buscar Cliente";
+            this.barButtonItem8.Id = 12;
+            this.barButtonItem8.Name = "barButtonItem8";
             // 
             // barButtonItem12
             // 
@@ -585,48 +591,58 @@
             this.barHeaderItem2.Id = 49;
             this.barHeaderItem2.Name = "barHeaderItem2";
             // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "Tela Principal";
+            this.barButtonItem16.Id = 52;
+            this.barButtonItem16.Name = "barButtonItem16";
+            this.barButtonItem16.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem16_ItemClick);
+            // 
             // chartControl1
             // 
             this.chartControl1.AnimationStartMode = DevExpress.XtraCharts.ChartAnimationMode.OnLoad;
             this.chartControl1.DataSource = this.bindingServicosSemanais;
-            xyDiagram7.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram7.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram7;
+            xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram3;
+            this.chartControl1.Legend.LegendID = -1;
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl1.Location = new System.Drawing.Point(0, 0);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.SeriesDataMember = "day_of_week";
-            series7.ArgumentDataMember = "day_of_week";
-            series7.CrosshairEnabled = DevExpress.Utils.DefaultBoolean.False;
-            series7.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series7.Name = "Semanal";
-            series7.ShowInLegend = false;
-            series7.ValueDataMembersSerializable = "count";
-            lineSeriesView7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            lineSeriesView7.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            lineSeriesView7.LineMarkerOptions.Size = 4;
-            lineSeriesView7.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series7.View = lineSeriesView7;
+            series3.ArgumentDataMember = "day_of_week";
+            series3.CrosshairEnabled = DevExpress.Utils.DefaultBoolean.False;
+            series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series3.Name = "Semanal";
+            series3.SeriesID = 0;
+            series3.ShowInLegend = false;
+            series3.ValueDataMembersSerializable = "count";
+            lineSeriesView3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            lineSeriesView3.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            lineSeriesView3.LineMarkerOptions.Size = 4;
+            lineSeriesView3.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series3.View = lineSeriesView3;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series7};
+        series3};
             this.chartControl1.SeriesTemplate.ArgumentDataMember = "day_of_week";
-            sideBySideBarSeriesLabel7.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            sideBySideBarSeriesLabel7.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
-            this.chartControl1.SeriesTemplate.Label = sideBySideBarSeriesLabel7;
+            sideBySideBarSeriesLabel3.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            sideBySideBarSeriesLabel3.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
+            this.chartControl1.SeriesTemplate.Label = sideBySideBarSeriesLabel3;
             this.chartControl1.SeriesTemplate.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            seriesKeyColorColorizer7.PaletteName = "Violet II";
-            this.chartControl1.SeriesTemplate.SeriesColorizer = seriesKeyColorColorizer7;
+            seriesKeyColorColorizer3.PaletteName = "Violet II";
+            this.chartControl1.SeriesTemplate.SeriesColorizer = seriesKeyColorColorizer3;
             this.chartControl1.SeriesTemplate.SeriesDataMember = "day_of_week";
             this.chartControl1.SeriesTemplate.ValueDataMembersSerializable = "count";
             this.chartControl1.Size = new System.Drawing.Size(930, 249);
             this.chartControl1.TabIndex = 4;
-            chartTitle7.DXFont = new DevExpress.Drawing.DXFont("Segoe UI", 12F);
-            chartTitle7.Indent = 1;
-            chartTitle7.MaxLineCount = 1;
-            chartTitle7.Text = "Serviços da Semana";
-            chartTitle7.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            chartTitle3.DXFont = new DevExpress.Drawing.DXFont("Segoe UI", 12F);
+            chartTitle3.Indent = 1;
+            chartTitle3.MaxLineCount = 1;
+            chartTitle3.Text = "Serviços da Semana";
+            chartTitle3.TitleID = 0;
+            chartTitle3.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle7});
+            chartTitle3});
             // 
             // bindingServicosSemanais
             // 
@@ -637,44 +653,47 @@
             // 
             this.chartControl2.AnimationStartMode = DevExpress.XtraCharts.ChartAnimationMode.OnLoad;
             this.chartControl2.DataSource = this.queryBindingSource;
-            xyDiagram8.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram8.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl2.Diagram = xyDiagram8;
+            xyDiagram4.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram4.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl2.Diagram = xyDiagram4;
+            this.chartControl2.Legend.LegendID = -1;
             this.chartControl2.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl2.Location = new System.Drawing.Point(0, 367);
             this.chartControl2.Name = "chartControl2";
             this.chartControl2.SeriesDataMember = "NomeMes";
-            series8.ArgumentDataMember = "NomeMes";
-            series8.CrosshairEnabled = DevExpress.Utils.DefaultBoolean.False;
-            series8.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
-            series8.Name = "Mensal";
-            series8.ShowInLegend = false;
-            series8.ValueDataMembersSerializable = "Quantidade";
-            lineSeriesView8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            lineSeriesView8.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            lineSeriesView8.LineMarkerOptions.Size = 4;
-            lineSeriesView8.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series8.View = lineSeriesView8;
+            series4.ArgumentDataMember = "NomeMes";
+            series4.CrosshairEnabled = DevExpress.Utils.DefaultBoolean.False;
+            series4.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            series4.Name = "Mensal";
+            series4.SeriesID = 0;
+            series4.ShowInLegend = false;
+            series4.ValueDataMembersSerializable = "Quantidade";
+            lineSeriesView4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            lineSeriesView4.LineMarkerOptions.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            lineSeriesView4.LineMarkerOptions.Size = 4;
+            lineSeriesView4.MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series4.View = lineSeriesView4;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series8};
+        series4};
             this.chartControl2.SeriesTemplate.ArgumentDataMember = "NomeMes";
-            sideBySideBarSeriesLabel8.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            sideBySideBarSeriesLabel8.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
-            this.chartControl2.SeriesTemplate.Label = sideBySideBarSeriesLabel8;
+            sideBySideBarSeriesLabel4.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            sideBySideBarSeriesLabel4.Position = DevExpress.XtraCharts.BarSeriesLabelPosition.Top;
+            this.chartControl2.SeriesTemplate.Label = sideBySideBarSeriesLabel4;
             this.chartControl2.SeriesTemplate.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            seriesKeyColorColorizer8.PaletteName = "Violet II";
-            this.chartControl2.SeriesTemplate.SeriesColorizer = seriesKeyColorColorizer8;
+            seriesKeyColorColorizer4.PaletteName = "Violet II";
+            this.chartControl2.SeriesTemplate.SeriesColorizer = seriesKeyColorColorizer4;
             this.chartControl2.SeriesTemplate.SeriesDataMember = "NomeMes";
             this.chartControl2.SeriesTemplate.ValueDataMembersSerializable = "Quantidade";
             this.chartControl2.Size = new System.Drawing.Size(1278, 244);
             this.chartControl2.TabIndex = 9;
-            chartTitle8.DXFont = new DevExpress.Drawing.DXFont("Segoe UI", 12F);
-            chartTitle8.Indent = 1;
-            chartTitle8.MaxLineCount = 1;
-            chartTitle8.Text = "Serviços por Mês";
-            chartTitle8.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            chartTitle4.DXFont = new DevExpress.Drawing.DXFont("Segoe UI", 12F);
+            chartTitle4.Indent = 1;
+            chartTitle4.MaxLineCount = 1;
+            chartTitle4.Text = "Serviços por Mês";
+            chartTitle4.TitleID = 0;
+            chartTitle4.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle8});
+            chartTitle4});
             // 
             // queryBindingSource
             // 
@@ -1031,29 +1050,29 @@
             this.Shown += new System.EventHandler(this.form_V2Standby_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_V2Standby_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.form_V2Standby_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.graficoMensal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.graficoSemanal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingServicosSemanais)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.queryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -1073,7 +1092,7 @@
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarSubItem barSubItem2;
-        private DevExpress.XtraBars.BarSubItem barSubItem3;
+        private DevExpress.XtraBars.BarSubItem btnTelaClientesMenu;
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -1083,7 +1102,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem btnBuscarServicos;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarSubItem barSubItem4;
@@ -1132,5 +1151,6 @@
         private DevExpress.XtraBars.BarStaticItem lblVersao;
         private DevExpress.XtraBars.BarButtonItem btnAtualizarSistema;
         private System.ComponentModel.BackgroundWorker workerInicializarJuntoComForm;
+        private DevExpress.XtraBars.BarStaticItem lblIP;
     }
 }

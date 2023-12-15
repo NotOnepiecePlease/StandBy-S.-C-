@@ -27,13 +27,13 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
             string porta = dadosSqlConexao[1].TrimStart('P', 'O', 'R', 'T', '=').Trim();
             string login = dadosSqlConexao[2].TrimStart('U', 'S', 'E', 'R', '=').Trim();
             string senha = dadosSqlConexao[3].TrimStart('P', 'A', 'S', '=').Trim();
-            string type = dadosSqlConexao[4].TrimStart('T', 'Y', 'P', 'E', '=').Trim();
+            string tipoSistema = dadosSqlConexao[4].TrimStart('T', 'Y', 'P', 'E', '=').Trim();
 
-            if (type.Equals("0"))//Se o tipo do sistema for o 0 (Sistema principal stand by)
+            if (tipoSistema.Equals("0")) //Se o tipo do sistema for o 0 (Sistema principal stand by)
             {
                 connectionString = $"Server={ip};Database=standby_org;User Id={login};Password={senha};";
             }
-            else if (type.Equals("1"))// se nao, se for do tipo 1 (cliente - server)
+            else if (tipoSistema.Equals("1")) // se nao, se for do tipo 1 (cliente - server)
             {
                 connectionString = $"Server={ip},{porta};Database=standby_org;User Id={login};Password={senha};";
             }
@@ -61,9 +61,12 @@ namespace PFC___StandBy_CSharp.SqlDbConnect
             }
             catch (Exception)
             {
-                MessageBox.Show($"Nao foi possivel se conectar com o banco de dados!\n\nIP Local: {PegarIp()}", "SEM CONEXAO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Nao foi possivel se conectar com o banco de dados!\n\nIP Local: {PegarIp()}"
+                    , "SEM CONEXAO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 //Application.Exit();
             }
+
             return con;
         }
 

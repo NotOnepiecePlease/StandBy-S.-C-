@@ -171,7 +171,7 @@ namespace PFC___StandBy_CSharp.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.behaviorManager1.SetBehaviors(this.gridctrlServicos, new DevExpress.Utils.Behaviors.Behavior[] {
-            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.Common.PersistenceBehavior.Create(typeof(DevExpress.Utils.BehaviorSource.PersistenceBehaviorSourceForControl), "C:\\StandBy EXE\\mylayout.xml", DevExpress.Utils.Behaviors.Common.Storage.File, DevExpress.Utils.DefaultBoolean.Default)))});
+            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.Common.PersistenceBehavior.Create(typeof(DevExpress.Utils.BehaviorSource.PersistenceBehaviorSourceForControl), "C:\\StandBy_Config\\mylayout.xml", DevExpress.Utils.Behaviors.Common.Storage.File, DevExpress.Utils.DefaultBoolean.Default)))});
             this.gridctrlServicos.DataMember = "Query";
             this.gridctrlServicos.DataSource = this.dataSourceGridServicos;
             this.gridctrlServicos.Location = new System.Drawing.Point(12, 58);
@@ -236,6 +236,7 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             this.colsv_id.FieldName = "sv_id";
             this.colsv_id.Name = "colsv_id";
+            this.colsv_id.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             // 
             // colsv_data
             // 

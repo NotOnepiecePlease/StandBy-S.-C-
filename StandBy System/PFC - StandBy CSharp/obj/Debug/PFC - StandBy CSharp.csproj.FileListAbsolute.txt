@@ -199,3 +199,213 @@ D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy S
 D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug2\System.Text.Json.xml
 D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug2\System.Threading.Tasks.Extensions.xml
 D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug2\System.ValueTuple.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\StandBy System.exe.config
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\StandBy System.exe
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\StandBy System.pdb
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Azure.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Azure.Identity.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForm.BunifuShadowPanel.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Bunifu.UI.WinForms.ToggleSwitch.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\BunifuDataViz.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Bunifu_UI_v1.5.3.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Charts.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Data.Desktop.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Data.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.DataAccess.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.DataAccess.v22.2.UI.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Diagram.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Mvvm.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Office.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Pdf.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Pdf.v22.2.Drawing.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.PivotGrid.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Printing.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.RichEdit.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Sparkline.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Utils.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Utils.v22.2.UI.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.Xpo.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraBars.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraCharts.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraCharts.v22.2.UI.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraCharts.v22.2.Wizard.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraDiagram.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraEditors.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraGauges.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraGrid.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraLayout.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraNavBar.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraPivotGrid.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraPrinting.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraReports.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraReports.v22.2.CodeCompletion.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraReports.v22.2.Extensions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraRichEdit.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraTreeList.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\DevExpress.XtraVerticalGrid.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Data.SqlClient.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.EntityFrameworkCore.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Options.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Identity.Client.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Newtonsoft.Json.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\NLog.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.Core.WinForms.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.DataSource.WinForms.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.Grid.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.Grid.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.GridCommon.WinForms.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.SfListView.WinForms.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.Shared.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.Shared.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.SpellChecker.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.Tools.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\Syncfusion.Tools.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Buffers.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Collections.Immutable.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Data.SqlClient.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Memory.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Memory.Data.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Numerics.Vectors.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Security.AccessControl.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Security.Permissions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Security.Principal.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Text.Encodings.Web.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Text.Json.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\bin\Debug\System.ValueTuple.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.AssemblyReference.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.SuggestedBindingRedirects.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\StandBy System.exe.config
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms._1___Ordems_Servico.form_InserirEditarChecklist.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms._1___Ordems_Servico.form_OrdemServicoEditar.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms._1___Ordems_Servico.form_RichTextboxExterno.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Configurações.Banco_de_Dados.form_BancoDados.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Configurações.form_PainelCentral.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ALERT.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_AlertMessage.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes_Edit.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluidos.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluido_Desfazer.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ComboboxConfig.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_DeveloperCommand.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_DiaEntrega.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Gastos.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_License.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_LucrosV2.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir_Alterar.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Notepad.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Notepad_Abrir.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Orcamento.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Orcamento_Adicionar.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdemServicoEntrada.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdemServicoSaida.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ_Edit.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_PasswordPattern.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_PasswordPatternExibir.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_QntdGarantia.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ServicoPrincipal.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ServicosAnuais.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_StandBy.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_VerGarantia.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_WordNota.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Pagamento_e_Compras.form_Compras.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Pagamento.form_Pagamento.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Testes.form_V2Standby.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.SplashScreen1.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Principal.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Impressao.ReportDesigner.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Impressao.report_OrdemServicoSaida.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Impressao.report_OrdemServicoEntrada.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Properties.Resources.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.GenerateResource.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\StandBy System.exe.licenses
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CoreCompileInputs.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.Fody.CopyLocal.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.Fody.RuntimeCopyLocal.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CopyComplete
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\StandBy System.exe
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\StandBy System.pdb
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.AssemblyReference.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.SuggestedBindingRedirects.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\StandBy System.exe.config
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms._1___Ordems_Servico.form_InserirEditarChecklist.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms._1___Ordems_Servico.form_OrdemServicoEditar.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms._1___Ordems_Servico.form_RichTextboxExterno.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Configurações.Banco_de_Dados.form_BancoDados.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Configurações.form_PainelCentral.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ALERT.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_AlertMessage.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_CadastroClientes_Edit.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluidos.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Concluido_Desfazer.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ComboboxConfig.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_DeveloperCommand.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_DiaEntrega.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Gastos.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_License.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_LucrosV2.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Lucros_Gastos_Exibir_Alterar.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Notepad.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Notepad_Abrir.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Orcamento.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_Orcamento_Adicionar.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdemServicoEntrada.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdemServicoSaida.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_OrdensServ_Edit.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_PasswordPattern.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_PasswordPatternExibir.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_QntdGarantia.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ServicoPrincipal.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_ServicosAnuais.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_StandBy.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_VerGarantia.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.form_WordNota.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Pagamento_e_Compras.form_Compras.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Pagamento.form_Pagamento.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.Testes.form_V2Standby.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Forms.SplashScreen1.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.form_Principal.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Impressao.ReportDesigner.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Impressao.report_OrdemServicoSaida.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Impressao.report_OrdemServicoEntrada.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC___StandBy_CSharp.Properties.Resources.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.GenerateResource.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\StandBy System.exe.licenses
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\PFC - StandBy CSharp\obj\Debug\PFC - StandBy CSharp.csproj.CoreCompileInputs.cache

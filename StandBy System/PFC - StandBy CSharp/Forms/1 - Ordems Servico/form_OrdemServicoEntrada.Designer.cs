@@ -30,11 +30,14 @@ namespace PFC___StandBy_CSharp.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServicoEntrada));
+            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
+            Syncfusion.Windows.Forms.MetroColorTable metroColorTable2 = new Syncfusion.Windows.Forms.MetroColorTable();
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_OrdemServicoEntrada));
             DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            Syncfusion.Windows.Forms.MetroColorTable metroColorTable1 = new Syncfusion.Windows.Forms.MetroColorTable();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
@@ -44,9 +47,6 @@ namespace PFC___StandBy_CSharp.Forms
             DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
             this.panel_FormOrdemServico = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblCidade = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -95,20 +95,20 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistAuricular = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cmbChecklistCameras = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistSensor = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cmbChecklistBotoes = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistTela = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.cmbChecklistBiometria = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cmbChecklistCameras = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistMicrofone = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cmbChecklistChip = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.cmbChecklistBiometria = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.cmbChecklistBotoes = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.group_RelatoCliente = new System.Windows.Forms.GroupBox();
             this.txtRelatoCliente = new DevExpress.XtraEditors.MemoEdit();
             this.group_OutrasObservacoes = new System.Windows.Forms.GroupBox();
@@ -413,16 +413,16 @@ namespace PFC___StandBy_CSharp.Forms
             this.memoEdit1.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.memoEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.memoEdit1.Size = new System.Drawing.Size(359, 122);
-            toolTipTitleItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            toolTipTitleItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem1.Text = "Dica:";
-            toolTipItem1.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem1.Appearance.Options.UseForeColor = true;
-            toolTipItem1.Text = "Exemplo 1: \"Aparelho chegou desmontado.\"\r\nExemplo 2: \"Faltando bateria.\"\r\nExemplo" +
+            toolTipTitleItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            toolTipTitleItem6.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem6.Text = "Dica:";
+            toolTipItem6.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem6.Appearance.Options.UseForeColor = true;
+            toolTipItem6.Text = "Exemplo 1: \"Aparelho chegou desmontado.\"\r\nExemplo 2: \"Faltando bateria.\"\r\nExemplo" +
     " 3: \"Tela descolando.\"";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.memoEdit1.SuperTip = superToolTip1;
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            superToolTip6.Items.Add(toolTipItem6);
+            this.memoEdit1.SuperTip = superToolTip6;
             this.memoEdit1.TabIndex = 999999;
             // 
             // lblIdChecklist
@@ -529,7 +529,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbCliente.MaxDropDownItems = 10;
             this.cmbCliente.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
             this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.ScrollMetroColorTable = metroColorTable1;
+            this.cmbCliente.ScrollMetroColorTable = metroColorTable2;
             this.cmbCliente.Size = new System.Drawing.Size(639, 31);
             this.cmbCliente.TabIndex = 999999;
             this.cmbCliente.TabStop = false;
@@ -695,20 +695,20 @@ namespace PFC___StandBy_CSharp.Forms
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel22);
             this.group_Checklist.Controls.Add(this.cmbChecklistAuricular);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel19);
-            this.group_Checklist.Controls.Add(this.cmbChecklistCameras);
-            this.group_Checklist.Controls.Add(this.bunifuCustomLabel20);
             this.group_Checklist.Controls.Add(this.cmbChecklistSensor);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel17);
-            this.group_Checklist.Controls.Add(this.cmbChecklistBotoes);
-            this.group_Checklist.Controls.Add(this.bunifuCustomLabel18);
             this.group_Checklist.Controls.Add(this.cmbChecklistTela);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel16);
+            this.group_Checklist.Controls.Add(this.cmbChecklistCameras);
             this.group_Checklist.Controls.Add(this.cmbChecklistBiometria);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel13);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel20);
             this.group_Checklist.Controls.Add(this.cmbChecklistMicrofone);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel14);
             this.group_Checklist.Controls.Add(this.cmbChecklistChip);
             this.group_Checklist.Controls.Add(this.bunifuCustomLabel15);
+            this.group_Checklist.Controls.Add(this.cmbChecklistBotoes);
+            this.group_Checklist.Controls.Add(this.bunifuCustomLabel18);
             this.group_Checklist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.group_Checklist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
             this.group_Checklist.Location = new System.Drawing.Point(805, 38);
@@ -720,20 +720,20 @@ namespace PFC___StandBy_CSharp.Forms
             // 
             // txtChecklistObservacoes
             // 
-            this.txtChecklistObservacoes.Location = new System.Drawing.Point(11, 384);
+            this.txtChecklistObservacoes.Location = new System.Drawing.Point(11, 369);
             this.txtChecklistObservacoes.Name = "txtChecklistObservacoes";
             this.txtChecklistObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtChecklistObservacoes.Properties.Appearance.Options.UseBackColor = true;
-            this.txtChecklistObservacoes.Size = new System.Drawing.Size(329, 68);
-            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
-            toolTipTitleItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem2.Text = "Dica:";
-            toolTipItem2.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem2.Appearance.Options.UseForeColor = true;
-            toolTipItem2.Text = "Exemplo: \"Botão funciona mas algumas vezes precisa apertar um pouco mais forte\"";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.txtChecklistObservacoes.SuperTip = superToolTip2;
+            this.txtChecklistObservacoes.Size = new System.Drawing.Size(329, 83);
+            toolTipTitleItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
+            toolTipTitleItem1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem1.Text = "Dica:";
+            toolTipItem1.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem1.Appearance.Options.UseForeColor = true;
+            toolTipItem1.Text = "Exemplo: \"Botão funciona mas algumas vezes precisa apertar um pouco mais forte\"";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.txtChecklistObservacoes.SuperTip = superToolTip1;
             this.txtChecklistObservacoes.TabIndex = 13;
             // 
             // txtChecklistMotivoAusencia
@@ -743,15 +743,15 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtChecklistMotivoAusencia.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtChecklistMotivoAusencia.Properties.Appearance.Options.UseBackColor = true;
             this.txtChecklistMotivoAusencia.Size = new System.Drawing.Size(329, 79);
-            toolTipTitleItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
-            toolTipTitleItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem3.Text = "Dica:";
-            toolTipItem3.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem3.Appearance.Options.UseForeColor = true;
-            toolTipItem3.Text = "Exemplo: \"A Tela nao liga, incapaz de fazer checklist\"";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.txtChecklistMotivoAusencia.SuperTip = superToolTip3;
+            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage2")));
+            toolTipTitleItem2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem2.Text = "Dica:";
+            toolTipItem2.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem2.Appearance.Options.UseForeColor = true;
+            toolTipItem2.Text = "Exemplo: \"A Tela nao liga, incapaz de fazer checklist\"";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.txtChecklistMotivoAusencia.SuperTip = superToolTip2;
             this.txtChecklistMotivoAusencia.TabIndex = 14;
             // 
             // switchChecklistAusente
@@ -790,7 +790,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel25.AutoSize = true;
             this.bunifuCustomLabel25.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel25.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel25.Location = new System.Drawing.Point(6, 364);
+            this.bunifuCustomLabel25.Location = new System.Drawing.Point(6, 347);
             this.bunifuCustomLabel25.Name = "bunifuCustomLabel25";
             this.bunifuCustomLabel25.Size = new System.Drawing.Size(104, 19);
             this.bunifuCustomLabel25.TabIndex = 999999;
@@ -843,7 +843,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistCarregamento.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistCarregamento.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistCarregamento.ItemTopMargin = 3;
-            this.cmbChecklistCarregamento.Location = new System.Drawing.Point(180, 312);
+            this.cmbChecklistCarregamento.Location = new System.Drawing.Point(12, 92);
             this.cmbChecklistCarregamento.Name = "cmbChecklistCarregamento";
             this.cmbChecklistCarregamento.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistCarregamento.TabIndex = 12;
@@ -857,7 +857,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel23.AutoSize = true;
             this.bunifuCustomLabel23.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel23.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel23.Location = new System.Drawing.Point(180, 293);
+            this.bunifuCustomLabel23.Location = new System.Drawing.Point(12, 73);
             this.bunifuCustomLabel23.Name = "bunifuCustomLabel23";
             this.bunifuCustomLabel23.Size = new System.Drawing.Size(120, 19);
             this.bunifuCustomLabel23.TabIndex = 999999;
@@ -898,7 +898,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistBluetooth.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistBluetooth.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistBluetooth.ItemTopMargin = 3;
-            this.cmbChecklistBluetooth.Location = new System.Drawing.Point(180, 150);
+            this.cmbChecklistBluetooth.Location = new System.Drawing.Point(180, 38);
             this.cmbChecklistBluetooth.Name = "cmbChecklistBluetooth";
             this.cmbChecklistBluetooth.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistBluetooth.TabIndex = 11;
@@ -912,7 +912,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel24.AutoSize = true;
             this.bunifuCustomLabel24.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel24.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel24.Location = new System.Drawing.Point(180, 131);
+            this.bunifuCustomLabel24.Location = new System.Drawing.Point(180, 19);
             this.bunifuCustomLabel24.Name = "bunifuCustomLabel24";
             this.bunifuCustomLabel24.Size = new System.Drawing.Size(87, 19);
             this.bunifuCustomLabel24.TabIndex = 999999;
@@ -953,7 +953,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAltoFaltante.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistAltoFaltante.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistAltoFaltante.ItemTopMargin = 3;
-            this.cmbChecklistAltoFaltante.Location = new System.Drawing.Point(180, 205);
+            this.cmbChecklistAltoFaltante.Location = new System.Drawing.Point(180, 145);
             this.cmbChecklistAltoFaltante.Name = "cmbChecklistAltoFaltante";
             this.cmbChecklistAltoFaltante.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAltoFaltante.TabIndex = 10;
@@ -967,7 +967,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel21.AutoSize = true;
             this.bunifuCustomLabel21.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel21.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel21.Location = new System.Drawing.Point(180, 186);
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(180, 126);
             this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
             this.bunifuCustomLabel21.Size = new System.Drawing.Size(103, 19);
             this.bunifuCustomLabel21.TabIndex = 999999;
@@ -1008,7 +1008,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistWifi.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistWifi.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistWifi.ItemTopMargin = 3;
-            this.cmbChecklistWifi.Location = new System.Drawing.Point(10, 150);
+            this.cmbChecklistWifi.Location = new System.Drawing.Point(12, 304);
             this.cmbChecklistWifi.Name = "cmbChecklistWifi";
             this.cmbChecklistWifi.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistWifi.TabIndex = 9;
@@ -1022,7 +1022,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel22.AutoSize = true;
             this.bunifuCustomLabel22.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel22.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel22.Location = new System.Drawing.Point(10, 131);
+            this.bunifuCustomLabel22.Location = new System.Drawing.Point(10, 285);
             this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
             this.bunifuCustomLabel22.Size = new System.Drawing.Size(44, 19);
             this.bunifuCustomLabel22.TabIndex = 999999;
@@ -1063,7 +1063,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistAuricular.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistAuricular.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistAuricular.ItemTopMargin = 3;
-            this.cmbChecklistAuricular.Location = new System.Drawing.Point(180, 258);
+            this.cmbChecklistAuricular.Location = new System.Drawing.Point(180, 304);
             this.cmbChecklistAuricular.Name = "cmbChecklistAuricular";
             this.cmbChecklistAuricular.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistAuricular.TabIndex = 8;
@@ -1077,66 +1077,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel19.AutoSize = true;
             this.bunifuCustomLabel19.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel19.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel19.Location = new System.Drawing.Point(180, 239);
+            this.bunifuCustomLabel19.Location = new System.Drawing.Point(180, 285);
             this.bunifuCustomLabel19.Name = "bunifuCustomLabel19";
             this.bunifuCustomLabel19.Size = new System.Drawing.Size(85, 19);
             this.bunifuCustomLabel19.TabIndex = 999999;
             this.bunifuCustomLabel19.Text = "AURICULAR";
-            // 
-            // cmbChecklistCameras
-            // 
-            this.defaultToolTipController1.SetAllowHtmlText(this.cmbChecklistCameras, DevExpress.Utils.DefaultBoolean.Default);
-            this.cmbChecklistCameras.BackColor = System.Drawing.Color.Transparent;
-            this.cmbChecklistCameras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.cmbChecklistCameras.BorderColor = System.Drawing.Color.Gray;
-            this.cmbChecklistCameras.BorderRadius = 2;
-            this.cmbChecklistCameras.Color = System.Drawing.Color.Gray;
-            this.cmbChecklistCameras.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistCameras.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistCameras.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistCameras.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistCameras.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.cmbChecklistCameras.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.cmbChecklistCameras.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbChecklistCameras.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.cmbChecklistCameras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbChecklistCameras.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cmbChecklistCameras.FillDropDown = true;
-            this.cmbChecklistCameras.FillIndicator = false;
-            this.cmbChecklistCameras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbChecklistCameras.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.cmbChecklistCameras.ForeColor = System.Drawing.Color.White;
-            this.cmbChecklistCameras.FormattingEnabled = true;
-            this.cmbChecklistCameras.Icon = null;
-            this.cmbChecklistCameras.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cmbChecklistCameras.IndicatorColor = System.Drawing.Color.Gray;
-            this.cmbChecklistCameras.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cmbChecklistCameras.ItemBackColor = System.Drawing.Color.White;
-            this.cmbChecklistCameras.ItemBorderColor = System.Drawing.Color.White;
-            this.cmbChecklistCameras.ItemForeColor = System.Drawing.Color.Black;
-            this.cmbChecklistCameras.ItemHeight = 26;
-            this.cmbChecklistCameras.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.cmbChecklistCameras.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.cmbChecklistCameras.ItemTopMargin = 3;
-            this.cmbChecklistCameras.Location = new System.Drawing.Point(180, 96);
-            this.cmbChecklistCameras.Name = "cmbChecklistCameras";
-            this.cmbChecklistCameras.Size = new System.Drawing.Size(164, 32);
-            this.cmbChecklistCameras.TabIndex = 7;
-            this.cmbChecklistCameras.Text = null;
-            this.cmbChecklistCameras.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cmbChecklistCameras.TextLeftMargin = 5;
-            // 
-            // bunifuCustomLabel20
-            // 
-            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel20, DevExpress.Utils.DefaultBoolean.Default);
-            this.bunifuCustomLabel20.AutoSize = true;
-            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel20.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel20.Location = new System.Drawing.Point(180, 77);
-            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
-            this.bunifuCustomLabel20.Size = new System.Drawing.Size(73, 19);
-            this.bunifuCustomLabel20.TabIndex = 999999;
-            this.bunifuCustomLabel20.Text = "CÂMERAS";
             // 
             // cmbChecklistSensor
             // 
@@ -1173,7 +1118,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistSensor.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistSensor.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistSensor.ItemTopMargin = 3;
-            this.cmbChecklistSensor.Location = new System.Drawing.Point(10, 312);
+            this.cmbChecklistSensor.Location = new System.Drawing.Point(180, 250);
             this.cmbChecklistSensor.Name = "cmbChecklistSensor";
             this.cmbChecklistSensor.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistSensor.TabIndex = 6;
@@ -1187,66 +1132,11 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel17.AutoSize = true;
             this.bunifuCustomLabel17.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel17.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel17.Location = new System.Drawing.Point(10, 293);
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(180, 231);
             this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
             this.bunifuCustomLabel17.Size = new System.Drawing.Size(63, 19);
             this.bunifuCustomLabel17.TabIndex = 999999;
             this.bunifuCustomLabel17.Text = "SENSOR";
-            // 
-            // cmbChecklistBotoes
-            // 
-            this.defaultToolTipController1.SetAllowHtmlText(this.cmbChecklistBotoes, DevExpress.Utils.DefaultBoolean.Default);
-            this.cmbChecklistBotoes.BackColor = System.Drawing.Color.Transparent;
-            this.cmbChecklistBotoes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.cmbChecklistBotoes.BorderColor = System.Drawing.Color.Gray;
-            this.cmbChecklistBotoes.BorderRadius = 2;
-            this.cmbChecklistBotoes.Color = System.Drawing.Color.Gray;
-            this.cmbChecklistBotoes.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistBotoes.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistBotoes.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistBotoes.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistBotoes.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.cmbChecklistBotoes.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.cmbChecklistBotoes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbChecklistBotoes.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.cmbChecklistBotoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbChecklistBotoes.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cmbChecklistBotoes.FillDropDown = true;
-            this.cmbChecklistBotoes.FillIndicator = false;
-            this.cmbChecklistBotoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbChecklistBotoes.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.cmbChecklistBotoes.ForeColor = System.Drawing.Color.White;
-            this.cmbChecklistBotoes.FormattingEnabled = true;
-            this.cmbChecklistBotoes.Icon = null;
-            this.cmbChecklistBotoes.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cmbChecklistBotoes.IndicatorColor = System.Drawing.Color.Gray;
-            this.cmbChecklistBotoes.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cmbChecklistBotoes.ItemBackColor = System.Drawing.Color.White;
-            this.cmbChecklistBotoes.ItemBorderColor = System.Drawing.Color.White;
-            this.cmbChecklistBotoes.ItemForeColor = System.Drawing.Color.Black;
-            this.cmbChecklistBotoes.ItemHeight = 26;
-            this.cmbChecklistBotoes.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.cmbChecklistBotoes.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.cmbChecklistBotoes.ItemTopMargin = 3;
-            this.cmbChecklistBotoes.Location = new System.Drawing.Point(10, 96);
-            this.cmbChecklistBotoes.Name = "cmbChecklistBotoes";
-            this.cmbChecklistBotoes.Size = new System.Drawing.Size(164, 32);
-            this.cmbChecklistBotoes.TabIndex = 5;
-            this.cmbChecklistBotoes.Text = null;
-            this.cmbChecklistBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cmbChecklistBotoes.TextLeftMargin = 5;
-            // 
-            // bunifuCustomLabel18
-            // 
-            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel18, DevExpress.Utils.DefaultBoolean.Default);
-            this.bunifuCustomLabel18.AutoSize = true;
-            this.bunifuCustomLabel18.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel18.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel18.Location = new System.Drawing.Point(10, 77);
-            this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
-            this.bunifuCustomLabel18.Size = new System.Drawing.Size(60, 19);
-            this.bunifuCustomLabel18.TabIndex = 999999;
-            this.bunifuCustomLabel18.Text = "BOTÕES";
             // 
             // cmbChecklistTela
             // 
@@ -1283,7 +1173,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistTela.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistTela.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistTela.ItemTopMargin = 3;
-            this.cmbChecklistTela.Location = new System.Drawing.Point(180, 39);
+            this.cmbChecklistTela.Location = new System.Drawing.Point(12, 38);
             this.cmbChecklistTela.Name = "cmbChecklistTela";
             this.cmbChecklistTela.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistTela.TabIndex = 3;
@@ -1297,66 +1187,66 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel16.AutoSize = true;
             this.bunifuCustomLabel16.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel16.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel16.Location = new System.Drawing.Point(180, 20);
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(12, 19);
             this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
             this.bunifuCustomLabel16.Size = new System.Drawing.Size(40, 19);
             this.bunifuCustomLabel16.TabIndex = 999999;
             this.bunifuCustomLabel16.Text = "TELA";
             // 
-            // cmbChecklistBiometria
+            // cmbChecklistCameras
             // 
-            this.defaultToolTipController1.SetAllowHtmlText(this.cmbChecklistBiometria, DevExpress.Utils.DefaultBoolean.Default);
-            this.cmbChecklistBiometria.BackColor = System.Drawing.Color.Transparent;
-            this.cmbChecklistBiometria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.cmbChecklistBiometria.BorderColor = System.Drawing.Color.Gray;
-            this.cmbChecklistBiometria.BorderRadius = 2;
-            this.cmbChecklistBiometria.Color = System.Drawing.Color.Gray;
-            this.cmbChecklistBiometria.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cmbChecklistBiometria.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistBiometria.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistBiometria.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmbChecklistBiometria.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.cmbChecklistBiometria.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.cmbChecklistBiometria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbChecklistBiometria.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.cmbChecklistBiometria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbChecklistBiometria.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cmbChecklistBiometria.FillDropDown = true;
-            this.cmbChecklistBiometria.FillIndicator = false;
-            this.cmbChecklistBiometria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbChecklistBiometria.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.cmbChecklistBiometria.ForeColor = System.Drawing.Color.White;
-            this.cmbChecklistBiometria.FormattingEnabled = true;
-            this.cmbChecklistBiometria.Icon = null;
-            this.cmbChecklistBiometria.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cmbChecklistBiometria.IndicatorColor = System.Drawing.Color.Gray;
-            this.cmbChecklistBiometria.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cmbChecklistBiometria.ItemBackColor = System.Drawing.Color.White;
-            this.cmbChecklistBiometria.ItemBorderColor = System.Drawing.Color.White;
-            this.cmbChecklistBiometria.ItemForeColor = System.Drawing.Color.Black;
-            this.cmbChecklistBiometria.ItemHeight = 26;
-            this.cmbChecklistBiometria.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.cmbChecklistBiometria.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.cmbChecklistBiometria.ItemTopMargin = 3;
-            this.cmbChecklistBiometria.Location = new System.Drawing.Point(10, 39);
-            this.cmbChecklistBiometria.Name = "cmbChecklistBiometria";
-            this.cmbChecklistBiometria.Size = new System.Drawing.Size(164, 32);
-            this.cmbChecklistBiometria.TabIndex = 1;
-            this.cmbChecklistBiometria.Text = null;
-            this.cmbChecklistBiometria.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cmbChecklistBiometria.TextLeftMargin = 5;
+            this.defaultToolTipController1.SetAllowHtmlText(this.cmbChecklistCameras, DevExpress.Utils.DefaultBoolean.Default);
+            this.cmbChecklistCameras.BackColor = System.Drawing.Color.Transparent;
+            this.cmbChecklistCameras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbChecklistCameras.BorderColor = System.Drawing.Color.Gray;
+            this.cmbChecklistCameras.BorderRadius = 2;
+            this.cmbChecklistCameras.Color = System.Drawing.Color.Gray;
+            this.cmbChecklistCameras.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.cmbChecklistCameras.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistCameras.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistCameras.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistCameras.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.cmbChecklistCameras.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.cmbChecklistCameras.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbChecklistCameras.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.cmbChecklistCameras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChecklistCameras.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cmbChecklistCameras.FillDropDown = true;
+            this.cmbChecklistCameras.FillIndicator = false;
+            this.cmbChecklistCameras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbChecklistCameras.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmbChecklistCameras.ForeColor = System.Drawing.Color.White;
+            this.cmbChecklistCameras.FormattingEnabled = true;
+            this.cmbChecklistCameras.Icon = null;
+            this.cmbChecklistCameras.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cmbChecklistCameras.IndicatorColor = System.Drawing.Color.Gray;
+            this.cmbChecklistCameras.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cmbChecklistCameras.ItemBackColor = System.Drawing.Color.White;
+            this.cmbChecklistCameras.ItemBorderColor = System.Drawing.Color.White;
+            this.cmbChecklistCameras.ItemForeColor = System.Drawing.Color.Black;
+            this.cmbChecklistCameras.ItemHeight = 26;
+            this.cmbChecklistCameras.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.cmbChecklistCameras.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.cmbChecklistCameras.ItemTopMargin = 3;
+            this.cmbChecklistCameras.Location = new System.Drawing.Point(12, 250);
+            this.cmbChecklistCameras.Name = "cmbChecklistCameras";
+            this.cmbChecklistCameras.Size = new System.Drawing.Size(164, 32);
+            this.cmbChecklistCameras.TabIndex = 7;
+            this.cmbChecklistCameras.Text = null;
+            this.cmbChecklistCameras.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cmbChecklistCameras.TextLeftMargin = 5;
             // 
-            // bunifuCustomLabel13
+            // bunifuCustomLabel20
             // 
-            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel13, DevExpress.Utils.DefaultBoolean.Default);
-            this.bunifuCustomLabel13.AutoSize = true;
-            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel13.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(10, 20);
-            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
-            this.bunifuCustomLabel13.Size = new System.Drawing.Size(147, 19);
-            this.bunifuCustomLabel13.TabIndex = 999999;
-            this.bunifuCustomLabel13.Text = "BIOMETRIA / FACE-ID";
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel20, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel20.AutoSize = true;
+            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuCustomLabel20.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(10, 231);
+            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
+            this.bunifuCustomLabel20.Size = new System.Drawing.Size(73, 19);
+            this.bunifuCustomLabel20.TabIndex = 999999;
+            this.bunifuCustomLabel20.Text = "CÂMERAS";
             // 
             // cmbChecklistMicrofone
             // 
@@ -1393,7 +1283,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistMicrofone.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistMicrofone.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistMicrofone.ItemTopMargin = 3;
-            this.cmbChecklistMicrofone.Location = new System.Drawing.Point(10, 205);
+            this.cmbChecklistMicrofone.Location = new System.Drawing.Point(180, 92);
             this.cmbChecklistMicrofone.Name = "cmbChecklistMicrofone";
             this.cmbChecklistMicrofone.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistMicrofone.TabIndex = 2;
@@ -1407,7 +1297,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.bunifuCustomLabel14.AutoSize = true;
             this.bunifuCustomLabel14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel14.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(10, 186);
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(180, 73);
             this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
             this.bunifuCustomLabel14.Size = new System.Drawing.Size(91, 19);
             this.bunifuCustomLabel14.TabIndex = 999999;
@@ -1448,7 +1338,7 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistChip.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.cmbChecklistChip.ItemHighLightForeColor = System.Drawing.Color.White;
             this.cmbChecklistChip.ItemTopMargin = 3;
-            this.cmbChecklistChip.Location = new System.Drawing.Point(10, 258);
+            this.cmbChecklistChip.Location = new System.Drawing.Point(180, 197);
             this.cmbChecklistChip.Name = "cmbChecklistChip";
             this.cmbChecklistChip.Size = new System.Drawing.Size(164, 32);
             this.cmbChecklistChip.TabIndex = 4;
@@ -1456,17 +1346,127 @@ namespace PFC___StandBy_CSharp.Forms
             this.cmbChecklistChip.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbChecklistChip.TextLeftMargin = 5;
             // 
+            // cmbChecklistBiometria
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.cmbChecklistBiometria, DevExpress.Utils.DefaultBoolean.Default);
+            this.cmbChecklistBiometria.BackColor = System.Drawing.Color.Transparent;
+            this.cmbChecklistBiometria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbChecklistBiometria.BorderColor = System.Drawing.Color.Gray;
+            this.cmbChecklistBiometria.BorderRadius = 2;
+            this.cmbChecklistBiometria.Color = System.Drawing.Color.Gray;
+            this.cmbChecklistBiometria.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.cmbChecklistBiometria.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBiometria.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBiometria.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBiometria.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.cmbChecklistBiometria.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.cmbChecklistBiometria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbChecklistBiometria.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.cmbChecklistBiometria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChecklistBiometria.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cmbChecklistBiometria.FillDropDown = true;
+            this.cmbChecklistBiometria.FillIndicator = false;
+            this.cmbChecklistBiometria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbChecklistBiometria.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmbChecklistBiometria.ForeColor = System.Drawing.Color.White;
+            this.cmbChecklistBiometria.FormattingEnabled = true;
+            this.cmbChecklistBiometria.Icon = null;
+            this.cmbChecklistBiometria.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cmbChecklistBiometria.IndicatorColor = System.Drawing.Color.Gray;
+            this.cmbChecklistBiometria.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cmbChecklistBiometria.ItemBackColor = System.Drawing.Color.White;
+            this.cmbChecklistBiometria.ItemBorderColor = System.Drawing.Color.White;
+            this.cmbChecklistBiometria.ItemForeColor = System.Drawing.Color.Black;
+            this.cmbChecklistBiometria.ItemHeight = 26;
+            this.cmbChecklistBiometria.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.cmbChecklistBiometria.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.cmbChecklistBiometria.ItemTopMargin = 3;
+            this.cmbChecklistBiometria.Location = new System.Drawing.Point(12, 145);
+            this.cmbChecklistBiometria.Name = "cmbChecklistBiometria";
+            this.cmbChecklistBiometria.Size = new System.Drawing.Size(164, 32);
+            this.cmbChecklistBiometria.TabIndex = 1;
+            this.cmbChecklistBiometria.Text = null;
+            this.cmbChecklistBiometria.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cmbChecklistBiometria.TextLeftMargin = 5;
+            // 
+            // bunifuCustomLabel13
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel13, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel13.AutoSize = true;
+            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuCustomLabel13.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(12, 126);
+            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
+            this.bunifuCustomLabel13.Size = new System.Drawing.Size(147, 19);
+            this.bunifuCustomLabel13.TabIndex = 999999;
+            this.bunifuCustomLabel13.Text = "BIOMETRIA / FACE-ID";
+            // 
             // bunifuCustomLabel15
             // 
             this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel15, DevExpress.Utils.DefaultBoolean.Default);
             this.bunifuCustomLabel15.AutoSize = true;
             this.bunifuCustomLabel15.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel15.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(10, 239);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(180, 178);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
             this.bunifuCustomLabel15.Size = new System.Drawing.Size(40, 19);
             this.bunifuCustomLabel15.TabIndex = 999999;
             this.bunifuCustomLabel15.Text = "CHIP";
+            // 
+            // cmbChecklistBotoes
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.cmbChecklistBotoes, DevExpress.Utils.DefaultBoolean.Default);
+            this.cmbChecklistBotoes.BackColor = System.Drawing.Color.Transparent;
+            this.cmbChecklistBotoes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.cmbChecklistBotoes.BorderColor = System.Drawing.Color.Gray;
+            this.cmbChecklistBotoes.BorderRadius = 2;
+            this.cmbChecklistBotoes.Color = System.Drawing.Color.Gray;
+            this.cmbChecklistBotoes.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.cmbChecklistBotoes.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBotoes.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBotoes.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbChecklistBotoes.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.cmbChecklistBotoes.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.cmbChecklistBotoes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbChecklistBotoes.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.cmbChecklistBotoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChecklistBotoes.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cmbChecklistBotoes.FillDropDown = true;
+            this.cmbChecklistBotoes.FillIndicator = false;
+            this.cmbChecklistBotoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbChecklistBotoes.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cmbChecklistBotoes.ForeColor = System.Drawing.Color.White;
+            this.cmbChecklistBotoes.FormattingEnabled = true;
+            this.cmbChecklistBotoes.Icon = null;
+            this.cmbChecklistBotoes.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cmbChecklistBotoes.IndicatorColor = System.Drawing.Color.Gray;
+            this.cmbChecklistBotoes.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cmbChecklistBotoes.ItemBackColor = System.Drawing.Color.White;
+            this.cmbChecklistBotoes.ItemBorderColor = System.Drawing.Color.White;
+            this.cmbChecklistBotoes.ItemForeColor = System.Drawing.Color.Black;
+            this.cmbChecklistBotoes.ItemHeight = 26;
+            this.cmbChecklistBotoes.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.cmbChecklistBotoes.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.cmbChecklistBotoes.ItemTopMargin = 3;
+            this.cmbChecklistBotoes.Location = new System.Drawing.Point(12, 197);
+            this.cmbChecklistBotoes.Name = "cmbChecklistBotoes";
+            this.cmbChecklistBotoes.Size = new System.Drawing.Size(164, 32);
+            this.cmbChecklistBotoes.TabIndex = 5;
+            this.cmbChecklistBotoes.Text = null;
+            this.cmbChecklistBotoes.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cmbChecklistBotoes.TextLeftMargin = 5;
+            // 
+            // bunifuCustomLabel18
+            // 
+            this.defaultToolTipController1.SetAllowHtmlText(this.bunifuCustomLabel18, DevExpress.Utils.DefaultBoolean.Default);
+            this.bunifuCustomLabel18.AutoSize = true;
+            this.bunifuCustomLabel18.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuCustomLabel18.ForeColor = System.Drawing.SystemColors.Control;
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(10, 178);
+            this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
+            this.bunifuCustomLabel18.Size = new System.Drawing.Size(60, 19);
+            this.bunifuCustomLabel18.TabIndex = 999999;
+            this.bunifuCustomLabel18.Text = "BOTÕES";
             // 
             // group_RelatoCliente
             // 
@@ -1492,15 +1492,15 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtRelatoCliente.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtRelatoCliente.Properties.Appearance.Options.UseBackColor = true;
             this.txtRelatoCliente.Size = new System.Drawing.Size(745, 165);
-            toolTipTitleItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
-            toolTipTitleItem4.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem4.Text = "Dica:";
-            toolTipItem4.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem4.Appearance.Options.UseForeColor = true;
-            toolTipItem4.Text = "Exemplo: \"Cliente informou que o aparelho caiu e quebrou a tela\"";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.txtRelatoCliente.SuperTip = superToolTip4;
+            toolTipTitleItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage3")));
+            toolTipTitleItem3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem3.Text = "Dica:";
+            toolTipItem3.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem3.Appearance.Options.UseForeColor = true;
+            toolTipItem3.Text = "Exemplo: \"Cliente informou que o aparelho caiu e quebrou a tela\"";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.txtRelatoCliente.SuperTip = superToolTip3;
             this.txtRelatoCliente.TabIndex = 999999;
             // 
             // group_OutrasObservacoes
@@ -1527,16 +1527,16 @@ namespace PFC___StandBy_CSharp.Forms
             this.txtObservacoes.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.txtObservacoes.Properties.Appearance.Options.UseBackColor = true;
             this.txtObservacoes.Size = new System.Drawing.Size(358, 122);
-            toolTipTitleItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage4")));
-            toolTipTitleItem5.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            toolTipTitleItem5.Text = "Dica:";
-            toolTipItem5.Appearance.ForeColor = System.Drawing.Color.Gold;
-            toolTipItem5.Appearance.Options.UseForeColor = true;
-            toolTipItem5.Text = "Exemplo 1: \"Aparelho chegou desmontado.\"\r\nExemplo 2: \"Faltando bateria.\"\r\nExemplo" +
+            toolTipTitleItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage4")));
+            toolTipTitleItem4.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            toolTipTitleItem4.Text = "Dica:";
+            toolTipItem4.Appearance.ForeColor = System.Drawing.Color.Gold;
+            toolTipItem4.Appearance.Options.UseForeColor = true;
+            toolTipItem4.Text = "Exemplo 1: \"Aparelho chegou desmontado.\"\r\nExemplo 2: \"Faltando bateria.\"\r\nExemplo" +
     " 3: \"Tela descolando.\"";
-            superToolTip5.Items.Add(toolTipTitleItem5);
-            superToolTip5.Items.Add(toolTipItem5);
-            this.txtObservacoes.SuperTip = superToolTip5;
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.txtObservacoes.SuperTip = superToolTip4;
             this.txtObservacoes.TabIndex = 999999;
             // 
             // group_CondicoesFisicas

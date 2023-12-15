@@ -39,7 +39,7 @@ namespace StandBy___CLIENT.SERVER
                 string localIP;
                 socket.Connect("8.8.8.8", 65530);
                 IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
-                localIP = endPoint.Address.ToString();
+                localIP    = endPoint.Address.ToString();
                 lblIp.Text = localIP + ",1433";
             }
         }
@@ -54,10 +54,11 @@ namespace StandBy___CLIENT.SERVER
             }
 
             currentChildForm = formFilho;
+
             //End
-            formFilho.TopLevel = false;
+            formFilho.TopLevel        = false;
             formFilho.FormBorderStyle = FormBorderStyle.None;
-            formFilho.Dock = DockStyle.Fill;
+            formFilho.Dock            = DockStyle.Fill;
             panelCentral.Controls.Add(formFilho);
             panelCentral.Tag = formFilho;
             formFilho.BringToFront();
@@ -80,7 +81,7 @@ namespace StandBy___CLIENT.SERVER
                 OpenChildForm(new form_Concluidos(new[] { 255, 0, 103 }));
 
                 btnServicosAndamento.Normalcolor = Color.Transparent;
-                btnLucros.Normalcolor = Color.Transparent;
+                btnLucros.Normalcolor            = Color.Transparent;
 
                 btnTodosServicos.Normalcolor = Color.Black;
             }
@@ -97,7 +98,7 @@ namespace StandBy___CLIENT.SERVER
                 OpenChildForm(new form_ServicosAndamento());
 
                 btnTodosServicos.Normalcolor = Color.Transparent;
-                btnLucros.Normalcolor = Color.Transparent;
+                btnLucros.Normalcolor        = Color.Transparent;
 
                 btnServicosAndamento.Normalcolor = Color.Black;
             }
@@ -119,15 +120,15 @@ namespace StandBy___CLIENT.SERVER
 
         private void btnLucros_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<form_Lucros>().Count() > 0)
+            if (Application.OpenForms.OfType<form_LucrosV2>().Count() > 0)
             {
                 //MessageBox.Show("O Form2 já está aberto!");
             }
             else
             {
-                OpenChildForm(new form_Lucros(new[] { 255, 0, 103 }));
+                OpenChildForm(new form_LucrosV2());
 
-                btnTodosServicos.Normalcolor = Color.Transparent;
+                btnTodosServicos.Normalcolor     = Color.Transparent;
                 btnServicosAndamento.Normalcolor = Color.Transparent;
 
                 btnLucros.Normalcolor = Color.Black;
@@ -140,31 +141,31 @@ namespace StandBy___CLIENT.SERVER
             {
                 currentChildForm.Close();
 
-                btnTodosServicos.Normalcolor = Color.Transparent;
+                btnTodosServicos.Normalcolor     = Color.Transparent;
                 btnServicosAndamento.Normalcolor = Color.Transparent;
-                btnLucros.Normalcolor = Color.Transparent;
+                btnLucros.Normalcolor            = Color.Transparent;
             }
         }
 
         private void backVerificarConexao_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            lblEstadoConexao.Text = @"Conectando...";
+            lblEstadoConexao.Text      = @"Conectando...";
             lblEstadoConexao.ForeColor = Color.DarkOrange;
 
             string status = con.StatusConexao();
             if (status == "Aberta")
             {
-                lblEstadoConexao.Text = @"Conectado ao Servidor!";
+                lblEstadoConexao.Text      = @"Conectado ao Servidor!";
                 lblEstadoConexao.ForeColor = Color.LawnGreen;
             }
             else if (status == "Fechada")
             {
-                lblEstadoConexao.Text = @"Servidor Desconectado!";
+                lblEstadoConexao.Text      = @"Servidor Desconectado!";
                 lblEstadoConexao.ForeColor = Color.Red;
             }
             else
             {
-                lblEstadoConexao.Text = @"Erro, clique aqui e tente novamente!";
+                lblEstadoConexao.Text      = @"Erro, clique aqui e tente novamente!";
                 lblEstadoConexao.ForeColor = Color.AntiqueWhite;
             }
         }
@@ -220,8 +221,8 @@ namespace StandBy___CLIENT.SERVER
             processo.StartInfo.Arguments = "/c arp -a";
 
             processo.StartInfo.RedirectStandardOutput = true;
-            processo.StartInfo.UseShellExecute = false;
-            processo.StartInfo.CreateNoWindow = true;
+            processo.StartInfo.UseShellExecute        = false;
+            processo.StartInfo.CreateNoWindow         = true;
 
             processo.Start();
             processo.WaitForExit();
@@ -229,6 +230,7 @@ namespace StandBy___CLIENT.SERVER
             string saida = processo.StandardOutput.ReadToEnd();
             string padraoIP = @"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}";
             string padraoMAC = @"\w{1,2}\-\w{1,2}\-\w{1,2}\-\w{1,2}\-\w{1,2}\-\w{1,2}";
+
             //string pattern = @"";
 
             MatchCollection matches;
@@ -258,41 +260,42 @@ namespace StandBy___CLIENT.SERVER
                 listaIpsComMac[listaIpsComMac.ElementAt(indice).Key] = enderecoMAC.ToString();
                 indice++;
             }
+
             return listaIpsComMac;
         }
 
         private void backVerificarVersao_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            lblUpdate.Text = @"Verificando atualizações...";
+            lblUpdate.Text      = @"Verificando atualizações...";
             lblUpdate.ForeColor = Color.DarkOrange;
-            lblUpdate.Location = new Point(187, 9);
+            lblUpdate.Location  = new Point(187, 9);
 
             //verificarUpd.ChecarVersaoStandBy(this);
             statusAtualizacao = verificarUpd.ChecarVersaoClientServer();
 
             if (statusAtualizacao == "Atualização Pendente!")
             {
-                lblUpdate.Text = @"Atualização Pendente!";
+                lblUpdate.Text      = @"Atualização Pendente!";
                 lblUpdate.ForeColor = Color.Yellow;
-                lblUpdate.Location = new Point(196, 9);
+                lblUpdate.Location  = new Point(196, 9);
             }
             else if (statusAtualizacao == "Sistema Atualizado!")
             {
-                lblUpdate.Text = @"Sistema Atualizado!";
+                lblUpdate.Text      = @"Sistema Atualizado!";
                 lblUpdate.ForeColor = Color.LawnGreen;
-                lblUpdate.Location = new Point(200, 9);
+                lblUpdate.Location  = new Point(200, 9);
             }
             else if (statusAtualizacao == "Erro ao atualizar!")
             {
-                lblUpdate.Text = @"Erro ao atualizar!";
+                lblUpdate.Text      = @"Erro ao atualizar!";
                 lblUpdate.ForeColor = Color.Crimson;
-                lblUpdate.Location = new Point(207, 9);
+                lblUpdate.Location  = new Point(207, 9);
             }
             else
             {
-                lblUpdate.Text = @"Erro Desconhecido!";
+                lblUpdate.Text      = @"Erro Desconhecido!";
                 lblUpdate.ForeColor = Color.AntiqueWhite;
-                lblUpdate.Location = new Point(201, 9);
+                lblUpdate.Location  = new Point(201, 9);
             }
         }
 
@@ -309,14 +312,14 @@ namespace StandBy___CLIENT.SERVER
             if (statusAtualizacao == "Atualização Pendente!")
             {
                 lblDesejaAtualizar.Visible = true;
-                btnSimAtualizar.Visible = true;
-                btnNaoAtualizar.Visible = true;
+                btnSimAtualizar.Visible    = true;
+                btnNaoAtualizar.Visible    = true;
             }
             else
             {
                 lblDesejaAtualizar.Visible = false;
-                btnSimAtualizar.Visible = false;
-                btnNaoAtualizar.Visible = false;
+                btnSimAtualizar.Visible    = false;
+                btnNaoAtualizar.Visible    = false;
             }
         }
 
@@ -328,8 +331,8 @@ namespace StandBy___CLIENT.SERVER
         private void btnNaoAtualizar_Click(object sender, EventArgs e)
         {
             lblDesejaAtualizar.Visible = false;
-            btnSimAtualizar.Visible = false;
-            btnNaoAtualizar.Visible = false;
+            btnSimAtualizar.Visible    = false;
+            btnNaoAtualizar.Visible    = false;
         }
     }
 }

@@ -45,7 +45,7 @@ namespace PFC___StandBy_CSharp.Forms
             //Preencher Combobox de Cidades
             Cidades.BuscarListaCidades();
             preencherComboboxCliente.Preencher(txtNomeCliente, cmbCidades, lblCidades_Carregando, listboxCidades);
-
+            CentralizarTextoTextboxes();
             //CarregarComboxClientes();
         }
 
@@ -812,6 +812,15 @@ namespace PFC___StandBy_CSharp.Forms
             }
         }
 
+        private void CentralizarTextoTextboxes()
+        {
+            txtEndereco.TextAlign = HorizontalAlignment.Center;
+            txtComplemento.TextAlign = HorizontalAlignment.Center;
+            txtBairro.TextAlign = HorizontalAlignment.Center;
+            cmbEstados.TextAlign = HorizontalAlignment.Center;
+            txtDataNascimento.TextAlign = HorizontalAlignment.Center;
+            txtCEP.TextAlign = HorizontalAlignment.Center;
+        }
         private void txtRua_Enter(object sender, EventArgs e)
         {
             SetarCorDaLinhaETexto_ENTER(txtEndereco, "Ex: Rua Segundo Cendes, 197B");

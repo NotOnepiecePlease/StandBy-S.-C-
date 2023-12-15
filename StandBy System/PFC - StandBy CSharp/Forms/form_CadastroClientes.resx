@@ -134,20 +134,6 @@
         jhgdMTpidMToiNGRZR9zewt8Zx9zuwCRqeYlbwRV/QAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="separatorESTADOS.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJUAAAAKCAYAAAC9khzZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVFhH7dTBCQAgEAPBYLH2X8DB+bECvecMbAchAQDg
-        X63d0mRGpfHuXwEA8Cw578nHXQ6w89cAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="separatorCIDADES.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAOoAAAAMCAYAAABsiSHRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA2SURBVGhD7dXBCQAgEAPBYLH2X8CBfvzr84QZ2BJCAgAA
-        AADPaswlqXeGKn3Q+VUAAAAAuEk2bAtdOfthRuYAAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="cl_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -270,6 +256,20 @@
         iVBORw0KGgoAAAANSUhEUgAAACUAAAAWCAYAAABHcFUAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVEhL7c7BCQBACASxxWKv/wIErw2RBOY/AeCKrjfb
         2jkFwAnJBwLksJ+kpbUNAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="separatorESTADOS.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAJUAAAAKCAYAAAC9khzZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAwSURBVFhH7dTBCQAgEAPBYLH2X8DB+bECvecMbAchAQDg
+        X63d0mRGpfHuXwEA8Cw578nHXQ6w89cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="separatorCIDADES.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAOoAAAAMCAYAAABsiSHRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA2SURBVGhD7dXBCQAgEAPBYLH2X8CBfvzr84QZ2BJCAgAA
+        AADPaswlqXeGKn3Q+VUAAAAAuEk2bAtdOfthRuYAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

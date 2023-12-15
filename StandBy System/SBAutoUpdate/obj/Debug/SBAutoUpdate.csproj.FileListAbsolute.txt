@@ -1,29 +1,108 @@
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\SBAutoUpdate.exe.config
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\SBAutoUpdate.exe
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\SBAutoUpdate.pdb
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\Bunifu_UI_v1.5.3.dll
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\Guna.UI.dll
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\bin\Debug\Bunifu_UI_v1.5.3.xml
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.csprojAssemblyReference.cache
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.Form1.resources
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.Properties.Resources.resources
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.GenerateResource.cache
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.CoreCompileInputs.cache
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.CopyComplete
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.exe
-F:\@C Sharp\TCC - Sistema StandBy - C#\PFC - StandBy CSharp\SBAutoUpdate\obj\Debug\SBAutoUpdate.pdb
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.AssemblyReference.cache
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.Form1.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.Properties.Resources.resources
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.GenerateResource.cache
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.CoreCompileInputs.cache
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.exe.config
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.exe
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.pdb
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\StandBy System.exe.config
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Bunifu_UI_v1.5.3.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.Fody.CopyLocal.cache
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.CopyComplete
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.exe
-E:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.pdb
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.exe.config
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.exe
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.pdb
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\StandBy System.exe.config
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Bunifu_UI_v1.5.3.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.DataAccess.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Xpo.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Newtonsoft.Json.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Buffers.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Memory.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Numerics.Vectors.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraEditors.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Utils.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Data.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Tools.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Shared.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraPrinting.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraBars.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraReports.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Printing.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraGrid.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraCharts.v22.2.UI.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraCharts.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Data.Desktop.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.RichEdit.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Office.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Sparkline.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.SpellChecker.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Grid.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Shared.Windows.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Grid.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Tools.Base.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraLayout.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraTreeList.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Charts.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.PivotGrid.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraGauges.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Pdf.v22.2.Drawing.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Pdf.v22.2.Core.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraCharts.v22.2.Wizard.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Utils.v22.2.UI.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraVerticalGrid.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraNavBar.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraRichEdit.v22.2.xml
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.AssemblyReference.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.SuggestedBindingRedirects.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.Form1.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.Properties.Resources.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.GenerateResource.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.CoreCompileInputs.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.Fody.CopyLocal.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.CopyComplete
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.exe
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.pdb
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.AssemblyReference.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.Form1.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.Properties.Resources.resources
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.GenerateResource.cache
+D:\@C Sharp\TCC - Sistema StandBy - C#\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\obj\Debug\SBAutoUpdate.csproj.CoreCompileInputs.cache
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.exe.config
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.exe
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\SBAutoUpdate.pdb
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\StandBy System.exe.config
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Bunifu_UI_v1.5.3.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.DataAccess.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Xpo.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Newtonsoft.Json.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Buffers.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Memory.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Numerics.Vectors.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraEditors.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Utils.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Data.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Tools.Windows.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Shared.Base.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraPrinting.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraBars.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraReports.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Printing.v23.1.Core.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraGrid.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraCharts.v23.1.UI.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraCharts.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Drawing.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Data.Desktop.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.RichEdit.v23.1.Core.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Office.v23.1.Core.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Sparkline.v23.1.Core.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.SpellChecker.Base.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Grid.Windows.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Shared.Windows.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Grid.Base.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\Syncfusion.Tools.Base.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraLayout.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraTreeList.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Charts.v23.1.Core.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.PivotGrid.v23.1.Core.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraGauges.v23.1.Core.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Pdf.v23.1.Drawing.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Pdf.v23.1.Core.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraCharts.v23.1.Wizard.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.Utils.v23.1.UI.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraVerticalGrid.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraNavBar.v23.1.xml
+D:\@C Sharp\TCC\GIT\StandBy-S.-C-\@Private GIT\StandByPRIVATE\StandBy-S.-C-\StandBy System\SBAutoUpdate\bin\Debug\DevExpress.XtraRichEdit.v23.1.xml

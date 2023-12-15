@@ -14,7 +14,8 @@ namespace SBAutoUpdate.Classes
 {
     internal static class AtualizarStandBy
     {
-        const string ARQUIVO_NOME = "UpdateNEW.zip";
+        public static string ARQUIVO_NOME = "";
+        public static string LINK_DOWNLOAD_PRINCIPAL = "";
 
         public static Task Atualizar(GunaProgressBar _progressBar)
         {
@@ -35,14 +36,13 @@ namespace SBAutoUpdate.Classes
                         string meuDiretorio = @".\";
                         List<string> arquivosSeremMantidos = new List<string>
                         {
-                            "SBAutoUpdate.exe", "dts.ini",
+                            "SBAutoUpdate.exe", "dts.ini", "Cidades.txt", "SBAutoUpdate.exe.config", "SBAutoUpdate.pdb", "StandBy System.pdb", "StandBy System.old.config"
                         };
 
                         Uteis.DeleteTodosExceto(meuDiretorio, arquivosSeremMantidos, true);
 
                         var client = new WebClient();
-                        client.DownloadFile("https://www.dropbox.com/s/nxtk7sztle13th2/UpdateNEW.zip?dl=1"
-                            , ARQUIVO_NOME);
+                        client.DownloadFile(LINK_DOWNLOAD_PRINCIPAL, ARQUIVO_NOME);
 
                         DirectoryInfo diretorioArquivoBaixado = new DirectoryInfo(ARQUIVO_NOME);
                         Thread.Sleep(10);

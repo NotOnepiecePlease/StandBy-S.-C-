@@ -8,25 +8,25 @@ namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_Lucros_Gastos_Exibir_Alterar : Form
     {
-        private form_Lucros formLucros;
+        private form_LucrosV2 formLucros;
         private AlterarDados ad = new AlterarDados();
         private int[] corGeral = { 0, 0, 0 };
 
-        public form_Lucros_Gastos_Exibir_Alterar(form_Lucros _formLucros, int[] corRgb)
+        public form_Lucros_Gastos_Exibir_Alterar(form_LucrosV2 _formLucros, int[] corRgb)
         {
             InitializeComponent();
             formLucros = _formLucros;
-            corGeral = corRgb;
+            corGeral   = corRgb;
             FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtValorGastosEditar);
             MudarCores();
         }
 
         public void MudarCores()
         {
-            panel1.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            panel1.BackColor                        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtProdutoGastosEditar.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtValorGastosEditar.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            btnAlterar.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtValorGastosEditar.FocusedLineColor   = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            btnAlterar.OnHoverBaseColor             = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void gunaAdvenceButton1_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace PFC___StandBy_CSharp.Forms
                 //Tirar o R$ do inicio do valor
                 FormatarCampos.TirarMascara(txtValorGastosEditar);
                 ad.AtualizarGastos(datePicker1.Value, txtProdutoGastosEditar.Text,
-                Convert.ToDecimal(txtValorGastosEditar.Text), Convert.ToInt32(lblID.Text));
+                    Convert.ToDecimal(txtValorGastosEditar.Text), Convert.ToInt32(lblID.Text));
                 formLucros.PreencherTableConformCheck();
                 this.Close();
             }

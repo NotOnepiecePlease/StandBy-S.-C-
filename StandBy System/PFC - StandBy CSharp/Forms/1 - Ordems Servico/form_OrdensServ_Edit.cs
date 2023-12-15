@@ -12,7 +12,7 @@ namespace PFC___StandBy_CSharp.Forms
     {
         private form_OrdensServ formServ1;
         private form_Concluidos formConcl1;
-        private form_Lucros formLucros1;
+        private form_LucrosV2 formLucros1;
         private form_DiaEntrega formDiaEntrega1;
         private AlterarDados ad = new AlterarDados();
         private BuscarDados bd = new BuscarDados();
@@ -28,7 +28,7 @@ namespace PFC___StandBy_CSharp.Forms
         {
             InitializeComponent();
             this.ActiveControl = txtAparelhoEdit;
-            corGeral = _cor;
+            corGeral           = _cor;
             MudarCores();
             CalcularLucro();
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
@@ -37,32 +37,32 @@ namespace PFC___StandBy_CSharp.Forms
         public form_OrdensServ_Edit(form_OrdensServ formServ, int[] _cor)
         {
             InitializeComponent();
-            formServ1 = formServ;
+            formServ1          = formServ;
             this.ActiveControl = txtAparelhoEdit;
-            corGeral = _cor;
+            corGeral           = _cor;
             MudarCores();
             CalcularLucro();
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
         }
 
-        public form_OrdensServ_Edit(form_Lucros formLucros, int[] _cor)
+        public form_OrdensServ_Edit(form_LucrosV2 formLucros, int[] _cor)
         {
             InitializeComponent();
-            formLucros1 = formLucros;
+            formLucros1        = formLucros;
             this.ActiveControl = txtAparelhoEdit;
-            corGeral = _cor;
+            corGeral           = _cor;
             MudarCores();
             CalcularLucro();
-            dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+            dtpDataEditPrevisao.Value  = DateTime.Parse("26/03/2020");
             btnConcluirServico.Visible = false;
         }
 
         public form_OrdensServ_Edit(form_Concluidos formConcluidos, int[] _cor)
         {
             InitializeComponent();
-            formConcl1 = formConcluidos;
+            formConcl1         = formConcluidos;
             this.ActiveControl = txtAparelhoEdit;
-            corGeral = _cor;
+            corGeral           = _cor;
             MudarCores();
             CalcularLucro();
             dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
@@ -71,12 +71,12 @@ namespace PFC___StandBy_CSharp.Forms
         public form_OrdensServ_Edit(form_DiaEntrega formDiaEntrega, int[] _cor)
         {
             InitializeComponent();
-            formDiaEntrega1 = formDiaEntrega;
+            formDiaEntrega1    = formDiaEntrega;
             this.ActiveControl = txtAparelhoEdit;
-            corGeral = _cor;
+            corGeral           = _cor;
             MudarCores();
             CalcularLucro();
-            dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+            dtpDataEditPrevisao.Value       = DateTime.Parse("26/03/2020");
             atualizarOuNaoATabelaDeServicos = true;
         }
 
@@ -93,12 +93,12 @@ namespace PFC___StandBy_CSharp.Forms
             groupBox3.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             groupBox4.ForeColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
-            txtAparelhoEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtDefeitoEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtPecaValorEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtSenhaEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtAparelhoEdit.LineMouseHoverColor     = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtDefeitoEdit.LineMouseHoverColor      = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtPecaValorEdit.LineMouseHoverColor    = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtSenhaEdit.LineMouseHoverColor        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             txtServicoValorEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtServicoEdit.LineMouseHoverColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtServicoEdit.LineMouseHoverColor      = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
 
             panel2.BackColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
@@ -111,37 +111,38 @@ namespace PFC___StandBy_CSharp.Forms
             try
             {
                 valorServico = float.Parse(txtServicoValorEdit.Text);
-                valorPeca = float.Parse(txtPecaValorEdit.Text);
-                lucro = valorServico - valorPeca;
+                valorPeca    = float.Parse(txtPecaValorEdit.Text);
+                lucro        = valorServico - valorPeca;
             }
             catch (Exception)
             {
                 // MessageBox.Show(ex.ToString());
             }
+
             if (lucro > 0)
             {
-                txtLucroValorEdit.ForeColor = Color.LimeGreen;
-                txtLucroValorEdit.LineIdleColor = Color.LimeGreen;
+                txtLucroValorEdit.ForeColor           = Color.LimeGreen;
+                txtLucroValorEdit.LineIdleColor       = Color.LimeGreen;
                 txtLucroValorEdit.LineMouseHoverColor = Color.LimeGreen;
-                txtLucroValorEdit.LineFocusedColor = Color.LimeGreen;
-                txtLucroValorEdit.Font = new Font(this.Font.Name, 14, FontStyle.Bold);
-                txtLucroValorEdit.Text = "R$: " + lucro.ToString();
+                txtLucroValorEdit.LineFocusedColor    = Color.LimeGreen;
+                txtLucroValorEdit.Font                = new Font(this.Font.Name, 14, FontStyle.Bold);
+                txtLucroValorEdit.Text                = "R$: " + lucro.ToString();
             }
             else if (lucro == 0)
             {
-                txtLucroValorEdit.ForeColor = Color.White;
-                txtLucroValorEdit.LineIdleColor = Color.White;
+                txtLucroValorEdit.ForeColor           = Color.White;
+                txtLucroValorEdit.LineIdleColor       = Color.White;
                 txtLucroValorEdit.LineMouseHoverColor = Color.White;
-                txtLucroValorEdit.LineFocusedColor = Color.White;
-                txtLucroValorEdit.Text = "R$: " + lucro.ToString();
+                txtLucroValorEdit.LineFocusedColor    = Color.White;
+                txtLucroValorEdit.Text                = "R$: " + lucro.ToString();
             }
             else if (lucro < 0)
             {
-                txtLucroValorEdit.ForeColor = Color.Red;
-                txtLucroValorEdit.LineIdleColor = Color.Red;
+                txtLucroValorEdit.ForeColor           = Color.Red;
+                txtLucroValorEdit.LineIdleColor       = Color.Red;
                 txtLucroValorEdit.LineMouseHoverColor = Color.Red;
-                txtLucroValorEdit.LineFocusedColor = Color.Red;
-                txtLucroValorEdit.Text = "R$: " + lucro.ToString();
+                txtLucroValorEdit.LineFocusedColor    = Color.Red;
+                txtLucroValorEdit.Text                = "R$: " + lucro.ToString();
             }
         }
 
@@ -191,17 +192,17 @@ namespace PFC___StandBy_CSharp.Forms
         {
             if (chkSemData.Checked == true)
             {
-                dtpDataEditPrevisao.Enabled = false;
-                dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+                dtpDataEditPrevisao.Enabled      = false;
+                dtpDataEditPrevisao.Value        = DateTime.Parse("26/03/2020");
                 dtpDataEditPrevisao.FormatCustom = " ";
-                dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+                dtpDataEditPrevisao.Format       = DateTimePickerFormat.Custom;
             }
             else
             {
-                dtpDataEditPrevisao.Enabled = true;
-                dtpDataEditPrevisao.Value = DateTime.Today;
+                dtpDataEditPrevisao.Enabled      = true;
+                dtpDataEditPrevisao.Value        = DateTime.Today;
                 dtpDataEditPrevisao.FormatCustom = "dd/MM/yyyy";
-                dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+                dtpDataEditPrevisao.Format       = DateTimePickerFormat.Custom;
             }
         }
 
@@ -213,6 +214,7 @@ namespace PFC___StandBy_CSharp.Forms
 
             ad.AlterarServico(Int32.Parse(lblIDservico.Text), dtpDataEdit.Value, txtAparelhoEdit.Text, txtDefeitoEdit.Text, txtSenhaEdit.Text, txtSituacaoEdit.Text,
                 float.Parse(txtServicoValorEdit.Text), float.Parse(txtPecaValorEdit.Text), lucro, txtServicoEdit.Text, _dataPrevisao, txtAcessoriosEdit.Text);
+
             //formServ1.refreshTable();
             this.Close();
         }
@@ -220,6 +222,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void txtServicoValorEdit_KeyUp(object sender, KeyEventArgs e)
         {
             CalcularLucro();
+
             //txtServicoValorEdit.Text = "R$ " + txtServicoValorEdit.Text;
         }
 
@@ -254,6 +257,7 @@ namespace PFC___StandBy_CSharp.Forms
             darGarantia.ShowDialog();
             formServ1.refreshTable();
             this.Close();
+
             //ConcluirServico();
         }
 
@@ -292,6 +296,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 imprimirNota();
             }
+
             //MessageBox.Show(""+cpfCliente.Length);
         }
 
@@ -303,11 +308,11 @@ namespace PFC___StandBy_CSharp.Forms
 
             StringFormat sfcenter = new StringFormat();
             sfcenter.LineAlignment = StringAlignment.Center;
-            sfcenter.Alignment = StringAlignment.Center;
+            sfcenter.Alignment     = StringAlignment.Center;
 
             int x = 220, y = 10; //start position
-            x += 0; //left align texts with logo image
-            y += 30; //some space below logo
+            x += 0;              //left align texts with logo image
+            y += 30;             //some space below logo
 
             var fntregular = new Font("Calibri (Corpo)", 10, FontStyle.Regular);
             var fntbold = new Font("Calibri (Corpo)", 10, FontStyle.Bold);
@@ -373,14 +378,14 @@ namespace PFC___StandBy_CSharp.Forms
         {
             using (form_WordNota imprimirNota = new form_WordNota(this, corGeral))
             {
-                ImprimiuAlgumaNota = 0;
-                imprimirNota.txtCliente.Text = lblClienteNome.Text;
-                imprimirNota.txtServico.Text = txtServicoEdit.Text;
-                imprimirNota.txtModelo.Text = txtAparelhoEdit.Text;
-                imprimirNota.txtValor.Text = txtServicoValorEdit.Text;
+                ImprimiuAlgumaNota             = 0;
+                imprimirNota.txtCliente.Text   = lblClienteNome.Text;
+                imprimirNota.txtServico.Text   = txtServicoEdit.Text;
+                imprimirNota.txtModelo.Text    = txtAparelhoEdit.Text;
+                imprimirNota.txtValor.Text     = txtServicoValorEdit.Text;
                 imprimirNota.lblIDServico.Text = lblIDservico.Text;
                 imprimirNota.lblIDCliente.Text = lblIDcliente.Text;
-                imprimirNota.txtCPF.Text = bd.BuscarCPFCliente(Convert.ToInt32(lblIDcliente.Text));
+                imprimirNota.txtCPF.Text       = bd.BuscarCPFCliente(Convert.ToInt32(lblIDcliente.Text));
                 imprimirNota.ShowDialog();
                 DeletarArquivoWordCliente();
                 if (ImprimiuAlgumaNota == 1)
@@ -413,7 +418,7 @@ namespace PFC___StandBy_CSharp.Forms
         private void dtpDataEditPrevisao_onValueChanged(object sender, EventArgs e)
         {
             dtpDataEditPrevisao.FormatCustom = "dd/MM/yyyy";
-            dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+            dtpDataEditPrevisao.Format       = DateTimePickerFormat.Custom;
             if (dtpDataEditPrevisao.Value != DateTime.Parse("26/03/2020"))
             {
                 chkSemData.Checked = false;
@@ -422,9 +427,9 @@ namespace PFC___StandBy_CSharp.Forms
 
         private void btnSemData_Click(object sender, EventArgs e)
         {
-            dtpDataEditPrevisao.Value = DateTime.Parse("26/03/2020");
+            dtpDataEditPrevisao.Value        = DateTime.Parse("26/03/2020");
             dtpDataEditPrevisao.FormatCustom = " ";
-            dtpDataEditPrevisao.Format = DateTimePickerFormat.Custom;
+            dtpDataEditPrevisao.Format       = DateTimePickerFormat.Custom;
         }
 
         private Image ConvertByteArrayToImage(byte[] data)
@@ -436,6 +441,7 @@ namespace PFC___StandBy_CSharp.Forms
                     return Image.FromStream(ms);
                 }
             }
+
             return null;
         }
 
@@ -446,19 +452,19 @@ namespace PFC___StandBy_CSharp.Forms
                 passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(lblIDservico.Text));
                 if (passShow.pictureBox1.Image == null)
                 {
-                    passShow.lblSemPadrao.Visible = true;
+                    passShow.lblSemPadrao.Visible       = true;
                     passShow.lblDesejaCadastrar.Visible = true;
-                    passShow.btnSim.Visible = true;
-                    passShow.btnNao.Visible = true;
-                    passShow.lblIDServico.Text = lblIDservico.Text;
+                    passShow.btnSim.Visible             = true;
+                    passShow.btnNao.Visible             = true;
+                    passShow.lblIDServico.Text          = lblIDservico.Text;
                 }
                 else
                 {
-                    passShow.lblSemPadrao.Visible = false;
+                    passShow.lblSemPadrao.Visible       = false;
                     passShow.lblDesejaCadastrar.Visible = false;
-                    passShow.btnSim.Visible = false;
-                    passShow.btnNao.Visible = false;
-                    passShow.lblIDServico.Text = lblIDservico.Text;
+                    passShow.btnSim.Visible             = false;
+                    passShow.btnNao.Visible             = false;
+                    passShow.lblIDServico.Text          = lblIDservico.Text;
                 }
 
                 passShow.ShowDialog();
@@ -470,13 +476,13 @@ namespace PFC___StandBy_CSharp.Forms
             using (form_PasswordPatternExibir passShow = new form_PasswordPatternExibir(corGeral))
             {
                 //passShow.pictureBox1.Image = ConvertByteArrayToImage(bd.BuscarImagem(lblIDservico.Text));
-                passShow.lblSemPadrao.Visible = true;
+                passShow.lblSemPadrao.Visible    = true;
                 passShow.lblDesejaCadastrar.Text = @"Deseja Alterar?";
                 passShow.CentralizarLabels(passShow.lblDesejaCadastrar);
                 passShow.lblDesejaCadastrar.Visible = true;
-                passShow.btnSim.Visible = true;
-                passShow.btnNao.Visible = true;
-                passShow.lblIDServico.Text = lblIDservico.Text;
+                passShow.btnSim.Visible             = true;
+                passShow.btnNao.Visible             = true;
+                passShow.lblIDServico.Text          = lblIDservico.Text;
 
                 passShow.ShowDialog();
             }

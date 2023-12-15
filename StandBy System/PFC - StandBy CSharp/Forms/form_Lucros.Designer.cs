@@ -37,16 +37,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation18 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation17 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation20 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation19 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation16 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_Lucros));
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
             this.panelLucros = new Guna.UI.WinForms.GunaPanel();
             this.btnGastosControle = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnLucroUltimos30Dias = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.panelBarH = new Guna.UI.WinForms.GunaPanel();
             this.btnAddGastos = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lblGastos = new Guna.UI.WinForms.GunaLabel();
             this.checkGastos = new Guna.UI.WinForms.GunaGoogleSwitch();
@@ -78,16 +77,11 @@
             this.DataConclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.panelResults = new Guna.UI.WinForms.GunaPanel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.circle4 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.lblDesc4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblGastosValor = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.circle3 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.lblDesc3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblLucro = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.circle1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.lblLucroLiquido = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -102,31 +96,31 @@
             this.animateRealSimbol = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.animateCircle4 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.backWork4 = new System.ComponentModel.BackgroundWorker();
+            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelLucros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaGastos)).BeginInit();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaLucros)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            this.gunaPanel1.SuspendLayout();
-            this.panelResults.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLucros
             // 
             this.panelLucros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.panelLucros.Controls.Add(this.btnGastosControle);
+            this.panelLucros.Controls.Add(this.gunaPanel2);
             this.panelLucros.Controls.Add(this.btnLucroUltimos30Dias);
-            this.panelLucros.Controls.Add(this.panelBarH);
-            this.panelLucros.Controls.Add(this.btnAddGastos);
-            this.panelLucros.Controls.Add(this.lblGastos);
-            this.panelLucros.Controls.Add(this.checkGastos);
             this.panelLucros.Controls.Add(this.tabelaGastos);
             this.panelLucros.Controls.Add(this.lblSemDados);
             this.panelLucros.Controls.Add(this.datepicker2);
             this.panelLucros.Controls.Add(this.datepicker1);
             this.panelLucros.Controls.Add(this.btnExecutarThread);
             this.panelLucros.Controls.Add(this.tabelaLucros);
-            this.panelLucros.Controls.Add(this.gunaPanel1);
+            this.panelLucros.Controls.Add(this.panel1);
             this.animateCircle3.SetDecoration(this.panelLucros, BunifuAnimatorNS.DecorationType.None);
             this.animateRealSimbol.SetDecoration(this.panelLucros, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle1.SetDecoration(this.panelLucros, BunifuAnimatorNS.DecorationType.None);
@@ -135,12 +129,11 @@
             this.panelLucros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLucros.Location = new System.Drawing.Point(0, 0);
             this.panelLucros.Name = "panelLucros";
-            this.panelLucros.Size = new System.Drawing.Size(1081, 665);
+            this.panelLucros.Size = new System.Drawing.Size(1278, 610);
             this.panelLucros.TabIndex = 0;
             // 
             // btnGastosControle
             // 
-            this.btnGastosControle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGastosControle.AnimationHoverSpeed = 0.07F;
             this.btnGastosControle.AnimationSpeed = 0.03F;
             this.btnGastosControle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
@@ -163,7 +156,7 @@
             this.btnGastosControle.Image = null;
             this.btnGastosControle.ImageSize = new System.Drawing.Size(20, 20);
             this.btnGastosControle.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnGastosControle.Location = new System.Drawing.Point(108, 396);
+            this.btnGastosControle.Location = new System.Drawing.Point(132, 337);
             this.btnGastosControle.Name = "btnGastosControle";
             this.btnGastosControle.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnGastosControle.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -201,7 +194,7 @@
             this.btnLucroUltimos30Dias.Image = null;
             this.btnLucroUltimos30Dias.ImageSize = new System.Drawing.Size(20, 20);
             this.btnLucroUltimos30Dias.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnLucroUltimos30Dias.Location = new System.Drawing.Point(872, 456);
+            this.btnLucroUltimos30Dias.Location = new System.Drawing.Point(971, 542);
             this.btnLucroUltimos30Dias.Name = "btnLucroUltimos30Dias";
             this.btnLucroUltimos30Dias.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnLucroUltimos30Dias.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -215,24 +208,8 @@
             this.btnLucroUltimos30Dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLucroUltimos30Dias.Click += new System.EventHandler(this.btnLucroUltimos30Dias_Click);
             // 
-            // panelBarH
-            // 
-            this.panelBarH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelBarH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
-            this.animateCircle3.SetDecoration(this.panelBarH, BunifuAnimatorNS.DecorationType.None);
-            this.animateRealSimbol.SetDecoration(this.panelBarH, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle1.SetDecoration(this.panelBarH, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle2.SetDecoration(this.panelBarH, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle4.SetDecoration(this.panelBarH, BunifuAnimatorNS.DecorationType.None);
-            this.panelBarH.Location = new System.Drawing.Point(0, 436);
-            this.panelBarH.Name = "panelBarH";
-            this.panelBarH.Size = new System.Drawing.Size(1081, 6);
-            this.panelBarH.TabIndex = 28;
-            // 
             // btnAddGastos
             // 
-            this.btnAddGastos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddGastos.AnimationHoverSpeed = 0.07F;
             this.btnAddGastos.AnimationSpeed = 0.03F;
             this.btnAddGastos.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
@@ -255,7 +232,7 @@
             this.btnAddGastos.Image = null;
             this.btnAddGastos.ImageSize = new System.Drawing.Size(20, 20);
             this.btnAddGastos.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAddGastos.Location = new System.Drawing.Point(11, 396);
+            this.btnAddGastos.Location = new System.Drawing.Point(35, 337);
             this.btnAddGastos.Name = "btnAddGastos";
             this.btnAddGastos.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
             this.btnAddGastos.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -271,7 +248,6 @@
             // 
             // lblGastos
             // 
-            this.lblGastos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblGastos.AutoSize = true;
             this.animateCircle3.SetDecoration(this.lblGastos, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle2.SetDecoration(this.lblGastos, BunifuAnimatorNS.DecorationType.None);
@@ -280,7 +256,7 @@
             this.animateCircle4.SetDecoration(this.lblGastos, BunifuAnimatorNS.DecorationType.None);
             this.lblGastos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblGastos.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblGastos.Location = new System.Drawing.Point(50, 374);
+            this.lblGastos.Location = new System.Drawing.Point(73, 315);
             this.lblGastos.Name = "lblGastos";
             this.lblGastos.Size = new System.Drawing.Size(121, 15);
             this.lblGastos.TabIndex = 25;
@@ -288,7 +264,6 @@
             // 
             // checkGastos
             // 
-            this.checkGastos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkGastos.BaseColor = System.Drawing.SystemColors.Control;
             this.checkGastos.CheckedOffColor = System.Drawing.Color.DarkGray;
             this.checkGastos.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
@@ -298,7 +273,7 @@
             this.animateRealSimbol.SetDecoration(this.checkGastos, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle3.SetDecoration(this.checkGastos, BunifuAnimatorNS.DecorationType.None);
             this.checkGastos.FillColor = System.Drawing.Color.White;
-            this.checkGastos.Location = new System.Drawing.Point(11, 372);
+            this.checkGastos.Location = new System.Drawing.Point(34, 313);
             this.checkGastos.Name = "checkGastos";
             this.checkGastos.Size = new System.Drawing.Size(43, 20);
             this.checkGastos.TabIndex = 24;
@@ -312,8 +287,6 @@
             this.tabelaGastos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.tabelaGastos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tabelaGastos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.tabelaGastos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.tabelaGastos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabelaGastos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -364,7 +337,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.tabelaGastos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tabelaGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabelaGastos.Size = new System.Drawing.Size(178, 354);
+            this.tabelaGastos.Size = new System.Drawing.Size(199, 295);
             this.tabelaGastos.TabIndex = 23;
             this.tabelaGastos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaGastos_CellDoubleClick);
             this.tabelaGastos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabelaGastos_MouseDown);
@@ -468,7 +441,7 @@
             this.animateCircle4.SetDecoration(this.lblSemDados, BunifuAnimatorNS.DecorationType.None);
             this.lblSemDados.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSemDados.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblSemDados.Location = new System.Drawing.Point(277, 194);
+            this.lblSemDados.Location = new System.Drawing.Point(413, 174);
             this.lblSemDados.Name = "lblSemDados";
             this.lblSemDados.Size = new System.Drawing.Size(492, 56);
             this.lblSemDados.TabIndex = 22;
@@ -489,7 +462,7 @@
             this.datepicker2.ForeColor = System.Drawing.Color.White;
             this.datepicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datepicker2.FormatCustom = null;
-            this.datepicker2.Location = new System.Drawing.Point(584, 456);
+            this.datepicker2.Location = new System.Drawing.Point(683, 542);
             this.datepicker2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.datepicker2.Name = "datepicker2";
             this.datepicker2.Size = new System.Drawing.Size(191, 42);
@@ -510,7 +483,7 @@
             this.datepicker1.ForeColor = System.Drawing.Color.White;
             this.datepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datepicker1.FormatCustom = null;
-            this.datepicker1.Location = new System.Drawing.Point(275, 456);
+            this.datepicker1.Location = new System.Drawing.Point(374, 542);
             this.datepicker1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.datepicker1.Name = "datepicker1";
             this.datepicker1.Size = new System.Drawing.Size(191, 42);
@@ -544,7 +517,7 @@
             this.btnExecutarThread.ImageOffsetX = 1;
             this.btnExecutarThread.ImageSize = new System.Drawing.Size(40, 40);
             this.btnExecutarThread.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExecutarThread.Location = new System.Drawing.Point(501, 454);
+            this.btnExecutarThread.Location = new System.Drawing.Point(600, 540);
             this.btnExecutarThread.Name = "btnExecutarThread";
             this.btnExecutarThread.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
             this.btnExecutarThread.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -604,7 +577,7 @@
             this.tabelaLucros.EnableHeadersVisualStyles = false;
             this.tabelaLucros.HeaderBgColor = System.Drawing.SystemColors.Control;
             this.tabelaLucros.HeaderForeColor = System.Drawing.Color.Black;
-            this.tabelaLucros.Location = new System.Drawing.Point(196, 12);
+            this.tabelaLucros.Location = new System.Drawing.Point(214, 12);
             this.tabelaLucros.Name = "tabelaLucros";
             this.tabelaLucros.ReadOnly = true;
             this.tabelaLucros.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -623,7 +596,7 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.tabelaLucros.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.tabelaLucros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabelaLucros.Size = new System.Drawing.Size(873, 430);
+            this.tabelaLucros.Size = new System.Drawing.Size(1052, 506);
             this.tabelaLucros.TabIndex = 11;
             this.tabelaLucros.DoubleClick += new System.EventHandler(this.tabelaLucros_DoubleClick);
             // 
@@ -717,80 +690,18 @@
             this.editarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(156, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(80, 26);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(79, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.gunaPanel1.Controls.Add(this.panelResults);
-            this.animateCircle3.SetDecoration(this.gunaPanel1, BunifuAnimatorNS.DecorationType.None);
-            this.animateRealSimbol.SetDecoration(this.gunaPanel1, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle1.SetDecoration(this.gunaPanel1, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle2.SetDecoration(this.gunaPanel1, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle4.SetDecoration(this.gunaPanel1, BunifuAnimatorNS.DecorationType.None);
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 510);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(1081, 155);
-            this.gunaPanel1.TabIndex = 22;
-            // 
-            // panelResults
-            // 
-            this.panelResults.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panelResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(36)))));
-            this.panelResults.Controls.Add(this.bunifuCustomLabel4);
-            this.panelResults.Controls.Add(this.circle4);
-            this.panelResults.Controls.Add(this.lblDesc4);
-            this.panelResults.Controls.Add(this.lblGastosValor);
-            this.panelResults.Controls.Add(this.bunifuCustomLabel3);
-            this.panelResults.Controls.Add(this.circle3);
-            this.panelResults.Controls.Add(this.lblDesc3);
-            this.panelResults.Controls.Add(this.bunifuCustomLabel1);
-            this.panelResults.Controls.Add(this.lblLucro);
-            this.panelResults.Controls.Add(this.circle1);
-            this.panelResults.Controls.Add(this.lblLucroLiquido);
-            this.panelResults.Controls.Add(this.lblDesc1);
-            this.animateCircle3.SetDecoration(this.panelResults, BunifuAnimatorNS.DecorationType.None);
-            this.animateRealSimbol.SetDecoration(this.panelResults, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle1.SetDecoration(this.panelResults, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle2.SetDecoration(this.panelResults, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle4.SetDecoration(this.panelResults, BunifuAnimatorNS.DecorationType.None);
-            this.panelResults.Location = new System.Drawing.Point(0, 0);
-            this.panelResults.Name = "panelResults";
-            this.panelResults.Size = new System.Drawing.Size(1081, 155);
-            this.panelResults.TabIndex = 19;
-            this.panelResults.Visible = false;
-            this.panelResults.Paint += new System.Windows.Forms.PaintEventHandler(this.panelResults_Paint);
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.animateCircle3.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle2.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle1.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
-            this.animateRealSimbol.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle4.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(283, 32);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(35, 24);
-            this.bunifuCustomLabel4.TabIndex = 25;
-            this.bunifuCustomLabel4.Text = "R$";
-            this.bunifuCustomLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // circle4
             // 
-            this.circle4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.circle4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.circle4.animated = false;
             this.circle4.animationIterval = 5;
             this.circle4.animationSpeed = 1;
@@ -806,20 +717,19 @@
             this.circle4.LabelVisible = false;
             this.circle4.LineProgressThickness = 5;
             this.circle4.LineThickness = 3;
-            this.circle4.Location = new System.Drawing.Point(258, 0);
+            this.circle4.Location = new System.Drawing.Point(145, 8);
             this.circle4.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.circle4.MaxValue = 100;
             this.circle4.Name = "circle4";
             this.circle4.ProgressBackColor = System.Drawing.Color.Gainsboro;
             this.circle4.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.circle4.Size = new System.Drawing.Size(84, 84);
+            this.circle4.Size = new System.Drawing.Size(44, 44);
             this.circle4.TabIndex = 24;
             this.circle4.Value = 0;
             this.circle4.Visible = false;
             // 
             // lblDesc4
             // 
-            this.lblDesc4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblDesc4.AutoSize = true;
             this.animateCircle3.SetDecoration(this.lblDesc4, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle2.SetDecoration(this.lblDesc4, BunifuAnimatorNS.DecorationType.None);
@@ -828,52 +738,38 @@
             this.animateCircle4.SetDecoration(this.lblDesc4, BunifuAnimatorNS.DecorationType.None);
             this.lblDesc4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lblDesc4.ForeColor = System.Drawing.Color.Silver;
-            this.lblDesc4.Location = new System.Drawing.Point(260, 110);
+            this.lblDesc4.Location = new System.Drawing.Point(3, 134);
             this.lblDesc4.Name = "lblDesc4";
-            this.lblDesc4.Size = new System.Drawing.Size(81, 15);
+            this.lblDesc4.Size = new System.Drawing.Size(84, 15);
             this.lblDesc4.TabIndex = 23;
-            this.lblDesc4.Text = "Gastos Totais";
+            this.lblDesc4.Text = "Gastos Totais:";
+            this.lblDesc4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDesc4.Visible = false;
             // 
             // lblGastosValor
             // 
-            this.lblGastosValor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblGastosValor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGastosValor.AutoSize = true;
             this.animateCircle3.SetDecoration(this.lblGastosValor, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle2.SetDecoration(this.lblGastosValor, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle1.SetDecoration(this.lblGastosValor, BunifuAnimatorNS.DecorationType.None);
             this.animateRealSimbol.SetDecoration(this.lblGastosValor, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle4.SetDecoration(this.lblGastosValor, BunifuAnimatorNS.DecorationType.None);
-            this.lblGastosValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGastosValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGastosValor.ForeColor = System.Drawing.Color.Silver;
-            this.lblGastosValor.Location = new System.Drawing.Point(254, 86);
+            this.lblGastosValor.Location = new System.Drawing.Point(85, 135);
             this.lblGastosValor.Name = "lblGastosValor";
-            this.lblGastosValor.Size = new System.Drawing.Size(93, 24);
+            this.lblGastosValor.Size = new System.Drawing.Size(101, 16);
             this.lblGastosValor.TabIndex = 22;
-            this.lblGastosValor.Text = "00000.00";
+            this.lblGastosValor.Text = "Carregando...";
+            this.lblGastosValor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblGastosValor.Visible = false;
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.animateCircle3.SetDecoration(this.bunifuCustomLabel3, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle2.SetDecoration(this.bunifuCustomLabel3, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle1.SetDecoration(this.bunifuCustomLabel3, BunifuAnimatorNS.DecorationType.None);
-            this.animateRealSimbol.SetDecoration(this.bunifuCustomLabel3, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle4.SetDecoration(this.bunifuCustomLabel3, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(508, 32);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(35, 24);
-            this.bunifuCustomLabel3.TabIndex = 21;
-            this.bunifuCustomLabel3.Text = "R$";
-            this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // circle3
             // 
-            this.circle3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.circle3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.circle3.animated = false;
             this.circle3.animationIterval = 5;
             this.circle3.animationSpeed = 1;
@@ -889,20 +785,19 @@
             this.circle3.LabelVisible = false;
             this.circle3.LineProgressThickness = 5;
             this.circle3.LineThickness = 3;
-            this.circle3.Location = new System.Drawing.Point(483, 0);
+            this.circle3.Location = new System.Drawing.Point(81, 8);
             this.circle3.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.circle3.MaxValue = 100;
             this.circle3.Name = "circle3";
             this.circle3.ProgressBackColor = System.Drawing.Color.Gainsboro;
             this.circle3.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.circle3.Size = new System.Drawing.Size(84, 84);
+            this.circle3.Size = new System.Drawing.Size(44, 44);
             this.circle3.TabIndex = 18;
             this.circle3.Value = 0;
             this.circle3.Visible = false;
             // 
             // lblDesc3
             // 
-            this.lblDesc3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblDesc3.AutoSize = true;
             this.animateCircle3.SetDecoration(this.lblDesc3, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle2.SetDecoration(this.lblDesc3, BunifuAnimatorNS.DecorationType.None);
@@ -911,52 +806,36 @@
             this.animateCircle4.SetDecoration(this.lblDesc3, BunifuAnimatorNS.DecorationType.None);
             this.lblDesc3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lblDesc3.ForeColor = System.Drawing.Color.Silver;
-            this.lblDesc3.Location = new System.Drawing.Point(490, 110);
+            this.lblDesc3.Location = new System.Drawing.Point(3, 108);
             this.lblDesc3.Name = "lblDesc3";
-            this.lblDesc3.Size = new System.Drawing.Size(70, 15);
+            this.lblDesc3.Size = new System.Drawing.Size(73, 15);
             this.lblDesc3.TabIndex = 10;
-            this.lblDesc3.Text = "Lucro Bruto";
+            this.lblDesc3.Text = "Lucro Bruto:";
             this.lblDesc3.Visible = false;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.animateCircle3.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle2.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle1.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.animateRealSimbol.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.animateCircle4.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Silver;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(733, 32);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(35, 24);
-            this.bunifuCustomLabel1.TabIndex = 19;
-            this.bunifuCustomLabel1.Text = "R$";
-            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLucro
             // 
-            this.lblLucro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblLucro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLucro.AutoSize = true;
             this.animateCircle3.SetDecoration(this.lblLucro, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle2.SetDecoration(this.lblLucro, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle1.SetDecoration(this.lblLucro, BunifuAnimatorNS.DecorationType.None);
             this.animateRealSimbol.SetDecoration(this.lblLucro, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle4.SetDecoration(this.lblLucro, BunifuAnimatorNS.DecorationType.None);
-            this.lblLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLucro.ForeColor = System.Drawing.Color.Silver;
-            this.lblLucro.Location = new System.Drawing.Point(456, 86);
+            this.lblLucro.Location = new System.Drawing.Point(85, 109);
             this.lblLucro.Name = "lblLucro";
-            this.lblLucro.Size = new System.Drawing.Size(138, 24);
+            this.lblLucro.Size = new System.Drawing.Size(101, 16);
             this.lblLucro.TabIndex = 7;
             this.lblLucro.Text = "Carregando...";
             this.lblLucro.Visible = false;
             // 
             // circle1
             // 
-            this.circle1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.circle1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.circle1.animated = false;
             this.circle1.animationIterval = 5;
             this.circle1.animationSpeed = 1;
@@ -972,39 +851,41 @@
             this.circle1.LabelVisible = false;
             this.circle1.LineProgressThickness = 5;
             this.circle1.LineThickness = 3;
-            this.circle1.Location = new System.Drawing.Point(708, 0);
+            this.circle1.Location = new System.Drawing.Point(17, 8);
             this.circle1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.circle1.MaxValue = 100;
             this.circle1.Name = "circle1";
             this.circle1.ProgressBackColor = System.Drawing.Color.Gainsboro;
             this.circle1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.circle1.Size = new System.Drawing.Size(84, 84);
+            this.circle1.Size = new System.Drawing.Size(44, 44);
             this.circle1.TabIndex = 4;
             this.circle1.Value = 0;
             this.circle1.Visible = false;
             // 
             // lblLucroLiquido
             // 
-            this.lblLucroLiquido.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblLucroLiquido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLucroLiquido.AutoSize = true;
             this.animateCircle3.SetDecoration(this.lblLucroLiquido, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle2.SetDecoration(this.lblLucroLiquido, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle1.SetDecoration(this.lblLucroLiquido, BunifuAnimatorNS.DecorationType.None);
             this.animateRealSimbol.SetDecoration(this.lblLucroLiquido, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle4.SetDecoration(this.lblLucroLiquido, BunifuAnimatorNS.DecorationType.None);
-            this.lblLucroLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLucroLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLucroLiquido.ForeColor = System.Drawing.Color.Silver;
-            this.lblLucroLiquido.Location = new System.Drawing.Point(704, 86);
+            this.lblLucroLiquido.Location = new System.Drawing.Point(85, 80);
             this.lblLucroLiquido.Name = "lblLucroLiquido";
-            this.lblLucroLiquido.Size = new System.Drawing.Size(93, 24);
+            this.lblLucroLiquido.Size = new System.Drawing.Size(101, 16);
             this.lblLucroLiquido.TabIndex = 5;
-            this.lblLucroLiquido.Text = "00000.00";
+            this.lblLucroLiquido.Text = "Carregando...";
             this.lblLucroLiquido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblLucroLiquido.Visible = false;
+            this.lblLucroLiquido.TextChanged += new System.EventHandler(this.lblLucroLiquido_TextChanged);
             // 
             // lblDesc1
             // 
-            this.lblDesc1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblDesc1.AutoSize = true;
             this.animateCircle3.SetDecoration(this.lblDesc1, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle2.SetDecoration(this.lblDesc1, BunifuAnimatorNS.DecorationType.None);
@@ -1013,75 +894,76 @@
             this.animateCircle4.SetDecoration(this.lblDesc1, BunifuAnimatorNS.DecorationType.None);
             this.lblDesc1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesc1.ForeColor = System.Drawing.Color.Silver;
-            this.lblDesc1.Location = new System.Drawing.Point(709, 110);
+            this.lblDesc1.Location = new System.Drawing.Point(3, 79);
             this.lblDesc1.Name = "lblDesc1";
-            this.lblDesc1.Size = new System.Drawing.Size(82, 15);
+            this.lblDesc1.Size = new System.Drawing.Size(85, 15);
             this.lblDesc1.TabIndex = 9;
-            this.lblDesc1.Text = "Lucro Liquido";
+            this.lblDesc1.Text = "Lucro Liquido:";
             this.lblDesc1.Visible = false;
+            this.lblDesc1.Click += new System.EventHandler(this.lblDesc1_Click);
             // 
             // animateCircle1
             // 
             this.animateCircle1.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.animateCircle1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 1F;
-            this.animateCircle1.DefaultAnimation = animation2;
+            animation18.AnimateOnlyDifferences = true;
+            animation18.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation18.BlindCoeff")));
+            animation18.LeafCoeff = 0F;
+            animation18.MaxTime = 1F;
+            animation18.MinTime = 0F;
+            animation18.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation18.MosaicCoeff")));
+            animation18.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation18.MosaicShift")));
+            animation18.MosaicSize = 0;
+            animation18.Padding = new System.Windows.Forms.Padding(0);
+            animation18.RotateCoeff = 0F;
+            animation18.RotateLimit = 0F;
+            animation18.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation18.ScaleCoeff")));
+            animation18.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation18.SlideCoeff")));
+            animation18.TimeCoeff = 0F;
+            animation18.TransparencyCoeff = 1F;
+            this.animateCircle1.DefaultAnimation = animation18;
             // 
             // animateCircle2
             // 
             this.animateCircle2.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.animateCircle2.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 1F;
-            this.animateCircle2.DefaultAnimation = animation1;
+            animation17.AnimateOnlyDifferences = true;
+            animation17.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.BlindCoeff")));
+            animation17.LeafCoeff = 0F;
+            animation17.MaxTime = 1F;
+            animation17.MinTime = 0F;
+            animation17.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.MosaicCoeff")));
+            animation17.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation17.MosaicShift")));
+            animation17.MosaicSize = 0;
+            animation17.Padding = new System.Windows.Forms.Padding(0);
+            animation17.RotateCoeff = 0F;
+            animation17.RotateLimit = 0F;
+            animation17.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.ScaleCoeff")));
+            animation17.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.SlideCoeff")));
+            animation17.TimeCoeff = 0F;
+            animation17.TransparencyCoeff = 1F;
+            this.animateCircle2.DefaultAnimation = animation17;
             // 
             // animateCircle3
             // 
             this.animateCircle3.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.animateCircle3.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 1F;
-            this.animateCircle3.DefaultAnimation = animation4;
+            animation20.AnimateOnlyDifferences = true;
+            animation20.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation20.BlindCoeff")));
+            animation20.LeafCoeff = 0F;
+            animation20.MaxTime = 1F;
+            animation20.MinTime = 0F;
+            animation20.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation20.MosaicCoeff")));
+            animation20.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation20.MosaicShift")));
+            animation20.MosaicSize = 0;
+            animation20.Padding = new System.Windows.Forms.Padding(0);
+            animation20.RotateCoeff = 0F;
+            animation20.RotateLimit = 0F;
+            animation20.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation20.ScaleCoeff")));
+            animation20.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation20.SlideCoeff")));
+            animation20.TimeCoeff = 0F;
+            animation20.TransparencyCoeff = 1F;
+            this.animateCircle3.DefaultAnimation = animation20;
             // 
             // backWork1
             // 
@@ -1103,49 +985,48 @@
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 0;
-            this.bunifuElipse1.TargetControl = this.panelResults;
             // 
             // animateRealSimbol
             // 
             this.animateRealSimbol.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.animateRealSimbol.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 1F;
-            this.animateRealSimbol.DefaultAnimation = animation3;
+            animation19.AnimateOnlyDifferences = true;
+            animation19.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation19.BlindCoeff")));
+            animation19.LeafCoeff = 0F;
+            animation19.MaxTime = 1F;
+            animation19.MinTime = 0F;
+            animation19.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation19.MosaicCoeff")));
+            animation19.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation19.MosaicShift")));
+            animation19.MosaicSize = 0;
+            animation19.Padding = new System.Windows.Forms.Padding(0);
+            animation19.RotateCoeff = 0F;
+            animation19.RotateLimit = 0F;
+            animation19.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation19.ScaleCoeff")));
+            animation19.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation19.SlideCoeff")));
+            animation19.TimeCoeff = 0F;
+            animation19.TransparencyCoeff = 1F;
+            this.animateRealSimbol.DefaultAnimation = animation19;
             // 
             // animateCircle4
             // 
             this.animateCircle4.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
             this.animateCircle4.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(0);
-            animation5.RotateCoeff = 0F;
-            animation5.RotateLimit = 0F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 1F;
-            this.animateCircle4.DefaultAnimation = animation5;
+            animation16.AnimateOnlyDifferences = true;
+            animation16.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation16.BlindCoeff")));
+            animation16.LeafCoeff = 0F;
+            animation16.MaxTime = 1F;
+            animation16.MinTime = 0F;
+            animation16.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation16.MosaicCoeff")));
+            animation16.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation16.MosaicShift")));
+            animation16.MosaicSize = 0;
+            animation16.Padding = new System.Windows.Forms.Padding(0);
+            animation16.RotateCoeff = 0F;
+            animation16.RotateLimit = 0F;
+            animation16.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation16.ScaleCoeff")));
+            animation16.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation16.SlideCoeff")));
+            animation16.TimeCoeff = 0F;
+            animation16.TransparencyCoeff = 1F;
+            this.animateCircle4.DefaultAnimation = animation16;
             // 
             // backWork4
             // 
@@ -1153,11 +1034,69 @@
             this.backWork4.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backWork4_DoWork);
             this.backWork4.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backWork4_RunWorkerCompleted);
             // 
+            // gunaPanel2
+            // 
+            this.gunaPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(103)))));
+            this.animateCircle3.SetDecoration(this.gunaPanel2, BunifuAnimatorNS.DecorationType.None);
+            this.animateRealSimbol.SetDecoration(this.gunaPanel2, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle1.SetDecoration(this.gunaPanel2, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle2.SetDecoration(this.gunaPanel2, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle4.SetDecoration(this.gunaPanel2, BunifuAnimatorNS.DecorationType.None);
+            this.gunaPanel2.Location = new System.Drawing.Point(214, 519);
+            this.gunaPanel2.Name = "gunaPanel2";
+            this.gunaPanel2.Size = new System.Drawing.Size(1052, 6);
+            this.gunaPanel2.TabIndex = 31;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.panel1.Controls.Add(this.panelControl1);
+            this.panel1.Controls.Add(this.btnGastosControle);
+            this.panel1.Controls.Add(this.btnAddGastos);
+            this.panel1.Controls.Add(this.checkGastos);
+            this.panel1.Controls.Add(this.lblGastos);
+            this.animateCircle3.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.animateRealSimbol.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle2.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle4.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1278, 610);
+            this.panel1.TabIndex = 32;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelControl1.Controls.Add(this.circle1);
+            this.panelControl1.Controls.Add(this.lblGastosValor);
+            this.panelControl1.Controls.Add(this.lblDesc3);
+            this.panelControl1.Controls.Add(this.circle4);
+            this.panelControl1.Controls.Add(this.lblDesc4);
+            this.panelControl1.Controls.Add(this.circle3);
+            this.panelControl1.Controls.Add(this.lblLucroLiquido);
+            this.panelControl1.Controls.Add(this.lblDesc1);
+            this.panelControl1.Controls.Add(this.lblLucro);
+            this.animateCircle3.SetDecoration(this.panelControl1, BunifuAnimatorNS.DecorationType.None);
+            this.animateRealSimbol.SetDecoration(this.panelControl1, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle1.SetDecoration(this.panelControl1, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle2.SetDecoration(this.panelControl1, BunifuAnimatorNS.DecorationType.None);
+            this.animateCircle4.SetDecoration(this.panelControl1, BunifuAnimatorNS.DecorationType.None);
+            this.panelControl1.Location = new System.Drawing.Point(11, 377);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(197, 221);
+            this.panelControl1.TabIndex = 23;
+            // 
             // form_Lucros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 665);
+            this.ClientSize = new System.Drawing.Size(1278, 610);
             this.Controls.Add(this.panelLucros);
             this.animateCircle3.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.animateCircle2.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -1167,6 +1106,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "form_Lucros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_Lucros";
             this.panelLucros.ResumeLayout(false);
             this.panelLucros.PerformLayout();
@@ -1174,9 +1114,11 @@
             this.menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabelaLucros)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.gunaPanel1.ResumeLayout(false);
-            this.panelResults.ResumeLayout(false);
-            this.panelResults.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1198,11 +1140,8 @@
         private System.ComponentModel.BackgroundWorker backWork2;
         private System.ComponentModel.BackgroundWorker backWork3;
         private Bunifu.Framework.UI.BunifuCircleProgressbar circle3;
-        private Guna.UI.WinForms.GunaPanel panelResults;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         public BunifuAnimatorNS.BunifuTransition animateRealSimbol;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuDatepicker datepicker1;
         private Bunifu.Framework.UI.BunifuDatepicker datepicker2;
         private Bunifu.Framework.UI.BunifuCustomLabel lblSemDados;
@@ -1210,14 +1149,11 @@
         private Guna.UI.WinForms.GunaLabel lblGastos;
         private Guna.UI.WinForms.GunaGoogleSwitch checkGastos;
         private Guna.UI.WinForms.GunaAdvenceButton btnAddGastos;
-        private Guna.UI.WinForms.GunaPanel gunaPanel1;
-        private Guna.UI.WinForms.GunaPanel panelBarH;
         private System.Windows.Forms.ContextMenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem tornarTemporarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tornarRealToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
         private BunifuAnimatorNS.BunifuTransition animateCircle4;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuCircleProgressbar circle4;
         private Bunifu.Framework.UI.BunifuCustomLabel lblDesc4;
         private Bunifu.Framework.UI.BunifuCustomLabel lblGastosValor;
@@ -1242,5 +1178,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sv_lucro;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataConclusao;
         private Guna.UI.WinForms.GunaAdvenceButton btnGastosControle;
+        private Guna.UI.WinForms.GunaPanel gunaPanel2;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }

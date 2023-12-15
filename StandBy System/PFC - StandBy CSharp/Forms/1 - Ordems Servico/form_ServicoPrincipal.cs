@@ -25,6 +25,7 @@ using NLog;
 namespace PFC___StandBy_CSharp.Forms
 {
     public partial class form_ServicoPrincipal : Form
+    //public partial class form_ServicoPrincipal : Form
     {
         //rowHandle e column servem pra mostrar o popup menu no grid servicos
         private int rowHandle;

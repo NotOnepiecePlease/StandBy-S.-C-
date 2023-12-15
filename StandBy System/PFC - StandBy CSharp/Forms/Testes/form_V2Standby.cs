@@ -21,6 +21,10 @@ using Microsoft.Win32;
 using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.Utils.Svg;
+using System.Net.Sockets;
+using System.Net;
+using DevExpress.XtraEditors;
+using PFC___StandBy_CSharp.Forms.UserControl;
 
 namespace PFC___StandBy_CSharp.Forms.Testes
 {
@@ -28,11 +32,13 @@ namespace PFC___StandBy_CSharp.Forms.Testes
     {
         private readonly BackupDados bd = new BackupDados();
         private Form currentChildForm;
+        private XtraUserControl currentChildForm2;
         private NLog.Logger logger = LogManager.GetCurrentClassLogger();
         private Verificar verificarUpd = new Verificar();
         private string statusAtualizacao = "";
         private const string PASTA_RAIZ = @"./PasswordPattern";
-
+        private form_ServicoPrincipal form_Principal = new form_ServicoPrincipal();
+        private ucTelaPrincipal ucPrincipal = new ucTelaPrincipal();
         public form_V2Standby()
         {
             InitializeComponent();
@@ -53,8 +59,33 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             thread.Start();
 
             //InicializarMenuAreaTrabalho();
+            CriarPastaConfig();
+
+
+            ucPrincipal.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(ucPrincipal);
+            panelControl1.Tag = ucPrincipal;
+            ucPrincipal.Hide();
+
+
+            //form_Principal.TopLevel = false;
+            //form_Principal.FormBorderStyle = FormBorderStyle.None;
+            //form_Principal.Dock = DockStyle.Fill;
+            //form_Principal.Dock = DockStyle.Fill;
+            //panelControl1.Controls.Add(form_Principal);
+            //panelControl1.Tag = form_Principal;
+
+            //this.Size = new Size(1500, 774);
+            //ucPrincipal.BringToFront();
         }
 
+        private void CriarPastaConfig()
+        {
+            if (!Directory.Exists("C:\\StandBy_Config"))
+            {
+                Directory.CreateDirectory("C:\\StandBy_Config");
+            }
+        }
         private void InicializarSkinStandbyDevexpress()
         {
             UserLookAndFeel.Default.SetSkinStyle(SkinStyle.WXI);
@@ -174,6 +205,38 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             }
         }
 
+        private void btnTelaClientesMenu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (Application.OpenForms.OfType<form_CadastroClientes>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i].Name == "form_CadastroClientes")
+                    {
+                        Application.OpenForms[i].Close();
+                        OpenChildForm(new form_CadastroClientes(new int[] { 255, 0, 103 }));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                OpenChildForm(new form_CadastroClientes(new int[] { 255, 0, 103 }));
+
+                if (ucPrincipal != null)
+                {
+                    ucPrincipal.Dispose();
+                    ucPrincipal = new ucTelaPrincipal();
+                    ucPrincipal.Dock = DockStyle.Fill;
+                    panelControl1.Controls.Add(ucPrincipal);
+                    panelControl1.Tag = ucPrincipal;
+                    ucPrincipal.Hide();
+                }
+                
+            }
+        }
+
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (Application.OpenForms.OfType<form_ServicoPrincipal>().Count() > 0)
@@ -190,7 +253,8 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             }
             else
             {
-                OpenChildForm(new form_ServicoPrincipal());
+                OpenChildForm2(ucPrincipal);
+                //OpenChildForm(new form_ServicoPrincipal());
             }
         }
 
@@ -221,11 +285,48 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             //lblAbaAtual.Text = formFilho.Text;
         }
 
+        private void OpenChildForm2(XtraUserControl formFilho)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+                currentChildForm.Dispose();
+            }
+
+            currentChildForm2 = formFilho;
+
+            //End
+            //formFilho.TopLevel = false;
+            //formFilho.FormBorderStyle = FormBorderStyle.None;
+            formFilho.Dock = DockStyle.Fill;
+            panelControl1.Controls.Add(formFilho);
+            panelControl1.Tag = formFilho;
+
+            //this.Size = new Size(1500, 774);
+            formFilho.BringToFront();
+
+            //formPrincipal.Hide(); //Form principal é carregado diferente dos outros
+            formFilho.Show();
+
+            //lblAbaAtual.Text = formFilho.Text;
+        }
+
         private void btnInicio_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (currentChildForm != null)
             {
                 currentChildForm.Close();
+            }
+
+            if (ucPrincipal != null)
+            {
+                ucPrincipal.Dispose();
+                ucPrincipal = new ucTelaPrincipal();
+                ucPrincipal.Dock = DockStyle.Fill;
+                panelControl1.Controls.Add(ucPrincipal);
+                panelControl1.Tag = ucPrincipal;
+                ucPrincipal.Hide();
             }
         }
 
@@ -312,17 +413,21 @@ namespace PFC___StandBy_CSharp.Forms.Testes
                 //MessageBox.Show("O Form2 já está aberto!");
                 for (int i = 0; i < Application.OpenForms.Count; i++)
                 {
-                    if (Application.OpenForms[i].Name == "form_Lucros")
+                    if (Application.OpenForms[i].Name == "form_LucrosV2")
                     {
                         Application.OpenForms[i].Close();
-                        OpenChildForm(new form_Lucros(new int[] { 255, 0, 103 }));
+
+                        //OpenChildForm(new form_Lucros(new int[] { 255, 0, 103 }));
+                        OpenChildForm(new form_LucrosV2());
                         break;
                     }
                 }
             }
             else
             {
-                OpenChildForm(new form_Lucros(new int[] { 255, 0, 103 }));
+                OpenChildForm(new form_LucrosV2());
+
+                //OpenChildForm(new form_Lucros(new int[] { 255, 0, 103 }));
             }
         }
 
@@ -396,6 +501,18 @@ namespace PFC___StandBy_CSharp.Forms.Testes
         {
             bd.CriarDiretorioEscreverConfigs();
             criarPastaDasSenhas();
+            lblIP.Caption = PegarIp();
+        }
+
+        private string PegarIp()
+        {
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            {
+                socket.Connect("8.8.8.8", 65530);
+                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                string localIP = endPoint.Address.ToString();
+                return localIP;
+            }
         }
 
         private void criarPastaDasSenhas()
@@ -407,6 +524,29 @@ namespace PFC___StandBy_CSharp.Forms.Testes
             else
             {
                 Directory.CreateDirectory(PASTA_RAIZ);
+            }
+        }
+
+        
+
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (Application.OpenForms.OfType<form_Concluidos>().Count() > 0)
+            {
+                //MessageBox.Show("O Form2 já está aberto!");
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i].Name == "form_Concluidos")
+                    {
+                        Application.OpenForms[i].Close();
+                        OpenChildForm(new form_Concluidos(new int[] { 255, 0, 103 }));
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                OpenChildForm(new form_Concluidos(new int[] { 255, 0, 103 }));
             }
         }
     }

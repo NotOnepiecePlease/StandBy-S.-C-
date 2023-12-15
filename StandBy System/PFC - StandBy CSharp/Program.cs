@@ -33,8 +33,9 @@ namespace PFC___StandBy_CSharp
 
             //Application.Run(new form_StandBy());
 
-            //Application.Run(new form_V2Standby());
-            Application.Run(new form_BancoDados());
+            Application.Run(new form_V2Standby());
+
+            //Application.Run(new form_BancoDados());
         }
     }
 }

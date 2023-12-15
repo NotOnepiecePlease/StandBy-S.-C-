@@ -75,7 +75,7 @@ namespace PFC___StandBy_CSharp.Forms
             string tipoAparelho = System.Enum.GetName(typeof(Aparelho), (int)tipoAparelhoGlobal);
             btnTipoAparelho.ImageOptions.SvgImage = svgCollection[tipoAparelho];
 
-            //InicializarOpcaoPadraoChecklist();
+            InicializarOpcaoPadraoChecklist();
         }
 
         private void InicializarOpcaoPadraoChecklist()

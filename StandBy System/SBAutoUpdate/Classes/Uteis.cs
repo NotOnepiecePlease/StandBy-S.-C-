@@ -14,14 +14,42 @@ namespace SBAutoUpdate.Classes
         {
             try
             {
-                var diretorioDoExecutavel = new DirectoryInfo(meuDiretorio);
 
+                var diretorioDoExecutavel = new DirectoryInfo(meuDiretorio);
+                var teste = diretorioDoExecutavel.GetFiles().Where(n => !arquivosParaManter.Contains(n.Name));
                 //Delete files excluding the list of file names
-                foreach (FileInfo arquivo in diretorioDoExecutavel.GetFiles()
-                             .Where(n => !arquivosParaManter.Contains(n.Name)))
+                foreach (FileInfo arquivo in teste)
                 {
-                    if (!arquivo.Name.Contains("SNI") && !arquivo.Name.Contains(".config"))
-                        arquivo.Delete();
+                    //if (arquivo.Name.Contains("NLog.xml"))
+                    //{
+                    //    var a = 1;
+                    //}
+
+                    //if (arquivo.Name.Contains("StandBy System"))
+                    //{
+                    //    var b = 2;
+                    //}
+
+                    if (arquivo.Name == "StandBy System.exe")
+                    {
+                        // Renomear o arquivo ao adicionar um sufixo, por exemplo, "_backup"
+                        string novoNome = arquivo.Name.Replace("StandBy System.exe", "StandBy System.old");
+                        string novoCaminho = Path.Combine(arquivo.DirectoryName, novoNome);
+                        if (File.Exists(novoCaminho))
+                        {
+                            File.Delete(novoCaminho);
+                        }
+                        File.Move(arquivo.FullName, novoCaminho);
+                    }
+                    else
+                    {
+                        if (!arquivo.Name.Contains("SNI") && !arquivo.Name.Contains(".config") && !arquivo.Name.Contains(".old"))
+                        {
+                            File.SetAttributes(arquivo.FullName, FileAttributes.Normal);
+                            arquivo.Delete();
+
+                        }
+                    }
                 }
 
                 //Loop sub directories if recursive == true
@@ -35,7 +63,7 @@ namespace SBAutoUpdate.Classes
             }
             catch (Exception e)
             {
-                // MessageBox.Show("Erro ao deletar arquivos: \n\n" + e);
+                MessageBox.Show("Erro ao deletar arquivos: \n\n" + e);
             }
         }
 

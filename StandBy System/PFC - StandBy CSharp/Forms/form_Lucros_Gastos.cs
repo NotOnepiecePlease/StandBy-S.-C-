@@ -9,30 +9,42 @@ namespace PFC___StandBy_CSharp.Forms
     public partial class form_Lucros_Gastos : Form
     {
         //Objetos
-        private form_Lucros formLucros;
+        private form_LucrosV2 formLucros;
+
+        //private form_Lucros formLucros;
 
         private readonly InserirDados ins_Dados = new InserirDados();
 
         //Formatar format_campos = new Formatar();
         private int[] corGeral = { 0, 0, 0 };
 
-        public form_Lucros_Gastos(form_Lucros _formLucros, int[] corRgb)
+        //public form_Lucros_Gastos(form_Lucros _formLucros, int[] corRgb)
+        //{
+        //    InitializeComponent();
+        //    corGeral = corRgb;
+        //    MudarCores();
+        //    FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtValor);
+        //    formLucros            = _formLucros;
+        //    radioGastoTemp.Checked = true;
+        //}
+
+        public form_Lucros_Gastos(form_LucrosV2 _formLucros, int[] corRgb)
         {
             InitializeComponent();
             corGeral = corRgb;
             MudarCores();
             FormatarCampos.AplicarApenasNumeroVirgulaEMoeda(txtValor);
-            formLucros = _formLucros;
+            formLucros             = _formLucros;
             radioGastoTemp.Checked = true;
         }
 
         public void MudarCores()
         {
-            radioGastoReal.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            radioGastoTemp.CheckedOnColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            radioGastoReal.CheckedOnColor    = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            radioGastoTemp.CheckedOnColor    = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
             btnInserirGasto.OnHoverBaseColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtProduto.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
-            txtValor.FocusedLineColor = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtProduto.FocusedLineColor      = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
+            txtValor.FocusedLineColor        = Color.FromArgb(corGeral[0], corGeral[1], corGeral[2]);
         }
 
         private void form_Lucros_Gastos_KeyDown(object sender, KeyEventArgs e)
@@ -59,6 +71,7 @@ namespace PFC___StandBy_CSharp.Forms
                 {
                     FormatarCampos.TirarMascara(txtValor);
                     ins_Dados.InserirGasto(dataAtual, txtProduto.Text, Convert.ToDecimal(txtValor.Text), 1);
+
                     //MessageBox.Show(@"Sucesso!, Pressione ESC para sair!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MessageBox.Show(@"Sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     formLucros.PreencherTableConformCheck();
@@ -68,6 +81,7 @@ namespace PFC___StandBy_CSharp.Forms
             {
                 MessageBox.Show("Erro: " + ex);
             }
+
             this.Close();
         }
 

@@ -19,7 +19,11 @@ namespace PFC___StandBy_CSharp.Dados
             "PORT= 1433",
             "USER= sa",
             "PASS= 123adr",
-            "TYPE= 0"
+            "TYPE= 0",
+            "FILE_1= UpdateNEW.zip",
+            "FILE_2= UpdateClientServer.zip",
+            "LINK_1= https://www.dropbox.com/s/nxtk7sztle13th2/UpdateNEW.zip?dl=1",
+            "LINK_2= "
         };
 
         public void criarPasta()

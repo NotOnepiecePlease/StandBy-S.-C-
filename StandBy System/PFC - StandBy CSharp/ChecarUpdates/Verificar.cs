@@ -7,15 +7,13 @@ namespace PFC___StandBy_CSharp.ChecarUpdates
 {
     public class Verificar
     {
-        public string VERSAO_STANDBY { get; set; } = "9.5.2";
+        public string VERSAO_STANDBY { get; set; } = "9.11.0";
 
-        private const string LINK_STANDBY =
-            "https://www.dropbox.com/s/snjdu5m150fcj7k/UpdateVersionStandBY_NEW.txt?dl=1";
+        private const string LINK_STANDBY = "https://www.dropbox.com/s/snjdu5m150fcj7k/UpdateVersionStandBY_NEW.txt?dl=1";
 
         private const string VERSAO_CLIENT_SERVER = "3.1.1";
 
-        private const string LINK_CLIENT_SERVER =
-            "https://www.dropbox.com/s/zb8ezcxnzk8fyz6/UpdateVersionClientServer.txt?dl=1";
+        private const string LINK_CLIENT_SERVER = "https://www.dropbox.com/s/zb8ezcxnzk8fyz6/UpdateVersionClientServer.txt?dl=1";
 
         public void ForcarAtualizacao()
         {
