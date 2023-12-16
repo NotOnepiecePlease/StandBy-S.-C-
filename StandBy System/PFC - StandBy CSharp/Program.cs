@@ -21,8 +21,8 @@ namespace PFC___StandBy_CSharp
         private static void Main()
         {
             //Essa linha abaixa desbuga as rows cortadas do gridview, era um problema com DPI dos monitores em escala 125%
-            //WindowsFormsSettings.SetDPIAware();
-            WindowsFormsSettings.SetPerMonitorDpiAware();
+            WindowsFormsSettings.SetDPIAware();
+            //WindowsFormsSettings.SetPerMonitorDpiAware();
 
             //https://www.syncfusion.com/account/downloads
             SyncfusionLicenseProvider.RegisterLicense(

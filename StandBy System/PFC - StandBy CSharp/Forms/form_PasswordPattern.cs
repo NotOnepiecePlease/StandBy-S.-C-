@@ -42,7 +42,7 @@ namespace PFC___StandBy_CSharp.Forms
             criarPastaDasSenhas();
             corGeral = _corRgb;
             MudarCores();
-            isUpdate = false;
+            isUpdate = false; //315; 264244; 203
             this.Size = new Size(261, 239);
             formOrdemServico = _formOrdemServico;
         }
@@ -162,6 +162,7 @@ namespace PFC___StandBy_CSharp.Forms
             pictureBox1.Image = image1;
 
             //Label q pergunta se a senha esta correta
+            CentralizarLabels(lblPasswordIsCorrect);
             lblPasswordIsCorrect.Visible = true;
         }
 

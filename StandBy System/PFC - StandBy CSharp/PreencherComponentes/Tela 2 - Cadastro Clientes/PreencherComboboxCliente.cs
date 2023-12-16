@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
+using DevExpress.XtraEditors;
 using PFC___StandBy_CSharp.Properties;
 using Syncfusion.Windows.Forms.Tools;
 
@@ -14,7 +15,7 @@ namespace PFC___StandBy_CSharp.PreencherComponentes.Tela_2___Cadastro_Clientes
     {
         private static List<string> listCidades = new List<string>();
 
-        public void Preencher(BunifuMaterialTextbox _txtNomeCliente, ComboBoxBase _cmbCidades, Label _lblCidades_Carregando, ListBox _listBoxCidades)
+        public void Preencher(TextEdit _txtNomeCliente, ComboBoxBase _cmbCidades, Label _lblCidades_Carregando, ListBox _listBoxCidades)
         {
             //CarregarListaDeCidadesAsync();
 
