@@ -5,3 +5,19 @@ Ctrl M + L will expand all. (in VS 2013 - Toggle All outlining)
 Ctrl M + P will expand all and disable outlining.
 
 Ctrl M + M will collapse/expand the current section.
+
+
+
+Query Servicos mensais do inicio
+SELECT 
+    DATEPART(MONTH, sv_data) AS Mes,
+    DATENAME(MONTH,DATEADD(MONTH, DATEPART(MONTH, sv_data)-1, 0)) AS NomeMes,
+    COUNT(*) AS Quantidade 
+FROM 
+    tb_servicos 
+WHERE 
+    DATEPART(YEAR, sv_data) = 2022
+GROUP BY 
+    DATEPART(MONTH, sv_data)
+ORDER BY 
+    Mes

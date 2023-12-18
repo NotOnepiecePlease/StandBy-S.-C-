@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using SBAutoUpdate.Classes;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 using PFC___StandBy_CSharp.Dados;
 
 namespace SBAutoUpdate

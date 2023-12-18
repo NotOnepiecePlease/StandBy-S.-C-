@@ -1,21 +1,7 @@
-﻿using Microsoft.Office.Interop.Word;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Sql;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-using static DevExpress.Data.Db.MsSqlFormatterHelper;
-using DataTable = System.Data.DataTable;
 
 namespace PFC___StandBy_CSharp.Forms.Configurações.Banco_de_Dados
 {

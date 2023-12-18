@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using PFC___StandBy_CSharp.MsgBox;
-using System.Data.SqlClient;
 using PFC___StandBy_CSharp.Models;
 using System.Data;
 using System.Linq;

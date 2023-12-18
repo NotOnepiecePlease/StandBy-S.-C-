@@ -1,5 +1,4 @@
 ﻿using PFC___StandBy_CSharp.SqlDbConnect;
-using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;

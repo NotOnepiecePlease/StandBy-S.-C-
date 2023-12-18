@@ -1,12 +1,8 @@
 ﻿using PFC___StandBy_CSharp.Models;
 using System;
-using System.ComponentModel;
 using System.Windows.Forms;
-using DevExpress.DataAccess.Sql;
 using PFC___StandBy_CSharp.Context;
 using PFC___StandBy_CSharp.Dados;
-using DevExpress.DataAccess.ConnectionParameters;
-using static PFC___StandBy_CSharp.Enums.EnumStandby;
 using System.Linq;
 using DevExpress.DataAccess.Sql.DataApi;
 using DevExpress.XtraGrid.Columns;

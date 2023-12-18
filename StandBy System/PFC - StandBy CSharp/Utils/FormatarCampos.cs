@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Bunifu.UI.WinForms.BunifuTextbox;
 using DevExpress.XtraEditors;
 using Guna.UI.WinForms;
 
@@ -15,7 +14,8 @@ namespace PFC___StandBy_CSharp.Utils
             TextEdit CPF = sender as TextEdit;
             if (e.KeyChar >= 48 && e.KeyChar <= 57)
             {
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
 
                 if (CPF.Text.Length == 0)
                 {
@@ -41,10 +41,11 @@ namespace PFC___StandBy_CSharp.Utils
 
         public static void FormatandoEmTempoRealParaCpf(object sender, KeyPressEventArgs e)
         {
-            TextBox CPF = sender as TextBox;
+            TextEdit CPF = sender as TextEdit;
             if (e.KeyChar >= 48 && e.KeyChar <= 57)
             {
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
 
                 if (CPF.Text.Length == 3 || CPF.Text.Length == 7)
                 {
@@ -55,16 +56,18 @@ namespace PFC___StandBy_CSharp.Utils
                     CPF.Text += "-";
                 }
 
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
 
         public static void FormatandoEmTempoRealParaCnpj(object sender, KeyPressEventArgs e)
         {
-            TextBox CPF = sender as TextBox;
+            TextEdit CPF = sender as TextEdit;
             if (e.KeyChar >= 48 && e.KeyChar <= 57)
             {
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
 
                 if (CPF.Text.Length == 2 || CPF.Text.Length == 6)
                 {
@@ -79,7 +82,8 @@ namespace PFC___StandBy_CSharp.Utils
                     CPF.Text += "-";
                 }
 
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length;
             }
         }
 
@@ -87,14 +91,15 @@ namespace PFC___StandBy_CSharp.Utils
         {
             Regex pattern = new Regex("[./-]");
             //string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
-            TextBox CPF = sender as TextBox;
+            TextEdit CPF = sender as TextEdit;
 
             string cpfTexto = pattern.Replace(_textBox.Text, "");
             char[] cpfCaracteres = cpfTexto.ToCharArray();
             _textBox.Text = "";
             foreach (char caractere in cpfCaracteres)
             {
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
                 _textBox.Text += caractere;
                 if (CPF.Text.Length == 3 || CPF.Text.Length == 7)
                 {
@@ -105,7 +110,8 @@ namespace PFC___StandBy_CSharp.Utils
                     CPF.Text += "-";
                 }
 
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
         public static void FormatarTodaStringParaCpf(object sender, TextEdit _textBox)
@@ -119,7 +125,8 @@ namespace PFC___StandBy_CSharp.Utils
             _textBox.Text = "";
             foreach (char caractere in cpfCaracteres)
             {
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
                 _textBox.Text += caractere;
                 if (CPF.Text.Length == 3 || CPF.Text.Length == 7)
                 {
@@ -130,21 +137,23 @@ namespace PFC___StandBy_CSharp.Utils
                     CPF.Text += "-";
                 }
 
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
 
         public static void FormatarTodaStringParaCnpj(object sender, TextBox _textBox)
         {
             Regex pattern = new Regex(@"[./-]");
-            TextBox CPF = sender as TextBox;
+            TextEdit CPF = sender as TextEdit;
 
             string cpfTexto = pattern.Replace(_textBox.Text, "");
             char[] cpfCaracteres = cpfTexto.ToCharArray();
             _textBox.Text = "";
             foreach (char caractere in cpfCaracteres)
             {
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
                 _textBox.Text += caractere;
                 if (CPF.Text.Length == 2 || CPF.Text.Length == 6)
                 {
@@ -159,7 +168,8 @@ namespace PFC___StandBy_CSharp.Utils
                     CPF.Text += "-";
                 }
 
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
         public static void FormatarTodaStringParaCnpj(object sender, TextEdit _textBox)
@@ -172,7 +182,8 @@ namespace PFC___StandBy_CSharp.Utils
             _textBox.Text = "";
             foreach (char caractere in cpfCaracteres)
             {
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
                 _textBox.Text += caractere;
                 if (CPF.Text.Length == 2 || CPF.Text.Length == 6)
                 {
@@ -187,7 +198,8 @@ namespace PFC___StandBy_CSharp.Utils
                     CPF.Text += "-";
                 }
 
-                CPF.SelectionStart = CPF.Text.Length + 1;
+                CPF.SelectionStart = CPF.Text.Length;
+                //CPF.SelectionStart = CPF.Text.Length + 1;
             }
         }
 
@@ -197,7 +209,7 @@ namespace PFC___StandBy_CSharp.Utils
             {
                 Regex pattern = new Regex("[./-]");
                 //string cpfApenasDigitos = pattern.Replace(txtCPFCliente.Text, "");
-                TextBox txtData = sender as TextBox;
+                TextEdit txtData = sender as TextEdit;
 
                 string dataSemCaracteresEspeciais = pattern.Replace(txtData.Text, "");
                 char[] dataApenasNumeros = dataSemCaracteresEspeciais.ToCharArray();
@@ -211,7 +223,8 @@ namespace PFC___StandBy_CSharp.Utils
                         txtData.Text += "/";
                     }
 
-                    txtData.SelectionStart = txtData.Text.Length + 1;
+                    txtData.SelectionStart = txtData.Text.Length;
+                    //txtData.SelectionStart = txtData.Text.Length + 1;
                 }
             }
             else if (e.KeyChar != 8)

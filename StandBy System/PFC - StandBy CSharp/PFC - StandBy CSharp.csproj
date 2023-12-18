@@ -85,17 +85,11 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Azure.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Azure.Core.1.24.0\lib\net461\Azure.Core.dll</HintPath>
+    <Reference Include="Azure.Core, Version=1.36.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Core.1.36.0\lib\net472\Azure.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Azure.Identity, Version=1.6.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>..\packages\Azure.Identity.1.6.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    <Reference Include="Azure.Identity, Version=1.10.4.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Identity.1.10.4\lib\netstandard2.0\Azure.Identity.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
@@ -106,32 +100,11 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
@@ -145,38 +118,14 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox2">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuTextbox2.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.ToggleSwitch">
-      <HintPath>..\..\..\..\..\..\..\..\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.ToggleSwitch.dll</HintPath>
     </Reference>
     <Reference Include="BunifuDataViz, Version=1.1.1.5, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -197,55 +146,23 @@
     <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v23.1.UI, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.Diagram.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Images.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Mvvm.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v23.1.Drawing, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v23.1.Export, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v23.1.UI, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v23.1.Extensions, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v23.1.UI, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v23.1.Wizard, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraDiagram.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraNavBar.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPivotGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v23.1.CodeCompletion, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v23.1.Extensions, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Guna_UI_Framework_Ultimate_2.0.0.1_Downloadly.ir\Guna_UI_v2.0.0.6\Guna.UI.WinForms_v1.0.0.9\.net 2.0\Guna.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.UI2">
-      <HintPath>..\..\..\..\..\..\..\..\Guna_UI_Framework_Ultimate_2.0.0.1_Downloadly.ir\Guna_UI_v2.0.0.6\Guna.UI2.WinForms_v2.0.0.6\.net 2.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -301,31 +218,29 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.32.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Identity.Client, Version=4.39.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Identity.Client.4.39.0\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    <Reference Include="Microsoft.Identity.Client, Version=4.56.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.56.0\lib\net461\Microsoft.Identity.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.19.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.2.19.3\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=4.56.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.4.56.0\lib\netstandard2.0\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.6.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.7.0.3\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.6.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.7.0.3\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.IdentityModel.Protocols, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.5.6.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.7.0.3\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.5.6.0\lib\net461\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.25.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.6.25.1\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.6.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.25.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.25.1\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Word\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Word.dll</HintPath>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=7.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.7.0.3\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>
@@ -336,7 +251,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.5.1.4\lib\net46\NLog.dll</HintPath>
@@ -344,71 +259,16 @@
     <Reference Include="PresentationCore">
       <Private>True</Private>
     </Reference>
-    <Reference Include="PresentationFramework">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Compression.Base, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\SyncFusionAssemblies\Syncfusion.Compression.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Core.WinForms, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.Core.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.DataSource.WinForms, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.DataSource.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Grid.Base, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.Grid.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Grid.Windows, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.Grid.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.GridCommon.WinForms, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.GridCommon.WinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.Licensing, Version=20.3460.0.60, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Licensing.20.3.0.60\lib\net46\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfInput.WinForms, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\SyncFusionAssemblies\Syncfusion.SfInput.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfListView.WinForms, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.SfListView.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.Base, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.Shared.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Shared.Windows, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.Shared.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SpellChecker.Base, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.SpellChecker.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Spreadsheet.Windows, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\SyncFusionAssemblies\Syncfusion.Spreadsheet.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Tools.Base, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.Tools.Base.dll</HintPath>
-    </Reference>
     <Reference Include="Syncfusion.Tools.Windows, Version=20.1460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>F:\@Programas\SyncFusion\Windows\20.1.0.47\precompiledassemblies\4.5\Syncfusion.Tools.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.XlsIO.Base, Version=20.4460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\SyncFusionAssemblies\Syncfusion.XlsIO.Base.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -427,13 +287,7 @@
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
-    <Reference Include="System.ComponentModel.Composition">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Configuration">
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -452,28 +306,15 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Data.Linq">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Data.OracleClient">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
-    <Reference Include="System.Design">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.1\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
       <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Drawing.Design">
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -481,11 +322,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IdentityModel">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.6.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.25.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.25.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
@@ -494,9 +332,6 @@
     <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
       <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.IO.Compression.FileSystem">
       <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -508,6 +343,9 @@
       <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
@@ -524,17 +362,11 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Management">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.Data.1.0.2\lib\net461\System.Memory.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Messaging">
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Net">
       <Private>True</Private>
@@ -549,9 +381,6 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Numerics">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
@@ -560,17 +389,15 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
     </Reference>
@@ -606,8 +433,11 @@
     <Reference Include="System.ServiceModel">
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.ServiceProcess">
-      <Private>True</Private>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
@@ -617,28 +447,13 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Transactions">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Mobile">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Windows.Forms.DataVisualization">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <Private>True</Private>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions">
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.CSharp">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Data">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Deployment">
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing">
@@ -653,9 +468,6 @@
     <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
       <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UIAutomationClient">
       <Private>True</Private>
     </Reference>
     <Reference Include="WindowsBase">
@@ -676,6 +488,7 @@
     <Compile Include="APIs\License\UserClasses\UserDataStructure.cs" />
     <Compile Include="APIs\License\UserClasses\UserSubscriptionData.cs" />
     <Compile Include="ChecarUpdates\Verificar.cs" />
+    <Compile Include="ConsoleLogServer\ConsoleLog.cs" />
     <Compile Include="Context\standby_orgContext.cs" />
     <Compile Include="Dados\AlterarDados.cs" />
     <Compile Include="Dados\BackupDados.cs" />
@@ -684,22 +497,28 @@
     <Compile Include="Dados\InserirDados.cs" />
     <Compile Include="Dados\VerificarExistencia.cs" />
     <Compile Include="Enums\EnumStandby.cs" />
-    <Compile Include="Forms\1 - Ordems Servico\form_InserirEditarChecklist.cs">
+    <Compile Include="Forms\FormsCarregamento\form_CarregandoTela.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_InserirEditarChecklist.Designer.cs">
+    <Compile Include="Forms\FormsCarregamento\form_CarregandoTela.Designer.cs">
+      <DependentUpon>form_CarregandoTela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\2 - OrdensServico\form_InserirEditarChecklist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\2 - OrdensServico\form_InserirEditarChecklist.Designer.cs">
       <DependentUpon>form_InserirEditarChecklist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoEditar.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_OrdemServicoEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoEditar.Designer.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_OrdemServicoEditar.Designer.cs">
       <DependentUpon>form_OrdemServicoEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_RichTextboxExterno.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_RichTextboxExterno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_RichTextboxExterno.Designer.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_RichTextboxExterno.Designer.cs">
       <DependentUpon>form_RichTextboxExterno.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Configurações\Banco de Dados\form_BancoDados.cs">
@@ -726,16 +545,16 @@
     <Compile Include="Forms\form_AlertMessage.Designer.cs">
       <DependentUpon>form_AlertMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\form_CadastroClientes.cs">
+    <Compile Include="Forms\3 - Clientes\form_CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\form_CadastroClientes.Designer.cs">
+    <Compile Include="Forms\3 - Clientes\form_CadastroClientes.Designer.cs">
       <DependentUpon>form_CadastroClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\form_CadastroClientes_Edit.cs">
+    <Compile Include="Forms\3 - Clientes\form_CadastroClientes_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\form_CadastroClientes_Edit.Designer.cs">
+    <Compile Include="Forms\3 - Clientes\form_CadastroClientes_Edit.Designer.cs">
       <DependentUpon>form_CadastroClientes_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\form_Concluidos.cs">
@@ -834,28 +653,28 @@
     <Compile Include="Forms\form_Orcamento_Adicionar.Designer.cs">
       <DependentUpon>form_Orcamento_Adicionar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoEntrada.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_OrdemServicoEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoEntrada.Designer.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_OrdemServicoEntrada.Designer.cs">
       <DependentUpon>form_OrdemServicoEntrada.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoSaida.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_OrdemServicoSaida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdemServicoSaida.Designer.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_OrdemServicoSaida.Designer.cs">
       <DependentUpon>form_OrdemServicoSaida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ.cs">
+    <Compile Include="Forms\2 - OrdensServico\Antigos %28nao usados%29\form_OrdensServ.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ.Designer.cs">
+    <Compile Include="Forms\2 - OrdensServico\Antigos %28nao usados%29\form_OrdensServ.Designer.cs">
       <DependentUpon>form_OrdensServ.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ_Edit.cs">
+    <Compile Include="Forms\2 - OrdensServico\Antigos %28nao usados%29\form_OrdensServ_Edit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_OrdensServ_Edit.Designer.cs">
+    <Compile Include="Forms\2 - OrdensServico\Antigos %28nao usados%29\form_OrdensServ_Edit.Designer.cs">
       <DependentUpon>form_OrdensServ_Edit.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\form_PasswordPattern.cs">
@@ -876,10 +695,10 @@
     <Compile Include="Forms\form_QntdGarantia.Designer.cs">
       <DependentUpon>form_QntdGarantia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_ServicoPrincipal.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_ServicoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1 - Ordems Servico\form_ServicoPrincipal.Designer.cs">
+    <Compile Include="Forms\2 - OrdensServico\form_ServicoPrincipal.Designer.cs">
       <DependentUpon>form_ServicoPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\form_ServicosAnuais.cs">
@@ -918,28 +737,16 @@
     <Compile Include="Forms\Pagamento e Compras\form_Pagamento.Designer.cs">
       <DependentUpon>form_Pagamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Testes\Form2.cs">
+    <Compile Include="Forms\1 - Principal\form_V2Standby.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Testes\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Testes\form_V2Standby.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Testes\form_V2Standby.Designer.cs">
+    <Compile Include="Forms\1 - Principal\form_V2Standby.Designer.cs">
       <DependentUpon>form_V2Standby.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Testes\SplashScreen1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Testes\SplashScreen1.Designer.cs">
-      <DependentUpon>SplashScreen1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UserControl\ucTelaPrincipal.cs">
+    <Compile Include="Forms\2 - OrdensServico\ucTelaPrincipal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UserControl\ucTelaPrincipal.Designer.cs">
+    <Compile Include="Forms\2 - OrdensServico\ucTelaPrincipal.Designer.cs">
       <DependentUpon>ucTelaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Graficos\GraficoServicosAnuais.cs" />
@@ -971,7 +778,6 @@
     </Compile>
     <Compile Include="LockScreenAndroid\LockScreenRenderer.cs" />
     <Compile Include="LockScreenAndroid\YASSCOMLockScreenRenderer.cs" />
-    <Compile Include="LogSystem\Logs.cs" />
     <Compile Include="Estruturas\ChecklistEstrutura.cs" />
     <Compile Include="Estruturas\ClienteEstrutura.cs" />
     <Compile Include="Estruturas\CondicoesFisicasEstrutura.cs" />
@@ -1027,13 +833,17 @@
     <Compile Include="Utils\ConvertImage.cs" />
     <Compile Include="Utils\CustomOverlayPainter.cs" />
     <Compile Include="Utils\FormatarCampos.cs" />
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_InserirEditarChecklist.resx">
+    <Compile Include="Utils\Loading.cs" />
+    <EmbeddedResource Include="Forms\FormsCarregamento\form_CarregandoTela.resx">
+      <DependentUpon>form_CarregandoTela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\2 - OrdensServico\form_InserirEditarChecklist.resx">
       <DependentUpon>form_InserirEditarChecklist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdemServicoEditar.resx">
+    <EmbeddedResource Include="Forms\2 - OrdensServico\form_OrdemServicoEditar.resx">
       <DependentUpon>form_OrdemServicoEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_RichTextboxExterno.resx">
+    <EmbeddedResource Include="Forms\2 - OrdensServico\form_RichTextboxExterno.resx">
       <DependentUpon>form_RichTextboxExterno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configurações\Banco de Dados\form_BancoDados.resx">
@@ -1048,10 +858,10 @@
     <EmbeddedResource Include="Forms\form_AlertMessage.resx">
       <DependentUpon>form_AlertMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\form_CadastroClientes.resx">
+    <EmbeddedResource Include="Forms\3 - Clientes\form_CadastroClientes.resx">
       <DependentUpon>form_CadastroClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\form_CadastroClientes_Edit.resx">
+    <EmbeddedResource Include="Forms\3 - Clientes\form_CadastroClientes_Edit.resx">
       <DependentUpon>form_CadastroClientes_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_Concluidos.resx">
@@ -1102,16 +912,16 @@
     <EmbeddedResource Include="Forms\form_Orcamento_Adicionar.resx">
       <DependentUpon>form_Orcamento_Adicionar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdemServicoEntrada.resx">
+    <EmbeddedResource Include="Forms\2 - OrdensServico\form_OrdemServicoEntrada.resx">
       <DependentUpon>form_OrdemServicoEntrada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdemServicoSaida.resx">
+    <EmbeddedResource Include="Forms\2 - OrdensServico\form_OrdemServicoSaida.resx">
       <DependentUpon>form_OrdemServicoSaida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdensServ.resx">
+    <EmbeddedResource Include="Forms\2 - OrdensServico\Antigos %28nao usados%29\form_OrdensServ.resx">
       <DependentUpon>form_OrdensServ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_OrdensServ_Edit.resx">
+    <EmbeddedResource Include="Forms\2 - OrdensServico\Antigos %28nao usados%29\form_OrdensServ_Edit.resx">
       <DependentUpon>form_OrdensServ_Edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_PasswordPattern.resx">
@@ -1123,7 +933,7 @@
     <EmbeddedResource Include="Forms\form_QntdGarantia.resx">
       <DependentUpon>form_QntdGarantia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\1 - Ordems Servico\form_ServicoPrincipal.resx">
+    <EmbeddedResource Include="Forms\2 - OrdensServico\form_ServicoPrincipal.resx">
       <DependentUpon>form_ServicoPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\form_ServicosAnuais.resx">
@@ -1144,13 +954,10 @@
     <EmbeddedResource Include="Forms\Pagamento e Compras\form_Pagamento.resx">
       <DependentUpon>form_Pagamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Testes\form_V2Standby.resx">
+    <EmbeddedResource Include="Forms\1 - Principal\form_V2Standby.resx">
       <DependentUpon>form_V2Standby.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Testes\SplashScreen1.resx">
-      <DependentUpon>SplashScreen1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserControl\ucTelaPrincipal.resx">
+    <EmbeddedResource Include="Forms\2 - OrdensServico\ucTelaPrincipal.resx">
       <DependentUpon>ucTelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_Principal.resx">
@@ -1173,7 +980,9 @@
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="efpt.config.json" />
-    <None Include="bin\Debug\NLog.config" />
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="PFC - StandBy CSharp_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -1373,6 +1182,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\UserControl\" />
     <Folder Include="PreencherComponentes\Tela 6 - Usada por Varias Telas\" />
   </ItemGroup>
   <ItemGroup>

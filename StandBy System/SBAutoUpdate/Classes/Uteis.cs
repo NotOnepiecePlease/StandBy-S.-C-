@@ -20,16 +20,6 @@ namespace SBAutoUpdate.Classes
                 //Delete files excluding the list of file names
                 foreach (FileInfo arquivo in teste)
                 {
-                    //if (arquivo.Name.Contains("NLog.xml"))
-                    //{
-                    //    var a = 1;
-                    //}
-
-                    //if (arquivo.Name.Contains("StandBy System"))
-                    //{
-                    //    var b = 2;
-                    //}
-
                     if (arquivo.Name == "StandBy System.exe")
                     {
                         // Renomear o arquivo ao adicionar um sufixo, por exemplo, "_backup"

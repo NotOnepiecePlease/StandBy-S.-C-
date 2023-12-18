@@ -9,8 +9,8 @@ namespace PFC___StandBy_CSharp.Dados
 {
     public class BackupDados
     {
-        private static string pastaRaiz = @"./data";
-        public string CAMINHO_TXT = @"./data/dts.ini";
+        public  string PASTA_RAIZ = @"./data";
+        public  string CAMINHO_TXT = @"./data/dts.ini";
 
         private List<string> DadosParaEscrever { get; } = new List<string>()
         {
@@ -20,6 +20,7 @@ namespace PFC___StandBy_CSharp.Dados
             "USER= sa",
             "PASS= 123adr",
             "TYPE= 0",
+            "DEBUG_MODE= 0",
             "FILE_1= UpdateNEW.zip",
             "FILE_2= UpdateClientServer.zip",
             "LINK_1= https://www.dropbox.com/s/nxtk7sztle13th2/UpdateNEW.zip?dl=1",
@@ -28,17 +29,25 @@ namespace PFC___StandBy_CSharp.Dados
 
         public void criarPasta()
         {
-            if (Directory.Exists(pastaRaiz))
+            if (Directory.Exists(PASTA_RAIZ))
             {
                 if (File.Exists(CAMINHO_TXT))
                 {
                     string[] sr = File.ReadAllLines(CAMINHO_TXT);
-                    string ipDoArquivoTexto = sr[1].Substring(4);
+                    string ipDoArquivoTexto = "";
                     string ipAtualDoPC = PegarIp();
 
-                    if (ipDoArquivoTexto != ipAtualDoPC)
+                    foreach (var linha in sr)
                     {
-                        CriarDiretorioEscreverConfigs();
+                        if (linha.Contains("IP="))
+                        {
+                            ipDoArquivoTexto = linha.Split('=')[1].Trim();
+                            if (ipDoArquivoTexto != ipAtualDoPC)
+                            {
+                                CriarDiretorioEscreverConfigs();
+                                break;
+                            }
+                        }
                     }
                 }
                 else
@@ -57,7 +66,7 @@ namespace PFC___StandBy_CSharp.Dados
 
         public void CriarDiretorioEscreverConfigs()
         {
-            Directory.CreateDirectory(pastaRaiz);
+            Directory.CreateDirectory(PASTA_RAIZ);
             using (StreamWriter sw = File.CreateText(CAMINHO_TXT))
             {
                 DadosParaEscrever.ForEach(x => sw.WriteLine(x));

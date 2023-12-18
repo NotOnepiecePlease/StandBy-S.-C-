@@ -1,15 +1,11 @@
-﻿using DevExpress.ChartRangeControlClient.Core;
-using DevExpress.XtraEditors.Controls;
+﻿using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using Microsoft.Office.Interop.Word;
 using PFC___StandBy_CSharp.Context;
 using PFC___StandBy_CSharp.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraGrid;
