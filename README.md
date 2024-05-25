@@ -2,6 +2,7 @@
 
 
 
+
 ![enter image description here](https://img.shields.io/badge/Maintained-yes-green.svg)
 ![enter image description here](https://aleen42.github.io/badges/src/photoshop.svg)
 ![enter image description here](https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
@@ -118,15 +119,27 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
  - Gerar nota nao fiscal
  - Venda vinculada a um cliente (***ou sem vinculos caso nao exista cadastro***)
 
+
+### Modulo de Licenciamento
+#### Funcionalidades:
+ - Validação por Hashcode e encryptação MD5, RSA, AES.
+ - Verificação de assinatura HMAC
+ - Opções de lista negra em várias camadas
+ - Ban IP, HWID e Token
+ - Webhooks e variáveis server-sided
+ - Verificação de licença online e local
+ - Compra automatica por pix atraves do software
+ - Aplicação automatica da licença
+
 ---
 ### Algumas imagens não foram atualizadas pois não houveram mudanças significativas no layout ou na funcionalidade
-# **TELA PRINCIPAL**![alt text](https://i.imgur.com/kFgDsdD.png)
+# **TELA PRINCIPAL**![alt text](https://i.imgur.com/85nioct.png)
 &nbsp;
 &nbsp;
-# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/TU5HITf.png)
+# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/ynyQCou.png)
 &nbsp;
 &nbsp;
-# EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/m2wRgly.png)
+# EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/qp3wTjJ.png)
 &nbsp;
 &nbsp;
 # TELA DE COMPRAS![alt text](https://i.imgur.com/wpPBQlx.png)
@@ -151,24 +164,27 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 # CONFIG - ITEMS DAS COMBOBOX's![alt text](https://i.imgur.com/M5jQYf8.png)
 &nbsp;
 &nbsp;
-# CADASTRO DE CLIENTE![alt text](https://i.imgur.com/JCI2zAr.png)
+# CADASTRO DE CLIENTE![alt text](https://i.imgur.com/1YEjhWs.png)
 &nbsp;
 &nbsp;
 # EDIÇÃO DE CLIENTES![alt text](https://i.imgur.com/vdlxslm.png)
 &nbsp;
 &nbsp;
-# SERVIÇOS CONCLUÍDOS![alt text](https://i.imgur.com/UX8YHiO.png)
+# SERVIÇOS CONCLUÍDOS![alt text](https://i.imgur.com/T7aDMej.png)
 &nbsp;
 &nbsp;
-# GRÁFICO SERVIÇOS POR MÊS ![](https://i.imgur.com/X6qoSjI.png)  
+# GRÁFICO SERVIÇOS POR MÊS ![](https://i.imgur.com/JTb6RN8.png)  
 &nbsp;
 &nbsp;
-# LUCROS POR DATAS![](https://i.imgur.com/Qf1jL79.png)
+# LUCROS POR DATAS![](https://i.imgur.com/ZYliVuG.png)
 &nbsp;
 &nbsp;
 
+# LUCROS COM FILTRO POR MEIO DE PAGAMENTO![](https://i.imgur.com/50J9K0j.png)
+&nbsp;
+&nbsp;
 
-# GASTOS FIXOS/TEMPORÁRIOS + BUSCA POR DATAS DOS MESMOS.
+# GASTOS FIXOS/TEMPORÁRIOS + BUSCA POR DATAS DOS MESMOS. (IMAGEM DESATUALIZADA)
 ![Tela de Lucros](https://i.imgur.com/wALTQem.gif)
 &nbsp;
 &nbsp;
@@ -184,6 +200,51 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 ![enter image description here](https://i.imgur.com/H3EaqIm.gif)
 &nbsp;
 &nbsp;
+
+# MODULO LICENÇA (Tela Principal)
+![enter image description here](https://i.imgur.com/FpW7D8C.png)
+&nbsp;
+&nbsp;
+
+
+# MODULO LICENÇA (Carregando licença)
+![enter image description here](https://i.imgur.com/J2YKfRt.png)
+&nbsp;
+&nbsp;
+
+
+
+# MODULO LICENÇA (Licença carregada e validada)
+![enter image description here](https://i.imgur.com/Ecj5Q4N.png)
+&nbsp;
+&nbsp;
+
+
+
+# MODULO LICENÇA (Software ativado)
+![enter image description here](https://i.imgur.com/Z6oatPq.png)
+&nbsp;
+&nbsp;
+
+
+# MODULO COMPRA/ATIVAÇÃO AUTOMATICA POR PIX
+![enter image description here](https://i.imgur.com/takcRau.png)
+&nbsp;
+&nbsp;
+
+# MODULO COMPRA/ATIVAÇÃO AUTOMATICA POR PIX
+![enter image description here](https://i.imgur.com/MbXGtOU.png)
+&nbsp;
+&nbsp;
+
+
+
+# MODULO COMPRA/ATIVAÇÃO AUTOMATICA POR PIX
+![enter image description here](https://i.imgur.com/MlmC3Uz.png)
+&nbsp;
+&nbsp;
+
+
 
 
 # MODULO DE AUTO UPDATE
