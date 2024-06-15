@@ -94,6 +94,15 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
  - Automaticamente baixa e instala o sistema.
 ---
 
+### Modulo de Rastreio - Correios
+#### Funcionalidades:
+ - Cadastrar itens para rastreio
+ - Deletar itens de rastreio
+ - Listar itens de rastreio
+ - Rastreio customizável
+ - Rastreio de itens por serviço
+---
+
 ### Modulo de Estoque
 #### Funcionalidades:
  - Cadastrar produtos no estoque
@@ -136,7 +145,7 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 # **TELA PRINCIPAL**![alt text](https://i.imgur.com/85nioct.png)
 &nbsp;
 &nbsp;
-# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/ynyQCou.png)
+# SERVIÇOS EM ANDAMENTO![alt text](https://i.imgur.com/pLG7isa.png)
 &nbsp;
 &nbsp;
 # EDIÇÃO DE SERVIÇOS ![alt text](https://i.imgur.com/qp3wTjJ.png)
@@ -149,13 +158,13 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 ![](https://i.imgur.com/yYsmh2o.png)
 &nbsp;
 &nbsp;
-# O.S - ENTRADA ![alt text](https://i.imgur.com/xZil4ql.png)
+# O.S - ENTRADA ![alt text](https://i.imgur.com/mFA63OK.png)
 &nbsp;
 &nbsp;
 # IMPRESSÃO O.S - ENTRADA![alt text](https://i.imgur.com/N5YNqEt.png)
 &nbsp;
 &nbsp;
-# O.S - SAIDA![alt text](https://i.imgur.com/w6Om1sq.png)
+# O.S - SAIDA![alt text](https://i.imgur.com/QenA0cG.png)
 &nbsp;
 &nbsp;
 # IMPRESSÃO O.S - SAIDA![alt text](https://i.imgur.com/n0EE5Ir.png)
@@ -167,16 +176,33 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 # CADASTRO DE CLIENTE![alt text](https://i.imgur.com/1YEjhWs.png)
 &nbsp;
 &nbsp;
-# EDIÇÃO DE CLIENTES![alt text](https://i.imgur.com/vdlxslm.png)
+# EDIÇÃO DE CLIENTES![alt text](https://i.imgur.com/m2KoefC.png)
 &nbsp;
 &nbsp;
 # SERVIÇOS CONCLUÍDOS![alt text](https://i.imgur.com/T7aDMej.png)
 &nbsp;
 &nbsp;
+# MODULO DE PDV (Venda Produtos)![alt text](https://i.imgur.com/U8JRLT2.png)
+&nbsp;
+&nbsp;
+# LISTAGEM DE VENDAS (CLIENTE > DATA)![alt text](https://i.imgur.com/iZStvEO.png)
+&nbsp;
+&nbsp;
 # GRÁFICO SERVIÇOS POR MÊS ![](https://i.imgur.com/JTb6RN8.png)  
 &nbsp;
 &nbsp;
-# LUCROS POR DATAS![](https://i.imgur.com/ZYliVuG.png)
+
+# MODULO DE RASTREIO - CORREIOS![](https://i.imgur.com/4xmBZhp.gif)  
+&nbsp;
+&nbsp;
+
+
+# RASTREIO DE COMPRAS PARA SERVIÇO![](https://i.imgur.com/DRqcPRU.gif)  
+&nbsp;
+&nbsp;
+
+
+# LUCROS POR DATAS![](https://i.imgur.com/HAtIZt5.gif)
 &nbsp;
 &nbsp;
 
@@ -184,20 +210,24 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 &nbsp;
 &nbsp;
 
-# GASTOS FIXOS/TEMPORÁRIOS + BUSCA POR DATAS DOS MESMOS. (IMAGEM DESATUALIZADA)
-![Tela de Lucros](https://i.imgur.com/wALTQem.gif)
+# MODULO DE GASTOS  + BUSCA POR DATAS DOS MESMOS.
+![Tela de Lucros](https://i.imgur.com/QXv4ery.png)
 &nbsp;
 &nbsp;
 
 
-# MODULO DE ANOTAÇÕES INTEGRADO AO SISTEMA 
-![enter image description here](https://i.imgur.com/8GrEuzw.gif)
+# MODULO DE GASTOS  + BUSCA POR DATAS DOS MESMOS.
+![Tela de Lucros](https://i.imgur.com/1gkag5l.png)
 &nbsp;
 &nbsp;
 
 
-# MODULO DE GARANTIAS CUSTOM/30/60/90 dias.
-![enter image description here](https://i.imgur.com/H3EaqIm.gif)
+# MODULO DE GARANTIAS CUSTOM.
+![enter image description here](https://i.imgur.com/grImqSp.png)
+&nbsp;
+&nbsp;
+
+![enter image description here](https://i.imgur.com/Us9wHff.png)
 &nbsp;
 &nbsp;
 
@@ -248,4 +278,4 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 
 
 # MODULO DE AUTO UPDATE
-![enter image description here](https://i.imgur.com/M0oBOTQ.png)
+![enter image description here](https://i.imgur.com/nk8gSz4.png)
