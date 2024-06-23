@@ -419,3 +419,66 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 
 ![](https://i.imgur.com/nk8gSz4.png)
 </details>
+
+
+
+
+# **🔥 MODULO DE CONFIGURAÇÕES**
+<details><summary>CONFIGURAÇÕES</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/81cKck4.png)
+</details>
+<details><summary>BANCO DE DADOS</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/Lje4hu7.png)
+</details>
+<details><summary>OPÇÕES DE MULTI SELEÇÃO</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/FNRRQCR.png)
+</details>
+<details><summary>EMAIL DO SISTEMA</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/J5mImDt.png)
+</details>
+<details><summary>REGISTROS DO SISTEMA</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/0J0nBTI.png)
+</details>
+<details><summary>EDITOR DE RELATÓRIOS</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/lZ3aLSD.png)
+
+![](https://i.imgur.com/WqdTQw7.png)
+</details>
+<details><summary>SERVIÇOS DO WINDOWS</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/HCk3M2o.png)
+=
+![](https://i.imgur.com/nZ9E2bI.png)
+![](https://i.imgur.com/lh2T2p6.png)
+![](https://i.imgur.com/L8ouHWv.png)
+![](https://i.imgur.com/4JFnedj.png)
+=
+![](https://i.imgur.com/dE9AblF.png)
+=
+![](https://i.imgur.com/xKUpp3s.png)
+=
+![](https://i.imgur.com/rI1VhQL.png)
+=
+![](https://i.imgur.com/A7mgQYs.png)
+
+</details>
