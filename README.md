@@ -482,3 +482,44 @@ Estamos comprometidos em fornecer uma plataforma robusta e intuitiva, projetada 
 ![](https://i.imgur.com/A7mgQYs.png)
 
 </details>
+
+
+
+
+# **🔥 MODULO DE TEMAS**
+<details><summary>CATEGORIAS DE TEMAS</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/iVkj9Go.png)
+</details>
+<details><summary>PALETAS DE TEMAS</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/cfY6V4E.png)
+</details>
+<details><summary>PREVIEW TEMAS</summary>
+&nbsp;
+&nbsp;
+
+![](https://i.imgur.com/EHcMnA8.png)
+=
+![](https://i.imgur.com/dMziOIB.png)
+=
+![](https://i.imgur.com/r8XF2ZK.png)
+=
+![](https://i.imgur.com/OqGKbUv.png)
+=
+![](https://i.imgur.com/8LUqDZ8.png)
+=
+![](https://i.imgur.com/7vxeYYP.png)
+=
+![](https://i.imgur.com/pfYEDxL.png)
+=
+![](https://i.imgur.com/E2rLajK.png)
+=
+![](https://i.imgur.com/EHcMnA8.png)
+=
+
+</details>
